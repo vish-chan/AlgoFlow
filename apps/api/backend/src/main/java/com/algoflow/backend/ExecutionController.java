@@ -22,6 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class ExecutionController {
 
     private static final Logger log = LoggerFactory.getLogger(ExecutionController.class);
+    private static final String RUNNER_PACKAGE = "com.algoflow.runner";
 
     @PostMapping("/execute")
     public Map<String, Object> execute(@RequestBody Map<String, String> request) {
@@ -47,7 +48,8 @@ public class ExecutionController {
         log.debug("Transformer JAR: {}", transformerJar);
         
         try {
-            Files.writeString(javaFile, code);
+            String normalizedCode = normalizeToRunnerPackage(code);
+            Files.writeString(javaFile, normalizedCode);
             log.debug("Written code to: {}", javaFile);
             
             Process compile = new ProcessBuilder("javac",
@@ -115,5 +117,24 @@ public class ExecutionController {
                     try { Files.delete(path); } catch (IOException ignored) {}
                 });
         }
+    }
+
+    /**
+     * Ensures the user-provided Java code is compiled as com.algoflow.runner.Main.
+     * Any existing package declaration is stripped and replaced with the expected one.
+     */
+    private String normalizeToRunnerPackage(String code) {
+        if (code == null || code.isBlank()) {
+            throw new IllegalArgumentException("Code must not be empty");
+        }
+
+        // Remove any leading package declaration (first one only).
+        // This regex matches: optional leading whitespace, 'package', anything up to ';', and trailing whitespace.
+        String withoutUserPackage = code.replaceFirst("^\\s*package\\s+[^;]+;\\s*", "");
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("package ").append(RUNNER_PACKAGE).append(";\n\n");
+        sb.append(withoutUserPackage.strip()).append('\n');
+        return sb.toString();
     }
 }
