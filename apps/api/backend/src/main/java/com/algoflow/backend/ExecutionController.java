@@ -1,0 +1,119 @@
+package com.algoflow.backend;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:5173")
+public class ExecutionController {
+
+    private static final Logger log = LoggerFactory.getLogger(ExecutionController.class);
+
+    @PostMapping("/execute")
+    public Map<String, Object> execute(@RequestBody Map<String, String> request) {
+        String code = request.get("code");
+        log.info("Received execution request, code length: {}", code.length());
+        
+        try {
+            List<?> commands = executeJavaCode(code);
+            log.info("Execution successful, commands count: {}", commands.size());
+            return Map.of("commands", commands);
+        } catch (Exception e) {
+            log.error("Execution failed: {}", e.getMessage(), e);
+            return Map.of("error", e.getMessage());
+        }
+    }
+
+    private List<?> executeJavaCode(String code) throws Exception {
+        Path tempDir = Files.createTempDirectory("algo");
+        Path javaFile = tempDir.resolve("Main.java");
+        Path transformerJar = Paths.get("../../../packages/java/engine/target/algo-transformer-1.0-SNAPSHOT.jar").toAbsolutePath();
+        
+        log.debug("Temp directory: {}", tempDir);
+        log.debug("Transformer JAR: {}", transformerJar);
+        
+        try {
+            Files.writeString(javaFile, code);
+            log.debug("Written code to: {}", javaFile);
+            
+            Process compile = new ProcessBuilder("javac",
+                "-d", ".",
+                "-cp", transformerJar.toString(),
+                "-g",
+                "Main.java")
+                .directory(tempDir.toFile())
+                .redirectErrorStream(true)
+                .start();
+            
+            int compileExitCode = compile.waitFor();
+            log.debug("Compilation exit code: {}", compileExitCode);
+            
+            if (compileExitCode != 0) {
+                String compileError = new String(compile.getInputStream().readAllBytes());
+                log.error("Compilation failed: {}", compileError);
+                throw new RuntimeException("Compilation failed: " + compileError);
+            }
+            
+            ProcessBuilder runBuilder = new ProcessBuilder("java",
+                "-javaagent:" + transformerJar,
+                "-cp", transformerJar + ":.",
+                "--add-opens", "java.base/java.util=ALL-UNNAMED",
+                "com.algoflow.runner.Main");
+            runBuilder.directory(tempDir.toFile());
+            runBuilder.environment().put("ALGORITHM_VISUALIZER", "true");
+            
+            log.debug("Starting Java process with command: {}", runBuilder.command());
+            
+            Process run = runBuilder.start();
+            run.getOutputStream().close();
+            int runExitCode = run.waitFor();
+            
+            String runOutput = new String(run.getInputStream().readAllBytes());
+            if (log.isDebugEnabled()) {
+                log.debug("Java process output:\n{}", runOutput);
+            }
+            
+            log.debug("Java process exit code: {}", runExitCode);
+            
+            if (runExitCode != 0) {
+                log.error("Java execution failed: {}", runOutput);
+                throw new RuntimeException("Execution failed: " + runOutput);
+            }
+            
+            Path jsonFile = tempDir.resolve("visualization.json");
+            if (!Files.exists(jsonFile)) {
+                log.error("visualization.json not found. Process output: {}", runOutput);
+                throw new RuntimeException("visualization.json not generated. Output: " + runOutput);
+            }
+            
+            String jsonContent = Files.readString(jsonFile);
+            log.debug("Read visualization.json, size: {} bytes", jsonContent.length());
+            if (log.isDebugEnabled()) {
+                log.debug("visualization.json content:\n{}", jsonContent);
+            }
+            
+            return new ObjectMapper().readValue(jsonContent, List.class);
+        } finally {
+            log.debug("Cleaning up temp directory: {}", tempDir);
+            Files.walk(tempDir)
+                .sorted(Comparator.reverseOrder())
+                .forEach(path -> {
+                    try { Files.delete(path); } catch (IOException ignored) {}
+                });
+        }
+    }
+}
