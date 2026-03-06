@@ -153,8 +153,11 @@ public class VisualizerRegistry {
             int row = parentGraph.findRowIndex(array);
             if (row >= 0) {
                 int col = (Integer) args[0];
-                if (((int[]) array)[col] != 0) {
-                    parentGraph.visit(row, col);
+                int value = (Integer) args[1];
+                if (value != 0) {
+                    parentGraph.addEdge(row, col, value);
+                } else {
+                    parentGraph.removeEdge(row, col);
                 }
                 return;
             }

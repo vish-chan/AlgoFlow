@@ -149,7 +149,7 @@ export class SimpleRenderer {
         } else if (this.data.type === 'variables') {
             this.renderVariables(this.data.vars, this.data.title, this.data.patchState);
         } else if (this.data.type === 'graph') {
-            this.renderGraphInBounds(this.data.adjMatrix, this.data.nodes, this.data.title, 0, 0, width, height, this.data.visitedEdges);
+            this.renderGraphInBounds(this.data.adjMatrix, this.data.nodes, this.data.title, 0, 0, width, height, this.data.visitedEdges, this.data.directed, this.data.weighted);
         } else if (this.data.type === 'layout') {
             this.renderLayout(this.data.children);
         } else {
@@ -317,7 +317,7 @@ export class SimpleRenderer {
             } else if (child?.type === 'recursion' && child.calls) {
                 this.renderRecursionInBounds(child.calls, child.title, 0, 0, width, sectionHeight, y, child.recursiveOnly, child.onToggleRecursiveOnly);
             } else if (child?.type === 'graph') {
-                this.renderGraphInBounds(child.adjMatrix, child.nodes, child.title, 0, 0, width, sectionHeight, child.visitedEdges);
+                this.renderGraphInBounds(child.adjMatrix, child.nodes, child.title, 0, 0, width, sectionHeight, child.visitedEdges, child.directed, child.weighted);
             } else if (child?.type === 'variables' && child.vars) {
                 this.renderVariablesInBounds(child.vars, child.title, 0, 0, width, sectionHeight, child.patchState);
             } else if (child?.type === 'variablesGroup') {
@@ -496,7 +496,7 @@ export class SimpleRenderer {
         });
     }
 
-    private renderGraphInBounds(adjMatrix: number[][], nodes: any[], title: string | undefined, x: number, y: number, width: number, height: number, visitedEdges?: string[]) {
+    private renderGraphInBounds(adjMatrix: number[][], nodes: any[], title: string | undefined, x: number, y: number, width: number, height: number, visitedEdges?: string[], directed?: boolean, weighted?: boolean) {
         if (!this.ctx || !nodes.length) return;
 
         const titleH = title ? 25 : 0;
@@ -514,16 +514,27 @@ export class SimpleRenderer {
         const n = nodes.length;
         const edgeSet = new Set(visitedEdges || []);
 
-        // Compute positions
         const pos = nodes.map((_: any, i: number) => ({
             x: cx + r * Math.cos(2 * Math.PI * i / n - Math.PI / 2),
             y: cy + r * Math.sin(2 * Math.PI * i / n - Math.PI / 2),
         }));
 
         // Draw edges
-        for (let i = 0; i < n; i++) {
-            for (let j = i + 1; j < n; j++) {
-                if (adjMatrix[i]?.[j] || adjMatrix[j]?.[i]) {
+        if (directed) {
+            for (let i = 0; i < n; i++) {
+                for (let j = 0; j < n; j++) {
+                    if (i === j || !adjMatrix[i]?.[j]) continue;
+                    const a = Math.min(i, j), b = Math.max(i, j);
+                    const visited = edgeSet.has(`${a}-${b}`);
+                    const bidir = !!(adjMatrix[j]?.[i]);
+                    this.drawDirectedEdge(pos[i], pos[j], nodeR, visited, bidir ? (i < j ? 1 : -1) : 0, weighted ? adjMatrix[i][j] : 0);
+                }
+            }
+        } else {
+            for (let i = 0; i < n; i++) {
+                for (let j = i + 1; j < n; j++) {
+                    const w = adjMatrix[i]?.[j] || adjMatrix[j]?.[i];
+                    if (!w) continue;
                     const visited = edgeSet.has(`${i}-${j}`);
                     this.ctx.strokeStyle = visited ? '#4CAF50' : '#555';
                     this.ctx.lineWidth = visited ? 2.5 : 1;
@@ -531,6 +542,13 @@ export class SimpleRenderer {
                     this.ctx.moveTo(pos[i].x, pos[i].y);
                     this.ctx.lineTo(pos[j].x, pos[j].y);
                     this.ctx.stroke();
+                    if (weighted && w !== 1) {
+                        this.ctx.fillStyle = '#ffab40';
+                        this.ctx.font = '10px sans-serif';
+                        this.ctx.textAlign = 'center';
+                        this.ctx.textBaseline = 'middle';
+                        this.ctx.fillText(String(w), (pos[i].x + pos[j].x) / 2, (pos[i].y + pos[j].y) / 2 - 8);
+                    }
                 }
             }
         }
@@ -550,6 +568,69 @@ export class SimpleRenderer {
             this.ctx.textAlign = 'center';
             this.ctx.textBaseline = 'middle';
             this.ctx.fillText(String(i), pos[i].x, pos[i].y);
+        }
+    }
+
+    private drawDirectedEdge(from: { x: number; y: number }, to: { x: number; y: number }, nodeR: number, visited: boolean, curve: number, weight: number) {
+        if (!this.ctx) return;
+        const dx = to.x - from.x, dy = to.y - from.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist === 0) return;
+        const ux = dx / dist, uy = dy / dist;
+
+        // Shorten to node edges
+        const sx = from.x + ux * nodeR, sy = from.y + uy * nodeR;
+        const ex = to.x - ux * nodeR, ey = to.y - uy * nodeR;
+
+        this.ctx.strokeStyle = visited ? '#4CAF50' : '#555';
+        this.ctx.lineWidth = visited ? 2.5 : 1;
+
+        const bulge = curve * 20;
+        const nx = -uy, ny = ux; // perpendicular
+        const cpx = (sx + ex) / 2 + nx * bulge;
+        const cpy = (sy + ey) / 2 + ny * bulge;
+
+        this.ctx.beginPath();
+        if (curve !== 0) {
+            this.ctx.moveTo(sx, sy);
+            this.ctx.quadraticCurveTo(cpx, cpy, ex, ey);
+        } else {
+            this.ctx.moveTo(sx, sy);
+            this.ctx.lineTo(ex, ey);
+        }
+        this.ctx.stroke();
+
+        // Arrowhead — tangent at endpoint
+        let ax: number, ay: number;
+        if (curve !== 0) {
+            ax = ex - (2 * (1 - 1) * (cpx - sx) + 2 * 1 * (ex - cpx)) ? ex - cpx : ux;
+            ay = ey - (2 * (1 - 1) * (cpy - sy) + 2 * 1 * (ey - cpy)) ? ey - cpy : uy;
+            // Tangent of quadratic at t=1: 2*(P2-P1) = 2*(end - cp)
+            ax = ex - cpx; ay = ey - cpy;
+        } else {
+            ax = ux; ay = uy;
+        }
+        const alen = Math.sqrt(ax * ax + ay * ay);
+        if (alen === 0) return;
+        ax /= alen; ay /= alen;
+        const arrowLen = 8;
+        this.ctx.fillStyle = visited ? '#4CAF50' : '#555';
+        this.ctx.beginPath();
+        this.ctx.moveTo(ex, ey);
+        this.ctx.lineTo(ex - arrowLen * ax + arrowLen * 0.4 * (-ay), ey - arrowLen * ay + arrowLen * 0.4 * ax);
+        this.ctx.lineTo(ex - arrowLen * ax - arrowLen * 0.4 * (-ay), ey - arrowLen * ay - arrowLen * 0.4 * ax);
+        this.ctx.closePath();
+        this.ctx.fill();
+
+        // Weight label
+        if (weight && weight !== 1) {
+            const lx = curve !== 0 ? cpx : (sx + ex) / 2;
+            const ly = (curve !== 0 ? cpy : (sy + ey) / 2) - 8;
+            this.ctx.fillStyle = '#ffab40';
+            this.ctx.font = '10px sans-serif';
+            this.ctx.textAlign = 'center';
+            this.ctx.textBaseline = 'middle';
+            this.ctx.fillText(String(weight), lx, ly);
         }
     }
 

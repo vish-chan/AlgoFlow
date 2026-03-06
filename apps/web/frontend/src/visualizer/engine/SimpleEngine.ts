@@ -179,6 +179,32 @@ export class SimpleEngine {
                 this.tracers[key].calls[this.tracers[key].calls.length - 1].active = false;
                 this.updateRenderer();
             }
+        } else if (key !== null && method === 'directed') {
+            if (this.tracers[key]?.type === 'graph') {
+                this.tracers[key].directed = !!args[0];
+                this.updateRenderer();
+            }
+        } else if (key !== null && method === 'weighted') {
+            if (this.tracers[key]?.type === 'graph') {
+                this.tracers[key].weighted = !!args[0];
+                this.updateRenderer();
+            }
+        } else if (key !== null && method === 'addEdge') {
+            if (this.tracers[key]?.type === 'graph') {
+                const from = Math.floor(args[0]), to = Math.floor(args[1]), weight = args[2] ?? 1;
+                if (this.tracers[key].adjMatrix[from]) {
+                    this.tracers[key].adjMatrix[from][to] = weight;
+                }
+                this.updateRenderer();
+            }
+        } else if (key !== null && method === 'removeEdge') {
+            if (this.tracers[key]?.type === 'graph') {
+                const from = Math.floor(args[0]), to = Math.floor(args[1]);
+                if (this.tracers[key].adjMatrix[from]) {
+                    this.tracers[key].adjMatrix[from][to] = 0;
+                }
+                this.updateRenderer();
+            }
         } else if (key !== null && method === 'layoutCircle') {
             if (this.tracers[key]?.type === 'graph') {
                 this.tracers[key].layout = 'circle';
@@ -303,7 +329,7 @@ export class SimpleEngine {
             } else if (tracer.type === 'variables') {
                 this.renderer.setData({ type: 'variables', vars: tracer.vars, title: tracer.title, patchState: tracer.patchState });
             } else if (tracer.type === 'graph') {
-                this.renderer.setData({ type: 'graph', adjMatrix: tracer.adjMatrix, nodes: tracer.nodes, visitedEdges: [...tracer.visitedEdges], title: tracer.title });
+                this.renderer.setData({ type: 'graph', adjMatrix: tracer.adjMatrix, nodes: tracer.nodes, visitedEdges: [...tracer.visitedEdges], title: tracer.title, directed: tracer.directed, weighted: tracer.weighted });
             } else if (tracer.type === 'layout') {
                 const children = tracer.children
                     .filter((childKey: string) => !this.hiddenChildren.has(childKey))
@@ -316,7 +342,7 @@ export class SimpleEngine {
                             return { ...c, recursiveOnly: this.recursiveOnly, onToggleRecursiveOnly: () => this.toggleRecursiveOnly() };
                         }
                         if (c?.type === 'graph') {
-                            return { ...c, visitedEdges: [...c.visitedEdges] };
+                            return { ...c, visitedEdges: [...c.visitedEdges], directed: c.directed, weighted: c.weighted };
                         }
                         return c;
                     })

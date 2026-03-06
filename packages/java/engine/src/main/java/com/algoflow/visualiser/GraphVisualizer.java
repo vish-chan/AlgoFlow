@@ -31,6 +31,16 @@ public class GraphVisualizer implements Visualizer {
         Tracer.delay();
     }
     
+    public void addEdge(int source, int target, int weight) {
+        _tracer.addEdge(source, target, weight);
+        Tracer.delay();
+    }
+    
+    public void removeEdge(int source, int target) {
+        _tracer.removeEdge(source, target);
+        Tracer.delay();
+    }
+    
     private void leaveLastSource(Object newSource) {
         if (_lastSource != null && !_lastSource.equals(newSource)) {
             _tracer.leave(_lastSource);
