@@ -61,8 +61,20 @@ public class VisualizerInitializer {
             return true;
         }
         
+        return registerValue(name, value, is2DList(field));
+    }
+    
+    public static boolean registerLocalValue(String name, Object value) {
+        if (VisualizerRegistry.isRegistered(value)) return false;
+        boolean is2D = (value instanceof List<?> list) && !list.isEmpty() && list.get(0) instanceof List;
+        if (!registerValue(name, value, is2D)) return false;
+        VisualizerRegistry.setLayout();
+        return true;
+    }
+    
+    private static boolean registerValue(String name, Object value, boolean is2DList) {
         if (value instanceof List<?> list) {
-            ListVisualizer vis = is2DList(field)
+            ListVisualizer vis = is2DList
                     ? new Array2DVisualiser(list, name)
                     : new Array1DVisualiser(list, name);
             VisualizerRegistry.register(vis, list);

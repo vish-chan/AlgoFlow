@@ -17,6 +17,11 @@ public class VisualizerRegistry {
     private static final Map<String, LocalVariablesVisualizer> _localVariablesVisualizers = new HashMap<>();
     private static CallStackVisualizer _callStackVisualizer;
 
+    public static boolean isRegistered(Object obj) {
+        return _objectToVisualizer.containsKey(obj) || _arrayToVisualizer.containsKey(obj)
+                || _array2DToVisualizer.containsKey(obj) || _graphToVisualizer.containsKey(obj);
+    }
+
     public static void register(Visualizer visualizer, Object... objects) {
         if (visualizer instanceof ListVisualizer listVis) {
             _visualizers.add(visualizer.getCommander());
@@ -283,6 +288,13 @@ public class VisualizerRegistry {
 
 
     public static void onLocalVariableUpdate(String methodKey, int slotIndex, Object value) {
+        String variableName = LocalVariablesVisualizer.getSlotName(methodKey, slotIndex);
+        if (variableName == null) return;
+        
+        if (value != null && VisualizerInitializer.registerLocalValue(variableName, value)) {
+            return;
+        }
+        
         LocalVariablesVisualizer visualizer = _localVariablesVisualizers.get(methodKey);
         if (visualizer == null) {
             String methodName = methodKey.substring(methodKey.lastIndexOf('#') + 1, methodKey.lastIndexOf('('));
@@ -290,10 +302,7 @@ public class VisualizerRegistry {
             registerLocalVariables(methodKey, visualizer);
             setLayout();
         }
-        String variableName = LocalVariablesVisualizer.getSlotName(methodKey, slotIndex);
-        if (variableName != null) {
-            visualizer.onVariableUpdate(variableName, value);
-        }
+        visualizer.onVariableUpdate(variableName, value);
     }
     
     private static GraphVisualizer findParentGraph(Object subarray) {
