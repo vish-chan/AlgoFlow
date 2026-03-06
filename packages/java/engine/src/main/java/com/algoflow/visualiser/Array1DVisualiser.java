@@ -12,7 +12,7 @@ public class Array1DVisualiser implements ListVisualizer {
     public Array1DVisualiser(Object list, String name) {
         this._list = list;
         this._tracer = new Array1DTracer(name);
-        _tracer.set(((List<?>) list).toArray());
+        _tracer.set(((Collection<?>) list).toArray());
         
         Tracer.delay();
     }
@@ -43,13 +43,19 @@ public class Array1DVisualiser implements ListVisualizer {
 
     @Override
     public void onAdd(Object[] args) {
-        _tracer.set(((List<?>) _list).toArray());
+        _tracer.set(((Collection<?>) _list).toArray());
+        Tracer.delay();
+    }
+
+    @Override
+    public void onRemove(Object[] args) {
+        _tracer.set(((Collection<?>) _list).toArray());
         Tracer.delay();
     }
 
     @Override
     public void onClear() {
-        _tracer.set(_list);
+        _tracer.set(((Collection<?>) _list).toArray());
         Tracer.delay();
     }
 

@@ -41,6 +41,15 @@ public class Array2DVisualiser implements ListVisualizer {
     }
 
     @Override
+    public void onRemove(Object[] args) {
+        Object[][] array = _matrix.stream()
+            .map(List::toArray)
+            .toArray(Object[][]::new);
+        _tracer.set(array);
+        Tracer.delay();
+    }
+
+    @Override
     public void onClear() {
         _tracer.set(new Object[0][0]);
         Tracer.delay();
@@ -81,6 +90,15 @@ public class Array2DVisualiser implements ListVisualizer {
             
             @Override
             public void onAdd(Object[] args) {
+                Object[][] array = _matrix.stream()
+                    .map(List::toArray)
+                    .toArray(Object[][]::new);
+                _tracer.set(array);
+                Tracer.delay();
+            }
+            
+            @Override
+            public void onRemove(Object[] args) {
                 Object[][] array = _matrix.stream()
                     .map(List::toArray)
                     .toArray(Object[][]::new);

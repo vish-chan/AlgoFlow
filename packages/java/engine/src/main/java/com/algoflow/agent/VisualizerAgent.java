@@ -44,6 +44,7 @@ public class VisualizerAgent {
         BiConsumer<Object, Object[]> onAdd = VisualizerRegistry::onAdd;
         Consumer<Object> onClear = VisualizerRegistry::onClear;
         Consumer<String> onLog = VisualizerRegistry::onLog;
+        BiConsumer<Object, Object[]> onRemove = VisualizerRegistry::onRemove;
 
         Field getListener = bootBridge.getField("getListener");
         getListener.setAccessible(true);
@@ -64,6 +65,10 @@ public class VisualizerAgent {
         Field logListener = bootBridge.getField("logListener");
         logListener.setAccessible(true);
         logListener.set(null, onLog);
+        
+        Field removeListener = bootBridge.getField("removeListener");
+        removeListener.setAccessible(true);
+        removeListener.set(null, onRemove);
 
         new AgentBuilder.Default()
                 .disableClassFormatChanges()
@@ -103,9 +108,23 @@ public class VisualizerAgent {
                                     .on(named("get").and(takesArguments(int.class))))
                             .visit(Advice.to(ListInterceptor.SetInterceptor.class)
                                     .on(named("set").and(takesArguments(int.class, Object.class))))
-                            .visit(Advice.to(ListInterceptor.AddInterceptor.class)
-                                    .on(named("add")))
-                            .visit(Advice.to(ListInterceptor.ClearInterceptor.class)
+                            .visit(Advice.to(CollectionInterceptor.AddInterceptor.class)
+                                    .on(named("add").or(named("offer")).or(named("push"))))
+                            .visit(Advice.to(CollectionInterceptor.RemoveInterceptor.class)
+                                    .on(named("remove").or(named("poll")).or(named("pop"))))
+                            .visit(Advice.to(CollectionInterceptor.ClearInterceptor.class)
+                                    .on(named("clear").and(takesArguments(0))));
+                })
+                .type(ElementMatchers.is(java.util.ArrayDeque.class)
+                        .or(ElementMatchers.is(java.util.PriorityQueue.class)))
+                .transform((builder, type, classLoader, module, protectionDomain) -> {
+                    System.out.println("[VisualizerAgent] Transforming: " + type.getName());
+                    return builder
+                            .visit(Advice.to(CollectionInterceptor.AddInterceptor.class)
+                                    .on(named("add").or(named("offer")).or(named("push"))))
+                            .visit(Advice.to(CollectionInterceptor.RemoveInterceptor.class)
+                                    .on(named("poll").or(named("pop")).or(named("remove"))))
+                            .visit(Advice.to(CollectionInterceptor.ClearInterceptor.class)
                                     .on(named("clear").and(takesArguments(0))));
                 })
                 .type(ElementMatchers.is(java.io.PrintStream.class))
@@ -114,7 +133,8 @@ public class VisualizerAgent {
                     return builder
                             .visit(Advice.to(PrintStreamInterceptor.class)
                                     .on(named("println").and(takesArguments(String.class))));
-                }).installOn(inst);
+                })
+                .installOn(inst);
 
         System.out.println("[VisualizerAgent] Agent installed");
     }

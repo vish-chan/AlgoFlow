@@ -25,21 +25,4 @@ public class ListInterceptor {
             VisualizerBridge.setListener.accept(instance, new Object[]{index, value});
         }
     }
-
-    static class AddInterceptor {
-        @Advice.OnMethodExit
-        static void onAdd(
-                @Advice.This Object instance,
-                @Advice.AllArguments Object[] args
-        ) {
-            VisualizerBridge.addListener.accept(instance, args);
-        }
-    }
-
-    static class ClearInterceptor {
-        @Advice.OnMethodExit
-        static void onClear(@Advice.This Object instance) {
-            VisualizerBridge.clearListener.accept(instance);
-        }
-    }
 }
