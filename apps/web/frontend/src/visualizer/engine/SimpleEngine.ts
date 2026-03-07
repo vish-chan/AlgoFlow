@@ -9,6 +9,7 @@ export class SimpleEngine {
     private listeners: Set<() => void> = new Set();
     private hiddenChildren: Set<string> = new Set();
     private recursiveOnly = false;
+    private highlightedLine: number | null = null;
 
     constructor() {
         this.renderer = new SimpleRenderer();
@@ -43,7 +44,12 @@ export class SimpleEngine {
     private reset() {
         this.tracers = {};
         this.root = null;
+        this.highlightedLine = null;
         this.renderer.setData(null);
+    }
+
+    getHighlightedLine(): number | null {
+        return this.highlightedLine;
     }
 
     private detectSwaps(chunks: Chunk[]): Map<string, { i: number; j: number }> {
@@ -94,6 +100,8 @@ export class SimpleEngine {
             }
         } else if (key !== null && method === 'LogTracer') {
             this.tracers[key] = { type: 'log', logs: [], title: args[0] || 'Log' };
+        } else if (key !== null && method === 'CodeTracer') {
+            this.tracers[key] = { type: 'code', line: null, title: args[0] || 'Code' };
         } else if (key !== null && method === 'GraphTracer') {
             this.tracers[key] = { type: 'graph', adjMatrix: [], nodes: [], visitedEdges: new Set<string>(), layout: 'circle', title: args[0] || 'Graph' };
         } else if (key !== null && method === 'VerticalLayout') {
@@ -157,12 +165,18 @@ export class SimpleEngine {
                 this.updateRenderer();
             }
         } else if (key !== null && method === 'print') {
-            if (this.tracers[key]?.type === 'log') {
+            if (this.tracers[key]?.type === 'code') {
+                const n = parseInt(String(args[0]));
+                if (!isNaN(n)) this.highlightedLine = n;
+            } else if (this.tracers[key]?.type === 'log') {
                 this.tracers[key].logs.push(args[0]);
                 this.updateRenderer();
             }
         } else if (key !== null && method === 'println') {
-            if (this.tracers[key]?.type === 'log') {
+            if (this.tracers[key]?.type === 'code') {
+                const n = parseInt(String(args[0]));
+                if (!isNaN(n)) this.highlightedLine = n;
+            } else if (this.tracers[key]?.type === 'log') {
                 this.tracers[key].logs.push(args[0] + '\n');
                 this.updateRenderer();
             }
@@ -332,7 +346,7 @@ export class SimpleEngine {
                 this.renderer.setData({ type: 'graph', adjMatrix: tracer.adjMatrix, nodes: tracer.nodes, visitedEdges: [...tracer.visitedEdges], title: tracer.title, directed: tracer.directed, weighted: tracer.weighted });
             } else if (tracer.type === 'layout') {
                 const children = tracer.children
-                    .filter((childKey: string) => !this.hiddenChildren.has(childKey))
+                    .filter((childKey: string) => !this.hiddenChildren.has(childKey) && this.tracers[childKey]?.type !== 'code')
                     .map((childKey: string) => {
                         const c = this.tracers[childKey];
                         if (c?.type === 'recursion' && this.recursiveOnly) {

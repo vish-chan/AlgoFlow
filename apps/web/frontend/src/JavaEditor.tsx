@@ -1,15 +1,51 @@
 import Editor from "@monaco-editor/react";
-import { useState } from "react";
-import { loadCommands, play } from "./visualizer/visualizerEngine";
+import { useEffect, useRef, useState } from "react";
+import { loadCommands, play, subscribe } from "./visualizer/visualizerEngine";
 import { executeJavaCode } from "./api/backend";
 import { DEFAULT_JAVA_CODE, SAMPLE_COMMANDS } from "./constants/sampleCode";
 import { ALGORITHMS, CATEGORIES } from "./constants/algorithms";
+import { engine } from "./visualizer/visualizerEngine";
 
 export default function JavaEditor() {
     const [code, setCode] = useState(DEFAULT_JAVA_CODE);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [menuOpen, setMenuOpen] = useState(false);
+    const editorRef = useRef<any>(null);
+    const monacoRef = useRef<any>(null);
+    const decorationsRef = useRef<any>(null);
+
+    const handleMount = (editor: any, monaco: any) => {
+        editorRef.current = editor;
+        monacoRef.current = monaco;
+    };
+
+    useEffect(() => {
+        return subscribe(() => {
+            const line = engine.getHighlightedLine();
+            const editor = editorRef.current;
+            const monaco = monacoRef.current;
+            if (!editor || !monaco) return;
+
+            if (!line) {
+                decorationsRef.current?.clear();
+                return;
+            }
+
+            const newDecorations = [{
+                range: new monaco.Range(line, 1, line, 1),
+                options: { isWholeLine: true, className: 'highlighted-line' },
+            }];
+
+            if (decorationsRef.current) {
+                decorationsRef.current.set(newDecorations);
+            } else {
+                decorationsRef.current = editor.createDecorationsCollection(newDecorations);
+            }
+
+            editor.revealLineInCenterIfOutsideViewport(line);
+        });
+    }, []);
 
     const handleRun = async () => {
         setLoading(true);
@@ -32,6 +68,7 @@ export default function JavaEditor() {
 
     return (
         <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+            <style>{`.highlighted-line { background: rgba(255, 213, 79, 0.15); }`}</style>
             <div style={{ flex: 1 }}>
                 <Editor
                     width="100%"
@@ -40,6 +77,7 @@ export default function JavaEditor() {
                     theme="vs-dark"
                     value={code}
                     onChange={(v) => setCode(v ?? "")}
+                    onMount={handleMount}
                     options={{
                         fontSize: 14,
                         minimap: { enabled: false },

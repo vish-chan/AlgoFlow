@@ -16,6 +16,7 @@ public class VisualizerRegistry {
     private static LogVisualizer _logVisualizer;
     private static final Map<String, LocalVariablesVisualizer> _localVariablesVisualizers = new HashMap<>();
     private static CallStackVisualizer _callStackVisualizer;
+    private static CodeVisualizer _codeVisualizer;
 
     public static boolean isRegistered(Object obj) {
         return _objectToVisualizer.containsKey(obj) || _arrayToVisualizer.containsKey(obj)
@@ -53,18 +54,56 @@ public class VisualizerRegistry {
         _graphToVisualizer.put(graphObj, visualizer);
     }
     
+    public static void autoRegisterCodeVisualizer() {
+        if (_codeVisualizer == null) {
+            _codeVisualizer = new CodeVisualizer("Line Tracker");
+            _visualizers.add(_codeVisualizer.getCommander());
+            setLayout();
+        }
+    }
+    
+    private static void highlightLine(int lineNumber) {
+        if (lineNumber <= 0) return;
+        if (_codeVisualizer == null) autoRegisterCodeVisualizer();
+        _codeVisualizer.highlightLine(lineNumber);
+    }
+    
+
+    
+    private static int getCallerLineNumber() {
+        return getRunnerLineNumber(0);
+    }
+    
+    private static int getCallerCallerLineNumber() {
+        return getRunnerLineNumber(1);
+    }
+    
+    private static int getRunnerLineNumber(int skip) {
+        return StackWalker.getInstance().walk(frames -> 
+            frames.filter(f -> f.getClassName().startsWith("com.algoflow.runner"))
+                  .skip(skip)
+                  .findFirst()
+                  .map(StackWalker.StackFrame::getLineNumber)
+                  .orElse(-1)
+        );
+    }
+    
     public static void onMethodEnter(String methodName, Object[] args) {
         if (_callStackVisualizer == null) {
             _callStackVisualizer = new CallStackVisualizer("CallStack");
             _visualizers.add(_callStackVisualizer.getCommander());
             setLayout();
         }
+        highlightLine(getCallerCallerLineNumber());
         _callStackVisualizer.onEnter(methodName, args);
+        highlightLine(getCallerLineNumber());
     }
     
     public static void onMethodExit(String methodName, Object result) {
         if (_callStackVisualizer != null) {
+            highlightLine(getCallerLineNumber());
             _callStackVisualizer.onExit(methodName, result);
+            highlightLine(getCallerCallerLineNumber());
         }
     }
     
@@ -86,6 +125,9 @@ public class VisualizerRegistry {
     }
     
     private static void doArrayGet(Object array, Object[] args) {
+        if (args.length > 1 && args[1] instanceof Integer lineNumber) {
+            highlightLine(lineNumber);
+        }
         
         // Check if this array is a graph (int[][] adjacency matrix)
         GraphVisualizer graphVis = _graphToVisualizer.get(array);
@@ -139,6 +181,9 @@ public class VisualizerRegistry {
     }
     
     private static void doArraySet(Object array, Object[] args) {
+        if (args.length > 2 && args[2] instanceof Integer lineNumber) {
+            highlightLine(lineNumber);
+        }
         
         // Check if this array is a graph (int[][] adjacency matrix)
         GraphVisualizer graphVis = _graphToVisualizer.get(array);
@@ -188,6 +233,8 @@ public class VisualizerRegistry {
         if (_processing) return;
         _processing = true;
         try {
+            highlightLine(getCallerLineNumber());
+            
             ListVisualizer visualizer = _objectToVisualizer.computeIfAbsent(object, VisualizerRegistry::findVisualizer);
             if (visualizer != null) {
                 visualizer.onGet(args);
@@ -201,6 +248,8 @@ public class VisualizerRegistry {
         if (_processing) return;
         _processing = true;
         try {
+            highlightLine(getCallerLineNumber());
+            
             ListVisualizer visualizer = _objectToVisualizer.computeIfAbsent(object, VisualizerRegistry::findVisualizer);
             if (visualizer != null) {
                 visualizer.onSet(args);
@@ -214,6 +263,8 @@ public class VisualizerRegistry {
         if (_processing) return;
         _processing = true;
         try {
+            highlightLine(getCallerLineNumber());
+            
             ListVisualizer visualizer = _objectToVisualizer.get(object);
             if (visualizer != null) {
                 visualizer.onAdd(args);
@@ -227,6 +278,8 @@ public class VisualizerRegistry {
         if (_processing) return;
         _processing = true;
         try {
+            highlightLine(getCallerLineNumber());
+            
             ListVisualizer visualizer = _objectToVisualizer.get(object);
             if (visualizer != null) {
                 visualizer.onRemove(args);
@@ -240,6 +293,8 @@ public class VisualizerRegistry {
         if (_processing) return;
         _processing = true;
         try {
+            highlightLine(getCallerLineNumber());
+            
             ListVisualizer visualizer = _objectToVisualizer.get(object);
             if (visualizer != null) {
                 visualizer.onClear();
@@ -270,6 +325,7 @@ public class VisualizerRegistry {
         if (_processing) return;
         _processing = true;
         try {
+            highlightLine(getCallerLineNumber());
             ListVisualizer vis = _iteratorToVisualizer.get(iterator);
             if (vis != null) {
                 int[] idx = _iteratorIndex.get(iterator);
@@ -283,11 +339,13 @@ public class VisualizerRegistry {
 
     public static void onPrintln(String message) {
         if (!isCalledFromRunner("println")) return;
+        highlightLine(getCallerLineNumber());
         if (_logVisualizer != null) _logVisualizer.println(message);
     }
 
     public static void onPrint(String message) {
         if (!isCalledFromRunner("print")) return;
+        highlightLine(getCallerLineNumber());
         if (_logVisualizer != null) _logVisualizer.print(message);
     }
     
@@ -300,6 +358,8 @@ public class VisualizerRegistry {
         if (value != null && VisualizerInitializer.registerLocalValue(variableName, value)) {
             return;
         }
+        
+        highlightLine(getCallerLineNumber());
         
         LocalVariablesVisualizer visualizer = _localVariablesVisualizers.get(methodKey);
         if (visualizer == null) {

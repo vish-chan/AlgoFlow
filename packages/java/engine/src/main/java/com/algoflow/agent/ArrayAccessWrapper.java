@@ -51,9 +51,16 @@ public class ArrayAccessWrapper implements AsmVisitorWrapper {
 
     private static class ArrayAccessMethodVisitor extends MethodVisitor {
         private boolean injectingCode = false;
+        private int currentLine = -1;
 
         public ArrayAccessMethodVisitor(MethodVisitor mv) {
             super(Opcodes.ASM9, mv);
+        }
+        
+        @Override
+        public void visitLineNumber(int line, net.bytebuddy.jar.asm.Label start) {
+            mv.visitLineNumber(line, start);
+            currentLine = line;
         }
 
         @Override
@@ -78,23 +85,26 @@ public class ArrayAccessWrapper implements AsmVisitorWrapper {
             injectingCode = true;
 
             // Stack: [array, index]
-            // Save to local variables
             int indexSlot = 100;
             int arraySlot = 101;
 
             super.visitVarInsn(Opcodes.ISTORE, indexSlot);
             super.visitVarInsn(Opcodes.ASTORE, arraySlot);
 
-            // Create Object[1] with index
-            super.visitInsn(Opcodes.ICONST_1);
+            // Create Object[2] with index and line number
+            super.visitInsn(Opcodes.ICONST_2);
             super.visitTypeInsn(Opcodes.ANEWARRAY, "java/lang/Object");
             super.visitInsn(Opcodes.DUP);
             super.visitInsn(Opcodes.ICONST_0);
             super.visitVarInsn(Opcodes.ILOAD, indexSlot);
             super.visitMethodInsn(Opcodes.INVOKESTATIC, "java/lang/Integer", "valueOf", "(I)Ljava/lang/Integer;", false);
             super.visitInsn(Opcodes.AASTORE);
+            super.visitInsn(Opcodes.DUP);
+            super.visitInsn(Opcodes.ICONST_1);
+            super.visitLdcInsn(currentLine);
+            super.visitMethodInsn(Opcodes.INVOKESTATIC, "java/lang/Integer", "valueOf", "(I)Ljava/lang/Integer;", false);
+            super.visitInsn(Opcodes.AASTORE);
 
-            // Call onArraySet(array, Object[])
             super.visitVarInsn(Opcodes.ALOAD, arraySlot);
             super.visitInsn(Opcodes.SWAP);
             super.visitMethodInsn(Opcodes.INVOKESTATIC,
@@ -103,7 +113,6 @@ public class ArrayAccessWrapper implements AsmVisitorWrapper {
                     "(Ljava/lang/Object;[Ljava/lang/Object;)V",
                     false);
 
-            // Execute original load
             super.visitVarInsn(Opcodes.ALOAD, arraySlot);
             super.visitVarInsn(Opcodes.ILOAD, indexSlot);
             super.visitInsn(opcode);
@@ -113,8 +122,6 @@ public class ArrayAccessWrapper implements AsmVisitorWrapper {
         private void injectArrayWrite(int opcode) {
             injectingCode = true;
             
-            // Stack: [array, index, value]
-            // Save to local variables
             int valueSlot = 100;
             int indexSlot = 101;
             int arraySlot = 102;
@@ -123,8 +130,8 @@ public class ArrayAccessWrapper implements AsmVisitorWrapper {
             super.visitVarInsn(Opcodes.ISTORE, indexSlot);
             super.visitVarInsn(Opcodes.ASTORE, arraySlot);
             
-            // Create Object[2] with index and value
-            super.visitInsn(Opcodes.ICONST_2);
+            // Create Object[3] with index, value, and line number
+            super.visitInsn(Opcodes.ICONST_3);
             super.visitTypeInsn(Opcodes.ANEWARRAY, "java/lang/Object");
             super.visitInsn(Opcodes.DUP);
             super.visitInsn(Opcodes.ICONST_0);
@@ -136,8 +143,12 @@ public class ArrayAccessWrapper implements AsmVisitorWrapper {
             loadValue(opcode, valueSlot);
             boxIfNeeded(opcode);
             super.visitInsn(Opcodes.AASTORE);
+            super.visitInsn(Opcodes.DUP);
+            super.visitInsn(Opcodes.ICONST_2);
+            super.visitLdcInsn(currentLine);
+            super.visitMethodInsn(Opcodes.INVOKESTATIC, "java/lang/Integer", "valueOf", "(I)Ljava/lang/Integer;", false);
+            super.visitInsn(Opcodes.AASTORE);
             
-            // Call onArraySet(array, Object[])
             super.visitVarInsn(Opcodes.ALOAD, arraySlot);
             super.visitInsn(Opcodes.SWAP);
             super.visitMethodInsn(Opcodes.INVOKESTATIC,
@@ -146,7 +157,6 @@ public class ArrayAccessWrapper implements AsmVisitorWrapper {
                 "(Ljava/lang/Object;[Ljava/lang/Object;)V",
                 false);
             
-            // Restore and execute original store
             super.visitVarInsn(Opcodes.ALOAD, arraySlot);
             super.visitVarInsn(Opcodes.ILOAD, indexSlot);
             loadValue(opcode, valueSlot);
