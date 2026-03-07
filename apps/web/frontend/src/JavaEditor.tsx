@@ -16,8 +16,9 @@ export default function JavaEditor() {
         setError(null);
         
         try {
-            const commands = await executeJavaCode(code);
-            loadCommands(commands);
+            const result = await executeJavaCode(code);
+            if (result.code) setCode(result.code);
+            loadCommands(result.commands);
             play();
         } catch (err) {
             setError(err instanceof Error ? err.message : 'Execution failed');

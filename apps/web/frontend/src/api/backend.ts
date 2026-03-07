@@ -1,6 +1,6 @@
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
-export async function executeJavaCode(code: string): Promise<any[]> {
+export async function executeJavaCode(code: string): Promise<{ commands: any[]; code?: string }> {
     const response = await fetch(`${API_BASE_URL}/execute`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -12,5 +12,5 @@ export async function executeJavaCode(code: string): Promise<any[]> {
     }
 
     const data = await response.json();
-    return data.commands || data;
+    return { commands: data.commands || data, code: data.code };
 }

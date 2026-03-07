@@ -33,16 +33,16 @@ public class ExecutionController {
         log.info("Received execution request, code length: {}", code.length());
         
         try {
-            List<?> commands = executeJavaCode(code);
-            log.info("Execution successful, commands count: {}", commands.size());
-            return Map.of("commands", commands);
+            Map<String, Object> result = executeJavaCode(code);
+            log.info("Execution successful");
+            return result;
         } catch (Exception e) {
             log.error("Execution failed: {}", e.getMessage(), e);
             return Map.of("error", e.getMessage());
         }
     }
 
-    private List<?> executeJavaCode(String code) throws Exception {
+    private Map<String, Object> executeJavaCode(String code) throws Exception {
         Path tempDir = Files.createTempDirectory("algo");
         String className = extractClassName(code);
         Path javaFile = tempDir.resolve(className + ".java");
@@ -112,7 +112,8 @@ public class ExecutionController {
                 log.debug("visualization.json content:\n{}", jsonContent);
             }
             
-            return new ObjectMapper().readValue(jsonContent, List.class);
+            List<?> commands = new ObjectMapper().readValue(jsonContent, List.class);
+            return Map.of("commands", commands, "code", normalizedCode);
         } finally {
             log.debug("Cleaning up temp directory: {}", tempDir);
             Files.walk(tempDir)
