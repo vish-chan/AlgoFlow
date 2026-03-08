@@ -366,27 +366,60 @@ export class SimpleEngine {
         }
     }
 
+    private isCodeTracerKey(key: string | null): boolean {
+        return key !== null && this.tracers[key]?.type === 'code';
+    }
+
     next(): boolean {
         if (this.cursor >= this.chunks.length) return false;
 
-        // Look ahead: collect current chunk + next chunk to detect cross-chunk swaps
-        const lookahead = [this.chunks[this.cursor]];
-        if (this.cursor + 1 < this.chunks.length) {
-            lookahead.push(this.chunks[this.cursor + 1]);
+        // Swap pattern: patch → depatch → patch → depatch (with possible CodeTracer in between)
+        // Collect array-relevant commands from current chunk onward, stopping at second patch
+        const cur = this.chunks[this.cursor];
+        let arrayPatch: Command | null = null;
+        for (const c of cur.commands) {
+            if (c.key !== null && c.method === 'patch' && this.tracers[c.key]?.type === 'array') {
+                arrayPatch = c;
+                break;
+            }
         }
-        const swaps = this.detectSwaps(lookahead);
 
-        // If swap spans two chunks, advance cursor by 2
-        const singleChunkSwaps = this.detectSwaps([this.chunks[this.cursor]]);
-        const crossChunk = swaps.size > 0 && singleChunkSwaps.size === 0;
-        
-        this.cursor += (crossChunk && this.cursor + 1 < this.chunks.length) ? 2 : 1;
+        let swap: { key: string; i: number; j: number } | null = null;
+        let consumeCount = 1;
+
+        if (arrayPatch) {
+            const k = arrayPatch.key!;
+            // Scan forward for: depatch(k) then patch(k) — the second half of a swap
+            let foundDepatch = false;
+            for (let i = this.cursor; i < this.chunks.length; i++) {
+                for (const c of this.chunks[i].commands) {
+                    if (c.key === k && c.method === 'depatch') foundDepatch = true;
+                    if (c.key === k && c.method === 'patch' && foundDepatch) {
+                        // Verify it's a real swap: values cross
+                        const idxA = arrayPatch!.args[0], valA = arrayPatch!.args[1];
+                        const idxB = c.args[0], valB = c.args[1];
+                        if (idxA !== idxB) {
+                            const oldA = this.tracers[k].data[idxA]?.value;
+                            const oldB = this.tracers[k].data[idxB]?.value;
+                            if (valA === oldB && valB === oldA) {
+                                swap = { key: k, i: idxA, j: idxB };
+                                consumeCount = i - this.cursor + 1;
+                            }
+                        }
+                        break;
+                    }
+                    // Abort if array gets reset
+                    if (c.key === k && c.method === 'set') break;
+                }
+                if (swap || (!foundDepatch && i > this.cursor)) break;
+            }
+        }
+
+        this.cursor += consumeCount;
         this.updateToCurrentCursor();
 
-        if (swaps.size > 0) {
-            for (const [, { i, j }] of swaps) {
-                this.renderer.animateSwap('', i, j);
-            }
+        if (swap) {
+            this.renderer.animateSwap('', swap.i, swap.j);
         }
 
         return true;
