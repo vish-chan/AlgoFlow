@@ -261,6 +261,7 @@ export class SimpleRenderer {
     private calcChildHeight(child: any): number {
         if (child?.type === 'recursion' && child.calls) return Math.max(120, 45 + child.calls.length * 22);
         if (child?.type === 'graph') return 250;
+        if (child?.type === 'array2d' && child.data) return Math.max(120, 30 + child.data.length * 35);
         if (child?.type === 'variables' && child.vars) return Math.max(60, 45 + 28);
         if (child?.type === 'variablesGroup') return 25 + child.items.length * 32;
         if (child?.type === 'log' && child.logs) return Math.max(80, 36 + child.logs.length * 16);
@@ -422,55 +423,38 @@ export class SimpleRenderer {
 
         const dpr = window.devicePixelRatio || 1;
         const width = this.canvas.width / dpr;
+        const height = this.canvas.height / dpr;
 
-        const cellWidth = 200;
-        const cellHeight = 30;
-        const startY = 50;
-
-        if (title) {
-            this.ctx.fillStyle = '#aaa';
-            this.ctx.font = '14px sans-serif';
-            this.ctx.textAlign = 'center';
-            this.ctx.fillText(title, width / 2, 25);
-        }
-
-        rows.forEach((row, rowIdx) => {
-            const y = startY + rowIdx * cellHeight;
-            row.forEach((item, colIdx) => {
-                const value = typeof item === 'object' ? item.value : item;
-                const selected = typeof item === 'object' ? item.selected : false;
-                const patched = typeof item === 'object' ? item.patched : false;
-                const x = 20 + colIdx * cellWidth;
-
-                this.ctx!.fillStyle = patched ? '#f44336' : (selected ? '#2196F3' : '#333');
-                this.ctx!.fillRect(x, y, cellWidth - 4, cellHeight);
-
-                this.ctx!.strokeStyle = '#666';
-                this.ctx!.strokeRect(x, y, cellWidth - 4, cellHeight);
-
-                this.ctx!.fillStyle = '#fff';
-                this.ctx!.font = '12px monospace';
-                this.ctx!.textAlign = 'left';
-                this.ctx!.fillText(String(value), x + 8, y + cellHeight / 2 + 4);
-            });
-        });
+        this.renderArray2DInBounds(rows, title, 0, 0, width, height);
     }
 
     private renderArray2DInBounds(rows: any[][], title: string | undefined, x: number, y: number, width: number, height: number) {
-        if (!this.ctx) return;
+        if (!this.ctx || !rows.length) return;
 
-        const cellSize = 35;
-        const gridWidth = rows[0]?.length * cellSize || 0;
-        const gridHeight = rows.length * cellSize;
-        const startX = x + (width - gridWidth) / 2;
-        const startY = y + (height - gridHeight) / 2 + 20;
+        const cols = rows[0]?.length || 1;
+        const nRows = rows.length;
+        const titleH = title ? 25 : 0;
+        const pad = 20;
+
+        const maxCellW = Math.floor((width - pad * 2) / cols);
+        const maxCellH = Math.floor((height - pad * 2 - titleH) / nRows);
+        const cellSize = Math.max(24, Math.min(64, maxCellW, maxCellH));
+
+        const gridW = cols * cellSize;
+        const gridH = nRows * cellSize;
+        const startX = x + (width - gridW) / 2;
+        const startY = y + titleH + (height - titleH - gridH) / 2;
 
         if (title) {
             this.ctx.fillStyle = '#aaa';
             this.ctx.font = '12px sans-serif';
             this.ctx.textAlign = 'center';
-            this.ctx.fillText(title, x + width / 2, startY - 10);
+            this.ctx.fillText(title, x + width / 2, y + 16);
         }
+
+        const fontSize = Math.max(8, Math.min(12, cellSize * 0.4));
+        this.ctx.font = `${fontSize}px monospace`;
+        const textPad = 4;
 
         rows.forEach((row, rowIdx) => {
             row.forEach((item, colIdx) => {
@@ -488,10 +472,11 @@ export class SimpleRenderer {
                 this.ctx!.strokeRect(cx, cy, cellSize, cellSize);
 
                 this.ctx!.fillStyle = '#fff';
-                this.ctx!.font = '12px monospace';
+                this.ctx!.font = `${fontSize}px monospace`;
                 this.ctx!.textAlign = 'center';
                 this.ctx!.textBaseline = 'middle';
-                this.ctx!.fillText(String(value), cx + cellSize / 2, cy + cellSize / 2);
+                const label = this.truncateText(String(value), cellSize - textPad * 2);
+                this.ctx!.fillText(label, cx + cellSize / 2, cy + cellSize / 2);
             });
         });
     }
