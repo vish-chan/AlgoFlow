@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { loadCommands, play, subscribe } from "./visualizer/visualizerEngine";
 import { executeJavaCode } from "./api/backend";
 import { DEFAULT_JAVA_CODE, SAMPLE_COMMANDS } from "./constants/sampleCode";
-import { ALGORITHMS, CATEGORIES } from "./constants/algorithms";
+import { ALGORITHMS, CATEGORIES, TEMPLATES, TEMPLATE_CATEGORIES } from "./constants/algorithms";
 import { engine } from "./visualizer/visualizerEngine";
 
 export default function JavaEditor() {
@@ -11,6 +11,7 @@ export default function JavaEditor() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [menuTab, setMenuTab] = useState<'algorithms' | 'templates'>('algorithms');
     const editorRef = useRef<any>(null);
     const monacoRef = useRef<any>(null);
     const decorationsRef = useRef<any>(null);
@@ -114,34 +115,73 @@ export default function JavaEditor() {
                                 background: "#252526",
                                 border: "1px solid #444",
                                 borderRadius: 4,
-                                width: 220,
-                                maxHeight: 320,
-                                overflowY: "auto",
+                                width: 240,
+                                maxHeight: 380,
                                 zIndex: 10,
                                 marginBottom: 4,
+                                display: "flex",
+                                flexDirection: "column",
                             }}
                         >
-                            {CATEGORIES.map(cat => (
-                                <div key={cat}>
-                                    <div style={{ padding: "6px 10px", fontSize: 11, color: "#888", textTransform: "uppercase", letterSpacing: 1 }}>{cat}</div>
-                                    {ALGORITHMS.filter(a => a.category === cat).map(a => (
-                                        <div
-                                            key={a.name}
-                                            onClick={() => { setCode(a.code); setMenuOpen(false); }}
-                                            style={{
-                                                padding: "6px 16px",
-                                                fontSize: 13,
-                                                color: "#ddd",
-                                                cursor: "pointer",
-                                            }}
-                                            onMouseEnter={e => (e.currentTarget.style.background = "#333")}
-                                            onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
-                                        >
-                                            {a.name}
+                            <div style={{ display: "flex", borderBottom: "1px solid #444" }}>
+                                {(["algorithms", "templates"] as const).map(tab => (
+                                    <button
+                                        key={tab}
+                                        onClick={() => setMenuTab(tab)}
+                                        style={{
+                                            flex: 1,
+                                            padding: "8px 0",
+                                            fontSize: 12,
+                                            background: menuTab === tab ? "#333" : "transparent",
+                                            color: menuTab === tab ? "#fff" : "#888",
+                                            border: "none",
+                                            borderBottom: menuTab === tab ? "2px solid #4CAF50" : "2px solid transparent",
+                                            cursor: "pointer",
+                                            textTransform: "capitalize",
+                                        }}
+                                    >
+                                        {tab === "algorithms" ? "📚 Algorithms" : "📝 Templates"}
+                                    </button>
+                                ))}
+                            </div>
+                            <div style={{ overflowY: "auto", maxHeight: 330 }}>
+                                {menuTab === "algorithms" ? (
+                                    CATEGORIES.map(cat => (
+                                        <div key={cat}>
+                                            <div style={{ padding: "6px 10px", fontSize: 11, color: "#888", textTransform: "uppercase", letterSpacing: 1 }}>{cat}</div>
+                                            {ALGORITHMS.filter(a => a.category === cat).map(a => (
+                                                <div
+                                                    key={a.name}
+                                                    onClick={() => { setCode(a.code); setMenuOpen(false); }}
+                                                    style={{ padding: "6px 16px", fontSize: 13, color: "#ddd", cursor: "pointer" }}
+                                                    onMouseEnter={e => (e.currentTarget.style.background = "#333")}
+                                                    onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+                                                >
+                                                    {a.name}
+                                                </div>
+                                            ))}
                                         </div>
-                                    ))}
-                                </div>
-                            ))}
+                                    ))
+                                ) : (
+                                    TEMPLATE_CATEGORIES.map(cat => (
+                                        <div key={cat}>
+                                            <div style={{ padding: "6px 10px", fontSize: 11, color: "#888", textTransform: "uppercase", letterSpacing: 1 }}>{cat}</div>
+                                            {TEMPLATES.filter(t => t.category === cat).map(t => (
+                                                <div
+                                                    key={t.name}
+                                                    onClick={() => { setCode(t.code); setMenuOpen(false); }}
+                                                    style={{ padding: "6px 16px", fontSize: 13, color: "#ddd", cursor: "pointer" }}
+                                                    onMouseEnter={e => (e.currentTarget.style.background = "#333")}
+                                                    onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+                                                >
+                                                    <div>{t.name}</div>
+                                                    <div style={{ fontSize: 11, color: "#666" }}>{t.description}</div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ))
+                                )}
+                            </div>
                         </div>
                     )}
                 </div>

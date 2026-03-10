@@ -57,8 +57,8 @@ export class SimpleRenderer {
 
     private resize = () => {
         if (!this.canvas || !this.container) return;
-        const rect = this.canvas.getBoundingClientRect();
         const dpr = window.devicePixelRatio || 1;
+        const containerWidth = this.container.clientWidth;
         const containerHeight = this.container.clientHeight;
         
         let requiredHeight = containerHeight;
@@ -72,10 +72,14 @@ export class SimpleRenderer {
             requiredHeight = Math.max(containerHeight, total);
         }
         
-        this.canvas.width = rect.width * dpr;
-        this.canvas.height = requiredHeight * dpr;
-        this.canvas.style.width = rect.width + 'px';
-        this.canvas.style.height = requiredHeight + 'px';
+        const newW = Math.round(containerWidth * dpr);
+        const newH = Math.round(requiredHeight * dpr);
+        if (this.canvas.width !== newW || this.canvas.height !== newH) {
+            this.canvas.width = newW;
+            this.canvas.height = newH;
+            this.canvas.style.width = containerWidth + 'px';
+            this.canvas.style.height = requiredHeight + 'px';
+        }
         
         this.render();
     };
@@ -149,7 +153,7 @@ export class SimpleRenderer {
         } else if (this.data.type === 'variables') {
             this.renderVariables(this.data.vars, this.data.title, this.data.patchState);
         } else if (this.data.type === 'graph') {
-            this.renderGraphInBounds(this.data.adjMatrix, this.data.nodes, this.data.title, 0, 0, width, height, this.data.visitedEdges, this.data.directed, this.data.weighted);
+            this.renderGraphInBounds(this.data.adjMatrix, this.data.nodes, this.data.title, 0, 0, width, height, this.data.visitedEdges, this.data.directed, this.data.weighted, this.data.nodeLabels, this.data.layout, this.data.edges);
         } else if (this.data.type === 'layout') {
             this.renderLayout(this.data.children);
         } else {
@@ -260,7 +264,7 @@ export class SimpleRenderer {
 
     private calcChildHeight(child: any): number {
         if (child?.type === 'recursion' && child.calls) return Math.max(120, 45 + child.calls.length * 22);
-        if (child?.type === 'graph') return 250;
+        if (child?.type === 'graph') return child?.layout === 'tree' ? 300 : 250;
         if (child?.type === 'array2d' && child.data) return Math.max(120, 30 + child.data.length * 35);
         if (child?.type === 'variables' && child.vars) return Math.max(60, 45 + 28);
         if (child?.type === 'variablesGroup') return 25 + child.items.length * 32;
@@ -318,7 +322,7 @@ export class SimpleRenderer {
             } else if (child?.type === 'recursion' && child.calls) {
                 this.renderRecursionInBounds(child.calls, child.title, 0, 0, width, sectionHeight, y, child.recursiveOnly, child.onToggleRecursiveOnly);
             } else if (child?.type === 'graph') {
-                this.renderGraphInBounds(child.adjMatrix, child.nodes, child.title, 0, 0, width, sectionHeight, child.visitedEdges, child.directed, child.weighted);
+                this.renderGraphInBounds(child.adjMatrix, child.nodes, child.title, 0, 0, width, sectionHeight, child.visitedEdges, child.directed, child.weighted, child.nodeLabels, child.layout, child.edges);
             } else if (child?.type === 'variables' && child.vars) {
                 this.renderVariablesInBounds(child.vars, child.title, 0, 0, width, sectionHeight, child.patchState);
             } else if (child?.type === 'variablesGroup') {
@@ -481,7 +485,7 @@ export class SimpleRenderer {
         });
     }
 
-    private renderGraphInBounds(adjMatrix: number[][], nodes: any[], title: string | undefined, x: number, y: number, width: number, height: number, visitedEdges?: string[], directed?: boolean, weighted?: boolean) {
+    private renderGraphInBounds(adjMatrix: number[][], nodes: any[], title: string | undefined, x: number, y: number, width: number, height: number, visitedEdges?: string[], directed?: boolean, weighted?: boolean, nodeLabels?: string[], layout?: string, edges?: [number, number][]) {
         if (!this.ctx || !nodes.length) return;
 
         const titleH = title ? 25 : 0;
@@ -492,23 +496,35 @@ export class SimpleRenderer {
             this.ctx.fillText(title, x + width / 2, y + 18);
         }
 
-        const cx = x + width / 2;
-        const cy = y + titleH + (height - titleH) / 2;
-        const r = Math.min(width, height - titleH) / 2 - 30;
-        const nodeR = 18;
         const n = nodes.length;
+        const nodeR = 20;
         const edgeSet = new Set(visitedEdges || []);
 
-        const pos = nodes.map((_: any, i: number) => ({
-            x: cx + r * Math.cos(2 * Math.PI * i / n - Math.PI / 2),
-            y: cy + r * Math.sin(2 * Math.PI * i / n - Math.PI / 2),
-        }));
+        const labels = nodeLabels || [];
 
-        // Draw edges
+        let pos: { x: number; y: number }[];
+
+        if (layout === 'tree' && edges?.length) {
+            pos = this.computeTreeLayout(n, edges, x, y + titleH, width, height - titleH, nodeR);
+        } else {
+            const cx = x + width / 2;
+            const cy = y + titleH + (height - titleH) / 2;
+            const r = Math.min(width, height - titleH) / 2 - 30;
+            pos = nodes.map((_: any, i: number) => ({
+                x: cx + r * Math.cos(2 * Math.PI * i / n - Math.PI / 2),
+                y: cy + r * Math.sin(2 * Math.PI * i / n - Math.PI / 2),
+            }));
+        }
+
+        // Helper to check if a node is a null sentinel
+        const isNull = (idx: number) => String(labels[idx] ?? '').startsWith('null_');
+
+        // Draw edges (skip edges to/from null sentinel nodes)
         if (directed) {
             for (let i = 0; i < n; i++) {
                 for (let j = 0; j < n; j++) {
                     if (i === j || !adjMatrix[i]?.[j]) continue;
+                    if (isNull(i) || isNull(j)) continue;
                     const a = Math.min(i, j), b = Math.max(i, j);
                     const visited = edgeSet.has(`${a}-${b}`);
                     const bidir = !!(adjMatrix[j]?.[i]);
@@ -518,6 +534,7 @@ export class SimpleRenderer {
         } else {
             for (let i = 0; i < n; i++) {
                 for (let j = i + 1; j < n; j++) {
+                    if (isNull(i) || isNull(j)) continue;
                     const w = adjMatrix[i]?.[j] || adjMatrix[j]?.[i];
                     if (!w) continue;
                     const visited = edgeSet.has(`${i}-${j}`);
@@ -538,9 +555,12 @@ export class SimpleRenderer {
             }
         }
 
-        // Draw nodes
+        // Draw nodes (skip null sentinel nodes)
         this.ctx.lineWidth = 1.5;
         for (let i = 0; i < n; i++) {
+            const label = String(labels[i] ?? i);
+            if (label.startsWith('null_')) continue;
+
             this.ctx.beginPath();
             this.ctx.arc(pos[i].x, pos[i].y, nodeR, 0, Math.PI * 2);
             this.ctx.fillStyle = nodes[i].state === 'active' ? '#4CAF50' : nodes[i].state === 'explored' ? '#2E7D32' : '#333';
@@ -552,8 +572,87 @@ export class SimpleRenderer {
             this.ctx.font = '13px monospace';
             this.ctx.textAlign = 'center';
             this.ctx.textBaseline = 'middle';
-            this.ctx.fillText(String(i), pos[i].x, pos[i].y);
+            this.ctx.fillText(this.truncateText(label, nodeR * 2 - 4), pos[i].x, pos[i].y);
         }
+    }
+
+    private computeTreeLayout(n: number, edges: [number, number][], x: number, y: number, width: number, height: number, nodeR: number): { x: number; y: number }[] {
+        // Build children map from directed edges
+        const children: number[][] = Array.from({ length: n }, () => []);
+        const hasParent = new Set<number>();
+        for (const [from, to] of edges) {
+            children[from].push(to);
+            hasParent.add(to);
+        }
+
+        // Find root (node with no parent)
+        let root = 0;
+        for (let i = 0; i < n; i++) {
+            if (!hasParent.has(i)) { root = i; break; }
+        }
+
+        // BFS to compute depth and leaf count for each subtree
+        const depth: number[] = new Array(n).fill(0);
+        const leafIndex: number[] = new Array(n).fill(0);
+        const subtreeLeaves: number[] = new Array(n).fill(0);
+        const order: number[] = [];
+
+        const queue = [root];
+        const visited = new Set([root]);
+        while (queue.length) {
+            const node = queue.shift()!;
+            order.push(node);
+            for (const child of children[node]) {
+                if (!visited.has(child)) {
+                    visited.add(child);
+                    depth[child] = depth[node] + 1;
+                    queue.push(child);
+                }
+            }
+        }
+
+        // Compute subtree leaf counts bottom-up
+        for (let i = order.length - 1; i >= 0; i--) {
+            const node = order[i];
+            const kids = children[node].filter(c => visited.has(c) || true);
+            if (kids.length === 0) {
+                subtreeLeaves[node] = 1;
+            } else {
+                subtreeLeaves[node] = kids.reduce((s, c) => s + subtreeLeaves[c], 0);
+            }
+        }
+
+        // Assign horizontal positions based on leaf ordering
+        let leafCounter = 0;
+        const assignLeafIndex = (node: number) => {
+            const kids = children[node];
+            if (kids.length === 0) {
+                leafIndex[node] = leafCounter++;
+            } else {
+                for (const child of kids) assignLeafIndex(child);
+                // Center parent over children
+                const first = leafIndex[kids[0]];
+                const last = leafIndex[kids[kids.length - 1]];
+                leafIndex[node] = (first + last) / 2;
+            }
+        };
+        assignLeafIndex(root);
+
+        const maxDepth = Math.max(...depth);
+        const totalLeaves = leafCounter || 1;
+        const pad = nodeR + 10;
+        const usableW = width - pad * 2;
+        const usableH = height - pad * 2;
+        const levelH = maxDepth > 0 ? usableH / maxDepth : 0;
+
+        const pos: { x: number; y: number }[] = new Array(n);
+        for (let i = 0; i < n; i++) {
+            pos[i] = {
+                x: x + pad + (totalLeaves > 1 ? (leafIndex[i] / (totalLeaves - 1)) * usableW : usableW / 2),
+                y: y + pad + depth[i] * levelH,
+            };
+        }
+        return pos;
     }
 
     private drawDirectedEdge(from: { x: number; y: number }, to: { x: number; y: number }, nodeR: number, visited: boolean, curve: number, weight: number) {

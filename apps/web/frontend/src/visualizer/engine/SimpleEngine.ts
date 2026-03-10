@@ -10,6 +10,7 @@ export class SimpleEngine {
     private hiddenChildren: Set<string> = new Set();
     private recursiveOnly = false;
     private highlightedLine: number | null = null;
+    private batching = false;
 
     constructor() {
         this.renderer = new SimpleRenderer();
@@ -103,7 +104,7 @@ export class SimpleEngine {
         } else if (key !== null && method === 'CodeTracer') {
             this.tracers[key] = { type: 'code', line: null, title: args[0] || 'Code' };
         } else if (key !== null && method === 'GraphTracer') {
-            this.tracers[key] = { type: 'graph', adjMatrix: [], nodes: [], visitedEdges: new Set<string>(), layout: 'circle', title: args[0] || 'Graph' };
+            this.tracers[key] = { type: 'graph', adjMatrix: [], nodes: [], visitedEdges: new Set<string>(), layout: 'circle', title: args[0] || 'Graph', namedNodes: new Map<string, number>(), nodeLabels: [] as string[], edges: [] as [number, number][], treeRoot: null as string | null };
         } else if (key !== null && method === 'VerticalLayout') {
             this.tracers[key] = { type: 'layout', children: args[0] || [], title: 'Layout' };
         } else if (key !== null && method === 'set') {
@@ -193,6 +194,17 @@ export class SimpleEngine {
                 this.tracers[key].calls[this.tracers[key].calls.length - 1].active = false;
                 this.updateRenderer();
             }
+        } else if (key !== null && method === 'reset') {
+            if (this.tracers[key]?.type === 'graph') {
+                this.tracers[key].adjMatrix = [];
+                this.tracers[key].nodes = [];
+                this.tracers[key].visitedEdges = new Set<string>();
+                this.tracers[key].namedNodes = new Map<string, number>();
+                this.tracers[key].nodeLabels = [];
+                this.tracers[key].edges = [];
+                this.tracers[key].treeRoot = null;
+                this.updateRenderer();
+            }
         } else if (key !== null && method === 'directed') {
             if (this.tracers[key]?.type === 'graph') {
                 this.tracers[key].directed = !!args[0];
@@ -203,48 +215,96 @@ export class SimpleEngine {
                 this.tracers[key].weighted = !!args[0];
                 this.updateRenderer();
             }
+        } else if (key !== null && method === 'addNode') {
+            if (this.tracers[key]?.type === 'graph') {
+                const t = this.tracers[key];
+                const id = String(args[0]);
+                if (!t.namedNodes.has(id)) {
+                    const idx = t.nodes.length;
+                    t.namedNodes.set(id, idx);
+                    t.nodeLabels.push(String(args[1] ?? id));
+                    t.nodes.push({ state: 'default', index: idx });
+                    // Expand adjacency matrix
+                    const n = t.nodes.length;
+                    for (const row of t.adjMatrix) { row.push(0); }
+                    t.adjMatrix.push(new Array(n).fill(0));
+                }
+                this.updateRenderer();
+            }
         } else if (key !== null && method === 'addEdge') {
             if (this.tracers[key]?.type === 'graph') {
-                const from = Math.floor(args[0]), to = Math.floor(args[1]), weight = args[2] ?? 1;
-                if (this.tracers[key].adjMatrix[from]) {
-                    this.tracers[key].adjMatrix[from][to] = weight;
+                const t = this.tracers[key];
+                const fromId = String(args[0]), toId = String(args[1]);
+                const from = t.namedNodes.has(fromId) ? t.namedNodes.get(fromId) : (isNaN(Number(fromId)) ? -1 : Math.floor(Number(fromId)));
+                const to = t.namedNodes.has(toId) ? t.namedNodes.get(toId) : (isNaN(Number(toId)) ? -1 : Math.floor(Number(toId)));
+                if (from >= 0 && to >= 0 && t.adjMatrix[from]) {
+                    t.adjMatrix[from][to] = args[2] ?? 1;
+                    if (!t.edges.some(([a, b]: [number, number]) => a === from && b === to)) {
+                        const posKey = `${from}-${to}`;
+                        const origIdx = t.removedEdgePositions?.get(posKey);
+                        if (origIdx !== undefined) {
+                            t.edges.splice(Math.min(origIdx, t.edges.length), 0, [from, to]);
+                            t.removedEdgePositions.delete(posKey);
+                        } else {
+                            t.edges.push([from, to]);
+                        }
+                    }
                 }
                 this.updateRenderer();
             }
         } else if (key !== null && method === 'removeEdge') {
             if (this.tracers[key]?.type === 'graph') {
-                const from = Math.floor(args[0]), to = Math.floor(args[1]);
-                if (this.tracers[key].adjMatrix[from]) {
-                    this.tracers[key].adjMatrix[from][to] = 0;
+                const t = this.tracers[key];
+                const fromId = String(args[0]), toId = String(args[1]);
+                const from = t.namedNodes.has(fromId) ? t.namedNodes.get(fromId) : (isNaN(Number(fromId)) ? -1 : Math.floor(Number(fromId)));
+                const to = t.namedNodes.has(toId) ? t.namedNodes.get(toId) : (isNaN(Number(toId)) ? -1 : Math.floor(Number(toId)));
+                if (from >= 0 && to >= 0 && t.adjMatrix[from]) {
+                    t.adjMatrix[from][to] = 0;
+                    const idx = t.edges.findIndex(([a, b]: [number, number]) => a === from && b === to);
+                    if (idx >= 0) {
+                        if (!t.removedEdgePositions) t.removedEdgePositions = new Map();
+                        t.removedEdgePositions.set(`${from}-${to}`, idx);
+                        t.edges.splice(idx, 1);
+                    }
                 }
                 this.updateRenderer();
             }
         } else if (key !== null && method === 'layoutCircle') {
             if (this.tracers[key]?.type === 'graph') {
                 this.tracers[key].layout = 'circle';
+                this.updateRenderer();
+            }
+        } else if (key !== null && method === 'layoutTree') {
+            if (this.tracers[key]?.type === 'graph') {
+                this.tracers[key].layout = 'tree';
+                this.tracers[key].treeRoot = String(args[0]);
+                this.updateRenderer();
             }
         } else if (key !== null && method === 'visit') {
             if (this.tracers[key]?.type === 'graph') {
-                const nodeIdx = Math.floor(args[0]);
-                if (this.tracers[key].nodes[nodeIdx]) {
-                    if (this.tracers[key].nodes[nodeIdx].state === 'default') {
-                        this.tracers[key].nodes[nodeIdx].state = 'active';
-                    }
+                const t = this.tracers[key];
+                const id = String(args[0]);
+                const nodeIdx = t.namedNodes.has(id) ? t.namedNodes.get(id) : (isNaN(Number(id)) ? -1 : Math.floor(Number(id)));
+                if (nodeIdx >= 0 && t.nodes[nodeIdx]) {
+                    t.nodes[nodeIdx].state = 'active';
                 }
                 if (args.length >= 2) {
-                    const src = Math.floor(args[1]);
-                    if (src !== nodeIdx) {
+                    const srcId = String(args[1]);
+                    const src = t.namedNodes.has(srcId) ? t.namedNodes.get(srcId) : (isNaN(Number(srcId)) ? -1 : Math.floor(Number(srcId)));
+                    if (src >= 0 && src !== nodeIdx) {
                         const a = Math.min(src, nodeIdx), b = Math.max(src, nodeIdx);
-                        this.tracers[key].visitedEdges.add(`${a}-${b}`);
+                        t.visitedEdges.add(`${a}-${b}`);
                     }
                 }
                 this.updateRenderer();
             }
         } else if (key !== null && method === 'leave') {
             if (this.tracers[key]?.type === 'graph') {
-                const nodeIdx = Math.floor(args[0]);
-                if (this.tracers[key].nodes[nodeIdx]) {
-                    this.tracers[key].nodes[nodeIdx].state = 'explored';
+                const t = this.tracers[key];
+                const id = String(args[0]);
+                const nodeIdx = t.namedNodes.has(id) ? t.namedNodes.get(id) : (isNaN(Number(id)) ? -1 : Math.floor(Number(id)));
+                if (nodeIdx >= 0 && t.nodes[nodeIdx]) {
+                    t.nodes[nodeIdx].state = 'explored';
                 }
                 this.updateRenderer();
             }
@@ -328,6 +388,7 @@ export class SimpleEngine {
     }
 
     private updateRenderer() {
+        if (this.batching) return;
         if (this.root && this.tracers[this.root]) {
             const tracer = this.tracers[this.root];
             
@@ -343,7 +404,7 @@ export class SimpleEngine {
             } else if (tracer.type === 'variables') {
                 this.renderer.setData({ type: 'variables', vars: tracer.vars, title: tracer.title, patchState: tracer.patchState });
             } else if (tracer.type === 'graph') {
-                this.renderer.setData({ type: 'graph', adjMatrix: tracer.adjMatrix, nodes: tracer.nodes, visitedEdges: [...tracer.visitedEdges], title: tracer.title, directed: tracer.directed, weighted: tracer.weighted });
+                this.renderer.setData({ type: 'graph', adjMatrix: tracer.adjMatrix, nodes: tracer.nodes, visitedEdges: [...tracer.visitedEdges], title: tracer.title, directed: tracer.directed, weighted: tracer.weighted, nodeLabels: tracer.nodeLabels, layout: tracer.layout, treeRoot: tracer.treeRoot, edges: tracer.edges, namedNodes: tracer.namedNodes });
             } else if (tracer.type === 'layout') {
                 const children = tracer.children
                     .filter((childKey: string) => !this.hiddenChildren.has(childKey) && this.tracers[childKey]?.type !== 'code')
@@ -356,7 +417,7 @@ export class SimpleEngine {
                             return { ...c, recursiveOnly: this.recursiveOnly, onToggleRecursiveOnly: () => this.toggleRecursiveOnly() };
                         }
                         if (c?.type === 'graph') {
-                            return { ...c, visitedEdges: [...c.visitedEdges], directed: c.directed, weighted: c.weighted };
+                            return { ...c, visitedEdges: [...c.visitedEdges], directed: c.directed, weighted: c.weighted, nodeLabels: c.nodeLabels, layout: c.layout, treeRoot: c.treeRoot, edges: c.edges, namedNodes: c.namedNodes };
                         }
                         return c;
                     })
@@ -373,9 +434,7 @@ export class SimpleEngine {
     next(): boolean {
         if (this.cursor >= this.chunks.length) return false;
 
-        // Swap pattern: patch(k,i,v1) → depatch(k,i) → patch(k,j,v2) → depatch(k,j)
-        // with possible CodeTracer/select/deselect noise in between.
-        // Only look in current chunk for first patch, then scan a few chunks for second.
+        // Swap detection for Array1DTracer only
         const cur = this.chunks[this.cursor];
         let arrayPatch: Command | null = null;
         for (const c of cur.commands) {
@@ -391,7 +450,6 @@ export class SimpleEngine {
         if (arrayPatch) {
             const k = arrayPatch.key!;
             const idxA = arrayPatch.args[0], valA = arrayPatch.args[1];
-            // Scan forward for depatch(k) then patch(k) — but only check next few chunks
             let foundDepatch = false;
             const maxScan = Math.min(this.cursor + 6, this.chunks.length);
             for (let i = this.cursor; i < maxScan; i++) {
@@ -407,7 +465,6 @@ export class SimpleEngine {
                                 consumeCount = i - this.cursor + 1;
                             }
                         }
-                        // Found second patch on same key — stop regardless
                         i = maxScan; break;
                     } else if (c.key === k && c.method === 'set') {
                         i = maxScan; break;
@@ -416,8 +473,14 @@ export class SimpleEngine {
             }
         }
 
+        // Apply chunks incrementally instead of replaying from scratch
+        for (let i = 0; i < consumeCount; i++) {
+            const chunk = this.chunks[this.cursor + i];
+            if (chunk) chunk.commands.forEach(cmd => this.applyCommand(cmd));
+        }
         this.cursor += consumeCount;
-        this.updateToCurrentCursor();
+        this.updateRenderer();
+        this.notify();
 
         if (swap) {
             this.renderer.animateSwap('', swap.i, swap.j);
@@ -441,10 +504,13 @@ export class SimpleEngine {
     }
 
     private updateToCurrentCursor() {
+        this.batching = true;
         const applyingChunks = this.chunks.slice(0, this.cursor);
         applyingChunks.forEach(chunk => {
             chunk.commands.forEach(command => this.applyCommand(command));
         });
+        this.batching = false;
+        this.updateRenderer();
         this.notify();
     }
 

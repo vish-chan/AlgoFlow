@@ -4,6 +4,13 @@ export interface Algorithm {
     code: string;
 }
 
+export interface Template {
+    name: string;
+    category: string;
+    description: string;
+    code: string;
+}
+
 export const ALGORITHMS: Algorithm[] = [
     // Sorting
     {
@@ -826,3 +833,290 @@ public class Main {
 ];
 
 export const CATEGORIES = [...new Set(ALGORITHMS.map(a => a.category))];
+
+export const TEMPLATES: Template[] = [
+    {
+        name: "Graph (Adjacency Matrix)",
+        category: "Graphs",
+        description: "Undirected graph with adjacency matrix",
+        code: `package com.algoflow.runner;
+
+import com.algoflow.annotation.Graph;
+
+public class Main {
+    @Graph
+    private int[][] adjMatrix = {
+        //  0  1  2  3  4
+        {0, 1, 1, 0, 0},  // 0
+        {1, 0, 0, 1, 0},  // 1
+        {1, 0, 0, 1, 1},  // 2
+        {0, 1, 1, 0, 1},  // 3
+        {0, 0, 1, 1, 0}   // 4
+    };
+
+    public static void main(String[] args) {
+        new Main().solve();
+    }
+
+    public void solve() {
+        // Your graph algorithm here
+        // Access adjMatrix[i][j] to check edges
+        // The @Graph annotation auto-visualizes the matrix
+        int n = adjMatrix.length;
+        boolean[] visited = new boolean[n];
+        dfs(0, visited);
+    }
+
+    private void dfs(int node, boolean[] visited) {
+        visited[node] = true;
+        for (int i = 0; i < adjMatrix.length; i++) {
+            if (adjMatrix[node][i] == 1 && !visited[i]) {
+                dfs(i, visited);
+            }
+        }
+    }
+}`,
+    },
+    {
+        name: "Directed Weighted Graph",
+        category: "Graphs",
+        description: "Directed graph with edge weights",
+        code: `package com.algoflow.runner;
+
+import java.util.*;
+import com.algoflow.annotation.Graph;
+
+public class Main {
+    @Graph(directed = true, weighted = true)
+    private int[][] adjMatrix = {
+        //  0  1  2  3
+        {0, 4, 0, 0},  // 0 -> 1 (weight 4)
+        {0, 0, 3, 0},  // 1 -> 2 (weight 3)
+        {0, 0, 0, 2},  // 2 -> 3 (weight 2)
+        {0, 0, 0, 0}   // 3
+    };
+
+    public static void main(String[] args) {
+        new Main().solve();
+    }
+
+    public void solve() {
+        // Your algorithm here
+        // Non-zero adjMatrix[i][j] = edge from i to j with that weight
+        int n = adjMatrix.length;
+        for (int u = 0; u < n; u++) {
+            for (int v = 0; v < n; v++) {
+                if (adjMatrix[u][v] > 0) {
+                    System.out.println(u + " -> " + v + " (" + adjMatrix[u][v] + ")");
+                }
+            }
+        }
+    }
+}`,
+    },
+    {
+        name: "Binary Tree (Traversal)",
+        category: "Trees",
+        description: "TreeNode-based tree with inorder traversal",
+        code: `package com.algoflow.runner;
+
+import com.algoflow.annotation.Tree;
+
+public class Main {
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int val) { this.val = val; }
+    }
+
+    @Tree
+    TreeNode root;
+
+    public static void main(String[] args) {
+        Main m = new Main();
+        // Build tree:       4
+        //                 /   \\
+        //                2     6
+        //               / \\   / \\
+        //              1   3 5   7
+        m.root = new TreeNode(4);
+        m.root.left = new TreeNode(2);
+        m.root.right = new TreeNode(6);
+        m.root.left.left = new TreeNode(1);
+        m.root.left.right = new TreeNode(3);
+        m.root.right.left = new TreeNode(5);
+        m.root.right.right = new TreeNode(7);
+
+        m.inorder(m.root);
+    }
+
+    void inorder(TreeNode node) {
+        if (node == null) return;
+        inorder(node.left);
+        System.out.println(node.val);
+        inorder(node.right);
+    }
+}`,
+    },
+    {
+        name: "BST Insert & Search",
+        category: "Trees",
+        description: "Binary search tree with insert and lookup",
+        code: `package com.algoflow.runner;
+
+import com.algoflow.annotation.Tree;
+
+public class Main {
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int val) { this.val = val; }
+    }
+
+    @Tree
+    TreeNode root;
+
+    public static void main(String[] args) {
+        Main bst = new Main();
+        int[] values = {5, 3, 7, 1, 4, 6, 8};
+        for (int v : values) {
+            bst.insert(v);
+        }
+        System.out.println("Found 4: " + bst.search(4));
+        System.out.println("Found 9: " + bst.search(9));
+    }
+
+    void insert(int val) {
+        root = insertRec(root, val);
+    }
+
+    TreeNode insertRec(TreeNode node, int val) {
+        if (node == null) return new TreeNode(val);
+        if (val < node.val) node.left = insertRec(node.left, val);
+        else node.right = insertRec(node.right, val);
+        return node;
+    }
+
+    boolean search(int val) {
+        TreeNode cur = root;
+        while (cur != null) {
+            if (val == cur.val) return true;
+            cur = val < cur.val ? cur.left : cur.right;
+        }
+        return false;
+    }
+}`,
+    },
+    {
+        name: "1D Array",
+        category: "Arrays",
+        description: "Basic array with iteration",
+        code: `package com.algoflow.runner;
+
+public class Main {
+    private int[] arr = {5, 3, 8, 1, 9, 2, 7};
+
+    public static void main(String[] args) {
+        new Main().solve();
+    }
+
+    public void solve() {
+        // Your array algorithm here
+        // The array will be auto-visualized
+        int n = arr.length;
+        for (int i = 0; i < n; i++) {
+            System.out.println("arr[" + i + "] = " + arr[i]);
+        }
+    }
+}`,
+    },
+    {
+        name: "2D Matrix",
+        category: "Arrays",
+        description: "2D array / grid operations",
+        code: `package com.algoflow.runner;
+
+public class Main {
+    private int[][] matrix = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    public static void main(String[] args) {
+        new Main().solve();
+    }
+
+    public void solve() {
+        // Your 2D array algorithm here
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}`,
+    },
+    {
+        name: "Recursive Function",
+        category: "Recursion",
+        description: "Template with recursion call stack visualization",
+        code: `package com.algoflow.runner;
+
+public class Main {
+    public static void main(String[] args) {
+        new Main().solve(5);
+    }
+
+    public void solve(int n) {
+        // Recursive calls are auto-tracked in the call stack
+        if (n <= 0) {
+            System.out.println("Base case reached");
+            return;
+        }
+        System.out.println("Processing n=" + n);
+        solve(n - 1);
+    }
+}`,
+    },
+    {
+        name: "Backtracking",
+        category: "Recursion",
+        description: "Backtracking pattern with state tracking",
+        code: `package com.algoflow.runner;
+
+public class Main {
+    private int[] arr = new int[4];
+    private boolean[] used = new boolean[4];
+
+    public static void main(String[] args) {
+        new Main().permute(0);
+    }
+
+    public void permute(int idx) {
+        if (idx == arr.length) {
+            // Found a permutation
+            StringBuilder sb = new StringBuilder();
+            for (int v : arr) sb.append(v).append(" ");
+            System.out.println(sb.toString().trim());
+            return;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (!used[i]) {
+                arr[idx] = i + 1;
+                used[i] = true;
+                permute(idx + 1);
+                used[i] = false;
+            }
+        }
+    }
+}`,
+    },
+];
+
+export const TEMPLATE_CATEGORIES = [...new Set(TEMPLATES.map(t => t.category))];

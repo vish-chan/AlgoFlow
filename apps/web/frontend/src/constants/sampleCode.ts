@@ -1,4 +1,6 @@
-export const DEFAULT_JAVA_CODE = `public class Main {
+export const DEFAULT_JAVA_CODE = `package com.algoflow.runner;
+
+public class Main {
 
     private int[] arr = new int[] {5, 3, 8, 1, 9, 2, 7};
 
