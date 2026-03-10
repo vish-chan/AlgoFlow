@@ -1,10 +1,19 @@
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import JavaEditor from "./JavaEditor";
 import AlgorithmVisualizerPane from "./visualizer/AlgorithmVisualizerPane";
 
+const MOBILE_BREAKPOINT = 768;
+
 export default function App() {
     const [splitPercent, setSplitPercent] = useState(40);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < MOBILE_BREAKPOINT);
     const dragging = useRef(false);
+
+    useEffect(() => {
+        const onResize = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+        window.addEventListener("resize", onResize);
+        return () => window.removeEventListener("resize", onResize);
+    }, []);
 
     const onMouseDown = useCallback(() => {
         dragging.current = true;
@@ -32,23 +41,19 @@ export default function App() {
             <div style={{ background: "#f59e0b", color: "#000", textAlign: "center", padding: "4px 0", fontSize: 12, fontWeight: 600, letterSpacing: 0.5, flexShrink: 0 }}>
                 🚧 BETA — This is an early version. Expect bugs and rough edges!
             </div>
-            <div style={{ display: "flex", flex: 1, minHeight: 0 }}>
-            <div style={{ width: `${splitPercent}%` }}>
-                <JavaEditor />
-            </div>
-            <div
-                onMouseDown={onMouseDown}
-                style={{
-                    width: 4,
-                    cursor: "col-resize",
-                    background: "#333",
-                    flexShrink: 0,
-                }}
-            />
-            <div style={{ flex: 1, minWidth: 0 }}>
-                <AlgorithmVisualizerPane />
-            </div>
-            </div>
+            {isMobile ? (
+                <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0 }}>
+                    <div style={{ height: "50%" }}><JavaEditor /></div>
+                    <div style={{ height: 3, background: "#333", flexShrink: 0 }} />
+                    <div style={{ flex: 1, minHeight: 0 }}><AlgorithmVisualizerPane /></div>
+                </div>
+            ) : (
+                <div style={{ display: "flex", flex: 1, minHeight: 0 }}>
+                    <div style={{ width: `${splitPercent}%` }}><JavaEditor /></div>
+                    <div onMouseDown={onMouseDown} style={{ width: 4, cursor: "col-resize", background: "#333", flexShrink: 0 }} />
+                    <div style={{ flex: 1, minWidth: 0 }}><AlgorithmVisualizerPane /></div>
+                </div>
+            )}
         </div>
     );
 }
