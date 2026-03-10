@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { loadCommands, play, subscribe } from "./visualizer/visualizerEngine";
 import { executeJavaCode } from "./api/backend";
 import { DEFAULT_JAVA_CODE, ALGORITHMS, CATEGORIES, TEMPLATES, TEMPLATE_CATEGORIES } from "./constants/algorithms";
+import { registerJavaCompletions } from "./constants/javaCompletions";
 import { engine } from "./visualizer/visualizerEngine";
 
 export default function JavaEditor() {
@@ -16,6 +17,7 @@ export default function JavaEditor() {
     const handleMount = (editor: any, monaco: any) => {
         editorRef.current = editor;
         monacoRef.current = monaco;
+        registerJavaCompletions(monaco);
     };
 
     useEffect(() => {
