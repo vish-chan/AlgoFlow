@@ -149,7 +149,7 @@ export class SimpleRenderer {
         } else if (this.data.type === 'log') {
             this.renderLog(this.data.logs, this.data.title);
         } else if (this.data.type === 'recursion') {
-            this.renderRecursion(this.data.calls, this.data.title, this.data.recursiveOnly, this.data.onToggleRecursiveOnly);
+            this.renderRecursion(this.data.calls, this.data.title);
         } else if (this.data.type === 'variables') {
             this.renderVariables(this.data.vars, this.data.title, this.data.patchState);
         } else if (this.data.type === 'graph') {
@@ -321,7 +321,7 @@ export class SimpleRenderer {
             } else if (child?.type === 'log' && child.logs) {
                 this.renderLogInBounds(child.logs, child.title, 0, 0);
             } else if (child?.type === 'recursion' && child.calls) {
-                this.renderRecursionInBounds(child.calls, child.title, 0, 0, width, sectionHeight, y, child.recursiveOnly, child.onToggleRecursiveOnly);
+                this.renderRecursionInBounds(child.calls, child.title, 0, 0, width, sectionHeight, y);
             } else if (child?.type === 'graph') {
                 this.renderGraphInBounds(child.adjMatrix, child.nodes, child.title, 0, 0, width, sectionHeight, child.visitedEdges, child.directed, child.weighted, child.nodeLabels, child.layout, child.edges);
             } else if (child?.type === 'variables' && child.vars) {
@@ -720,7 +720,7 @@ export class SimpleRenderer {
         }
     }
 
-    private renderRecursion(calls: any[], title?: string, recursiveOnly?: boolean, onToggle?: () => void) {
+    private renderRecursion(calls: any[], title?: string) {
         if (!this.ctx || !this.canvas) return;
         
         const dpr = window.devicePixelRatio || 1;
@@ -733,7 +733,6 @@ export class SimpleRenderer {
             this.ctx.font = '14px sans-serif';
             this.ctx.textAlign = 'left';
             this.ctx.fillText(title, 20, y);
-            if (onToggle) this.drawRecursiveToggle(width - 150, y - 10, recursiveOnly ?? false, onToggle);
             y += 30;
         }
         
@@ -779,7 +778,7 @@ export class SimpleRenderer {
         this.drawVarChips(vars, patchState, 20, y, width - 40, '12px monospace');
     }
     
-    private renderRecursionInBounds(calls: any[], title: string | undefined, x: number, y: number, width: number, _height: number, parentY: number, recursiveOnly?: boolean, onToggle?: () => void) {
+    private renderRecursionInBounds(calls: any[], title: string | undefined, x: number, y: number, width: number, _height: number, _parentY: number) {
         if (!this.ctx) return;
         
         let ly = y + 20;
@@ -789,7 +788,6 @@ export class SimpleRenderer {
             this.ctx.font = '12px sans-serif';
             this.ctx.textAlign = 'left';
             this.ctx.fillText(title, x + 10, ly);
-            if (onToggle) this.drawRecursiveToggle(x + width - 140, parentY + ly - 10, recursiveOnly ?? false, onToggle);
             ly += 25;
         }
         
@@ -860,17 +858,6 @@ export class SimpleRenderer {
         });
     }
 
-    private drawRecursiveToggle(x: number, y: number, checked: boolean, onToggle: () => void) {
-        if (!this.ctx) return;
-        const label = `${checked ? '☑' : '☐'} recursive only`;
-        this.ctx.fillStyle = '#888';
-        this.ctx.font = '12px sans-serif';
-        this.ctx.textAlign = 'left';
-        this.ctx.textBaseline = 'top';
-        this.ctx.fillText(label, x, y);
-        const tw = this.ctx.measureText(label).width;
-        this.clickRegions.push({ x, y, w: tw, h: 16, action: onToggle });
-    }
 
     private drawVarChips(vars: Record<string, any>, patchState: Record<string, any> | undefined, startX: number, y: number, maxWidth: number, font: string) {
         if (!this.ctx) return;

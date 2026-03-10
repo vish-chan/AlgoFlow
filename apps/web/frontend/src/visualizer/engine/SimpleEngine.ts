@@ -8,7 +8,6 @@ export class SimpleEngine {
     private renderer: SimpleRenderer;
     private listeners: Set<() => void> = new Set();
     private hiddenChildren: Set<string> = new Set();
-    private recursiveOnly = false;
     private highlightedLine: number | null = null;
     private batching = false;
 
@@ -103,9 +102,8 @@ export class SimpleEngine {
                 if (Array.isArray(flatData) && flatData.length > 0) {
                     this.tracers[key].calls = flatData.map((call: string) => {
                         const raw = String(call);
-                        const isRecursive = /recursive/i.test(raw);
                         const m = raw.replace(/\s*recursive\s*/gi, '').trim().replace(/,\s*$/, '');
-                        return { method: m, params: [], active: false, isRecursive };
+                        return { method: m, params: [], active: false };
                     });
                     this.tracers[key].calls[0].active = true;
                 } else {
@@ -155,9 +153,8 @@ export class SimpleEngine {
         } else if (key !== null && method === 'push') {
             if (this.tracers[key]?.type === 'recursion') {
                 const rawMethod = String(args[0]);
-                const isRecursive = /recursive/i.test(rawMethod);
                 const method = rawMethod.replace(/\s*recursive\s*/gi, '').trim().replace(/,\s*$/, '');
-                this.tracers[key].calls.push({ method, params: args[1] || [], active: true, isRecursive });
+                this.tracers[key].calls.push({ method, params: args[1] || [], active: true });
                 this.updateRenderer();
             }
         } else if (key !== null && method === 'pop') {
@@ -370,8 +367,7 @@ export class SimpleEngine {
             } else if (tracer.type === 'log') {
                 this.renderer.setData({ type: 'log', logs: tracer.logs, title: tracer.title });
             } else if (tracer.type === 'recursion') {
-                const calls = this.recursiveOnly ? tracer.calls.filter((c: any) => c.isRecursive) : tracer.calls;
-                this.renderer.setData({ type: 'recursion', calls, title: tracer.title, recursiveOnly: this.recursiveOnly, onToggleRecursiveOnly: () => this.toggleRecursiveOnly() });
+                this.renderer.setData({ type: 'recursion', calls: tracer.calls, title: tracer.title });
             } else if (tracer.type === 'variables') {
                 this.renderer.setData({ type: 'variables', vars: tracer.vars, title: tracer.title, patchState: tracer.patchState });
             } else if (tracer.type === 'graph') {
@@ -381,12 +377,7 @@ export class SimpleEngine {
                     .filter((childKey: string) => !this.hiddenChildren.has(childKey) && this.tracers[childKey]?.type !== 'code')
                     .map((childKey: string) => {
                         const c = this.tracers[childKey];
-                        if (c?.type === 'recursion' && this.recursiveOnly) {
-                            return { ...c, calls: c.calls.filter((call: any) => call.isRecursive), recursiveOnly: this.recursiveOnly, onToggleRecursiveOnly: () => this.toggleRecursiveOnly() };
-                        }
-                        if (c?.type === 'recursion') {
-                            return { ...c, recursiveOnly: this.recursiveOnly, onToggleRecursiveOnly: () => this.toggleRecursiveOnly() };
-                        }
+    
                         if (c?.type === 'graph') {
                             return { ...c, visitedEdges: [...c.visitedEdges], directed: c.directed, weighted: c.weighted, nodeLabels: c.nodeLabels, layout: c.layout, treeRoot: c.treeRoot, edges: c.edges, namedNodes: c.namedNodes };
                         }
@@ -507,16 +498,6 @@ export class SimpleEngine {
 
     isChildHidden(key: string): boolean {
         return this.hiddenChildren.has(key);
-    }
-
-    getRecursiveOnly(): boolean {
-        return this.recursiveOnly;
-    }
-
-    toggleRecursiveOnly() {
-        this.recursiveOnly = !this.recursiveOnly;
-        this.updateRenderer();
-        this.notify();
     }
 
     hasRecursionTracer(): boolean {
