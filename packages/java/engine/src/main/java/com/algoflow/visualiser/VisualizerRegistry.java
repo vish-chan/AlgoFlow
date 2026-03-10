@@ -395,6 +395,24 @@ public class VisualizerRegistry {
         }
     }
 
+    public static void onFieldGet(Object owner, String fieldName, int lineNumber) {
+        if (_processing)
+            return;
+        _processing = true;
+        try {
+            if (lineNumber > 0)
+                highlightLine(lineNumber);
+            for (TreeVisualizer tv : _treeVisualizers) {
+                if (tv.isTrackedNode(owner)) {
+                    tv.onFieldGet(owner, fieldName);
+                    return;
+                }
+            }
+        } finally {
+            _processing = false;
+        }
+    }
+
     public static void onPrint(String message) {
         if (_processing)
             return;
@@ -402,6 +420,7 @@ public class VisualizerRegistry {
         try {
             if (!isCalledFromRunner("print"))
                 return;
+            highlightLine(getCallerLineNumber());
             if (_logVisualizer != null)
                 _logVisualizer.print(message);
         } finally {

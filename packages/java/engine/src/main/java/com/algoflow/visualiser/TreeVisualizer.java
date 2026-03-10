@@ -85,6 +85,15 @@ public class TreeVisualizer implements Visualizer {
         }
     }
 
+    public void onFieldGet(Object owner, String fieldName) {
+        if (!_knownNodes.contains(owner))
+            return;
+        leaveLastVisited(owner);
+        _lastVisited = owner;
+        _tracer.visit(id(owner));
+        Tracer.delay();
+    }
+
     public void onFieldSet(Object owner, String fieldName) {
         if (owner == _rootOwner && fieldName.equals(_rootFieldName)) {
             _root = getChild(_rootOwner, _rootFieldName);
