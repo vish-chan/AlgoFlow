@@ -72,7 +72,104 @@ export default function JavaEditor() {
     return (
         <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
             <style>{`.highlighted-line { background: rgba(255, 213, 79, 0.15); }`}</style>
-            <div style={{ flex: 1 }}>
+            <div
+                style={{
+                    padding: "4px 10px",
+                    backgroundColor: "#1e1e1e",
+                    borderBottom: "1px solid #333",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    position: "relative",
+                }}
+            >
+                <div style={{ position: "relative" }}>
+                    <button
+                        onClick={() => setMenuOpen(menuOpen === 'templates' ? null : 'templates')}
+                        style={{ padding: "4px 10px", fontSize: 12, cursor: "pointer", background: "transparent", color: "#aaa", border: "1px solid #444", borderRadius: 3 }}
+                    >
+                        📝 Templates ▾
+                    </button>
+                    {menuOpen === 'templates' && (
+                        <div
+                            style={{
+                                position: "absolute",
+                                top: "100%",
+                                left: 0,
+                                background: "#252526",
+                                border: "1px solid #444",
+                                borderRadius: 4,
+                                width: 220,
+                                maxHeight: 350,
+                                overflowY: "auto",
+                                zIndex: 10,
+                                marginTop: 4,
+                            }}
+                        >
+                            {TEMPLATE_CATEGORIES.map(cat => (
+                                <div key={cat}>
+                                    <div style={{ padding: "6px 10px", fontSize: 11, color: "#888", textTransform: "uppercase", letterSpacing: 1 }}>{cat}</div>
+                                    {TEMPLATES.filter(t => t.category === cat).map(t => (
+                                        <div
+                                            key={t.name}
+                                            onClick={() => { setCode(t.code); setMenuOpen(null); }}
+                                            style={{ padding: "6px 16px", fontSize: 13, color: "#ddd", cursor: "pointer" }}
+                                            onMouseEnter={e => (e.currentTarget.style.background = "#333")}
+                                            onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+                                        >
+                                            <div>{t.name}</div>
+                                            <div style={{ fontSize: 11, color: "#666" }}>{t.description}</div>
+                                        </div>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+                <div style={{ position: "relative" }}>
+                    <button
+                        onClick={() => setMenuOpen(menuOpen === 'algorithms' ? null : 'algorithms')}
+                        style={{ padding: "4px 10px", fontSize: 12, cursor: "pointer", background: "transparent", color: "#aaa", border: "1px solid #444", borderRadius: 3 }}
+                    >
+                        📚 Examples ▾
+                    </button>
+                    {menuOpen === 'algorithms' && (
+                        <div
+                            style={{
+                                position: "absolute",
+                                top: "100%",
+                                right: 0,
+                                background: "#252526",
+                                border: "1px solid #444",
+                                borderRadius: 4,
+                                width: 220,
+                                maxHeight: 350,
+                                overflowY: "auto",
+                                zIndex: 10,
+                                marginTop: 4,
+                            }}
+                        >
+                            {CATEGORIES.map(cat => (
+                                <div key={cat}>
+                                    <div style={{ padding: "6px 10px", fontSize: 11, color: "#888", textTransform: "uppercase", letterSpacing: 1 }}>{cat}</div>
+                                    {ALGORITHMS.filter(a => a.category === cat).map(a => (
+                                        <div
+                                            key={a.name}
+                                            onClick={() => { setCode(a.code); setMenuOpen(null); }}
+                                            style={{ padding: "6px 16px", fontSize: 13, color: "#ddd", cursor: "pointer" }}
+                                            onMouseEnter={e => (e.currentTarget.style.background = "#333")}
+                                            onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+                                        >
+                                            {a.name}
+                                        </div>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            </div>
+            <div style={{ flex: 1, minHeight: 0 }}>
                 <Editor
                     width="100%"
                     height="100%"
@@ -101,75 +198,7 @@ export default function JavaEditor() {
                     gap: 8,
                 }}
             >
-                <div style={{ position: "relative", display: "flex", gap: 4 }}>
-                    <button
-                        onClick={() => setMenuOpen(menuOpen === 'algorithms' ? null : 'algorithms')}
-                        style={{ padding: "6px 12px", fontSize: 13, cursor: "pointer" }}
-                    >
-                        📚 Algorithms ▾
-                    </button>
-                    <button
-                        onClick={() => setMenuOpen(menuOpen === 'templates' ? null : 'templates')}
-                        style={{ padding: "6px 12px", fontSize: 13, cursor: "pointer" }}
-                    >
-                        📝 Templates ▾
-                    </button>
-                    {menuOpen && (
-                        <div
-                            style={{
-                                position: "absolute",
-                                bottom: "100%",
-                                left: 0,
-                                background: "#252526",
-                                border: "1px solid #444",
-                                borderRadius: 4,
-                                width: 220,
-                                maxHeight: 350,
-                                overflowY: "auto",
-                                zIndex: 10,
-                                marginBottom: 4,
-                            }}
-                        >
-                            {menuOpen === "algorithms" ? (
-                                CATEGORIES.map(cat => (
-                                    <div key={cat}>
-                                        <div style={{ padding: "6px 10px", fontSize: 11, color: "#888", textTransform: "uppercase", letterSpacing: 1 }}>{cat}</div>
-                                        {ALGORITHMS.filter(a => a.category === cat).map(a => (
-                                            <div
-                                                key={a.name}
-                                                onClick={() => { setCode(a.code); setMenuOpen(null); }}
-                                                style={{ padding: "6px 16px", fontSize: 13, color: "#ddd", cursor: "pointer" }}
-                                                onMouseEnter={e => (e.currentTarget.style.background = "#333")}
-                                                onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
-                                            >
-                                                {a.name}
-                                            </div>
-                                        ))}
-                                    </div>
-                                ))
-                            ) : (
-                                TEMPLATE_CATEGORIES.map(cat => (
-                                    <div key={cat}>
-                                        <div style={{ padding: "6px 10px", fontSize: 11, color: "#888", textTransform: "uppercase", letterSpacing: 1 }}>{cat}</div>
-                                        {TEMPLATES.filter(t => t.category === cat).map(t => (
-                                            <div
-                                                key={t.name}
-                                                onClick={() => { setCode(t.code); setMenuOpen(null); }}
-                                                style={{ padding: "6px 16px", fontSize: 13, color: "#ddd", cursor: "pointer" }}
-                                                onMouseEnter={e => (e.currentTarget.style.background = "#333")}
-                                                onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
-                                            >
-                                                <div>{t.name}</div>
-                                                <div style={{ fontSize: 11, color: "#666" }}>{t.description}</div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                ))
-                            )}
-                        </div>
-                    )}
-                </div>
-                <div style={{ flex: 1 }} />
+                <span style={{ fontSize: 12, color: "#e8a435", background: "#2a2218", border: "1px solid #e8a43544", borderRadius: 3, padding: "3px 8px", fontWeight: 600 }}>☕ Java 21</span>
                 <button
                     onClick={handleRun}
                     disabled={loading}

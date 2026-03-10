@@ -495,7 +495,7 @@ export class SimpleEngine {
         if (tracer?.type !== 'layout') return [];
         return tracer.children
             .map((k: string) => ({ key: k, title: this.tracers[k]?.title || k }))
-            .filter((c: { key: string; title: string }) => this.tracers[c.key]);
+            .filter((c: { key: string; title: string }) => this.tracers[c.key] && this.tracers[c.key].type !== 'code');
     }
 
     toggleChild(key: string) {
