@@ -38,7 +38,7 @@ export default function App() {
 
     return (
         <div style={{ display: "flex", flexDirection: "column", width: "100vw", height: "100vh" }}>
-            <div style={{ background: "#f59e0b", color: "#000", textAlign: "center", padding: "4px 0", fontSize: 12, fontWeight: 600, letterSpacing: 0.5, flexShrink: 0 }}>
+            <div style={{ background: "#2196F3", color: "#fff", textAlign: "center", padding: "4px 0", fontSize: 12, fontWeight: 600, letterSpacing: 0.5, flexShrink: 0 }}>
                 🚧 BETA — This is an early version. Expect bugs and rough edges!
             </div>
             {isMobile ? (

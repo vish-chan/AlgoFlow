@@ -1,43 +1,23 @@
 export const DEFAULT_JAVA_CODE = `package com.algoflow.runner;
 
-public class Main {
+public class BubbleSort {
 
-    private int[] arr = new int[] {5, 3, 8, 1, 9, 2, 7};
+    // Declare an array field — AlgoPad auto-visualizes it
+    private int[] arr = {5, 3, 8, 1, 2};
 
     public static void main(String[] args) {
-        new Main().quickSort();
+        new BubbleSort().sort();
     }
 
-    public void quickSort() {
-        System.out.println("Starting QuickSort");
-        qs(0, arr.length - 1);
-        System.out.println("QuickSort complete!");
-    }
-
-    private void qs(int lo, int hi) {
-        if (lo < hi) {
-            int p = partition(lo, hi);
-            qs(lo, p - 1);
-            qs(p + 1, hi);
-        }
-    }
-
-    private int partition(int lo, int hi) {
-        int pivot = arr[lo];
-        int i = lo + 1;
-        int j = hi;
-        while (true) {
-            while (i <= j && arr[i] <= pivot) i++;
-            while (i <= j && arr[j] > pivot) j--;
-            if (i >= j) break;
-            int tmp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = tmp;
-        }
-        int tmp = arr[lo];
-        arr[lo] = arr[j];
-        arr[j] = tmp;
-        return j;
+    // Each comparison and swap is animated automatically
+    void sort() {
+        for (int i = 0; i < arr.length; i++)
+            for (int j = 0; j < arr.length - i - 1; j++)
+                if (arr[j] > arr[j + 1]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+                }
     }
 }
 `;
@@ -888,6 +868,7 @@ export const TEMPLATES: Template[] = [
 import com.algoflow.annotation.Graph;
 
 public class Main {
+    // @Graph visualizes an adjacency matrix (adj list not supported)
     @Graph
     private int[][] adjMatrix = {
         {0, 1, 1, 0, 0},
@@ -915,6 +896,7 @@ public class Main {
 import com.algoflow.annotation.Graph;
 
 public class Main {
+    // Use directed/weighted options: @Graph(directed = true, weighted = true)
     @Graph(directed = true, weighted = true)
     private int[][] adjMatrix = {
         {0, 4, 0, 0},
@@ -948,6 +930,7 @@ public class Main {
         TreeNode(int val) { this.val = val; }
     }
 
+    // @Tree visualizes a TreeNode field (must have val, left, right)
     @Tree
     TreeNode root;
 

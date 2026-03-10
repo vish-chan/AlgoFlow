@@ -134,11 +134,18 @@ export class SimpleRenderer {
         this.ctx.clearRect(0, 0, width, height);
         
         if (!this.data) {
-            this.ctx.fillStyle = '#555';
-            this.ctx.font = '14px sans-serif';
             this.ctx.textAlign = 'center';
             this.ctx.textBaseline = 'middle';
-            this.ctx.fillText('Run code to visualize', width / 2, height / 2);
+            const cx = width / 2, cy = height / 2;
+
+            this.ctx.fillStyle = '#666';
+            this.ctx.font = 'bold 18px sans-serif';
+            this.ctx.fillText('Write Java → Click Run → Watch it animate', cx, cy - 30);
+
+            this.ctx.fillStyle = '#555';
+            this.ctx.font = '13px sans-serif';
+            this.ctx.fillText('Use Templates for quick starters or Examples for full algorithms', cx, cy + 10);
+
             return;
         }
 
