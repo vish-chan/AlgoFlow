@@ -4,7 +4,7 @@ Bytecode transformation engine that auto-visualizes algorithms with zero manual 
 
 ## What It Does
 
-Write normal Java code — the engine intercepts array access, collection operations, field mutations, and method calls at the bytecode level to produce step-by-step visualization data.
+Write normal Java code — the engine intercepts array access, collection operations, field mutations, and method calls at the bytecode level to produce step-by-step visualization data. Java only.
 
 ```java
 // No SDKs, no annotations on operations, no manual tracing.

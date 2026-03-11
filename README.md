@@ -1,6 +1,6 @@
 # AlgoFlow
 
-Write Java algorithms — see them execute step by step. No SDKs, no manual tracing.
+Write Java algorithms — see them execute step by step. No SDKs, no manual tracing. Java only.
 
 ```java
 int[] arr = {5, 2, 8, 1};
