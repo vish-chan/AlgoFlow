@@ -14,6 +14,7 @@ public class VisualizerRegistry {
     private static final Map<Object, PrimitiveArray2DVisualizer> _array2DToVisualizer = new IdentityHashMap<>();
     private static final Map<Object, GraphVisualizer> _graphToVisualizer = new IdentityHashMap<>();
     private static final List<TreeVisualizer> _treeVisualizers = new ArrayList<>();
+    static final Set<String> _knownTreeNodeClasses = new HashSet<>();
     private static LogVisualizer _logVisualizer;
     private static final Map<String, LocalVariablesVisualizer> _localVariablesVisualizers = new HashMap<>();
     private static CallStackVisualizer _callStackVisualizer;
@@ -54,6 +55,17 @@ public class VisualizerRegistry {
     public static void registerTree(TreeVisualizer visualizer) {
         _visualizers.add(visualizer.getCommander());
         _treeVisualizers.add(visualizer);
+    }
+
+
+    public static void registerTree(TreeVisualizer visualizer, Class<?> nodeClass) {
+        _visualizers.add(visualizer.getCommander());
+        _treeVisualizers.add(visualizer);
+        _knownTreeNodeClasses.add(nodeClass.getName());
+    }
+
+    public static boolean isKnownTreeNodeClass(String className) {
+        return _knownTreeNodeClasses.contains(className);
     }
 
     public static void registerGraph(GraphVisualizer visualizer, Object graphObj) {

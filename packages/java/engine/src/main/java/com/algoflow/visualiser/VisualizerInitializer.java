@@ -69,7 +69,7 @@ public class VisualizerInitializer {
         if (field.isAnnotationPresent(Tree.class)) {
             TreeVisualizer vis = new TreeVisualizer(name, value, field.getType());
             vis.setRootOwner(instance, name);
-            VisualizerRegistry.registerTree(vis);
+            VisualizerRegistry.registerTree(vis, field.getType());
             return true;
         }
 
@@ -79,7 +79,8 @@ public class VisualizerInitializer {
     public static boolean registerLocalValue(String name, Object value) {
         if (value == null)
             return false;
-        if (VisualizerRegistry.isRegistered(value))
+        // Skip isRegistered check for tree nodes to allow multiple tree visualizers
+        if (!VisualizerRegistry.isKnownTreeNodeClass(value.getClass().getName()) && VisualizerRegistry.isRegistered(value))
             return false;
         boolean is2D = (value instanceof List<?> list) && !list.isEmpty() && list.getFirst() instanceof List;
         if (!registerValue(name, value, is2D))
@@ -89,6 +90,14 @@ public class VisualizerInitializer {
     }
 
     private static boolean registerValue(String name, Object value, boolean is2DList) {
+        // Check if it's a known tree node class first
+        if (VisualizerRegistry.isKnownTreeNodeClass(value.getClass().getName())) {
+            String treeName = name + "_tree";
+            TreeVisualizer treeVis = new TreeVisualizer(treeName, value, value.getClass());
+            VisualizerRegistry.registerTree(treeVis, value.getClass());
+            return true;
+        }
+        
         if (value instanceof List<?> list) {
             ListVisualizer vis = is2DList ? new Array2DVisualiser(list, name) : new Array1DVisualiser(list, name);
             VisualizerRegistry.register(vis, list);
