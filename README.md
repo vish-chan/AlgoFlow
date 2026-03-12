@@ -1,4 +1,4 @@
-# AlgoFlow
+# <picture><source media="(prefers-color-scheme: dark)" srcset="logo-dark.svg"><img src="apps/web/frontend/public/favicon.svg" alt="AlgoFlow" width="32" height="32" style="vertical-align: middle;"></picture> AlgoFlow
 
 **🚀 [Try it live](https://algopad.up.railway.app/)**
 
