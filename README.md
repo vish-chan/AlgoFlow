@@ -2,6 +2,8 @@
 
 Write Java algorithms — see them execute step by step. No SDKs, no manual tracing. Java only.
 
+**🚀 Try it live: [algopad.up.railway.app](https://algopad.up.railway.app/)**
+
 ```java
 int[] arr = {5, 2, 8, 1};
 arr[0] = 10;  // ← automatically visualized
