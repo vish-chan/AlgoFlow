@@ -311,108 +311,130 @@ public class Main {
     }
 }`,
     },
-    // Strings
+    // Trees
     {
-        name: "KMP String Search",
-        category: "Strings",
+        name: "BST Inorder Traversal",
+        category: "Trees",
         code: `package com.algoflow.runner;
 
-public class Main {
-    public static void main(String[] args) {
-        new Main().kmpSearch("ABABDABACDABABCABAB", "ABABCABAB");
-    }
-
-    public void kmpSearch(String text, String pattern) {
-        int[] lps = buildLPS(pattern);
-        int i = 0, j = 0;
-        while (i < text.length()) {
-            if (text.charAt(i) == pattern.charAt(j)) {
-                i++;
-                j++;
-            }
-            if (j == pattern.length()) {
-                System.out.println("Pattern found at index " + (i - j));
-                j = lps[j - 1];
-            } else if (i < text.length() && text.charAt(i) != pattern.charAt(j)) {
-                if (j != 0) j = lps[j - 1];
-                else i++;
-            }
-        }
-    }
-
-    private int[] buildLPS(String pattern) {
-        int[] lps = new int[pattern.length()];
-        int len = 0, i = 1;
-        while (i < pattern.length()) {
-            if (pattern.charAt(i) == pattern.charAt(len)) {
-                lps[i++] = ++len;
-            } else if (len != 0) {
-                len = lps[len - 1];
-            } else {
-                lps[i++] = 0;
-            }
-        }
-        return lps;
-    }
-}`,
-    },
-    // Sorting (continued)
-    {
-        name: "Heap Sort",
-        category: "Sorting",
-        code: `package com.algoflow.runner;
+import com.algoflow.annotation.Tree;
 
 public class Main {
-    private int[] arr = {5, 3, 8, 1, 9, 2, 7};
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int val) { this.val = val; }
+    }
+
+    @Tree
+    TreeNode root;
 
     public static void main(String[] args) {
-        new Main().heapSort();
+        Main m = new Main();
+        m.root = new TreeNode(4);
+        m.root.left = new TreeNode(2);
+        m.root.right = new TreeNode(6);
+        m.root.left.left = new TreeNode(1);
+        m.root.left.right = new TreeNode(3);
+        m.root.right.left = new TreeNode(5);
+        m.root.right.right = new TreeNode(7);
+        m.inorder(m.root);
     }
 
-    public void heapSort() {
-        int n = arr.length;
-        for (int i = n / 2 - 1; i >= 0; i--) heapify(n, i);
-        for (int i = n - 1; i > 0; i--) {
-            int tmp = arr[0]; arr[0] = arr[i]; arr[i] = tmp;
-            heapify(i, 0);
-        }
-    }
-
-    private void heapify(int n, int i) {
-        int largest = i, l = 2 * i + 1, r = 2 * i + 2;
-        if (l < n && arr[l] > arr[largest]) largest = l;
-        if (r < n && arr[r] > arr[largest]) largest = r;
-        if (largest != i) {
-            int tmp = arr[i]; arr[i] = arr[largest]; arr[largest] = tmp;
-            heapify(n, largest);
-        }
+    public void inorder(TreeNode node) {
+        if (node == null) return;
+        inorder(node.left);
+        System.out.println(node.val);
+        inorder(node.right);
     }
 }`,
     },
     {
-        name: "Counting Sort",
-        category: "Sorting",
+        name: "BST Insert/Search",
+        category: "Trees",
         code: `package com.algoflow.runner;
 
-public class Main {
-    private int[] arr = {4, 2, 2, 8, 3, 3, 1};
+import com.algoflow.annotation.Tree;
 
-    public static void main(String[] args) {
-        new Main().countingSort();
+public class Main {
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int val) { this.val = val; }
     }
 
-    public void countingSort() {
-        int max = 0;
-        for (int v : arr) if (v > max) max = v;
-        int[] count = new int[max + 1];
-        for (int v : arr) count[v]++;
-        int idx = 0;
-        for (int i = 0; i <= max; i++) {
-            while (count[i]-- > 0) arr[idx++] = i;
-        }
+    @Tree
+    TreeNode root;
+
+    public static void main(String[] args) {
+        Main m = new Main();
+        m.root = m.insert(m.root, 4);
+        m.root = m.insert(m.root, 2);
+        m.root = m.insert(m.root, 6);
+        m.root = m.insert(m.root, 1);
+        m.root = m.insert(m.root, 3);
+        m.root = m.insert(m.root, 5);
+        m.root = m.insert(m.root, 7);
+        System.out.println("Found 3: " + m.search(m.root, 3));
+        System.out.println("Found 8: " + m.search(m.root, 8));
+    }
+
+    public TreeNode insert(TreeNode node, int val) {
+        if (node == null) return new TreeNode(val);
+        if (val < node.val) node.left = insert(node.left, val);
+        else if (val > node.val) node.right = insert(node.right, val);
+        return node;
+    }
+
+    public boolean search(TreeNode node, int val) {
+        if (node == null) return false;
+        if (val == node.val) return true;
+        return val < node.val ? search(node.left, val) : search(node.right, val);
     }
 }`,
     },
+    {
+        name: "Invert Binary Tree",
+        category: "Trees",
+        code: `package com.algoflow.runner;
+
+import com.algoflow.annotation.Tree;
+
+public class Main {
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int val) { this.val = val; }
+    }
+
+    @Tree
+    TreeNode root;
+
+    public static void main(String[] args) {
+        Main m = new Main();
+        m.root = new TreeNode(4);
+        m.root.left = new TreeNode(2);
+        m.root.right = new TreeNode(7);
+        m.root.left.left = new TreeNode(1);
+        m.root.left.right = new TreeNode(3);
+        m.root.right.left = new TreeNode(6);
+        m.root.right.right = new TreeNode(9);
+        m.root = m.invert(m.root);
+    }
+
+    public TreeNode invert(TreeNode node) {
+        if (node == null) return null;
+        TreeNode temp = node.left;
+        node.left = invert(node.right);
+        node.right = invert(temp);
+        return node;
+    }
+}`,
+    },
+
     // Graphs (continued)
     {
         name: "Dijkstra's Shortest Path",
@@ -577,34 +599,7 @@ public class Main {
     }
 }`,
     },
-    {
-        name: "Longest Increasing Subsequence",
-        category: "Dynamic Programming",
-        code: `package com.algoflow.runner;
 
-public class Main {
-    private int[] arr = {10, 9, 2, 5, 3, 7, 101, 18};
-
-    public static void main(String[] args) {
-        new Main().lis();
-    }
-
-    public int lis() {
-        int n = arr.length;
-        int[] dp = new int[n];
-        java.util.Arrays.fill(dp, 1);
-        int maxLen = 1;
-        for (int i = 1; i < n; i++) {
-            for (int j = 0; j < i; j++) {
-                if (arr[j] < arr[i])
-                    dp[i] = Math.max(dp[i], dp[j] + 1);
-            }
-            maxLen = Math.max(maxLen, dp[i]);
-        }
-        return maxLen;
-    }
-}`,
-    },
     // Backtracking
     {
         name: "N-Queens",
@@ -640,56 +635,7 @@ public class Main {
     }
 }`,
     },
-    {
-        name: "Sudoku Solver",
-        category: "Backtracking",
-        code: `package com.algoflow.runner;
 
-public class Main {
-    private int[][] board = {
-        {5,3,0,0,7,0,0,0,0},
-        {6,0,0,1,9,5,0,0,0},
-        {0,9,8,0,0,0,0,6,0},
-        {8,0,0,0,6,0,0,0,3},
-        {4,0,0,8,0,3,0,0,1},
-        {7,0,0,0,2,0,0,0,6},
-        {0,6,0,0,0,0,2,8,0},
-        {0,0,0,4,1,9,0,0,5},
-        {0,0,0,0,8,0,0,7,9}
-    };
-
-    public static void main(String[] args) {
-        new Main().solve();
-    }
-
-    public boolean solve() {
-        for (int r = 0; r < 9; r++) {
-            for (int c = 0; c < 9; c++) {
-                if (board[r][c] == 0) {
-                    for (int num = 1; num <= 9; num++) {
-                        if (isValid(r, c, num)) {
-                            board[r][c] = num;
-                            if (solve()) return true;
-                            board[r][c] = 0;
-                        }
-                    }
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
-    private boolean isValid(int row, int col, int num) {
-        for (int i = 0; i < 9; i++) {
-            if (board[row][i] == num || board[i][col] == num) return false;
-            int r = 3 * (row / 3) + i / 3, c = 3 * (col / 3) + i % 3;
-            if (board[r][c] == num) return false;
-        }
-        return true;
-    }
-}`,
-    },
     // Divide & Conquer
     {
         name: "Tower of Hanoi",
@@ -709,151 +655,7 @@ public class Main {
     }
 }`,
     },
-    {
-        name: "Matrix Chain Multiplication",
-        category: "Dynamic Programming",
-        code: `package com.algoflow.runner;
 
-public class Main {
-    private int[] dims = {10, 30, 5, 60, 10};
-
-    public static void main(String[] args) {
-        new Main().mcm();
-    }
-
-    public int mcm() {
-        int n = dims.length - 1;
-        int[][] dp = new int[n][n];
-        for (int len = 2; len <= n; len++) {
-            for (int i = 0; i <= n - len; i++) {
-                int j = i + len - 1;
-                dp[i][j] = Integer.MAX_VALUE;
-                for (int k = i; k < j; k++) {
-                    int cost = dp[i][k] + dp[k + 1][j] + dims[i] * dims[k + 1] * dims[j + 1];
-                    dp[i][j] = Math.min(dp[i][j], cost);
-                }
-            }
-        }
-        return dp[0][n - 1];
-    }
-}`,
-    },
-    {
-        name: "Floyd-Warshall",
-        category: "Graphs",
-        code: `package com.algoflow.runner;
-
-import com.algoflow.annotation.Graph;
-
-public class Main {
-    @Graph
-    private int[][] adjMatrix = {
-        {0, 3, 0, 7, 0},
-        {3, 0, 4, 2, 0},
-        {0, 4, 0, 5, 6},
-        {7, 2, 5, 0, 4},
-        {0, 0, 6, 4, 0}
-    };
-
-    public static void main(String[] args) {
-        new Main().floydWarshall();
-    }
-
-    public void floydWarshall() {
-        int n = adjMatrix.length;
-        int INF = 99999;
-        int[][] dist = new int[n][n];
-        for (int i = 0; i < n; i++)
-            for (int j = 0; j < n; j++)
-                dist[i][j] = (i == j) ? 0 : (adjMatrix[i][j] > 0 ? adjMatrix[i][j] : INF);
-        for (int k = 0; k < n; k++)
-            for (int i = 0; i < n; i++)
-                for (int j = 0; j < n; j++)
-                    if (dist[i][k] + dist[k][j] < dist[i][j])
-                        dist[i][j] = dist[i][k] + dist[k][j];
-    }
-}`,
-    },
-    {
-        name: "Prim's MST",
-        category: "Graphs",
-        code: `package com.algoflow.runner;
-
-import java.util.*;
-import com.algoflow.annotation.Graph;
-
-public class Main {
-    @Graph
-    private int[][] adjMatrix = {
-        {0, 2, 0, 6, 0},
-        {2, 0, 3, 8, 5},
-        {0, 3, 0, 0, 7},
-        {6, 8, 0, 0, 9},
-        {0, 5, 7, 9, 0}
-    };
-
-    public static void main(String[] args) {
-        new Main().prim();
-    }
-
-    public void prim() {
-        int n = adjMatrix.length;
-        boolean[] inMST = new boolean[n];
-        int[] key = new int[n];
-        Arrays.fill(key, Integer.MAX_VALUE);
-        key[0] = 0;
-        for (int count = 0; count < n; count++) {
-            int u = -1;
-            for (int v = 0; v < n; v++)
-                if (!inMST[v] && (u == -1 || key[v] < key[u])) u = v;
-            inMST[u] = true;
-            for (int v = 0; v < n; v++)
-                if (adjMatrix[u][v] > 0 && !inMST[v] && adjMatrix[u][v] < key[v])
-                    key[v] = adjMatrix[u][v];
-        }
-    }
-}`,
-    },
-    {
-        name: "Bellman-Ford",
-        category: "Graphs",
-        code: `package com.algoflow.runner;
-
-import java.util.*;
-import com.algoflow.annotation.Graph;
-
-public class Main {
-    @Graph(directed = true, weighted = true)
-    private int[][] adjMatrix = {
-        {0, 6, 0, 7, 0},
-        {0, 0, 5, 8, -4},
-        {0, -2, 0, 0, 0},
-        {0, 0, -3, 0, 9},
-        {2, 0, 7, 0, 0}
-    };
-
-    public static void main(String[] args) {
-        new Main().bellmanFord(0);
-    }
-
-    public void bellmanFord(int src) {
-        int n = adjMatrix.length;
-        int[] dist = new int[n];
-        Arrays.fill(dist, Integer.MAX_VALUE);
-        dist[src] = 0;
-        for (int iter = 0; iter < n - 1; iter++) {
-            for (int u = 0; u < n; u++) {
-                if (dist[u] == Integer.MAX_VALUE) continue;
-                for (int v = 0; v < n; v++) {
-                    if (adjMatrix[u][v] != 0 && dist[u] + adjMatrix[u][v] < dist[v]) {
-                        dist[v] = dist[u] + adjMatrix[u][v];
-                    }
-                }
-            }
-        }
-    }
-}`,
-    },
 ];
 
 export const CATEGORIES = [...new Set(ALGORITHMS.map(a => a.category))];
