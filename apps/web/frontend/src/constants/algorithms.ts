@@ -662,6 +662,77 @@ export const CATEGORIES = [...new Set(ALGORITHMS.map(a => a.category))];
 
 export const TEMPLATES: Template[] = [
     {
+        name: "1D Array",
+        category: "Arrays",
+        description: "Auto-visualized int array",
+        code: `package com.algoflow.runner;
+
+public class Main {
+    private int[] arr = {5, 3, 8, 1, 9, 2, 7};
+
+    public static void main(String[] args) {
+        new Main().solve();
+    }
+
+    public void solve() {
+        // TODO: your algorithm here
+    }
+}`,
+    },
+    {
+        name: "2D Matrix",
+        category: "Arrays",
+        description: "Auto-visualized 2D array",
+        code: `package com.algoflow.runner;
+
+public class Main {
+    private int[][] matrix = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    public static void main(String[] args) {
+        new Main().solve();
+    }
+
+    public void solve() {
+        // TODO: your algorithm here
+    }
+}`,
+    },
+    {
+        name: "Binary Tree",
+        category: "Trees",
+        description: "TreeNode with @Tree annotation",
+        code: `package com.algoflow.runner;
+
+import com.algoflow.annotation.Tree;
+
+public class Main {
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int val) { this.val = val; }
+    }
+
+    // @Tree visualizes a TreeNode field (must have val, left, right)
+    @Tree
+    TreeNode root;
+
+    public static void main(String[] args) {
+        Main m = new Main();
+        m.root = new TreeNode(4);
+        m.root.left = new TreeNode(2);
+        m.root.right = new TreeNode(6);
+        m.root.left.left = new TreeNode(1);
+        m.root.left.right = new TreeNode(3);
+        // TODO: your algorithm here
+    }
+}`,
+    },
+    {
         name: "Undirected Graph",
         category: "Graphs",
         description: "Adjacency matrix graph",
@@ -713,95 +784,6 @@ public class Main {
 
     public void solve() {
         // TODO: your algorithm here
-    }
-}`,
-    },
-    {
-        name: "Binary Tree",
-        category: "Trees",
-        description: "TreeNode with @Tree annotation",
-        code: `package com.algoflow.runner;
-
-import com.algoflow.annotation.Tree;
-
-public class Main {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int val) { this.val = val; }
-    }
-
-    // @Tree visualizes a TreeNode field (must have val, left, right)
-    @Tree
-    TreeNode root;
-
-    public static void main(String[] args) {
-        Main m = new Main();
-        m.root = new TreeNode(4);
-        m.root.left = new TreeNode(2);
-        m.root.right = new TreeNode(6);
-        m.root.left.left = new TreeNode(1);
-        m.root.left.right = new TreeNode(3);
-        // TODO: your algorithm here
-    }
-}`,
-    },
-    {
-        name: "1D Array",
-        category: "Arrays",
-        description: "Auto-visualized int array",
-        code: `package com.algoflow.runner;
-
-public class Main {
-    private int[] arr = {5, 3, 8, 1, 9, 2, 7};
-
-    public static void main(String[] args) {
-        new Main().solve();
-    }
-
-    public void solve() {
-        // TODO: your algorithm here
-    }
-}`,
-    },
-    {
-        name: "2D Matrix",
-        category: "Arrays",
-        description: "Auto-visualized 2D array",
-        code: `package com.algoflow.runner;
-
-public class Main {
-    private int[][] matrix = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
-
-    public static void main(String[] args) {
-        new Main().solve();
-    }
-
-    public void solve() {
-        // TODO: your algorithm here
-    }
-}`,
-    },
-    {
-        name: "Recursion",
-        category: "General",
-        description: "Auto-tracked call stack",
-        code: `package com.algoflow.runner;
-
-public class Main {
-    public static void main(String[] args) {
-        new Main().solve(5);
-    }
-
-    public void solve(int n) {
-        if (n <= 0) return;
-        // TODO: your logic here
-        solve(n - 1);
     }
 }`,
     },
