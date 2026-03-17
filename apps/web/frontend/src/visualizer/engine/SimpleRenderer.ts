@@ -243,9 +243,29 @@ export class SimpleRenderer {
         });
     }
 
+    private wrapText(text: string, maxWidth: number): string[] {
+        if (!this.ctx) return [text];
+        const words = text.split(' ');
+        const lines: string[] = [];
+        let current = '';
+        for (const word of words) {
+            const test = current ? `${current} ${word}` : word;
+            if (this.ctx.measureText(test).width > maxWidth && current) {
+                lines.push(current);
+                current = word;
+            } else {
+                current = test;
+            }
+        }
+        if (current) lines.push(current);
+        return lines;
+    }
+
     private renderLog(logs: any[], title?: string) {
-        if (!this.ctx) return;
+        if (!this.ctx || !this.canvas) return;
         
+        const dpr = window.devicePixelRatio || 1;
+        const width = this.canvas.width / dpr;
         const isError = title === 'Error';
         let y = 30;
         
@@ -264,8 +284,10 @@ export class SimpleRenderer {
             const text = String(log);
             const lines = text.split('\n');
             lines.forEach(line => {
-                this.ctx!.fillText(line, 20, y);
-                y += 20;
+                for (const wrapped of this.wrapText(line, width - 40)) {
+                    this.ctx!.fillText(wrapped, 20, y);
+                    y += 20;
+                }
             });
         });
     }
@@ -326,7 +348,7 @@ export class SimpleRenderer {
             } else if (child?.type === 'array2d' && child.data) {
                 this.renderArray2DInBounds(child.data, child.title, 0, 0, width, sectionHeight);
             } else if (child?.type === 'log' && child.logs) {
-                this.renderLogInBounds(child.logs, child.title, 0, 0);
+                this.renderLogInBounds(child.logs, child.title, 0, 0, width);
             } else if (child?.type === 'recursion' && child.calls) {
                 this.renderRecursionInBounds(child.calls, child.title, 0, 0, width, sectionHeight, y);
             } else if (child?.type === 'graph') {
@@ -407,11 +429,12 @@ export class SimpleRenderer {
         });
     }
 
-    private renderLogInBounds(logs: any[], title: string | undefined, x: number, y: number) {
+    private renderLogInBounds(logs: any[], title: string | undefined, x: number, y: number, maxWidth?: number) {
         if (!this.ctx) return;
         
         const isError = title === 'Error';
         let ly = y + 20;
+        const wrapW = (maxWidth || 400) - 20;
         
         if (title) {
             this.ctx.fillStyle = isError ? '#f44336' : '#aaa';
@@ -426,8 +449,10 @@ export class SimpleRenderer {
         
         logs.forEach(log => {
             const text = String(log);
-            this.ctx!.fillText(text, x + 10, ly);
-            ly += 16;
+            for (const wrapped of this.wrapText(text, wrapW)) {
+                this.ctx!.fillText(wrapped, x + 10, ly);
+                ly += 16;
+            }
         });
     }
 
