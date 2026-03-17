@@ -200,7 +200,7 @@ export default function JavaEditor() {
                     gap: 8,
                 }}
             >
-                <span style={{ fontSize: 12, color: "#aaa", background: "transparent", border: "1px solid #444", borderRadius: 3, padding: "3px 8px", fontWeight: 600 }}>☕ Java 21</span>
+                <span style={{ fontSize: 12, color: "#aaa", background: "transparent", border: "1px solid #444", borderRadius: 3, padding: "3px 8px", fontWeight: 600 }}>☕ Java 25</span>
                 <button
                     onClick={handleRun}
                     disabled={loading}
