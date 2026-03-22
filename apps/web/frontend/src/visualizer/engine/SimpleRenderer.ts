@@ -256,14 +256,29 @@ export class SimpleRenderer {
         });
     }
 
+    private static readonly GRAPH_MIN_SCALE = 0.5;
+    private static readonly GRAPH_PANE_HEIGHT = 400;
+    private static readonly TREE_PANE_HEIGHT = 450;
+
+    private graphNaturalSize(child: any): { w: number; h: number } {
+        const n = child.nodes?.length || 0;
+        if (child.layout === 'tree') {
+            const h = Math.max(SimpleRenderer.TREE_PANE_HEIGHT, n * 20);
+            return { w: h, h }; // trees are roughly square
+        }
+        const nodeR = Math.max(10, Math.min(20, 200 / Math.max(n, 1)));
+        const minR = n > 1 ? (n * (nodeR * 2 + 12)) / (2 * Math.PI) : 40;
+        const d = (minR + nodeR + 10) * 2;
+        return { w: d, h: d + 25 };
+    }
+
     calcChildHeight(child: any): number {
         if (child?.type === 'recursion' && child.calls) return Math.max(120, 45 + child.calls.length * 22);
         if (child?.type === 'graph') {
-            const n = child.nodes?.length || 0;
-            if (child.layout === 'tree') return Math.max(450, n * 20);
-            const nodeR = Math.max(10, Math.min(20, 200 / Math.max(n, 1)));
-            const minR = n > 1 ? (n * (nodeR * 2 + 12)) / (2 * Math.PI) : 40;
-            return Math.max(400, (minR + nodeR + 10) * 2 + 25);
+            const nat = this.graphNaturalSize(child);
+            const paneH = child.layout === 'tree' ? SimpleRenderer.TREE_PANE_HEIGHT : SimpleRenderer.GRAPH_PANE_HEIGHT;
+            const scale = Math.max(SimpleRenderer.GRAPH_MIN_SCALE, Math.min(1, paneH / nat.h));
+            return Math.max(paneH, Math.round(nat.h * scale));
         }
         if (child?.type === 'array2d' && child.data) return Math.max(120, 30 + child.data.length * 40);
         if (child?.type === 'variables' && child.vars) return Math.max(60, 45 + 28);
@@ -285,10 +300,9 @@ export class SimpleRenderer {
             return cols * 40 + 40;
         }
         if (child?.type === 'graph') {
-            const n = child.nodes?.length || 0;
-            const nodeR = Math.max(10, Math.min(20, 200 / Math.max(n, 1)));
-            const minR = n > 1 ? (n * (nodeR * 2 + 12)) / (2 * Math.PI) : 40;
-            return (minR + nodeR + 10) * 2;
+            const nat = this.graphNaturalSize(child);
+            const scale = Math.max(SimpleRenderer.GRAPH_MIN_SCALE, Math.min(1, SimpleRenderer.GRAPH_PANE_HEIGHT / Math.max(nat.w, nat.h)));
+            return scale < 1 ? Math.round(nat.w * scale) : 0;
         }
         return 0; // 0 means use container width
     }
@@ -701,6 +715,33 @@ export class SimpleRenderer {
     private renderGraphInBounds(adjMatrix: number[][], nodes: any[], title: string | undefined, x: number, y: number, width: number, height: number, visitedEdges?: string[], directed?: boolean, weighted?: boolean, nodeLabels?: string[], layout?: string, edges?: [number, number][]) {
         if (!this.ctx || !nodes.length) return;
 
+        // Compute scale factor: shrink large graphs to fit, min 0.5
+        const n = nodes.length;
+        const nodeR = Math.max(10, Math.min(20, 200 / Math.max(n, 1)));
+        const nat = this.graphNaturalSize({ nodes, layout, edges } as any);
+        const paneH = layout === 'tree' ? SimpleRenderer.TREE_PANE_HEIGHT : SimpleRenderer.GRAPH_PANE_HEIGHT;
+        const scale = Math.max(SimpleRenderer.GRAPH_MIN_SCALE, Math.min(1, paneH / Math.max(nat.w, nat.h)));
+
+        if (scale < 1) {
+            this.ctx.save();
+            this.ctx.translate(x, y);
+            this.ctx.scale(scale, scale);
+            // Render into the scaled coordinate space
+            const sw = width / scale;
+            const sh = height / scale;
+            this.renderGraphContent(adjMatrix, nodes, title, 0, 0, sw, sh, visitedEdges, directed, weighted, nodeLabels, layout, edges, nodeR);
+            this.ctx.restore();
+        } else {
+            this.renderGraphContent(adjMatrix, nodes, title, x, y, width, height, visitedEdges, directed, weighted, nodeLabels, layout, edges, nodeR);
+        }
+    }
+
+    private renderGraphContent(adjMatrix: number[][], nodes: any[], title: string | undefined, x: number, y: number, width: number, height: number, visitedEdges?: string[], directed?: boolean, weighted?: boolean, nodeLabels?: string[], layout?: string, edges?: [number, number][], nodeR?: number) {
+        if (!this.ctx) return;
+
+        const n = nodes.length;
+        const nr = nodeR ?? Math.max(10, Math.min(20, 200 / Math.max(n, 1)));
+
         const titleH = title ? 25 : 0;
         if (title) {
             this.ctx.fillStyle = '#aaa';
@@ -709,20 +750,18 @@ export class SimpleRenderer {
             this.ctx.fillText(title, x + width / 2, y + 18);
         }
 
-        const n = nodes.length;
-        const nodeR = Math.max(10, Math.min(20, 200 / Math.max(n, 1)));
         const edgeSet = new Set(visitedEdges || []);
         const labels = nodeLabels || [];
 
         let pos: { x: number; y: number }[];
 
         if (layout === 'tree' && edges?.length) {
-            pos = this.computeTreeLayout(n, edges, x, y + titleH, width, height - titleH, nodeR);
+            pos = this.computeTreeLayout(n, edges, x, y + titleH, width, height - titleH, nr);
         } else {
             const cxC = x + width / 2;
             const cyC = y + titleH + (height - titleH) / 2;
-            const minCircleR = n > 1 ? (n * (nodeR * 2 + 12)) / (2 * Math.PI) : 0;
-            const fitR = Math.min(width, height - titleH) / 2 - nodeR - 10;
+            const minCircleR = n > 1 ? (n * (nr * 2 + 12)) / (2 * Math.PI) : 0;
+            const fitR = Math.min(width, height - titleH) / 2 - nr - 10;
             const r = Math.max(minCircleR, fitR);
             pos = nodes.map((_: any, i: number) => ({
                 x: cxC + r * Math.cos(2 * Math.PI * i / n - Math.PI / 2),
@@ -741,7 +780,7 @@ export class SimpleRenderer {
                     if (isNull(from) || isNull(to)) continue;
                     const a = Math.min(from, to), b = Math.max(from, to);
                     const visited = edgeSet.has(`${a}-${b}`);
-                    this.drawDirectedEdge(pos[from], pos[to], nodeR, visited, 0, weighted ? (adjMatrix[from]?.[to] || 0) : 0);
+                    this.drawDirectedEdge(pos[from], pos[to], nr, visited, 0, weighted ? (adjMatrix[from]?.[to] || 0) : 0);
                 }
             } else {
                 for (let i = 0; i < n; i++) {
@@ -751,7 +790,7 @@ export class SimpleRenderer {
                         const a = Math.min(i, j), b = Math.max(i, j);
                         const visited = edgeSet.has(`${a}-${b}`);
                         const bidir = !!(adjMatrix[j]?.[i]);
-                        this.drawDirectedEdge(pos[i], pos[j], nodeR, visited, bidir ? (i < j ? 1 : -1) : 0, weighted ? adjMatrix[i][j] : 0);
+                        this.drawDirectedEdge(pos[i], pos[j], nr, visited, bidir ? (i < j ? 1 : -1) : 0, weighted ? adjMatrix[i][j] : 0);
                     }
                 }
             }
@@ -786,22 +825,23 @@ export class SimpleRenderer {
             if (label.startsWith('null_')) continue;
 
             this.ctx.beginPath();
-            this.ctx.arc(pos[i].x, pos[i].y, nodeR, 0, Math.PI * 2);
+            this.ctx.arc(pos[i].x, pos[i].y, nr, 0, Math.PI * 2);
             this.ctx.fillStyle = nodes[i].state === 'active' ? '#4CAF50' : nodes[i].state === 'explored' ? '#2E7D32' : '#333';
             this.ctx.fill();
             this.ctx.strokeStyle = '#888';
             this.ctx.stroke();
 
             this.ctx.fillStyle = '#fff';
-            this.ctx.font = `${Math.max(8, Math.min(13, nodeR))}px monospace`;
+            this.ctx.font = `${Math.max(8, Math.min(13, nr))}px monospace`;
             this.ctx.textAlign = 'center';
             this.ctx.textBaseline = 'middle';
-            this.ctx.fillText(this.truncateText(label, nodeR * 2 - 4), pos[i].x, pos[i].y);
+            this.ctx.fillText(this.truncateText(label, nr * 2 - 4), pos[i].x, pos[i].y);
         }
 
     }
 
     private computeTreeLayout(n: number, edges: [number, number][], x: number, y: number, width: number, height: number, nodeR: number): { x: number; y: number }[] {
+        if (n === 0) return [];
         // Build children map from directed edges
         const children: number[][] = Array.from({ length: n }, () => []);
         const hasParent = new Set<number>();
@@ -880,7 +920,7 @@ export class SimpleRenderer {
         return pos;
     }
 
-    private drawDirectedEdge(from: { x: number; y: number }, to: { x: number; y: number }, nodeR: number, visited: boolean, curve: number, weight: number) {
+    private drawDirectedEdge(from: { x: number; y: number }, to: { x: number; y: number }, nr: number, visited: boolean, curve: number, weight: number) {
         if (!this.ctx) return;
         const dx = to.x - from.x, dy = to.y - from.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
@@ -888,8 +928,8 @@ export class SimpleRenderer {
         const ux = dx / dist, uy = dy / dist;
 
         // Shorten to node edges
-        const sx = from.x + ux * nodeR, sy = from.y + uy * nodeR;
-        const ex = to.x - ux * nodeR, ey = to.y - uy * nodeR;
+        const sx = from.x + ux * nr, sy = from.y + uy * nr;
+        const ex = to.x - ux * nr, ey = to.y - uy * nr;
 
         this.ctx.strokeStyle = visited ? '#4CAF50' : '#555';
         this.ctx.lineWidth = visited ? 2.5 : 1;
