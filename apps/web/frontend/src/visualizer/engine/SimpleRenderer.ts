@@ -187,7 +187,7 @@ export class SimpleRenderer {
 
         if (dsType === 'Stack') {
             this.renderStackInBounds(arr, title, dsType, 0, 0, width, height);
-        } else if (dsType === 'LinkedList' || dsType === 'Deque') {
+        } else if (dsType === 'LinkedList') {
             this.renderLinkedListInBounds(arr, title, dsType, 0, 0, width, height);
         } else {
             this.renderDefaultArrayInBounds(arr, title, dsType, 0, 0, width, height, true);
@@ -291,7 +291,7 @@ export class SimpleRenderer {
         if (child?.type === 'array' && child.data) {
             const n = child.data.length;
             const dsType = child.dsType;
-            if (dsType === 'LinkedList' || dsType === 'Deque') return n * 48 + (n - 1) * 24 + 60;
+            if (dsType === 'LinkedList') return n * 48 + (n - 1) * 24 + 60;
             if (dsType === 'Stack') return n * 60 + 40;
             return n * 60 + 40;
         }
@@ -380,7 +380,7 @@ export class SimpleRenderer {
         if (!this.ctx) return;
         if (dsType === 'Stack') {
             this.renderStackInBounds(arr, title, dsType, x, y, width, height);
-        } else if (dsType === 'LinkedList' || dsType === 'Deque') {
+        } else if (dsType === 'LinkedList') {
             this.renderLinkedListInBounds(arr, title, dsType, x, y, width, height);
         } else {
             this.renderDefaultArrayInBounds(arr, title, dsType, x, y, width, height, false);
@@ -511,15 +511,27 @@ export class SimpleRenderer {
                 const ax = nx + nodeW + 2, ax2 = ax + arrowW - 4;
                 this.ctx!.strokeStyle = '#888';
                 this.ctx!.lineWidth = 1.5;
+                // Forward arrow →
                 this.ctx!.beginPath();
-                this.ctx!.moveTo(ax, cy);
-                this.ctx!.lineTo(ax2, cy);
+                this.ctx!.moveTo(ax, cy - 3);
+                this.ctx!.lineTo(ax2, cy - 3);
                 this.ctx!.stroke();
                 this.ctx!.fillStyle = '#888';
                 this.ctx!.beginPath();
-                this.ctx!.moveTo(ax2, cy);
-                this.ctx!.lineTo(ax2 - 5, cy - 4);
-                this.ctx!.lineTo(ax2 - 5, cy + 4);
+                this.ctx!.moveTo(ax2, cy - 3);
+                this.ctx!.lineTo(ax2 - 5, cy - 7);
+                this.ctx!.lineTo(ax2 - 5, cy + 1);
+                this.ctx!.closePath();
+                this.ctx!.fill();
+                // Backward arrow ←
+                this.ctx!.beginPath();
+                this.ctx!.moveTo(ax2, cy + 3);
+                this.ctx!.lineTo(ax, cy + 3);
+                this.ctx!.stroke();
+                this.ctx!.beginPath();
+                this.ctx!.moveTo(ax, cy + 3);
+                this.ctx!.lineTo(ax + 5, cy - 1);
+                this.ctx!.lineTo(ax + 5, cy + 7);
                 this.ctx!.closePath();
                 this.ctx!.fill();
                 this.ctx!.lineWidth = 1;

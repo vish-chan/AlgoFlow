@@ -420,7 +420,7 @@ export class SimpleEngine {
             const k = arrayPatch.key!;
             // Only animate swaps for default arrays (not LinkedList, Stack, Deque, etc.)
             const dsType = this.tracers[k]?.dsType;
-            if (!dsType || dsType === 'ArrayList' || dsType === 'Collection') {
+            if (!dsType || dsType === 'ArrayList' || dsType === 'Deque' || dsType === 'Collection') {
             const idxA = arrayPatch.args[0], valA = arrayPatch.args[1];
             let foundDepatch = false;
             const maxScan = Math.min(this.cursor + 6, this.chunks.length);
