@@ -386,7 +386,13 @@ export class SimpleEngine {
                         if (c?.type === 'array') {
                             return { ...c, dsType: c.dsType };
                         }
-                        return c;
+                        if (c?.type === 'log') {
+                            return { ...c, logs: [...c.logs] };
+                        }
+                        if (c?.type === 'variables') {
+                            return { ...c, patchState: c.patchState ? { ...c.patchState } : undefined };
+                        }
+                        return { ...c };
                     })
                     .filter((child: any) => child);
                 this.renderer.setData({ type: 'layout', children });
