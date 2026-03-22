@@ -742,13 +742,9 @@ export class SimpleRenderer {
         const n = nodes.length;
         const nr = nodeR ?? Math.max(10, Math.min(20, 200 / Math.max(n, 1)));
 
-        const titleH = title ? 25 : 0;
-        if (title) {
-            this.ctx.fillStyle = '#aaa';
-            this.ctx.font = '12px sans-serif';
-            this.ctx.textAlign = 'center';
-            this.ctx.fillText(title, x + width / 2, y + 18);
-        }
+        const badge = layout === 'tree' ? 'Tree' : 'Graph';
+        const titleH = 25;
+        this.drawTitleWithBadge(title || badge, badge, x + width / 2, y + 14, 12);
 
         const edgeSet = new Set(visitedEdges || []);
         const labels = nodeLabels || [];
