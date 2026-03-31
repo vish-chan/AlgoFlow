@@ -15,6 +15,8 @@ export class SimpleRenderer {
     private animFrameId: number | null = null;
     private resizeObserver: ResizeObserver | null = null;
     private clickRegions: { x: number; y: number; w: number; h: number; action: () => void }[] = [];
+    private tooltipRegions: { x: number; y: number; w: number; h: number; text: string }[] = [];
+    private lastChildTooltipRegions: { x: number; y: number; w: number; h: number; text: string }[] = [];
     private handleClick: ((e: MouseEvent) => void) | null = null;
     private expandedFrames: Set<number> = new Set();
     private hoveredRegionIdx: number = -1;
@@ -137,6 +139,7 @@ export class SimpleRenderer {
     private render() {
         if (!this.ctx || !this.canvas) return;
         this.clickRegions = [];
+        this.tooltipRegions = [];
         
         const dpr = window.devicePixelRatio || 1;
         this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -151,13 +154,22 @@ export class SimpleRenderer {
             this.ctx.textBaseline = 'middle';
             const cx = width / 2, cy = height / 2;
 
-            this.ctx.fillStyle = '#666';
-            this.ctx.font = 'bold 18px sans-serif';
-            this.ctx.fillText('Write Java → Click Run → Watch it animate', cx, cy - 30);
+            // Icon
+            this.ctx.fillStyle = '#333';
+            this.ctx.font = '48px sans-serif';
+            this.ctx.fillText('▶', cx, cy - 50);
+
+            this.ctx.fillStyle = '#888';
+            this.ctx.font = 'bold 16px sans-serif';
+            this.ctx.fillText('Write Java · Click Run · Watch it animate', cx, cy + 10);
 
             this.ctx.fillStyle = '#555';
-            this.ctx.font = '13px sans-serif';
-            this.ctx.fillText('Use Templates for quick starters or Examples for full algorithms', cx, cy + 10);
+            this.ctx.font = '12px sans-serif';
+            this.ctx.fillText('Use Templates for quick starters or Examples for full algorithms', cx, cy + 36);
+
+            this.ctx.fillStyle = '#444';
+            this.ctx.font = '11px sans-serif';
+            this.ctx.fillText('Space = play/pause · ← → = step · Home = reset', cx, cy + 58);
 
             return;
         }
@@ -467,8 +479,10 @@ export class SimpleRenderer {
                 offsetX = i === anim.i ? t * dist : -t * dist;
             }
             const cx = startX + i * cellWidth + offsetX;
+            if (patched) { this.ctx!.shadowColor = '#f44336'; this.ctx!.shadowBlur = 10; }
             this.ctx!.fillStyle = (isSwapping || patched) ? '#f44336' : (selected ? '#2196F3' : '#333');
             this.ctx!.fillRect(cx + 2, startY, cellWidth - 4, cellHeight);
+            this.ctx!.shadowColor = 'transparent'; this.ctx!.shadowBlur = 0;
             this.ctx!.strokeStyle = '#666';
             this.ctx!.strokeRect(cx + 2, startY, cellWidth - 4, cellHeight);
             this.ctx!.fillStyle = '#fff';
@@ -476,6 +490,7 @@ export class SimpleRenderer {
             this.ctx!.textAlign = 'center';
             this.ctx!.textBaseline = 'middle';
             this.ctx!.fillText(String(value), cx + cellWidth / 2, startY + cellHeight / 2);
+            this.tooltipRegions.push({ x: cx + 2, y: startY, w: cellWidth - 4, h: cellHeight, text: `[${i}] = ${value}` });
             this.ctx!.fillStyle = '#888';
             this.ctx!.font = `${large ? 12 : 10}px monospace`;
             this.ctx!.fillText(String(i), startX + i * cellWidth + cellWidth / 2, startY + cellHeight + (large ? 20 : 15));
@@ -521,6 +536,7 @@ export class SimpleRenderer {
             this.ctx!.textAlign = 'center';
             this.ctx!.textBaseline = 'middle';
             this.ctx!.fillText(this.truncateText(String(value), nodeW - 8), nx + nodeW / 2, cy);
+            this.tooltipRegions.push({ x: nx, y: cy - nodeH / 2, w: nodeW, h: nodeH, text: `[${i}] = ${value}` });
 
             if (i < arr.length - 1) {
                 const ax = nx + nodeW + 2, ax2 = ax + arrowW - 4;
@@ -608,6 +624,7 @@ export class SimpleRenderer {
             this.ctx!.textAlign = 'center';
             this.ctx!.textBaseline = 'middle';
             this.ctx!.fillText(String(value), cx + cellWidth / 2, startY + cellHeight / 2);
+            this.tooltipRegions.push({ x: cx + 2, y: startY, w: cellWidth - 4, h: cellHeight, text: `[${i}] = ${value}` });
 
             if (i === topIdx) {
                 this.ctx!.fillStyle = '#4CAF50';
@@ -632,6 +649,10 @@ export class SimpleRenderer {
         return this.hoveredRegionIdx;
     }
 
+    getTooltipRegions() {
+        return this.lastChildTooltipRegions;
+    }
+
     renderChildToCanvas(canvas: HTMLCanvasElement, child: any) {
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
@@ -640,6 +661,7 @@ export class SimpleRenderer {
         this.canvas = canvas;
         this.ctx = ctx;
         this.clickRegions = [];
+        this.tooltipRegions = [];
 
         const dpr = window.devicePixelRatio || 1;
         const width = canvas.width / dpr;
@@ -663,9 +685,16 @@ export class SimpleRenderer {
             this.renderVariablesInBounds(child.vars, child.title, 0, 0, width, height, child.patchState);
         } else if (child?.type === 'variablesGroup') {
             this.renderVariablesGroupInBounds(child.items, 0, 0, width);
+        } else {
+            this.ctx.fillStyle = '#444';
+            this.ctx.font = '12px sans-serif';
+            this.ctx.textAlign = 'center';
+            this.ctx.textBaseline = 'middle';
+            this.ctx.fillText('waiting for data…', width / 2, height / 2);
         }
 
         this.lastChildClickRegions = this.clickRegions;
+        this.lastChildTooltipRegions = this.tooltipRegions;
         this.canvas = prevCanvas;
         this.ctx = prevCtx;
     }
@@ -761,10 +790,16 @@ export class SimpleRenderer {
                     const tw = this.ctx.measureText(label).width;
                     const chipW = tw + 10;
                     const patched = patchedRows?.has(v.rowIdx);
+                    if (patched) {
+                        this.ctx.shadowColor = '#f44336';
+                        this.ctx.shadowBlur = 8;
+                    }
                     this.ctx.fillStyle = patched ? '#f44336' : 'rgba(0,0,0,0.35)';
                     this.ctx.beginPath();
                     this.ctx.roundRect(cx, chipY - 7, chipW, 16, 3);
                     this.ctx.fill();
+                    this.ctx.shadowColor = 'transparent';
+                    this.ctx.shadowBlur = 0;
                     this.ctx.strokeStyle = 'rgba(255,255,255,0.25)';
                     this.ctx.beginPath();
                     this.ctx.roundRect(cx, chipY - 7, chipW, 16, 3);
@@ -988,6 +1023,7 @@ export class SimpleRenderer {
             this.ctx.textAlign = 'center';
             this.ctx.textBaseline = 'middle';
             this.ctx.fillText(this.truncateText(label, nr * 2 - 4), pos[i].x, pos[i].y);
+            this.tooltipRegions.push({ x: pos[i].x - nr, y: pos[i].y - nr, w: nr * 2, h: nr * 2, text: label });
         }
 
     }
@@ -1292,8 +1328,14 @@ export class SimpleRenderer {
             }
             
             const isPatched = patchState?.[name]?.patched;
+            if (isPatched) {
+                this.ctx!.shadowColor = '#f44336';
+                this.ctx!.shadowBlur = 8;
+            }
             this.ctx!.fillStyle = isPatched ? '#f44336' : '#333';
             this.ctx!.fillRect(cx, y - 12, chipW, chipH);
+            this.ctx!.shadowColor = 'transparent';
+            this.ctx!.shadowBlur = 0;
             this.ctx!.strokeStyle = '#666';
             this.ctx!.strokeRect(cx, y - 12, chipW, chipH);
             

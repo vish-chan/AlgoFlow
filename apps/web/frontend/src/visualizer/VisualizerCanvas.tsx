@@ -1,10 +1,57 @@
-import { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { getEngine, subscribe } from "./visualizerEngine";
 
-function ChildPane({ child, renderer }: { child: any; renderer: any }) {
+function PaneResizeHandle() {
+    const [dragging, setDragging] = useState(false);
+    return (
+        <div
+            style={{
+                height: 5,
+                cursor: "row-resize",
+                background: dragging ? "#555" : "#2a2a2a",
+                flexShrink: 0,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                transition: "background 0.15s",
+            }}
+            onMouseEnter={e => (e.currentTarget.style.background = '#444')}
+            onMouseLeave={e => { if (!dragging) e.currentTarget.style.background = '#2a2a2a'; }}
+            onMouseDown={e => {
+                setDragging(true);
+                const handle = e.currentTarget;
+                const prev = handle.previousElementSibling as HTMLElement;
+                const next = handle.nextElementSibling as HTMLElement;
+                if (!prev || !next) return;
+                const startY = e.clientY;
+                const prevH = prev.offsetHeight;
+                const nextH = next.offsetHeight;
+                const onMove = (ev: MouseEvent) => {
+                    const dy = ev.clientY - startY;
+                    prev.style.maxHeight = Math.max(40, prevH + dy) + 'px';
+                    next.style.maxHeight = Math.max(40, nextH - dy) + 'px';
+                };
+                const onUp = () => {
+                    setDragging(false);
+                    handle.style.background = '#2a2a2a';
+                    window.removeEventListener('mousemove', onMove);
+                    window.removeEventListener('mouseup', onUp);
+                };
+                window.addEventListener('mousemove', onMove);
+                window.addEventListener('mouseup', onUp);
+            }}
+        >
+            <div style={{ width: 30, height: 2, borderRadius: 1, background: '#555' }} />
+        </div>
+    );
+}
+
+function ChildPane({ child, renderer }: { child: any; renderer: any; isFirst?: boolean }) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const regionsRef = useRef<any[]>([]);
+    const tooltipRef = useRef<any[]>([]);
+    const [tooltip, setTooltip] = useState<{ text: string; x: number; y: number } | null>(null);
     const [, forceUpdate] = useState({});
 
     const paint = useCallback(() => {
@@ -26,6 +73,10 @@ function ChildPane({ child, renderer }: { child: any; renderer: any }) {
         }
         renderer.renderChildToCanvas(canvas, child);
         regionsRef.current = [...renderer.getClickRegions()];
+        tooltipRef.current = [...renderer.getTooltipRegions()];
+        if (child?.type === 'locals' && container.scrollTop > 0) {
+            container.scrollTop = 0;
+        }
     }, [child, renderer]);
 
     useEffect(() => {
@@ -55,17 +106,29 @@ function ChildPane({ child, renderer }: { child: any; renderer: any }) {
         };
         const onMove = (e: MouseEvent) => {
             const idx = hitTest(e);
+            const rect = canvas.getBoundingClientRect();
+            const mx = e.clientX - rect.left;
+            const my = e.clientY - rect.top;
             canvas.style.cursor = idx >= 0 ? 'pointer' : '';
             if (renderer.getHoveredRegion() !== idx) {
                 renderer.setHoveredRegion(idx);
                 paint();
             }
+            let tip: { text: string; x: number; y: number } | null = null;
+            for (const r of tooltipRef.current) {
+                if (mx >= r.x && mx <= r.x + r.w && my >= r.y && my <= r.y + r.h) {
+                    tip = { text: r.text, x: mx, y: r.y };
+                    break;
+                }
+            }
+            setTooltip(tip);
         };
         const onLeave = () => {
             if (renderer.getHoveredRegion() !== -1) {
                 renderer.setHoveredRegion(-1);
                 paint();
             }
+            setTooltip(null);
         };
         canvas.addEventListener('click', onClick);
         canvas.addEventListener('mousemove', onMove);
@@ -98,14 +161,33 @@ function ChildPane({ child, renderer }: { child: any; renderer: any }) {
         <div
             ref={containerRef}
             style={{
+                position: "relative",
                 flex: "0 0 auto",
                 minHeight: 60,
                 maxHeight: maxH,
                 overflow: "auto",
-                borderBottom: "1px solid #333",
+                borderBottom: "none",
+                borderTop: "none",
             }}
         >
             <canvas ref={canvasRef} style={{ display: "block", background: "#111" }} />
+            {tooltip && (
+                <div style={{
+                    position: "absolute",
+                    left: tooltip.x,
+                    top: tooltip.y - 24,
+                    background: "#222",
+                    color: "#fff",
+                    fontSize: 11,
+                    padding: "2px 8px",
+                    borderRadius: 4,
+                    border: "1px solid #555",
+                    pointerEvents: "none",
+                    whiteSpace: "nowrap",
+                    zIndex: 10,
+                    transform: "translateX(-50%)",
+                }}>{tooltip.text}</div>
+            )}
         </div>
     );
 }
@@ -200,7 +282,10 @@ export default function VisualizerCanvas() {
             {isLayout && grouped.length > 0 ? (
                 <div style={{ flex: 1, minHeight: 0, overflowY: "auto", display: "flex", flexDirection: "column", background: "#111" }}>
                     {grouped.map((child: any, i: number) => (
-                        <ChildPane key={child.title || child.type + i} child={child} renderer={renderer} />
+                        <React.Fragment key={child.title || child.type + i}>
+                            <ChildPane child={child} renderer={renderer} isFirst={i === 0} />
+                            {i < grouped.length - 1 && <PaneResizeHandle />}
+                        </React.Fragment>
                     ))}
                 </div>
             ) : null}
