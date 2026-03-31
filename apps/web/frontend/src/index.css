@@ -28,6 +28,26 @@ body {
   min-height: 100vh;
 }
 
+/* Dark scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #1a1a1a;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+*::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

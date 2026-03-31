@@ -703,7 +703,7 @@ export class SimpleRenderer {
         this.ctx.fillStyle = '#aaa';
         this.ctx.font = '12px sans-serif';
         this.ctx.textAlign = 'left';
-        this.ctx.fillText('Call Stack', x + 10, ly);
+        this.ctx.fillText('Call Stack & Locals', x + 10, ly);
         ly += 20;
 
         for (let f = 0; f < frames.length; f++) {

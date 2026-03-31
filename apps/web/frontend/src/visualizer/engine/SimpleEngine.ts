@@ -519,7 +519,13 @@ export class SimpleEngine {
         const tracer = this.tracers[this.root];
         if (tracer?.type !== 'layout') return [];
         return tracer.children
-            .map((k: string) => ({ key: k, title: this.tracers[k]?.title || k, dsType: this.tracers[k]?.dsType }))
+            .map((k: string) => {
+                const t = this.tracers[k];
+                let dsType = t?.dsType;
+                if (!dsType && t?.type === 'graph') dsType = t.layout === 'tree' ? 'Tree' : 'Graph';
+                if (!dsType && t?.type === 'locals') dsType = 'Call Stack';
+                return { key: k, title: t?.title || k, dsType };
+            })
             .filter((c: { key: string; title: string }) => {
                 const t = this.tracers[c.key];
                 if (!t || t.type === 'code' || t.type === 'recursion') return false;
