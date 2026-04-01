@@ -104,7 +104,7 @@ export default function JavaEditor({ mode, onLoadingChange }: { mode?: string; o
     const monacoRef = useRef<any>(null);
     const decorationsRef = useRef<any>(null);
     const menuRef = useRef<HTMLDivElement>(null);
-    const runRef = useRef<() => void>();
+    const runRef = useRef<(() => void) | undefined>(undefined);
     const [activeTab, setActiveTab] = useState<'problem' | 'code'>('problem');
     const [langOpen, setLangOpen] = useState(false);
 

@@ -294,7 +294,7 @@ export default function VisualizerCanvas() {
         });
     };
 
-    useEffect(() => subscribeToPlaying(setPlaying), []);
+    useEffect(() => { const unsub = subscribeToPlaying(setPlaying); return () => { unsub(); }; }, []);
 
     const engine = getEngine();
     const isLayout = engine.isLayoutRoot();

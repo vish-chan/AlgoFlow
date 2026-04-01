@@ -873,16 +873,7 @@ export class SimpleRenderer {
         return Math.max(60, 38 + rowCount * 30);
     }
 
-    private calcLocalsHeight(rows: any[]): number {
-        const frames = this.parseLocalsFrames(rows);
-        let h = 38;
-        for (let f = 0; f < frames.length; f++) {
-            const isTop = f === 0;
-            const show = isTop || this.expandedFrames.has(f);
-            h += (show && frames[f].vars.length > 0) ? 42 : 26;
-        }
-        return Math.max(60, h);
-    }
+
 
     private parseLocalsFrames(rows: any[]): { name: string; vars: { name: string; val: any; rowIdx: number }[] }[] {
         const frames: { name: string; vars: { name: string; val: any; rowIdx: number }[] }[] = [];
