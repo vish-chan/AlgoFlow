@@ -10,6 +10,10 @@ export class SimpleEngine {
     private hiddenChildren: Set<string> = new Set();
     private highlightedLine: number | null = null;
     private batching = false;
+    private activeChildKey: string | null = null;
+    private static readonly TYPE_PRIORITY: Record<string, number> = {
+        graph: 10, array: 9, array2d: 9, log: 5, variables: 3, locals: 1, recursion: 0,
+    };
 
     constructor() {
         this.renderer = new SimpleRenderer();
@@ -38,7 +42,92 @@ export class SimpleEngine {
         this.chunks = chunks;
         this.cursor = 0;
         this.reset();
+        this.precomputeFinalTreeLayouts(commands);
         this.notify();
+    }
+
+    private treeMaxLeaves: Map<string, number> = new Map();
+    private treeMaxDepth: Map<string, number> = new Map();
+    private _maxLocalsRows = 0;
+    private _maxLocalsFrames = 0;
+
+    getMaxLocalsRows(): number { return this._maxLocalsRows; }
+    getMaxLocalsFrames(): number { return this._maxLocalsFrames; }
+
+    private precomputeFinalTreeLayouts(commands: Command[]) {
+        this.treeMaxLeaves.clear();
+        this.treeMaxDepth.clear();
+        this._maxLocalsRows = 0;
+        this._maxLocalsFrames = 0;
+        const localsKeys = new Set<string>();
+        const trackers = new Map<string, { namedNodes: Map<string, number>; edges: [number, number][]; isTree: boolean }>();
+        for (const cmd of commands) {
+            const { key, method, args } = cmd;
+            if (!key) continue;
+            if (method === 'Array2DTracer') {
+                const title = String(args[0] || '').toLowerCase();
+                if (title === 'locals') localsKeys.add(key);
+            }
+            if (method === 'set' && localsKeys.has(key)) {
+                const rawData = args[0];
+                const rows = (rawData?.length === 1 && Array.isArray(rawData[0]) && Array.isArray(rawData[0][0])) ? rawData[0] : rawData;
+                if (Array.isArray(rows)) {
+                    this._maxLocalsRows = Math.max(this._maxLocalsRows, rows.length);
+                    let frames = 0;
+                    for (const r of rows) { if (Array.isArray(r) && String(r[0]).startsWith('\u25b8')) frames++; }
+                    this._maxLocalsFrames = Math.max(this._maxLocalsFrames, frames);
+                }
+            }
+            if (method === 'GraphTracer') {
+                trackers.set(key, { namedNodes: new Map(), edges: [], isTree: false });
+            }
+            const t = trackers.get(key);
+            if (!t) continue;
+            if (method === 'reset') {
+                t.namedNodes.clear(); t.edges.length = 0;
+            } else if (method === 'addNode') {
+                const id = String(args[0]);
+                if (!t.namedNodes.has(id)) t.namedNodes.set(id, t.namedNodes.size);
+            } else if (method === 'addEdge') {
+                const from = t.namedNodes.get(String(args[0])) ?? -1;
+                const to = t.namedNodes.get(String(args[1])) ?? -1;
+                if (from >= 0 && to >= 0) t.edges.push([from, to]);
+            } else if (method === 'layoutTree') {
+                t.isTree = true;
+                // Compute depth and leaf count for this rebuild
+                const n = t.namedNodes.size;
+                const children: number[][] = Array.from({ length: n }, () => []);
+                const hasParent = new Set<number>();
+                for (const [from, to] of t.edges) { children[from].push(to); hasParent.add(to); }
+                let root = 0;
+                for (let i = 0; i < n; i++) { if (!hasParent.has(i)) { root = i; break; } }
+                const depth = new Array(n).fill(0);
+                const queue = [root];
+                const visited = new Set([root]);
+                while (queue.length) {
+                    const nd = queue.shift()!;
+                    for (const c of children[nd]) {
+                        if (!visited.has(c)) { visited.add(c); depth[c] = depth[nd] + 1; queue.push(c); }
+                    }
+                }
+                let leaves = 0;
+                for (let i = 0; i < n; i++) {
+                    const label = [...t.namedNodes.entries()].find(([, v]) => v === i)?.[0];
+                    if (label?.startsWith('null_')) continue;
+                    if (children[i].length === 0) leaves++;
+                }
+                const maxD = Math.max(...depth);
+                this.treeMaxLeaves.set(key, Math.max(this.treeMaxLeaves.get(key) ?? 0, leaves));
+                this.treeMaxDepth.set(key, Math.max(this.treeMaxDepth.get(key) ?? 0, maxD));
+            }
+        }
+    }
+
+    getTreeMaxDimensions(key: string): { maxLeaves: number; maxDepth: number } | undefined {
+        const l = this.treeMaxLeaves.get(key);
+        const d = this.treeMaxDepth.get(key);
+        if (l === undefined || d === undefined) return undefined;
+        return { maxLeaves: l, maxDepth: d };
     }
 
     private reset() {
@@ -48,12 +137,29 @@ export class SimpleEngine {
         this.renderer.setData(null);
     }
 
+    getActiveChildKey(): string | null {
+        return this.activeChildKey;
+    }
+
+    getActiveChildType(): string | null {
+        if (!this.activeChildKey) return null;
+        return this.tracers[this.activeChildKey]?.type || null;
+    }
+
     getHighlightedLine(): number | null {
         return this.highlightedLine;
     }
 
     private applyCommand(command: Command) {
         const { key, method, args } = command;
+
+        // Track which tracer is actively being updated (prefer visual types over bookkeeping)
+        if (key !== null && this.tracers[key] && this.tracers[key].type !== 'code') {
+            const newPriority = SimpleEngine.TYPE_PRIORITY[this.tracers[key].type] ?? 2;
+            const curPriority = this.activeChildKey && this.tracers[this.activeChildKey]
+                ? (SimpleEngine.TYPE_PRIORITY[this.tracers[this.activeChildKey].type] ?? 2) : -1;
+            if (newPriority >= curPriority) this.activeChildKey = key;
+        }
 
         if (key === null && method === 'setRoot') {
             this.root = args[0];
@@ -261,6 +367,10 @@ export class SimpleEngine {
         } else if (key !== null && method === 'visit') {
             if (this.tracers[key]?.type === 'graph') {
                 const t = this.tracers[key];
+                // Clear any previously active node (only one should be active at a time)
+                for (const node of t.nodes) {
+                    if (node.state === 'active') node.state = 'default';
+                }
                 const id = String(args[0]);
                 const nodeIdx = t.namedNodes.has(id) ? t.namedNodes.get(id) : (isNaN(Number(id)) ? -1 : Math.floor(Number(id)));
                 if (nodeIdx >= 0 && t.nodes[nodeIdx]) {
@@ -282,13 +392,23 @@ export class SimpleEngine {
                 const id = String(args[0]);
                 const nodeIdx = t.namedNodes.has(id) ? t.namedNodes.get(id) : (isNaN(Number(id)) ? -1 : Math.floor(Number(id)));
                 if (nodeIdx >= 0 && t.nodes[nodeIdx]) {
-                    t.nodes[nodeIdx].state = 'explored';
+                    t.nodes[nodeIdx].state = 'default';
                 }
                 this.updateRenderer();
             }
         } else if (key !== null && method === 'setVar') {
             if (this.tracers[key]?.type === 'variables') {
                 this.tracers[key].vars[args[0]] = args[1];
+                this.updateRenderer();
+            }
+        } else if (key !== null && method === 'updateNode') {
+            if (this.tracers[key]?.type === 'graph') {
+                const t = this.tracers[key];
+                const id = String(args[0]);
+                const nodeIdx = t.namedNodes.has(id) ? t.namedNodes.get(id) : -1;
+                if (nodeIdx >= 0 && args.length >= 2) {
+                    t.nodeLabels[nodeIdx] = String(args[1]);
+                }
                 this.updateRenderer();
             }
         } else if (key !== null && method === 'select') {
@@ -310,6 +430,9 @@ export class SimpleEngine {
                 this.updateRenderer();
             } else if (this.tracers[key]?.type === 'array2d' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
                 this.tracers[key].data[args[0]][args[1]].selected = false;
+                this.updateRenderer();
+            } else if (this.tracers[key]?.type === 'recursion' && this.tracers[key]?.calls?.[args[0]]) {
+                this.tracers[key].calls[args[0]].active = false;
                 this.updateRenderer();
             }
         } else if (key !== null && method === 'patch') {
@@ -385,33 +508,34 @@ export class SimpleEngine {
             } else if (tracer.type === 'recursion') {
                 this.renderer.setData({ type: 'recursion', calls: tracer.calls, title: tracer.title });
             } else if (tracer.type === 'locals') {
-                this.renderer.setData({ type: 'locals', rows: [...tracer.rows], patchedRows: new Set(tracer.patchedRows), title: tracer.title });
+                this.renderer.setData({ type: 'locals', rows: [...tracer.rows], patchedRows: new Set(tracer.patchedRows), title: tracer.title, maxRows: this._maxLocalsRows, maxFrames: this._maxLocalsFrames });
             } else if (tracer.type === 'variables') {
                 this.renderer.setData({ type: 'variables', vars: tracer.vars, title: tracer.title, patchState: tracer.patchState });
             } else if (tracer.type === 'graph') {
-                this.renderer.setData({ type: 'graph', adjMatrix: tracer.adjMatrix, nodes: tracer.nodes, visitedEdges: [...tracer.visitedEdges], title: tracer.title, directed: tracer.directed, weighted: tracer.weighted, nodeLabels: tracer.nodeLabels, layout: tracer.layout, treeRoot: tracer.treeRoot, edges: tracer.edges, namedNodes: tracer.namedNodes });
+                const graphKey = Object.entries(this.tracers).find(([, v]) => v === tracer)?.[0];
+                this.renderer.setData({ type: 'graph', adjMatrix: tracer.adjMatrix, nodes: tracer.nodes, visitedEdges: [...tracer.visitedEdges], title: tracer.title, directed: tracer.directed, weighted: tracer.weighted, nodeLabels: tracer.nodeLabels, layout: tracer.layout, treeRoot: tracer.treeRoot, edges: tracer.edges, namedNodes: tracer.namedNodes, treeDims: graphKey ? this.getTreeMaxDimensions(graphKey) : undefined });
             } else if (tracer.type === 'layout') {
                 const children = tracer.children
                     .filter((childKey: string) => !this.hiddenChildren.has(childKey) && this.tracers[childKey]?.type !== 'code')
                     .map((childKey: string) => {
                         const c = this.tracers[childKey];
-    
+                        const _tracerKey = childKey;
                         if (c?.type === 'graph') {
-                            return { ...c, visitedEdges: [...c.visitedEdges], directed: c.directed, weighted: c.weighted, nodeLabels: c.nodeLabels, layout: c.layout, treeRoot: c.treeRoot, edges: c.edges, namedNodes: c.namedNodes };
+                            return { ...c, _tracerKey, visitedEdges: [...c.visitedEdges], directed: c.directed, weighted: c.weighted, nodeLabels: c.nodeLabels, layout: c.layout, treeRoot: c.treeRoot, edges: c.edges, namedNodes: c.namedNodes, treeDims: this.getTreeMaxDimensions(childKey) };
                         }
                         if (c?.type === 'array') {
-                            return { ...c, dsType: c.dsType };
+                            return { ...c, _tracerKey, dsType: c.dsType };
                         }
                         if (c?.type === 'log') {
-                            return { ...c, logs: [...c.logs] };
+                            return { ...c, _tracerKey, logs: [...c.logs] };
                         }
                         if (c?.type === 'variables') {
-                            return { ...c, patchState: c.patchState ? { ...c.patchState } : undefined };
+                            return { ...c, _tracerKey, patchState: c.patchState ? { ...c.patchState } : undefined };
                         }
                         if (c?.type === 'locals') {
-                            return { ...c, rows: [...c.rows], patchedRows: new Set(c.patchedRows) };
+                            return { ...c, _tracerKey, rows: [...c.rows], patchedRows: new Set(c.patchedRows), maxRows: this._maxLocalsRows, maxFrames: this._maxLocalsFrames };
                         }
-                        return { ...c };
+                        return { ...c, _tracerKey };
                     })
                     .filter((child: any) => child);
                 this.renderer.setData({ type: 'layout', children });
@@ -421,6 +545,7 @@ export class SimpleEngine {
 
     next(): boolean {
         if (this.cursor >= this.chunks.length) return false;
+        this.activeChildKey = null;
 
         // Swap detection for Array1DTracer only
         const cur = this.chunks[this.cursor];
@@ -559,22 +684,23 @@ export class SimpleEngine {
             .map((childKey: string) => {
                 const c = this.tracers[childKey];
                 if (!c) return null;
+                const _tracerKey = childKey;
                 if (c.type === 'graph') {
-                    return { ...c, visitedEdges: [...c.visitedEdges] };
+                    return { ...c, _tracerKey, visitedEdges: [...c.visitedEdges], treeDims: this.getTreeMaxDimensions(childKey) };
                 }
                 if (c.type === 'array') {
-                    return { ...c };
+                    return { ...c, _tracerKey };
                 }
                 if (c.type === 'log') {
-                    return { ...c, logs: [...c.logs] };
+                    return { ...c, _tracerKey, logs: [...c.logs] };
                 }
                 if (c.type === 'locals') {
-                    return { ...c, rows: [...c.rows], patchedRows: new Set(c.patchedRows) };
+                    return { ...c, _tracerKey, rows: [...c.rows], patchedRows: new Set(c.patchedRows), maxRows: this._maxLocalsRows, maxFrames: this._maxLocalsFrames };
                 }
                 if (c.type === 'variables') {
-                    return { ...c, patchState: c.patchState ? { ...c.patchState } : undefined };
+                    return { ...c, _tracerKey, patchState: c.patchState ? { ...c.patchState } : undefined };
                 }
-                return { ...c };
+                return { ...c, _tracerKey };
             })
             .filter((child: any) => child);
     }

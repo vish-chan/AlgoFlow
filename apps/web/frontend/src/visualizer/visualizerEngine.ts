@@ -4,7 +4,8 @@ export const engine = new SimpleEngine();
 
 let playing = false;
 let playTimer: number | null = null;
-let speed = 500;
+const SPEED_KEY = 'algoflow-speed';
+let speed = (() => { try { const v = localStorage.getItem(SPEED_KEY); return v ? Number(v) : 500; } catch { return 500; } })();
 
 export function loadCommands(commands: any[]) {
     pause();
@@ -68,6 +69,7 @@ export function reset() {
 
 export function setSpeed(newSpeed: number) {
     speed = newSpeed;
+    try { localStorage.setItem(SPEED_KEY, String(newSpeed)); } catch {}
 }
 
 export function subscribe(listener: () => void) {

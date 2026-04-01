@@ -81,6 +81,10 @@ public class VisualizerInitializer {
             return false;
         if (VisualizerRegistry.isRegistered(value))
             return false;
+
+        // Check if it's a tree node — delegate to registry for temp registration
+        VisualizerRegistry.handleTreeLocalVariable(name, value);
+
         boolean is2D = (value instanceof List<?> list) && !list.isEmpty() && list.getFirst() instanceof List;
         if (!registerValue(name, value, is2D))
             return false;

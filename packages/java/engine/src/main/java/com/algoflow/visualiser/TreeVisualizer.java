@@ -11,6 +11,7 @@ public class TreeVisualizer implements Visualizer {
     private final String _valField;
     private final String _leftField;
     private final String _rightField;
+    private final Class<?> _nodeClass;
     private final Set<Object> _knownNodes = Collections.newSetFromMap(new IdentityHashMap<>());
     private Object _lastVisited;
     private Object _rootOwner;
@@ -33,6 +34,7 @@ public class TreeVisualizer implements Visualizer {
         this._leftField = !childFields.isEmpty() ? childFields.get(0) : "left";
         this._rightField = childFields.size() > 1 ? childFields.get(1) : "right";
         this._valField = valField != null ? valField : "val";
+        this._nodeClass = nodeClass;
         this._root = root;
 
         _tracer.directed(true);
@@ -87,6 +89,8 @@ public class TreeVisualizer implements Visualizer {
 
     public void onFieldGet(Object owner, String fieldName) {
         if (!_knownNodes.contains(owner))
+            return;
+        if (_lastVisited == owner)
             return;
         leaveLastVisited(owner);
         _lastVisited = owner;
@@ -158,6 +162,10 @@ public class TreeVisualizer implements Visualizer {
 
     public boolean isTrackedNode(Object obj) {
         return _knownNodes.contains(obj) || obj == _rootOwner;
+    }
+
+    public Class<?> getNodeClass() {
+        return _nodeClass;
     }
 
     private void leaveLastVisited(Object newNode) {

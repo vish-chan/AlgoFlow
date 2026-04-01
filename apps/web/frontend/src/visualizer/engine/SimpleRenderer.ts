@@ -6,6 +6,12 @@ interface SwapAnimation {
     startTime: number;
 }
 
+interface ColorTransition {
+    from: [number, number, number, number];
+    to: [number, number, number, number];
+    startTime: number;
+}
+
 export class SimpleRenderer {
     private canvas: HTMLCanvasElement | null = null;
     private ctx: CanvasRenderingContext2D | null = null;
@@ -13,6 +19,7 @@ export class SimpleRenderer {
     private container: HTMLElement | null = null;
     private swapAnim: SwapAnimation | null = null;
     private animFrameId: number | null = null;
+    private transitionFrameId: number | null = null;
     private resizeObserver: ResizeObserver | null = null;
     private clickRegions: { x: number; y: number; w: number; h: number; action: () => void }[] = [];
     private tooltipRegions: { x: number; y: number; w: number; h: number; text: string }[] = [];
@@ -20,8 +27,11 @@ export class SimpleRenderer {
     private handleClick: ((e: MouseEvent) => void) | null = null;
     private expandedFrames: Set<number> = new Set();
     private hoveredRegionIdx: number = -1;
+    private transitions: Map<string, ColorTransition> = new Map();
+    private childTransitions: Map<string, ColorTransition> = new Map();
 
     private static readonly SWAP_DURATION = 300;
+    private static readonly TRANSITION_DURATION = 200;
 
     mount(container: HTMLElement) {
         this.container = container;
@@ -52,11 +62,13 @@ export class SimpleRenderer {
     unmount() {
         this.resizeObserver?.disconnect();
         if (this.animFrameId !== null) cancelAnimationFrame(this.animFrameId);
+        if (this.transitionFrameId !== null) cancelAnimationFrame(this.transitionFrameId);
         if (this.canvas && this.handleClick) this.canvas.removeEventListener('click', this.handleClick);
         if (this.canvas?.parentElement) {
             this.canvas.parentElement.removeChild(this.canvas);
         }
         this.container = null;
+        this.transitions.clear();
     }
 
     private resize = () => {
@@ -91,6 +103,78 @@ export class SimpleRenderer {
     setData(data: any) {
         this.data = data;
         this.resize();
+        this.scheduleTransitionLoop();
+    }
+
+    private parseRGBA(color: string): [number, number, number, number] {
+        if (color.startsWith('#')) {
+            const hex = color.slice(1);
+            const r = parseInt(hex.substring(0, 2), 16);
+            const g = parseInt(hex.substring(2, 4), 16);
+            const b = parseInt(hex.substring(4, 6), 16);
+            return [r, g, b, 1];
+        }
+        return [0, 0, 0, 1];
+    }
+
+    private transitionColor(key: string, target: string, store?: Map<string, ColorTransition>): string {
+        const map = store || this.transitions;
+        const targetRGBA = this.parseRGBA(target);
+        const existing = map.get(key);
+        const now = performance.now();
+
+        if (!existing) {
+            map.set(key, { from: targetRGBA, to: targetRGBA, startTime: now });
+            return target;
+        }
+
+        if (existing.to[0] === targetRGBA[0] && existing.to[1] === targetRGBA[1] && existing.to[2] === targetRGBA[2]) {
+            const t = Math.min((now - existing.startTime) / SimpleRenderer.TRANSITION_DURATION, 1);
+            if (t >= 1) return target;
+            const e = this.easeInOut(t);
+            const r = Math.round(existing.from[0] + (existing.to[0] - existing.from[0]) * e);
+            const g = Math.round(existing.from[1] + (existing.to[1] - existing.from[1]) * e);
+            const b = Math.round(existing.from[2] + (existing.to[2] - existing.from[2]) * e);
+            return `rgb(${r},${g},${b})`;
+        }
+
+        // Target changed — start new transition from current interpolated value
+        const t = Math.min((now - existing.startTime) / SimpleRenderer.TRANSITION_DURATION, 1);
+        const e = this.easeInOut(t);
+        const curR = Math.round(existing.from[0] + (existing.to[0] - existing.from[0]) * e);
+        const curG = Math.round(existing.from[1] + (existing.to[1] - existing.from[1]) * e);
+        const curB = Math.round(existing.from[2] + (existing.to[2] - existing.from[2]) * e);
+        map.set(key, { from: [curR, curG, curB, 1], to: targetRGBA, startTime: now });
+        return `rgb(${curR},${curG},${curB})`;
+    }
+
+    private hasActiveTransitions(store?: Map<string, ColorTransition>): boolean {
+        const map = store || this.transitions;
+        const now = performance.now();
+        for (const t of map.values()) {
+            if (now - t.startTime < SimpleRenderer.TRANSITION_DURATION) return true;
+        }
+        return false;
+    }
+
+    private scheduleTransitionLoop() {
+        if (this.transitionFrameId !== null) return;
+        if (!this.hasActiveTransitions() && !this.hasActiveTransitions(this.childTransitions)) return;
+        const loop = () => {
+            this.transitionFrameId = null;
+            if (this.hasActiveTransitions() || this.hasActiveTransitions(this.childTransitions)) {
+                this.render();
+                this.onTransitionFrame?.();
+                this.transitionFrameId = requestAnimationFrame(loop);
+            }
+        };
+        this.transitionFrameId = requestAnimationFrame(loop);
+    }
+
+    private onTransitionFrame: (() => void) | null = null;
+
+    setTransitionFrameCallback(cb: (() => void) | null) {
+        this.onTransitionFrame = cb;
     }
 
     animateSwap(_tracerKey: string, i: number, j: number) {
@@ -154,22 +238,27 @@ export class SimpleRenderer {
             this.ctx.textBaseline = 'middle';
             const cx = width / 2, cy = height / 2;
 
-            // Icon
-            this.ctx.fillStyle = '#333';
-            this.ctx.font = '48px sans-serif';
-            this.ctx.fillText('▶', cx, cy - 50);
+            // Play icon in circle
+            this.ctx.fillStyle = '#2a2a2a';
+            this.ctx.beginPath();
+            this.ctx.arc(cx, cy - 40, 32, 0, Math.PI * 2);
+            this.ctx.fill();
+            this.ctx.fillStyle = '#4CAF50';
+            this.ctx.font = '28px sans-serif';
+            this.ctx.fillText('▶', cx + 2, cy - 38);
 
-            this.ctx.fillStyle = '#888';
-            this.ctx.font = 'bold 16px sans-serif';
-            this.ctx.fillText('Write Java · Click Run · Watch it animate', cx, cy + 10);
+            this.ctx.fillStyle = '#aaa';
+            this.ctx.font = 'bold 15px sans-serif';
+            this.ctx.fillText('Write Java · Run · Visualize', cx, cy + 16);
 
             this.ctx.fillStyle = '#555';
             this.ctx.font = '12px sans-serif';
-            this.ctx.fillText('Use Templates for quick starters or Examples for full algorithms', cx, cy + 36);
+            this.ctx.fillText('Arrays, graphs, and trees animate automatically', cx, cy + 40);
 
             this.ctx.fillStyle = '#444';
             this.ctx.font = '11px sans-serif';
-            this.ctx.fillText('Space = play/pause · ← → = step · Home = reset', cx, cy + 58);
+            const isMac = typeof navigator !== 'undefined' && navigator.platform?.includes('Mac');
+            this.ctx.fillText(`${isMac ? '⌘' : 'Ctrl'}+Enter = run · Space = play/pause · ← → = step`, cx, cy + 62);
 
             return;
         }
@@ -187,7 +276,7 @@ export class SimpleRenderer {
         } else if (this.data.type === 'locals') {
             this.renderLocalsInBounds(this.data.rows, this.data.patchedRows, this.data.title, 0, 0, width);
         } else if (this.data.type === 'graph') {
-            this.renderGraphInBounds(this.data.adjMatrix, this.data.nodes, this.data.title, 0, 0, width, height, this.data.visitedEdges, this.data.directed, this.data.weighted, this.data.nodeLabels, this.data.layout, this.data.edges);
+            this.renderGraphInBounds(this.data.adjMatrix, this.data.nodes, this.data.title, 0, 0, width, height, this.data.visitedEdges, this.data.directed, this.data.weighted, this.data.nodeLabels, this.data.layout, this.data.edges, this.data.treeDims);
         } else if (this.data.type === 'layout') {
             this.renderLayout(this.data.children);
         } else {
@@ -299,7 +388,8 @@ export class SimpleRenderer {
         if (child?.type === 'array2d' && child.data) return Math.max(120, 30 + child.data.length * 40);
         if (child?.type === 'variables' && child.vars) return Math.max(60, 45 + 28);
         if (child?.type === 'locals' && child.rows) {
-            return this.calcLocalsHeight(child.rows);
+            const rows = child.maxRows || child.rows.length;
+            return this.calcLocalsHeightFromCount(rows, child.maxFrames);
         }
         if (child?.type === 'variablesGroup') return 25 + child.items.length * 32;
         if (child?.type === 'log' && child.logs) return Math.max(80, 36 + child.logs.length * 16);
@@ -384,7 +474,7 @@ export class SimpleRenderer {
             } else if (child?.type === 'recursion' && child.calls) {
                 this.renderRecursionInBounds(child.calls, child.title, 0, 0, width, sectionHeight, y);
             } else if (child?.type === 'graph') {
-                this.renderGraphInBounds(child.adjMatrix, child.nodes, child.title, 0, 0, width, sectionHeight, child.visitedEdges, child.directed, child.weighted, child.nodeLabels, child.layout, child.edges);
+                this.renderGraphInBounds(child.adjMatrix, child.nodes, child.title, 0, 0, width, sectionHeight, child.visitedEdges, child.directed, child.weighted, child.nodeLabels, child.layout, child.edges, child.treeDims);
             } else if (child?.type === 'variables' && child.vars) {
                 this.renderVariablesInBounds(child.vars, child.title, 0, 0, width, sectionHeight, child.patchState);
             } else if (child?.type === 'variablesGroup') {
@@ -479,8 +569,10 @@ export class SimpleRenderer {
                 offsetX = i === anim.i ? t * dist : -t * dist;
             }
             const cx = startX + i * cellWidth + offsetX;
+            const targetColor = (isSwapping || patched) ? '#f44336' : (selected ? '#2196F3' : '#333333');
+            const cellColor = this.transitionColor(`arr-${i}`, targetColor);
             if (patched) { this.ctx!.shadowColor = '#f44336'; this.ctx!.shadowBlur = 10; }
-            this.ctx!.fillStyle = (isSwapping || patched) ? '#f44336' : (selected ? '#2196F3' : '#333');
+            this.ctx!.fillStyle = cellColor;
             this.ctx!.fillRect(cx + 2, startY, cellWidth - 4, cellHeight);
             this.ctx!.shadowColor = 'transparent'; this.ctx!.shadowBlur = 0;
             this.ctx!.strokeStyle = '#666';
@@ -614,7 +706,8 @@ export class SimpleRenderer {
             const patched = typeof item === 'object' ? item.patched : false;
             const cx = startX + i * cellWidth;
 
-            this.ctx!.fillStyle = patched ? '#f44336' : (selected ? '#2196F3' : '#333');
+            const stackTarget = patched ? '#f44336' : (selected ? '#2196F3' : '#333333');
+            this.ctx!.fillStyle = this.transitionColor(`stack-${i}`, stackTarget);
             this.ctx!.fillRect(cx + 2, startY, cellWidth - 4, cellHeight);
             this.ctx!.strokeStyle = '#666';
             this.ctx!.strokeRect(cx + 2, startY, cellWidth - 4, cellHeight);
@@ -658,8 +751,10 @@ export class SimpleRenderer {
         if (!ctx) return;
         const prevCanvas = this.canvas;
         const prevCtx = this.ctx;
+        const prevTransitions = this.transitions;
         this.canvas = canvas;
         this.ctx = ctx;
+        this.transitions = this.childTransitions;
         this.clickRegions = [];
         this.tooltipRegions = [];
 
@@ -680,7 +775,7 @@ export class SimpleRenderer {
         } else if (child?.type === 'recursion' && child.calls) {
             this.renderRecursionInBounds(child.calls, child.title, 0, 0, width, height, 0);
         } else if (child?.type === 'graph') {
-            this.renderGraphInBounds(child.adjMatrix, child.nodes, child.title, 0, 0, width, height, child.visitedEdges, child.directed, child.weighted, child.nodeLabels, child.layout, child.edges);
+            this.renderGraphInBounds(child.adjMatrix, child.nodes, child.title, 0, 0, width, height, child.visitedEdges, child.directed, child.weighted, child.nodeLabels, child.layout, child.edges, child.treeDims);
         } else if (child?.type === 'variables' && child.vars) {
             this.renderVariablesInBounds(child.vars, child.title, 0, 0, width, height, child.patchState);
         } else if (child?.type === 'variablesGroup') {
@@ -695,8 +790,17 @@ export class SimpleRenderer {
 
         this.lastChildClickRegions = this.clickRegions;
         this.lastChildTooltipRegions = this.tooltipRegions;
+        this.transitions = prevTransitions;
         this.canvas = prevCanvas;
         this.ctx = prevCtx;
+    }
+
+    private calcLocalsHeightFromCount(rowCount: number, maxFrames?: number): number {
+        if (maxFrames && maxFrames > 1) {
+            // Top frame expanded (~46px) + collapsed frames (~26px each) + title (38px)
+            return Math.max(60, 38 + 46 + (maxFrames - 1) * 26);
+        }
+        return Math.max(60, 38 + rowCount * 30);
     }
 
     private calcLocalsHeight(rows: any[]): number {
@@ -727,13 +831,15 @@ export class SimpleRenderer {
         if (!this.ctx) return;
         const frames = this.parseLocalsFrames(rows);
         const csCalls = callStack?.calls || [];
-        let ly = y + 18;
+        let ly = y + (_title ? 18 : 8);
 
-        this.ctx.fillStyle = '#aaa';
-        this.ctx.font = '12px sans-serif';
-        this.ctx.textAlign = 'left';
-        this.ctx.fillText('Call Stack & Locals', x + 10, ly);
-        ly += 20;
+        if (_title) {
+            this.ctx.fillStyle = '#aaa';
+            this.ctx.font = '12px sans-serif';
+            this.ctx.textAlign = 'left';
+            this.ctx.fillText('Call Stack & Locals', x + 10, ly);
+            ly += 20;
+        }
 
         for (let f = 0; f < frames.length; f++) {
             const frame = frames[f];
@@ -903,10 +1009,9 @@ export class SimpleRenderer {
 
     }
 
-    private renderGraphInBounds(adjMatrix: number[][], nodes: any[], title: string | undefined, x: number, y: number, width: number, height: number, visitedEdges?: string[], directed?: boolean, weighted?: boolean, nodeLabels?: string[], layout?: string, edges?: [number, number][]) {
+    private renderGraphInBounds(adjMatrix: number[][], nodes: any[], title: string | undefined, x: number, y: number, width: number, height: number, visitedEdges?: string[], directed?: boolean, weighted?: boolean, nodeLabels?: string[], layout?: string, edges?: [number, number][], treeDims?: { maxLeaves: number; maxDepth: number }) {
         if (!this.ctx || !nodes.length) return;
 
-        // Compute scale factor: shrink large graphs to fit, min 0.5
         const n = nodes.length;
         const nodeR = Math.max(10, Math.min(20, 200 / Math.max(n, 1)));
         const nat = this.graphNaturalSize({ nodes, layout, edges } as any);
@@ -917,25 +1022,24 @@ export class SimpleRenderer {
             this.ctx.save();
             this.ctx.translate(x, y);
             this.ctx.scale(scale, scale);
-            // Render into the scaled coordinate space
             const sw = width / scale;
             const sh = height / scale;
-            this.renderGraphContent(adjMatrix, nodes, title, 0, 0, sw, sh, visitedEdges, directed, weighted, nodeLabels, layout, edges, nodeR);
+            this.renderGraphContent(adjMatrix, nodes, title, 0, 0, sw, sh, visitedEdges, directed, weighted, nodeLabels, layout, edges, nodeR, treeDims);
             this.ctx.restore();
         } else {
-            this.renderGraphContent(adjMatrix, nodes, title, x, y, width, height, visitedEdges, directed, weighted, nodeLabels, layout, edges, nodeR);
+            this.renderGraphContent(adjMatrix, nodes, title, x, y, width, height, visitedEdges, directed, weighted, nodeLabels, layout, edges, nodeR, treeDims);
         }
     }
 
-    private renderGraphContent(adjMatrix: number[][], nodes: any[], title: string | undefined, x: number, y: number, width: number, height: number, visitedEdges?: string[], directed?: boolean, weighted?: boolean, nodeLabels?: string[], layout?: string, edges?: [number, number][], nodeR?: number) {
+    private renderGraphContent(adjMatrix: number[][], nodes: any[], title: string | undefined, x: number, y: number, width: number, height: number, visitedEdges?: string[], directed?: boolean, weighted?: boolean, nodeLabels?: string[], layout?: string, edges?: [number, number][], nodeR?: number, treeDims?: { maxLeaves: number; maxDepth: number }) {
         if (!this.ctx) return;
 
         const n = nodes.length;
         const nr = nodeR ?? Math.max(10, Math.min(20, 200 / Math.max(n, 1)));
 
         const badge = layout === 'tree' ? 'Tree' : 'Graph';
-        const titleH = 25;
-        this.drawTitleWithBadge(title || badge, badge, x + width / 2, y + 14, 12);
+        const titleH = title ? 25 : 0;
+        if (title) this.drawTitleWithBadge(title, badge, x + width / 2, y + 14, 12);
 
         const edgeSet = new Set(visitedEdges || []);
         const labels = nodeLabels || [];
@@ -943,7 +1047,7 @@ export class SimpleRenderer {
         let pos: { x: number; y: number }[];
 
         if (layout === 'tree' && edges?.length) {
-            pos = this.computeTreeLayout(n, edges, x, y + titleH, width, height - titleH, nr);
+            pos = this.computeTreeLayout(n, edges, x, y + titleH, width, height - titleH, nr, treeDims);
         } else {
             const cxC = x + width / 2;
             const cyC = y + titleH + (height - titleH) / 2;
@@ -988,7 +1092,8 @@ export class SimpleRenderer {
                     const w = adjMatrix[i]?.[j] || adjMatrix[j]?.[i];
                     if (!w) continue;
                     const visited = edgeSet.has(`${i}-${j}`);
-                    this.ctx.strokeStyle = visited ? '#4CAF50' : '#555';
+                    const edgeTarget = visited ? '#4CAF50' : '#555555';
+                    this.ctx.strokeStyle = this.transitionColor(`edge-${i}-${j}`, edgeTarget);
                     this.ctx.lineWidth = visited ? 2.5 : 1;
                     this.ctx.beginPath();
                     this.ctx.moveTo(pos[i].x, pos[i].y);
@@ -1013,7 +1118,8 @@ export class SimpleRenderer {
 
             this.ctx.beginPath();
             this.ctx.arc(pos[i].x, pos[i].y, nr, 0, Math.PI * 2);
-            this.ctx.fillStyle = nodes[i].state === 'active' ? '#4CAF50' : nodes[i].state === 'explored' ? '#2E7D32' : '#333';
+            const nodeTarget = nodes[i].state === 'active' ? '#4CAF50' : nodes[i].state === 'explored' ? '#2E7D32' : '#333333';
+            this.ctx.fillStyle = this.transitionColor(`node-${i}`, nodeTarget);
             this.ctx.fill();
             this.ctx.strokeStyle = '#888';
             this.ctx.stroke();
@@ -1028,7 +1134,7 @@ export class SimpleRenderer {
 
     }
 
-    private computeTreeLayout(n: number, edges: [number, number][], x: number, y: number, width: number, height: number, nodeR: number): { x: number; y: number }[] {
+    private computeTreeLayout(n: number, edges: [number, number][], x: number, y: number, width: number, height: number, nodeR: number, treeDims?: { maxLeaves: number; maxDepth: number }): { x: number; y: number }[] {
         if (n === 0) return [];
         // Build children map from directed edges
         const children: number[][] = Array.from({ length: n }, () => []);
@@ -1093,15 +1199,18 @@ export class SimpleRenderer {
 
         const maxDepth = Math.max(...depth);
         const totalLeaves = leafCounter || 1;
+        // Use precomputed max dimensions for stable centering across rebuilds
+        const spacingLeaves = treeDims ? Math.max(totalLeaves, treeDims.maxLeaves) : totalLeaves;
+        const spacingDepth = treeDims ? Math.max(maxDepth, treeDims.maxDepth) : maxDepth;
         const pad = nodeR + 10;
         const usableW = width - pad * 2;
         const usableH = height - pad * 2;
-        const levelH = maxDepth > 0 ? usableH / maxDepth : 0;
+        const levelH = spacingDepth > 0 ? usableH / spacingDepth : 0;
 
         const pos: { x: number; y: number }[] = new Array(n);
         for (let i = 0; i < n; i++) {
             pos[i] = {
-                x: x + pad + (totalLeaves > 1 ? (leafIndex[i] / (totalLeaves - 1)) * usableW : usableW / 2),
+                x: x + pad + (spacingLeaves > 1 ? (leafIndex[i] / (spacingLeaves - 1)) * usableW : usableW / 2),
                 y: y + pad + depth[i] * levelH,
             };
         }
@@ -1285,11 +1394,14 @@ export class SimpleRenderer {
         if (!this.ctx) return;
         
         let ly = y + 18;
-        this.ctx.fillStyle = '#aaa';
-        this.ctx.font = '12px sans-serif';
-        this.ctx.textAlign = 'left';
-        this.ctx.fillText('Local Variables', x + 10, ly);
-        ly += 20;
+        const hasTitle = items.some((item: any) => item.title);
+        if (hasTitle) {
+            this.ctx.fillStyle = '#aaa';
+            this.ctx.font = '12px sans-serif';
+            this.ctx.textAlign = 'left';
+            this.ctx.fillText('Local Variables', x + 10, ly);
+            ly += 20;
+        }
         
         this.ctx.font = '11px sans-serif';
         const subTitles = items.map((item: any) =>
@@ -1332,7 +1444,8 @@ export class SimpleRenderer {
                 this.ctx!.shadowColor = '#f44336';
                 this.ctx!.shadowBlur = 8;
             }
-            this.ctx!.fillStyle = isPatched ? '#f44336' : '#333';
+            const chipTarget = isPatched ? '#f44336' : '#333333';
+            this.ctx!.fillStyle = this.transitionColor(`var-${name}`, chipTarget);
             this.ctx!.fillRect(cx, y - 12, chipW, chipH);
             this.ctx!.shadowColor = 'transparent';
             this.ctx!.shadowBlur = 0;

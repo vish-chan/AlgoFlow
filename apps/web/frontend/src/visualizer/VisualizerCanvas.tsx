@@ -1,5 +1,42 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
-import { getEngine, subscribe } from "./visualizerEngine";
+import { useEffect, useRef, useState, useCallback } from "react";
+import { getEngine, subscribe, subscribeToPlaying } from "./visualizerEngine";
+
+function PaneLabel({ child, collapsed, onToggle }: { child: any; collapsed: boolean; onToggle: () => void }) {
+    const type = child?.type || '';
+    const title = child?.title || '';
+    const typeIcon: Record<string, string> = {
+        array: '▦', array2d: '▦', graph: '◉', log: '▸', locals: '⧉',
+        variables: '𝑥', variablesGroup: '𝑥', recursion: '↻',
+    };
+    const displayName: Record<string, string> = {
+        locals: 'Call Stack & Locals',
+        variablesGroup: 'Local Variables',
+        log: title === 'Error' ? '⚠ Error' : (title || 'Log'),
+        graph: title || 'Graph',
+        array: title || 'Array',
+        array2d: title || '2D Array',
+        recursion: title || 'Recursion',
+        variables: title || 'Variables',
+    };
+    const label = displayName[type] || title || type;
+    const icon = typeIcon[type] || '';
+    return (
+        <div
+            onClick={onToggle}
+            style={{
+                padding: '3px 10px', fontSize: 11, color: '#777', background: '#1a1a1a',
+                borderBottom: '1px solid #222', display: 'flex', alignItems: 'center', gap: 5,
+                flexShrink: 0, userSelect: 'none', cursor: 'pointer',
+            }}
+            onMouseEnter={e => (e.currentTarget.style.color = '#aaa')}
+            onMouseLeave={e => (e.currentTarget.style.color = '#777')}
+        >
+            <span style={{ fontSize: 8, opacity: 0.5 }}>{collapsed ? '▶' : '▼'}</span>
+            <span style={{ opacity: 0.6 }}>{icon}</span>
+            {label}
+        </div>
+    );
+}
 
 function PaneResizeHandle() {
     const handleRef = useRef<HTMLDivElement>(null);
@@ -81,7 +118,7 @@ function PaneResizeHandle() {
     );
 }
 
-function ChildPane({ child, renderer }: { child: any; renderer: any; isFirst?: boolean }) {
+function ChildPane({ child, renderer, autoScroll, hideTitle }: { child: any; renderer: any; isFirst?: boolean; autoScroll?: boolean; hideTitle?: boolean }) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const regionsRef = useRef<any[]>([]);
@@ -106,7 +143,8 @@ function ChildPane({ child, renderer }: { child: any; renderer: any; isFirst?: b
             canvas.style.width = w + "px";
             canvas.style.height = h + "px";
         }
-        renderer.renderChildToCanvas(canvas, child);
+        const renderChild = hideTitle ? { ...child, title: undefined } : child;
+        renderer.renderChildToCanvas(canvas, renderChild);
         regionsRef.current = [...renderer.getClickRegions()];
         tooltipRef.current = [...renderer.getTooltipRegions()];
         if (child?.type === 'locals' && container.scrollTop > 0) {
@@ -186,11 +224,25 @@ function ChildPane({ child, renderer }: { child: any; renderer: any; isFirst?: b
         return () => renderer.setSwapFrameCallback(prev);
     }, [child, renderer, paint]);
 
+    // Repaint during color transitions
+    useEffect(() => {
+        renderer.setTransitionFrameCallback(() => paint());
+        return () => renderer.setTransitionFrameCallback(null);
+    }, [renderer, paint]);
+
+    // Auto-scroll log panes to bottom during playback
+    useEffect(() => {
+        if (autoScroll && containerRef.current) {
+            const el = containerRef.current;
+            el.scrollTop = el.scrollHeight;
+        }
+    });
+
     const naturalH = renderer.calcChildHeight(child);
     const naturalW = renderer.calcChildWidth(child);
     const isLocals = child?.type === 'locals';
-    const needsScroll = naturalH > 450 || naturalW > 0 || isLocals;
-    const maxH = needsScroll ? Math.max(60, isLocals ? 300 : Math.round(naturalH * 0.9)) : naturalH;
+    const needsScroll = naturalW > 0 || isLocals;
+    const maxH = needsScroll ? Math.max(60, naturalH) : naturalH;
 
     return (
         <div
@@ -230,10 +282,20 @@ function ChildPane({ child, renderer }: { child: any; renderer: any; isFirst?: b
 export default function VisualizerCanvas() {
     const containerRef = useRef<HTMLDivElement>(null);
     const [, forceUpdate] = useState({});
-    const [panelOpen, setPanelOpen] = useState(false);
+    const [playing, setPlaying] = useState(false);
+    const [collapsedPanes, setCollapsedPanes] = useState<Set<string>>(new Set());
+
+    const toggleCollapse = (key: string) => {
+        setCollapsedPanes(prev => {
+            const next = new Set(prev);
+            if (next.has(key)) next.delete(key); else next.add(key);
+            return next;
+        });
+    };
+
+    useEffect(() => subscribeToPlaying(setPlaying), []);
 
     const engine = getEngine();
-    const layoutChildren = engine.getLayoutChildren();
     const isLayout = engine.isLayoutRoot();
 
     useEffect(() => {
@@ -248,80 +310,88 @@ export default function VisualizerCanvas() {
 
     const renderer = engine.getRenderer();
     const grouped = isLayout ? renderer.groupLayoutChildren(engine.getLayoutData()) : [];
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const paneRefs = useRef<(HTMLElement | null)[]>([]);
+    const [offscreenActivity, setOffscreenActivity] = useState<'above' | 'below' | null>(null);
+    const activeTypeRef = useRef<string | null>(null);
+
+    // Track which pane is active and whether it's off-screen
+    const offscreenRef = useRef<'above' | 'below' | null>(null);
+    useEffect(() => {
+        if (!playing) {
+            if (offscreenRef.current !== null) { offscreenRef.current = null; setOffscreenActivity(null); }
+            return;
+        }
+        const activeKey = engine.getActiveChildKey();
+        const activeType = engine.getActiveChildType();
+        if (!activeKey || !activeType || activeType === 'recursion' || activeType === 'locals') return;
+        activeTypeRef.current = activeKey;
+        const idx = grouped.findIndex((c: any) => c._tracerKey === activeKey);
+        if (idx < 0 || !scrollRef.current) return;
+        const el = paneRefs.current[idx];
+        if (!el) return;
+        const containerRect = scrollRef.current.getBoundingClientRect();
+        const elRect = el.getBoundingClientRect();
+        let next: 'above' | 'below' | null = null;
+        if (elRect.bottom < containerRect.top) next = 'above';
+        else if (elRect.top > containerRect.bottom) next = 'below';
+        if (next !== offscreenRef.current) { offscreenRef.current = next; setOffscreenActivity(next); }
+    });
+
+    const scrollToActive = () => {
+        if (!scrollRef.current) return;
+        const activeKey = activeTypeRef.current;
+        if (!activeKey) return;
+        const idx = grouped.findIndex((c: any) => c._tracerKey === activeKey);
+        const el = idx >= 0 ? paneRefs.current[idx] : null;
+        if (el) {
+            const containerRect = scrollRef.current.getBoundingClientRect();
+            const elRect = el.getBoundingClientRect();
+            scrollRef.current.scrollTop += elRect.top - containerRect.top;
+        }
+        setOffscreenActivity(null);
+    };
 
     return (
         <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "100%" }}>
-            {layoutChildren.length > 0 && (
-                <div style={{ background: "#1a1a1a", borderBottom: "1px solid #333" }}>
-                    <button
-                        onClick={() => setPanelOpen(!panelOpen)}
-                        onMouseEnter={e => (e.currentTarget.style.color = '#ccc')}
-                        onMouseLeave={e => (e.currentTarget.style.color = '#888')}
-                        style={{
-                            padding: "4px 10px",
-                            fontSize: 12,
-                            background: "transparent",
-                            color: "#888",
-                            border: "none",
-                            cursor: "pointer",
-                            width: "100%",
-                            textAlign: "left",
-                            transition: "color 0.15s",
-                        }}
-                    >
-                        ⚙ Panels {panelOpen ? "▾" : "▸"}
-                    </button>
-                    {panelOpen && (
-                        <div style={{ display: "flex", gap: 6, padding: "4px 10px 8px", flexWrap: "wrap" }}>
-                            {layoutChildren.map(({ key, title, dsType }) => {
-                                const hidden = engine.isChildHidden(key);
-                                return (
-                                    <button
-                                        key={key}
-                                        onClick={() => engine.toggleChild(key)}
-                                        onMouseEnter={e => { e.currentTarget.style.filter = 'brightness(1.3)'; }}
-                                        onMouseLeave={e => { e.currentTarget.style.filter = ''; }}
-                                        style={{
-                                            padding: "2px 10px",
-                                            fontSize: 12,
-                                            background: hidden ? "#333" : "#444",
-                                            color: hidden ? "#666" : "#ddd",
-                                            border: `1px solid ${hidden ? "#444" : "#666"}`,
-                                            borderRadius: 4,
-                                            cursor: "pointer",
-                                            textDecoration: hidden ? "line-through" : "none",
-                                            display: "flex",
-                                            alignItems: "center",
-                                            gap: 4,
-                                            transition: "filter 0.15s",
-                                        }}
-                                    >
-                                        {dsType && (
-                                            <span style={{
-                                                background: "#2a4a3a",
-                                                color: "#4CAF50",
-                                                fontSize: 10,
-                                                fontWeight: "bold",
-                                                padding: "1px 4px",
-                                                borderRadius: 3,
-                                            }}>{dsType}</span>
-                                        )}
-                                        {title}
-                                    </button>
-                                );
-                            })}
+            {isLayout && grouped.length > 0 ? (
+                <div style={{ flex: 1, minHeight: 0, position: 'relative', background: '#111' }}>
+                    <div ref={scrollRef} style={{ height: '100%', overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
+                        {grouped.map((child: any, i: number) => {
+                            const paneKey = child.title || child.type + i;
+                            const collapsed = collapsedPanes.has(paneKey);
+                            return (
+                                <div key={paneKey} ref={el => { paneRefs.current[i] = el; }}>
+                                    <PaneLabel child={child} collapsed={collapsed} onToggle={() => toggleCollapse(paneKey)} />
+                                    {!collapsed && (
+                                        <>
+                                            <ChildPane child={child} renderer={renderer} isFirst={i === 0} autoScroll={playing && child?.type === 'log'} hideTitle />
+                                            {i < grouped.length - 1 && <PaneResizeHandle />}
+                                        </>
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
+                    {offscreenActivity && (
+                        <div
+                            onClick={scrollToActive}
+                            style={{
+                                position: 'absolute',
+                                right: 12,
+                                [offscreenActivity === 'above' ? 'top' : 'bottom']: 12,
+                                zIndex: 20,
+                                width: 32, height: 32, borderRadius: '50%',
+                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                background: '#4CAF50',
+                                color: '#fff', fontSize: 16,
+                                cursor: 'pointer',
+                                boxShadow: '0 2px 8px rgba(0,0,0,0.4)',
+                            }}
+                        >
+                            {offscreenActivity === 'above' ? '↑' : '↓'}
                         </div>
                     )}
-                </div>
-            )}
-            {isLayout && grouped.length > 0 ? (
-                <div style={{ flex: 1, minHeight: 0, overflowY: "auto", display: "flex", flexDirection: "column", background: "#111" }}>
-                    {grouped.map((child: any, i: number) => (
-                        <React.Fragment key={child.title || child.type + i}>
-                            <ChildPane child={child} renderer={renderer} isFirst={i === 0} />
-                            {i < grouped.length - 1 && <PaneResizeHandle />}
-                        </React.Fragment>
-                    ))}
                 </div>
             ) : null}
             <div

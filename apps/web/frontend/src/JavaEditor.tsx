@@ -6,19 +6,52 @@ import { DEFAULT_JAVA_CODE, ALGORITHMS, CATEGORIES, TEMPLATES, TEMPLATE_CATEGORI
 import { registerJavaCompletions } from "./constants/javaCompletions";
 import { engine } from "./visualizer/visualizerEngine";
 
-export default function JavaEditor() {
-    const [code, setCode] = useState(DEFAULT_JAVA_CODE);
+const CODE_KEY = 'algoflow-code';
+
+export default function JavaEditor({ onLoadingChange }: { onLoadingChange?: (loading: boolean) => void }) {
+    const [code, setCode] = useState(() => {
+        try { const v = localStorage.getItem(CODE_KEY); return v || DEFAULT_JAVA_CODE; } catch { return DEFAULT_JAVA_CODE; }
+    });
     const [loading, setLoading] = useState(false);
+    const [editorReady, setEditorReady] = useState(false);
     const [menuOpen, setMenuOpen] = useState<'algorithms' | 'templates' | null>(null);
     const editorRef = useRef<any>(null);
     const monacoRef = useRef<any>(null);
     const decorationsRef = useRef<any>(null);
+    const menuRef = useRef<HTMLDivElement>(null);
+    const runRef = useRef<() => void>();
 
     const handleMount = (editor: any, monaco: any) => {
         editorRef.current = editor;
         monacoRef.current = monaco;
         registerJavaCompletions(monaco);
+        setEditorReady(true);
     };
+
+    // Close dropdown on outside click
+    useEffect(() => {
+        if (!menuOpen) return;
+        const onClick = (e: MouseEvent) => {
+            if (menuRef.current && !menuRef.current.contains(e.target as Node)) setMenuOpen(null);
+        };
+        document.addEventListener('mousedown', onClick);
+        return () => document.removeEventListener('mousedown', onClick);
+    }, [menuOpen]);
+
+    // Cmd/Ctrl+Enter to run
+    useEffect(() => {
+        runRef.current = handleRun;
+    });
+    useEffect(() => {
+        const onKey = (e: KeyboardEvent) => {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+                e.preventDefault();
+                runRef.current?.();
+            }
+        };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, []);
 
     useEffect(() => {
         const unsubscribe = subscribe(() => {
@@ -48,8 +81,18 @@ export default function JavaEditor() {
         return () => { unsubscribe(); };
     }, []);
 
+    const setLoadingState = (v: boolean) => {
+        setLoading(v);
+        onLoadingChange?.(v);
+    };
+
+    const persistCode = (c: string) => {
+        setCode(c);
+        try { localStorage.setItem(CODE_KEY, c); } catch {}
+    };
+
     const handleRun = async () => {
-        setLoading(true);
+        setLoadingState(true);
         
         try {
             const result = await executeJavaCode(code);
@@ -67,7 +110,7 @@ export default function JavaEditor() {
             ]);
             play();
         } finally {
-            setLoading(false);
+            setLoadingState(false);
         }
     };
 
@@ -75,6 +118,7 @@ export default function JavaEditor() {
         <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
             <style>{`.highlighted-line { background: rgba(255, 213, 79, 0.15); }`}</style>
             <div
+                ref={menuRef}
                 style={{
                     padding: "4px 10px",
                     backgroundColor: "#1e1e1e",
@@ -114,7 +158,7 @@ export default function JavaEditor() {
                                     {TEMPLATES.filter(t => t.category === cat).map(t => (
                                         <div
                                             key={t.name}
-                                            onClick={() => { setCode(t.code); setMenuOpen(null); reset(); }}
+                                            onClick={() => { persistCode(t.code); setMenuOpen(null); reset(); }}
                                             style={{ padding: "6px 16px", fontSize: 13, color: "#ddd", cursor: "pointer" }}
                                             onMouseEnter={e => (e.currentTarget.style.background = "#333")}
                                             onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
@@ -157,7 +201,7 @@ export default function JavaEditor() {
                                     {ALGORITHMS.filter(a => a.category === cat).map(a => (
                                         <div
                                             key={a.name}
-                                            onClick={() => { setCode(a.code); setMenuOpen(null); reset(); }}
+                                            onClick={() => { persistCode(a.code); setMenuOpen(null); reset(); }}
                                             style={{ padding: "6px 16px", fontSize: 13, color: "#ddd", cursor: "pointer" }}
                                             onMouseEnter={e => (e.currentTarget.style.background = "#333")}
                                             onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
@@ -171,14 +215,22 @@ export default function JavaEditor() {
                     )}
                 </div>
             </div>
-            <div style={{ flex: 1, minHeight: 0 }}>
+            <div style={{ flex: 1, minHeight: 0, position: 'relative' }}>
+                {!editorReady && (
+                    <div style={{
+                        position: 'absolute', inset: 0, background: '#1e1e1e', zIndex: 1,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}>
+                        <div style={{ color: '#555', fontSize: 13 }}>Loading editor…</div>
+                    </div>
+                )}
                 <Editor
                     width="100%"
                     height="100%"
                     language="java"
                     theme="vs-dark"
                     value={code}
-                    onChange={(v) => { setCode(v ?? ""); reset(); }}
+                    onChange={(v) => { persistCode(v ?? ""); reset(); }}
                     onMount={handleMount}
                     options={{
                         fontSize: 14,
@@ -202,15 +254,25 @@ export default function JavaEditor() {
             >
                 <span style={{ fontSize: 12, color: "#aaa", background: "transparent", border: "1px solid #444", borderRadius: 3, padding: "3px 8px", fontWeight: 600 }}>☕ Java 25</span>
                 <button
+                    data-tour="run"
                     onClick={handleRun}
                     disabled={loading}
+                    title={`Run (${navigator.platform.includes('Mac') ? '⌘' : 'Ctrl'}+Enter)`}
                     style={{
-                        padding: "6px 12px",
+                        padding: "6px 16px",
                         fontSize: 14,
                         cursor: loading ? "not-allowed" : "pointer",
+                        background: loading ? '#333' : '#4CAF50',
+                        color: '#fff',
+                        border: 'none',
+                        borderRadius: 4,
+                        fontWeight: 600,
+                        transition: 'background 0.15s',
                     }}
+                    onMouseEnter={e => { if (!loading) e.currentTarget.style.background = '#43a047'; }}
+                    onMouseLeave={e => { if (!loading) e.currentTarget.style.background = '#4CAF50'; }}
                 >
-                    {loading ? "Running..." : "Run"}
+                    {loading ? "Running…" : "▶ Run"}
                 </button>
             </div>
         </div>

@@ -105,6 +105,10 @@ public class VisualizerRegistry {
             _callStackVisualizer.onEnter(methodName, args);
             ensureLocalVariablesVisualizer();
             _localVariablesVisualizer.pushFrame(methodName);
+
+            List<TreeVisualizer> tempTrees = handleTreeArgs(methodName, args);
+            _tempTreeStack.push(tempTrees);
+
             highlightLine(getCallerLineNumber());
         } finally {
             _processing = false;
@@ -122,10 +126,65 @@ public class VisualizerRegistry {
                 if (_localVariablesVisualizer != null) {
                     _localVariablesVisualizer.popFrame();
                 }
+
+                if (!_tempTreeStack.isEmpty()) {
+                    List<TreeVisualizer> tempTrees = _tempTreeStack.pop();
+                    for (TreeVisualizer tv : tempTrees) {
+                        _treeVisualizers.remove(tv);
+                        _visualizers.remove(tv.getCommander());
+                    }
+                    if (!tempTrees.isEmpty()) setLayout();
+                }
+
                 highlightLine(getCallerCallerLineNumber());
             }
         } finally {
             _processing = false;
+        }
+    }
+
+    private static List<TreeVisualizer> handleTreeArgs(String methodName, Object[] args) {
+        if (args == null) return new ArrayList<>();
+        int depth = _tempTreeStack.size();
+        List<TreeVisualizer> tempTrees = new ArrayList<>();
+        for (int i = 0; i < args.length; i++) {
+            String name = methodName + " → arg" + i;
+            if (depth > 0) name += " #" + depth;
+            handleTreeValue(args[i], name, tempTrees);
+        }
+        return tempTrees;
+    }
+
+    public static void handleTreeLocalVariable(String varName, Object value) {
+        if (value == null || _tempTreeStack.isEmpty()) return;
+        String name = varName;
+        int depth = _tempTreeStack.size() - 1;
+        if (depth > 0) name += " #" + depth;
+        handleTreeValue(value, name, _tempTreeStack.peek());
+    }
+
+
+
+    private static void handleTreeValue(Object value, String name, List<TreeVisualizer> tempTrees) {
+        if (value == null) return;
+
+        // Already tracked → visit it
+        for (TreeVisualizer tv : _treeVisualizers) {
+            if (tv.isTrackedNode(value)) {
+                tv.visit(value);
+                return;
+            }
+        }
+
+        // Matches a known tree node class but untracked → temp register
+        for (TreeVisualizer tv : _treeVisualizers) {
+            if (tv.getNodeClass() == value.getClass()) {
+                TreeVisualizer tempVis = new TreeVisualizer(name, value, value.getClass());
+                registerTree(tempVis);
+                setLayout();
+                tempTrees.add(tempVis);
+                return;
+            }
         }
     }
 
@@ -138,6 +197,7 @@ public class VisualizerRegistry {
     }
 
     private static volatile boolean _processing = false;
+    private static final Deque<List<TreeVisualizer>> _tempTreeStack = new ArrayDeque<>();
 
     public static void onArrayGet(Object array, Object[] args) {
         if (_processing)
