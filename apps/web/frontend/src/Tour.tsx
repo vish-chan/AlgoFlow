@@ -11,6 +11,8 @@ interface Step {
 
 const STEPS: Step[] = [
     { target: "[data-tour='editor']", title: "Code Editor", body: "Write your Java code here. Arrays, graphs, and trees are auto-visualized.", position: "right" },
+    { target: "[data-tour='templates']", title: "Templates", body: "Quick-start templates for arrays, trees, graphs, and more.", position: "bottom" },
+    { target: "[data-tour='examples']", title: "Examples", body: "Pre-built algorithm examples — load one and hit Run to see it visualize.", position: "bottom" },
     { target: "[data-tour='run']", title: "Run", body: "Click Run or press ⌘/Ctrl+Enter to execute and visualize.", position: "top" },
     { target: "[data-tour='visualizer']", title: "Visualizer", body: "Your algorithm animates here — arrays, graphs, trees, and more.", position: "left" },
     { target: "[data-tour='controls']", title: "Playback Controls", body: "Play, pause, step through, scrub, and adjust speed.", position: "top" },
@@ -31,14 +33,19 @@ export function useTour() {
 export default function Tour({ onFinish }: { onFinish: () => void }) {
     const [step, setStep] = useState(0);
     const [rect, setRect] = useState<DOMRect | null>(null);
-
-    const updateRect = useCallback(() => {
-        const el = document.querySelector(STEPS[step].target);
-        if (el) setRect(el.getBoundingClientRect());
-    }, [step]);
+    const [activeSteps, setActiveSteps] = useState<Step[]>([]);
 
     useEffect(() => {
-        // Clear previous rect immediately so we don't flash at the old position
+        setActiveSteps(STEPS.filter(s => document.querySelector(s.target)));
+    }, []);
+
+    const updateRect = useCallback(() => {
+        if (!activeSteps.length) return;
+        const el = document.querySelector(activeSteps[step].target);
+        if (el) setRect(el.getBoundingClientRect());
+    }, [step, activeSteps]);
+
+    useEffect(() => {
         setRect(null);
         const t = setTimeout(updateRect, 150);
         window.addEventListener("resize", updateRect);
@@ -46,15 +53,15 @@ export default function Tour({ onFinish }: { onFinish: () => void }) {
     }, [updateRect]);
 
     const next = () => {
-        if (step < STEPS.length - 1) setStep(step + 1);
+        if (step < activeSteps.length - 1) setStep(step + 1);
         else onFinish();
     };
 
     const skip = () => onFinish();
 
-    if (!rect) return null;
+    if (!rect || !activeSteps.length) return null;
 
-    const s = STEPS[step];
+    const s = activeSteps[step];
     const pad = 6;
     const tipW = 260;
     const tipH = 120;
@@ -132,7 +139,7 @@ export default function Tour({ onFinish }: { onFinish: () => void }) {
                     }),
                 }} />
                 <div style={{ color: "#4CAF50", fontSize: 13, fontWeight: 700, marginBottom: 6 }}>
-                    {step + 1}/{STEPS.length} — {s.title}
+                    {step + 1}/{activeSteps.length} — {s.title}
                 </div>
                 <div style={{ color: "#ccc", fontSize: 12, lineHeight: 1.5, marginBottom: 14 }}>
                     {s.body}
@@ -152,7 +159,7 @@ export default function Tour({ onFinish }: { onFinish: () => void }) {
                             fontWeight: 600, cursor: "pointer",
                         }}
                     >
-                        {step < STEPS.length - 1 ? "Next" : "Got it!"}
+                        {step < activeSteps.length - 1 ? "Next" : "Got it!"}
                     </button>
                 </div>
             </div>

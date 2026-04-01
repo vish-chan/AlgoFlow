@@ -1,0 +1,10 @@
+id: 74
+title: Meeting Rooms II
+difficulty: Medium
+category: Intervals
+leetcodeUrl: https://leetcode.com/problems/meeting-rooms-ii/
+description: >
+  Given an array of meeting time intervals, find the minimum number of conference rooms required.
+examples:
+  - "Input: intervals = [[0,30],[5,10],[15,20]] → Output: 2"
+  - "Input: intervals = [[7,10],[2,4]] → Output: 1"

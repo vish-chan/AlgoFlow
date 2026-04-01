@@ -1,0 +1,11 @@
+id: 73
+title: Meeting Rooms
+difficulty: Easy
+category: Intervals
+leetcodeUrl: https://leetcode.com/problems/meeting-rooms/
+description: >
+  Given an array of meeting time intervals where intervals[i] = [start_i, end_i], determine
+  if a person could attend all meetings.
+examples:
+  - "Input: intervals = [[0,30],[5,10],[15,20]] → Output: false"
+  - "Input: intervals = [[7,10],[2,4]] → Output: true"

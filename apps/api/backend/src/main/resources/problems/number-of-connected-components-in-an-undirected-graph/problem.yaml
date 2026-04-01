@@ -1,0 +1,10 @@
+id: 42
+title: Number of Connected Components
+difficulty: Medium
+category: Graphs
+leetcodeUrl: https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
+description: >
+  Given n nodes labeled from 0 to n-1 and a list of undirected edges, return the number of
+  connected components in the graph.
+examples:
+  - "Input: n = 5, edges = [[0,1],[1,2],[3,4]] → Output: 2"

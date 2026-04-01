@@ -1,0 +1,9 @@
+id: 44
+title: Alien Dictionary
+difficulty: Hard
+category: Graphs
+leetcodeUrl: https://leetcode.com/problems/alien-dictionary/
+description: >
+  Given a sorted dictionary of an alien language, find the order of characters in the alien language.
+examples:
+  - "Input: words = [\"wrt\",\"wrf\",\"er\",\"ett\",\"rftt\"] → Output: \"wertf\""

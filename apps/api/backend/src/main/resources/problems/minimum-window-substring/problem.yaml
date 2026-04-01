@@ -1,0 +1,11 @@
+id: 29
+title: Minimum Window Substring
+difficulty: Hard
+category: Strings
+leetcodeUrl: https://leetcode.com/problems/minimum-window-substring/
+description: >
+  Given two strings s and t, return the minimum window substring of s such that every character
+  in t (including duplicates) is included in the window. If there is no such substring, return "".
+examples:
+  - "Input: s = \"ADOBECODEBANC\", t = \"ABC\" → Output: \"BANC\""
+  - "Input: s = \"a\", t = \"a\" → Output: \"a\""

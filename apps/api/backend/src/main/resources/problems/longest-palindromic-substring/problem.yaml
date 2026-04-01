@@ -1,0 +1,10 @@
+id: 25
+title: Longest Palindromic Substring
+difficulty: Medium
+category: Strings
+leetcodeUrl: https://leetcode.com/problems/longest-palindromic-substring/
+description: >
+  Given a string s, return the longest palindromic substring in s.
+examples:
+  - "Input: s = \"babad\" → Output: \"bab\" or \"aba\""
+  - "Input: s = \"cbbd\" → Output: \"bb\""

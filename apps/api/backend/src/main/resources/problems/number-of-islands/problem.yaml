@@ -1,0 +1,11 @@
+id: 11
+title: Number of Islands
+difficulty: Medium
+category: Graphs
+leetcodeUrl: https://leetcode.com/problems/number-of-islands/
+description: >
+  Given an m x n 2D grid of '1's (land) and '0's (water), count the number of islands.
+  An island is surrounded by water and is formed by connecting adjacent lands horizontally
+  or vertically.
+examples:
+  - "Input: grid = [[1,1,0,0,0],[1,1,0,0,0],[0,0,1,0,0],[0,0,0,1,1]] → Output: 3"

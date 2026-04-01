@@ -1,0 +1,11 @@
+id: 6
+title: Search in Rotated Sorted Array
+difficulty: Medium
+category: Binary Search
+leetcodeUrl: https://leetcode.com/problems/search-in-rotated-sorted-array/
+description: >
+  Given a rotated sorted array `nums` and a `target`, return the index of `target` or -1
+  if not found. You must write an algorithm with O(log n) runtime.
+examples:
+  - "Input: nums = [4,5,6,7,0,1,2], target = 0 → Output: 4"
+  - "Input: nums = [4,5,6,7,0,1,2], target = 3 → Output: -1"

@@ -74,7 +74,16 @@ function FloatingNodes({ count }: { count: number }) {
     return <canvas ref={canvasRef} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none" }} />;
 }
 
-function TypewriterCode() {
+function AlgoPadLogo({ size = 28 }: { size?: number }) {
+    return (
+        <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+            <img src="/logo-dark.svg" alt="" width={size} height={size} />
+            <span style={{ fontSize: size * 0.75, fontWeight: 800, letterSpacing: 1, color: "#fff" }}>AlgoPad</span>
+        </span>
+    );
+}
+
+function TypewriterCode({ onDone }: { onDone: () => void }) {
     const lines = [
         'private int[] arr = {5, 3, 8, 1, 2};',
         '',
@@ -91,8 +100,8 @@ function TypewriterCode() {
         let i = 0;
         const id = setInterval(() => {
             if (i <= full.length) { setDisplayed(full.slice(0, i)); i++; }
-            else clearInterval(id);
-        }, 30);
+            else { clearInterval(id); onDone(); }
+        }, 12);
         return () => clearInterval(id);
     }, []);
 
@@ -111,7 +120,7 @@ function TypewriterCode() {
     );
 }
 
-function AnimatedBars() {
+function AnimatedBars({ active }: { active: boolean }) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -157,6 +166,8 @@ function AnimatedBars() {
                 ctx.fill();
             }
 
+            if (!active) { raf = requestAnimationFrame(draw); return; }
+
             frame++;
             if (frame % 20 === 0 && step < swaps.length) {
                 const [a, b] = swaps[step];
@@ -174,13 +185,14 @@ function AnimatedBars() {
         };
         draw();
         return () => cancelAnimationFrame(raf);
-    }, []);
+    }, [active]);
 
     return <canvas ref={canvasRef} style={{ width: "100%", height: 120, borderRadius: 8 }} />;
 }
 
 export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playground" | "practice") => void }) {
     const [visible, setVisible] = useState(false);
+    const [codeTyped, setCodeTyped] = useState(false);
     useEffect(() => { requestAnimationFrame(() => setVisible(true)); }, []);
 
     return (
@@ -213,7 +225,7 @@ export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playgr
                     {/* Left — text */}
                     <div style={{ flex: "1 1 400px", maxWidth: 520 }}>
                         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-                            <span style={{ fontSize: 28, fontWeight: 800, letterSpacing: 1 }}>AlgoPad</span>
+                            <AlgoPadLogo size={28} />
                             <span style={{ fontSize: 10, background: "#4CAF50", color: "#fff", padding: "2px 8px", borderRadius: 4, fontWeight: 700 }}>BETA</span>
                         </div>
                         <h1 style={{ fontSize: 44, fontWeight: 800, lineHeight: 1.15, margin: "0 0 20px", letterSpacing: -1 }}>
@@ -238,10 +250,10 @@ export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playgr
 
                     {/* Right — demo */}
                     <div style={{ flex: "1 1 360px", maxWidth: 440, animation: "glow 3s ease-in-out infinite" }}>
-                        <TypewriterCode />
+                        <TypewriterCode onDone={() => setCodeTyped(true)} />
                         <div style={{ marginTop: 12, background: "#111", borderRadius: 8, padding: 16, border: "1px solid #222" }}>
                             <div style={{ fontSize: 10, color: "#666", marginBottom: 8, textTransform: "uppercase", letterSpacing: 1 }}>Live Visualization</div>
-                            <AnimatedBars />
+                            <AnimatedBars active={codeTyped} />
                         </div>
                     </div>
                 </div>
@@ -302,9 +314,15 @@ export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playgr
                         ⚡ Playground
                     </button>
                 </div>
-                <div style={{ marginTop: 32, fontSize: 12, color: "#444" }}>
-                    Open source · Built with ❤️ using{" "}
-                    <a href="https://aws.amazon.com/q/developer/" target="_blank" rel="noopener noreferrer" style={{ color: "#4CAF50", textDecoration: "none" }}>Amazon Q Developer</a>
+                <div style={{ marginTop: 32, fontSize: 12, color: "#444", display: "flex", alignItems: "center", justifyContent: "center", gap: 12 }}>
+                    <a href="https://github.com/vish-chan/AlgoFlow" target="_blank" rel="noopener noreferrer" style={{ color: "#888", display: "inline-flex", alignItems: "center", gap: 4, textDecoration: "none" }}>
+                        <svg height="14" width="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                        Open Source
+                    </a>
+                    <span style={{ color: "#333" }}>·</span>
+                    <a href="https://github.com/vish-chan/AlgoFlow/issues" target="_blank" rel="noopener noreferrer" style={{ color: "#888", textDecoration: "none" }}>
+                        Feedback
+                    </a>
                 </div>
             </div>
         </div>

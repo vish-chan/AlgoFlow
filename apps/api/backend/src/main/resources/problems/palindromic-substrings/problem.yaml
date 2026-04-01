@@ -1,0 +1,10 @@
+id: 26
+title: Palindromic Substrings
+difficulty: Medium
+category: Strings
+leetcodeUrl: https://leetcode.com/problems/palindromic-substrings/
+description: >
+  Given a string s, return the number of palindromic substrings in it.
+examples:
+  - "Input: s = \"abc\" → Output: 3"
+  - "Input: s = \"aaa\" → Output: 6"

@@ -1,0 +1,11 @@
+id: 55
+title: Word Break
+difficulty: Medium
+category: Dynamic Programming
+leetcodeUrl: https://leetcode.com/problems/word-break/
+description: >
+  Given a string s and a dictionary of strings wordDict, return true if s can be segmented
+  into a space-separated sequence of one or more dictionary words.
+examples:
+  - "Input: s = \"leetcode\", wordDict = [\"leet\",\"code\"] → Output: true"
+  - "Input: s = \"catsandog\", wordDict = [\"cats\",\"dog\",\"sand\",\"and\",\"cat\"] → Output: false"

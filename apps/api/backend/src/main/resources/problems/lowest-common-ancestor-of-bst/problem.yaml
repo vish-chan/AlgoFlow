@@ -1,0 +1,10 @@
+id: 10
+title: Lowest Common Ancestor of BST
+difficulty: Medium
+category: Trees
+leetcodeUrl: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+description: >
+  Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes
+  p and q. The LCA is the lowest node that has both p and q as descendants.
+examples:
+  - "Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8 → Output: 6"

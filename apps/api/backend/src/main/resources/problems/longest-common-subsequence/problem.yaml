@@ -1,0 +1,11 @@
+id: 62
+title: Longest Common Subsequence
+difficulty: Medium
+category: Dynamic Programming
+leetcodeUrl: https://leetcode.com/problems/longest-common-subsequence/
+description: >
+  Given two strings text1 and text2, return the length of their longest common subsequence.
+  If there is no common subsequence, return 0.
+examples:
+  - "Input: text1 = \"abcde\", text2 = \"ace\" → Output: 3"
+  - "Input: text1 = \"abc\", text2 = \"def\" → Output: 0"

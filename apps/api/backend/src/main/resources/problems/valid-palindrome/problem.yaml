@@ -1,0 +1,11 @@
+id: 24
+title: Valid Palindrome
+difficulty: Easy
+category: Strings
+leetcodeUrl: https://leetcode.com/problems/valid-palindrome/
+description: >
+  Given a string s, return true if it is a palindrome after converting all uppercase letters
+  to lowercase and removing all non-alphanumeric characters.
+examples:
+  - "Input: s = \"A man, a plan, a canal: Panama\" → Output: true"
+  - "Input: s = \"race a car\" → Output: false"

@@ -1,0 +1,11 @@
+id: 59
+title: Decode Ways
+difficulty: Medium
+category: Dynamic Programming
+leetcodeUrl: https://leetcode.com/problems/decode-ways/
+description: >
+  A message containing letters A-Z can be encoded to numbers 1-26. Given a string s containing
+  only digits, return the number of ways to decode it.
+examples:
+  - "Input: s = \"12\" → Output: 2"
+  - "Input: s = \"226\" → Output: 3"

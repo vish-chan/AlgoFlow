@@ -1,0 +1,9 @@
+id: 30
+title: Encode and Decode Strings
+difficulty: Medium
+category: Strings
+leetcodeUrl: https://leetcode.com/problems/encode-and-decode-strings/
+description: >
+  Design an algorithm to encode a list of strings to a single string and decode it back.
+examples:
+  - "Input: [\"Hello\",\"World\"] → Encode → Decode → Output: [\"Hello\",\"World\"]"

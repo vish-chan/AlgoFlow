@@ -1,0 +1,11 @@
+id: 61
+title: Jump Game
+difficulty: Medium
+category: Dynamic Programming
+leetcodeUrl: https://leetcode.com/problems/jump-game/
+description: >
+  Given an integer array nums where each element represents your maximum jump length at that
+  position, return true if you can reach the last index.
+examples:
+  - "Input: nums = [2,3,1,1,4] → Output: true"
+  - "Input: nums = [3,2,1,0,4] → Output: false"

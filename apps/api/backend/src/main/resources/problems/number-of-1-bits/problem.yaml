@@ -1,0 +1,10 @@
+id: 32
+title: Number of 1 Bits
+difficulty: Easy
+category: Bit Manipulation
+leetcodeUrl: https://leetcode.com/problems/number-of-1-bits/
+description: >
+  Given a positive integer n, return the number of set bits (1s) in its binary representation.
+examples:
+  - "Input: n = 11 → Output: 3"
+  - "Input: n = 128 → Output: 1"

@@ -1,0 +1,11 @@
+id: 14
+title: Coin Change
+difficulty: Medium
+category: Dynamic Programming
+leetcodeUrl: https://leetcode.com/problems/coin-change/
+description: >
+  Given an array of coin denominations and a total `amount`, return the fewest number of
+  coins needed to make up that amount. If it cannot be made up, return -1.
+examples:
+  - "Input: coins = [1,5,11], amount = 11 → Output: 1"
+  - "Input: coins = [2], amount = 3 → Output: -1"

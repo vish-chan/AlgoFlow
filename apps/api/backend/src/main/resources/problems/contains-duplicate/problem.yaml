@@ -1,0 +1,11 @@
+id: 3
+title: Contains Duplicate
+difficulty: Easy
+category: Arrays
+leetcodeUrl: https://leetcode.com/problems/contains-duplicate/
+description: >
+  Given an integer array `nums`, return `true` if any value appears at least twice,
+  and `false` if every element is distinct.
+examples:
+  - "Input: nums = [1,2,3,1] → Output: true"
+  - "Input: nums = [1,2,3,4] → Output: false"

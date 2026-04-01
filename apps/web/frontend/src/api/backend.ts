@@ -1,5 +1,31 @@
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
+export interface Problem {
+    id: number;
+    title: string;
+    difficulty: "Easy" | "Medium" | "Hard";
+    category: string;
+    description: string;
+    examples: string[];
+    leetcodeUrl: string;
+    starterCode: string;
+}
+
+let problemsCache: Problem[] | null = null;
+
+export async function fetchProblems(): Promise<Problem[]> {
+    if (problemsCache) return problemsCache;
+    let response: Response;
+    try {
+        response = await fetch(`${API_BASE_URL}/problems`);
+    } catch {
+        throw new Error('Backend unreachable — try again in ~30s');
+    }
+    if (!response.ok) throw new Error('Failed to fetch problems');
+    problemsCache = await response.json();
+    return problemsCache!;
+}
+
 export async function executeJavaCode(code: string): Promise<{ commands: any[]; code?: string }> {
     let response: Response;
     try {

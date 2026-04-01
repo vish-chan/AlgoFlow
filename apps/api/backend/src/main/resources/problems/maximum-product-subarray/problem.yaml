@@ -1,0 +1,10 @@
+id: 21
+title: Maximum Product Subarray
+difficulty: Medium
+category: Arrays
+leetcodeUrl: https://leetcode.com/problems/maximum-product-subarray/
+description: >
+  Given an integer array nums, find a subarray that has the largest product, and return the product.
+examples:
+  - "Input: nums = [2,3,-2,4] → Output: 6"
+  - "Input: nums = [-2,0,-1] → Output: 0"

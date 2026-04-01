@@ -1,0 +1,11 @@
+id: 2
+title: Best Time to Buy and Sell Stock
+difficulty: Easy
+category: Arrays
+leetcodeUrl: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+description: >
+  Given an array `prices` where `prices[i]` is the price of a stock on the ith day,
+  find the maximum profit from one buy and one sell. If no profit is possible, return 0.
+examples:
+  - "Input: prices = [7,1,5,3,6,4] → Output: 5"
+  - "Input: prices = [7,6,4,3,1] → Output: 0"

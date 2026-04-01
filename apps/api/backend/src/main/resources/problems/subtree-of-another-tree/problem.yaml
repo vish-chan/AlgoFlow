@@ -1,0 +1,10 @@
+id: 50
+title: Subtree of Another Tree
+difficulty: Easy
+category: Trees
+leetcodeUrl: https://leetcode.com/problems/subtree-of-another-tree/
+description: >
+  Given the roots of two binary trees root and subRoot, return true if there is a subtree of root
+  with the same structure and node values of subRoot and false otherwise.
+examples:
+  - "Input: root = [3,4,5,1,2], subRoot = [4,1,2] → Output: true"

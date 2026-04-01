@@ -1,0 +1,12 @@
+id: 41
+title: Course Schedule
+difficulty: Medium
+category: Graphs
+leetcodeUrl: https://leetcode.com/problems/course-schedule/
+description: >
+  There are a total of numCourses courses you have to take. Some courses have prerequisites.
+  Given the total number of courses and a list of prerequisite pairs, return whether it is
+  possible to finish all courses.
+examples:
+  - "Input: numCourses = 2, prerequisites = [[1,0]] → Output: true"
+  - "Input: numCourses = 2, prerequisites = [[1,0],[0,1]] → Output: false"

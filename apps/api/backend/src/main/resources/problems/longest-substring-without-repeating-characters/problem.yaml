@@ -1,0 +1,10 @@
+id: 27
+title: Longest Substring Without Repeating Characters
+difficulty: Medium
+category: Strings
+leetcodeUrl: https://leetcode.com/problems/longest-substring-without-repeating-characters/
+description: >
+  Given a string s, find the length of the longest substring without repeating characters.
+examples:
+  - "Input: s = \"abcabcbb\" → Output: 3"
+  - "Input: s = \"bbbbb\" → Output: 1"

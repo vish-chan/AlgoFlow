@@ -1,0 +1,11 @@
+id: 58
+title: House Robber II
+difficulty: Medium
+category: Dynamic Programming
+leetcodeUrl: https://leetcode.com/problems/house-robber-ii/
+description: >
+  All houses are arranged in a circle. Given an integer array nums representing the amount of
+  money of each house, return the maximum amount you can rob without robbing two adjacent houses.
+examples:
+  - "Input: nums = [2,3,2] → Output: 3"
+  - "Input: nums = [1,2,3,1] → Output: 4"

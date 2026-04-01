@@ -1,0 +1,11 @@
+id: 72
+title: Non-overlapping Intervals
+difficulty: Medium
+category: Intervals
+leetcodeUrl: https://leetcode.com/problems/non-overlapping-intervals/
+description: >
+  Given an array of intervals, return the minimum number of intervals you need to remove to make
+  the rest of the intervals non-overlapping.
+examples:
+  - "Input: intervals = [[1,2],[2,3],[3,4],[1,3]] → Output: 1"
+  - "Input: intervals = [[1,2],[1,2],[1,2]] → Output: 2"

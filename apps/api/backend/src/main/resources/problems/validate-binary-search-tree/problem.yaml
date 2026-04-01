@@ -1,0 +1,12 @@
+id: 9
+title: Validate Binary Search Tree
+difficulty: Medium
+category: Trees
+leetcodeUrl: https://leetcode.com/problems/validate-binary-search-tree/
+description: >
+  Given the root of a binary tree, determine if it is a valid binary search tree (BST).
+  A valid BST has left subtree values strictly less than the node, and right subtree values
+  strictly greater.
+examples:
+  - "Input: root = [2,1,3] → Output: true"
+  - "Input: root = [5,1,4,null,null,3,6] → Output: false"

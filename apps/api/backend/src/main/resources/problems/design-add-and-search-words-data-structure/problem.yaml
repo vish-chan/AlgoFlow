@@ -1,0 +1,10 @@
+id: 54
+title: Design Add and Search Words Data Structure
+difficulty: Medium
+category: Trie
+leetcodeUrl: https://leetcode.com/problems/design-add-and-search-words-data-structure/
+description: >
+  Design a data structure that supports adding new words and finding if a string matches any
+  previously added string. The search word can contain dots where each dot can match any letter.
+examples:
+  - "Input: addWord(\"bad\"), addWord(\"dad\"), search(\"pad\") → false, search(\"bad\") → true, search(\".ad\") → true"

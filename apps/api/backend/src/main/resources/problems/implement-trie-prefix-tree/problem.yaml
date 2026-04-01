@@ -1,0 +1,9 @@
+id: 53
+title: Implement Trie (Prefix Tree)
+difficulty: Medium
+category: Trie
+leetcodeUrl: https://leetcode.com/problems/implement-trie-prefix-tree/
+description: >
+  Implement a trie with insert, search, and startsWith methods.
+examples:
+  - "Input: [\"Trie\",\"insert\",\"search\",\"search\",\"startsWith\",\"insert\",\"search\"] [[],[\"apple\"],[\"apple\"],[\"app\"],[\"app\"],[\"app\"],[\"app\"]] → Output: [null,null,true,false,true,null,true]"

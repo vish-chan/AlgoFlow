@@ -1,0 +1,9 @@
+id: 70
+title: Find Median from Data Stream
+difficulty: Hard
+category: Heap
+leetcodeUrl: https://leetcode.com/problems/find-median-from-data-stream/
+description: >
+  Design a data structure that supports adding integers and finding the median of all elements added so far.
+examples:
+  - "addNum(1), addNum(2), findMedian() → 1.5, addNum(3), findMedian() → 2.0"

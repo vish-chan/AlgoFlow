@@ -1,0 +1,9 @@
+id: 49
+title: Serialize and Deserialize Binary Tree
+difficulty: Hard
+category: Trees
+leetcodeUrl: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+description: >
+  Design an algorithm to serialize and deserialize a binary tree.
+examples:
+  - "Input: root = [1,2,3,null,null,4,5] → serialize → deserialize → Output: [1,2,3,null,null,4,5]"

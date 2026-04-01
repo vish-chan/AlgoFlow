@@ -73,7 +73,10 @@ export default function App() {
         <div style={{ display: "flex", flexDirection: "column", width: "100vw", height: "100vh" }}>
             <div style={{ background: "#1a1a1a", color: "#fff", padding: "4px 12px", fontSize: 12, fontWeight: 600, letterSpacing: 0.5, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #333" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                    <span onClick={goHome} style={{ fontSize: 14, fontWeight: 700, letterSpacing: 1, cursor: "pointer" }} title="Back to home">AlgoPad</span>
+                    <span onClick={goHome} style={{ display: "inline-flex", alignItems: "center", gap: 6, cursor: "pointer" }} title="Back to home">
+                        <img src="/logo-dark.svg" alt="" width={18} height={18} />
+                        <span style={{ fontSize: 14, fontWeight: 700, letterSpacing: 1 }}>AlgoPad</span>
+                    </span>
                     <span style={{ fontSize: 9, background: mode === "practice" ? "#f57c00" : "#2196F3", color: "#fff", padding: "1px 6px", borderRadius: 3, fontWeight: 600, letterSpacing: 0.5 }}>
                         {mode === "practice" ? "BLIND 75" : "PLAYGROUND"}
                     </span>

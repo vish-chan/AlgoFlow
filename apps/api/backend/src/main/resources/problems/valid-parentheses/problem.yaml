@@ -1,0 +1,11 @@
+id: 23
+title: Valid Parentheses
+difficulty: Easy
+category: Strings
+leetcodeUrl: https://leetcode.com/problems/valid-parentheses/
+description: >
+  Given a string s containing just the characters (, ), {, }, [ and ], determine if the input string is valid.
+  An input string is valid if open brackets are closed by the same type and in the correct order.
+examples:
+  - "Input: s = \"()[]{}\" → Output: true"
+  - "Input: s = \"(]\" → Output: false"

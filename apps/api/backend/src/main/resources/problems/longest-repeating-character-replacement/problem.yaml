@@ -1,0 +1,12 @@
+id: 28
+title: Longest Repeating Character Replacement
+difficulty: Medium
+category: Strings
+leetcodeUrl: https://leetcode.com/problems/longest-repeating-character-replacement/
+description: >
+  You are given a string s and an integer k. You can choose any character and change it to any
+  other uppercase English character at most k times. Return the length of the longest substring
+  containing the same letter after performing the above operations.
+examples:
+  - "Input: s = \"ABAB\", k = 2 → Output: 4"
+  - "Input: s = \"AABABBA\", k = 1 → Output: 4"

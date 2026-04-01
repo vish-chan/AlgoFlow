@@ -1,0 +1,10 @@
+id: 63
+title: Linked List Cycle
+difficulty: Easy
+category: Linked List
+leetcodeUrl: https://leetcode.com/problems/linked-list-cycle/
+description: >
+  Given head, the head of a linked list, determine if the linked list has a cycle in it.
+examples:
+  - "Input: head = [3,2,0,-4], pos = 1 → Output: true"
+  - "Input: head = [1], pos = -1 → Output: false"
