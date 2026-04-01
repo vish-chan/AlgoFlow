@@ -192,6 +192,66 @@ public class Main {
     }
 }`,
     },
+    {
+        name: "Bubble Sort (Bar Chart)",
+        category: "Sorting",
+        code: `package com.algoflow.runner;
+
+import com.algoflow.annotation.Chart;
+
+public class Main {
+    @Chart
+    private int[] arr = {5, 3, 8, 1, 9, 2, 7};
+
+    public static void main(String[] args) {
+        new Main().bubbleSort();
+    }
+
+    public void bubbleSort() {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+}`,
+    },
+    {
+        name: "Selection Sort (Bar Chart)",
+        category: "Sorting",
+        code: `package com.algoflow.runner;
+
+import com.algoflow.annotation.Chart;
+
+public class Main {
+    @Chart
+    private int[] arr = {5, 3, 8, 1, 9, 2, 7};
+
+    public static void main(String[] args) {
+        new Main().selectionSort();
+    }
+
+    public void selectionSort() {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            int minIdx = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIdx]) {
+                    minIdx = j;
+                }
+            }
+            int temp = arr[minIdx];
+            arr[minIdx] = arr[i];
+            arr[i] = temp;
+        }
+    }
+}`,
+    },
     // Searching
     {
         name: "Binary Search",
@@ -661,6 +721,27 @@ public class Main {
 export const CATEGORIES = [...new Set(ALGORITHMS.map(a => a.category))];
 
 export const TEMPLATES: Template[] = [
+    {
+        name: "Bar Chart Array",
+        category: "Arrays",
+        description: "Array visualized as bar chart",
+        code: `package com.algoflow.runner;
+
+import com.algoflow.annotation.Chart;
+
+public class Main {
+    @Chart
+    private int[] arr = {5, 3, 8, 1, 9, 2, 7};
+
+    public static void main(String[] args) {
+        new Main().solve();
+    }
+
+    public void solve() {
+        // TODO: your algorithm here
+    }
+}`,
+    },
     {
         name: "1D Array",
         category: "Arrays",

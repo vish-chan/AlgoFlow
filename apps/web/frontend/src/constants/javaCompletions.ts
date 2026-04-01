@@ -79,11 +79,12 @@ export function registerJavaCompletions(monaco: any) {
                         'Math', 'System', 'StringBuilder',
                     ].map(type),
 
-                    // AlgoFlow annotations (with auto-import)
+                    // AlgoPad annotations (with auto-import)
                     autoImport('@Graph', '@Graph', 'com.algoflow.annotation.Graph', 'Visualize int[][] as a graph'),
                     autoImport('@Graph(directed)', '@Graph(directed = true)', 'com.algoflow.annotation.Graph', 'Directed graph visualization'),
                     autoImport('@Graph(weighted)', '@Graph(directed = true, weighted = true)', 'com.algoflow.annotation.Graph', 'Directed weighted graph'),
                     autoImport('@Tree', '@Tree', 'com.algoflow.annotation.Tree', 'Visualize TreeNode field as a tree'),
+                    autoImport('@Chart', '@Chart', 'com.algoflow.annotation.Chart', 'Visualize int[] as a bar chart'),
 
                     // Common snippets
                     snippet('main', 'public static void main(String[] args) {\n\t${0}\n}', 'Main method'),

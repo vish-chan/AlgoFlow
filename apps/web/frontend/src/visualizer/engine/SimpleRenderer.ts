@@ -30,7 +30,7 @@ export class SimpleRenderer {
     private transitions: Map<string, ColorTransition> = new Map();
     private childTransitions: Map<string, ColorTransition> = new Map();
 
-    private static readonly SWAP_DURATION = 300;
+    private static readonly SWAP_DURATION = 400;
     private static readonly TRANSITION_DURATION = 200;
 
     mount(container: HTMLElement) {
@@ -207,7 +207,10 @@ export class SimpleRenderer {
     };
 
     private easeInOut(t: number): number {
-        return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+        // Cubic ease-out with slight overshoot for snappy feel
+        return t < 0.5
+            ? 4 * t * t * t
+            : 1 - Math.pow(-2 * t + 2, 3) / 2;
     }
 
     private truncateText(text: string, maxWidth: number): string {
@@ -263,7 +266,9 @@ export class SimpleRenderer {
             return;
         }
 
-        if (this.data.type === 'array') {
+        if (this.data.type === 'chart') {
+            this.renderChartInBounds(this.data.data, this.data.title, 0, 0, width, height);
+        } else if (this.data.type === 'array') {
             this.renderArray(this.data.data, this.data.title, this.data.dsType);
         } else if (this.data.type === 'array2d') {
             this.renderArray2D(this.data.data, this.data.title);
@@ -378,6 +383,7 @@ export class SimpleRenderer {
     }
 
     calcChildHeight(child: any): number {
+        if (child?.type === 'chart' && child.data) return Math.max(120, 160);
         if (child?.type === 'recursion' && child.calls) return Math.max(120, 45 + child.calls.length * 22);
         if (child?.type === 'graph') {
             const nat = this.graphNaturalSize(child);
@@ -432,6 +438,7 @@ export class SimpleRenderer {
                 grouped.push({ ...child, callStack: recursionChild });
             } else {
                 if (child?.type === 'array' && child.data?.length === 0) continue;
+                if (child?.type === 'chart' && child.data?.length === 0) continue;
                 grouped.push(child);
             }
         }
@@ -463,7 +470,9 @@ export class SimpleRenderer {
             this.ctx!.rect(0, 0, width, sectionHeight);
             this.ctx!.clip();
             
-            if (child?.type === 'array' && child.data) {
+            if (child?.type === 'chart' && child.data) {
+                this.renderChartInBounds(child.data, child.title, 0, 0, width, sectionHeight);
+            } else if (child?.type === 'array' && child.data) {
                 this.renderArrayInBounds(child.data, child.title, 0, 0, width, sectionHeight, child.dsType);
             } else if (child?.type === 'locals' && child.rows) {
                 this.renderLocalsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, child.callStack);
@@ -540,6 +549,65 @@ export class SimpleRenderer {
             this.ctx.textAlign = 'center';
             this.ctx.textBaseline = 'middle';
             this.ctx.fillText(title, cx, cy);
+        }
+    }
+
+    private renderChartInBounds(arr: any[], title: string | undefined, x: number, y: number, width: number, height: number) {
+        if (!this.ctx || !arr.length) return;
+        const titleH = title ? 25 : 0;
+        if (title) this.drawTitleWithBadge(title, 'Chart', x + width / 2, y + 14, 12);
+
+        const pad = 12;
+        const chartX = x + pad;
+        const chartY = y + titleH + 4;
+        const chartW = width - pad * 2;
+        const chartH = height - titleH - 8;
+        const gap = 2;
+        const barW = Math.max(3, Math.min(30, (chartW - gap * (arr.length - 1)) / arr.length));
+
+        let maxVal = 0;
+        for (const item of arr) {
+            const v = Math.abs(typeof item === 'object' ? item.value : item);
+            if (v > maxVal) maxVal = v;
+        }
+        if (maxVal === 0) maxVal = 1;
+
+        const totalBarW = arr.length * barW + (arr.length - 1) * gap;
+        const offsetX = chartX + (chartW - totalBarW) / 2;
+
+        const anim = this.swapAnim;
+        const t = anim ? this.easeInOut(anim.progress) : 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            const value = typeof arr[i] === 'object' ? arr[i].value : arr[i];
+            const selected = typeof arr[i] === 'object' ? arr[i].selected : false;
+            const patched = typeof arr[i] === 'object' ? arr[i].patched : false;
+            const barH = Math.max(2, (Math.abs(value) / maxVal) * (chartH - 20));
+            let swapOffset = 0;
+            let isSwapping = false;
+            if (anim && (i === anim.i || i === anim.j)) {
+                isSwapping = true;
+                const dist = (anim.j - anim.i) * (barW + gap);
+                swapOffset = i === anim.i ? t * dist : -t * dist;
+            }
+            const bx = offsetX + i * (barW + gap) + swapOffset;
+            const by = chartY + chartH - barH;
+
+            const target = (isSwapping || patched) ? '#f44336' : (selected ? '#2196F3' : '#4CAF50');
+            this.ctx.fillStyle = this.transitionColor(`chart-${i}`, target);
+            this.ctx.beginPath();
+            this.ctx.roundRect(bx, by, barW, barH, Math.min(3, barW / 2));
+            this.ctx.fill();
+
+            if (barW >= 16) {
+                this.ctx.fillStyle = '#fff';
+                this.ctx.font = `${Math.min(11, barW - 2)}px monospace`;
+                this.ctx.textAlign = 'center';
+                this.ctx.textBaseline = 'bottom';
+                this.ctx.fillText(String(value), bx + barW / 2, by - 2);
+            }
+
+            this.tooltipRegions.push({ x: bx, y: by, w: barW, h: barH, text: `[${i}] = ${value}` });
         }
     }
 
@@ -764,7 +832,9 @@ export class SimpleRenderer {
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         ctx.clearRect(0, 0, width, height);
 
-        if (child?.type === 'array' && child.data) {
+        if (child?.type === 'chart' && child.data) {
+            this.renderChartInBounds(child.data, child.title, 0, 0, width, height);
+        } else if (child?.type === 'array' && child.data) {
             this.renderArrayInBounds(child.data, child.title, 0, 0, width, height, child.dsType);
         } else if (child?.type === 'locals' && child.rows) {
             this.renderLocalsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, child.callStack);

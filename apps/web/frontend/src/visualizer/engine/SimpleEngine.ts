@@ -164,6 +164,8 @@ export class SimpleEngine {
         if (key === null && method === 'setRoot') {
             this.root = args[0];
             this.updateRenderer();
+        } else if (key !== null && method === 'ChartTracer') {
+            this.tracers[key] = { type: 'chart', data: [], title: args[0] || '' };
         } else if (key !== null && method === 'Array1DTracer') {
             const rawTitle = args[0] || '';
             const colonIdx = rawTitle.indexOf(': ');
@@ -190,7 +192,7 @@ export class SimpleEngine {
         } else if (key !== null && method === 'VerticalLayout') {
             this.tracers[key] = { type: 'layout', children: args[0] || [], title: 'Layout' };
         } else if (key !== null && method === 'set') {
-            if (this.tracers[key]?.type === 'array') {
+            if (this.tracers[key]?.type === 'chart' || this.tracers[key]?.type === 'array') {
                 this.tracers[key].data = args[0].map((v: any) => ({ value: v, selected: false, patched: false }));
                 this.updateRenderer();
             } else if (this.tracers[key]?.type === 'array2d') {
@@ -412,7 +414,7 @@ export class SimpleEngine {
                 this.updateRenderer();
             }
         } else if (key !== null && method === 'select') {
-            if (this.tracers[key]?.type === 'array' && this.tracers[key]?.data?.[args[0]]) {
+            if ((this.tracers[key]?.type === 'array' || this.tracers[key]?.type === 'chart') && this.tracers[key]?.data?.[args[0]]) {
                 this.tracers[key].data[args[0]].selected = true;
                 this.tracers[key].data[args[0]].patched = false;
                 this.updateRenderer();
@@ -425,7 +427,7 @@ export class SimpleEngine {
                 this.updateRenderer();
             }
         } else if (key !== null && method === 'deselect') {
-            if (this.tracers[key]?.type === 'array' && this.tracers[key]?.data?.[args[0]]) {
+            if ((this.tracers[key]?.type === 'array' || this.tracers[key]?.type === 'chart') && this.tracers[key]?.data?.[args[0]]) {
                 this.tracers[key].data[args[0]].selected = false;
                 this.updateRenderer();
             } else if (this.tracers[key]?.type === 'array2d' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
@@ -436,7 +438,7 @@ export class SimpleEngine {
                 this.updateRenderer();
             }
         } else if (key !== null && method === 'patch') {
-            if (this.tracers[key]?.type === 'array' && this.tracers[key]?.data?.[args[0]]) {
+            if ((this.tracers[key]?.type === 'array' || this.tracers[key]?.type === 'chart') && this.tracers[key]?.data?.[args[0]]) {
                 this.tracers[key].data[args[0]].value = args[1];
                 this.tracers[key].data[args[0]].patched = true;
                 this.tracers[key].data[args[0]].selected = false;
@@ -468,7 +470,7 @@ export class SimpleEngine {
                 }
             }
         } else if (key !== null && method === 'depatch') {
-            if (this.tracers[key]?.type === 'array' && this.tracers[key]?.data?.[args[0]]) {
+            if ((this.tracers[key]?.type === 'array' || this.tracers[key]?.type === 'chart') && this.tracers[key]?.data?.[args[0]]) {
                 this.tracers[key].data[args[0]].patched = false;
                 this.updateRenderer();
             } else if (this.tracers[key]?.type === 'array2d' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
@@ -499,7 +501,9 @@ export class SimpleEngine {
         if (this.root && this.tracers[this.root]) {
             const tracer = this.tracers[this.root];
             
-            if (tracer.type === 'array') {
+            if (tracer.type === 'chart') {
+                this.renderer.setData({ type: 'chart', data: tracer.data, title: tracer.title });
+            } else if (tracer.type === 'array') {
                 this.renderer.setData({ type: 'array', data: tracer.data, title: tracer.title, dsType: tracer.dsType });
             } else if (tracer.type === 'array2d') {
                 this.renderer.setData({ type: 'array2d', data: tracer.data, title: tracer.title });
@@ -522,6 +526,9 @@ export class SimpleEngine {
                         const _tracerKey = childKey;
                         if (c?.type === 'graph') {
                             return { ...c, _tracerKey, visitedEdges: [...c.visitedEdges], directed: c.directed, weighted: c.weighted, nodeLabels: c.nodeLabels, layout: c.layout, treeRoot: c.treeRoot, edges: c.edges, namedNodes: c.namedNodes, treeDims: this.getTreeMaxDimensions(childKey) };
+                        }
+                        if (c?.type === 'chart') {
+                            return { ...c, _tracerKey };
                         }
                         if (c?.type === 'array') {
                             return { ...c, _tracerKey, dsType: c.dsType };
@@ -547,11 +554,11 @@ export class SimpleEngine {
         if (this.cursor >= this.chunks.length) return false;
         this.activeChildKey = null;
 
-        // Swap detection for Array1DTracer only
+        // Swap detection for Array1DTracer and ChartTracer
         const cur = this.chunks[this.cursor];
         let arrayPatch: Command | null = null;
         for (const c of cur.commands) {
-            if (c.key !== null && c.method === 'patch' && this.tracers[c.key]?.type === 'array') {
+            if (c.key !== null && c.method === 'patch' && (this.tracers[c.key]?.type === 'array' || this.tracers[c.key]?.type === 'chart')) {
                 arrayPatch = c;
                 break;
             }
@@ -562,9 +569,10 @@ export class SimpleEngine {
 
         if (arrayPatch) {
             const k = arrayPatch.key!;
-            // Only animate swaps for default arrays (not LinkedList, Stack, Deque, etc.)
+            const tracerType = this.tracers[k]?.type;
+            // Only animate swaps for default arrays (not LinkedList, Stack, Deque, etc.) and charts
             const dsType = this.tracers[k]?.dsType;
-            if (!dsType || dsType === 'ArrayList' || dsType === 'Deque' || dsType === 'Collection') {
+            if (tracerType === 'chart' || !dsType || dsType === 'ArrayList' || dsType === 'Deque' || dsType === 'Collection') {
             const idxA = arrayPatch.args[0], valA = arrayPatch.args[1];
             let foundDepatch = false;
             const maxScan = Math.min(this.cursor + 6, this.chunks.length);
@@ -648,13 +656,14 @@ export class SimpleEngine {
                 const t = this.tracers[k];
                 let dsType = t?.dsType;
                 if (!dsType && t?.type === 'graph') dsType = t.layout === 'tree' ? 'Tree' : 'Graph';
+                if (!dsType && t?.type === 'chart') dsType = 'Chart';
                 if (!dsType && t?.type === 'locals') dsType = 'Call Stack';
                 return { key: k, title: t?.title || k, dsType };
             })
             .filter((c: { key: string; title: string }) => {
                 const t = this.tracers[c.key];
                 if (!t || t.type === 'code' || t.type === 'recursion') return false;
-                if (t.type === 'array' && t.data?.length === 0) return false;
+                if ((t.type === 'array' || t.type === 'chart') && t.data?.length === 0) return false;
                 return true;
             });
     }
@@ -687,6 +696,9 @@ export class SimpleEngine {
                 const _tracerKey = childKey;
                 if (c.type === 'graph') {
                     return { ...c, _tracerKey, visitedEdges: [...c.visitedEdges], treeDims: this.getTreeMaxDimensions(childKey) };
+                }
+                if (c.type === 'chart') {
+                    return { ...c, _tracerKey };
                 }
                 if (c.type === 'array') {
                     return { ...c, _tracerKey };

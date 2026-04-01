@@ -5,7 +5,7 @@ function PaneLabel({ child, collapsed, onToggle }: { child: any; collapsed: bool
     const type = child?.type || '';
     const title = child?.title || '';
     const typeIcon: Record<string, string> = {
-        array: '▦', array2d: '▦', graph: '◉', log: '▸', locals: '⧉',
+        array: '▦', array2d: '▦', chart: '▥', graph: '◉', log: '▸', locals: '⧉',
         variables: '𝑥', variablesGroup: '𝑥', recursion: '↻',
     };
     const displayName: Record<string, string> = {
@@ -13,6 +13,7 @@ function PaneLabel({ child, collapsed, onToggle }: { child: any; collapsed: bool
         variablesGroup: 'Local Variables',
         log: title === 'Error' ? '⚠ Error' : (title || 'Log'),
         graph: title || 'Graph',
+        chart: title || 'Chart',
         array: title || 'Array',
         array2d: title || '2D Array',
         recursion: title || 'Recursion',

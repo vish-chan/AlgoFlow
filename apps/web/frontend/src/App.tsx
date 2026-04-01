@@ -2,10 +2,20 @@ import { useState, useCallback, useRef, useEffect } from "react";
 import JavaEditor from "./JavaEditor";
 import AlgorithmVisualizerPane from "./visualizer/AlgorithmVisualizerPane";
 import Tour, { useTour } from "./Tour";
+import LandingPage from "./LandingPage";
+
+type Mode = "landing" | "playground" | "practice";
 
 const MOBILE_BREAKPOINT = 768;
 
+function parseHash(): Mode {
+    const h = window.location.hash.slice(1);
+    if (h === "playground" || h === "practice") return h;
+    return "landing";
+}
+
 export default function App() {
+    const [mode, setMode] = useState<Mode>(parseHash);
     const [splitPercent, setSplitPercent] = useState(40);
     const [isMobile, setIsMobile] = useState(window.innerWidth < MOBILE_BREAKPOINT);
     const dragging = useRef(false);
@@ -13,9 +23,25 @@ export default function App() {
     const [executing, setExecuting] = useState(false);
 
     useEffect(() => {
+        const onHash = () => setMode(parseHash());
+        window.addEventListener("hashchange", onHash);
+        return () => window.removeEventListener("hashchange", onHash);
+    }, []);
+
+    useEffect(() => {
         const onResize = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
         window.addEventListener("resize", onResize);
         return () => window.removeEventListener("resize", onResize);
+    }, []);
+
+    const navigate = useCallback((m: "playground" | "practice") => {
+        window.location.hash = m;
+        setMode(m);
+    }, []);
+
+    const goHome = useCallback(() => {
+        window.location.hash = "";
+        setMode("landing");
     }, []);
 
     const onMouseDown = useCallback(() => {
@@ -39,12 +65,18 @@ export default function App() {
         window.addEventListener("mouseup", onMouseUp);
     }, []);
 
+    if (mode === "landing") {
+        return <LandingPage onNavigate={navigate} />;
+    }
+
     return (
         <div style={{ display: "flex", flexDirection: "column", width: "100vw", height: "100vh" }}>
             <div style={{ background: "#1a1a1a", color: "#fff", padding: "4px 12px", fontSize: 12, fontWeight: 600, letterSpacing: 0.5, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #333" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <span style={{ fontSize: 14, fontWeight: 700, letterSpacing: 1 }}>AlgoPad</span>
-                    <span style={{ fontSize: 9, background: "#2196F3", color: "#fff", padding: "1px 6px", borderRadius: 3, fontWeight: 600, letterSpacing: 0.5 }}>BETA</span>
+                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <span onClick={goHome} style={{ fontSize: 14, fontWeight: 700, letterSpacing: 1, cursor: "pointer" }} title="Back to home">AlgoPad</span>
+                    <span style={{ fontSize: 9, background: mode === "practice" ? "#f57c00" : "#2196F3", color: "#fff", padding: "1px 6px", borderRadius: 3, fontWeight: 600, letterSpacing: 0.5 }}>
+                        {mode === "practice" ? "BLIND 75" : "PLAYGROUND"}
+                    </span>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <button onClick={startTour} title="Show tour" style={{ background: "none", border: "1px solid #444", color: "#888", borderRadius: "50%", width: 20, height: 20, fontSize: 11, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", padding: 0, fontWeight: 700 }}>?</button>
@@ -55,13 +87,13 @@ export default function App() {
             </div>
             {isMobile ? (
                 <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0 }}>
-                    <div data-tour="editor" style={{ height: "50%" }}><JavaEditor onLoadingChange={setExecuting} /></div>
+                    <div data-tour="editor" style={{ height: "50%" }}><JavaEditor mode={mode} onLoadingChange={setExecuting} /></div>
                     <div style={{ height: 3, background: "#333", flexShrink: 0 }} />
                     <div data-tour="visualizer" style={{ flex: 1, minHeight: 0 }}><AlgorithmVisualizerPane loading={executing} /></div>
                 </div>
             ) : (
                 <div style={{ display: "flex", flex: 1, minHeight: 0 }}>
-                    <div data-tour="editor" style={{ width: `${splitPercent}%` }}><JavaEditor onLoadingChange={setExecuting} /></div>
+                    <div data-tour="editor" style={{ width: `${splitPercent}%` }}><JavaEditor mode={mode} onLoadingChange={setExecuting} /></div>
                     <div onMouseDown={onMouseDown} style={{ width: 4, cursor: "col-resize", background: "#333", flexShrink: 0 }} />
                     <div data-tour="visualizer" style={{ flex: 1, minWidth: 0 }}><AlgorithmVisualizerPane loading={executing} /></div>
                 </div>

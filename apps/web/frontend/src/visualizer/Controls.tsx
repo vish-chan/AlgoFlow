@@ -37,8 +37,8 @@ export default function Controls() {
 
     useEffect(() => {
         const onKey = (e: KeyboardEvent) => {
-            const tag = (e.target as HTMLElement)?.tagName;
-            if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+            const el = e.target as HTMLElement;
+            if (el?.tagName === 'INPUT' || el?.tagName === 'TEXTAREA' || el?.closest('.monaco-editor')) return;
             if (e.key === ' ') { e.preventDefault(); handlePlayPause(); }
             else if (e.key === 'ArrowRight') { e.preventDefault(); stepForward(); }
             else if (e.key === 'ArrowLeft') { e.preventDefault(); stepBackward(); }
