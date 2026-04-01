@@ -71,6 +71,20 @@ public class FieldAccessWrapper implements AsmVisitorWrapper {
                         "onFieldGet", "(Ljava/lang/Object;Ljava/lang/String;I)V", false);
                 return;
             }
+            if (opcode == Opcodes.GETFIELD && isPrimitiveField(descriptor)) {
+                // Stack: [objectref]
+                int ownerSlot = 203;
+                super.visitInsn(Opcodes.DUP);
+                super.visitVarInsn(Opcodes.ASTORE, ownerSlot);
+                super.visitFieldInsn(opcode, owner, name, descriptor);
+
+                super.visitVarInsn(Opcodes.ALOAD, ownerSlot);
+                super.visitLdcInsn(name);
+                super.visitLdcInsn(currentLine);
+                super.visitMethodInsn(Opcodes.INVOKESTATIC, "com/algoflow/visualiser/VisualizerRegistry",
+                        "onFieldGet", "(Ljava/lang/Object;Ljava/lang/String;I)V", false);
+                return;
+            }
             if (opcode == Opcodes.PUTFIELD && isObjectField(descriptor)) {
                 // Stack: [objectref, newValue]
                 int newValueSlot = 2000;
