@@ -1,14 +1,16 @@
 import Editor from "@monaco-editor/react";
 import { useEffect, useRef, useState, useImperativeHandle, forwardRef } from "react";
 import { loadCommands, play, reset, subscribe } from "./visualizer/visualizerEngine";
-import { executeJavaCode, fetchProblems } from "./api/backend";
+import { executeCode, fetchProblems } from "./api/backend";
 import type { Problem } from "./api/backend";
-import { DEFAULT_JAVA_CODE, ALGORITHMS, CATEGORIES, TEMPLATES, TEMPLATE_CATEGORIES } from "./constants/algorithms";
+import { DEFAULT_JAVA_CODE, DEFAULT_PYTHON_CODE, ALGORITHMS, CATEGORIES, TEMPLATES, TEMPLATE_CATEGORIES, PYTHON_ALGORITHMS, PYTHON_CATEGORIES, PYTHON_TEMPLATES, PYTHON_TEMPLATE_CATEGORIES } from "./constants/algorithms";
 import { getCategories } from "./constants/problems";
 import { registerJavaCompletions } from "./constants/javaCompletions";
 import { engine } from "./visualizer/visualizerEngine";
 
 const CODE_KEY = 'algoflow-code';
+const CODE_KEY_PY = 'algoflow-code-py';
+const LANG_KEY = 'algoflow-lang';
 const PROBLEM_KEY = 'algopad-problem';
 
 const DIFF_COLORS: Record<string, string> = { Easy: "var(--easy)", Medium: "var(--medium)", Hard: "var(--hard)" };
@@ -139,6 +141,12 @@ export interface JavaEditorHandle {
 const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange?: (loading: boolean) => void; onOpenSidebar?: () => void; onProblemsLoaded?: (problems: Problem[]) => void; readOnly?: boolean; initialCode?: string }>(function JavaEditor({ mode, onLoadingChange, onOpenSidebar, onProblemsLoaded, readOnly, initialCode }, ref) {
     const isPractice = mode === "practice";
 
+    const [lang, setLang] = useState<'java' | 'python'>(() => {
+        if (isPractice) return 'java';
+        try { const v = localStorage.getItem(LANG_KEY); if (v === 'python') return 'python'; } catch {}
+        return 'java';
+    });
+
     const [problems, setProblems] = useState<Problem[]>([]);
     const [, setProblemsError] = useState<string | null>(null);
     const [problem, setProblem] = useState<Problem | null>(null);
@@ -146,7 +154,12 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
     const [code, setCode] = useState(() => {
         if (initialCode) return initialCode;
         if (isPractice) return "";
-        try { const v = localStorage.getItem(CODE_KEY); return v || DEFAULT_JAVA_CODE; } catch { return DEFAULT_JAVA_CODE; }
+        try {
+            const savedLang = localStorage.getItem(LANG_KEY) || 'java';
+            const key = savedLang === 'python' ? CODE_KEY_PY : CODE_KEY;
+            const v = localStorage.getItem(key);
+            return v || (savedLang === 'python' ? DEFAULT_PYTHON_CODE : DEFAULT_JAVA_CODE);
+        } catch { return DEFAULT_JAVA_CODE; }
     });
     const [loading, setLoading] = useState(false);
     const [editorReady, setEditorReady] = useState(false);
@@ -155,6 +168,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
     const monacoRef = useRef<any>(null);
     const decorationsRef = useRef<any>(null);
     const menuRef = useRef<HTMLDivElement>(null);
+    const langRef = useRef<HTMLDivElement>(null);
     const runRef = useRef<(() => void) | undefined>(undefined);
     const [langOpen, setLangOpen] = useState(false);
 
@@ -183,7 +197,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
         if (!menuOpen && !langOpen) return;
         const onClick = (e: MouseEvent) => {
             if (menuRef.current && !menuRef.current.contains(e.target as Node)) setMenuOpen(null);
-            setLangOpen(false);
+            if (langRef.current && !langRef.current.contains(e.target as Node)) setLangOpen(false);
         };
         document.addEventListener('mousedown', onClick);
         return () => document.removeEventListener('mousedown', onClick);
@@ -242,13 +256,37 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
 
     const persistCode = (c: string) => {
         setCode(c);
-        if (!isPractice) { try { localStorage.setItem(CODE_KEY, c); } catch {} }
+        if (!isPractice) { try { localStorage.setItem(lang === 'python' ? CODE_KEY_PY : CODE_KEY, c); } catch {} }
     };
+
+    const switchLang = (newLang: 'java' | 'python') => {
+        if (newLang === lang) return;
+        // Save current code
+        try { localStorage.setItem(lang === 'python' ? CODE_KEY_PY : CODE_KEY, code); } catch {}
+        setLang(newLang);
+        try { localStorage.setItem(LANG_KEY, newLang); } catch {}
+        // Load saved code for new lang
+        try {
+            const key = newLang === 'python' ? CODE_KEY_PY : CODE_KEY;
+            const saved = localStorage.getItem(key);
+            setCode(saved || (newLang === 'python' ? DEFAULT_PYTHON_CODE : DEFAULT_JAVA_CODE));
+        } catch {
+            setCode(newLang === 'python' ? DEFAULT_PYTHON_CODE : DEFAULT_JAVA_CODE);
+        }
+        reset();
+        setLangOpen(false);
+    };
+
+    const curAlgorithms = lang === 'python' ? PYTHON_ALGORITHMS : ALGORITHMS;
+    const curCategories = lang === 'python' ? PYTHON_CATEGORIES : CATEGORIES;
+    const curTemplates = lang === 'python' ? PYTHON_TEMPLATES : TEMPLATES;
+    const curTemplateCategories = lang === 'python' ? PYTHON_TEMPLATE_CATEGORIES : TEMPLATE_CATEGORIES;
+    const defaultCode = lang === 'python' ? DEFAULT_PYTHON_CODE : DEFAULT_JAVA_CODE;
 
     const handleRun = async () => {
         setLoadingState(true);
         try {
-            const result = await executeJavaCode(code);
+            const result = await executeCode(code, lang);
             if (result.code) setCode(result.code);
             loadCommands(result.commands);
             play();
@@ -289,10 +327,10 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
                         </button>
                         {menuOpen === 'templates' && (
                             <div style={{ ...dropdownStyle, left: 0 }}>
-                                {TEMPLATE_CATEGORIES.map(cat => (
+                                {curTemplateCategories.map(cat => (
                                     <div key={cat}>
                                         <div style={{ padding: "8px 14px 4px", fontSize: 10, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: 1, fontWeight: 600 }}>{cat}</div>
-                                        {TEMPLATES.filter(t => t.category === cat).map(t => (
+                                        {curTemplates.filter(t => t.category === cat).map(t => (
                                             <div
                                                 key={t.name}
                                                 onClick={() => { persistCode(t.code); setMenuOpen(null); reset(); }}
@@ -321,10 +359,10 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
                         </button>
                         {menuOpen === 'algorithms' && (
                             <div style={{ ...dropdownStyle, right: 0 }}>
-                                {CATEGORIES.map(cat => (
+                                {curCategories.map(cat => (
                                     <div key={cat}>
                                         <div style={{ padding: "8px 14px 4px", fontSize: 10, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: 1, fontWeight: 600 }}>{cat}</div>
-                                        {ALGORITHMS.filter(a => a.category === cat).map(a => (
+                                        {curAlgorithms.filter(a => a.category === cat).map(a => (
                                             <div
                                                 key={a.name}
                                                 onClick={() => { persistCode(a.code); setMenuOpen(null); reset(); }}
@@ -357,7 +395,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
                     <Editor
                         width="100%"
                         height="100%"
-                        language="java"
+                        language={lang === 'python' ? 'python' : 'java'}
                         theme="vs-dark"
                         value={code}
                         onChange={(v) => { persistCode(v ?? ""); reset(); }}
@@ -375,7 +413,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
             }}>
                 <>
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                        <div style={{ position: "relative" }}>
+                        <div ref={langRef} style={{ position: "relative" }}>
                             <button
                                 onClick={() => setLangOpen(!langOpen)}
                                 style={{
@@ -387,7 +425,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
                                 onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--border-light)"; e.currentTarget.style.color = "var(--text-secondary)"; }}
                                 onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--text-muted)"; }}
                             >
-                                ☕ Java 25 ▾
+                                {lang === 'python' ? '🐍 Python 3' : '☕ Java 25'} ▾
                             </button>
                             {langOpen && (
                                 <div style={{
@@ -396,15 +434,28 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
                                     borderRadius: 6, zIndex: 10, minWidth: 120,
                                     boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
                                 }}>
-                                    <div style={{ padding: "6px 12px", fontSize: 12, color: "#fff", background: "var(--bg-active)", borderRadius: 5, cursor: "default" }}>
+                                    <div
+                                        onClick={() => switchLang('java')}
+                                        style={{ padding: "6px 12px", fontSize: 12, color: lang === 'java' ? '#fff' : 'var(--text-secondary)', background: lang === 'java' ? 'var(--bg-active)' : 'transparent', borderRadius: '5px 5px 0 0', cursor: "pointer", transition: 'background 0.1s' }}
+                                        onMouseEnter={e => { if (lang !== 'java') e.currentTarget.style.background = 'var(--bg-hover)'; }}
+                                        onMouseLeave={e => { if (lang !== 'java') e.currentTarget.style.background = 'transparent'; }}
+                                    >
                                         ☕ Java 25
+                                    </div>
+                                    <div
+                                        onClick={() => switchLang('python')}
+                                        style={{ padding: "6px 12px", fontSize: 12, color: lang === 'python' ? '#fff' : 'var(--text-secondary)', background: lang === 'python' ? 'var(--bg-active)' : 'transparent', borderRadius: '0 0 5px 5px', cursor: "pointer", transition: 'background 0.1s' }}
+                                        onMouseEnter={e => { if (lang !== 'python') e.currentTarget.style.background = 'var(--bg-hover)'; }}
+                                        onMouseLeave={e => { if (lang !== 'python') e.currentTarget.style.background = 'transparent'; }}
+                                    >
+                                        🐍 Python 3
                                     </div>
                                 </div>
                             )}
                         </div>
                         {!isPractice && (
                             <button
-                                onClick={() => { persistCode(DEFAULT_JAVA_CODE); reset(); }}
+                                onClick={() => { persistCode(defaultCode); reset(); }}
                                 title="Reset editor"
                                 style={{
                                     fontSize: 11, color: "var(--text-muted)", background: "transparent",

@@ -26,13 +26,13 @@ export async function fetchProblems(): Promise<Problem[]> {
     return problemsCache!;
 }
 
-export async function executeJavaCode(code: string): Promise<{ commands: any[]; code?: string }> {
+export async function executeCode(code: string, language: string = 'java'): Promise<{ commands: any[]; code?: string }> {
     let response: Response;
     try {
         response = await fetch(`${API_BASE_URL}/execute`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ code }),
+            body: JSON.stringify({ code, language }),
         });
     } catch {
         throw new Error('Backend\'s taking a nap 😴 — it runs on Railway free tier so it may be down or overloaded. Please try again in ~30s, or reach out via GitHub: https://github.com/vish-chan/AlgoFlow');
@@ -44,3 +44,6 @@ export async function executeJavaCode(code: string): Promise<{ commands: any[]; 
     }
     return { commands: data.commands || data, code: data.code };
 }
+
+/** @deprecated Use executeCode instead */
+export const executeJavaCode = executeCode;

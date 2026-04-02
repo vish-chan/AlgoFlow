@@ -12,6 +12,14 @@ public class Solution {
 }
 `;
 
+export const DEFAULT_PYTHON_CODE = `# Common data structures are visualized automatically
+# when you hit Run.
+
+arr = [5, 3, 8, 1, 9, 2, 7]
+
+# Write your algorithm here
+`;
+
 export interface Algorithm {
     name: string;
     category: string;
@@ -941,3 +949,181 @@ public class Main {
 ];
 
 export const TEMPLATE_CATEGORIES = [...new Set(TEMPLATES.map(t => t.category))];
+
+// ── Python ──
+
+export const PYTHON_ALGORITHMS: Algorithm[] = [
+    {
+        name: "Bubble Sort",
+        category: "Sorting",
+        code: `arr = [5, 3, 8, 1, 9, 2, 7]
+
+def bubble_sort(a):
+    n = len(a)
+    for i in range(n - 1):
+        for j in range(n - i - 1):
+            if a[j] > a[j + 1]:
+                a[j], a[j + 1] = a[j + 1], a[j]
+
+bubble_sort(arr)
+print("sorted")
+`,
+    },
+    {
+        name: "Selection Sort",
+        category: "Sorting",
+        code: `arr = [5, 3, 8, 1, 9, 2, 7]
+
+def selection_sort(a):
+    n = len(a)
+    for i in range(n - 1):
+        min_idx = i
+        for j in range(i + 1, n):
+            if a[j] < a[min_idx]:
+                min_idx = j
+        a[i], a[min_idx] = a[min_idx], a[i]
+
+selection_sort(arr)
+`,
+    },
+    {
+        name: "Insertion Sort",
+        category: "Sorting",
+        code: `arr = [5, 3, 8, 1, 9, 2, 7]
+
+def insertion_sort(a):
+    for i in range(1, len(a)):
+        key = a[i]
+        j = i - 1
+        while j >= 0 and a[j] > key:
+            a[j + 1] = a[j]
+            j -= 1
+        a[j + 1] = key
+
+insertion_sort(arr)
+`,
+    },
+    {
+        name: "Binary Search",
+        category: "Searching",
+        code: `arr = [1, 3, 5, 7, 9, 11, 13, 15, 17]
+
+def binary_search(a, target):
+    lo = 0
+    hi = len(a) - 1
+    while lo <= hi:
+        mid = (lo + hi) // 2
+        if a[mid] == target:
+            return mid
+        elif a[mid] < target:
+            lo = mid + 1
+        else:
+            hi = mid - 1
+    return -1
+
+result = binary_search(arr, 7)
+print("found at", result)
+`,
+    },
+    {
+        name: "Linear Search",
+        category: "Searching",
+        code: `arr = [5, 3, 8, 1, 9, 2, 7]
+
+def linear_search(a, target):
+    for i in range(len(a)):
+        if a[i] == target:
+            return i
+    return -1
+
+result = linear_search(arr, 9)
+print("found at", result)
+`,
+    },
+    {
+        name: "Fibonacci (Memoized)",
+        category: "Dynamic Programming",
+        code: `memo = {}
+
+def fib(n):
+    if n <= 1:
+        return n
+    if n in memo:
+        return memo[n]
+    result = fib(n - 1) + fib(n - 2)
+    memo[n] = result
+    return result
+
+fib(10)
+print("fib(10) =", memo[10])
+`,
+    },
+    {
+        name: "Two Sum",
+        category: "Hash Maps",
+        code: `nums = [2, 7, 11, 15]
+seen = {}
+
+def two_sum(nums, target):
+    for i in range(len(nums)):
+        complement = target - nums[i]
+        if complement in seen:
+            print("found", seen[complement], i)
+            return
+        seen[nums[i]] = i
+
+two_sum(nums, 9)
+`,
+    },
+];
+
+export const PYTHON_CATEGORIES = [...new Set(PYTHON_ALGORITHMS.map(a => a.category))];
+
+export const PYTHON_TEMPLATES: Template[] = [
+    {
+        name: "1D List",
+        category: "Lists",
+        description: "Auto-visualized list",
+        code: `arr = [5, 3, 8, 1, 9, 2, 7]
+
+# Write your algorithm here
+`,
+    },
+    {
+        name: "2D List",
+        category: "Lists",
+        description: "Auto-visualized 2D list",
+        code: `matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Write your algorithm here
+`,
+    },
+    {
+        name: "Dictionary",
+        category: "Data Structures",
+        description: "Auto-visualized dict",
+        code: `scores = {"alice": 90, "bob": 80, "charlie": 70}
+
+# Write your algorithm here
+`,
+    },
+    {
+        name: "Set",
+        category: "Data Structures",
+        description: "Auto-visualized set",
+        code: `visited = set()
+
+visited.add(1)
+visited.add(2)
+visited.add(3)
+
+# Write your algorithm here
+`,
+    },
+];
+
+export const PYTHON_TEMPLATE_CATEGORIES = [...new Set(PYTHON_TEMPLATES.map(t => t.category))];

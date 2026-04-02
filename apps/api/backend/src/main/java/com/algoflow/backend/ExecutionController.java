@@ -29,13 +29,19 @@ public class ExecutionController {
     @org.springframework.beans.factory.annotation.Value("${engine.jar.path:../../../packages/java/engine/target/algo-transformer-1.0-SNAPSHOT.jar}")
     private String engineJarPath;
 
+    @org.springframework.beans.factory.annotation.Value("${engine.python.path:../../../packages/python/engine}")
+    private String pythonEnginePath;
+
     @PostMapping("/execute")
     public ResponseEntity<Map<String, Object>> execute(@RequestBody Map<String, String> request) {
         String code = request.get("code");
-        log.info("Received execution request, code length: {}", code.length());
+        String language = request.getOrDefault("language", "java");
+        log.info("Received execution request, language: {}, code length: {}", language, code.length());
         
         try {
-            Map<String, Object> result = executeJavaCode(code);
+            Map<String, Object> result = "python".equals(language)
+                ? executePythonCode(code)
+                : executeJavaCode(code);
             log.info("Execution successful");
             return ResponseEntity.ok(result);
         } catch (Exception e) {
@@ -149,6 +155,55 @@ public class ExecutionController {
                 .filter(line -> !line.startsWith("OpenJDK"))
                 .filter(line -> !line.startsWith("WARNING:"))
                 .reduce("", (a, b) -> a.isEmpty() ? b : a + "\n" + b);
+    }
+
+    private Map<String, Object> executePythonCode(String code) throws Exception {
+        Path tempDir = Files.createTempDirectory("algo-py");
+        Path pyFile = tempDir.resolve("solution.py");
+        Path engineDir = Paths.get(pythonEnginePath).toAbsolutePath();
+
+        log.debug("Python temp directory: {}", tempDir);
+        log.debug("Python engine directory: {}", engineDir);
+
+        try {
+            Files.writeString(pyFile, code);
+
+            ProcessBuilder runBuilder = new ProcessBuilder(
+                "python3", engineDir.resolve("engine/runner.py").toString(), pyFile.toString());
+            runBuilder.directory(engineDir.toFile());
+
+            log.debug("Starting Python process: {}", runBuilder.command());
+
+            Process run = runBuilder.start();
+            run.getOutputStream().close();
+            String runOutput = new String(run.getInputStream().readAllBytes());
+            String runStderr = new String(run.getErrorStream().readAllBytes());
+            int runExitCode = run.waitFor();
+
+            if (log.isDebugEnabled()) {
+                log.debug("Python process stdout length: {}", runOutput.length());
+                log.debug("Python process stderr:\n{}", runStderr);
+            }
+
+            if (runExitCode != 0) {
+                log.error("Python execution failed: {}", runStderr);
+                throw new RuntimeException(runStderr.isBlank() ? "Python execution failed" : runStderr.strip());
+            }
+
+            if (runOutput.isBlank()) {
+                throw new RuntimeException("No visualization output produced");
+            }
+
+            List<?> commands = new ObjectMapper().readValue(runOutput, List.class);
+            return Map.of("commands", commands, "code", code);
+        } finally {
+            log.debug("Cleaning up Python temp directory: {}", tempDir);
+            Files.walk(tempDir)
+                .sorted(Comparator.reverseOrder())
+                .forEach(path -> {
+                    try { Files.delete(path); } catch (IOException ignored) {}
+                });
+        }
     }
 
     private String normalizeToRunnerPackage(String code) {
