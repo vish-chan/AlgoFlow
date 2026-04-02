@@ -90,6 +90,16 @@ public class TreeVisualizer implements Visualizer {
     public void onFieldGet(Object owner, String fieldName) {
         if (!_knownNodes.contains(owner))
             return;
+        if (fieldName.equals(_leftField) || fieldName.equals(_rightField)) {
+            Object child = getChild(owner, fieldName);
+            if (child != null && _knownNodes.contains(child)) {
+                leaveLastVisited(child);
+                _lastVisited = child;
+                _tracer.visit(id(child), id(owner));
+                Tracer.delay();
+            }
+            return;
+        }
         if (_lastVisited == owner)
             return;
         leaveLastVisited(owner);
