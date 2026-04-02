@@ -111,6 +111,9 @@ public class VisualizerInitializer {
             case ArrayList<?> objects -> "ArrayList";
             case ArrayDeque<?> objects -> "Deque";
             case PriorityQueue<?> objects -> "PriorityQueue";
+            case java.util.TreeSet<?> objects -> "TreeSet";
+            case java.util.LinkedHashSet<?> objects -> "LinkedHashSet";
+            case java.util.HashSet<?> objects -> "HashSet";
             case null, default -> "Collection";
         };
         return prefix + ": " + name;

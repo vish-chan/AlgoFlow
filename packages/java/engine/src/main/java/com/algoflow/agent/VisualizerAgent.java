@@ -144,7 +144,10 @@ public class VisualizerAgent {
                                     .on(named("clear").and(takesArguments(0))));
                 })
                 .type(ElementMatchers.is(java.util.ArrayDeque.class)
-                        .or(ElementMatchers.is(java.util.PriorityQueue.class)))
+                        .or(ElementMatchers.is(java.util.PriorityQueue.class))
+                        .or(ElementMatchers.is(java.util.HashSet.class))
+                        .or(ElementMatchers.is(java.util.LinkedHashSet.class))
+                        .or(ElementMatchers.is(java.util.TreeSet.class)))
                 .transform((builder, type, classLoader, module, protectionDomain) -> {
                     System.out.println("[VisualizerAgent] Transforming: " + type.getName());
                     return builder
@@ -175,7 +178,10 @@ public class VisualizerAgent {
                 .type(ElementMatchers.is(java.util.ArrayList.class).or(ElementMatchers.is(LinkedList.class))
                         .or(ElementMatchers.is(java.util.Stack.class))
                         .or(ElementMatchers.is(java.util.ArrayDeque.class))
-                        .or(ElementMatchers.is(java.util.PriorityQueue.class)))
+                        .or(ElementMatchers.is(java.util.PriorityQueue.class))
+                        .or(ElementMatchers.is(java.util.HashSet.class))
+                        .or(ElementMatchers.is(java.util.LinkedHashSet.class))
+                        .or(ElementMatchers.is(java.util.TreeSet.class)))
                 .transform((builder, type, classLoader, module, protectionDomain) -> {
                     System.out.println("[VisualizerAgent] Transforming iterator() on: " + type.getName());
                     return builder.visit(Advice.to(IteratorInterceptor.CreatedInterceptor.class)
