@@ -4,18 +4,18 @@ import { getEngine, subscribe, subscribeToPlaying } from "./visualizerEngine";
 function PaneLabel({ child, collapsed, onToggle }: { child: any; collapsed: boolean; onToggle: () => void }) {
     const type = child?.type || '';
     const title = child?.title || '';
+    const dsType = child?.dsType
+        || (type === 'chart' ? 'Chart' : null)
+        || (type === 'hashmap' ? 'Map' : null)
+        || (type === 'locals' ? 'Call Stack' : null);
     const typeIcon: Record<string, string> = {
         array: '▦', array2d: '▦', chart: '▥', graph: '◉', log: '▸', locals: '⧉',
-        variables: '𝑥', variablesGroup: '𝑥', recursion: '↻',
+        variables: '𝑥', variablesGroup: '𝑥', recursion: '↻', hashmap: '◈',
     };
     const displayName: Record<string, string> = {
         locals: 'Call Stack & Locals',
         variablesGroup: 'Local Variables',
         log: title === 'Error' ? '⚠ Error' : (title || 'Log'),
-        graph: title || 'Graph',
-        chart: title || 'Chart',
-        array: title || 'Array',
-        array2d: title || '2D Array',
         recursion: title || 'Recursion',
         variables: title || 'Variables',
     };
@@ -34,6 +34,9 @@ function PaneLabel({ child, collapsed, onToggle }: { child: any; collapsed: bool
         >
             <span style={{ fontSize: 8, opacity: 0.5 }}>{collapsed ? '▶' : '▼'}</span>
             <span style={{ opacity: 0.6 }}>{icon}</span>
+            {dsType && (
+                <span style={{ fontSize: 9, fontWeight: 700, color: 'var(--accent)', background: 'rgba(76,175,80,0.1)', padding: '1px 5px', borderRadius: 3 }}>{dsType}</span>
+            )}
             {label}
         </div>
     );

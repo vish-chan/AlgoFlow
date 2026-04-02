@@ -271,7 +271,7 @@ export class SimpleRenderer {
         } else if (this.data.type === 'array') {
             this.renderArray(this.data.data, this.data.title, this.data.dsType);
         } else if (this.data.type === 'array2d') {
-            this.renderArray2D(this.data.data, this.data.title);
+            this.renderArray2D(this.data.data, this.data.title, this.data.dsType);
         } else if (this.data.type === 'hashmap') {
             this.renderHashMap(this.data.data, this.data.title);
         } else if (this.data.type === 'log') {
@@ -488,7 +488,7 @@ export class SimpleRenderer {
             } else if (child?.type === 'locals' && child.rows) {
                 this.renderLocalsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, child.callStack);
             } else if (child?.type === 'array2d' && child.data) {
-                this.renderArray2DInBounds(child.data, child.title, 0, 0, width, sectionHeight);
+                this.renderArray2DInBounds(child.data, child.title, 0, 0, width, sectionHeight, child.dsType);
             } else if (child?.type === 'hashmap' && child.data) {
                 this.renderHashMapInBounds(child.data, child.title, 0, 0, width, sectionHeight);
             } else if (child?.type === 'log' && child.logs) {
@@ -852,7 +852,7 @@ export class SimpleRenderer {
         } else if (child?.type === 'locals' && child.rows) {
             this.renderLocalsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, child.callStack);
         } else if (child?.type === 'array2d' && child.data) {
-            this.renderArray2DInBounds(child.data, child.title, 0, 0, width, height);
+            this.renderArray2DInBounds(child.data, child.title, 0, 0, width, height, child.dsType);
         } else if (child?.type === 'hashmap' && child.data) {
             this.renderHashMapInBounds(child.data, child.title, 0, 0, width, height);
         } else if (child?.type === 'log' && child.logs) {
@@ -1025,17 +1025,17 @@ export class SimpleRenderer {
         });
     }
 
-    private renderArray2D(rows: any[][], title?: string) {
+    private renderArray2D(rows: any[][], title?: string, dsType?: string) {
         if (!this.ctx || !this.canvas) return;
 
         const dpr = window.devicePixelRatio || 1;
         const width = this.canvas.width / dpr;
         const height = this.canvas.height / dpr;
 
-        this.renderArray2DInBounds(rows, title, 0, 0, width, height);
+        this.renderArray2DInBounds(rows, title, 0, 0, width, height, dsType);
     }
 
-    private renderArray2DInBounds(rows: any[][], title: string | undefined, x: number, y: number, width: number, height: number) {
+    private renderArray2DInBounds(rows: any[][], title: string | undefined, x: number, y: number, width: number, height: number, dsType?: string) {
         if (!this.ctx || !rows.length) return;
 
         const cols = rows[0]?.length || 1;
@@ -1049,10 +1049,7 @@ export class SimpleRenderer {
         const startY = y + titleH + (height - titleH - gridH) / 2;
 
         if (title) {
-            this.ctx.fillStyle = theme.text.secondary;
-            this.ctx.font = '12px sans-serif';
-            this.ctx.textAlign = 'center';
-            this.ctx.fillText(title, x + width / 2, y + 16);
+            this.drawTitleWithBadge(title, dsType, x + width / 2, y + 16, 12);
         }
 
         const fontSize = 12;

@@ -48,6 +48,7 @@ export class SimpleEngine {
 
     private treeMaxLeaves: Map<string, number> = new Map();
     private treeMaxDepth: Map<string, number> = new Map();
+    private treeKeys: Set<string> = new Set();
     private _maxLocalsRows = 0;
     private _maxLocalsFrames = 0;
 
@@ -57,6 +58,7 @@ export class SimpleEngine {
     private precomputeFinalTreeLayouts(commands: Command[]) {
         this.treeMaxLeaves.clear();
         this.treeMaxDepth.clear();
+        this.treeKeys.clear();
         this._maxLocalsRows = 0;
         this._maxLocalsFrames = 0;
         const localsKeys = new Set<string>();
@@ -94,6 +96,7 @@ export class SimpleEngine {
                 if (from >= 0 && to >= 0) t.edges.push([from, to]);
             } else if (method === 'layoutTree') {
                 t.isTree = true;
+                this.treeKeys.add(key);
                 // Compute depth and leaf count for this rebuild
                 const n = t.namedNodes.size;
                 const children: number[][] = Array.from({ length: n }, () => []);
@@ -184,7 +187,10 @@ export class SimpleEngine {
                 const mapTitle = title.replace(/^map:\s*/i, '');
                 this.tracers[key] = { type: 'hashmap', data: [], title: mapTitle };
             } else {
-                this.tracers[key] = { type: 'array2d', data: [], title: args[0] };
+                const colonIdx = title.indexOf(': ');
+                const dsType = colonIdx >= 0 ? title.substring(0, colonIdx) : undefined;
+                const displayTitle = colonIdx >= 0 ? title.substring(colonIdx + 2) : title;
+                this.tracers[key] = { type: 'array2d', data: [], title: displayTitle, dsType };
             }
         } else if (key !== null && method === 'LogTracer') {
             this.tracers[key] = { type: 'log', logs: [], title: args[0] || 'Log' };
@@ -533,7 +539,7 @@ export class SimpleEngine {
             } else if (tracer.type === 'array') {
                 this.renderer.setData({ type: 'array', data: tracer.data, title: tracer.title, dsType: tracer.dsType });
             } else if (tracer.type === 'array2d') {
-                this.renderer.setData({ type: 'array2d', data: tracer.data, title: tracer.title });
+                this.renderer.setData({ type: 'array2d', data: tracer.data, title: tracer.title, dsType: tracer.dsType });
             } else if (tracer.type === 'hashmap') {
                 this.renderer.setData({ type: 'hashmap', data: tracer.data, title: tracer.title });
             } else if (tracer.type === 'log') {
@@ -554,7 +560,7 @@ export class SimpleEngine {
                         const c = this.tracers[childKey];
                         const _tracerKey = childKey;
                         if (c?.type === 'graph') {
-                            return { ...c, _tracerKey, visitedEdges: [...c.visitedEdges], directed: c.directed, weighted: c.weighted, nodeLabels: c.nodeLabels, layout: c.layout, treeRoot: c.treeRoot, edges: c.edges, namedNodes: c.namedNodes, treeDims: this.getTreeMaxDimensions(childKey) };
+                            return { ...c, _tracerKey, dsType: this.treeKeys.has(childKey) ? 'Tree' : 'Graph', visitedEdges: [...c.visitedEdges], directed: c.directed, weighted: c.weighted, nodeLabels: c.nodeLabels, layout: c.layout, treeRoot: c.treeRoot, edges: c.edges, namedNodes: c.namedNodes, treeDims: this.getTreeMaxDimensions(childKey) };
                         }
                         if (c?.type === 'chart') {
                             return { ...c, _tracerKey };
@@ -684,7 +690,7 @@ export class SimpleEngine {
             .map((k: string) => {
                 const t = this.tracers[k];
                 let dsType = t?.dsType;
-                if (!dsType && t?.type === 'graph') dsType = t.layout === 'tree' ? 'Tree' : 'Graph';
+                if (!dsType && t?.type === 'graph') dsType = this.treeKeys.has(k) ? 'Tree' : 'Graph';
                 if (!dsType && t?.type === 'chart') dsType = 'Chart';
                 if (!dsType && t?.type === 'locals') dsType = 'Call Stack';
                 if (!dsType && t?.type === 'hashmap') dsType = 'Map';
@@ -725,7 +731,7 @@ export class SimpleEngine {
                 if (!c) return null;
                 const _tracerKey = childKey;
                 if (c.type === 'graph') {
-                    return { ...c, _tracerKey, visitedEdges: [...c.visitedEdges], treeDims: this.getTreeMaxDimensions(childKey) };
+                    return { ...c, _tracerKey, dsType: this.treeKeys.has(childKey) ? 'Tree' : 'Graph', visitedEdges: [...c.visitedEdges], treeDims: this.getTreeMaxDimensions(childKey) };
                 }
                 if (c.type === 'chart') {
                     return { ...c, _tracerKey };

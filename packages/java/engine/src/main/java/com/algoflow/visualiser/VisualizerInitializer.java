@@ -130,9 +130,9 @@ public class VisualizerInitializer {
             return true;
         } else if (value.getClass().isArray()) {
             if (is2DArray(value)) {
-                VisualizerRegistry.register(new PrimitiveArray2DVisualizer(value, name), value);
+                VisualizerRegistry.register(new PrimitiveArray2DVisualizer(value, "int[][]: " + name), value);
             } else {
-                VisualizerRegistry.register(new PrimitiveArray1DVisualizer(value, name), value);
+                VisualizerRegistry.register(new PrimitiveArray1DVisualizer(value, "int[]: " + name), value);
             }
             return true;
         }
