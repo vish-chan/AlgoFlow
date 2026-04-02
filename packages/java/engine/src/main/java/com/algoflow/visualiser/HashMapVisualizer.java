@@ -17,14 +17,15 @@ public class HashMapVisualizer implements Visualizer {
         updateDisplay();
     }
 
-    public void onPut(Object key, Object value) {
-        int existing = keyIndex(key);
-        if (existing >= 0) {
-            _tracer.patch(1, existing, value);
-            Tracer.delay();
-            _tracer.depatch(1, existing);
+    public void onPut(Object key, Object value, String phase) {
+        if ("before".equals(phase)) {
+            int existing = keyIndex(key);
+            if (existing >= 0) {
+                _tracer.patch(1, existing, value);
+                Tracer.delay();
+                _tracer.depatch(1, existing);
+            }
         } else {
-            updateDisplay();
             int col = keyIndex(key);
             if (col >= 0) {
                 _tracer.select(0, col);
@@ -33,8 +34,8 @@ public class HashMapVisualizer implements Visualizer {
                 _tracer.deselect(0, col);
                 _tracer.deselect(1, col);
             }
+            updateDisplay();
         }
-        updateDisplay();
     }
 
     public void onGet(Object key) {
@@ -69,6 +70,15 @@ public class HashMapVisualizer implements Visualizer {
     public void onClear() {
         updateDisplay();
         Tracer.delay();
+    }
+
+    public void onValueMutated() {
+        updateDisplay();
+        Tracer.delay();
+    }
+
+    public boolean containsValue(Object value) {
+        return _map.containsValue(value);
     }
 
     private int keyIndex(Object key) {

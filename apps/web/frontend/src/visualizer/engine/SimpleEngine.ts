@@ -134,7 +134,6 @@ export class SimpleEngine {
         this.tracers = {};
         this.root = null;
         this.highlightedLine = null;
-        this.renderer.clearHashMapLayouts();
         this.renderer.setData(null);
     }
 

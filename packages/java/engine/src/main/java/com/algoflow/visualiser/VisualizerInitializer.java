@@ -69,7 +69,7 @@ public class VisualizerInitializer {
         if (field.isAnnotationPresent(Graph.class)) {
             Graph annotation = field.getAnnotation(Graph.class);
             if (!isSupportedGraphType(value)) {
-                System.err.println("[AlgoFlow] @Graph on '" + name + "': unsupported type. Supported: int[][]");
+                System.err.println("[AlgoFlow] @Graph on '" + name + "': unsupported type. Supported: int[][], Map<K, List<V>>");
                 return false;
             }
             GraphVisualizer vis = new GraphVisualizer(name, value, annotation.directed(), annotation.weighted());
@@ -156,6 +156,6 @@ public class VisualizerInitializer {
     }
 
     private static boolean isSupportedGraphType(Object value) {
-        return value instanceof int[][];
+        return value instanceof int[][] || value instanceof java.util.Map;
     }
 }

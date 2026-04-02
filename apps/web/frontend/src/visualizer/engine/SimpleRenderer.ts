@@ -31,7 +31,6 @@ export class SimpleRenderer {
     private hoveredRegionIdx: number = -1;
     private transitions: Map<string, ColorTransition> = new Map();
     private childTransitions: Map<string, ColorTransition> = new Map();
-    private hashMapLayouts: Map<string, 'horizontal' | 'vertical'> = new Map();
 
     private static readonly SWAP_DURATION = 400;
     private static readonly TRANSITION_DURATION = 200;
@@ -107,10 +106,6 @@ export class SimpleRenderer {
         this.data = data;
         this.resize();
         this.scheduleTransitionLoop();
-    }
-
-    clearHashMapLayouts() {
-        this.hashMapLayouts.clear();
     }    private parseRGBA(color: string): [number, number, number, number] {
         if (color.startsWith('#')) {
             const hex = color.slice(1);
@@ -401,9 +396,7 @@ export class SimpleRenderer {
         if (child?.type === 'array2d' && child.data) return Math.max(120, 30 + child.data.length * 40);
         if (child?.type === 'hashmap' && child.data) {
             const n = child.data[0]?.length || 1;
-            const layoutKey = child.title || '_default_map';
-            const layout = this.hashMapLayouts.get(layoutKey);
-            if (layout === 'vertical') return Math.max(120, 30 + n * 31);
+            if (this.isHashMapVertical(child.data, 400)) return Math.max(120, 30 + n * 31);
             return Math.max(120, 30 + 80);
         }
         if (child?.type === 'variables' && child.vars) return Math.max(60, 45 + 28);
@@ -1103,14 +1096,18 @@ export class SimpleRenderer {
     private isHashMapVertical(rows: any[][], width: number): boolean {
         if (!this.ctx || rows.length < 2) return false;
         const n = rows[0]?.length || 0;
+        if (n > 10) return true;
         this.ctx.font = '12px monospace';
-        let maxValW = 0;
+        const pad = 40;
+        const gap = 6;
+        let totalW = (n - 1) * gap;
         for (let i = 0; i < n; i++) {
+            const k = typeof rows[0][i] === 'object' ? rows[0][i].value : rows[0][i];
             const v = typeof rows[1][i] === 'object' ? rows[1][i].value : rows[1][i];
-            maxValW = Math.max(maxValW, this.ctx.measureText(String(v)).width);
+            const content = Math.max(this.ctx.measureText(String(k)).width, this.ctx.measureText(String(v)).width) + 16;
+            totalW += Math.max(50, Math.min(120, content));
         }
-        const horizCellW = Math.min(70, Math.max(50, (width - 40) / n));
-        return maxValW > horizCellW - 16 || n > 10;
+        return totalW > width - pad;
     }
 
     private renderHashMapInBounds(rows: any[][], title: string | undefined, x: number, y: number, width: number, height: number) {
@@ -1124,14 +1121,7 @@ export class SimpleRenderer {
         const titleH = title ? 25 : 0;
         if (title) this.drawTitleWithBadge(title, 'Map', x + width / 2, y + 14, 12);
 
-        const layoutKey = title || '_default_map';
-        let layout = this.hashMapLayouts.get(layoutKey);
-        if (!layout) {
-            layout = this.isHashMapVertical(rows, width) ? 'vertical' : 'horizontal';
-            this.hashMapLayouts.set(layoutKey, layout);
-        }
-
-        if (layout === 'vertical') {
+        if (this.isHashMapVertical(rows, width)) {
             this.renderHashMapVertical(keys, values, n, x, y + titleH, width, height - titleH);
         } else {
             this.renderHashMapHorizontal(keys, values, n, x, y + titleH, width, height - titleH);
@@ -1139,16 +1129,30 @@ export class SimpleRenderer {
     }
 
     private renderHashMapHorizontal(keys: any[], values: any[], n: number, x: number, y: number, width: number, height: number) {
-        const cellW = Math.min(70, Math.max(50, (width - 40) / n));
         const cellH = 32;
         const gap = 6;
-        const totalW = n * cellW + (n - 1) * gap;
+        const minW = 50;
+        const maxW = 120;
+
+        this.ctx!.font = '12px monospace';
+        const naturalWidths: number[] = [];
+        for (let i = 0; i < n; i++) {
+            const { kVal, vVal } = this.extractMapEntry(keys[i], values[i]);
+            const content = Math.max(this.ctx!.measureText(String(kVal)).width, this.ctx!.measureText(String(vVal)).width) + 16;
+            naturalWidths.push(Math.max(minW, Math.min(maxW, content)));
+        }
+        const totalNatural = naturalWidths.reduce((s, w) => s + w, 0) + (n - 1) * gap;
+        const availW = width - 40;
+        const scale = totalNatural > availW ? availW / totalNatural : 1;
+        const cellWidths = naturalWidths.map(w => w * scale);
+        const totalW = cellWidths.reduce((s, w) => s + w, 0) + (n - 1) * gap;
         const startX = x + (width - totalW) / 2;
         const startY = y + (height - cellH * 2 - 12) / 2;
 
+        let curX = startX;
         for (let i = 0; i < n; i++) {
+            const cellW = cellWidths[i];
             const { kVal, vVal, selected, patched } = this.extractMapEntry(keys[i], values[i]);
-            const cx = startX + i * (cellW + gap);
             const keyTarget = patched ? theme.status.error : (selected ? theme.status.info : theme.bg.elevated);
             const valTarget = patched ? theme.status.error : (selected ? theme.status.info : theme.cell.default);
             const borderTarget = patched ? theme.status.error : (selected ? theme.status.info : theme.border.light);
@@ -1156,7 +1160,7 @@ export class SimpleRenderer {
             this.applyMapGlow(selected, patched);
             this.ctx!.fillStyle = this.transitionColor(`map-k-${i}`, keyTarget);
             this.ctx!.beginPath();
-            this.ctx!.roundRect(cx, startY, cellW, cellH, [4, 4, 0, 0]);
+            this.ctx!.roundRect(curX, startY, cellW, cellH, [4, 4, 0, 0]);
             this.ctx!.fill();
             this.ctx!.strokeStyle = borderTarget;
             this.ctx!.lineWidth = 1;
@@ -1167,12 +1171,12 @@ export class SimpleRenderer {
             this.ctx!.font = '12px monospace';
             this.ctx!.textAlign = 'center';
             this.ctx!.textBaseline = 'middle';
-            this.ctx!.fillText(this.truncateText(String(kVal), cellW - 8), cx + cellW / 2, startY + cellH / 2);
+            this.ctx!.fillText(this.truncateText(String(kVal), cellW - 8), curX + cellW / 2, startY + cellH / 2);
 
             this.applyMapGlow(selected, patched);
             this.ctx!.fillStyle = this.transitionColor(`map-v-${i}`, valTarget);
             this.ctx!.beginPath();
-            this.ctx!.roundRect(cx, startY + cellH, cellW, cellH, [0, 0, 4, 4]);
+            this.ctx!.roundRect(curX, startY + cellH, cellW, cellH, [0, 0, 4, 4]);
             this.ctx!.fill();
             this.ctx!.strokeStyle = borderTarget;
             this.ctx!.lineWidth = 1;
@@ -1183,9 +1187,10 @@ export class SimpleRenderer {
             this.ctx!.font = 'bold 13px monospace';
             this.ctx!.textAlign = 'center';
             this.ctx!.textBaseline = 'middle';
-            this.ctx!.fillText(this.truncateText(String(vVal), cellW - 8), cx + cellW / 2, startY + cellH + cellH / 2);
+            this.ctx!.fillText(this.truncateText(String(vVal), cellW - 8), curX + cellW / 2, startY + cellH + cellH / 2);
 
-            this.tooltipRegions.push({ x: cx, y: startY, w: cellW, h: cellH * 2, text: `${kVal} \u2192 ${vVal}` });
+            this.tooltipRegions.push({ x: curX, y: startY, w: cellW, h: cellH * 2, text: `${kVal} \u2192 ${vVal}` });
+            curX += cellW + gap;
         }
     }
 

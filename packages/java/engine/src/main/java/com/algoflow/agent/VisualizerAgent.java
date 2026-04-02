@@ -187,7 +187,9 @@ public class VisualizerAgent {
                 .transform((builder, type, classLoader, module, protectionDomain) -> {
                     System.out.println("[VisualizerAgent] Transforming Map: " + type.getName());
                     return builder
-                            .visit(Advice.to(MapInterceptor.PutInterceptor.class)
+                            .visit(Advice.to(MapInterceptor.PutEnterInterceptor.class)
+                                    .on(named("put").and(takesArguments(Object.class, Object.class))))
+                            .visit(Advice.to(MapInterceptor.PutExitInterceptor.class)
                                     .on(named("put").and(takesArguments(Object.class, Object.class))))
                             .visit(Advice.to(MapInterceptor.GetInterceptor.class)
                                     .on(named("get").and(takesArguments(Object.class))))

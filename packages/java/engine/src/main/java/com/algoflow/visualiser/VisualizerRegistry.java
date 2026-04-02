@@ -110,11 +110,7 @@ public class VisualizerRegistry {
         _processing = true;
         try {
             highlightLine(getCallerCallerLineNumber());
-            if (_callStackVisualizer == null) {
-                _callStackVisualizer = new CallStackVisualizer("CallStack");
-                _visualizers.add(_callStackVisualizer.getCommander());
-                setLayout();
-            }
+            ensureCallStackVisualizer();
             _callStackVisualizer.onEnter(methodName, args);
             ensureLocalVariablesVisualizer();
             _localVariablesVisualizer.pushFrame(methodName);
@@ -201,10 +197,19 @@ public class VisualizerRegistry {
         }
     }
 
+    private static void ensureCallStackVisualizer() {
+        if (_callStackVisualizer == null) {
+            _callStackVisualizer = new CallStackVisualizer("CallStack");
+            _visualizers.add(0, _callStackVisualizer.getCommander());
+            setLayout();
+        }
+    }
+
     private static void ensureLocalVariablesVisualizer() {
         if (_localVariablesVisualizer == null) {
             _localVariablesVisualizer = new LocalVariablesVisualizer("Locals");
-            _visualizers.add(_localVariablesVisualizer.getCommander());
+            int idx = _callStackVisualizer != null ? _visualizers.indexOf(_callStackVisualizer.getCommander()) + 1 : 0;
+            _visualizers.add(idx, _localVariablesVisualizer.getCommander());
             setLayout();
         }
     }
@@ -380,6 +385,21 @@ public class VisualizerRegistry {
         try {
             highlightLine(getCallerLineNumber());
 
+            GraphVisualizer graphVis = findParentGraphForList(object);
+            if (graphVis != null) {
+                Object node = graphVis.findNodeForList(object);
+                if (node != null && args.length > 0) {
+                    graphVis.onNeighborAdd(node, args[0]);
+                }
+                return;
+            }
+
+            HashMapVisualizer mapVis = findParentMapForValue(object);
+            if (mapVis != null) {
+                mapVis.onValueMutated();
+                return;
+            }
+
             ListVisualizer visualizer = _objectToVisualizer.get(object);
             if (visualizer != null) {
                 visualizer.onAdd(args);
@@ -395,6 +415,21 @@ public class VisualizerRegistry {
         _processing = true;
         try {
             highlightLine(getCallerLineNumber());
+
+            GraphVisualizer graphVis = findParentGraphForList(object);
+            if (graphVis != null) {
+                Object node = graphVis.findNodeForList(object);
+                if (node != null && args.length > 0) {
+                    graphVis.onNeighborRemove(node, args[0]);
+                }
+                return;
+            }
+
+            HashMapVisualizer mapVis = findParentMapForValue(object);
+            if (mapVis != null) {
+                mapVis.onValueMutated();
+                return;
+            }
 
             ListVisualizer visualizer = _objectToVisualizer.get(object);
             if (visualizer != null) {
@@ -461,8 +496,16 @@ public class VisualizerRegistry {
         _processing = true;
         try {
             highlightLine(getCallerLineNumber());
+            String phase = (String) args[2];
+            GraphVisualizer graphVis = _graphToVisualizer.get(map);
+            if (graphVis != null && graphVis.isAdjList()) {
+                if ("after".equals(phase)) {
+                    graphVis.onMapPut(args[0], args[1]);
+                }
+                return;
+            }
             HashMapVisualizer vis = _mapToVisualizer.get(map);
-            if (vis != null) vis.onPut(args[0], args[1]);
+            if (vis != null) vis.onPut(args[0], args[1], phase);
         } finally {
             _processing = false;
         }
@@ -485,8 +528,16 @@ public class VisualizerRegistry {
         _processing = true;
         try {
             highlightLine(getCallerLineNumber());
+            String phase = (String) args[1];
+            GraphVisualizer graphVis = _graphToVisualizer.get(map);
+            if (graphVis != null && graphVis.isAdjList()) {
+                if ("after".equals(phase)) {
+                    graphVis.onMapRemove(args[0]);
+                }
+                return;
+            }
             HashMapVisualizer vis = _mapToVisualizer.get(map);
-            if (vis != null) vis.onRemove(args[0], (String) args[1]);
+            if (vis != null) vis.onRemove(args[0], phase);
         } finally {
             _processing = false;
         }
@@ -589,6 +640,21 @@ public class VisualizerRegistry {
         for (GraphVisualizer graphVis : _graphToVisualizer.values()) {
             if (graphVis.findRowIndex(subarray) >= 0)
                 return graphVis;
+        }
+        return null;
+    }
+
+    private static GraphVisualizer findParentGraphForList(Object list) {
+        for (GraphVisualizer graphVis : _graphToVisualizer.values()) {
+            if (graphVis.isAdjList() && graphVis.findNodeForList(list) != null)
+                return graphVis;
+        }
+        return null;
+    }
+
+    private static HashMapVisualizer findParentMapForValue(Object value) {
+        for (HashMapVisualizer vis : _mapToVisualizer.values()) {
+            if (vis.containsValue(value)) return vis;
         }
         return null;
     }

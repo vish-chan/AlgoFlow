@@ -4,11 +4,19 @@ import net.bytebuddy.asm.Advice;
 
 public class MapInterceptor {
 
-    static class PutInterceptor {
-        @Advice.OnMethodExit
-        static void onPut(@Advice.This Object instance, @Advice.Argument(0) Object key,
+    static class PutEnterInterceptor {
+        @Advice.OnMethodEnter
+        static void onPutBefore(@Advice.This Object instance, @Advice.Argument(0) Object key,
                 @Advice.Argument(1) Object value) {
-            VisualizerBridge.mapPutListener.accept(instance, new Object[]{key, value});
+            VisualizerBridge.mapPutListener.accept(instance, new Object[]{key, value, "before"});
+        }
+    }
+
+    static class PutExitInterceptor {
+        @Advice.OnMethodExit
+        static void onPutAfter(@Advice.This Object instance, @Advice.Argument(0) Object key,
+                @Advice.Argument(1) Object value) {
+            VisualizerBridge.mapPutListener.accept(instance, new Object[]{key, value, "after"});
         }
     }
 
