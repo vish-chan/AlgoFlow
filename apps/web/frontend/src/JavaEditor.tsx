@@ -138,7 +138,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
     const isPractice = mode === "practice";
 
     const [problems, setProblems] = useState<Problem[]>([]);
-    const [problemsError, setProblemsError] = useState<string | null>(null);
+    const [, setProblemsError] = useState<string | null>(null);
     const [problem, setProblem] = useState<Problem | null>(null);
 
     const [code, setCode] = useState(() => {
