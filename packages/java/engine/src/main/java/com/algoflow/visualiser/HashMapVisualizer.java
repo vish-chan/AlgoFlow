@@ -81,6 +81,14 @@ public class HashMapVisualizer implements Visualizer {
         Tracer.delay();
     }
 
+    public void onIterateIndex(int col) {
+        _tracer.select(0, col);
+        _tracer.select(1, col);
+        Tracer.delay();
+        _tracer.deselect(0, col);
+        _tracer.deselect(1, col);
+    }
+
     public boolean containsValue(Object value) {
         return _map.containsValue(value);
     }

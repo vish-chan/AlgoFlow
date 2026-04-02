@@ -503,6 +503,8 @@ public class VisualizerRegistry {
         }
     }
 
+    private static final IdentityHashMap<Object, HashMapVisualizer> _iteratorToMapVisualizer = new IdentityHashMap<>();
+
     public static void onIteratorNext(Object iterator) {
         if (_processing)
             return;
@@ -525,6 +527,22 @@ public class VisualizerRegistry {
             if (vis != null) {
                 int[] idx = _iteratorIndex.get(iterator);
                 vis.onGet(new Object[]{idx[0]});
+                idx[0]++;
+                return;
+            }
+
+            // Check map iterator via this$0
+            HashMapVisualizer mapVis = _iteratorToMapVisualizer.get(iterator);
+            if (mapVis == null) {
+                mapVis = findMapVisualizerForIterator(iterator);
+                if (mapVis != null) {
+                    _iteratorToMapVisualizer.put(iterator, mapVis);
+                    _iteratorIndex.put(iterator, new int[]{0});
+                }
+            }
+            if (mapVis != null) {
+                int[] idx = _iteratorIndex.get(iterator);
+                mapVis.onIterateIndex(idx[0]);
                 idx[0]++;
             }
         } finally {
@@ -701,6 +719,27 @@ public class VisualizerRegistry {
     private static HashMapVisualizer findParentMapForValue(Object value) {
         for (HashMapVisualizer vis : _mapToVisualizer.values()) {
             if (vis.containsValue(value)) return vis;
+        }
+        return null;
+    }
+
+    private static HashMapVisualizer findMapVisualizerForIterator(Object iterator) {
+        try {
+            Class<?> clazz = iterator.getClass();
+            while (clazz != null) {
+                try {
+                    java.lang.reflect.Field f = clazz.getDeclaredField("this$0");
+                    f.setAccessible(true);
+                    Object owner = f.get(iterator);
+                    if (owner != null) {
+                        return _mapToVisualizer.get(owner);
+                    }
+                } catch (NoSuchFieldException e) {
+                    clazz = clazz.getSuperclass();
+                }
+            }
+        } catch (Exception e) {
+            // ignore
         }
         return null;
     }
