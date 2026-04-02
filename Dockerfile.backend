@@ -13,8 +13,12 @@ RUN mvn clean package -q -DskipTests
 # Runtime
 FROM amazoncorretto:25
 
+# Install Python 3
+RUN dnf install -y python3 && dnf clean all
+
 COPY --from=build /build/engine/target/algo-transformer-1.0-SNAPSHOT.jar /app/engine.jar
 COPY --from=build /build/backend/target/algo-backend-1.0.0.jar /app/backend.jar
+COPY packages/python/engine /app/python-engine
 
 WORKDIR /app
 
@@ -24,4 +28,5 @@ EXPOSE 8080
 
 CMD ["java", "-jar", "backend.jar", \
      "--engine.jar.path=/app/engine.jar", \
+     "--engine.python.path=/app/python-engine", \
      "--server.port=8080"]
