@@ -588,21 +588,14 @@ export class SimpleRenderer {
         const offsetX = chartX + (chartW - totalBarW) / 2;
 
         const anim = this.swapAnim;
-        const t = anim ? this.easeInOut(anim.progress) : 0;
 
         for (let i = 0; i < arr.length; i++) {
             const value = typeof arr[i] === 'object' ? arr[i].value : arr[i];
             const selected = typeof arr[i] === 'object' ? arr[i].selected : false;
             const patched = typeof arr[i] === 'object' ? arr[i].patched : false;
             const barH = Math.max(2, (Math.abs(value) / maxVal) * (chartH - 20));
-            let swapOffset = 0;
-            let isSwapping = false;
-            if (anim && (i === anim.i || i === anim.j)) {
-                isSwapping = true;
-                const dist = (anim.j - anim.i) * (barW + gap);
-                swapOffset = i === anim.i ? t * dist : -t * dist;
-            }
-            const bx = offsetX + i * (barW + gap) + swapOffset;
+            const isSwapping = !!(anim && (i === anim.i || i === anim.j));
+            const bx = offsetX + i * (barW + gap);
             const by = chartY + chartH - barH;
 
             const target = (isSwapping || patched) ? theme.status.error : (selected ? theme.status.info : theme.accent.default);
