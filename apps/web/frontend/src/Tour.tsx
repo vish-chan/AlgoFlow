@@ -14,6 +14,7 @@ const PLAYGROUND_STEPS: Step[] = [
     { target: "[data-tour='run']", title: "Run", body: "Click Run or press ⌘/Ctrl+Enter to execute and visualize.", position: "top" },
     { target: "[data-tour='visualizer']", title: "Visualizer", body: "Your algorithm animates here — common data structures visualized step by step.", position: "left" },
     { target: "[data-tour='controls']", title: "Playback Controls", body: "Play, pause, step through, scrub, and adjust speed.", position: "top" },
+    { target: "[data-tour='annotate']", title: "Create Lessons", body: "Toggle annotation mode to add teaching notes at any step. Share the lesson URL with your students.", position: "top" },
 ];
 
 const PRACTICE_STEPS: Step[] = [
@@ -25,7 +26,14 @@ const PRACTICE_STEPS: Step[] = [
     { target: "[data-tour='controls']", title: "Playback Controls", body: "Play, pause, step through, scrub, and adjust speed.", position: "top" },
 ];
 
-const STEPS_BY_MODE: Record<string, Step[]> = { playground: PLAYGROUND_STEPS, practice: PRACTICE_STEPS };
+const LESSON_STEPS: Step[] = [
+    { target: "[data-tour='editor']", title: "Lesson Code", body: "This is the teacher's code — read-only so you can follow along.", position: "right" },
+    { target: "[data-tour='run']", title: "Run", body: "Hit Run to execute the code and start the visualization.", position: "top" },
+    { target: "[data-tour='visualizer']", title: "Visualizer", body: "Watch the algorithm animate. Teacher notes appear at key steps.", position: "left" },
+    { target: "[data-tour='controls']", title: "Playback Controls", body: "Step through at your own pace. Look for the green dots — those steps have teacher notes.", position: "top" },
+];
+
+const STEPS_BY_MODE: Record<string, Step[]> = { playground: PLAYGROUND_STEPS, practice: PRACTICE_STEPS, lesson: LESSON_STEPS };
 
 export function useTour(mode: string) {
     const key = `algoflow-tour-seen-${mode}`;

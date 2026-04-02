@@ -11,6 +11,7 @@ export class SimpleEngine {
     private highlightedLine: number | null = null;
     private batching = false;
     private activeChildKey: string | null = null;
+    private rawCommands: Command[] = [];
     private static readonly TYPE_PRIORITY: Record<string, number> = {
         graph: 10, array: 9, array2d: 9, hashmap: 9, log: 5, variables: 3, locals: 1, recursion: 0,
     };
@@ -28,6 +29,7 @@ export class SimpleEngine {
     }
 
     loadCommands(commands: Command[]) {
+        this.rawCommands = commands;
         // Identify CodeTracer keys
         const codeKeys = new Set<string>();
         for (const c of commands) {
@@ -699,6 +701,10 @@ export class SimpleEngine {
 
     getLength() {
         return this.chunks.length;
+    }
+
+    getCommands() {
+        return this.rawCommands;
     }
 
     getLayoutChildren(): { key: string; title: string; dsType?: string }[] {

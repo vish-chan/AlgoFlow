@@ -4,13 +4,16 @@ import type { JavaEditorHandle } from "./JavaEditor";
 import AlgorithmVisualizerPane from "./visualizer/AlgorithmVisualizerPane";
 import Tour, { useTour } from "./Tour";
 import LandingPage from "./LandingPage";
+import { parseLessonFromURL, buildLessonURL } from "./lesson/lessonStore";
+import type { Lesson } from "./lesson/lessonStore";
+import { subscribe, getEngine } from "./visualizer/visualizerEngine";
 
 type Mode = "landing" | "playground" | "practice";
 
 const MOBILE_BREAKPOINT = 768;
 
 function parseHash(): Mode {
-    const h = window.location.hash.slice(1);
+    const h = window.location.hash.slice(1).split('?')[0];
     if (h === "playground" || h === "practice") return h;
     return "landing";
 }
@@ -20,11 +23,60 @@ export default function App() {
     const [splitPercent, setSplitPercent] = useState(40);
     const [isMobile, setIsMobile] = useState(window.innerWidth < MOBILE_BREAKPOINT);
     const dragging = useRef(false);
-    const { showTour, startTour, finishTour } = useTour(mode);
     const [executing, setExecuting] = useState(false);
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [sidebarProblems, setSidebarProblems] = useState<import("./api/backend").Problem[]>([]);
     const editorRef = useRef<JavaEditorHandle>(null);
+
+    // Lesson state
+    const [lessonChecked, setLessonChecked] = useState(false);
+    const [viewingLesson, setViewingLesson] = useState<Lesson | null>(null);
+    const [annotating, setAnnotating] = useState(false);
+    const [annotations, setAnnotations] = useState<Record<number, string>>({});
+    const [cursor, setCursor] = useState(0);
+    const [total, setTotal] = useState(0);
+    const annotationCount = Object.keys(annotations).filter(k => annotations[Number(k)]).length;
+
+    const tourMode = viewingLesson ? 'lesson' : mode;
+    const { showTour, startTour, finishTour } = useTour(tourMode);
+
+    useEffect(() => {
+        parseLessonFromURL().then(lesson => {
+            if (lesson) {
+                setViewingLesson(lesson);
+                setAnnotations(lesson.annotations);
+            }
+            setLessonChecked(true);
+        });
+    }, []);
+
+    useEffect(() => {
+        return subscribe(() => {
+            const eng = getEngine();
+            setCursor(eng.getCursor());
+            setTotal(eng.getLength());
+        });
+    }, []);
+
+    const handleAnnotationChange = useCallback((step: number, text: string) => {
+        setAnnotations(prev => {
+            const next = { ...prev };
+            if (text) next[step] = text;
+            else delete next[step];
+            return next;
+        });
+    }, []);
+
+    const handleShare = useCallback(async () => {
+        const code = editorRef.current?.getCode?.() ?? "";
+        if (!code.trim()) return;
+        const lesson: Lesson = { code, annotations };
+        const url = await buildLessonURL(lesson);
+        await navigator.clipboard.writeText(url);
+        alert("Lesson URL copied to clipboard!");
+    }, [annotations]);
+
+
     const onProblemsLoaded = useCallback((list: import("./api/backend").Problem[]) => {
         setSidebarProblems(list);
 
@@ -45,11 +97,14 @@ export default function App() {
         return () => window.removeEventListener("resize", onResize);
     }, []);
 
-    const navigate = useCallback((m: "playground" | "practice") => {
+    const navigate = useCallback((m: "playground" | "practice", opts?: { annotate?: boolean }) => {
         setOpacity(0);
         setTimeout(() => {
             window.location.hash = m;
             setMode(m);
+            setViewingLesson(null);
+            setAnnotations({});
+            setAnnotating(!!opts?.annotate);
             setFadeKey(k => k + 1);
         }, 250);
     }, []);
@@ -59,6 +114,9 @@ export default function App() {
         setTimeout(() => {
             window.location.hash = "";
             setMode("landing");
+            setViewingLesson(null);
+            setAnnotations({});
+            setAnnotating(false);
             setFadeKey(k => k + 1);
         }, 250);
     }, []);
@@ -96,9 +154,13 @@ export default function App() {
         return <div style={wrapStyle}><LandingPage onNavigate={navigate} /></div>;
     }
 
-    const modeBadge = mode === "practice"
-        ? { label: "LEETCODE", bg: "var(--medium)" }
-        : { label: "PLAYGROUND", bg: "var(--info)" };
+    if (!lessonChecked) return null;
+
+    const modeBadge = viewingLesson
+        ? { label: "LESSON", bg: "var(--warning)" }
+        : mode === "practice"
+            ? { label: "LEETCODE", bg: "var(--medium)" }
+            : { label: "PLAYGROUND", bg: "var(--info)" };
 
     return (
         <div style={{ ...wrapStyle, display: "flex", flexDirection: "column", width: "100vw", height: "100vh" }}>
@@ -155,9 +217,21 @@ export default function App() {
             {/* Main content */}
             {isMobile ? (
                 <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, position: 'relative' }}>
-                    <div data-tour="editor" style={{ height: "50%" }}><JavaEditor ref={editorRef} mode={mode} onLoadingChange={setExecuting} onOpenSidebar={() => setSidebarOpen(true)} onProblemsLoaded={onProblemsLoaded} /></div>
+                    <div data-tour="editor" style={{ height: "50%" }}><JavaEditor ref={editorRef} mode={mode} onLoadingChange={setExecuting} onOpenSidebar={() => setSidebarOpen(true)} onProblemsLoaded={onProblemsLoaded} readOnly={!!viewingLesson} initialCode={viewingLesson?.code} /></div>
                     <div style={{ height: 3, background: "var(--border)", flexShrink: 0 }} />
-                    <div data-tour="visualizer" style={{ flex: 1, minHeight: 0 }}><AlgorithmVisualizerPane loading={executing} /></div>
+                    <div data-tour="visualizer" style={{ flex: 1, minHeight: 0 }}>
+                        <AlgorithmVisualizerPane
+                            loading={executing}
+                            annotating={!viewingLesson && annotating}
+                            onAnnotatingChange={!viewingLesson ? setAnnotating : undefined}
+                            annotations={annotations}
+                            onAnnotationChange={handleAnnotationChange}
+                            lessonViewing={!!viewingLesson}
+                            onShare={handleShare}
+                            cursor={cursor}
+                            total={total}
+                        />
+                    </div>
                     {mode === 'practice' && (
                         <ProblemSidebar
                             problems={sidebarProblems}
@@ -170,7 +244,7 @@ export default function App() {
                 </div>
             ) : (
                 <div style={{ display: "flex", flex: 1, minHeight: 0, position: 'relative' }}>
-                    <div data-tour="editor" style={{ width: `${splitPercent}%` }}><JavaEditor ref={editorRef} mode={mode} onLoadingChange={setExecuting} onOpenSidebar={() => setSidebarOpen(true)} onProblemsLoaded={onProblemsLoaded} /></div>
+                    <div data-tour="editor" style={{ width: `${splitPercent}%` }}><JavaEditor ref={editorRef} mode={mode} onLoadingChange={setExecuting} onOpenSidebar={() => setSidebarOpen(true)} onProblemsLoaded={onProblemsLoaded} readOnly={!!viewingLesson} initialCode={viewingLesson?.code} /></div>
                     <div
                         onMouseDown={onMouseDown}
                         style={{
@@ -180,7 +254,19 @@ export default function App() {
                         onMouseEnter={e => e.currentTarget.style.background = "var(--accent)"}
                         onMouseLeave={e => { if (!dragging.current) e.currentTarget.style.background = "var(--border)"; }}
                     />
-                    <div data-tour="visualizer" style={{ flex: 1, minWidth: 0 }}><AlgorithmVisualizerPane loading={executing} /></div>
+                    <div data-tour="visualizer" style={{ flex: 1, minWidth: 0 }}>
+                        <AlgorithmVisualizerPane
+                            loading={executing}
+                            annotating={!viewingLesson && annotating}
+                            onAnnotatingChange={!viewingLesson ? setAnnotating : undefined}
+                            annotations={annotations}
+                            onAnnotationChange={handleAnnotationChange}
+                            lessonViewing={!!viewingLesson}
+                            onShare={handleShare}
+                            cursor={cursor}
+                            total={total}
+                        />
+                    </div>
                     {mode === 'practice' && (
                         <ProblemSidebar
                             problems={sidebarProblems}
@@ -192,7 +278,7 @@ export default function App() {
                     )}
                 </div>
             )}
-            {showTour && (mode !== 'practice' || sidebarProblems.length > 0) && <Tour mode={mode} onFinish={finishTour} />}
+            {showTour && (mode !== 'practice' || sidebarProblems.length > 0) && <Tour mode={tourMode} onFinish={finishTour} />}
         </div>
     );
 }

@@ -35,6 +35,8 @@ export class SimpleRenderer {
     private static readonly SWAP_DURATION = 400;
     private static readonly TRANSITION_DURATION = 200;
 
+    private resizeRAF: number | null = null;
+
     mount(container: HTMLElement) {
         this.container = container;
         this.canvas = document.createElement('canvas');
@@ -56,7 +58,10 @@ export class SimpleRenderer {
             }
         };
         this.canvas.addEventListener('click', this.handleClick);
-        this.resizeObserver = new ResizeObserver(() => this.resize());
+        this.resizeObserver = new ResizeObserver(() => {
+            if (this.resizeRAF !== null) cancelAnimationFrame(this.resizeRAF);
+            this.resizeRAF = requestAnimationFrame(() => { this.resizeRAF = null; this.resize(); });
+        });
         this.resizeObserver.observe(container);
         this.resize();
     }
@@ -65,6 +70,7 @@ export class SimpleRenderer {
         this.resizeObserver?.disconnect();
         if (this.animFrameId !== null) cancelAnimationFrame(this.animFrameId);
         if (this.transitionFrameId !== null) cancelAnimationFrame(this.transitionFrameId);
+        if (this.resizeRAF !== null) cancelAnimationFrame(this.resizeRAF);
         if (this.canvas && this.handleClick) this.canvas.removeEventListener('click', this.handleClick);
         if (this.canvas?.parentElement) {
             this.canvas.parentElement.removeChild(this.canvas);
@@ -96,7 +102,13 @@ export class SimpleRenderer {
             this.canvas.width = newW;
             this.canvas.height = newH;
             this.canvas.style.width = containerWidth + 'px';
-            this.canvas.style.height = requiredHeight + 'px';
+            // Only set explicit height when content overflows (logs/layouts)
+            // Otherwise let the canvas fill its container naturally
+            if (requiredHeight > containerHeight) {
+                this.canvas.style.height = requiredHeight + 'px';
+            } else {
+                this.canvas.style.height = '100%';
+            }
         }
         
         this.render();
@@ -105,7 +117,7 @@ export class SimpleRenderer {
     setData(data: any) {
         this.data = data;
         this.resize();
-        this.scheduleTransitionLoop();
+        if (data) this.scheduleTransitionLoop();
     }    private parseRGBA(color: string): [number, number, number, number] {
         if (color.startsWith('#')) {
             const hex = color.slice(1);
@@ -239,7 +251,7 @@ export class SimpleRenderer {
         if (!this.data) {
             this.ctx.textAlign = 'center';
             this.ctx.textBaseline = 'middle';
-            const cx = width / 2, cy = height / 2;
+            const cx = Math.round(width / 2), cy = Math.round(height / 2);
 
             // Play icon in circle
             this.ctx.fillStyle = theme.bg.active;

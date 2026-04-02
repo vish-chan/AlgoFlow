@@ -132,9 +132,11 @@ export interface JavaEditorHandle {
     getProblems: () => Problem[];
     getProblem: () => Problem | null;
     selectProblem: (p: Problem) => void;
+    getCode: () => string;
+    run: () => void;
 }
 
-const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange?: (loading: boolean) => void; onOpenSidebar?: () => void; onProblemsLoaded?: (problems: Problem[]) => void }>(function JavaEditor({ mode, onLoadingChange, onOpenSidebar, onProblemsLoaded }, ref) {
+const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange?: (loading: boolean) => void; onOpenSidebar?: () => void; onProblemsLoaded?: (problems: Problem[]) => void; readOnly?: boolean; initialCode?: string }>(function JavaEditor({ mode, onLoadingChange, onOpenSidebar, onProblemsLoaded, readOnly, initialCode }, ref) {
     const isPractice = mode === "practice";
 
     const [problems, setProblems] = useState<Problem[]>([]);
@@ -142,6 +144,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
     const [problem, setProblem] = useState<Problem | null>(null);
 
     const [code, setCode] = useState(() => {
+        if (initialCode) return initialCode;
         if (isPractice) return "";
         try { const v = localStorage.getItem(CODE_KEY); return v || DEFAULT_JAVA_CODE; } catch { return DEFAULT_JAVA_CODE; }
     });
@@ -233,7 +236,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
         try { localStorage.setItem(PROBLEM_KEY, String(p.id)); } catch {}
     };
 
-    useImperativeHandle(ref, () => ({ getProblems: () => problems, getProblem: () => problem, selectProblem }), [problems, problem]);
+    useImperativeHandle(ref, () => ({ getProblems: () => problems, getProblem: () => problem, selectProblem, getCode: () => code, run: () => runRef.current?.() }), [problems, problem, code]);
 
     const setLoadingState = (v: boolean) => { setLoading(v); onLoadingChange?.(v); };
 
@@ -359,7 +362,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
                         value={code}
                         onChange={(v) => { persistCode(v ?? ""); reset(); }}
                         onMount={handleMount}
-                        options={{ fontSize: 14, minimap: { enabled: false }, automaticLayout: true, wordWrap: "on" }}
+                        options={{ fontSize: 14, minimap: { enabled: false }, automaticLayout: true, wordWrap: "on", readOnly }}
                     />
                 </div>
             </div>

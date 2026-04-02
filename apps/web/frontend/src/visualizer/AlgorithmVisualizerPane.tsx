@@ -1,7 +1,24 @@
 import VisualizerCanvas from "./VisualizerCanvas";
 import Controls from "./Controls";
+import LessonAnnotation from "../lesson/LessonAnnotation";
+import LessonBanner from "../lesson/LessonBanner";
 
-export default function AlgorithmVisualizerPane({ loading }: { loading?: boolean }) {
+interface Props {
+    loading?: boolean;
+    annotating?: boolean;
+    onAnnotatingChange?: (v: boolean) => void;
+    annotations?: Record<number, string>;
+    onAnnotationChange?: (step: number, text: string) => void;
+    lessonViewing?: boolean;
+    onShare?: () => void;
+    cursor?: number;
+    total?: number;
+}
+
+export default function AlgorithmVisualizerPane({ loading, annotating, onAnnotatingChange, annotations, onAnnotationChange, lessonViewing, onShare, cursor, total }: Props) {
+    const annotationCount = annotations ? Object.keys(annotations).filter(k => annotations[Number(k)]).length : 0;
+    const currentNote = (cursor !== undefined && annotations?.[cursor]) || "";
+
     return (
         <div
             style={{
@@ -11,10 +28,28 @@ export default function AlgorithmVisualizerPane({ loading }: { loading?: boolean
                 position: "relative",
             }}
         >
-            <div style={{ flex: 1, overflow: "auto", minHeight: 0 }}>
+            <div style={{ flex: 1, overflow: "auto", minHeight: 0, position: "relative" }}>
                 <VisualizerCanvas />
+                {lessonViewing && (
+                    <LessonBanner text={currentNote} step={cursor ?? 0} total={total ?? 0} />
+                )}
             </div>
-            <Controls />
+            {annotating && cursor !== undefined && onAnnotationChange && onShare && (
+                <LessonAnnotation
+                    step={cursor}
+                    total={total ?? 0}
+                    value={currentNote}
+                    annotationCount={annotationCount}
+                    onChange={onAnnotationChange}
+                    onShare={onShare}
+                />
+            )}
+            <Controls
+                annotating={annotating}
+                onAnnotatingChange={onAnnotatingChange}
+                onShare={!annotating && annotationCount > 0 ? onShare : undefined}
+                annotations={annotations}
+            />
             {loading && (
                 <div style={{
                     position: "absolute", inset: 0,

@@ -11,7 +11,14 @@ import {
     setSpeed,
 } from "./visualizerEngine";
 
-export default function Controls() {
+interface ControlsProps {
+    annotating?: boolean;
+    onAnnotatingChange?: (v: boolean) => void;
+    onShare?: () => void;
+    annotations?: Record<number, string>;
+}
+
+export default function Controls({ annotating, onAnnotatingChange, onShare, annotations }: ControlsProps) {
     const [isPlaying, setIsPlaying] = useState(false);
     const [cursor, setCursor] = useState(0);
     const [total, setTotal] = useState(0);
@@ -83,15 +90,36 @@ export default function Controls() {
                 .progress-track::-moz-range-thumb { width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 2px solid var(--accent); cursor: pointer; }
             `}</style>
             {total > 0 && (
-                <input
-                    className="progress-track"
-                    type="range"
-                    min={0}
-                    max={total}
-                    value={cursor}
-                    onChange={handleScrub}
-                    style={{ '--pct': `${total > 0 ? (cursor / total) * 100 : 0}%`, '--track-color': trackColor } as React.CSSProperties}
-                />
+                <div style={{ position: 'relative' }}>
+                    <input
+                        className="progress-track"
+                        type="range"
+                        min={0}
+                        max={total}
+                        value={cursor}
+                        onChange={handleScrub}
+                        style={{ '--pct': `${total > 0 ? (cursor / total) * 100 : 0}%`, '--track-color': trackColor } as React.CSSProperties}
+                    />
+                    {annotations && total > 0 && Object.keys(annotations).map(k => {
+                        const step = Number(k);
+                        if (!annotations[step] || step > total) return null;
+                        return (
+                            <div
+                                key={step}
+                                style={{
+                                    position: 'absolute', top: -2,
+                                    left: `${(step / total) * 100}%`,
+                                    width: 6, height: 6, borderRadius: '50%',
+                                    background: step === cursor ? '#fff' : 'var(--accent)',
+                                    transform: 'translateX(-3px)',
+                                    pointerEvents: 'none',
+                                    opacity: 0.9,
+                                }}
+                                title={`Note at step ${step}`}
+                            />
+                        );
+                    })}
+                </div>
             )}
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 2 }}>
@@ -115,6 +143,24 @@ export default function Controls() {
                     {cursor}<span style={{ color: 'var(--text-faint)' }}>/</span>{total}{done ? ' ✓' : ''}
                 </span>
                 <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                    {onAnnotatingChange && (
+                        <button
+                            className="ctrl-btn"
+                            data-tour="annotate"
+                            onClick={() => onAnnotatingChange(!annotating)}
+                            title={annotating ? "Stop annotating" : "Annotate steps"}
+                            style={annotating ? { color: 'var(--accent)', fontSize: 12 } : { fontSize: 12 }}
+                        >📝</button>
+                    )}
+                    {onShare && (
+                        <button
+                            className="ctrl-btn"
+                            data-tour="share-lesson"
+                            onClick={onShare}
+                            title="Share as lesson"
+                            style={{ fontSize: 12 }}
+                        >🔗</button>
+                    )}
                     <span style={{ fontSize: 10, color: 'var(--text-secondary)', fontFamily: 'monospace', minWidth: 28, textAlign: 'right' }}>{speedMultiplier}</span>
                     <input
                         className="progress-track"

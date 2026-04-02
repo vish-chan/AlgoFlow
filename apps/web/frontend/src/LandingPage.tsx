@@ -188,7 +188,7 @@ function AnimatedBars({ active }: { active: boolean }) {
     return <canvas ref={canvasRef} style={{ width: "100%", height: 120, borderRadius: 8 }} />;
 }
 
-export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playground" | "practice") => void }) {
+export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playground" | "practice", opts?: { annotate?: boolean }) => void }) {
     const [visible, setVisible] = useState(false);
     const [codeTyped, setCodeTyped] = useState(false);
     const [runClicked, setRunClicked] = useState(false);
@@ -254,6 +254,19 @@ export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playgr
                                 ⚡ Playground
                             </button>
                         </div>
+                        <button
+                            onClick={() => onNavigate("playground", { annotate: true })}
+                            style={{
+                                marginTop: 14, background: "none", border: "none",
+                                color: "var(--text-muted)", fontSize: 13, cursor: "pointer",
+                                display: "flex", alignItems: "center", gap: 6,
+                                padding: 0, transition: "color 0.15s",
+                            }}
+                            onMouseEnter={e => e.currentTarget.style.color = "var(--text-primary)"}
+                            onMouseLeave={e => e.currentTarget.style.color = "var(--text-muted)"}
+                        >
+                            📝 Create a lesson for your students →
+                        </button>
                     </div>
 
                     {/* Right — demo */}
