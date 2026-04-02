@@ -1,23 +1,13 @@
-export const DEFAULT_JAVA_CODE = `package com.algoflow.runner;
-
-public class BubbleSort {
-
-    // Declare an array field — AlgoPad auto-visualizes it
-    private int[] arr = {5, 3, 8, 1, 2};
+export const DEFAULT_JAVA_CODE = `// Common data structures are visualized automatically
+// when you hit Run.
+public class Solution {
 
     public static void main(String[] args) {
-        new BubbleSort().sort();
+        new Solution().solve();
     }
 
-    // Each comparison and swap is animated automatically
-    void sort() {
-        for (int i = 0; i < arr.length; i++)
-            for (int j = 0; j < arr.length - i - 1; j++)
-                if (arr[j] > arr[j + 1]) {
-                    int tmp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = tmp;
-                }
+    void solve() {
+        // Write your code here
     }
 }
 `;

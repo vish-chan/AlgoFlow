@@ -8,11 +8,11 @@ interface Step {
 }
 
 const PLAYGROUND_STEPS: Step[] = [
-    { target: "[data-tour='editor']", title: "Code Editor", body: "Write your code here. Arrays, graphs, and trees are auto-visualized.", position: "right" },
-    { target: "[data-tour='templates']", title: "Templates", body: "Quick-start templates for arrays, trees, graphs, and linked lists.", position: "bottom" },
+    { target: "[data-tour='editor']", title: "Code Editor", body: "Write your code here. Common data structures are visualized automatically.", position: "right" },
+    { target: "[data-tour='templates']", title: "Templates", body: "Quick-start templates for common data structures and patterns.", position: "bottom" },
     { target: "[data-tour='examples']", title: "Examples", body: "Pre-built algorithms — load one and hit Run to see it in action.", position: "bottom" },
     { target: "[data-tour='run']", title: "Run", body: "Click Run or press ⌘/Ctrl+Enter to execute and visualize.", position: "top" },
-    { target: "[data-tour='visualizer']", title: "Visualizer", body: "Your algorithm animates here — arrays, graphs, trees, and more.", position: "left" },
+    { target: "[data-tour='visualizer']", title: "Visualizer", body: "Your algorithm animates here — common data structures visualized step by step.", position: "left" },
     { target: "[data-tour='controls']", title: "Playback Controls", body: "Play, pause, step through, scrub, and adjust speed.", position: "top" },
 ];
 
@@ -21,7 +21,7 @@ const PRACTICE_STEPS: Step[] = [
     { target: "[data-tour='problem-desc']", title: "Problem Description", body: "Read the problem statement, examples, and constraints. Click to collapse.", position: "bottom" },
     { target: "[data-tour='editor']", title: "Code Editor", body: "Write your solution here. The starter code is pre-loaded for each problem.", position: "right" },
     { target: "[data-tour='run']", title: "Run", body: "Execute your solution and watch it visualize step by step.", position: "top" },
-    { target: "[data-tour='visualizer']", title: "Visualizer", body: "See your algorithm animate — arrays, graphs, trees, and more.", position: "left" },
+    { target: "[data-tour='visualizer']", title: "Visualizer", body: "See your algorithm animate — common data structures visualized step by step.", position: "left" },
     { target: "[data-tour='controls']", title: "Playback Controls", body: "Play, pause, step through, scrub, and adjust speed.", position: "top" },
 ];
 

@@ -243,7 +243,7 @@ export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playgr
                             <span style={{ color: "var(--accent)" }}>come alive</span>
                         </h1>
                         <p className="hero-sub" style={{ fontSize: 17, color: "var(--text-secondary)", lineHeight: 1.6, margin: "0 0 36px" }}>
-                            Write code. Hit run. Watch it animate — arrays, trees, graphs, and more.
+                            Write code. Hit run. Watch it animate — common data structures visualized automatically.
                             Not a line-by-line debugger. Not a slideshow. A real-time algorithm visualizer.
                         </p>
                         <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>

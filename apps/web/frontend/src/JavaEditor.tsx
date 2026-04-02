@@ -399,6 +399,22 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
                                 </div>
                             )}
                         </div>
+                        {!isPractice && (
+                            <button
+                                onClick={() => { persistCode(DEFAULT_JAVA_CODE); reset(); }}
+                                title="Reset editor"
+                                style={{
+                                    fontSize: 11, color: "var(--text-muted)", background: "transparent",
+                                    border: "1px solid var(--border)", borderRadius: 4,
+                                    padding: "3px 8px", fontWeight: 600, cursor: "pointer",
+                                    transition: "all 0.15s",
+                                }}
+                                onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--border-light)"; e.currentTarget.style.color = "var(--text-secondary)"; }}
+                                onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--text-muted)"; }}
+                            >
+                                ↺ Reset
+                            </button>
+                        )}
                         <span style={{ fontSize: 10, color: "var(--text-faint)", fontFamily: "monospace" }}>
                             {isMac ? '⌘' : 'Ctrl'}+Enter
                         </span>

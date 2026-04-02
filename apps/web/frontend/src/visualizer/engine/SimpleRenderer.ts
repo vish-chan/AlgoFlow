@@ -256,7 +256,7 @@ export class SimpleRenderer {
 
             this.ctx.fillStyle = theme.text.muted;
             this.ctx.font = '12px sans-serif';
-            this.ctx.fillText('Arrays, graphs, and trees animate automatically', cx, cy + 40);
+            this.ctx.fillText('Common data structures are visualized automatically', cx, cy + 40);
 
             this.ctx.fillStyle = theme.text.faint;
             this.ctx.font = '11px sans-serif';
