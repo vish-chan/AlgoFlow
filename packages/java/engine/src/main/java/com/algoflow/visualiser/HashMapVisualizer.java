@@ -15,6 +15,7 @@ public class HashMapVisualizer implements Visualizer {
         this._map = map;
         this._tracer = new Array2DTracer(name);
         updateDisplay();
+        Tracer.delay();
     }
 
     public void onPut(Object key, Object value, String phase) {
@@ -26,6 +27,7 @@ public class HashMapVisualizer implements Visualizer {
                 _tracer.depatch(1, existing);
             }
         } else {
+            updateDisplay();
             int col = keyIndex(key);
             if (col >= 0) {
                 _tracer.select(0, col);
@@ -34,7 +36,7 @@ public class HashMapVisualizer implements Visualizer {
                 _tracer.deselect(0, col);
                 _tracer.deselect(1, col);
             }
-            updateDisplay();
+            Tracer.delay();
         }
     }
 
@@ -46,6 +48,7 @@ public class HashMapVisualizer implements Visualizer {
             Tracer.delay();
             _tracer.deselect(0, col);
             _tracer.deselect(1, col);
+            Tracer.delay();
         } else {
             Tracer.delay();
         }
@@ -60,6 +63,7 @@ public class HashMapVisualizer implements Visualizer {
                 Tracer.delay();
                 _tracer.depatch(0, col);
                 _tracer.depatch(1, col);
+                Tracer.delay();
             }
         } else {
             updateDisplay();
