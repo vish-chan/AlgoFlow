@@ -308,29 +308,29 @@ import com.algoflow.annotation.Graph;
 
 public class Main {
     @Graph
-    private int[][] adjMatrix = {
-        {0, 1, 1, 0, 0, 0},
-        {1, 0, 0, 1, 1, 0},
-        {1, 0, 0, 0, 1, 0},
-        {0, 1, 0, 0, 0, 1},
-        {0, 1, 1, 0, 0, 1},
-        {0, 0, 0, 1, 1, 0}
-    };
+    private Map<Integer, List<Integer>> graph = new HashMap<>();
 
     public static void main(String[] args) {
-        new Main().bfs(0);
+        Main m = new Main();
+        m.graph.put(0, Arrays.asList(1, 2));
+        m.graph.put(1, Arrays.asList(0, 3, 4));
+        m.graph.put(2, Arrays.asList(0, 4));
+        m.graph.put(3, Arrays.asList(1, 5));
+        m.graph.put(4, Arrays.asList(1, 2, 5));
+        m.graph.put(5, Arrays.asList(3, 4));
+        m.bfs(0);
     }
 
     public void bfs(int start) {
-        boolean[] visited = new boolean[adjMatrix.length];
+        Set<Integer> visited = new HashSet<>();
         Queue<Integer> queue = new LinkedList<>();
-        visited[start] = true;
+        visited.add(start);
         queue.add(start);
         while (!queue.isEmpty()) {
             int current = queue.poll();
-            for (int neighbor = 0; neighbor < adjMatrix.length; neighbor++) {
-                if (adjMatrix[current][neighbor] == 1 && !visited[neighbor]) {
-                    visited[neighbor] = true;
+            for (int neighbor : graph.get(current)) {
+                if (!visited.contains(neighbor)) {
+                    visited.add(neighbor);
                     queue.add(neighbor);
                 }
             }
@@ -822,7 +822,7 @@ public class Main {
 import com.algoflow.annotation.Graph;
 
 public class Main {
-    // @Graph visualizes an adjacency matrix (adj list not supported)
+    // @Graph visualizes an adjacency matrix or Map<K, List<V>>
     @Graph
     private int[][] adjMatrix = {
         {0, 1, 1, 0, 0},
@@ -858,6 +858,35 @@ public class Main {
         m.list.add(2);
         m.list.add(3);
         m.list.add(4);
+        m.solve();
+    }
+
+    public void solve() {
+        // TODO: your algorithm here
+    }
+}`,
+    },
+    {
+        name: "Adjacency List Graph",
+        category: "Graphs",
+        description: "Graph from Map<Integer, List<Integer>>",
+        code: `package com.algoflow.runner;
+
+import java.util.*;
+import com.algoflow.annotation.Graph;
+
+public class Main {
+    // @Graph also supports Map<K, List<V>> as adjacency list
+    @Graph
+    private Map<Integer, List<Integer>> graph = new HashMap<>();
+
+    public static void main(String[] args) {
+        Main m = new Main();
+        m.graph.put(0, Arrays.asList(1, 2));
+        m.graph.put(1, Arrays.asList(0, 3));
+        m.graph.put(2, Arrays.asList(0, 3, 4));
+        m.graph.put(3, Arrays.asList(1, 2, 4));
+        m.graph.put(4, Arrays.asList(2, 3));
         m.solve();
     }
 
