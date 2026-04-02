@@ -1,5 +1,6 @@
 import { useState, useCallback, useRef, useEffect, type CSSProperties } from "react";
-import JavaEditor from "./JavaEditor";
+import JavaEditor, { ProblemSidebar } from "./JavaEditor";
+import type { JavaEditorHandle } from "./JavaEditor";
 import AlgorithmVisualizerPane from "./visualizer/AlgorithmVisualizerPane";
 import Tour, { useTour } from "./Tour";
 import LandingPage from "./LandingPage";
@@ -19,8 +20,16 @@ export default function App() {
     const [splitPercent, setSplitPercent] = useState(40);
     const [isMobile, setIsMobile] = useState(window.innerWidth < MOBILE_BREAKPOINT);
     const dragging = useRef(false);
-    const { showTour, startTour, finishTour } = useTour();
+    const { showTour, startTour, finishTour } = useTour(mode);
     const [executing, setExecuting] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [sidebarProblems, setSidebarProblems] = useState<import("./api/backend").Problem[]>([]);
+    const editorRef = useRef<JavaEditorHandle>(null);
+    const onProblemsLoaded = useCallback((list: import("./api/backend").Problem[]) => {
+        setSidebarProblems(list);
+
+    }, [mode]);
+
     const [fadeKey, setFadeKey] = useState(0);
     const [opacity, setOpacity] = useState(1);
 
@@ -145,14 +154,23 @@ export default function App() {
 
             {/* Main content */}
             {isMobile ? (
-                <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0 }}>
-                    <div data-tour="editor" style={{ height: "50%" }}><JavaEditor mode={mode} onLoadingChange={setExecuting} /></div>
+                <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, position: 'relative' }}>
+                    <div data-tour="editor" style={{ height: "50%" }}><JavaEditor ref={editorRef} mode={mode} onLoadingChange={setExecuting} onOpenSidebar={() => setSidebarOpen(true)} onProblemsLoaded={onProblemsLoaded} /></div>
                     <div style={{ height: 3, background: "var(--border)", flexShrink: 0 }} />
                     <div data-tour="visualizer" style={{ flex: 1, minHeight: 0 }}><AlgorithmVisualizerPane loading={executing} /></div>
+                    {mode === 'practice' && (
+                        <ProblemSidebar
+                            problems={sidebarProblems}
+                            problem={editorRef.current?.getProblem() ?? null}
+                            onSelect={p => editorRef.current?.selectProblem(p)}
+                            open={sidebarOpen}
+                            onClose={() => setSidebarOpen(false)}
+                        />
+                    )}
                 </div>
             ) : (
-                <div style={{ display: "flex", flex: 1, minHeight: 0 }}>
-                    <div data-tour="editor" style={{ width: `${splitPercent}%` }}><JavaEditor mode={mode} onLoadingChange={setExecuting} /></div>
+                <div style={{ display: "flex", flex: 1, minHeight: 0, position: 'relative' }}>
+                    <div data-tour="editor" style={{ width: `${splitPercent}%` }}><JavaEditor ref={editorRef} mode={mode} onLoadingChange={setExecuting} onOpenSidebar={() => setSidebarOpen(true)} onProblemsLoaded={onProblemsLoaded} /></div>
                     <div
                         onMouseDown={onMouseDown}
                         style={{
@@ -163,9 +181,18 @@ export default function App() {
                         onMouseLeave={e => { if (!dragging.current) e.currentTarget.style.background = "var(--border)"; }}
                     />
                     <div data-tour="visualizer" style={{ flex: 1, minWidth: 0 }}><AlgorithmVisualizerPane loading={executing} /></div>
+                    {mode === 'practice' && (
+                        <ProblemSidebar
+                            problems={sidebarProblems}
+                            problem={editorRef.current?.getProblem() ?? null}
+                            onSelect={p => editorRef.current?.selectProblem(p)}
+                            open={sidebarOpen}
+                            onClose={() => setSidebarOpen(false)}
+                        />
+                    )}
                 </div>
             )}
-            {showTour && <Tour onFinish={finishTour} />}
+            {showTour && (mode !== 'practice' || sidebarProblems.length > 0) && <Tour mode={mode} onFinish={finishTour} />}
         </div>
     );
 }

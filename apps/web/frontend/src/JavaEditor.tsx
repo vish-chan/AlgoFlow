@@ -1,5 +1,5 @@
 import Editor from "@monaco-editor/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useImperativeHandle, forwardRef } from "react";
 import { loadCommands, play, reset, subscribe } from "./visualizer/visualizerEngine";
 import { executeJavaCode, fetchProblems } from "./api/backend";
 import type { Problem } from "./api/backend";
@@ -32,70 +32,95 @@ const toolbarBtnStyle: React.CSSProperties = {
     transition: "all 0.15s", display: "inline-flex", alignItems: "center", gap: 4,
 };
 
-function ProblemPanel({ problems, problem, onSelect }: { problems: Problem[]; problem: Problem | null; onSelect: (p: Problem) => void }) {
+export function ProblemSidebar({ problems, problem, onSelect, open, onClose }: { problems: Problem[]; problem: Problem | null; onSelect: (p: Problem) => void; open: boolean; onClose: () => void }) {
     const categories = getCategories(problems);
     const [expanded, setExpanded] = useState<string | null>(problem?.category ?? categories[0] ?? null);
+    const panelRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!open) return;
+        const onClick = (e: MouseEvent) => {
+            if (panelRef.current && !panelRef.current.contains(e.target as Node)) onClose();
+        };
+        document.addEventListener('mousedown', onClick);
+        return () => document.removeEventListener('mousedown', onClick);
+    }, [open, onClose]);
 
     return (
-        <div style={{ height: "100%", display: "flex", flexDirection: "column", background: "var(--bg-surface)" }}>
-            <div style={{ flex: 1, overflow: "auto", padding: "8px 0" }}>
+        <div ref={panelRef} style={{
+            position: 'absolute', top: 0, left: 0, bottom: 0, width: 260, zIndex: 20,
+            background: 'var(--bg-elevated)', borderRight: '1px solid var(--border-light)',
+            boxShadow: open ? '4px 0 24px rgba(0,0,0,0.4)' : 'none',
+            transform: open ? 'translateX(0)' : 'translateX(-100%)',
+            transition: 'transform 0.2s ease', display: 'flex', flexDirection: 'column',
+        }}>
+            <div style={{ padding: '8px 12px', fontSize: 11, borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
+                <span style={{ fontWeight: 700, letterSpacing: 0.5, textTransform: 'uppercase', fontSize: 10, color: 'var(--text-secondary)' }}>Problems</span>
+                <span onClick={onClose} style={{ fontSize: 14, color: 'var(--text-muted)', cursor: 'pointer', lineHeight: 1 }}
+                    onMouseEnter={e => e.currentTarget.style.color = 'var(--text-primary)'}
+                    onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
+                >×</span>
+            </div>
+            <div style={{ flex: 1, overflow: 'auto', padding: '4px 0' }}>
                 {categories.map(cat => (
                     <div key={cat}>
                         <div
                             onClick={() => setExpanded(expanded === cat ? null : cat)}
-                            style={{ padding: "6px 16px", fontSize: 11, color: "var(--text-secondary)", textTransform: "uppercase", letterSpacing: 1, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: 6 }}
+                            style={{ padding: '5px 12px', fontSize: 10, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: 1, fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 5 }}
                         >
-                            <span style={{ fontSize: 9, color: "var(--text-faint)" }}>{expanded === cat ? "▼" : "▶"}</span>
+                            <span style={{ fontSize: 8, color: 'var(--text-faint)' }}>{expanded === cat ? '▼' : '▶'}</span>
                             {cat}
-                            <span style={{ fontSize: 10, color: "var(--text-faint)", fontWeight: 400, textTransform: "none", letterSpacing: 0 }}>({problems.filter(p => p.category === cat).length})</span>
+                            <span style={{ fontSize: 9, color: 'var(--text-faint)', fontWeight: 400, textTransform: 'none', letterSpacing: 0 }}>({problems.filter(p => p.category === cat).length})</span>
                         </div>
                         {expanded === cat && problems.filter(p => p.category === cat).map(p => (
                             <div
                                 key={p.id}
-                                onClick={() => onSelect(p)}
+                                onClick={() => { onSelect(p); onClose(); }}
                                 style={{
-                                    padding: "7px 16px 7px 32px", fontSize: 13, cursor: "pointer",
-                                    color: problem?.id === p.id ? "#fff" : "var(--text-primary)",
-                                    background: problem?.id === p.id ? "var(--bg-active)" : "transparent",
-                                    display: "flex", alignItems: "center", justifyContent: "space-between",
-                                    borderLeft: problem?.id === p.id ? "2px solid var(--accent)" : "2px solid transparent",
+                                    padding: '5px 10px 5px 24px', fontSize: 12, cursor: 'pointer',
+                                    color: problem?.id === p.id ? '#fff' : 'var(--text-primary)',
+                                    background: problem?.id === p.id ? 'var(--bg-active)' : 'transparent',
+                                    display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 4,
+                                    borderLeft: problem?.id === p.id ? '2px solid var(--accent)' : '2px solid transparent',
                                 }}
-                                onMouseEnter={e => { if (problem?.id !== p.id) e.currentTarget.style.background = "var(--bg-hover)"; }}
-                                onMouseLeave={e => { if (problem?.id !== p.id) e.currentTarget.style.background = "transparent"; }}
+                                onMouseEnter={e => { if (problem?.id !== p.id) e.currentTarget.style.background = 'var(--bg-hover)'; }}
+                                onMouseLeave={e => { if (problem?.id !== p.id) e.currentTarget.style.background = 'transparent'; }}
                             >
-                                <span>{p.title}</span>
-                                <span style={{ fontSize: 10, color: DIFF_COLORS[p.difficulty], fontWeight: 700 }}>{p.difficulty}</span>
+                                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.title}</span>
+                                <span style={{ fontSize: 9, color: DIFF_COLORS[p.difficulty], fontWeight: 700, flexShrink: 0 }}>{p.difficulty}</span>
                             </div>
                         ))}
                     </div>
                 ))}
             </div>
+        </div>
+    );
+}
 
-            {problem && (
-                <div style={{ borderTop: "1px solid var(--border-light)", padding: "12px 16px", overflow: "auto", flex: 1, minHeight: 0 }}>
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
-                        <h3 style={{ margin: 0, fontSize: 14, fontWeight: 700, color: "var(--text-primary)" }}>
-                            {problem.id}. {problem.title}
-                        </h3>
-                        <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
-                            <a
-                                href={problem.leetcodeUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ fontSize: 10, color: "var(--warning)", textDecoration: "none", border: "1px solid var(--warning)", padding: "1px 6px", borderRadius: 3, fontWeight: 700 }}
-                            >
-                                LeetCode ↗
-                            </a>
-                            <span style={{ fontSize: 10, color: DIFF_COLORS[problem.difficulty], fontWeight: 700, border: `1px solid ${DIFF_COLORS[problem.difficulty]}`, padding: "1px 6px", borderRadius: 3 }}>
-                                {problem.difficulty}
-                            </span>
-                        </div>
-                    </div>
-                    <p style={{ fontSize: 12, color: "var(--text-secondary)", lineHeight: 1.6, margin: "8px 0" }}>{problem.description}</p>
+function ProblemDescription({ problem, onOpenList }: { problem: Problem; onOpenList: () => void }) {
+    const [collapsed, setCollapsed] = useState(false);
+    return (
+        <div data-tour="problem-desc" style={{ borderBottom: "1px solid var(--border)", borderLeft: '3px solid var(--accent)', flexShrink: 0 }}>
+            <div
+                onClick={() => setCollapsed(!collapsed)}
+                style={{ padding: "7px 12px", fontSize: 11, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "space-between", background: 'rgba(76,175,80,0.04)' }}
+            >
+                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <span data-tour="problems-btn" onClick={e => { e.stopPropagation(); onOpenList(); }} style={{ cursor: 'pointer', fontSize: 10, color: 'var(--accent)', background: 'rgba(76,175,80,0.1)', border: '1px solid var(--accent)', borderRadius: 3, padding: '2px 8px', fontWeight: 700, transition: 'all 0.15s' }}
+                        onMouseEnter={e => { e.currentTarget.style.background = 'rgba(76,175,80,0.2)'; }}
+                        onMouseLeave={e => { e.currentTarget.style.background = 'rgba(76,175,80,0.1)'; }}
+                    >☰ Problems</span>
+                    <span style={{ fontSize: 8, color: 'var(--text-faint)' }}>{collapsed ? "▶" : "▼"}</span>
+                    <span style={{ fontWeight: 700, color: 'var(--text-primary)', fontSize: 12 }}>{problem.id}. {problem.title}</span>
+                    <span style={{ fontSize: 10, color: DIFF_COLORS[problem.difficulty], fontWeight: 700, border: `1px solid ${DIFF_COLORS[problem.difficulty]}`, padding: '0px 5px', borderRadius: 3 }}>{problem.difficulty}</span>
+                </div>
+                <a href={problem.leetcodeUrl} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()} style={{ fontSize: 10, color: "var(--warning)", textDecoration: "none", border: "1px solid var(--warning)", padding: "1px 6px", borderRadius: 3, fontWeight: 700 }}>LeetCode ↗</a>
+            </div>
+            {!collapsed && (
+                <div style={{ padding: "10px 14px", maxHeight: 180, overflow: "auto", background: 'rgba(76,175,80,0.02)' }}>
+                    <p style={{ fontSize: 12.5, color: "var(--text-secondary)", lineHeight: 1.7, margin: "0 0 8px" }}>{problem.description}</p>
                     {problem.examples.map((ex, i) => (
-                        <div key={i} style={{ background: "var(--bg-base)", borderRadius: 4, padding: "6px 10px", marginBottom: 4, fontFamily: "monospace", fontSize: 11, color: "var(--text-primary)", lineHeight: 1.5 }}>
-                            {ex}
-                        </div>
+                        <div key={i} style={{ background: "var(--bg-elevated)", borderRadius: 4, padding: "6px 10px", marginBottom: 4, fontFamily: "monospace", fontSize: 11, color: "var(--text-primary)", lineHeight: 1.5, border: '1px solid var(--border)' }}>{ex}</div>
                     ))}
                 </div>
             )}
@@ -103,7 +128,13 @@ function ProblemPanel({ problems, problem, onSelect }: { problems: Problem[]; pr
     );
 }
 
-export default function JavaEditor({ mode, onLoadingChange }: { mode?: string; onLoadingChange?: (loading: boolean) => void }) {
+export interface JavaEditorHandle {
+    getProblems: () => Problem[];
+    getProblem: () => Problem | null;
+    selectProblem: (p: Problem) => void;
+}
+
+const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange?: (loading: boolean) => void; onOpenSidebar?: () => void; onProblemsLoaded?: (problems: Problem[]) => void }>(function JavaEditor({ mode, onLoadingChange, onOpenSidebar, onProblemsLoaded }, ref) {
     const isPractice = mode === "practice";
 
     const [problems, setProblems] = useState<Problem[]>([]);
@@ -122,17 +153,18 @@ export default function JavaEditor({ mode, onLoadingChange }: { mode?: string; o
     const decorationsRef = useRef<any>(null);
     const menuRef = useRef<HTMLDivElement>(null);
     const runRef = useRef<(() => void) | undefined>(undefined);
-    const [activeTab, setActiveTab] = useState<'problem' | 'code'>('problem');
     const [langOpen, setLangOpen] = useState(false);
 
     useEffect(() => {
         if (!isPractice) return;
         fetchProblems().then(list => {
             setProblems(list);
+            onProblemsLoaded?.(list);
             try {
                 const savedId = localStorage.getItem(PROBLEM_KEY);
                 const saved = savedId ? list.find(p => p.id === Number(savedId)) : null;
-                if (saved) { setProblem(saved); setCode(saved.starterCode); setTimeout(foldMain, 300); }
+                const pick = saved ?? list[0] ?? null;
+                if (pick) { setProblem(pick); setCode(pick.starterCode); }
             } catch {}
         }).catch(e => setProblemsError(e.message));
     }, [isPractice]);
@@ -200,6 +232,8 @@ export default function JavaEditor({ mode, onLoadingChange }: { mode?: string; o
         setTimeout(foldMain, 100);
         try { localStorage.setItem(PROBLEM_KEY, String(p.id)); } catch {}
     };
+
+    useImperativeHandle(ref, () => ({ getProblems: () => problems, getProblem: () => problem, selectProblem }), [problems, problem]);
 
     const setLoadingState = (v: boolean) => { setLoading(v); onLoadingChange?.(v); };
 
@@ -306,45 +340,12 @@ export default function JavaEditor({ mode, onLoadingChange }: { mode?: string; o
                 </div>
             )}
 
-            {/* Tab bar — practice mode */}
-            {isPractice && (
-                <div style={{ display: "flex", background: "var(--bg-elevated)", borderBottom: "1px solid var(--border)", flexShrink: 0 }}>
-                    {([['problem', '📋 Problem'], ['code', `</> ${problem ? problem.title : 'Code'}`]] as const).map(([key, label]) => (
-                        <button
-                            key={key}
-                            onClick={() => setActiveTab(key)}
-                            style={{
-                                padding: "8px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer",
-                                background: activeTab === key ? "var(--bg-active)" : "transparent",
-                                color: activeTab === key ? "#fff" : "var(--text-secondary)",
-                                border: "none", borderBottom: activeTab === key ? "2px solid var(--accent)" : "2px solid transparent",
-                            }}
-                        >
-                            {label}
-                        </button>
-                    ))}
-                </div>
-            )}
+
 
             {/* Main content */}
             <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", position: "relative" }}>
-                {isPractice && activeTab === 'problem' && (
-                    <div style={{ flex: 1, overflow: "auto" }}>
-                        {problemsError ? (
-                            <div style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center", background: "var(--bg-surface)", color: "var(--error)", fontSize: 13 }}>
-                                {problemsError}
-                            </div>
-                        ) : problems.length === 0 ? (
-                            <div style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center", background: "var(--bg-surface)", color: "var(--text-muted)", fontSize: 13 }}>
-                                Loading problems…
-                            </div>
-                        ) : (
-                            <ProblemPanel problems={problems} problem={problem} onSelect={selectProblem} />
-                        )}
-                    </div>
-                )}
-
-                <div style={{ flex: 1, minHeight: 0, position: "relative", display: isPractice && activeTab === 'problem' ? 'none' : 'flex', flexDirection: 'column' }}>
+                {isPractice && problem && <ProblemDescription problem={problem} onOpenList={() => onOpenSidebar?.()} />}
+                <div style={{ flex: 1, minHeight: 0, position: "relative" }}>
                     {!editorReady && (
                         <div style={{ position: 'absolute', inset: 0, background: 'var(--bg-elevated)', zIndex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <div style={{ color: 'var(--text-muted)', fontSize: 13 }}>Loading editor…</div>
@@ -369,83 +370,60 @@ export default function JavaEditor({ mode, onLoadingChange }: { mode?: string; o
                 borderTop: "1px solid var(--border)", display: "flex",
                 justifyContent: "space-between", alignItems: "center", gap: 8,
             }}>
-                {isPractice && activeTab === 'problem' ? (
-                    <button
-                        onClick={() => setActiveTab('code')}
-                        style={{
-                            padding: "6px 20px", fontSize: 13, cursor: "pointer", marginLeft: "auto",
-                            background: "var(--accent)", color: "#fff", border: "none", borderRadius: 5,
-                            fontWeight: 600, transition: "all 0.15s",
-                        }}
-                        onMouseEnter={e => e.currentTarget.style.background = 'var(--accent-hover)'}
-                        onMouseLeave={e => e.currentTarget.style.background = 'var(--accent)'}
-                    >
-                        Start Coding →
-                    </button>
-                ) : (
-                    <>
-                        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                            <div style={{ position: "relative" }}>
-                                <button
-                                    onClick={() => setLangOpen(!langOpen)}
-                                    style={{
-                                        fontSize: 11, color: "var(--text-muted)", background: "transparent",
-                                        border: "1px solid var(--border)", borderRadius: 4,
-                                        padding: "3px 8px", fontWeight: 600, cursor: "pointer",
-                                        transition: "all 0.15s",
-                                    }}
-                                    onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--border-light)"; e.currentTarget.style.color = "var(--text-secondary)"; }}
-                                    onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--text-muted)"; }}
-                                >
-                                    ☕ Java 25 ▾
-                                </button>
-                                {langOpen && (
-                                    <div style={{
-                                        position: "absolute", bottom: "calc(100% + 4px)", left: 0,
-                                        background: "var(--bg-elevated)", border: "1px solid var(--border-light)",
-                                        borderRadius: 6, zIndex: 10, minWidth: 120,
-                                        boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
-                                    }}>
-                                        <div style={{ padding: "6px 12px", fontSize: 12, color: "#fff", background: "var(--bg-active)", borderRadius: 5, cursor: "default" }}>
-                                            ☕ Java 25
-                                        </div>
+                <>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                        <div style={{ position: "relative" }}>
+                            <button
+                                onClick={() => setLangOpen(!langOpen)}
+                                style={{
+                                    fontSize: 11, color: "var(--text-muted)", background: "transparent",
+                                    border: "1px solid var(--border)", borderRadius: 4,
+                                    padding: "3px 8px", fontWeight: 600, cursor: "pointer",
+                                    transition: "all 0.15s",
+                                }}
+                                onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--border-light)"; e.currentTarget.style.color = "var(--text-secondary)"; }}
+                                onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--text-muted)"; }}
+                            >
+                                ☕ Java 25 ▾
+                            </button>
+                            {langOpen && (
+                                <div style={{
+                                    position: "absolute", bottom: "calc(100% + 4px)", left: 0,
+                                    background: "var(--bg-elevated)", border: "1px solid var(--border-light)",
+                                    borderRadius: 6, zIndex: 10, minWidth: 120,
+                                    boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
+                                }}>
+                                    <div style={{ padding: "6px 12px", fontSize: 12, color: "#fff", background: "var(--bg-active)", borderRadius: 5, cursor: "default" }}>
+                                        ☕ Java 25
                                     </div>
-                                )}
-                            </div>
-                            {isPractice && problem && (
-                                <a
-                                    href={problem.leetcodeUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{ fontSize: 11, color: "var(--warning)", textDecoration: "none", border: "1px solid var(--warning)", padding: "2px 8px", borderRadius: 3, fontWeight: 700 }}
-                                >
-                                    LeetCode ↗
-                                </a>
+                                </div>
                             )}
-                            <span style={{ fontSize: 10, color: "var(--text-faint)", fontFamily: "monospace" }}>
-                                {isMac ? '⌘' : 'Ctrl'}+Enter
-                            </span>
                         </div>
-                        <button
-                            data-tour="run"
-                            onClick={handleRun}
-                            disabled={loading}
-                            title={`Run (${isMac ? '⌘' : 'Ctrl'}+Enter)`}
-                            style={{
-                                padding: "6px 20px", fontSize: 13, cursor: loading ? "not-allowed" : "pointer",
-                                background: loading ? 'var(--border-light)' : 'var(--accent)', color: '#fff',
-                                border: 'none', borderRadius: 5, fontWeight: 600,
-                                transition: 'all 0.15s', marginLeft: isPractice ? 'auto' : undefined,
-                                boxShadow: loading ? 'none' : '0 2px 8px rgba(76,175,80,0.2)',
-                            }}
-                            onMouseEnter={e => { if (!loading) e.currentTarget.style.background = 'var(--accent-hover)'; }}
-                            onMouseLeave={e => { if (!loading) e.currentTarget.style.background = loading ? 'var(--border-light)' : 'var(--accent)'; }}
-                        >
-                            {loading ? "Running…" : "▶ Run"}
-                        </button>
-                    </>
-                )}
+                        <span style={{ fontSize: 10, color: "var(--text-faint)", fontFamily: "monospace" }}>
+                            {isMac ? '⌘' : 'Ctrl'}+Enter
+                        </span>
+                    </div>
+                    <button
+                        data-tour="run"
+                        onClick={handleRun}
+                        disabled={loading}
+                        title={`Run (${isMac ? '⌘' : 'Ctrl'}+Enter)`}
+                        style={{
+                            padding: "6px 20px", fontSize: 13, cursor: loading ? "not-allowed" : "pointer",
+                            background: loading ? 'var(--border-light)' : 'var(--accent)', color: '#fff',
+                            border: 'none', borderRadius: 5, fontWeight: 600,
+                            transition: 'all 0.15s',
+                            boxShadow: loading ? 'none' : '0 2px 8px rgba(76,175,80,0.2)',
+                        }}
+                        onMouseEnter={e => { if (!loading) e.currentTarget.style.background = 'var(--accent-hover)'; }}
+                        onMouseLeave={e => { if (!loading) e.currentTarget.style.background = loading ? 'var(--border-light)' : 'var(--accent)'; }}
+                    >
+                        {loading ? "Running…" : "▶ Run"}
+                    </button>
+                </>
             </div>
         </div>
     );
-}
+});
+
+export default JavaEditor;

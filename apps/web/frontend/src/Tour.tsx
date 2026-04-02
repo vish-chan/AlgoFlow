@@ -1,7 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
 
-const TOUR_KEY = "algoflow-tour-seen";
-
 interface Step {
     target: string;
     title: string;
@@ -9,7 +7,7 @@ interface Step {
     position: "bottom" | "top" | "left" | "right";
 }
 
-const STEPS: Step[] = [
+const PLAYGROUND_STEPS: Step[] = [
     { target: "[data-tour='editor']", title: "Code Editor", body: "Write your code here. Arrays, graphs, and trees are auto-visualized.", position: "right" },
     { target: "[data-tour='templates']", title: "Templates", body: "Quick-start templates for arrays, trees, graphs, and linked lists.", position: "bottom" },
     { target: "[data-tour='examples']", title: "Examples", body: "Pre-built algorithms — load one and hit Run to see it in action.", position: "bottom" },
@@ -18,26 +16,39 @@ const STEPS: Step[] = [
     { target: "[data-tour='controls']", title: "Playback Controls", body: "Play, pause, step through, scrub, and adjust speed.", position: "top" },
 ];
 
-export function useTour() {
+const PRACTICE_STEPS: Step[] = [
+    { target: "[data-tour='problems-btn']", title: "Problem List", body: "Browse LeetCode-style problems organized by category and difficulty.", position: "bottom" },
+    { target: "[data-tour='problem-desc']", title: "Problem Description", body: "Read the problem statement, examples, and constraints. Click to collapse.", position: "bottom" },
+    { target: "[data-tour='editor']", title: "Code Editor", body: "Write your solution here. The starter code is pre-loaded for each problem.", position: "right" },
+    { target: "[data-tour='run']", title: "Run", body: "Execute your solution and watch it visualize step by step.", position: "top" },
+    { target: "[data-tour='visualizer']", title: "Visualizer", body: "See your algorithm animate — arrays, graphs, trees, and more.", position: "left" },
+    { target: "[data-tour='controls']", title: "Playback Controls", body: "Play, pause, step through, scrub, and adjust speed.", position: "top" },
+];
+
+const STEPS_BY_MODE: Record<string, Step[]> = { playground: PLAYGROUND_STEPS, practice: PRACTICE_STEPS };
+
+export function useTour(mode: string) {
+    const key = `algoflow-tour-seen-${mode}`;
     const [seen, setSeen] = useState(() => {
-        try { return localStorage.getItem(TOUR_KEY) === "1"; } catch { return false; }
+        try { return localStorage.getItem(key) === "1"; } catch { return false; }
     });
     const start = useCallback(() => setSeen(false), []);
     const finish = useCallback(() => {
         setSeen(true);
-        try { localStorage.setItem(TOUR_KEY, "1"); } catch {}
-    }, []);
+        try { localStorage.setItem(key, "1"); } catch {}
+    }, [key]);
     return { showTour: !seen, startTour: start, finishTour: finish };
 }
 
-export default function Tour({ onFinish }: { onFinish: () => void }) {
+export default function Tour({ mode, onFinish }: { mode: string; onFinish: () => void }) {
     const [step, setStep] = useState(0);
     const [rect, setRect] = useState<DOMRect | null>(null);
     const [activeSteps, setActiveSteps] = useState<Step[]>([]);
 
     useEffect(() => {
-        setActiveSteps(STEPS.filter(s => document.querySelector(s.target)));
-    }, []);
+        const steps = STEPS_BY_MODE[mode] ?? PLAYGROUND_STEPS;
+        setActiveSteps(steps.filter(s => document.querySelector(s.target)));
+    }, [mode]);
 
     const updateRect = useCallback(() => {
         if (!activeSteps.length) return;
