@@ -484,8 +484,7 @@ export class SimpleRenderer {
             if (child?.type === 'chart' && child.data) {
                 this.renderChartInBounds(child.data, child.title, 0, 0, width, sectionHeight);
             } else if (child?.type === 'array' && child.data) {
-                this.renderArrayInBounds(child.data, child.title, 0, 0, width, sectionHeight, child.dsType);
-            } else if (child?.type === 'locals' && child.rows) {
+                this.renderArrayInBounds(child.data, child.title, 0, 0, width, sectionHeight, child.dsType, child._tracerKey);            } else if (child?.type === 'locals' && child.rows) {
                 this.renderLocalsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, child.callStack);
             } else if (child?.type === 'array2d' && child.data) {
                 this.renderArray2DInBounds(child.data, child.title, 0, 0, width, sectionHeight, child.dsType);
@@ -515,14 +514,14 @@ export class SimpleRenderer {
         });
     }
 
-    private renderArrayInBounds(arr: any[], title: string | undefined, x: number, y: number, width: number, height: number, dsType?: string) {
+    private renderArrayInBounds(arr: any[], title: string | undefined, x: number, y: number, width: number, height: number, dsType?: string, tracerKey?: string) {
         if (!this.ctx) return;
         if (dsType === 'Stack') {
             this.renderStackInBounds(arr, title, dsType, x, y, width, height);
         } else if (dsType === 'LinkedList') {
             this.renderLinkedListInBounds(arr, title, dsType, x, y, width, height);
         } else {
-            this.renderDefaultArrayInBounds(arr, title, dsType, x, y, width, height, false);
+            this.renderDefaultArrayInBounds(arr, title, dsType, x, y, width, height, false, tracerKey);
         }
     }
 
@@ -624,7 +623,7 @@ export class SimpleRenderer {
         }
     }
 
-    private renderDefaultArrayInBounds(arr: any[], title: string | undefined, dsType: string | undefined, x: number, y: number, width: number, height: number, large: boolean) {
+    private renderDefaultArrayInBounds(arr: any[], title: string | undefined, dsType: string | undefined, x: number, y: number, width: number, height: number, large: boolean, tracerKey?: string) {
         if (!this.ctx) return;
         const cellWidth = large ? 80 : 60;
         const cellHeight = large ? 60 : 40;
@@ -632,6 +631,7 @@ export class SimpleRenderer {
         const startX = x + (width - totalWidth) / 2;
         const startY = y + (height - cellHeight) / 2;
         const fontSize = large ? 14 : 12;
+        const colorPrefix = tracerKey || title || 'arr';
 
         if (title) this.drawTitleWithBadge(title, dsType, x + width / 2, startY - (large ? 15 : 10), fontSize);
 
@@ -651,7 +651,7 @@ export class SimpleRenderer {
             }
             const cx = startX + i * cellWidth + offsetX;
             const targetColor = (isSwapping || patched) ? theme.status.error : (selected ? theme.status.info : theme.cell.default);
-            const cellColor = this.transitionColor(`arr-${i}`, targetColor);
+            const cellColor = this.transitionColor(`${colorPrefix}-${i}`, targetColor);
             if (patched) { this.ctx!.shadowColor = theme.status.error; this.ctx!.shadowBlur = 10; }
             this.ctx!.fillStyle = cellColor;
             this.ctx!.fillRect(cx + 2, startY, cellWidth - 4, cellHeight);
@@ -848,8 +848,7 @@ export class SimpleRenderer {
         if (child?.type === 'chart' && child.data) {
             this.renderChartInBounds(child.data, child.title, 0, 0, width, height);
         } else if (child?.type === 'array' && child.data) {
-            this.renderArrayInBounds(child.data, child.title, 0, 0, width, height, child.dsType);
-        } else if (child?.type === 'locals' && child.rows) {
+            this.renderArrayInBounds(child.data, child.title, 0, 0, width, height, child.dsType, child._tracerKey);        } else if (child?.type === 'locals' && child.rows) {
             this.renderLocalsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, child.callStack);
         } else if (child?.type === 'array2d' && child.data) {
             this.renderArray2DInBounds(child.data, child.title, 0, 0, width, height, child.dsType);

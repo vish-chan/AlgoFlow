@@ -103,6 +103,11 @@ public class VisualizerAgent {
             });
         }
 
+        BiConsumer<Object, Object[]> onContains = VisualizerRegistry::onContains;
+        Field containsListenerField = bootBridge.getField("containsListener");
+        containsListenerField.setAccessible(true);
+        containsListenerField.set(null, onContains);
+
         new AgentBuilder.Default().disableClassFormatChanges().with(RETRANSFORMATION)
                 // Make sure we see helpful logs
                 .with(AgentBuilder.RedefinitionStrategy.Listener.StreamWriting.toSystemError())
@@ -141,7 +146,9 @@ public class VisualizerAgent {
                                             .or(named("pollFirst")).or(named("pollLast"))
                                             .or(named("removeFirst")).or(named("removeLast"))))
                             .visit(Advice.to(CollectionInterceptor.ClearInterceptor.class)
-                                    .on(named("clear").and(takesArguments(0))));
+                                    .on(named("clear").and(takesArguments(0))))
+                            .visit(Advice.to(CollectionInterceptor.ContainsInterceptor.class)
+                                    .on(named("contains").and(takesArguments(Object.class))));
                 })
                 .type(ElementMatchers.is(java.util.ArrayDeque.class)
                         .or(ElementMatchers.is(java.util.PriorityQueue.class))
@@ -160,7 +167,9 @@ public class VisualizerAgent {
                                             .or(named("pollFirst")).or(named("pollLast"))
                                             .or(named("removeFirst")).or(named("removeLast"))))
                             .visit(Advice.to(CollectionInterceptor.ClearInterceptor.class)
-                                    .on(named("clear").and(takesArguments(0))));
+                                    .on(named("clear").and(takesArguments(0))))
+                            .visit(Advice.to(CollectionInterceptor.ContainsInterceptor.class)
+                                    .on(named("contains").and(takesArguments(Object.class))));
                 }).type(ElementMatchers.is(java.io.PrintStream.class))
                 .transform((builder, type, classLoader, module, protectionDomain) -> {
                     System.out.println("[VisualizerAgent] Transforming PrintStream");
@@ -202,7 +211,9 @@ public class VisualizerAgent {
                             .visit(Advice.to(MapInterceptor.RemoveInterceptor.class)
                                     .on(named("remove").and(takesArguments(Object.class))))
                             .visit(Advice.to(MapInterceptor.ClearInterceptor.class)
-                                    .on(named("clear").and(takesArguments(0))));
+                                    .on(named("clear").and(takesArguments(0))))
+                            .visit(Advice.to(MapInterceptor.GetInterceptor.class)
+                                    .on(named("containsKey").and(takesArguments(Object.class))));
                 }).installOn(inst);
 
         System.out.println("[VisualizerAgent] Agent installed");

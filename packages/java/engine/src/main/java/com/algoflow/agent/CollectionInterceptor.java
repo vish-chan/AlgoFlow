@@ -24,4 +24,11 @@ public class CollectionInterceptor {
             VisualizerBridge.clearListener.accept(instance);
         }
     }
+
+    static class ContainsInterceptor {
+        @Advice.OnMethodExit
+        static void onContains(@Advice.This Object instance, @Advice.Argument(0) Object element) {
+            VisualizerBridge.containsListener.accept(instance, new Object[]{element});
+        }
+    }
 }

@@ -60,6 +60,22 @@ public class Array1DVisualiser implements ListVisualizer {
     }
 
     @Override
+    public void onContains(Object element) {
+        int i = 0;
+        for (Object e : (Collection<?>) _list) {
+            if (java.util.Objects.equals(e, element)) {
+                _tracer.select(i);
+                Tracer.delay();
+                _tracer.deselect(i);
+                Tracer.delay();
+                return;
+            }
+            i++;
+        }
+        Tracer.delay();
+    }
+
+    @Override
     public Commander getCommander() {
         return _tracer;
     }

@@ -16,4 +16,5 @@ public class VisualizerBridge {
     public static BiConsumer<Object, Object[]> mapGetListener;
     public static BiConsumer<Object, Object[]> mapRemoveListener;
     public static Consumer<Object> mapClearListener;
+    public static BiConsumer<Object, Object[]> containsListener;
 }

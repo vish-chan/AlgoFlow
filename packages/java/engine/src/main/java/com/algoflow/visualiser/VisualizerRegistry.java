@@ -90,6 +90,8 @@ public class VisualizerRegistry {
         _codeVisualizer.highlightLine(lineNumber);
     }
 
+
+
     private static int getCallerLineNumber() {
         return getRunnerLineNumber(0);
     }
@@ -450,6 +452,21 @@ public class VisualizerRegistry {
             ListVisualizer visualizer = _objectToVisualizer.get(object);
             if (visualizer != null) {
                 visualizer.onClear();
+            }
+        } finally {
+            _processing = false;
+        }
+    }
+
+    public static void onContains(Object object, Object[] args) {
+        if (_processing)
+            return;
+        _processing = true;
+        try {
+            highlightLine(getCallerLineNumber());
+            ListVisualizer visualizer = _objectToVisualizer.get(object);
+            if (visualizer != null) {
+                visualizer.onContains(args[0]);
             }
         } finally {
             _processing = false;

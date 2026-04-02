@@ -6,4 +6,5 @@ public interface ListVisualizer extends Visualizer {
     void onAdd(Object[] args);
     void onRemove(Object[] args);
     void onClear();
+    default void onContains(Object element) {}
 }
