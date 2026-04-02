@@ -457,6 +457,7 @@ public class VisualizerRegistry {
     }
 
     private static final IdentityHashMap<Object, ListVisualizer> _iteratorToVisualizer = new IdentityHashMap<>();
+    private static final IdentityHashMap<Object, Object[]> _iteratorToGraphNode = new IdentityHashMap<>();
     private static final IdentityHashMap<Object, int[]> _iteratorIndex = new IdentityHashMap<>();
 
     public static void onIteratorCreated(Object collection, Object iterator) {
@@ -464,6 +465,17 @@ public class VisualizerRegistry {
             return;
         _processing = true;
         try {
+            // Check if this is a neighbor list in a @Graph adj list
+            GraphVisualizer graphVis = findParentGraphForList(collection);
+            if (graphVis != null) {
+                Object node = graphVis.findNodeForList(collection);
+                if (node != null) {
+                    _iteratorToGraphNode.put(iterator, new Object[]{graphVis, node});
+                    _iteratorIndex.put(iterator, new int[]{0});
+                }
+                return;
+            }
+
             ListVisualizer vis = _objectToVisualizer.get(collection);
             if (vis != null) {
                 _iteratorToVisualizer.put(iterator, vis);
@@ -480,6 +492,18 @@ public class VisualizerRegistry {
         _processing = true;
         try {
             highlightLine(getCallerLineNumber());
+
+            // Check graph neighbor iteration
+            Object[] graphInfo = _iteratorToGraphNode.get(iterator);
+            if (graphInfo != null) {
+                GraphVisualizer graphVis = (GraphVisualizer) graphInfo[0];
+                Object node = graphInfo[1];
+                int[] idx = _iteratorIndex.get(iterator);
+                graphVis.onNeighborIterate(node, idx[0]);
+                idx[0]++;
+                return;
+            }
+
             ListVisualizer vis = _iteratorToVisualizer.get(iterator);
             if (vis != null) {
                 int[] idx = _iteratorIndex.get(iterator);
@@ -516,6 +540,11 @@ public class VisualizerRegistry {
         _processing = true;
         try {
             highlightLine(getCallerLineNumber());
+            GraphVisualizer graphVis = _graphToVisualizer.get(map);
+            if (graphVis != null && graphVis.isAdjList()) {
+                graphVis.visit(args[0]);
+                return;
+            }
             HashMapVisualizer vis = _mapToVisualizer.get(map);
             if (vis != null) vis.onGet(args[0]);
         } finally {

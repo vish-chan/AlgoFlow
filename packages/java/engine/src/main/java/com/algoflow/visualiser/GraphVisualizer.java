@@ -57,6 +57,24 @@ public class GraphVisualizer implements Visualizer {
         Tracer.delay();
     }
 
+    public void visit(Object node) {
+        leaveLastSource(node);
+        _lastSource = node;
+        _tracer.visit(node);
+        Tracer.delay();
+    }
+
+    public void onNeighborIterate(Object node, int index) {
+        if (_adjacency instanceof java.util.Map<?, ?> map) {
+            Object neighbors = map.get(node);
+            if (neighbors instanceof java.util.List<?> list && index < list.size()) {
+                Object neighbor = list.get(index);
+                _tracer.visit(neighbor, node);
+                Tracer.delay();
+            }
+        }
+    }
+
     public void addEdge(int source, int target, int weight) {
         _tracer.addEdge(source, target, weight);
         Tracer.delay();
