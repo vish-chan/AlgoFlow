@@ -85,6 +85,14 @@ public class VisualizerInitializer {
             return true;
         }
 
+        // Check for @LinkedList annotation
+        if (field.isAnnotationPresent(com.algoflow.annotation.LinkedList.class)) {
+            LinkedListVisualizer vis = new LinkedListVisualizer(name, value, field.getType());
+            vis.setRootOwner(instance, name);
+            VisualizerRegistry.registerLinkedList(vis);
+            return true;
+        }
+
         return value != null && registerValue(name, value, is2DList(field));
     }
 

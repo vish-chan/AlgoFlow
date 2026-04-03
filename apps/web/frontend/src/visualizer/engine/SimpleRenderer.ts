@@ -311,7 +311,7 @@ export class SimpleRenderer {
 
         if (dsType === 'Stack') {
             this.renderStackInBounds(arr, title, dsType, 0, 0, width, height);
-        } else if (dsType === 'LinkedList') {
+        } else if (dsType === 'LinkedList' || dsType === 'SinglyLinkedList') {
             this.renderLinkedListInBounds(arr, title, dsType, 0, 0, width, height);
         } else {
             this.renderDefaultArrayInBounds(arr, title, dsType, 0, 0, width, height, true);
@@ -425,7 +425,7 @@ export class SimpleRenderer {
         if (child?.type === 'array' && child.data) {
             const n = child.data.length;
             const dsType = child.dsType;
-            if (dsType === 'LinkedList') return n * 48 + (n - 1) * 24 + 60;
+            if (dsType === 'LinkedList' || dsType === 'SinglyLinkedList') return n * 48 + (n - 1) * 24 + 60;
             if (dsType === 'Stack') return n * 60 + 40;
             return n * 60 + 40;
         }
@@ -530,7 +530,7 @@ export class SimpleRenderer {
         if (!this.ctx) return;
         if (dsType === 'Stack') {
             this.renderStackInBounds(arr, title, dsType, x, y, width, height);
-        } else if (dsType === 'LinkedList') {
+        } else if (dsType === 'LinkedList' || dsType === 'SinglyLinkedList') {
             this.renderLinkedListInBounds(arr, title, dsType, x, y, width, height);
         } else {
             this.renderDefaultArrayInBounds(arr, title, dsType, x, y, width, height, false, tracerKey);
@@ -722,27 +722,29 @@ export class SimpleRenderer {
                 this.ctx!.lineWidth = 1.5;
                 // Forward arrow →
                 this.ctx!.beginPath();
-                this.ctx!.moveTo(ax, cy - 3);
-                this.ctx!.lineTo(ax2, cy - 3);
+                this.ctx!.moveTo(ax, cy - (dsType === 'SinglyLinkedList' ? 0 : 3));
+                this.ctx!.lineTo(ax2, cy - (dsType === 'SinglyLinkedList' ? 0 : 3));
                 this.ctx!.stroke();
                 this.ctx!.fillStyle = theme.text.secondary;
                 this.ctx!.beginPath();
-                this.ctx!.moveTo(ax2, cy - 3);
-                this.ctx!.lineTo(ax2 - 5, cy - 7);
-                this.ctx!.lineTo(ax2 - 5, cy + 1);
+                this.ctx!.moveTo(ax2, cy - (dsType === 'SinglyLinkedList' ? 0 : 3));
+                this.ctx!.lineTo(ax2 - 5, cy - (dsType === 'SinglyLinkedList' ? 4 : 7));
+                this.ctx!.lineTo(ax2 - 5, cy + (dsType === 'SinglyLinkedList' ? 4 : 1));
                 this.ctx!.closePath();
                 this.ctx!.fill();
-                // Backward arrow ←
-                this.ctx!.beginPath();
-                this.ctx!.moveTo(ax2, cy + 3);
-                this.ctx!.lineTo(ax, cy + 3);
-                this.ctx!.stroke();
-                this.ctx!.beginPath();
-                this.ctx!.moveTo(ax, cy + 3);
-                this.ctx!.lineTo(ax + 5, cy - 1);
-                this.ctx!.lineTo(ax + 5, cy + 7);
-                this.ctx!.closePath();
-                this.ctx!.fill();
+                if (dsType !== 'SinglyLinkedList') {
+                    // Backward arrow ←
+                    this.ctx!.beginPath();
+                    this.ctx!.moveTo(ax2, cy + 3);
+                    this.ctx!.lineTo(ax, cy + 3);
+                    this.ctx!.stroke();
+                    this.ctx!.beginPath();
+                    this.ctx!.moveTo(ax, cy + 3);
+                    this.ctx!.lineTo(ax + 5, cy - 1);
+                    this.ctx!.lineTo(ax + 5, cy + 7);
+                    this.ctx!.closePath();
+                    this.ctx!.fill();
+                }
                 this.ctx!.lineWidth = 1;
             }
         });

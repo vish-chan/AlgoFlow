@@ -16,6 +16,7 @@ public class VisualizerRegistry {
     private static final Map<Object, GraphVisualizer> _graphToVisualizer = new IdentityHashMap<>();
     private static final Map<Object, HashMapVisualizer> _mapToVisualizer = new IdentityHashMap<>();
     private static final List<TreeVisualizer> _treeVisualizers = new ArrayList<>();
+    private static final List<LinkedListVisualizer> _linkedListVisualizers = new ArrayList<>();
     private static LogVisualizer _logVisualizer;
     private static LocalVariablesVisualizer _localVariablesVisualizer;
     private static CallStackVisualizer _callStackVisualizer;
@@ -25,7 +26,8 @@ public class VisualizerRegistry {
         return _objectToVisualizer.containsKey(obj) || _arrayToVisualizer.containsKey(obj)
                 || _array2DToVisualizer.containsKey(obj) || _graphToVisualizer.containsKey(obj)
                 || _chartToVisualizer.containsKey(obj) || _mapToVisualizer.containsKey(obj)
-                || _treeVisualizers.stream().anyMatch(t -> t.isTrackedNode(obj));
+                || _treeVisualizers.stream().anyMatch(t -> t.isTrackedNode(obj))
+                || _linkedListVisualizers.stream().anyMatch(l -> l.isTrackedNode(obj));
     }
 
     public static void register(Visualizer visualizer, Object... objects) {
@@ -57,6 +59,11 @@ public class VisualizerRegistry {
     public static void registerTree(TreeVisualizer visualizer) {
         _visualizers.add(visualizer.getCommander());
         _treeVisualizers.add(visualizer);
+    }
+
+    public static void registerLinkedList(LinkedListVisualizer visualizer) {
+        _visualizers.add(visualizer.getCommander());
+        _linkedListVisualizers.add(visualizer);
     }
 
     public static void registerChart(ChartVisualizer visualizer, Object arrayObj) {
@@ -647,6 +654,12 @@ public class VisualizerRegistry {
                     return;
                 }
             }
+            for (LinkedListVisualizer lv : _linkedListVisualizers) {
+                if (lv.isTrackedNode(owner)) {
+                    lv.onFieldSet(owner, fieldName);
+                    return;
+                }
+            }
         } finally {
             _processing = false;
         }
@@ -662,6 +675,12 @@ public class VisualizerRegistry {
             for (TreeVisualizer tv : _treeVisualizers) {
                 if (tv.isTrackedNode(owner)) {
                     tv.onFieldGet(owner, fieldName);
+                    return;
+                }
+            }
+            for (LinkedListVisualizer lv : _linkedListVisualizers) {
+                if (lv.isTrackedNode(owner)) {
+                    lv.onFieldGet(owner, fieldName);
                     return;
                 }
             }
