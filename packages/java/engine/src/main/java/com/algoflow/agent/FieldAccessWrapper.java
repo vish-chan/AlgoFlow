@@ -125,6 +125,16 @@ public class FieldAccessWrapper implements AsmVisitorWrapper {
                         "(Ljava/lang/Object;Ljava/lang/String;I)V", false);
                 return;
             }
+            if (opcode == Opcodes.PUTSTATIC && isObjectField(descriptor)) {
+                // Stack: [newValue]
+                super.visitFieldInsn(opcode, owner, name, descriptor);
+                super.visitLdcInsn(owner.replace('/', '.'));
+                super.visitLdcInsn(name);
+                super.visitLdcInsn(currentLine);
+                super.visitMethodInsn(Opcodes.INVOKESTATIC, "com/algoflow/visualiser/VisualizerRegistry",
+                        "onStaticFieldSet", "(Ljava/lang/String;Ljava/lang/String;I)V", false);
+                return;
+            }
             super.visitFieldInsn(opcode, owner, name, descriptor);
         }
 

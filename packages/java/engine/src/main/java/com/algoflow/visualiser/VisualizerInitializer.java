@@ -17,6 +17,7 @@ public class VisualizerInitializer {
             return;
         _scanned.put(instance, true);
 
+        scanStatics(instance.getClass());
         scanFields(instance.getClass(), instance);
     }
 
@@ -39,7 +40,7 @@ public class VisualizerInitializer {
             field.setAccessible(true);
             try {
                 Object value = field.get(instance);
-                if (registerField(field, value, instance)) {
+                if (registerField(field, value, instance, clazz)) {
                     registered = true;
                 }
             } catch (IllegalAccessException e) {
@@ -51,7 +52,7 @@ public class VisualizerInitializer {
             VisualizerRegistry.setLayout();
     }
 
-    private static boolean registerField(Field field, Object value, Object instance) {
+    private static boolean registerField(Field field, Object value, Object instance, Class<?> clazz) {
         String name = field.getName();
 
         // Check for @Chart annotation
@@ -62,7 +63,7 @@ public class VisualizerInitializer {
             }
             ChartVisualizer vis = new ChartVisualizer(value, name);
             VisualizerRegistry.registerChart(vis, value);
-            if (value == null) VisualizerRegistry.deferField(instance, name, vis);
+            if (value == null) deferNull(instance, clazz, name, vis);
             return true;
         }
 
@@ -75,7 +76,7 @@ public class VisualizerInitializer {
             }
             GraphVisualizer vis = new GraphVisualizer(name, value, annotation.directed(), annotation.weighted());
             VisualizerRegistry.registerGraph(vis, value);
-            if (value == null) VisualizerRegistry.deferField(instance, name, vis);
+            if (value == null) deferNull(instance, clazz, name, vis);
             return true;
         }
 
@@ -102,11 +103,11 @@ public class VisualizerInitializer {
                 if (type.getComponentType().isArray()) {
                     var vis = new PrimitiveArray2DVisualizer(null, "int[][]: " + name);
                     VisualizerRegistry.register(vis);
-                    VisualizerRegistry.deferField(instance, name, vis);
+                    deferNull(instance, clazz, name, vis);
                 } else {
                     var vis = new PrimitiveArray1DVisualizer(null, "int[]: " + name);
                     VisualizerRegistry.register(vis);
-                    VisualizerRegistry.deferField(instance, name, vis);
+                    deferNull(instance, clazz, name, vis);
                 }
                 return true;
             }
@@ -184,6 +185,14 @@ public class VisualizerInitializer {
     private static boolean is2DArray(Object value) {
         Class<?> clazz = value.getClass();
         return clazz.isArray() && clazz.getComponentType().isArray();
+    }
+
+    private static void deferNull(Object instance, Class<?> clazz, String fieldName, Visualizer vis) {
+        if (instance != null) {
+            VisualizerRegistry.deferField(instance, fieldName, vis);
+        } else {
+            VisualizerRegistry.deferStaticField(clazz.getName(), fieldName, vis);
+        }
     }
 
     private static boolean isSupportedGraphType(Object value) {

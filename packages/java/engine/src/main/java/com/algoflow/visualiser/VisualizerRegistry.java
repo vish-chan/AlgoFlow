@@ -16,6 +16,7 @@ public class VisualizerRegistry {
     private static final Map<Object, GraphVisualizer> _graphToVisualizer = new IdentityHashMap<>();
     private static final Map<Object, HashMapVisualizer> _mapToVisualizer = new IdentityHashMap<>();
     private static final Map<Object, Map<String, Visualizer>> _deferredFields = new IdentityHashMap<>();
+    private static final Map<String, Visualizer> _deferredStaticFields = new HashMap<>();
     private static final List<TreeVisualizer> _treeVisualizers = new ArrayList<>();
     private static final List<LinkedListVisualizer> _linkedListVisualizers = new ArrayList<>();
     private static LogVisualizer _logVisualizer;
@@ -83,6 +84,10 @@ public class VisualizerRegistry {
 
     public static void deferField(Object owner, String fieldName, Visualizer visualizer) {
         _deferredFields.computeIfAbsent(owner, k -> new HashMap<>()).put(fieldName, visualizer);
+    }
+
+    public static void deferStaticField(String className, String fieldName, Visualizer visualizer) {
+        _deferredStaticFields.put(className + "." + fieldName, visualizer);
     }
 
     public static void registerMap(HashMapVisualizer visualizer, Object mapObj) {
@@ -725,6 +730,29 @@ public class VisualizerRegistry {
         if (old != null) {
             _visualizers.remove(old);
             setLayout();
+        }
+    }
+
+    public static void onStaticFieldSet(String className, String fieldName, int lineNumber) {
+        if (_processing) return;
+        _processing = true;
+        try {
+            if (lineNumber > 0) highlightLine(lineNumber);
+            String key = className + "." + fieldName;
+            Visualizer vis = _deferredStaticFields.get(key);
+            if (vis != null) {
+                try {
+                    Class<?> clazz = Class.forName(className);
+                    java.lang.reflect.Field f = clazz.getDeclaredField(fieldName);
+                    f.setAccessible(true);
+                    Object value = f.get(null);
+                    if (value != null) {
+                        initDeferred(vis, value);
+                    }
+                } catch (Exception ignored) {}
+            }
+        } finally {
+            _processing = false;
         }
     }
 
