@@ -38,11 +38,15 @@ Outputs `visualization.json` — an array of tracer commands consumed by the fro
 | 1D arrays | `int[] arr` | Array1DTracer |
 | 2D arrays | `int[][] matrix` | Array2DTracer |
 | Graphs | `@Graph int[][] adj` | GraphTracer |
+| Graphs (adj list) | `@Graph Map<K, List<V>> adj` | GraphTracer |
 | Binary trees | `@Tree TreeNode root` | GraphTracer + layoutTree |
+| Linked lists | `@LinkedList ListNode head` | Array1DTracer |
 | Lists | `List<Integer> list` | Array1DTracer |
 | 2D Lists | `List<List<Integer>> grid` | Array2DTracer |
+| Maps | `Map<K, V> map` | Array2DTracer |
 | Queues/Deques | `Queue<Integer> q` | Array1DTracer |
 | PriorityQueues | `PriorityQueue<Integer> pq` | Array1DTracer |
+| Charts | `@Chart int[] data` | ChartTracer |
 
 ### `@Graph`
 
@@ -53,7 +57,7 @@ Outputs `visualization.json` — an array of tracer commands consumed by the fro
 @Graph(directed = true, weighted = true)  // both
 ```
 
-Only `int[][]` adjacency matrices are supported.
+Supports `int[][]` adjacency matrices and `Map<K, List<V>>` adjacency lists.
 
 ### `@Tree`
 
@@ -62,6 +66,24 @@ Only `int[][]` adjacency matrices are supported.
 ```
 
 Zero-config — auto-detects `val`, `left`, `right` fields from the node class. Any class with two self-referential fields (children) and a non-self field (value) works. Root can start as `null`.
+
+### `@LinkedList`
+
+```java
+@LinkedList ListNode head;
+```
+
+Auto-detects `val` and `next` fields from the node class. Any class with at least one self-referential field (next pointer) and a non-self field (value) works. Singly linked (1 self-ref field) and doubly linked (2 self-ref fields) are both supported.
+
+Linked list nodes created as local variables (without `@LinkedList`) are also auto-detected and visualized.
+
+### `@Chart`
+
+```java
+@Chart int[] data;
+```
+
+Renders a bar chart that updates as array values change.
 
 ## Auto-Tracked Panels
 
@@ -79,9 +101,10 @@ Bytecode transformers wired by `VisualizerAgent` via ByteBuddy at class load tim
 | File | What it intercepts |
 |------|--------------------|
 | `ArrayAccessWrapper` | `IALOAD`/`IASTORE` etc. → array read/write events |
-| `FieldAccessWrapper` | `GETFIELD`/`PUTFIELD` → tree node field access |
+| `FieldAccessWrapper` | `GETFIELD`/`PUTFIELD` → tree/linked list node field access |
 | `CollectionInterceptor` | `add`/`remove`/`clear`/`offer`/`poll`/`push`/`pop` |
 | `ListInterceptor` | `get`/`set` (index-based) |
+| `MapInterceptor` | `put`/`get`/`remove`/`clear` on Maps |
 | `IteratorInterceptor` | `iterator()`/`next()` on collections |
 | `PrintStreamInterceptor` | `writeln`/`write` on PrintStream |
 | `RecursionInterceptor` | Method enter/exit for call stack tracking |
@@ -101,8 +124,11 @@ Receives events from the agent layer and translates them into tracer commands.
 | `PrimitiveArray2DVisualizer` | `int[][]` → Array2DTracer |
 | `Array1DVisualiser` | `List`/`Queue`/`Deque` → Array1DTracer |
 | `Array2DVisualiser` | `List<List>` → Array2DTracer |
-| `GraphVisualizer` | Adjacency matrix → GraphTracer |
+| `GraphVisualizer` | Adjacency matrix/list → GraphTracer |
 | `TreeVisualizer` | Binary tree → GraphTracer with `layoutTree` |
+| `LinkedListVisualizer` | Linked list → Array1DTracer |
+| `HashMapVisualizer` | `Map<K, V>` → Array2DTracer |
+| `ChartVisualizer` | Primitive arrays → ChartTracer |
 | `CallStackVisualizer` | Method call stack |
 | `LocalVariablesVisualizer` | Local variable table |
 | `LogVisualizer` | Console output |
@@ -112,10 +138,11 @@ Receives events from the agent layer and translates them into tracer commands.
 
 | Annotation | Target | Purpose |
 |------------|--------|---------|
-| `@Graph` | Field | Marks `int[][]` as adjacency matrix |
+| `@Graph` | Field | Marks `int[][]` or `Map<K, List<V>>` as graph |
 | `@Tree` | Field | Marks a field as binary tree root |
+| `@LinkedList` | Field | Marks a field as linked list head |
+| `@Chart` | Field | Marks a primitive array as bar chart |
 
 ## Limitations
 
-- `@Graph` only supports `int[][]` — `HashMap`/`Iterator` interception causes JVM bootstrap recursion
 - `@Tree` auto-detection requires exactly two self-referential fields in the node class

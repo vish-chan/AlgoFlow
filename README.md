@@ -1,6 +1,6 @@
 # <picture><source media="(prefers-color-scheme: dark)" srcset="apps/web/frontend/public/logo-dark.svg"><img alt="AlgoFlow" src="apps/web/frontend/public/favicon.svg" width="28" height="28" style="vertical-align: middle;"></picture> AlgoFlow
 
-Write Java algorithms — see them execute step by step. No SDKs, no manual tracing.
+Write algorithms in Java or Python — see them execute step by step. No SDKs, no manual tracing.
 
 **[Try it live →](https://algopad.up.railway.app/)**
 
@@ -9,29 +9,36 @@ Write Java algorithms — see them execute step by step. No SDKs, no manual trac
 
 ## Zero Instrumentation
 
-Just write normal Java. AlgoFlow intercepts operations at the bytecode level — every array swap, tree insertion, and graph traversal is visualized automatically.
+Just write normal code. AlgoFlow intercepts operations automatically — every array swap, tree insertion, and graph traversal is visualized.
 
 ```java
+// Java — bytecode-level interception
 int[] arr = {5, 2, 8, 1};
 arr[0] = 10;                    // ← visualized
 
 @Tree TreeNode root = new TreeNode(1);
 root.left = new TreeNode(2);    // ← visualized
+```
 
-@Graph int[][] adj = new int[4][4];
-adj[0][1] = 1;                  // ← visualized
+```python
+# Python — automatic tracing
+arr = [5, 2, 8, 1]
+arr[0] = 10                     # ← visualized
+
+graph = {0: [1, 2], 1: [0, 3]}
+visited = set()                 # ← visualized
 ```
 
 ## Features
 
 - **Arrays** — 1D, 2D, bar charts with step-by-step highlighting
-- **Trees** — binary trees via `@Tree` annotation
-- **Graphs** — directed, undirected, weighted via `@Graph`
-- **Collections** — Lists, Queues, Stacks, PriorityQueues
-- **Call Stack** — method enter/exit tracking for recursion
+- **Trees** — binary trees (Java: `@Tree` annotation, Python: auto-detected)
+- **Graphs** — directed, undirected, weighted (Java: `@Graph`, Python: adjacency lists/matrices)
+- **Collections** — Lists, Queues, Stacks, Dicts, Sets
+- **Call Stack** — method/function enter/exit tracking for recursion
 - **Local Variables** — automatic detection and display
 - **Line Highlighting** — see exactly which line is executing
-- **Leetcode Practice** — curated problems with built-in editor
+- **Leetcode Practice** — curated problems with built-in editor (Java & Python)
 
 ## Quick Start
 
@@ -49,16 +56,19 @@ Opens at [localhost:5173](http://localhost:5173). Backend runs on `:8080`.
 
 ```
 ┌─────────────┐     ┌──────────────────┐     ┌────────────────┐
-│   Frontend   │────▶│  Spring Boot API  │────▶│  Java Agent    │
-│  React +     │◀────│  Compile & Run    │◀────│  ByteBuddy     │
-│  Monaco      │     │  user code        │     │  bytecode xform│
+│   Frontend   │────▶│  Spring Boot API  │────▶│  Java Agent /  │
+│  React +     │◀────│  Compile & Run    │◀────│  Python Tracer │
+│  Monaco      │     │  user code        │     │                │
 └─────────────┘     └──────────────────┘     └────────────────┘
        ▲                                              │
        │            visualization commands            │
        └──────────────────────────────────────────────┘
 ```
 
-The Java agent transforms bytecode at class load time, intercepting array operations, collection methods, field mutations, and method calls. These events stream to the frontend as visualization commands.
+- **Java** — A ByteBuddy agent transforms bytecode at class load time, intercepting array operations, collection methods, field mutations, and method calls.
+- **Python** — A tracer hooks into execution, tracking variable assignments, data structure mutations, and function calls.
+
+Both produce the same visualization command stream consumed by the frontend.
 
 ## Project Structure
 
