@@ -35,8 +35,6 @@ export default function App() {
     const [annotations, setAnnotations] = useState<Record<number, string>>({});
     const [cursor, setCursor] = useState(0);
     const [total, setTotal] = useState(0);
-    const annotationCount = Object.keys(annotations).filter(k => annotations[Number(k)]).length;
-
     const tourMode = viewingLesson ? 'lesson' : mode;
     const { showTour, startTour, finishTour } = useTour(tourMode);
 
@@ -51,11 +49,12 @@ export default function App() {
     }, []);
 
     useEffect(() => {
-        return subscribe(() => {
+        const unsub = subscribe(() => {
             const eng = getEngine();
             setCursor(eng.getCursor());
             setTotal(eng.getLength());
         });
+        return () => { unsub(); };
     }, []);
 
     const handleAnnotationChange = useCallback((step: number, text: string) => {
