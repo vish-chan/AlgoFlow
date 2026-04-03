@@ -168,9 +168,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
     const monacoRef = useRef<any>(null);
     const decorationsRef = useRef<any>(null);
     const menuRef = useRef<HTMLDivElement>(null);
-    const langRef = useRef<HTMLDivElement>(null);
     const runRef = useRef<(() => void) | undefined>(undefined);
-    const [langOpen, setLangOpen] = useState(false);
 
     useEffect(() => {
         if (!isPractice) return;
@@ -194,14 +192,13 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
     };
 
     useEffect(() => {
-        if (!menuOpen && !langOpen) return;
+        if (!menuOpen) return;
         const onClick = (e: MouseEvent) => {
             if (menuRef.current && !menuRef.current.contains(e.target as Node)) setMenuOpen(null);
-            if (langRef.current && !langRef.current.contains(e.target as Node)) setLangOpen(false);
         };
         document.addEventListener('mousedown', onClick);
         return () => document.removeEventListener('mousedown', onClick);
-    }, [menuOpen, langOpen]);
+    }, [menuOpen]);
 
     useEffect(() => { runRef.current = handleRun; });
     useEffect(() => {
@@ -274,7 +271,6 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
             setCode(newLang === 'python' ? DEFAULT_PYTHON_CODE : DEFAULT_JAVA_CODE);
         }
         reset();
-        setLangOpen(false);
     };
 
     const curAlgorithms = lang === 'python' ? PYTHON_ALGORITHMS : ALGORITHMS;
@@ -315,68 +311,88 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
                     borderBottom: "1px solid var(--border)", display: "flex",
                     justifyContent: "space-between", alignItems: "center", position: "relative",
                 }}>
-                    <div style={{ position: "relative" }}>
-                        <button
-                            data-tour="templates"
-                            onClick={() => setMenuOpen(menuOpen === 'templates' ? null : 'templates')}
-                            style={toolbarBtnStyle}
-                            onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--border-light)"; e.currentTarget.style.color = "var(--text-primary)"; }}
-                            onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--text-secondary)"; }}
-                        >
-                            📝 Templates <span style={{ fontSize: 10, opacity: 0.5 }}>▾</span>
-                        </button>
-                        {menuOpen === 'templates' && (
-                            <div style={{ ...dropdownStyle, left: 0 }}>
-                                {curTemplateCategories.map(cat => (
-                                    <div key={cat}>
-                                        <div style={{ padding: "8px 14px 4px", fontSize: 10, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: 1, fontWeight: 600 }}>{cat}</div>
-                                        {curTemplates.filter(t => t.category === cat).map(t => (
-                                            <div
-                                                key={t.name}
-                                                onClick={() => { persistCode(t.code); setMenuOpen(null); reset(); }}
-                                                style={dropdownItemStyle}
-                                                onMouseEnter={e => e.currentTarget.style.background = "var(--bg-hover)"}
-                                                onMouseLeave={e => e.currentTarget.style.background = "transparent"}
-                                            >
-                                                <div>{t.name}</div>
-                                                <div style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 1 }}>{t.description}</div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                ))}
-                            </div>
-                        )}
+                    {/* Language toggle — left */}
+                    <div style={{ display: "flex", borderRadius: 6, overflow: "hidden", border: "1px solid var(--border)" }}>
+                        {([['java', '☕ Java'], ['python', '🐍 Python']] as const).map(([id, label]) => (
+                            <button
+                                key={id}
+                                onClick={() => switchLang(id)}
+                                style={{
+                                    padding: "4px 14px", fontSize: 12, fontWeight: 600, cursor: "pointer",
+                                    border: "none", transition: "all 0.15s",
+                                    background: lang === id ? 'var(--accent)' : 'transparent',
+                                    color: lang === id ? '#fff' : 'var(--text-secondary)',
+                                }}
+                                onMouseEnter={e => { if (lang !== id) e.currentTarget.style.background = 'var(--bg-hover)'; }}
+                                onMouseLeave={e => { if (lang !== id) e.currentTarget.style.background = 'transparent'; }}
+                            >{label}</button>
+                        ))}
                     </div>
-                    <div style={{ position: "relative" }}>
-                        <button
-                            data-tour="examples"
-                            onClick={() => setMenuOpen(menuOpen === 'algorithms' ? null : 'algorithms')}
-                            style={toolbarBtnStyle}
-                            onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--border-light)"; e.currentTarget.style.color = "var(--text-primary)"; }}
-                            onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--text-secondary)"; }}
-                        >
-                            📚 Examples <span style={{ fontSize: 10, opacity: 0.5 }}>▾</span>
-                        </button>
-                        {menuOpen === 'algorithms' && (
-                            <div style={{ ...dropdownStyle, right: 0 }}>
-                                {curCategories.map(cat => (
-                                    <div key={cat}>
-                                        <div style={{ padding: "8px 14px 4px", fontSize: 10, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: 1, fontWeight: 600 }}>{cat}</div>
-                                        {curAlgorithms.filter(a => a.category === cat).map(a => (
-                                            <div
-                                                key={a.name}
-                                                onClick={() => { persistCode(a.code); setMenuOpen(null); reset(); }}
-                                                style={dropdownItemStyle}
-                                                onMouseEnter={e => e.currentTarget.style.background = "var(--bg-hover)"}
-                                                onMouseLeave={e => e.currentTarget.style.background = "transparent"}
-                                            >
-                                                {a.name}
-                                            </div>
-                                        ))}
-                                    </div>
-                                ))}
-                            </div>
-                        )}
+                    {/* Templates & Examples — right */}
+                    <div style={{ display: "flex", gap: 8 }}>
+                        <div style={{ position: "relative" }}>
+                            <button
+                                data-tour="templates"
+                                onClick={() => setMenuOpen(menuOpen === 'templates' ? null : 'templates')}
+                                style={toolbarBtnStyle}
+                                onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--border-light)"; e.currentTarget.style.color = "var(--text-primary)"; }}
+                                onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--text-secondary)"; }}
+                            >
+                                📝 Templates <span style={{ fontSize: 10, opacity: 0.5 }}>▾</span>
+                            </button>
+                            {menuOpen === 'templates' && (
+                                <div style={{ ...dropdownStyle, right: 0 }}>
+                                    {curTemplateCategories.map(cat => (
+                                        <div key={cat}>
+                                            <div style={{ padding: "8px 14px 4px", fontSize: 10, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: 1, fontWeight: 600 }}>{cat}</div>
+                                            {curTemplates.filter(t => t.category === cat).map(t => (
+                                                <div
+                                                    key={t.name}
+                                                    onClick={() => { persistCode(t.code); setMenuOpen(null); reset(); }}
+                                                    style={dropdownItemStyle}
+                                                    onMouseEnter={e => e.currentTarget.style.background = "var(--bg-hover)"}
+                                                    onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+                                                >
+                                                    <div>{t.name}</div>
+                                                    <div style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 1 }}>{t.description}</div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                        <div style={{ position: "relative" }}>
+                            <button
+                                data-tour="examples"
+                                onClick={() => setMenuOpen(menuOpen === 'algorithms' ? null : 'algorithms')}
+                                style={toolbarBtnStyle}
+                                onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--border-light)"; e.currentTarget.style.color = "var(--text-primary)"; }}
+                                onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--text-secondary)"; }}
+                            >
+                                📚 Examples <span style={{ fontSize: 10, opacity: 0.5 }}>▾</span>
+                            </button>
+                            {menuOpen === 'algorithms' && (
+                                <div style={{ ...dropdownStyle, right: 0 }}>
+                                    {curCategories.map(cat => (
+                                        <div key={cat}>
+                                            <div style={{ padding: "8px 14px 4px", fontSize: 10, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: 1, fontWeight: 600 }}>{cat}</div>
+                                            {curAlgorithms.filter(a => a.category === cat).map(a => (
+                                                <div
+                                                    key={a.name}
+                                                    onClick={() => { persistCode(a.code); setMenuOpen(null); reset(); }}
+                                                    style={dropdownItemStyle}
+                                                    onMouseEnter={e => e.currentTarget.style.background = "var(--bg-hover)"}
+                                                    onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+                                                >
+                                                    {a.name}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             )}
@@ -413,46 +429,6 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
             }}>
                 <>
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                        <div ref={langRef} style={{ position: "relative" }}>
-                            <button
-                                onClick={() => setLangOpen(!langOpen)}
-                                style={{
-                                    fontSize: 11, color: "var(--text-muted)", background: "transparent",
-                                    border: "1px solid var(--border)", borderRadius: 4,
-                                    padding: "3px 8px", fontWeight: 600, cursor: "pointer",
-                                    transition: "all 0.15s",
-                                }}
-                                onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--border-light)"; e.currentTarget.style.color = "var(--text-secondary)"; }}
-                                onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--text-muted)"; }}
-                            >
-                                {lang === 'python' ? '🐍 Python 3' : '☕ Java 25'} ▾
-                            </button>
-                            {langOpen && (
-                                <div style={{
-                                    position: "absolute", bottom: "calc(100% + 4px)", left: 0,
-                                    background: "var(--bg-elevated)", border: "1px solid var(--border-light)",
-                                    borderRadius: 6, zIndex: 10, minWidth: 120,
-                                    boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
-                                }}>
-                                    <div
-                                        onClick={() => switchLang('java')}
-                                        style={{ padding: "6px 12px", fontSize: 12, color: lang === 'java' ? '#fff' : 'var(--text-secondary)', background: lang === 'java' ? 'var(--bg-active)' : 'transparent', borderRadius: '5px 5px 0 0', cursor: "pointer", transition: 'background 0.1s' }}
-                                        onMouseEnter={e => { if (lang !== 'java') e.currentTarget.style.background = 'var(--bg-hover)'; }}
-                                        onMouseLeave={e => { if (lang !== 'java') e.currentTarget.style.background = 'transparent'; }}
-                                    >
-                                        ☕ Java 25
-                                    </div>
-                                    <div
-                                        onClick={() => switchLang('python')}
-                                        style={{ padding: "6px 12px", fontSize: 12, color: lang === 'python' ? '#fff' : 'var(--text-secondary)', background: lang === 'python' ? 'var(--bg-active)' : 'transparent', borderRadius: '0 0 5px 5px', cursor: "pointer", transition: 'background 0.1s' }}
-                                        onMouseEnter={e => { if (lang !== 'python') e.currentTarget.style.background = 'var(--bg-hover)'; }}
-                                        onMouseLeave={e => { if (lang !== 'python') e.currentTarget.style.background = 'transparent'; }}
-                                    >
-                                        🐍 Python 3
-                                    </div>
-                                </div>
-                            )}
-                        </div>
                         {!isPractice && (
                             <button
                                 onClick={() => { persistCode(defaultCode); reset(); }}
