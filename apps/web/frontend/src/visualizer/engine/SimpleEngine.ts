@@ -725,6 +725,8 @@ export class SimpleEngine {
                 const t = this.tracers[c.key];
                 if (!t || t.type === 'code' || t.type === 'recursion') return false;
                 if ((t.type === 'array' || t.type === 'chart') && t.data?.length === 0) return false;
+                if (t.type === 'graph' && t.nodes?.length === 0) return false;
+                if (t.type === 'hashmap' && (!t.data?.length || t.data.length < 2)) return false;
                 return true;
             });
     }

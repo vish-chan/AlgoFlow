@@ -4,13 +4,18 @@ import org.algorithm_visualizer.*;
 
 public class ChartVisualizer implements Visualizer {
 
-    private final Object _array;
+    private Object _array;
     private final ChartTracer _tracer;
     private int _lastSelected = -1;
 
     public ChartVisualizer(Object array, String name) {
         this._array = array;
         this._tracer = new ChartTracer(name);
+        if (array != null) updateDisplay();
+    }
+
+    void lateInit(Object array) {
+        this._array = array;
         updateDisplay();
     }
 

@@ -5,7 +5,7 @@ import org.algorithm_visualizer.*;
 public class GraphVisualizer implements Visualizer {
 
     private final GraphTracer _tracer;
-    private final Object _adjacency;
+    private Object _adjacency;
     private final boolean _weighted;
     private Object _lastSource;
 
@@ -17,6 +17,15 @@ public class GraphVisualizer implements Visualizer {
             _tracer.directed(true);
         if (weighted)
             _tracer.weighted(true);
+        if (adjacency != null) {
+            buildGraph();
+            _tracer.layoutCircle();
+        }
+        Tracer.delay();
+    }
+
+    void lateInit(Object adjacency) {
+        this._adjacency = adjacency;
         buildGraph();
         _tracer.layoutCircle();
         Tracer.delay();

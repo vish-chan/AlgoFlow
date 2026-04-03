@@ -4,13 +4,18 @@ import org.algorithm_visualizer.*;
 
 public class PrimitiveArray1DVisualizer implements Visualizer {
 
-    private final Object _array;
+    private Object _array;
     private final Array1DTracer _tracer;
     private int _lastSelected = -1;
 
     public PrimitiveArray1DVisualizer(Object array, String name) {
         this._array = array;
         this._tracer = new Array1DTracer(name);
+        if (array != null) updateDisplay();
+    }
+
+    void lateInit(Object array) {
+        this._array = array;
         updateDisplay();
     }
 

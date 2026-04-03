@@ -8,13 +8,18 @@ import java.util.Map;
 
 public class PrimitiveArray2DVisualizer implements Visualizer {
 
-    private final Object _array;
+    private Object _array;
     private final Array2DTracer _tracer;
     private final Map<Object, RowVisualizer> _rowVisualizers = new IdentityHashMap<>();
 
     public PrimitiveArray2DVisualizer(Object array, String name) {
         this._array = array;
         this._tracer = new Array2DTracer(name);
+        if (array != null) updateDisplay();
+    }
+
+    void lateInit(Object array) {
+        this._array = array;
         updateDisplay();
     }
 
@@ -36,7 +41,7 @@ public class PrimitiveArray2DVisualizer implements Visualizer {
     }
 
     private int findRowIndex(Object rowArray) {
-        if (!_array.getClass().isArray()) return -1;
+        if (_array == null || !_array.getClass().isArray()) return -1;
         int len = Array.getLength(_array);
         for (int i = 0; i < len; i++) {
             if (Array.get(_array, i) == rowArray) return i;

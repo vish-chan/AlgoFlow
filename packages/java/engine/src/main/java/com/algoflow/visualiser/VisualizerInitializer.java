@@ -56,24 +56,26 @@ public class VisualizerInitializer {
 
         // Check for @Chart annotation
         if (field.isAnnotationPresent(Chart.class)) {
-            if (value == null || !value.getClass().isArray()) {
+            if (value != null && !value.getClass().isArray()) {
                 System.err.println("[AlgoFlow] @Chart on '" + name + "': unsupported type. Supported: primitive arrays");
                 return false;
             }
             ChartVisualizer vis = new ChartVisualizer(value, name);
             VisualizerRegistry.registerChart(vis, value);
+            if (value == null) VisualizerRegistry.deferField(instance, name, vis);
             return true;
         }
 
-        // Check for @Graph annotation first
+        // Check for @Graph annotation
         if (field.isAnnotationPresent(Graph.class)) {
             Graph annotation = field.getAnnotation(Graph.class);
-            if (!isSupportedGraphType(value)) {
+            if (value != null && !isSupportedGraphType(value)) {
                 System.err.println("[AlgoFlow] @Graph on '" + name + "': unsupported type. Supported: int[][], Map<K, List<V>>");
                 return false;
             }
             GraphVisualizer vis = new GraphVisualizer(name, value, annotation.directed(), annotation.weighted());
             VisualizerRegistry.registerGraph(vis, value);
+            if (value == null) VisualizerRegistry.deferField(instance, name, vis);
             return true;
         }
 
@@ -93,7 +95,25 @@ public class VisualizerInitializer {
             return true;
         }
 
-        return value != null && registerValue(name, value, is2DList(field));
+        if (value == null) {
+            // Register null fields eagerly so they appear in the layout
+            Class<?> type = field.getType();
+            if (type.isArray()) {
+                if (type.getComponentType().isArray()) {
+                    var vis = new PrimitiveArray2DVisualizer(null, "int[][]: " + name);
+                    VisualizerRegistry.register(vis);
+                    VisualizerRegistry.deferField(instance, name, vis);
+                } else {
+                    var vis = new PrimitiveArray1DVisualizer(null, "int[]: " + name);
+                    VisualizerRegistry.register(vis);
+                    VisualizerRegistry.deferField(instance, name, vis);
+                }
+                return true;
+            }
+            return false;
+        }
+
+        return registerValue(name, value, is2DList(field));
     }
 
     public static boolean registerLocalValue(String name, Object value) {

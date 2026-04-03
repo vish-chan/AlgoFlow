@@ -15,6 +15,7 @@ public class VisualizerRegistry {
     private static final Map<Object, PrimitiveArray2DVisualizer> _array2DToVisualizer = new IdentityHashMap<>();
     private static final Map<Object, GraphVisualizer> _graphToVisualizer = new IdentityHashMap<>();
     private static final Map<Object, HashMapVisualizer> _mapToVisualizer = new IdentityHashMap<>();
+    private static final Map<Object, Map<String, Visualizer>> _deferredFields = new IdentityHashMap<>();
     private static final List<TreeVisualizer> _treeVisualizers = new ArrayList<>();
     private static final List<LinkedListVisualizer> _linkedListVisualizers = new ArrayList<>();
     private static LogVisualizer _logVisualizer;
@@ -66,14 +67,22 @@ public class VisualizerRegistry {
         _linkedListVisualizers.add(visualizer);
     }
 
-    public static void registerChart(ChartVisualizer visualizer, Object arrayObj) {
-        _visualizers.add(visualizer.getCommander());
-        _chartToVisualizer.put(arrayObj, visualizer);
-    }
-
     public static void registerGraph(GraphVisualizer visualizer, Object graphObj) {
         _visualizers.add(visualizer.getCommander());
-        _graphToVisualizer.put(graphObj, visualizer);
+        if (graphObj != null) _graphToVisualizer.put(graphObj, visualizer);
+    }
+
+    public static void registerChart(ChartVisualizer visualizer, Object arrayObj) {
+        _visualizers.add(visualizer.getCommander());
+        if (arrayObj != null) _chartToVisualizer.put(arrayObj, visualizer);
+    }
+
+    public static void register(Visualizer visualizer) {
+        _visualizers.add(visualizer.getCommander());
+    }
+
+    public static void deferField(Object owner, String fieldName, Visualizer visualizer) {
+        _deferredFields.computeIfAbsent(owner, k -> new HashMap<>()).put(fieldName, visualizer);
     }
 
     public static void registerMap(HashMapVisualizer visualizer, Object mapObj) {
@@ -664,8 +673,58 @@ public class VisualizerRegistry {
                     return;
                 }
             }
+            // Check deferred fields: null → non-null transition
+            var fields = _deferredFields.get(owner);
+            if (fields != null) {
+                Visualizer vis = fields.get(fieldName);
+                if (vis != null) {
+                    try {
+                        java.lang.reflect.Field f = owner.getClass().getDeclaredField(fieldName);
+                        f.setAccessible(true);
+                        Object value = f.get(owner);
+                        if (value != null) {
+                            initDeferred(vis, value);
+                        }
+                    } catch (Exception ignored) {}
+                }
+            }
         } finally {
             _processing = false;
+        }
+    }
+
+    private static void initDeferred(Visualizer vis, Object value) {
+        evictExisting(value);
+        if (vis instanceof GraphVisualizer g) {
+            _graphToVisualizer.put(value, g);
+            g.lateInit(value);
+        } else if (vis instanceof ChartVisualizer c) {
+            _chartToVisualizer.put(value, c);
+            c.lateInit(value);
+        } else if (vis instanceof PrimitiveArray1DVisualizer a) {
+            _arrayToVisualizer.put(value, a);
+            a.lateInit(value);
+        } else if (vis instanceof PrimitiveArray2DVisualizer a) {
+            _array2DToVisualizer.put(value, a);
+            a.lateInit(value);
+        }
+    }
+
+    private static void evictExisting(Object value) {
+        Commander old = null;
+        Visualizer removed;
+        if ((removed = _arrayToVisualizer.remove(value)) != null) old = removed.getCommander();
+        else if ((removed = _array2DToVisualizer.remove(value)) != null) old = removed.getCommander();
+        else if ((removed = _graphToVisualizer.remove(value)) != null) old = removed.getCommander();
+        else if ((removed = _chartToVisualizer.remove(value)) != null) old = removed.getCommander();
+        else if ((removed = _mapToVisualizer.remove(value)) != null) old = removed.getCommander();
+        else {
+            ListVisualizer lv = _objectToVisualizer.remove(value);
+            if (lv != null) old = lv.getCommander();
+        }
+        if (old != null) {
+            _visualizers.remove(old);
+            setLayout();
         }
     }
 

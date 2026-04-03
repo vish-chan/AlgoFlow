@@ -462,6 +462,8 @@ export class SimpleRenderer {
             } else {
                 if (child?.type === 'array' && child.data?.length === 0) continue;
                 if (child?.type === 'chart' && child.data?.length === 0) continue;
+                if (child?.type === 'graph' && child.nodes?.length === 0) continue;
+                if (child?.type === 'hashmap' && (!child.data?.length || child.data.length < 2)) continue;
                 grouped.push(child);
             }
         }
