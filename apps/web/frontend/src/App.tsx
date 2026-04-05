@@ -6,7 +6,7 @@ import Tour, { useTour } from "./Tour";
 import LandingPage from "./LandingPage";
 import { parseLessonFromURL, buildLessonURL, detectLanguage } from "./lesson/lessonStore";
 import type { Lesson } from "./lesson/lessonStore";
-import { subscribe, getEngine } from "./visualizer/visualizerEngine";
+import { subscribe, getEngine, loadCommands, pause } from "./visualizer/visualizerEngine";
 
 type Mode = "landing" | "playground" | "practice";
 
@@ -99,6 +99,7 @@ export default function App() {
 
     const navigate = useCallback((m: "playground" | "practice", opts?: { annotate?: boolean }) => {
         setOpacity(0);
+        loadCommands([]);
         setTimeout(() => {
             window.location.hash = m;
             setMode(m);
@@ -111,6 +112,7 @@ export default function App() {
 
     const goHome = useCallback(() => {
         setOpacity(0);
+        loadCommands([]);
         setTimeout(() => {
             window.location.hash = "";
             setMode("landing");
