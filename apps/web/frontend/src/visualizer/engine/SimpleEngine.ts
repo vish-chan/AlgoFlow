@@ -30,11 +30,6 @@ export class SimpleEngine {
 
     loadCommands(commands: Command[]) {
         this.rawCommands = commands;
-        // Identify CodeTracer keys
-        const codeKeys = new Set<string>();
-        for (const c of commands) {
-            if (c.key !== null && c.method === 'CodeTracer') codeKeys.add(c.key);
-        }
 
         const raw: Chunk[] = [{ commands: [] }];
         commands.forEach(command => {
@@ -46,21 +41,7 @@ export class SimpleEngine {
             }
         });
 
-        // Merge line-only chunks into the next chunk
-        const chunks: Chunk[] = [];
-        let pending: Command[] = [];
-        for (const chunk of raw) {
-            const isLineOnly = chunk.commands.length > 0 && chunk.commands.every(c => c.key !== null && codeKeys.has(c.key));
-            if (isLineOnly) {
-                pending.push(...chunk.commands);
-            } else {
-                chunks.push({ commands: [...pending, ...chunk.commands] });
-                pending = [];
-            }
-        }
-        if (pending.length) chunks.push({ commands: pending });
-
-        this.chunks = chunks;
+        this.chunks = raw.filter(c => c.commands.length > 0);
         this.cursor = 0;
         this.reset();
         this.precomputeFinalTreeLayouts(commands);

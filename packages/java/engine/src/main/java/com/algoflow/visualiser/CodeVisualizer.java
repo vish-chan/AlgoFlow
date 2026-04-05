@@ -17,7 +17,6 @@ public class CodeVisualizer implements Visualizer {
             return;
         _lastLine = lineNumber;
         _tracer.highlightLine(lineNumber);
-        Tracer.delay();
     }
 
     @Override
