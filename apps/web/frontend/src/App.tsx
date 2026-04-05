@@ -27,6 +27,7 @@ export default function App() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [sidebarProblems, setSidebarProblems] = useState<import("./api/backend").Problem[]>([]);
     const editorRef = useRef<JavaEditorHandle>(null);
+    const appRef = useRef<HTMLDivElement>(null);
 
     // Lesson state
     const [lessonChecked, setLessonChecked] = useState(false);
@@ -165,7 +166,7 @@ export default function App() {
             : { label: "PLAYGROUND", bg: "var(--info)" };
 
     return (
-        <div style={{ ...wrapStyle, display: "flex", flexDirection: "column", width: "100vw", height: "100vh" }}>
+        <div ref={appRef} style={{ ...wrapStyle, display: "flex", flexDirection: "column", width: "100vw", height: "100vh" }}>
             {/* Top bar */}
             <div style={{
                 background: "var(--bg-surface)", padding: "0 16px", height: 40, flexShrink: 0,
@@ -226,6 +227,7 @@ export default function App() {
                             onShare={handleShare}
                             cursor={cursor}
                             total={total}
+                            appContainer={appRef.current}
                         />
                     </div>
                     {mode === 'practice' && (
@@ -261,6 +263,7 @@ export default function App() {
                             onShare={handleShare}
                             cursor={cursor}
                             total={total}
+                            appContainer={appRef.current}
                         />
                     </div>
                     {mode === 'practice' && (

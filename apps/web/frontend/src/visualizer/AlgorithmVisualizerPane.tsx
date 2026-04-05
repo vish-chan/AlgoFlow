@@ -13,9 +13,10 @@ interface Props {
     onShare?: () => void;
     cursor?: number;
     total?: number;
+    appContainer?: HTMLElement | null;
 }
 
-export default function AlgorithmVisualizerPane({ loading, annotating, onAnnotatingChange, annotations, onAnnotationChange, lessonViewing, onShare, cursor, total }: Props) {
+export default function AlgorithmVisualizerPane({ loading, annotating, onAnnotatingChange, annotations, onAnnotationChange, lessonViewing, onShare, cursor, total, appContainer }: Props) {
     const annotationCount = annotations ? Object.keys(annotations).filter(k => annotations[Number(k)]).length : 0;
     const currentNote = (cursor !== undefined && annotations?.[cursor]) || "";
 
@@ -49,6 +50,7 @@ export default function AlgorithmVisualizerPane({ loading, annotating, onAnnotat
                 onAnnotatingChange={onAnnotatingChange}
                 onShare={!annotating ? onShare : undefined}
                 annotations={annotations}
+                appContainer={appContainer}
             />
             {loading && (
                 <div style={{

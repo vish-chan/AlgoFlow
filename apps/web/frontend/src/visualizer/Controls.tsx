@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
     play,
     pause,
@@ -10,15 +10,17 @@ import {
     getEngine,
     setSpeed,
 } from "./visualizerEngine";
+import { recordGif, cancelRecording, onStateChange, getState, type RecordingState } from "./gifRecorder";
 
 interface ControlsProps {
     annotating?: boolean;
     onAnnotatingChange?: (v: boolean) => void;
     onShare?: () => void;
     annotations?: Record<number, string>;
+    appContainer?: HTMLElement | null;
 }
 
-export default function Controls({ annotating, onAnnotatingChange, onShare, annotations }: ControlsProps) {
+export default function Controls({ annotating, onAnnotatingChange, onShare, annotations, appContainer }: ControlsProps) {
     const [isPlaying, setIsPlaying] = useState(false);
     const [cursor, setCursor] = useState(0);
     const [total, setTotal] = useState(0);
@@ -29,6 +31,8 @@ export default function Controls({ annotating, onAnnotatingChange, onShare, anno
     const done = !isPlaying && total > 0 && cursor >= total;
     const speedMultiplier = (500 / speed).toFixed(1) + '×';
 
+    const [gifState, setGifState] = useState<RecordingState>(getState);
+
     useEffect(() => {
         const unsubscribePlaying = subscribeToPlaying(setIsPlaying);
         const unsubscribe = subscribe(() => {
@@ -36,9 +40,11 @@ export default function Controls({ annotating, onAnnotatingChange, onShare, anno
             setCursor(engine.getCursor());
             setTotal(engine.getLength());
         });
+        const unsubGif = onStateChange(setGifState);
         return () => {
             unsubscribePlaying();
             unsubscribe();
+            unsubGif();
         };
     }, []);
 
@@ -130,7 +136,7 @@ export default function Controls({ annotating, onAnnotatingChange, onShare, anno
                         <svg viewBox="0 0 24 24"><rect x="5" y="6" width="2.5" height="12" rx="1"/><polygon points="19,6 19,18 8,12"/></svg>
                     </button>
                     <button className="ctrl-btn play-btn" onClick={handlePlayPause} title="Play/Pause (Space)">
-                        {isPlaying
+                        {isPlaying || gifState === 'recording'
                             ? <svg viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
                             : <svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>
                         }
@@ -161,6 +167,32 @@ export default function Controls({ annotating, onAnnotatingChange, onShare, anno
                             style={{ fontSize: 12 }}
                         >🔗</button>
                     )}
+                    <button
+                        data-tour="record"
+                        onClick={() => {
+                            if (gifState === 'recording') {
+                                cancelRecording();
+                            } else if (gifState === 'idle' && total > 0) {
+                                pause();
+                                recordGif(
+                                    () => appContainer || null,
+                                    () => getEngine().next(),
+                                    speed,
+                                );
+                            }
+                        }}
+                        disabled={gifState === 'encoding' || total === 0}
+                        title={gifState === 'recording' ? 'Stop GIF recording' : gifState === 'encoding' ? 'Creating GIF…' : 'Record as GIF'}
+                        style={{
+                            fontSize: 11, fontWeight: 600, cursor: gifState === 'encoding' || total === 0 ? 'not-allowed' : 'pointer',
+                            background: gifState === 'recording' ? 'var(--error)' : gifState === 'encoding' ? 'var(--warning)' : 'rgba(255,255,255,0.08)',
+                            color: '#fff',
+                            border: gifState !== 'idle' ? 'none' : '1px solid rgba(255,255,255,0.15)',
+                            borderRadius: 4, padding: '3px 10px',
+                            opacity: total === 0 ? 0.4 : 1,
+                            transition: 'all 0.15s',
+                        }}
+                    >{gifState === 'recording' ? '⏹ Stop' : gifState === 'encoding' ? '⏳ Encoding…' : '⏺ Record'}</button>
                     <span style={{ fontSize: 10, color: 'var(--text-secondary)', fontFamily: 'monospace', minWidth: 28, textAlign: 'right' }}>{speedMultiplier}</span>
                     <input
                         className="progress-track"

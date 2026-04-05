@@ -15,6 +15,7 @@ const PLAYGROUND_STEPS: Step[] = [
     { target: "[data-tour='run']", title: "Run", body: "Click Run or press ⌘/Ctrl+Enter to execute and visualize.", position: "top" },
     { target: "[data-tour='visualizer']", title: "Visualizer", body: "Your algorithm animates here — common data structures visualized step by step.", position: "left" },
     { target: "[data-tour='controls']", title: "Playback Controls", body: "Play, pause, step through, scrub, and adjust speed.", position: "top" },
+    { target: "[data-tour='record']", title: "Record GIF", body: "Record the visualization as a GIF from the current step. Share it in blog posts, READMEs, or presentations.", position: "top" },
     { target: "[data-tour='annotate']", title: "Create Lessons", body: "Toggle annotation mode to add teaching notes at any step. Share the lesson URL with your students.", position: "top" },
 ];
 
