@@ -38,15 +38,21 @@ const STEPS_BY_MODE: Record<string, Step[]> = { playground: PLAYGROUND_STEPS, pr
 
 export function useTour(mode: string) {
     const key = `algoflow-tour-seen-${mode}`;
-    const [seen, setSeen] = useState(() => {
-        try { return localStorage.getItem(key) === "1"; } catch { return false; }
-    });
-    const start = useCallback(() => setSeen(false), []);
+    const [active, setActive] = useState(false);
+    const seen = (() => { try { return localStorage.getItem(key) === "1"; } catch { return true; } })();
+    const start = useCallback(() => setActive(true), []);
     const finish = useCallback(() => {
-        setSeen(true);
+        setActive(false);
         try { localStorage.setItem(key, "1"); } catch {}
     }, [key]);
-    return { showTour: !seen, startTour: start, finishTour: finish };
+    // Auto-start once if never seen
+    useEffect(() => {
+        if (!seen) {
+            setActive(true);
+            try { localStorage.setItem(key, "1"); } catch {}
+        }
+    }, [seen, key]);
+    return { showTour: active, startTour: start, finishTour: finish };
 }
 
 export default function Tour({ mode, onFinish }: { mode: string; onFinish: () => void }) {
