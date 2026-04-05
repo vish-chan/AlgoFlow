@@ -59,6 +59,11 @@ public class Array1DVisualiser implements ListVisualizer {
         Tracer.delay();
     }
 
+    public void refresh() {
+        _tracer.set(((java.util.Collection<?>) _list).toArray());
+        Tracer.delay();
+    }
+
     @Override
     public void onContains(Object element) {
         int i = 0;

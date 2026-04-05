@@ -218,6 +218,14 @@ public class VisualizerAgent {
                                     .on(named("sort").or(named("fill"))))
                             .visit(Advice.to(ApiCallInterceptor.ExitInterceptor.class)
                                     .on(named("sort").or(named("fill"))));
+                })
+                .type(ElementMatchers.is(java.util.Collections.class))
+                .transform((builder, type, classLoader, module, protectionDomain) -> {
+                    return builder
+                            .visit(Advice.to(ApiCallInterceptor.EnterInterceptor.class)
+                                    .on(named("sort").and(takesArguments(1))))
+                            .visit(Advice.to(ApiCallInterceptor.ExitInterceptor.class)
+                                    .on(named("sort").and(takesArguments(1))));
                 }).installOn(inst);
 
         System.err.println("[VisualizerAgent] Agent installed");

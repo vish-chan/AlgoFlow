@@ -860,6 +860,8 @@ public class VisualizerRegistry {
             if (a1 != null) { a1.refresh(); return; }
             PrimitiveArray2DVisualizer a2 = _array2DToVisualizer.get(target);
             if (a2 != null) { a2.refresh(); return; }
+            ListVisualizer lv = _objectToVisualizer.get(target);
+            if (lv instanceof Array1DVisualiser a1d) { a1d.refresh(); return; }
         } finally {
             _processing = false;
         }
