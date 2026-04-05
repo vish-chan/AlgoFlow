@@ -49,6 +49,10 @@ public class PrimitiveArray2DVisualizer implements Visualizer {
         return -1;
     }
 
+    public void refresh() {
+        updateDisplay();
+    }
+
     private void updateDisplay() {
         Object[][] boxed = to2DBoxedArray(_array);
         _tracer.set(boxed);

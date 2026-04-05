@@ -851,6 +851,20 @@ public class VisualizerRegistry {
         return true;
     }
 
+    public static void onApiMutate(Object target) {
+        if (_processing) return;
+        _processing = true;
+        try {
+            highlightLine(getCallerLineNumber());
+            PrimitiveArray1DVisualizer a1 = _arrayToVisualizer.get(target);
+            if (a1 != null) { a1.refresh(); return; }
+            PrimitiveArray2DVisualizer a2 = _array2DToVisualizer.get(target);
+            if (a2 != null) { a2.refresh(); return; }
+        } finally {
+            _processing = false;
+        }
+    }
+
     private static GraphVisualizer findParentGraph(Object subarray) {
         for (GraphVisualizer graphVis : _graphToVisualizer.values()) {
             if (graphVis.findRowIndex(subarray) >= 0)

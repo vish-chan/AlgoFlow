@@ -44,6 +44,10 @@ public class PrimitiveArray1DVisualizer implements Visualizer {
         _lastSelected = idx;
     }
 
+    public void refresh() {
+        updateDisplay();
+    }
+
     private void updateDisplay() {
         Object[] boxed = toBoxedArray(_array);
         _tracer.set(boxed);

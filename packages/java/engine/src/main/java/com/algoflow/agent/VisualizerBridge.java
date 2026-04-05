@@ -17,4 +17,6 @@ public class VisualizerBridge {
     public static BiConsumer<Object, Object[]> mapRemoveListener;
     public static Consumer<Object> mapClearListener;
     public static BiConsumer<Object, Object[]> containsListener;
+    public static Consumer<Object> apiMutateListener;
+    public static volatile int apiCallDepth;
 }

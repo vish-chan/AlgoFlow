@@ -108,6 +108,11 @@ public class VisualizerAgent {
         containsListenerField.setAccessible(true);
         containsListenerField.set(null, onContains);
 
+        Consumer<Object> onApiMutate = VisualizerRegistry::onApiMutate;
+        Field apiMutateListenerField = bootBridge.getField("apiMutateListener");
+        apiMutateListenerField.setAccessible(true);
+        apiMutateListenerField.set(null, onApiMutate);
+
         new AgentBuilder.Default().disableClassFormatChanges().with(RETRANSFORMATION)
                 .with(AgentBuilder.RedefinitionStrategy.Listener.StreamWriting.toSystemError())
                 .with(AgentBuilder.Listener.StreamWriting.toSystemError().withTransformationsOnly())
@@ -206,6 +211,13 @@ public class VisualizerAgent {
                                     .on(named("clear").and(takesArguments(0))))
                             .visit(Advice.to(MapInterceptor.GetInterceptor.class)
                                     .on(named("containsKey").and(takesArguments(Object.class))));
+                }).type(ElementMatchers.is(java.util.Arrays.class))
+                .transform((builder, type, classLoader, module, protectionDomain) -> {
+                    return builder
+                            .visit(Advice.to(ApiCallInterceptor.EnterInterceptor.class)
+                                    .on(named("sort").or(named("fill"))))
+                            .visit(Advice.to(ApiCallInterceptor.ExitInterceptor.class)
+                                    .on(named("sort").or(named("fill"))));
                 }).installOn(inst);
 
         System.err.println("[VisualizerAgent] Agent installed");
