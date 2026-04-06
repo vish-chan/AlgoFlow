@@ -264,13 +264,18 @@ class Registry:
         e = self._get(obj)
         if not e:
             return
+        if e.kind == "graph":
+            # Outer read on adjacency matrix: matrix[row] — visit the row node
+            self._graph_visit(e, index)
+            return
         if e.kind == "graph_row":
             row_idx = e.state["row_index"]
             if isinstance(e.ref, list) and row_idx < len(e.ref) and index < len(e.ref[row_idx]):
                 if e.ref[row_idx][index] != 0:
                     e.vis.visit(index, row_idx)
                     Tracer.delay()
-        elif e.kind == "list":
+            return
+        if e.kind == "list":
             last = e.state.get("last_selected", -1)
             if last >= 0:
                 e.vis.deselect(last)

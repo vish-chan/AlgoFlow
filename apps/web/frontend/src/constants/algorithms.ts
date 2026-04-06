@@ -1239,7 +1239,7 @@ bfs(0)
     {
         name: "DFS",
         category: "Graphs",
-        code: `adj_matrix = [
+        code: `adj_matrix = [  # @graph
     [0, 1, 1, 0, 0, 0],
     [1, 0, 0, 1, 1, 0],
     [1, 0, 0, 0, 1, 0],
@@ -1263,7 +1263,7 @@ dfs(0)
         category: "Graphs",
         code: `import heapq
 
-adj_matrix = [
+adj_matrix = [  # @graph(directed=True, weighted=True)
     [0, 4, 2, 0, 0, 0],
     [0, 0, 8, 0, 0, 0],
     [0, 0, 0, 7, 0, 2],
@@ -1293,7 +1293,7 @@ dijkstra(0)
     {
         name: "Topological Sort (DFS)",
         category: "Graphs",
-        code: `adj_matrix = [
+        code: `adj_matrix = [  # @graph(directed=True)
     [0, 1, 1, 0, 0, 0],
     [0, 0, 0, 1, 0, 0],
     [0, 0, 0, 1, 1, 0],

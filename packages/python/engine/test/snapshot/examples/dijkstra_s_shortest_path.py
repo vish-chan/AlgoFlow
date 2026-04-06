@@ -1,6 +1,6 @@
 import heapq
 
-adj_matrix = [
+adj_matrix = [  # @graph(directed=True, weighted=True)
     [0, 4, 2, 0, 0, 0],
     [0, 0, 8, 0, 0, 0],
     [0, 0, 0, 7, 0, 2],

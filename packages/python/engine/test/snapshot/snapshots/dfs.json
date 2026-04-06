@@ -44,9 +44,9 @@
   },
   {
     "key": "tracer_003",
-    "method": "Array2DTracer",
+    "method": "GraphTracer",
     "args": [
-      "list2d: adj_matrix"
+      "graph: adj_matrix"
     ]
   },
   {
@@ -400,6 +400,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -472,6 +484,31 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1,
+      0
     ]
   },
   {
@@ -673,6 +710,43 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "leave",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -753,6 +827,18 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1
     ]
   },
   {
@@ -849,6 +935,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -929,6 +1027,31 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3,
+      1
     ]
   },
   {
@@ -1150,6 +1273,30 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "leave",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -1238,6 +1385,31 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1,
+      3
     ]
   },
   {
@@ -1342,6 +1514,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -1430,6 +1614,18 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3
     ]
   },
   {
@@ -1534,6 +1730,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -1622,6 +1830,31 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5,
+      3
     ]
   },
   {
@@ -1863,6 +2096,30 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "leave",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -1959,6 +2216,18 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5
     ]
   },
   {
@@ -2071,6 +2340,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -2167,6 +2448,31 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3,
+      5
     ]
   },
   {
@@ -2271,6 +2577,31 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4,
+      5
     ]
   },
   {
@@ -2532,6 +2863,30 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "leave",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -2644,6 +2999,31 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1,
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -2748,6 +3128,31 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2,
+      4
     ]
   },
   {
@@ -3029,6 +3434,43 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "leave",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0,
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -3149,6 +3591,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -3269,6 +3723,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -3381,6 +3847,18 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
     ]
   },
   {
@@ -3501,6 +3979,31 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4,
+      2
     ]
   },
   {
@@ -3621,6 +4124,18 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
     ]
   },
   {
@@ -3880,6 +4395,30 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "leave",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -3992,6 +4531,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -4096,6 +4647,31 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5,
+      4
     ]
   },
   {
@@ -4331,6 +4907,30 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "leave",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -4617,6 +5217,43 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "leave",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -4697,6 +5334,18 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1
     ]
   },
   {
@@ -4860,6 +5509,43 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "leave",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -4932,6 +5618,18 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
     ]
   },
   {
@@ -5020,6 +5718,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "deselect",
     "args": [
@@ -5092,6 +5802,18 @@
     "method": "println",
     "args": [
       14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
     ]
   },
   {

@@ -56,9 +56,23 @@
   },
   {
     "key": "tracer_003",
-    "method": "Array2DTracer",
+    "method": "GraphTracer",
     "args": [
-      "list2d: adj_matrix"
+      "graph: adj_matrix"
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "weighted",
+    "args": [
+      true
     ]
   },
   {
@@ -1675,6 +1689,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -1684,6 +1710,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       0
     ]
@@ -1794,6 +1832,31 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -1804,6 +1867,31 @@
     "key": "tracer_009",
     "method": "select",
     "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1,
       0
     ]
   },
@@ -1854,6 +1942,31 @@
     "key": "tracer_009",
     "method": "select",
     "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1,
       0
     ]
   },
@@ -1971,6 +2084,31 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -1981,6 +2119,31 @@
     "key": "tracer_009",
     "method": "select",
     "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2,
       0
     ]
   },
@@ -2031,6 +2194,31 @@
     "key": "tracer_009",
     "method": "select",
     "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2,
       0
     ]
   },
@@ -2148,6 +2336,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -2157,6 +2357,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       0
     ]
@@ -2267,6 +2479,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -2276,6 +2500,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       0
     ]
@@ -2386,6 +2622,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -2395,6 +2643,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       0
     ]
@@ -3634,6 +3894,30 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "leave",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -3643,6 +3927,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       2
     ]
@@ -3753,6 +4049,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -3762,6 +4070,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       2
     ]
@@ -3872,6 +4192,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -3881,6 +4213,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       2
     ]
@@ -3991,6 +4335,31 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3,
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -4001,6 +4370,31 @@
     "key": "tracer_009",
     "method": "select",
     "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3,
       2
     ]
   },
@@ -4051,6 +4445,31 @@
     "key": "tracer_009",
     "method": "select",
     "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3,
       2
     ]
   },
@@ -4168,6 +4587,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -4177,6 +4608,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       2
     ]
@@ -4287,6 +4730,31 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5,
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -4297,6 +4765,31 @@
     "key": "tracer_009",
     "method": "select",
     "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5,
       2
     ]
   },
@@ -4347,6 +4840,31 @@
     "key": "tracer_009",
     "method": "select",
     "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5,
       2
     ]
   },
@@ -5524,6 +6042,30 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "leave",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -5533,6 +6075,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       1
     ]
@@ -5643,6 +6197,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -5652,6 +6218,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       1
     ]
@@ -5762,6 +6340,31 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -5772,6 +6375,31 @@
     "key": "tracer_009",
     "method": "select",
     "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      2,
       1
     ]
   },
@@ -5881,6 +6509,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -5890,6 +6530,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       1
     ]
@@ -6000,6 +6652,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -6009,6 +6673,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       1
     ]
@@ -6119,6 +6795,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -6128,6 +6816,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       1
     ]
@@ -7353,6 +8053,30 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "leave",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -7362,6 +8086,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       5
     ]
@@ -7472,6 +8208,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -7481,6 +8229,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       5
     ]
@@ -7591,6 +8351,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -7600,6 +8372,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       5
     ]
@@ -7710,6 +8494,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -7719,6 +8515,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       5
     ]
@@ -7829,6 +8637,31 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4,
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -7839,6 +8672,31 @@
     "key": "tracer_009",
     "method": "select",
     "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4,
       5
     ]
   },
@@ -7889,6 +8747,31 @@
     "key": "tracer_009",
     "method": "select",
     "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4,
       5
     ]
   },
@@ -8006,6 +8889,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -8015,6 +8910,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       5
     ]
@@ -9240,6 +10147,30 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "leave",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -9249,6 +10180,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       4
     ]
@@ -9359,6 +10302,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -9368,6 +10323,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       4
     ]
@@ -9478,6 +10445,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -9487,6 +10466,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       4
     ]
@@ -9597,6 +10588,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -9606,6 +10609,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       4
     ]
@@ -9716,6 +10731,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -9725,6 +10752,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       4
     ]
@@ -9835,6 +10874,31 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5,
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -9845,6 +10909,31 @@
     "key": "tracer_009",
     "method": "select",
     "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      5,
       4
     ]
   },
@@ -11000,6 +12089,30 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "leave",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -11009,6 +12122,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       3
     ]
@@ -11119,6 +12244,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -11128,6 +12265,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       3
     ]
@@ -11238,6 +12387,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -11247,6 +12408,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       3
     ]
@@ -11357,6 +12530,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -11366,6 +12551,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       3
     ]
@@ -11476,6 +12673,31 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4,
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -11486,6 +12708,31 @@
     "key": "tracer_009",
     "method": "select",
     "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      4,
       3
     ]
   },
@@ -11595,6 +12842,18 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "visit",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_009",
     "method": "deselect",
     "args": [
@@ -11604,6 +12863,18 @@
   {
     "key": "tracer_009",
     "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "visit",
     "args": [
       3
     ]

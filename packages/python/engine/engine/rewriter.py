@@ -412,13 +412,12 @@ class Rewriter(ast.NodeTransformer):
         """Recursively find Subscript nodes in Load context."""
         if isinstance(node, ast.Subscript) and isinstance(node.ctx, ast.Load):
             obj = node.value
-            # Skip nested subscripts (2D) — only collect if obj is a Name
             if isinstance(obj, ast.Name):
                 out.append((obj, node.slice))
             elif isinstance(obj, ast.Subscript):
-                # 2D read: obj[row][col]
-                out.append((obj.value, obj.slice))  # outer read
-                # We don't emit for inner — the 2D get handles it
+                # 2D read: outer[row][col] — emit both outer read and inner read
+                out.append((obj.value, obj.slice))  # outer: on_list_get(outer, row)
+                out.append((obj, node.slice))        # inner: on_list_get(outer[row], col)
         if isinstance(node, ast.Compare):
             self._collect_subscript_reads(node.left, out)
             for comp in node.comparators:
