@@ -494,6 +494,49 @@
     "args": []
   },
   {
+    "key": "tracer_011",
+    "method": "Array1DTracer",
+    "args": [
+      "deque: queue"
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_012",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_005",
+        "tracer_007",
+        "tracer_000",
+        "tracer_003",
+        "tracer_009",
+        "tracer_011",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_012"
+    ]
+  },
+  {
     "key": "tracer_007",
     "method": "set",
     "args": [
@@ -784,6 +827,20 @@
     "args": []
   },
   {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_000",
     "method": "println",
     "args": [
@@ -919,6 +976,21 @@
     "method": "println",
     "args": [
       21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        1,
+        2
+      ]
     ]
   },
   {
@@ -1285,6 +1357,21 @@
     "args": []
   },
   {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        2,
+        3
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_000",
     "method": "println",
     "args": [
@@ -1422,6 +1509,22 @@
     "method": "println",
     "args": [
       21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        2,
+        3,
+        4
+      ]
     ]
   },
   {
@@ -2113,6 +2216,21 @@
     "method": "println",
     "args": [
       21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        4,
+        5
+      ]
     ]
   },
   {

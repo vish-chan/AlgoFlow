@@ -318,6 +318,16 @@ class Rewriter(ast.NodeTransformer):
                 keywords=call.keywords
             )))]
 
+        # heapq.heapify/heappush/heappop/heapreplace → original + refresh
+        if (isinstance(call.func, ast.Attribute)
+                and isinstance(call.func.value, ast.Name)
+                and call.func.value.id == "heapq"
+                and call.func.attr in ("heapify", "heappush", "heappop", "heapreplace", "heappushpop")
+                and call.args):
+            stmts = [node]
+            stmts.append(self._call_registry("on_heap_mutate", [_load(call.args[0])]))
+            return stmts
+
         # obj.method(...) → original + callback
         if isinstance(call.func, ast.Attribute):
             obj = call.func.value
@@ -332,8 +342,14 @@ class Rewriter(ast.NodeTransformer):
                     ]))
                 stmts.append(self._call_registry("on_list_append", [_load(obj)]))
                 return stmts
+            elif method in ("appendleft", "extendleft"):
+                stmts.append(self._call_registry("on_deque_mutate", [_load(obj)]))
+                return stmts
             elif method in ("pop", "remove"):
                 stmts.append(self._call_registry("on_list_remove", [_load(obj)]))
+                return stmts
+            elif method == "popleft":
+                stmts.append(self._call_registry("on_deque_mutate", [_load(obj)]))
                 return stmts
             elif method == "clear":
                 stmts.append(ast.fix_missing_locations(ast.If(

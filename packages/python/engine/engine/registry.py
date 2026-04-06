@@ -175,7 +175,7 @@ class Registry:
     # ── Registration ──
 
     def _register_simple(self, kind, label, obj, data):
-        vis = Array1DTracer(label) if kind in ("list", "set") else Array2DTracer(label)
+        vis = Array1DTracer(label) if kind in ("list", "set", "deque") else Array2DTracer(label)
         vis.set(data)
         Tracer.delay()
         state = {"last_selected": -1} if kind == "list" else None
@@ -254,9 +254,15 @@ class Registry:
             self._register_tree(name, obj)
         elif self._is_linked_list_node(obj):
             self._register_linked_list(name, obj)
+        elif self._is_deque(obj):
+            self._register_simple("deque", f"deque: {name}", obj, list(obj))
 
     def _looks_like_graph(self, d):
         return bool(d) and all(isinstance(v, list) for v in d.values())
+
+    def _is_deque(self, obj):
+        from collections import deque
+        return isinstance(obj, deque)
 
     # ── List operations ──
 
@@ -304,7 +310,7 @@ class Registry:
             e.state["last_selected"] = index
 
     def _refresh_list(self, obj):
-        e = self._get(obj, "list")
+        e = self._get(obj, "list", "deque")
         if e:
             e.vis.set(list(e.ref))
             Tracer.delay()
@@ -332,6 +338,22 @@ class Registry:
                 e.vis.deselect(i)
                 return
         Tracer.delay()
+
+    # ── Deque operations ──
+
+    def on_deque_mutate(self, obj):
+        e = self._get(obj, "deque")
+        if e:
+            e.vis.set(list(e.ref))
+            Tracer.delay()
+
+    # ── Heap operations ──
+
+    def on_heap_mutate(self, obj):
+        e = self._get(obj, "list")
+        if e:
+            e.vis.set(list(e.ref))
+            Tracer.delay()
 
     # ── 2D List operations ──
 
