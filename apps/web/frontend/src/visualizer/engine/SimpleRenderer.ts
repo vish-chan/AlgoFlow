@@ -274,7 +274,7 @@ export class SimpleRenderer {
 
         if (dsType === 'Stack') {
             this.renderStackInBounds(arr, title, dsType, 0, 0, width, height);
-        } else if (dsType === 'LinkedList' || dsType === 'SinglyLinkedList') {
+        } else if (dsType === 'LinkedList' || dsType === 'SinglyLinkedList' || dsType === 'DoublyLinkedList') {
             this.renderLinkedListInBounds(arr, title, dsType, 0, 0, width, height);
         } else {
             this.renderDefaultArrayInBounds(arr, title, dsType, 0, 0, width, height, true);
@@ -495,7 +495,7 @@ export class SimpleRenderer {
         if (!this.ctx) return;
         if (dsType === 'Stack') {
             this.renderStackInBounds(arr, title, dsType, x, y, width, height);
-        } else if (dsType === 'LinkedList' || dsType === 'SinglyLinkedList') {
+        } else if (dsType === 'LinkedList' || dsType === 'SinglyLinkedList' || dsType === 'DoublyLinkedList') {
             this.renderLinkedListInBounds(arr, title, dsType, x, y, width, height);
         } else {
             this.renderDefaultArrayInBounds(arr, title, dsType, x, y, width, height, false, tracerKey);
