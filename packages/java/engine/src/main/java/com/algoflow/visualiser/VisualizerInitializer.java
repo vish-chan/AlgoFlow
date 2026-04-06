@@ -96,6 +96,24 @@ public class VisualizerInitializer {
             return true;
         }
 
+        // Auto-detect unannotated node fields by declared type.
+        // Skip self-referential fields (e.g. TreeNode.left inside TreeNode).
+        Class<?> fieldType = field.getType();
+        if (fieldType != clazz && NodeStructure.isNodeClass(fieldType)) {
+            NodeStructure ns = NodeStructure.of(fieldType);
+            if (ns.isTree()) {
+                TreeVisualizer vis = new TreeVisualizer(name, value, fieldType);
+                vis.setRootOwner(instance, name);
+                VisualizerRegistry.registerTree(vis);
+                return true;
+            } else if (ns.isLinkedList()) {
+                LinkedListVisualizer vis = new LinkedListVisualizer(name, value, fieldType);
+                vis.setRootOwner(instance, name);
+                VisualizerRegistry.registerLinkedList(vis);
+                return true;
+            }
+        }
+
         if (value == null) {
             // Register null fields eagerly so they appear in the layout
             Class<?> type = field.getType();
