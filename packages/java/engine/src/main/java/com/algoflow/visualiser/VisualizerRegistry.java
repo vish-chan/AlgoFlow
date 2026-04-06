@@ -395,7 +395,7 @@ public class VisualizerRegistry {
         for (LinkedListVisualizer lv : _linkedListVisualizers) {
             if (lv.onLocalUpdate(variableName, value)) { consumedByLL = true; break; }
         }
-        if (!consumedByLL && value != null) consumedByLL = tryAutoRegisterLinkedList(variableName, value);
+        if (!consumedByLL && value != null) consumedByLL = tryAutoRegisterNode(variableName, value);
         if (VisualizerInitializer.registerLocalValue(variableName, value)) return;
 
         highlightLine(getCallerLineNumber());
@@ -460,23 +460,26 @@ public class VisualizerRegistry {
         }
     }
 
-    private static boolean tryAutoRegisterLinkedList(String varName, Object value) {
+    private static boolean tryAutoRegisterNode(String varName, Object value) {
         if (value == null) return false;
         Class<?> clazz = value.getClass();
+        if (!clazz.getPackageName().startsWith("com.algoflow.runner")) return false;
         for (LinkedListVisualizer lv : _linkedListVisualizers) if (lv.getNodeClass() == clazz) return false;
         for (TreeVisualizer tv : _treeVisualizers) if (tv.getNodeClass() == clazz) return false;
-        int selfRefCount = 0;
-        boolean hasValue = false;
-        for (java.lang.reflect.Field f : clazz.getDeclaredFields()) {
-            if (java.lang.reflect.Modifier.isStatic(f.getModifiers())) continue;
-            if (f.getType() == clazz) selfRefCount++;
-            else hasValue = true;
+
+        NodeStructure ns = NodeStructure.of(clazz);
+        if (ns.isLinkedList()) {
+            LinkedListVisualizer vis = new LinkedListVisualizer(varName, value, clazz);
+            registerLinkedList(vis);
+            setLayout();
+            return true;
+        } else if (ns.isTree()) {
+            TreeVisualizer vis = new TreeVisualizer(varName, value, clazz);
+            registerTree(vis);
+            setLayout();
+            return true;
         }
-        if (selfRefCount == 0 || !hasValue) return false;
-        LinkedListVisualizer vis = new LinkedListVisualizer(varName, value, clazz);
-        registerLinkedList(vis);
-        setLayout();
-        return true;
+        return false;
     }
 
     // ── Code / layout ────────────────────────────────────────────────────

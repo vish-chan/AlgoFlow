@@ -2,16 +2,12 @@ package com.algoflow.visualiser;
 
 import org.algorithm_visualizer.*;
 
-import java.lang.reflect.Field;
 import java.util.*;
 
 public class TreeVisualizer implements Visualizer {
 
     private final GraphTracer _tracer;
-    private final String _valField;
-    private final String _leftField;
-    private final String _rightField;
-    private final Class<?> _nodeClass;
+    private final NodeStructure _structure;
     private final Set<Object> _knownNodes = Collections.newSetFromMap(new IdentityHashMap<>());
     private Object _lastVisited;
     private Object _rootOwner;
@@ -21,20 +17,7 @@ public class TreeVisualizer implements Visualizer {
 
     public TreeVisualizer(String name, Object root, Class<?> nodeClass) {
         this._tracer = new GraphTracer(name);
-
-        List<String> childFields = new ArrayList<>();
-        String valField = null;
-        for (Field f : nodeClass.getDeclaredFields()) {
-            if (f.getType() == nodeClass) {
-                childFields.add(f.getName());
-            } else if (valField == null && !java.lang.reflect.Modifier.isStatic(f.getModifiers())) {
-                valField = f.getName();
-            }
-        }
-        this._leftField = !childFields.isEmpty() ? childFields.get(0) : "left";
-        this._rightField = childFields.size() > 1 ? childFields.get(1) : "right";
-        this._valField = valField != null ? valField : "val";
-        this._nodeClass = nodeClass;
+        this._structure = NodeStructure.of(nodeClass);
         this._root = root;
 
         _tracer.directed(true);
@@ -61,22 +44,20 @@ public class TreeVisualizer implements Visualizer {
     private void walkAndBuild(Object root) {
         Queue<Object> queue = new LinkedList<>();
         _knownNodes.add(root);
-        _tracer.addNode(id(root), getNodeValue(root));
+        _tracer.addNode(id(root), _structure.getPrimaryValueAsDouble(root));
         queue.add(root);
 
         while (!queue.isEmpty()) {
             Object node = queue.poll();
-            Object left = getChild(node, _leftField);
-            Object right = getChild(node, _rightField);
-            addChild(queue, node, left);
-            addChild(queue, node, right);
+            addChild(queue, node, _structure.getLeft(node));
+            addChild(queue, node, _structure.getRight(node));
         }
     }
 
     private void addChild(Queue<Object> queue, Object node, Object child) {
         if (child != null) {
             if (_knownNodes.add(child)) {
-                _tracer.addNode(id(child), getNodeValue(child));
+                _tracer.addNode(id(child), _structure.getPrimaryValueAsDouble(child));
                 queue.add(child);
             }
             _tracer.addEdge(id(node), id(child));
@@ -88,9 +69,9 @@ public class TreeVisualizer implements Visualizer {
     }
 
     public void onFieldGet(Object owner, String fieldName) {
-        if (!_knownNodes.contains(owner))
-            return;
-        if (fieldName.equals(_leftField) || fieldName.equals(_rightField)) {
+        if (!_knownNodes.contains(owner)) return;
+
+        if (isChildField(fieldName)) {
             Object child = getChild(owner, fieldName);
             if (child != null && _knownNodes.contains(child)) {
                 leaveLastVisited(child);
@@ -100,8 +81,7 @@ public class TreeVisualizer implements Visualizer {
             }
             return;
         }
-        if (_lastVisited == owner)
-            return;
+        if (_lastVisited == owner) return;
         leaveLastVisited(owner);
         _lastVisited = owner;
         _tracer.visit(id(owner));
@@ -110,28 +90,26 @@ public class TreeVisualizer implements Visualizer {
 
     public void onFieldSet(Object owner, String fieldName) {
         if (owner == _rootOwner && fieldName.equals(_rootFieldName)) {
-            _root = getChild(_rootOwner, _rootFieldName);
+            _root = getOwnerField(_rootOwner, _rootFieldName);
             rebuild();
             return;
         }
 
-        if (!_knownNodes.contains(owner))
-            return;
+        if (!_knownNodes.contains(owner)) return;
 
-        if (fieldName.equals(_valField)) {
-            _tracer.updateNode(id(owner), getNodeValue(owner));
+        if (isValueField(fieldName)) {
+            _tracer.updateNode(id(owner), _structure.getPrimaryValueAsDouble(owner));
             Tracer.delay();
             return;
         }
 
-        if (fieldName.equals(_leftField) || fieldName.equals(_rightField)) {
+        if (isChildField(fieldName)) {
             rebuild();
         }
     }
 
     public void visit(Object node) {
-        if (node == null || !_knownNodes.contains(node))
-            return;
+        if (node == null || !_knownNodes.contains(node)) return;
         leaveLastVisited(node);
         _lastVisited = node;
         _tracer.visit(id(node));
@@ -139,8 +117,7 @@ public class TreeVisualizer implements Visualizer {
     }
 
     public void visit(Object node, Object parent) {
-        if (node == null || !_knownNodes.contains(node))
-            return;
+        if (node == null || !_knownNodes.contains(node)) return;
         leaveLastVisited(node);
         _lastVisited = node;
         _tracer.visit(id(node), id(parent));
@@ -148,24 +125,20 @@ public class TreeVisualizer implements Visualizer {
     }
 
     public void leave(Object node) {
-        if (node == null || !_knownNodes.contains(node))
-            return;
+        if (node == null || !_knownNodes.contains(node)) return;
         _tracer.leave(id(node));
         Tracer.delay();
-        if (_lastVisited == node)
-            _lastVisited = null;
+        if (_lastVisited == node) _lastVisited = null;
     }
 
     public void select(Object node) {
-        if (node == null || !_knownNodes.contains(node))
-            return;
+        if (node == null || !_knownNodes.contains(node)) return;
         _tracer.select(id(node));
         Tracer.delay();
     }
 
     public void deselect(Object node) {
-        if (node == null || !_knownNodes.contains(node))
-            return;
+        if (node == null || !_knownNodes.contains(node)) return;
         _tracer.deselect(id(node));
         Tracer.delay();
     }
@@ -174,8 +147,19 @@ public class TreeVisualizer implements Visualizer {
         return _knownNodes.contains(obj) || obj == _rootOwner;
     }
 
-    public Class<?> getNodeClass() {
-        return _nodeClass;
+    public Class<?> getNodeClass() { return _structure.getNodeClass(); }
+
+    private boolean isChildField(String fieldName) {
+        return (_structure.getLeftField() != null && _structure.getLeftField().getName().equals(fieldName))
+                || (_structure.getRightField() != null && _structure.getRightField().getName().equals(fieldName));
+    }
+
+    private boolean isValueField(String fieldName) {
+        return _structure.getValueFields().stream().anyMatch(f -> f.getName().equals(fieldName));
+    }
+
+    private Object getChild(Object node, String fieldName) {
+        return getOwnerField(node, fieldName);
     }
 
     private void leaveLastVisited(Object newNode) {
@@ -185,24 +169,11 @@ public class TreeVisualizer implements Visualizer {
         }
     }
 
-    private double getNodeValue(Object node) {
+    private static Object getOwnerField(Object obj, String fieldName) {
         try {
-            Field f = node.getClass().getDeclaredField(_valField);
+            java.lang.reflect.Field f = obj.getClass().getDeclaredField(fieldName);
             f.setAccessible(true);
-            Object val = f.get(node);
-            if (val instanceof Number n)
-                return n.doubleValue();
-            return 0;
-        } catch (Exception e) {
-            return 0;
-        }
-    }
-
-    private Object getChild(Object node, String fieldName) {
-        try {
-            Field f = node.getClass().getDeclaredField(fieldName);
-            f.setAccessible(true);
-            return f.get(node);
+            return f.get(obj);
         } catch (Exception e) {
             return null;
         }
@@ -213,7 +184,5 @@ public class TreeVisualizer implements Visualizer {
     }
 
     @Override
-    public Commander getCommander() {
-        return _tracer;
-    }
+    public Commander getCommander() { return _tracer; }
 }
