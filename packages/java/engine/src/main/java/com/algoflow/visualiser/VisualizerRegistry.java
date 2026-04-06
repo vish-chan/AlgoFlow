@@ -280,11 +280,12 @@ public class VisualizerRegistry {
 
     private static void doFieldSet(Object owner, String fieldName, int lineNumber) {
         if (lineNumber > 0) highlightLine(lineNumber);
+        // Check all tree/LL visualizers — both for tracked nodes and root owner updates
         for (TreeVisualizer tv : _treeVisualizers) {
-            if (tv.isTrackedNode(owner)) { tv.onFieldSet(owner, fieldName); return; }
+            if (tv.onFieldSet(owner, fieldName)) return;
         }
         for (LinkedListVisualizer lv : _linkedListVisualizers) {
-            if (lv.isTrackedNode(owner)) { lv.onFieldSet(owner, fieldName); return; }
+            if (lv.onFieldSet(owner, fieldName)) return;
         }
         var fields = _deferredFields.get(owner);
         if (fields != null) {
@@ -318,10 +319,10 @@ public class VisualizerRegistry {
     private static void doFieldGet(Object owner, String fieldName, int lineNumber) {
         if (lineNumber > 0) highlightLine(lineNumber);
         for (TreeVisualizer tv : _treeVisualizers) {
-            if (tv.isTrackedNode(owner)) { tv.onFieldGet(owner, fieldName); return; }
+            if (tv.isTrackedNode(owner) && tv.onFieldGet(owner, fieldName)) return;
         }
         for (LinkedListVisualizer lv : _linkedListVisualizers) {
-            if (lv.isTrackedNode(owner)) { lv.onFieldGet(owner, fieldName); return; }
+            if (lv.isTrackedNode(owner) && lv.onFieldGet(owner, fieldName)) return;
         }
     }
 

@@ -259,9 +259,7 @@
         ],
         [
           "  m",
-          {
-            "head": null
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -535,21 +533,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": {
-                "val": 2.0,
-                "next": {
-                  "val": 3.0,
-                  "next": {
-                    "val": 4.0,
-                    "next": null
-                  }
-                }
-              }
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -577,19 +561,7 @@
         ],
         [
           "  head",
-          {
-            "val": 1.0,
-            "next": {
-              "val": 2.0,
-              "next": {
-                "val": 3.0,
-                "next": {
-                  "val": 4.0,
-                  "next": null
-                }
-              }
-            }
-          }
+          "1"
         ],
         [
           "\u25b8 main",
@@ -597,21 +569,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": {
-                "val": 2.0,
-                "next": {
-                  "val": 3.0,
-                  "next": {
-                    "val": 4.0,
-                    "next": null
-                  }
-                }
-              }
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -648,23 +606,11 @@
         ],
         [
           "  head",
-          {
-            "val": 1.0,
-            "next": {
-              "val": 2.0,
-              "next": {
-                "val": 3.0,
-                "next": {
-                  "val": 4.0,
-                  "next": null
-                }
-              }
-            }
-          }
+          "1"
         ],
         [
           "  prev",
-          null
+          "null"
         ],
         [
           "\u25b8 main",
@@ -672,21 +618,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": {
-                "val": 2.0,
-                "next": {
-                  "val": 3.0,
-                  "next": {
-                    "val": 4.0,
-                    "next": null
-                  }
-                }
-              }
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -730,39 +662,15 @@
         ],
         [
           "  head",
-          {
-            "val": 1.0,
-            "next": {
-              "val": 2.0,
-              "next": {
-                "val": 3.0,
-                "next": {
-                  "val": 4.0,
-                  "next": null
-                }
-              }
-            }
-          }
+          "1"
         ],
         [
           "  prev",
-          null
+          "null"
         ],
         [
           "  curr",
-          {
-            "val": 1.0,
-            "next": {
-              "val": 2.0,
-              "next": {
-                "val": 3.0,
-                "next": {
-                  "val": 4.0,
-                  "next": null
-                }
-              }
-            }
-          }
+          "1"
         ],
         [
           "\u25b8 main",
@@ -770,21 +678,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": {
-                "val": 2.0,
-                "next": {
-                  "val": 3.0,
-                  "next": {
-                    "val": 4.0,
-                    "next": null
-                  }
-                }
-              }
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -847,52 +741,19 @@
         ],
         [
           "  head",
-          {
-            "val": 1.0,
-            "next": {
-              "val": 2.0,
-              "next": {
-                "val": 3.0,
-                "next": {
-                  "val": 4.0,
-                  "next": null
-                }
-              }
-            }
-          }
+          "1"
         ],
         [
           "  prev",
-          null
+          "null"
         ],
         [
           "  curr",
-          {
-            "val": 1.0,
-            "next": {
-              "val": 2.0,
-              "next": {
-                "val": 3.0,
-                "next": {
-                  "val": 4.0,
-                  "next": null
-                }
-              }
-            }
-          }
+          "1"
         ],
         [
           "  next",
-          {
-            "val": 2.0,
-            "next": {
-              "val": 3.0,
-              "next": {
-                "val": 4.0,
-                "next": null
-              }
-            }
-          }
+          "2"
         ],
         [
           "\u25b8 main",
@@ -900,21 +761,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": {
-                "val": 2.0,
-                "next": {
-                  "val": 3.0,
-                  "next": {
-                    "val": 4.0,
-                    "next": null
-                  }
-                }
-              }
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -982,37 +829,19 @@
         ],
         [
           "  head",
-          {
-            "val": 1.0,
-            "next": null
-          }
+          "1"
         ],
         [
           "  prev",
-          {
-            "val": 1.0,
-            "next": null
-          }
+          "1"
         ],
         [
           "  curr",
-          {
-            "val": 1.0,
-            "next": null
-          }
+          "1"
         ],
         [
           "  next",
-          {
-            "val": 2.0,
-            "next": {
-              "val": 3.0,
-              "next": {
-                "val": 4.0,
-                "next": null
-              }
-            }
-          }
+          "2"
         ],
         [
           "\u25b8 main",
@@ -1020,12 +849,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -1069,43 +893,19 @@
         ],
         [
           "  head",
-          {
-            "val": 1.0,
-            "next": null
-          }
+          "1"
         ],
         [
           "  prev",
-          {
-            "val": 1.0,
-            "next": null
-          }
+          "1"
         ],
         [
           "  curr",
-          {
-            "val": 2.0,
-            "next": {
-              "val": 3.0,
-              "next": {
-                "val": 4.0,
-                "next": null
-              }
-            }
-          }
+          "2"
         ],
         [
           "  next",
-          {
-            "val": 2.0,
-            "next": {
-              "val": 3.0,
-              "next": {
-                "val": 4.0,
-                "next": null
-              }
-            }
-          }
+          "2"
         ],
         [
           "\u25b8 main",
@@ -1113,12 +913,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -1181,40 +976,19 @@
         ],
         [
           "  head",
-          {
-            "val": 1.0,
-            "next": null
-          }
+          "1"
         ],
         [
           "  prev",
-          {
-            "val": 1.0,
-            "next": null
-          }
+          "1"
         ],
         [
           "  curr",
-          {
-            "val": 2.0,
-            "next": {
-              "val": 3.0,
-              "next": {
-                "val": 4.0,
-                "next": null
-              }
-            }
-          }
+          "2"
         ],
         [
           "  next",
-          {
-            "val": 3.0,
-            "next": {
-              "val": 4.0,
-              "next": null
-            }
-          }
+          "3"
         ],
         [
           "\u25b8 main",
@@ -1222,12 +996,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -1295,40 +1064,19 @@
         ],
         [
           "  head",
-          {
-            "val": 1.0,
-            "next": null
-          }
+          "1"
         ],
         [
           "  prev",
-          {
-            "val": 2.0,
-            "next": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "2"
         ],
         [
           "  curr",
-          {
-            "val": 2.0,
-            "next": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "2"
         ],
         [
           "  next",
-          {
-            "val": 3.0,
-            "next": {
-              "val": 4.0,
-              "next": null
-            }
-          }
+          "3"
         ],
         [
           "\u25b8 main",
@@ -1336,12 +1084,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -1385,40 +1128,19 @@
         ],
         [
           "  head",
-          {
-            "val": 1.0,
-            "next": null
-          }
+          "1"
         ],
         [
           "  prev",
-          {
-            "val": 2.0,
-            "next": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "2"
         ],
         [
           "  curr",
-          {
-            "val": 3.0,
-            "next": {
-              "val": 4.0,
-              "next": null
-            }
-          }
+          "3"
         ],
         [
           "  next",
-          {
-            "val": 3.0,
-            "next": {
-              "val": 4.0,
-              "next": null
-            }
-          }
+          "3"
         ],
         [
           "\u25b8 main",
@@ -1426,12 +1148,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -1494,37 +1211,19 @@
         ],
         [
           "  head",
-          {
-            "val": 1.0,
-            "next": null
-          }
+          "1"
         ],
         [
           "  prev",
-          {
-            "val": 2.0,
-            "next": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "2"
         ],
         [
           "  curr",
-          {
-            "val": 3.0,
-            "next": {
-              "val": 4.0,
-              "next": null
-            }
-          }
+          "3"
         ],
         [
           "  next",
-          {
-            "val": 4.0,
-            "next": null
-          }
+          "4"
         ],
         [
           "\u25b8 main",
@@ -1532,12 +1231,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -1605,43 +1299,19 @@
         ],
         [
           "  head",
-          {
-            "val": 1.0,
-            "next": null
-          }
+          "1"
         ],
         [
           "  prev",
-          {
-            "val": 3.0,
-            "next": {
-              "val": 2.0,
-              "next": {
-                "val": 1.0,
-                "next": null
-              }
-            }
-          }
+          "3"
         ],
         [
           "  curr",
-          {
-            "val": 3.0,
-            "next": {
-              "val": 2.0,
-              "next": {
-                "val": 1.0,
-                "next": null
-              }
-            }
-          }
+          "3"
         ],
         [
           "  next",
-          {
-            "val": 4.0,
-            "next": null
-          }
+          "4"
         ],
         [
           "\u25b8 main",
@@ -1649,12 +1319,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -1698,37 +1363,19 @@
         ],
         [
           "  head",
-          {
-            "val": 1.0,
-            "next": null
-          }
+          "1"
         ],
         [
           "  prev",
-          {
-            "val": 3.0,
-            "next": {
-              "val": 2.0,
-              "next": {
-                "val": 1.0,
-                "next": null
-              }
-            }
-          }
+          "3"
         ],
         [
           "  curr",
-          {
-            "val": 4.0,
-            "next": null
-          }
+          "4"
         ],
         [
           "  next",
-          {
-            "val": 4.0,
-            "next": null
-          }
+          "4"
         ],
         [
           "\u25b8 main",
@@ -1736,12 +1383,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -1785,34 +1427,19 @@
         ],
         [
           "  head",
-          {
-            "val": 1.0,
-            "next": null
-          }
+          "1"
         ],
         [
           "  prev",
-          {
-            "val": 3.0,
-            "next": {
-              "val": 2.0,
-              "next": {
-                "val": 1.0,
-                "next": null
-              }
-            }
-          }
+          "3"
         ],
         [
           "  curr",
-          {
-            "val": 4.0,
-            "next": null
-          }
+          "4"
         ],
         [
           "  next",
-          null
+          "null"
         ],
         [
           "\u25b8 main",
@@ -1820,12 +1447,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -1893,46 +1515,19 @@
         ],
         [
           "  head",
-          {
-            "val": 1.0,
-            "next": null
-          }
+          "1"
         ],
         [
           "  prev",
-          {
-            "val": 4.0,
-            "next": {
-              "val": 3.0,
-              "next": {
-                "val": 2.0,
-                "next": {
-                  "val": 1.0,
-                  "next": null
-                }
-              }
-            }
-          }
+          "4"
         ],
         [
           "  curr",
-          {
-            "val": 4.0,
-            "next": {
-              "val": 3.0,
-              "next": {
-                "val": 2.0,
-                "next": {
-                  "val": 1.0,
-                  "next": null
-                }
-              }
-            }
-          }
+          "4"
         ],
         [
           "  next",
-          null
+          "null"
         ],
         [
           "\u25b8 main",
@@ -1940,12 +1535,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -1989,34 +1579,19 @@
         ],
         [
           "  head",
-          {
-            "val": 1.0,
-            "next": null
-          }
+          "1"
         ],
         [
           "  prev",
-          {
-            "val": 4.0,
-            "next": {
-              "val": 3.0,
-              "next": {
-                "val": 2.0,
-                "next": {
-                  "val": 1.0,
-                  "next": null
-                }
-              }
-            }
-          }
+          "4"
         ],
         [
           "  curr",
-          null
+          "null"
         ],
         [
           "  next",
-          null
+          "null"
         ],
         [
           "\u25b8 main",
@@ -2024,12 +1599,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]
@@ -2127,12 +1697,7 @@
         ],
         [
           "  m",
-          {
-            "head": {
-              "val": 1.0,
-              "next": null
-            }
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]

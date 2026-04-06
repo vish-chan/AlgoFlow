@@ -68,8 +68,8 @@ public class TreeVisualizer implements Visualizer {
         }
     }
 
-    public void onFieldGet(Object owner, String fieldName) {
-        if (!_knownNodes.contains(owner)) return;
+    public boolean onFieldGet(Object owner, String fieldName) {
+        if (!_knownNodes.contains(owner)) return false;
 
         if (isChildField(fieldName)) {
             Object child = getChild(owner, fieldName);
@@ -79,33 +79,36 @@ public class TreeVisualizer implements Visualizer {
                 _tracer.visit(id(child), id(owner));
                 Tracer.delay();
             }
-            return;
+            return true;
         }
-        if (_lastVisited == owner) return;
+        if (_lastVisited == owner) return true;
         leaveLastVisited(owner);
         _lastVisited = owner;
         _tracer.visit(id(owner));
         Tracer.delay();
+        return true;
     }
 
-    public void onFieldSet(Object owner, String fieldName) {
+    public boolean onFieldSet(Object owner, String fieldName) {
         if (owner == _rootOwner && fieldName.equals(_rootFieldName)) {
             _root = getOwnerField(_rootOwner, _rootFieldName);
             rebuild();
-            return;
+            return true;
         }
 
-        if (!_knownNodes.contains(owner)) return;
+        if (!_knownNodes.contains(owner)) return false;
 
         if (isValueField(fieldName)) {
             _tracer.updateNode(id(owner), _structure.getPrimaryValueAsDouble(owner));
             Tracer.delay();
-            return;
+            return true;
         }
 
         if (isChildField(fieldName)) {
             rebuild();
+            return true;
         }
+        return false;
     }
 
     public void visit(Object node) {
@@ -144,7 +147,7 @@ public class TreeVisualizer implements Visualizer {
     }
 
     public boolean isTrackedNode(Object obj) {
-        return _knownNodes.contains(obj) || obj == _rootOwner;
+        return _knownNodes.contains(obj);
     }
 
     public Class<?> getNodeClass() { return _structure.getNodeClass(); }

@@ -37,8 +37,21 @@ public class LocalVariablesVisualizer implements Visualizer {
     public void onVariableUpdate(String variableName, Object value) {
         if (_frames.isEmpty()) return;
         Frame top = _frames.peekFirst();
-        top.variables.put(variableName, value);
+        top.variables.put(variableName, sanitize(value));
         updateDisplay(variableName);
+    }
+
+    private static Object sanitize(Object value) {
+        if (value == null) return "null";
+        Class<?> clazz = value.getClass();
+        if (clazz.isPrimitive() || value instanceof Number || value instanceof String
+                || value instanceof Boolean || value instanceof Character) {
+            return value;
+        }
+        if (NodeStructure.isNodeClass(clazz)) {
+            return NodeStructure.of(clazz).getDisplayValue(value);
+        }
+        return String.valueOf(value);
     }
 
     private void updateDisplay(String patchedVariable) {

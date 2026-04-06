@@ -271,9 +271,7 @@
         ],
         [
           "  m",
-          {
-            "root": null
-          }
+          "com.algoflow.runner.Main@HASH"
         ]
       ]
     ]

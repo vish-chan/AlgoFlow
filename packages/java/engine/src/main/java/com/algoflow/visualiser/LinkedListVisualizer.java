@@ -76,8 +76,8 @@ public class LinkedListVisualizer implements Visualizer {
         return -1;
     }
 
-    public void onFieldGet(Object owner, String fieldName) {
-        if (!_knownNodes.contains(owner)) return;
+    public boolean onFieldGet(Object owner, String fieldName) {
+        if (!_knownNodes.contains(owner)) return false;
 
         if (isNextField(fieldName)) {
             Object next = _structure.getNext(owner);
@@ -90,7 +90,7 @@ public class LinkedListVisualizer implements Visualizer {
                     Tracer.delay();
                 }
             }
-            return;
+            return true;
         }
 
         int idx = indexOf(owner);
@@ -99,17 +99,19 @@ public class LinkedListVisualizer implements Visualizer {
             _lastVisited = owner;
             _tracer.select(idx);
             Tracer.delay();
+            return true;
         }
+        return false;
     }
 
-    public void onFieldSet(Object owner, String fieldName) {
+    public boolean onFieldSet(Object owner, String fieldName) {
         if (owner == _rootOwner && fieldName.equals(_rootFieldName)) {
             _head = getOwnerField(_rootOwner, _rootFieldName);
             rebuild();
-            return;
+            return true;
         }
 
-        if (!_knownNodes.contains(owner)) return;
+        if (!_knownNodes.contains(owner)) return false;
 
         if (isValueField(fieldName)) {
             int idx = indexOf(owner);
@@ -118,18 +120,20 @@ public class LinkedListVisualizer implements Visualizer {
                 Tracer.delay();
                 _tracer.depatch(idx);
             }
-            return;
+            return true;
         }
 
         if (isNextField(fieldName)) {
             Object next = _structure.getNext(owner);
             if (next != null) _knownNodes.add(next);
             rebuild();
+            return true;
         }
+        return false;
     }
 
     public boolean isTrackedNode(Object obj) {
-        return _knownNodes.contains(obj) || obj == _rootOwner;
+        return _knownNodes.contains(obj);
     }
 
     public Class<?> getNodeClass() { return _structure.getNodeClass(); }
