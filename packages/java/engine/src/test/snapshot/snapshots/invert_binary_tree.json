@@ -271,7 +271,9 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": null
+          }
         ]
       ]
     ]
@@ -1645,7 +1647,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -1697,7 +1729,35 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -1705,7 +1765,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -1774,11 +1864,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -1786,7 +1916,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -1900,11 +2060,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -1912,7 +2112,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -1952,7 +2182,19 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 6.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 invert",
@@ -1960,11 +2202,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -1972,7 +2254,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -2041,11 +2353,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 6.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -2053,11 +2381,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -2065,7 +2433,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -2183,11 +2581,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 6.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -2195,11 +2609,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -2207,7 +2661,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -2247,7 +2731,11 @@
         ],
         [
           "  node",
-          "9"
+          {
+            "val": 9.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -2255,11 +2743,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 6.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -2267,11 +2771,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -2279,7 +2823,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -2323,11 +2897,15 @@
         ],
         [
           "  node",
-          "9"
+          {
+            "val": 9.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -2335,11 +2913,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 6.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -2347,11 +2941,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -2359,7 +2993,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -2456,11 +3120,15 @@
         ],
         [
           "  node",
-          "9"
+          {
+            "val": 9.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -2468,11 +3136,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 6.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -2480,11 +3164,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -2492,7 +3216,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -2520,7 +3274,7 @@
         ],
         [
           "  node",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -2528,11 +3282,15 @@
         ],
         [
           "  node",
-          "9"
+          {
+            "val": 9.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -2540,11 +3298,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 6.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -2552,11 +3326,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -2564,7 +3378,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -2694,11 +3538,15 @@
         ],
         [
           "  node",
-          "9"
+          {
+            "val": 9.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -2706,11 +3554,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 6.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -2718,11 +3582,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -2730,7 +3634,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -3066,11 +4000,15 @@
         ],
         [
           "  node",
-          "9"
+          {
+            "val": 9.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -3078,11 +4016,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 6.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -3090,11 +4044,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -3102,7 +4096,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -3130,7 +4154,7 @@
         ],
         [
           "  node",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -3138,11 +4162,15 @@
         ],
         [
           "  node",
-          "9"
+          {
+            "val": 9.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -3150,11 +4178,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 6.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -3162,11 +4206,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -3174,7 +4258,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -3304,11 +4418,15 @@
         ],
         [
           "  node",
-          "9"
+          {
+            "val": 9.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -3316,11 +4434,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 6.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -3328,11 +4462,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -3340,7 +4514,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -3701,11 +4905,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 6.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -3713,11 +4933,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -3725,7 +4985,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -4019,11 +5309,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -4031,11 +5337,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -4043,7 +5389,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -4174,7 +5550,11 @@
         ],
         [
           "  node",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -4182,11 +5562,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -4194,11 +5590,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -4206,7 +5642,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -4250,11 +5716,15 @@
         ],
         [
           "  node",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -4262,11 +5732,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -4274,11 +5760,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -4286,7 +5812,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -4383,11 +5939,15 @@
         ],
         [
           "  node",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -4395,11 +5955,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -4407,11 +5983,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -4419,7 +6035,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -4447,7 +6093,7 @@
         ],
         [
           "  node",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -4455,11 +6101,15 @@
         ],
         [
           "  node",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -4467,11 +6117,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -4479,11 +6145,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -4491,7 +6197,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -4621,11 +6357,15 @@
         ],
         [
           "  node",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -4633,11 +6373,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -4645,11 +6401,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -4657,7 +6453,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -4807,11 +6633,15 @@
         ],
         [
           "  node",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -4819,11 +6649,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -4831,11 +6677,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -4843,7 +6729,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -4871,7 +6787,7 @@
         ],
         [
           "  node",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -4879,11 +6795,15 @@
         ],
         [
           "  node",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -4891,11 +6811,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -4903,11 +6839,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -4915,7 +6891,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -5045,11 +7051,15 @@
         ],
         [
           "  node",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -5057,11 +7067,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -5069,11 +7095,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -5081,7 +7147,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -5256,11 +7352,27 @@
         ],
         [
           "  node",
-          "7"
+          {
+            "val": 7.0,
+            "left": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 9.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "6"
+          {
+            "val": 6.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -5268,11 +7380,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -5280,7 +7432,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -5659,11 +7841,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 2.0,
+              "left": {
+                "val": 1.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 3.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -5671,7 +7893,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 2.0,
+                "left": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -5899,11 +8151,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -5911,7 +8203,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -6104,7 +8426,19 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 invert",
@@ -6112,11 +8446,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -6124,7 +8498,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -6181,11 +8585,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -6193,11 +8613,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -6205,7 +8665,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -6323,11 +8813,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -6335,11 +8841,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -6347,7 +8893,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -6387,7 +8963,11 @@
         ],
         [
           "  node",
-          "3"
+          {
+            "val": 3.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -6395,11 +8975,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -6407,11 +9003,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -6419,7 +9055,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -6463,11 +9129,15 @@
         ],
         [
           "  node",
-          "3"
+          {
+            "val": 3.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -6475,11 +9145,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -6487,11 +9173,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -6499,7 +9225,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -6596,11 +9352,15 @@
         ],
         [
           "  node",
-          "3"
+          {
+            "val": 3.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -6608,11 +9368,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -6620,11 +9396,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -6632,7 +9448,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -6660,7 +9506,7 @@
         ],
         [
           "  node",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -6668,11 +9514,15 @@
         ],
         [
           "  node",
-          "3"
+          {
+            "val": 3.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -6680,11 +9530,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -6692,11 +9558,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -6704,7 +9610,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -6834,11 +9770,15 @@
         ],
         [
           "  node",
-          "3"
+          {
+            "val": 3.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -6846,11 +9786,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -6858,11 +9814,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -6870,7 +9866,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -7082,11 +10108,15 @@
         ],
         [
           "  node",
-          "3"
+          {
+            "val": 3.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -7094,11 +10124,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -7106,11 +10152,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -7118,7 +10204,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -7146,7 +10262,7 @@
         ],
         [
           "  node",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -7154,11 +10270,15 @@
         ],
         [
           "  node",
-          "3"
+          {
+            "val": 3.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -7166,11 +10286,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -7178,11 +10314,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -7190,7 +10366,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -7320,11 +10526,15 @@
         ],
         [
           "  node",
-          "3"
+          {
+            "val": 3.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -7332,11 +10542,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -7344,11 +10570,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -7356,7 +10622,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -7593,11 +10889,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -7605,11 +10917,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -7617,7 +10969,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -7787,11 +11169,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -7799,11 +11197,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -7811,7 +11249,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -7943,7 +11411,11 @@
         ],
         [
           "  node",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -7951,11 +11423,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -7963,11 +11451,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -7975,7 +11503,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -8019,11 +11577,15 @@
         ],
         [
           "  node",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -8031,11 +11593,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -8043,11 +11621,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -8055,7 +11673,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -8152,11 +11800,15 @@
         ],
         [
           "  node",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -8164,11 +11816,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -8176,11 +11844,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -8188,7 +11896,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -8216,7 +11954,7 @@
         ],
         [
           "  node",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -8224,11 +11962,15 @@
         ],
         [
           "  node",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -8236,11 +11978,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -8248,11 +12006,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -8260,7 +12058,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -8390,11 +12218,15 @@
         ],
         [
           "  node",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -8402,11 +12234,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -8414,11 +12262,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -8426,7 +12314,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -8576,11 +12494,15 @@
         ],
         [
           "  node",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -8588,11 +12510,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -8600,11 +12538,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -8612,7 +12590,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -8640,7 +12648,7 @@
         ],
         [
           "  node",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -8648,11 +12656,15 @@
         ],
         [
           "  node",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -8660,11 +12672,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -8672,11 +12700,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -8684,7 +12752,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -8814,11 +12912,15 @@
         ],
         [
           "  node",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "  temp",
-          "null"
+          null
         ],
         [
           "\u25b8 invert",
@@ -8826,11 +12928,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -8838,11 +12956,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -8850,7 +13008,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -9025,11 +13213,27 @@
         ],
         [
           "  node",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "  temp",
-          "1"
+          {
+            "val": 1.0,
+            "left": null,
+            "right": null
+          }
         ],
         [
           "\u25b8 invert",
@@ -9037,11 +13241,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -9049,7 +13293,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -9305,11 +13579,51 @@
         ],
         [
           "  node",
-          "4"
+          {
+            "val": 4.0,
+            "left": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            },
+            "right": {
+              "val": 7.0,
+              "left": {
+                "val": 9.0,
+                "left": null,
+                "right": null
+              },
+              "right": {
+                "val": 6.0,
+                "left": null,
+                "right": null
+              }
+            }
+          }
         ],
         [
           "  temp",
-          "2"
+          {
+            "val": 2.0,
+            "left": {
+              "val": 3.0,
+              "left": null,
+              "right": null
+            },
+            "right": {
+              "val": 1.0,
+              "left": null,
+              "right": null
+            }
+          }
         ],
         [
           "\u25b8 main",
@@ -9317,7 +13631,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -9680,7 +14024,37 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "root": {
+              "val": 4.0,
+              "left": {
+                "val": 7.0,
+                "left": {
+                  "val": 9.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 6.0,
+                  "left": null,
+                  "right": null
+                }
+              },
+              "right": {
+                "val": 2.0,
+                "left": {
+                  "val": 3.0,
+                  "left": null,
+                  "right": null
+                },
+                "right": {
+                  "val": 1.0,
+                  "left": null,
+                  "right": null
+                }
+              }
+            }
+          }
         ]
       ]
     ]

@@ -259,7 +259,9 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "list": []
+          }
         ]
       ]
     ]
@@ -434,7 +436,14 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "list": [
+              1.0,
+              2.0,
+              3.0,
+              4.0
+            ]
+          }
         ]
       ]
     ]
@@ -516,7 +525,14 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "list": [
+              1.0,
+              2.0,
+              3.0,
+              4.0
+            ]
+          }
         ]
       ]
     ]

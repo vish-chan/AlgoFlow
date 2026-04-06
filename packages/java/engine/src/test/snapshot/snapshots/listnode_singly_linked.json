@@ -259,7 +259,9 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "head": null
+          }
         ]
       ]
     ]
@@ -533,7 +535,21 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "head": {
+              "val": 1.0,
+              "next": {
+                "val": 2.0,
+                "next": {
+                  "val": 3.0,
+                  "next": {
+                    "val": 4.0,
+                    "next": null
+                  }
+                }
+              }
+            }
+          }
         ]
       ]
     ]
@@ -615,7 +631,21 @@
         ],
         [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          {
+            "head": {
+              "val": 1.0,
+              "next": {
+                "val": 2.0,
+                "next": {
+                  "val": 3.0,
+                  "next": {
+                    "val": 4.0,
+                    "next": null
+                  }
+                }
+              }
+            }
+          }
         ]
       ]
     ]
