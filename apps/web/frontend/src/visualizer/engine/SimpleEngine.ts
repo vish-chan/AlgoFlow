@@ -1,9 +1,11 @@
 import { SimpleRenderer } from './SimpleRenderer';
+import type { Command, Chunk, Tracer, GraphTracer } from './types';
+export type { Command, Chunk } from './types';
 
 export class SimpleEngine {
     private chunks: Chunk[] = [];
     private cursor = 0;
-    private tracers: Record<string, any> = {};
+    private tracers: Record<string, Tracer> = {};
     private root: string | null = null;
     private renderer: SimpleRenderer;
     private listeners: Set<() => void> = new Set();
@@ -648,14 +650,4 @@ export class SimpleEngine {
     private notify() {
         this.listeners.forEach(listener => listener());
     }
-}
-
-interface Command {
-    key: string | null;
-    method: string;
-    args: any[];
-}
-
-interface Chunk {
-    commands: Command[];
 }
