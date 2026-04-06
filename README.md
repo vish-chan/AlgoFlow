@@ -1,3 +1,12 @@
+[![Stars](https://img.shields.io/github/stars/vish-chan/AlgoFlow?style=flat-square)](https://github.com/vish-chan/AlgoFlow/stargazers)
+[![Forks](https://img.shields.io/github/forks/vish-chan/AlgoFlow?style=flat-square)](https://github.com/vish-chan/AlgoFlow/network/members)
+[![Issues](https://img.shields.io/github/issues/vish-chan/AlgoFlow?style=flat-square)](https://github.com/vish-chan/AlgoFlow/issues)
+[![License](https://img.shields.io/github/license/vish-chan/AlgoFlow?style=flat-square)](https://github.com/vish-chan/AlgoFlow/blob/main/LICENSE)
+[![Java](https://img.shields.io/badge/Java-17+-orange?style=flat-square&logo=openjdk)](https://openjdk.org/)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat-square&logo=python&logoColor=white)](https://python.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
+
 # <picture><source media="(prefers-color-scheme: dark)" srcset="apps/web/frontend/public/logo-dark.svg"><img alt="AlgoFlow" src="apps/web/frontend/public/favicon.svg" width="28" height="28" style="vertical-align: middle;"></picture> AlgoFlow
 
 Write algorithms in Java or Python — see them execute step by step. No SDKs, no manual tracing.
