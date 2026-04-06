@@ -1,0 +1,5127 @@
+[
+  {
+    "key": "tracer_000",
+    "method": "Array2DTracer",
+    "args": [
+      "CallStack"
+    ]
+  },
+  {
+    "key": "tracer_001",
+    "method": "LogTracer",
+    "args": [
+      "Console"
+    ]
+  },
+  {
+    "key": "tracer_002",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_002"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "Array2DTracer",
+    "args": [
+      "Locals"
+    ]
+  },
+  {
+    "key": "tracer_004",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_004"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "CodeTracer",
+    "args": [
+      "Line Tracker"
+    ]
+  },
+  {
+    "key": "tracer_006",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_006"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      7.0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "Array1DTracer",
+    "args": [
+      "int[]: args"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_008",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_008"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "Array1DTracer",
+    "args": [
+      "int[]: arr"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        5.0,
+        3.0,
+        8.0,
+        1.0,
+        9.0,
+        2.0,
+        7.0
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_010",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_010"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      7.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "bubbleSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      11.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      12.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          0.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          0.0
+        ],
+        [
+          "  j",
+          0.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          0.0
+        ],
+        [
+          "  j",
+          0.0
+        ],
+        [
+          "  temp",
+          5.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1.0,
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          0.0
+        ],
+        [
+          "  j",
+          1.0
+        ],
+        [
+          "  temp",
+          5.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          0.0
+        ],
+        [
+          "  j",
+          2.0
+        ],
+        [
+          "  temp",
+          5.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          0.0
+        ],
+        [
+          "  j",
+          2.0
+        ],
+        [
+          "  temp",
+          8.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      3.0,
+      8.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          0.0
+        ],
+        [
+          "  j",
+          3.0
+        ],
+        [
+          "  temp",
+          8.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          0.0
+        ],
+        [
+          "  j",
+          4.0
+        ],
+        [
+          "  temp",
+          8.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          0.0
+        ],
+        [
+          "  j",
+          4.0
+        ],
+        [
+          "  temp",
+          9.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      4.0,
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      5.0,
+      9.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          0.0
+        ],
+        [
+          "  j",
+          5.0
+        ],
+        [
+          "  temp",
+          9.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      6.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          0.0
+        ],
+        [
+          "  j",
+          5.0
+        ],
+        [
+          "  temp",
+          9.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      6.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      5.0,
+      7.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          0.0
+        ],
+        [
+          "  j",
+          6.0
+        ],
+        [
+          "  temp",
+          9.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      12.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "  j",
+          6.0
+        ],
+        [
+          "  temp",
+          9.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "  j",
+          0.0
+        ],
+        [
+          "  temp",
+          9.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "  j",
+          1.0
+        ],
+        [
+          "  temp",
+          9.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "  j",
+          1.0
+        ],
+        [
+          "  temp",
+          5.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      2.0,
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "  j",
+          2.0
+        ],
+        [
+          "  temp",
+          5.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "  j",
+          3.0
+        ],
+        [
+          "  temp",
+          5.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "  j",
+          3.0
+        ],
+        [
+          "  temp",
+          8.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      3.0,
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      4.0,
+      8.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "  j",
+          4.0
+        ],
+        [
+          "  temp",
+          8.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "  j",
+          4.0
+        ],
+        [
+          "  temp",
+          8.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      4.0,
+      7.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      5.0,
+      8.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "  j",
+          5.0
+        ],
+        [
+          "  temp",
+          8.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      12.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          2.0
+        ],
+        [
+          "  j",
+          5.0
+        ],
+        [
+          "  temp",
+          8.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          2.0
+        ],
+        [
+          "  j",
+          0.0
+        ],
+        [
+          "  temp",
+          8.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          2.0
+        ],
+        [
+          "  j",
+          0.0
+        ],
+        [
+          "  temp",
+          3.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1.0,
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          2.0
+        ],
+        [
+          "  j",
+          1.0
+        ],
+        [
+          "  temp",
+          3.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          2.0
+        ],
+        [
+          "  j",
+          2.0
+        ],
+        [
+          "  temp",
+          3.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          2.0
+        ],
+        [
+          "  j",
+          2.0
+        ],
+        [
+          "  temp",
+          5.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      2.0,
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      3.0,
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          2.0
+        ],
+        [
+          "  j",
+          3.0
+        ],
+        [
+          "  temp",
+          5.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          2.0
+        ],
+        [
+          "  j",
+          4.0
+        ],
+        [
+          "  temp",
+          5.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      12.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          3.0
+        ],
+        [
+          "  j",
+          4.0
+        ],
+        [
+          "  temp",
+          5.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          3.0
+        ],
+        [
+          "  j",
+          0.0
+        ],
+        [
+          "  temp",
+          5.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          3.0
+        ],
+        [
+          "  j",
+          1.0
+        ],
+        [
+          "  temp",
+          5.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          3.0
+        ],
+        [
+          "  j",
+          1.0
+        ],
+        [
+          "  temp",
+          3.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1.0,
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      2.0,
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          3.0
+        ],
+        [
+          "  j",
+          2.0
+        ],
+        [
+          "  temp",
+          3.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          3.0
+        ],
+        [
+          "  j",
+          3.0
+        ],
+        [
+          "  temp",
+          3.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      12.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          4.0
+        ],
+        [
+          "  j",
+          3.0
+        ],
+        [
+          "  temp",
+          3.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          4.0
+        ],
+        [
+          "  j",
+          0.0
+        ],
+        [
+          "  temp",
+          3.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          4.0
+        ],
+        [
+          "  j",
+          1.0
+        ],
+        [
+          "  temp",
+          3.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          4.0
+        ],
+        [
+          "  j",
+          2.0
+        ],
+        [
+          "  temp",
+          3.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      12.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          5.0
+        ],
+        [
+          "  j",
+          2.0
+        ],
+        [
+          "  temp",
+          3.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          5.0
+        ],
+        [
+          "  j",
+          0.0
+        ],
+        [
+          "  temp",
+          3.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          5.0
+        ],
+        [
+          "  j",
+          1.0
+        ],
+        [
+          "  temp",
+          3.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      12.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 bubbleSort",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  i",
+          6.0
+        ],
+        [
+          "  j",
+          1.0
+        ],
+        [
+          "  temp",
+          3.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      21.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "bubbleSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      7.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      8.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  }
+]

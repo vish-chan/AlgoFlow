@@ -1,0 +1,9458 @@
+[
+  {
+    "key": "tracer_000",
+    "method": "Array2DTracer",
+    "args": [
+      "CallStack"
+    ]
+  },
+  {
+    "key": "tracer_001",
+    "method": "LogTracer",
+    "args": [
+      "Console"
+    ]
+  },
+  {
+    "key": "tracer_002",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_002"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "Array2DTracer",
+    "args": [
+      "Locals"
+    ]
+  },
+  {
+    "key": "tracer_004",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_004"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "CodeTracer",
+    "args": [
+      "Line Tracker"
+    ]
+  },
+  {
+    "key": "tracer_006",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_006"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      9.0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "Array1DTracer",
+    "args": [
+      "int[]: args"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_008",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_008"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "Array2DTracer",
+    "args": [
+      "Map: memo"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [],
+        []
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_010",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_010"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      9.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(3)",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(2)",
+          "recursive"
+        ],
+        [
+          "fib(3)",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          2.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(1)",
+          "recursive"
+        ],
+        [
+          "fib(2)",
+          "recursive"
+        ],
+        [
+          "fib(3)",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          2.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          1.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          2.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(1) \u2192 1",
+          "recursive"
+        ],
+        [
+          "fib(2)",
+          "recursive"
+        ],
+        [
+          "fib(3)",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(2)",
+          "recursive"
+        ],
+        [
+          "fib(3)",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          2.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(0)",
+          "recursive"
+        ],
+        [
+          "fib(2)",
+          "recursive"
+        ],
+        [
+          "fib(3)",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          2.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          0.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          2.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(0) \u2192 0",
+          "recursive"
+        ],
+        [
+          "fib(2)",
+          "recursive"
+        ],
+        [
+          "fib(3)",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(2)",
+          "recursive"
+        ],
+        [
+          "fib(3)",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          2.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          2.0
+        ],
+        [
+          "  result",
+          1.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          2.0
+        ],
+        [
+          1.0
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(2) \u2192 1",
+          "recursive"
+        ],
+        [
+          "fib(3)",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(3)",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(1)",
+          "recursive"
+        ],
+        [
+          "fib(3)",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          1.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(1) \u2192 1",
+          "recursive"
+        ],
+        [
+          "fib(3)",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(3)",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "  result",
+          2.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          2.0,
+          3.0
+        ],
+        [
+          1.0,
+          2.0
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(3) \u2192 2",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(2)",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          2.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(2) \u2192 1",
+          "recursive"
+        ],
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "  result",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          1.0,
+          2.0,
+          3.0
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(4) \u2192 3",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(3)",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          3.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(3) \u2192 2",
+          "recursive"
+        ],
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "  result",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          2.0,
+          3.0,
+          4.0,
+          5.0
+        ],
+        [
+          1.0,
+          2.0,
+          3.0,
+          5.0
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(5) \u2192 5",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(4)",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          4.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(4) \u2192 3",
+          "recursive"
+        ],
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "  result",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          1.0,
+          2.0,
+          3.0,
+          5.0,
+          8.0
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(6) \u2192 8",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(5)",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          5.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(5) \u2192 5",
+          "recursive"
+        ],
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "  result",
+          13.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0
+        ],
+        [
+          1.0,
+          2.0,
+          3.0,
+          5.0,
+          8.0,
+          13.0
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(7) \u2192 13",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(6)",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          6.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(6) \u2192 8",
+          "recursive"
+        ],
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "  result",
+          21.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        [
+          1.0,
+          2.0,
+          3.0,
+          5.0,
+          8.0,
+          13.0,
+          21.0
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      6.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      6.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(8) \u2192 21",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(7)",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          7.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(7) \u2192 13",
+          "recursive"
+        ],
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(9)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          9.0
+        ],
+        [
+          "  result",
+          34.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0
+        ],
+        [
+          1.0,
+          2.0,
+          3.0,
+          5.0,
+          8.0,
+          13.0,
+          21.0,
+          34.0
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      7.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      7.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      7.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      7.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(9) \u2192 34",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(8)",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      13.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          8.0
+        ],
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      6.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      6.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      6.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      6.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(8) \u2192 21",
+          "recursive"
+        ],
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(10)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 fib",
+          ""
+        ],
+        [
+          "  n",
+          10.0
+        ],
+        [
+          "  result",
+          55.0
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0
+        ],
+        [
+          1.0,
+          2.0,
+          3.0,
+          5.0,
+          8.0,
+          13.0,
+          21.0,
+          34.0,
+          55.0
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0,
+      8.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0,
+      8.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0,
+      8.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0,
+      8.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "fib(10) \u2192 55",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      9.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      10.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  }
+]

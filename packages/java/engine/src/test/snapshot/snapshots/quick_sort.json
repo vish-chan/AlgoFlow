@@ -1,0 +1,11717 @@
+[
+  {
+    "key": "tracer_000",
+    "method": "Array2DTracer",
+    "args": [
+      "CallStack"
+    ]
+  },
+  {
+    "key": "tracer_001",
+    "method": "LogTracer",
+    "args": [
+      "Console"
+    ]
+  },
+  {
+    "key": "tracer_002",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_002"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "Array2DTracer",
+    "args": [
+      "Locals"
+    ]
+  },
+  {
+    "key": "tracer_004",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_004"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "CodeTracer",
+    "args": [
+      "Line Tracker"
+    ]
+  },
+  {
+    "key": "tracer_006",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_006"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      7.0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "Array1DTracer",
+    "args": [
+      "int[]: args"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_008",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_008"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "Array1DTracer",
+    "args": [
+      "int[]: arr"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        5.0,
+        3.0,
+        8.0,
+        1.0,
+        9.0,
+        2.0,
+        7.0
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_010",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_010"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      7.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      11.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition(0, 6)",
+          ""
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      23.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      24.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          5.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          5.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "  j",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      26.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          5.0
+        ],
+        [
+          "  i",
+          2.0
+        ],
+        [
+          "  j",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      27.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      6.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          5.0
+        ],
+        [
+          "  i",
+          2.0
+        ],
+        [
+          "  j",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      29.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          5.0
+        ],
+        [
+          "  i",
+          2.0
+        ],
+        [
+          "  j",
+          5.0
+        ],
+        [
+          "  tmp",
+          8.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      6.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      6.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      2.0,
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      5.0,
+      8.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      26.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          5.0
+        ],
+        [
+          "  i",
+          3.0
+        ],
+        [
+          "  j",
+          5.0
+        ],
+        [
+          "  tmp",
+          8.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          5.0
+        ],
+        [
+          "  i",
+          4.0
+        ],
+        [
+          "  j",
+          5.0
+        ],
+        [
+          "  tmp",
+          8.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      27.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          5.0
+        ],
+        [
+          "  i",
+          4.0
+        ],
+        [
+          "  j",
+          4.0
+        ],
+        [
+          "  tmp",
+          8.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          5.0
+        ],
+        [
+          "  i",
+          4.0
+        ],
+        [
+          "  j",
+          3.0
+        ],
+        [
+          "  tmp",
+          8.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      31.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          5.0
+        ],
+        [
+          "  i",
+          4.0
+        ],
+        [
+          "  j",
+          3.0
+        ],
+        [
+          "  tmp",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      6.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      6.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      3.0,
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      32.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition(0, 6) \u2192 3",
+          ""
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition(0, 2)",
+          ""
+        ],
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      23.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  pivot",
+          1.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      24.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  pivot",
+          1.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  pivot",
+          1.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "  j",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      26.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      27.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  pivot",
+          1.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "  j",
+          1.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  pivot",
+          1.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "  j",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      31.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  pivot",
+          1.0
+        ],
+        [
+          "  i",
+          1.0
+        ],
+        [
+          "  j",
+          0.0
+        ],
+        [
+          "  tmp",
+          1.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      6.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      6.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      32.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition(0, 2) \u2192 0",
+          ""
+        ],
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(0, -1)",
+          "recursive"
+        ],
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          -1.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(0, -1)",
+          "recursive"
+        ],
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      18.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(1, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition(1, 2)",
+          ""
+        ],
+        [
+          "qs(1, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      23.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  pivot",
+          3.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      24.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  pivot",
+          3.0
+        ],
+        [
+          "  i",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  pivot",
+          3.0
+        ],
+        [
+          "  i",
+          2.0
+        ],
+        [
+          "  j",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      26.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  pivot",
+          3.0
+        ],
+        [
+          "  i",
+          3.0
+        ],
+        [
+          "  j",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      31.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  pivot",
+          3.0
+        ],
+        [
+          "  i",
+          3.0
+        ],
+        [
+          "  j",
+          2.0
+        ],
+        [
+          "  tmp",
+          3.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      6.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      6.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1.0,
+      2.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      2.0,
+      3.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      32.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition(1, 2) \u2192 2",
+          ""
+        ],
+        [
+          "qs(1, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(1, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(1, 1)",
+          "recursive"
+        ],
+        [
+          "qs(1, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          1.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(1, 1)",
+          "recursive"
+        ],
+        [
+          "qs(1, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(1, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      18.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(3, 2)",
+          "recursive"
+        ],
+        [
+          "qs(1, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          3.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          3.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(3, 2)",
+          "recursive"
+        ],
+        [
+          "qs(1, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(1, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          1.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          2.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      18.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(1, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          2.0
+        ],
+        [
+          "  p",
+          0.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      18.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(0, 2)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      18.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition(4, 6)",
+          ""
+        ],
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      23.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          9.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      24.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          9.0
+        ],
+        [
+          "  i",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          9.0
+        ],
+        [
+          "  i",
+          5.0
+        ],
+        [
+          "  j",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      26.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          9.0
+        ],
+        [
+          "  i",
+          6.0
+        ],
+        [
+          "  j",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      6.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          9.0
+        ],
+        [
+          "  i",
+          7.0
+        ],
+        [
+          "  j",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      31.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  pivot",
+          9.0
+        ],
+        [
+          "  i",
+          7.0
+        ],
+        [
+          "  j",
+          6.0
+        ],
+        [
+          "  tmp",
+          9.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      6.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      6.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      6.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      4.0,
+      7.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      32.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition(4, 6) \u2192 6",
+          ""
+        ],
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(4, 5)",
+          "recursive"
+        ],
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition(4, 5)",
+          ""
+        ],
+        [
+          "qs(4, 5)",
+          "recursive"
+        ],
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      23.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "  pivot",
+          7.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      24.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "  pivot",
+          7.0
+        ],
+        [
+          "  i",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "  pivot",
+          7.0
+        ],
+        [
+          "  i",
+          5.0
+        ],
+        [
+          "  j",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      26.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      27.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "  pivot",
+          7.0
+        ],
+        [
+          "  i",
+          5.0
+        ],
+        [
+          "  j",
+          4.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      5.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      31.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "  pivot",
+          7.0
+        ],
+        [
+          "  i",
+          5.0
+        ],
+        [
+          "  j",
+          4.0
+        ],
+        [
+          "  tmp",
+          7.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      6.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      6.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      4.0,
+      7.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      4.0,
+      7.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      4.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      32.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition(4, 5) \u2192 4",
+          ""
+        ],
+        [
+          "qs(4, 5)",
+          "recursive"
+        ],
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(4, 5)",
+          "recursive"
+        ],
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "  p",
+          4.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(4, 3)",
+          "recursive"
+        ],
+        [
+          "qs(4, 5)",
+          "recursive"
+        ],
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "  p",
+          4.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "  p",
+          4.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          3.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "  p",
+          4.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(4, 3)",
+          "recursive"
+        ],
+        [
+          "qs(4, 5)",
+          "recursive"
+        ],
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(4, 5)",
+          "recursive"
+        ],
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "  p",
+          4.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      18.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(5, 5)",
+          "recursive"
+        ],
+        [
+          "qs(4, 5)",
+          "recursive"
+        ],
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "  p",
+          4.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "  p",
+          4.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          5.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "  p",
+          4.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(5, 5)",
+          "recursive"
+        ],
+        [
+          "qs(4, 5)",
+          "recursive"
+        ],
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(4, 5)",
+          "recursive"
+        ],
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          5.0
+        ],
+        [
+          "  p",
+          4.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      18.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(4, 5)",
+          "recursive"
+        ],
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      18.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(7, 6)",
+          "recursive"
+        ],
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          7.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          7.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(7, 6)",
+          "recursive"
+        ],
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          4.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          6.0
+        ],
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      18.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(4, 6)",
+          "recursive"
+        ],
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 qs",
+          ""
+        ],
+        [
+          "  lo",
+          0.0
+        ],
+        [
+          "  hi",
+          6.0
+        ],
+        [
+          "  p",
+          3.0
+        ],
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      18.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "qs(0, 6)",
+          ""
+        ],
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quickSort",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      11.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      12.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quickSort()",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      7.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      8.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  }
+]
