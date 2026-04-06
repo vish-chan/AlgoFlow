@@ -24,7 +24,7 @@ def trace_calls(frame, event, arg):
     elif event == "return":
         name = frame.f_code.co_name
         if name != "<module>":
-            _r.on_return(name)
+            _r.on_return(name, arg)
 
     return trace_calls
 
