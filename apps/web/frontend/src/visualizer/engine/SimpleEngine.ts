@@ -168,7 +168,6 @@ export class SimpleEngine {
 
         if (key === null && method === 'setRoot') {
             this.root = args[0];
-            this.updateRenderer();
         } else if (key !== null && method === 'ChartTracer') {
             this.tracers[key] = { type: 'chart', data: [], title: args[0] || '' };
         } else if (key !== null && method === 'Array1DTracer') {
@@ -205,7 +204,6 @@ export class SimpleEngine {
         } else if (key !== null && method === 'set') {
             if (this.tracers[key]?.type === 'chart' || this.tracers[key]?.type === 'array') {
                 this.tracers[key].data = args[0].map((v: any) => ({ value: v, selected: false, patched: false }));
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'array2d') {
                 const rawData = args[0];
                 const unwrapped = (rawData.length === 1 && Array.isArray(rawData[0]) && Array.isArray(rawData[0][0])) 
@@ -214,7 +212,6 @@ export class SimpleEngine {
                 this.tracers[key].data = unwrapped.map((row: any[]) =>
                     row.map((v: any) => ({ value: v, selected: false, patched: false }))
                 );
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'hashmap') {
                 const rawData = args[0];
                 const unwrapped = (rawData.length === 1 && Array.isArray(rawData[0]) && Array.isArray(rawData[0][0]))
@@ -223,10 +220,8 @@ export class SimpleEngine {
                 this.tracers[key].data = unwrapped.map((row: any[]) =>
                     row.map((v: any) => ({ value: v, selected: false, patched: false }))
                 );
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'log') {
                 this.tracers[key].logs = [args[0]];
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'recursion') {
                 const rawData = args[0];
                 let flatData = rawData;
@@ -243,20 +238,17 @@ export class SimpleEngine {
                 } else {
                     this.tracers[key].calls = [];
                 }
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'graph') {
                 const raw = args[0];
                 const matrix = (raw.length === 1 && Array.isArray(raw[0]) && Array.isArray(raw[0][0])) ? raw[0] : raw;
                 this.tracers[key].adjMatrix = matrix;
                 this.tracers[key].nodes = matrix.map((_: any, i: number) => ({ state: 'default', index: i }));
                 this.tracers[key].visitedEdges = new Set<string>();
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'locals') {
                 const rawData = args[0];
                 const unwrapped = (rawData.length === 1 && Array.isArray(rawData[0]) && Array.isArray(rawData[0][0])) ? rawData[0] : rawData;
                 this.tracers[key].rows = unwrapped.map((r: any[]) => [r[0], r[1]]);
                 this.tracers[key].patchedRows = new Set<number>();
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'variables') {
                 const rawData = args[0];
                 let flatData = rawData;
@@ -272,7 +264,6 @@ export class SimpleEngine {
                     });
                 }
                 this.tracers[key].vars = vars;
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'print') {
             if (this.tracers[key]?.type === 'code') {
@@ -285,7 +276,6 @@ export class SimpleEngine {
                 } else {
                     logs.push(args[0]);
                 }
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'println') {
             if (this.tracers[key]?.type === 'code') {
@@ -298,19 +288,16 @@ export class SimpleEngine {
                 } else {
                     logs.push(args[0] + '\n');
                 }
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'push') {
             if (this.tracers[key]?.type === 'recursion') {
                 const rawMethod = String(args[0]);
                 const method = rawMethod.replace(/\s*recursive\s*/gi, '').trim().replace(/,\s*$/, '');
                 this.tracers[key].calls.push({ method, params: args[1] || [], active: true });
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'pop') {
             if (this.tracers[key]?.type === 'recursion' && this.tracers[key].calls.length > 0) {
                 this.tracers[key].calls[this.tracers[key].calls.length - 1].active = false;
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'reset') {
             if (this.tracers[key]?.type === 'graph') {
@@ -321,17 +308,14 @@ export class SimpleEngine {
                 this.tracers[key].nodeLabels = [];
                 this.tracers[key].edges = [];
                 this.tracers[key].treeRoot = null;
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'directed') {
             if (this.tracers[key]?.type === 'graph') {
                 this.tracers[key].directed = !!args[0];
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'weighted') {
             if (this.tracers[key]?.type === 'graph') {
                 this.tracers[key].weighted = !!args[0];
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'addNode') {
             if (this.tracers[key]?.type === 'graph') {
@@ -347,7 +331,6 @@ export class SimpleEngine {
                     for (const row of t.adjMatrix) { row.push(0); }
                     t.adjMatrix.push(new Array(n).fill(0));
                 }
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'addEdge') {
             if (this.tracers[key]?.type === 'graph') {
@@ -366,7 +349,6 @@ export class SimpleEngine {
                         t.edges.push([from, to]);
                     }
                 }
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'removeEdge') {
             if (this.tracers[key]?.type === 'graph') {
@@ -383,18 +365,15 @@ export class SimpleEngine {
                         t.edges.splice(idx, 1);
                     }
                 }
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'layoutCircle') {
             if (this.tracers[key]?.type === 'graph') {
                 this.tracers[key].layout = 'circle';
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'layoutTree') {
             if (this.tracers[key]?.type === 'graph') {
                 this.tracers[key].layout = 'tree';
                 this.tracers[key].treeRoot = String(args[0]);
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'visit') {
             if (this.tracers[key]?.type === 'graph') {
@@ -416,7 +395,6 @@ export class SimpleEngine {
                         t.visitedEdges.add(`${a}-${b}`);
                     }
                 }
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'leave') {
             if (this.tracers[key]?.type === 'graph') {
@@ -426,12 +404,10 @@ export class SimpleEngine {
                 if (nodeIdx >= 0 && t.nodes[nodeIdx]) {
                     t.nodes[nodeIdx].state = 'default';
                 }
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'setVar') {
             if (this.tracers[key]?.type === 'variables') {
                 this.tracers[key].vars[args[0]] = args[1];
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'updateNode') {
             if (this.tracers[key]?.type === 'graph') {
@@ -441,61 +417,47 @@ export class SimpleEngine {
                 if (nodeIdx >= 0 && args.length >= 2) {
                     t.nodeLabels[nodeIdx] = String(args[1]);
                 }
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'select') {
             if ((this.tracers[key]?.type === 'array' || this.tracers[key]?.type === 'chart') && this.tracers[key]?.data?.[args[0]]) {
                 this.tracers[key].data[args[0]].selected = true;
                 this.tracers[key].data[args[0]].patched = false;
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'array2d' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
                 this.tracers[key].data[args[0]][args[1]].selected = true;
                 this.tracers[key].data[args[0]][args[1]].patched = false;
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'hashmap' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
                 this.tracers[key].data[args[0]][args[1]].selected = true;
                 this.tracers[key].data[args[0]][args[1]].patched = false;
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'recursion' && this.tracers[key]?.calls?.[args[0]]) {
                 this.tracers[key].calls[args[0]].active = true;
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'deselect') {
             if ((this.tracers[key]?.type === 'array' || this.tracers[key]?.type === 'chart') && this.tracers[key]?.data?.[args[0]]) {
                 this.tracers[key].data[args[0]].selected = false;
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'array2d' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
                 this.tracers[key].data[args[0]][args[1]].selected = false;
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'hashmap' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
                 this.tracers[key].data[args[0]][args[1]].selected = false;
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'recursion' && this.tracers[key]?.calls?.[args[0]]) {
                 this.tracers[key].calls[args[0]].active = false;
-                this.updateRenderer();
             }
         } else if (key !== null && method === 'patch') {
             if ((this.tracers[key]?.type === 'array' || this.tracers[key]?.type === 'chart') && this.tracers[key]?.data?.[args[0]]) {
                 this.tracers[key].data[args[0]].value = args[1];
                 this.tracers[key].data[args[0]].patched = true;
                 this.tracers[key].data[args[0]].selected = false;
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'array2d' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
                 this.tracers[key].data[args[0]][args[1]].value = args[2];
                 this.tracers[key].data[args[0]][args[1]].patched = true;
                 this.tracers[key].data[args[0]][args[1]].selected = false;
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'hashmap' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
                 this.tracers[key].data[args[0]][args[1]].value = args[2];
                 this.tracers[key].data[args[0]][args[1]].patched = true;
                 this.tracers[key].data[args[0]][args[1]].selected = false;
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'recursion' && this.tracers[key]?.calls?.[args[0]]) {
                 this.tracers[key].calls[args[0]].patched = true;
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'locals') {
                 this.tracers[key].patchedRows.add(Math.floor(args[0]));
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'variables') {
                 if (args.length >= 2) {
                     const varNames = Object.keys(this.tracers[key].vars);
@@ -507,26 +469,20 @@ export class SimpleEngine {
                             this.tracers[key].patchState = {};
                         }
                         this.tracers[key].patchState[varName] = { patched: true, col: colIndex };
-                        this.updateRenderer();
                     }
                 }
             }
         } else if (key !== null && method === 'depatch') {
             if ((this.tracers[key]?.type === 'array' || this.tracers[key]?.type === 'chart') && this.tracers[key]?.data?.[args[0]]) {
                 this.tracers[key].data[args[0]].patched = false;
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'array2d' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
                 this.tracers[key].data[args[0]][args[1]].patched = false;
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'hashmap' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
                 this.tracers[key].data[args[0]][args[1]].patched = false;
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'recursion' && this.tracers[key]?.calls?.[args[0]]) {
                 this.tracers[key].calls[args[0]].patched = false;
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'locals') {
                 this.tracers[key].patchedRows.delete(Math.floor(args[0]));
-                this.updateRenderer();
             } else if (this.tracers[key]?.type === 'variables') {
                 if (args.length >= 1) {
                     const varNames = Object.keys(this.tracers[key].vars);
@@ -534,7 +490,6 @@ export class SimpleEngine {
                     const varName = varNames[rowIndex];
                     if (varName && this.tracers[key].patchState?.[varName]) {
                         delete this.tracers[key].patchState[varName];
-                        this.updateRenderer();
                     }
                 }
             }
