@@ -1,0 +1,6468 @@
+[
+  {
+    "key": "tracer_000",
+    "method": "CodeTracer",
+    "args": [
+      "Line Tracker"
+    ]
+  },
+  {
+    "key": "tracer_001",
+    "method": "LogTracer",
+    "args": [
+      "Console"
+    ]
+  },
+  {
+    "key": "tracer_002",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_002"
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      8
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "Array2DTracer",
+    "args": [
+      "CallStack"
+    ]
+  },
+  {
+    "key": "tracer_004",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_003",
+        "tracer_000",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_004"
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "Array2DTracer",
+    "args": [
+      "Locals"
+    ]
+  },
+  {
+    "key": "tracer_006",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_003",
+        "tracer_005",
+        "tracer_000",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_006"
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "Move disk 1 from A to B"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "Move disk 2 from A to C"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "Move disk 1 from B to C"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "Move disk 3 from A to B"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(2, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'C', 'A', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'C', 'A', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'C', 'A', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "Move disk 1 from C to A"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'C', 'A', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'C', 'A', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(2, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "Move disk 2 from C to B"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "Move disk 1 from A to B"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(2, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(3, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(3, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "Move disk 4 from A to C"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(2, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "Move disk 1 from B to C"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(2, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "Move disk 2 from B to A"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'C', 'A', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'C', 'A', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'C', 'A', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "Move disk 1 from C to A"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'C', 'A', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'C', 'A', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'C', 'A', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(2, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "Move disk 3 from B to C"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "Move disk 1 from A to B"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'C', 'B', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'C', 'B', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'A', 'B', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'A', 'B', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "Move disk 2 from A to C"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'B', 'A', 'C')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'B', 'A', 'C')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "Move disk 1 from B to C"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(0, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(1, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(0, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(1, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(1, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(2, 'A', 'C', 'B')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(2, 'A', 'C', 'B')",
+          "recursive"
+        ],
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(3, 'B', 'C', 'A')",
+          ""
+        ],
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(3, 'B', 'C', 'A')",
+          "recursive"
+        ],
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "hanoi(4, 'A', 'C', 'B')",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  }
+]

@@ -1,0 +1,5829 @@
+[
+  {
+    "key": "tracer_000",
+    "method": "CodeTracer",
+    "args": [
+      "Line Tracker"
+    ]
+  },
+  {
+    "key": "tracer_001",
+    "method": "LogTracer",
+    "args": [
+      "Console"
+    ]
+  },
+  {
+    "key": "tracer_002",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_002"
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "Array2DTracer",
+    "args": [
+      "CallStack"
+    ]
+  },
+  {
+    "key": "tracer_004",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_003",
+        "tracer_000",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_004"
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "TreeNode()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "Array2DTracer",
+    "args": [
+      "Locals"
+    ]
+  },
+  {
+    "key": "tracer_006",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_003",
+        "tracer_005",
+        "tracer_000",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_006"
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 TreeNode()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "TreeNode()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      7
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 4)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 __init__(<TreeNode object at 0xHASH>, 4)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 4)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "GraphTracer",
+    "args": [
+      "tree: root"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_000",
+      4,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_0",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_1",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "layoutTree",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_008",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_003",
+        "tracer_005",
+        "tracer_000",
+        "tracer_007",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_008"
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      8
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 2)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 __init__(<TreeNode object at 0xHASH>, 2)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 2)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 2)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 __init__(<TreeNode object at 0xHASH>, 2)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 2)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_000",
+      4,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_001",
+      2,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_001"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_0",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_1",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_2",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "layoutTree",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      9
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 __init__(<TreeNode object at 0xHASH>, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 __init__(<TreeNode object at 0xHASH>, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_000",
+      4,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_001",
+      2,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_001"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_002",
+      6,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_002"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_0",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_1",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_2",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_3",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_3"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "layoutTree",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      10
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 1)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 __init__(<TreeNode object at 0xHASH>, 1)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 1)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 1)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 __init__(<TreeNode object at 0xHASH>, 1)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 1)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_000",
+      4,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_001",
+      2,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_001"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_002",
+      6,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_002"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_003",
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_003"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_0",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_1",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_2",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_3",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_3"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_4",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_4"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "layoutTree",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      11
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 3)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 __init__(<TreeNode object at 0xHASH>, 3)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 3)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 3)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 __init__(<TreeNode object at 0xHASH>, 3)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 3)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_000",
+      4,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_001",
+      2,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_001"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_002",
+      6,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_002"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_003",
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_003"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_004",
+      3,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_004"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_0",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_1",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_2",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_3",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_3"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_4",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_004",
+      "null_4"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_5",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_004",
+      "null_5"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "layoutTree",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      12
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 5)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 __init__(<TreeNode object at 0xHASH>, 5)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 5)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 5)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 __init__(<TreeNode object at 0xHASH>, 5)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 5)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_000",
+      4,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_001",
+      2,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_001"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_002",
+      6,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_002"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_003",
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_003"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_004",
+      3,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_004"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_005",
+      5,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "node_005"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_0",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_1",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_2",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_3",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_004",
+      "null_3"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_4",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_004",
+      "null_4"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_5",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_005",
+      "null_5"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_6",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_005",
+      "null_6"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "layoutTree",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 7)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 __init__(<TreeNode object at 0xHASH>, 7)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 7)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 7)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 __init__(<TreeNode object at 0xHASH>, 7)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "__init__(<TreeNode object at 0xHASH>, 7)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_000",
+      4,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_001",
+      2,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_001"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_002",
+      6,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_002"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_003",
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_003"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_004",
+      3,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_004"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_005",
+      5,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "node_005"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "node_006",
+      7,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "node_006"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_0",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_1",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_2",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_004",
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_3",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_004",
+      "null_3"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_4",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_005",
+      "null_4"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_5",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_005",
+      "null_5"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_6",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_006",
+      "null_6"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addNode",
+    "args": [
+      "null_7",
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "addEdge",
+    "args": [
+      "node_006",
+      "null_7"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "layoutTree",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      15
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      22
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      18
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "visit",
+    "args": [
+      "node_001",
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      18
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "leave",
+    "args": [
+      "node_001"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "visit",
+    "args": [
+      "node_003",
+      "node_001"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      18
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(None)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      19
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "visit",
+    "args": [
+      "node_003"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "1"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(None)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      19
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "leave",
+    "args": [
+      "node_003"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "visit",
+    "args": [
+      "node_001"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "2"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "leave",
+    "args": [
+      "node_001"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "visit",
+    "args": [
+      "node_004",
+      "node_001"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      18
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(None)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      19
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "visit",
+    "args": [
+      "node_004"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "3"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(None)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      19
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "leave",
+    "args": [
+      "node_004"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "visit",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "4"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "leave",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "visit",
+    "args": [
+      "node_002",
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      18
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "leave",
+    "args": [
+      "node_002"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "visit",
+    "args": [
+      "node_005",
+      "node_002"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      18
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(None)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      19
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "visit",
+    "args": [
+      "node_005"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "5"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(None)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      19
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "leave",
+    "args": [
+      "node_005"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "visit",
+    "args": [
+      "node_002"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "6"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "leave",
+    "args": [
+      "node_002"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "visit",
+    "args": [
+      "node_006",
+      "node_002"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      18
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(None)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      19
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "visit",
+    "args": [
+      "node_006"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "7"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(None)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(None)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ],
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          "recursive"
+        ],
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "inorder(<TreeNode object at 0xHASH>)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  }
+]

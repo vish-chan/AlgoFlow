@@ -1,0 +1,1050 @@
+[
+  {
+    "key": "tracer_000",
+    "method": "CodeTracer",
+    "args": [
+      "Line Tracker"
+    ]
+  },
+  {
+    "key": "tracer_001",
+    "method": "LogTracer",
+    "args": [
+      "Console"
+    ]
+  },
+  {
+    "key": "tracer_002",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_002"
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "Array1DTracer",
+    "args": [
+      "list: arr"
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_004",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_004"
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "Array2DTracer",
+    "args": [
+      "CallStack"
+    ]
+  },
+  {
+    "key": "tracer_006",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_005",
+        "tracer_000",
+        "tracer_003",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_006"
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "binary_search([1, 3, 5, 7, 9, 11, 13, 15, 17], 7)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "Array2DTracer",
+    "args": [
+      "Locals"
+    ]
+  },
+  {
+    "key": "tracer_008",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_005",
+        "tracer_007",
+        "tracer_000",
+        "tracer_003",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_008"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 binary_search([1, 3, 5, 7, 9, 11, 13, 15, 17], 7)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 binary_search([1, 3, 5, 7, 9, 11, 13, 15, 17], 7)",
+          ""
+        ],
+        [
+          "  lo",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 binary_search([1, 3, 5, 7, 9, 11, 13, 15, 17], 7)",
+          ""
+        ],
+        [
+          "  lo",
+          "0"
+        ],
+        [
+          "  hi",
+          "8"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      7
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 binary_search([1, 3, 5, 7, 9, 11, 13, 15, 17], 7)",
+          ""
+        ],
+        [
+          "  lo",
+          "0"
+        ],
+        [
+          "  hi",
+          "8"
+        ],
+        [
+          "  mid",
+          "4"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      8
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      10
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 binary_search([1, 3, 5, 7, 9, 11, 13, 15, 17], 7)",
+          ""
+        ],
+        [
+          "  lo",
+          "0"
+        ],
+        [
+          "  hi",
+          "3"
+        ],
+        [
+          "  mid",
+          "4"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      7
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 binary_search([1, 3, 5, 7, 9, 11, 13, 15, 17], 7)",
+          ""
+        ],
+        [
+          "  lo",
+          "0"
+        ],
+        [
+          "  hi",
+          "3"
+        ],
+        [
+          "  mid",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      8
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      10
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      11
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 binary_search([1, 3, 5, 7, 9, 11, 13, 15, 17], 7)",
+          ""
+        ],
+        [
+          "  lo",
+          "2"
+        ],
+        [
+          "  hi",
+          "3"
+        ],
+        [
+          "  mid",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      7
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 binary_search([1, 3, 5, 7, 9, 11, 13, 15, 17], 7)",
+          ""
+        ],
+        [
+          "  lo",
+          "2"
+        ],
+        [
+          "  hi",
+          "3"
+        ],
+        [
+          "  mid",
+          "2"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      8
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      10
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      11
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 binary_search([1, 3, 5, 7, 9, 11, 13, 15, 17], 7)",
+          ""
+        ],
+        [
+          "  lo",
+          "3"
+        ],
+        [
+          "  hi",
+          "3"
+        ],
+        [
+          "  mid",
+          "2"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      7
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 binary_search([1, 3, 5, 7, 9, 11, 13, 15, 17], 7)",
+          ""
+        ],
+        [
+          "  lo",
+          "3"
+        ],
+        [
+          "  hi",
+          "3"
+        ],
+        [
+          "  mid",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      8
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      9
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "binary_search([1, 3, 5, 7, 9, 11, 13, 15, 17], 7) \u2192 3",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "found at 3"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  }
+]

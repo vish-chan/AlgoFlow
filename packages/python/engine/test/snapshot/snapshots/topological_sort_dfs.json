@@ -1,0 +1,6006 @@
+[
+  {
+    "key": "tracer_000",
+    "method": "CodeTracer",
+    "args": [
+      "Line Tracker"
+    ]
+  },
+  {
+    "key": "tracer_001",
+    "method": "LogTracer",
+    "args": [
+      "Console"
+    ]
+  },
+  {
+    "key": "tracer_002",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_002"
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "Array2DTracer",
+    "args": [
+      "list2d: adj_matrix"
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_004",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_004"
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      9
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "Array1DTracer",
+    "args": [
+      "list: visited"
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_006",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_006"
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      10
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "Array1DTracer",
+    "args": [
+      "list: stack"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_008",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_008"
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      12
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      18
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      25
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "Array2DTracer",
+    "args": [
+      "CallStack"
+    ]
+  },
+  {
+    "key": "tracer_010",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_009",
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_010"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "Array2DTracer",
+    "args": [
+      "Locals"
+    ]
+  },
+  {
+    "key": "tracer_012",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_009",
+        "tracer_011",
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_012"
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      15
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      19
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      true
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "depatch",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      22
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      19
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      1,
+      true
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "depatch",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      22
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      19
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      3,
+      true
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "depatch",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      22
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(5)",
+          "recursive"
+        ],
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      19
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      5,
+      true
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "depatch",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      23
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        5
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(5)",
+          "recursive"
+        ],
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        5,
+        3
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      23
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        5,
+        3,
+        1
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      22
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(2)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      19
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      2,
+      true
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "depatch",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      22
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(4)",
+          "recursive"
+        ],
+        [
+          "dfs(2)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      19
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      4,
+      true
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "depatch",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ],
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      23
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        5,
+        3,
+        1,
+        4
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(4)",
+          "recursive"
+        ],
+        [
+          "dfs(2)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(2)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      23
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        5,
+        3,
+        1,
+        4,
+        2
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(2)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      23
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        5,
+        3,
+        1,
+        4,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(0)",
+          ""
+        ],
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "2"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "4"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 topo_sort()",
+          ""
+        ],
+        [
+          "  i",
+          "5"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_001",
+    "method": "println",
+    "args": [
+      "[0, 2, 4, 1, 3, 5]"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "topo_sort()",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      []
+    ]
+  }
+]

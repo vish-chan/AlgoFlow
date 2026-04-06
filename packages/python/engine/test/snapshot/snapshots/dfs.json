@@ -1,0 +1,5165 @@
+[
+  {
+    "key": "tracer_000",
+    "method": "CodeTracer",
+    "args": [
+      "Line Tracker"
+    ]
+  },
+  {
+    "key": "tracer_001",
+    "method": "LogTracer",
+    "args": [
+      "Console"
+    ]
+  },
+  {
+    "key": "tracer_002",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_002"
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "Array2DTracer",
+    "args": [
+      "list2d: adj_matrix"
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_004",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_004"
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      9
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "Array1DTracer",
+    "args": [
+      "list: visited"
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_006",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_006"
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      11
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "Array2DTracer",
+    "args": [
+      "CallStack"
+    ]
+  },
+  {
+    "key": "tracer_008",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_007",
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_008"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "Array2DTracer",
+    "args": [
+      "Locals"
+    ]
+  },
+  {
+    "key": "tracer_010",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_007",
+        "tracer_009",
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_010"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      12
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      true
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "depatch",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      15
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      12
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      1,
+      true
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "depatch",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "0"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      15
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      12
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      3,
+      true
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "depatch",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "0"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      15
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(5)",
+          "recursive"
+        ],
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      12
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      5,
+      true
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "depatch",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "0"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      15
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(4)",
+          "recursive"
+        ],
+        [
+          "dfs(5)",
+          "recursive"
+        ],
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      12
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      4,
+      true
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "depatch",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "0"
+        ],
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ],
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      15
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(2)",
+          "recursive"
+        ],
+        [
+          "dfs(4)",
+          "recursive"
+        ],
+        [
+          "dfs(5)",
+          "recursive"
+        ],
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      12
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      2,
+      true
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "depatch",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "0"
+        ],
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ],
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(2)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(2)",
+          "recursive"
+        ],
+        [
+          "dfs(4)",
+          "recursive"
+        ],
+        [
+          "dfs(5)",
+          "recursive"
+        ],
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(4)",
+          "recursive"
+        ],
+        [
+          "dfs(5)",
+          "recursive"
+        ],
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "2"
+        ],
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(4)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(4)",
+          "recursive"
+        ],
+        [
+          "dfs(5)",
+          "recursive"
+        ],
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(5)",
+          "recursive"
+        ],
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(5)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(5)",
+          "recursive"
+        ],
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(3)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(3)",
+          "recursive"
+        ],
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(1)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ],
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(1)",
+          "recursive"
+        ],
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "2"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "4"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 dfs(0)",
+          ""
+        ],
+        [
+          "  neighbor",
+          "5"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "dfs(0)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      []
+    ]
+  }
+]

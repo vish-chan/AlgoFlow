@@ -1,0 +1,6112 @@
+[
+  {
+    "key": "tracer_000",
+    "method": "CodeTracer",
+    "args": [
+      "Line Tracker"
+    ]
+  },
+  {
+    "key": "tracer_001",
+    "method": "LogTracer",
+    "args": [
+      "Console"
+    ]
+  },
+  {
+    "key": "tracer_002",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_002"
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "Array1DTracer",
+    "args": [
+      "list: arr"
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        5,
+        3,
+        8,
+        1,
+        9,
+        2,
+        7
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_004",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_004"
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      9
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      23
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "Array2DTracer",
+    "args": [
+      "CallStack"
+    ]
+  },
+  {
+    "key": "tracer_006",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_005",
+        "tracer_000",
+        "tracer_003",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_006"
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "Array2DTracer",
+    "args": [
+      "Locals"
+    ]
+  },
+  {
+    "key": "tracer_008",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_005",
+        "tracer_007",
+        "tracer_000",
+        "tracer_003",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_008"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      10
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  pivot",
+          "5"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      11
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  pivot",
+          "5"
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  pivot",
+          "5"
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "  j",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      12
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  pivot",
+          "5"
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "  j",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      15
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  pivot",
+          "5"
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "  j",
+          "5"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      19
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2,
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      5,
+      8
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      12
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  pivot",
+          "5"
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "  j",
+          "5"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  pivot",
+          "5"
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "  j",
+          "5"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      15
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  pivot",
+          "5"
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "  j",
+          "4"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      15
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  pivot",
+          "5"
+        ],
+        [
+          "  i",
+          "4"
+        ],
+        [
+          "  j",
+          "3"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      18
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3,
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition([5, 3, 8, 1, 9, 2, 7], 0, 6) \u2192 3",
+          ""
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      10
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      3
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  pivot",
+          "1"
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      11
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  pivot",
+          "1"
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  pivot",
+          "1"
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "  j",
+          "2"
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      12
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      15
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  pivot",
+          "1"
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "  j",
+          "1"
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      15
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  pivot",
+          "1"
+        ],
+        [
+          "  i",
+          "1"
+        ],
+        [
+          "  j",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      18
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      0,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition([1, 3, 2, 5, 9, 8, 7], 0, 2) \u2192 0",
+          ""
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, -1)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, -1)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, -1)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      7
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      10
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "  pivot",
+          "3"
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      11
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "  pivot",
+          "3"
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "  pivot",
+          "3"
+        ],
+        [
+          "  i",
+          "2"
+        ],
+        [
+          "  j",
+          "2"
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      12
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "  pivot",
+          "3"
+        ],
+        [
+          "  i",
+          "3"
+        ],
+        [
+          "  j",
+          "2"
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      15
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      18
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1,
+      2
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      1
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2,
+      3
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition([1, 3, 2, 5, 9, 8, 7], 1, 2) \u2192 2",
+          ""
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "2"
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 1, 1)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 1, 1)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "2"
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 1, 1)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "2"
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      7
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 3, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 3, 2)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "2"
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 3, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "2"
+        ],
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 1, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          ""
+        ],
+        [
+          "  p",
+          "0"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 3, 2, 5, 9, 8, 7], 0, 2)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      7
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      10
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      2
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  pivot",
+          "9"
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      11
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  pivot",
+          "9"
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  pivot",
+          "9"
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "  j",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      12
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  pivot",
+          "9"
+        ],
+        [
+          "  i",
+          "6"
+        ],
+        [
+          "  j",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      14
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  pivot",
+          "9"
+        ],
+        [
+          "  i",
+          "7"
+        ],
+        [
+          "  j",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      15
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      18
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4,
+      7
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      6,
+      9
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition([1, 2, 3, 5, 9, 8, 7], 4, 6) \u2192 6",
+          ""
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      10
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "  pivot",
+          "7"
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      11
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "  pivot",
+          "7"
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      2,
+      1
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "  pivot",
+          "7"
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "  j",
+          "5"
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      12
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      13
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      15
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "select",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      16
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 partition([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "  pivot",
+          "7"
+        ],
+        [
+          "  i",
+          "5"
+        ],
+        [
+          "  j",
+          "4"
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      3,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      17
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      18
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      20
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      5
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4,
+      7
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "deselect",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      4,
+      7
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      21
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "partition([1, 2, 3, 5, 7, 8, 9], 4, 5) \u2192 4",
+          ""
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "  p",
+          "4"
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "patch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "depatch",
+    "args": [
+      1,
+      1
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      6
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 3)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 3)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "  p",
+          "4"
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 3)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "  p",
+          "4"
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      7
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 5, 5)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 7, 8, 9], 5, 5)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "  p",
+          "4"
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 5, 5)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          ""
+        ],
+        [
+          "  p",
+          "4"
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 4, 5)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      7
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 7, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 7, 8, 9], 7, 6)",
+          ""
+        ],
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "println",
+    "args": [
+      4
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 7, 8, 9], 7, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "6"
+        ],
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([1, 2, 3, 5, 9, 8, 7], 4, 6)",
+          "recursive"
+        ],
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "select",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ],
+        [
+          "  p",
+          "3"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      [
+        [
+          "quick_sort([5, 3, 8, 1, 9, 2, 7], 0, 6)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "patch",
+    "args": [
+      0,
+      0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      []
+    ]
+  }
+]
