@@ -903,12 +903,14 @@ export class SimpleRenderer {
             this.ctx.roundRect(barX, ly, barW, barH, 4);
             this.ctx.stroke();
 
-            // Frame name
+            // Frame name + return value
+            const returnValue = returning && csCall?.method?.includes('→') ? csCall.method.substring(csCall.method.indexOf('→')) : '';
+            const displayName = frame.name + (returnValue ? ' ' + returnValue : '') + toggle;
             this.ctx.fillStyle = isTop ? '#fff' : theme.text.primary;
             this.ctx.font = 'bold 11px sans-serif';
             this.ctx.textAlign = 'left';
             this.ctx.textBaseline = 'middle';
-            this.ctx.fillText(frame.name + toggle, barX + 8, ly + 11);
+            this.ctx.fillText(displayName, barX + 8, ly + 11);
 
             if (!isTop) {
                 this.clickRegions.push({
