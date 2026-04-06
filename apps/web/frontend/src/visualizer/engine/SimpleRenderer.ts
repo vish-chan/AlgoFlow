@@ -1,13 +1,5 @@
 import { theme } from "../../constants/theme";
 
-interface SwapAnimation {
-    tracerKey: string;
-    i: number;
-    j: number;
-    progress: number;
-    startTime: number;
-}
-
 interface ColorTransition {
     from: [number, number, number, number];
     to: [number, number, number, number];
@@ -19,8 +11,6 @@ export class SimpleRenderer {
     private ctx: CanvasRenderingContext2D | null = null;
     private data: any = null;
     private container: HTMLElement | null = null;
-    private swapAnim: SwapAnimation | null = null;
-    private animFrameId: number | null = null;
     private transitionFrameId: number | null = null;
     private resizeObserver: ResizeObserver | null = null;
     private clickRegions: { x: number; y: number; w: number; h: number; action: () => void }[] = [];
@@ -32,7 +22,6 @@ export class SimpleRenderer {
     private transitions: Map<string, ColorTransition> = new Map();
     private childTransitions: Map<string, ColorTransition> = new Map();
 
-    private static readonly SWAP_DURATION = 400;
     private static readonly TRANSITION_DURATION = 200;
 
     private resizeRAF: number | null = null;
@@ -68,7 +57,6 @@ export class SimpleRenderer {
 
     unmount() {
         this.resizeObserver?.disconnect();
-        if (this.animFrameId !== null) cancelAnimationFrame(this.animFrameId);
         if (this.transitionFrameId !== null) cancelAnimationFrame(this.transitionFrameId);
         if (this.resizeRAF !== null) cancelAnimationFrame(this.resizeRAF);
         if (this.canvas && this.handleClick) this.canvas.removeEventListener('click', this.handleClick);
@@ -176,47 +164,22 @@ export class SimpleRenderer {
             this.transitionFrameId = null;
             if (this.hasActiveTransitions() || this.hasActiveTransitions(this.childTransitions)) {
                 this.render();
-                this.onTransitionFrame?.();
+                this.onTransitionFrame.forEach(cb => cb());
                 this.transitionFrameId = requestAnimationFrame(loop);
             }
         };
         this.transitionFrameId = requestAnimationFrame(loop);
     }
 
-    private onTransitionFrame: (() => void) | null = null;
+    private onTransitionFrame: Set<() => void> = new Set();
 
-    setTransitionFrameCallback(cb: (() => void) | null) {
-        this.onTransitionFrame = cb;
+    addTransitionFrameCallback(cb: () => void) {
+        this.onTransitionFrame.add(cb);
     }
 
-    animateSwap(_tracerKey: string, i: number, j: number) {
-        this.swapAnim = { tracerKey: _tracerKey, i, j, progress: 0, startTime: performance.now() };
-        this.animLoop();
+    removeTransitionFrameCallback(cb: () => void) {
+        this.onTransitionFrame.delete(cb);
     }
-
-    private onSwapFrame: (() => void) | null = null;
-
-    setSwapFrameCallback(cb: (() => void) | null) {
-        this.onSwapFrame = cb;
-    }
-
-    getSwapAnim() {
-        return this.swapAnim;
-    }
-
-    private animLoop = () => {
-        if (!this.swapAnim) return;
-        const elapsed = performance.now() - this.swapAnim.startTime;
-        this.swapAnim.progress = Math.min(elapsed / SimpleRenderer.SWAP_DURATION, 1);
-        this.render();
-        this.onSwapFrame?.();
-        if (this.swapAnim.progress < 1) {
-            this.animFrameId = requestAnimationFrame(this.animLoop);
-        } else {
-            this.swapAnim = null;
-            this.animFrameId = null;
-        }
-    };
 
     private easeInOut(t: number): number {
         // Cubic ease-out with slight overshoot for snappy feel
@@ -601,18 +564,15 @@ export class SimpleRenderer {
         const totalBarW = arr.length * barW + (arr.length - 1) * gap;
         const offsetX = chartX + (chartW - totalBarW) / 2;
 
-        const anim = this.swapAnim;
-
         for (let i = 0; i < arr.length; i++) {
             const value = typeof arr[i] === 'object' ? arr[i].value : arr[i];
             const selected = typeof arr[i] === 'object' ? arr[i].selected : false;
             const patched = typeof arr[i] === 'object' ? arr[i].patched : false;
             const barH = Math.max(2, (Math.abs(value) / maxVal) * (chartH - 20));
-            const isSwapping = !!(anim && (i === anim.i || i === anim.j));
             const bx = offsetX + i * (barW + gap);
             const by = chartY + chartH - barH;
 
-            const target = (isSwapping || patched) ? theme.status.error : (selected ? theme.status.info : theme.accent.default);
+            const target = patched ? theme.status.error : (selected ? theme.status.info : theme.accent.default);
             this.ctx.fillStyle = this.transitionColor(`chart-${i}`, target);
             this.ctx.beginPath();
             this.ctx.roundRect(bx, by, barW, barH, Math.min(3, barW / 2));
@@ -642,22 +602,14 @@ export class SimpleRenderer {
 
         if (title) this.drawTitleWithBadge(title, dsType, x + width / 2, startY - (large ? 15 : 10), fontSize);
 
-        const anim = this.swapAnim;
-        const t = anim ? this.easeInOut(anim.progress) : 0;
         const valFont = `${large ? 16 : 14}px monospace`;
 
         arr.forEach((item, i) => {
             const value = typeof item === 'object' ? item.value : item;
             const selected = typeof item === 'object' ? item.selected : false;
             const patched = typeof item === 'object' ? item.patched : false;
-            let offsetX = 0, isSwapping = false;
-            if (anim && (i === anim.i || i === anim.j)) {
-                isSwapping = true;
-                const dist = (anim.j - anim.i) * cellWidth;
-                offsetX = i === anim.i ? t * dist : -t * dist;
-            }
-            const cx = startX + i * cellWidth + offsetX;
-            const targetColor = (isSwapping || patched) ? theme.status.error : (selected ? theme.status.info : theme.cell.default);
+            const cx = startX + i * cellWidth;
+            const targetColor = patched ? theme.status.error : (selected ? theme.status.info : theme.cell.default);
             const cellColor = this.transitionColor(`${colorPrefix}-${i}`, targetColor);
             if (patched) { this.ctx!.shadowColor = theme.status.error; this.ctx!.shadowBlur = 10; }
             this.ctx!.fillStyle = cellColor;

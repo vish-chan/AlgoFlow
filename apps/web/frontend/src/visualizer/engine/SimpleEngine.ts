@@ -601,62 +601,11 @@ export class SimpleEngine {
         if (this.cursor >= this.chunks.length) return false;
         this.activeChildKey = null;
 
-        // Swap detection for Array1DTracer and ChartTracer
-        const cur = this.chunks[this.cursor];
-        let arrayPatch: Command | null = null;
-        for (const c of cur.commands) {
-            if (c.key !== null && c.method === 'patch' && (this.tracers[c.key]?.type === 'array' || this.tracers[c.key]?.type === 'chart')) {
-                arrayPatch = c;
-                break;
-            }
-        }
-
-        let swap: { key: string; i: number; j: number } | null = null;
-        let consumeCount = 1;
-
-        if (arrayPatch) {
-            const k = arrayPatch.key!;
-            const tracerType = this.tracers[k]?.type;
-            // Only animate swaps for default arrays (not LinkedList, Stack, Deque, etc.) and charts
-            const dsType = this.tracers[k]?.dsType;
-            if (tracerType === 'chart' || !dsType || dsType === 'ArrayList' || dsType === 'Deque' || dsType === 'Collection') {
-            const idxA = arrayPatch.args[0], valA = arrayPatch.args[1];
-            let foundDepatch = false;
-            const maxScan = Math.min(this.cursor + 6, this.chunks.length);
-            for (let i = this.cursor; i < maxScan; i++) {
-                for (const c of this.chunks[i].commands) {
-                    if (c.key === k && c.method === 'depatch') foundDepatch = true;
-                    else if (c.key === k && c.method === 'patch' && foundDepatch) {
-                        const idxB = c.args[0], valB = c.args[1];
-                        if (idxA !== idxB) {
-                            const oldA = this.tracers[k].data[idxA]?.value;
-                            const oldB = this.tracers[k].data[idxB]?.value;
-                            if (valA === oldB && valB === oldA) {
-                                swap = { key: k, i: idxA, j: idxB };
-                                consumeCount = i - this.cursor + 1;
-                            }
-                        }
-                        i = maxScan; break;
-                    } else if (c.key === k && c.method === 'set') {
-                        i = maxScan; break;
-                    }
-                }
-            }
-            }
-        }
-
-        // Apply chunks incrementally instead of replaying from scratch
-        for (let i = 0; i < consumeCount; i++) {
-            const chunk = this.chunks[this.cursor + i];
-            if (chunk) chunk.commands.forEach(cmd => this.applyCommand(cmd));
-        }
-        this.cursor += consumeCount;
+        const chunk = this.chunks[this.cursor];
+        chunk.commands.forEach(cmd => this.applyCommand(cmd));
+        this.cursor++;
         this.updateRenderer();
         this.notify();
-
-        if (swap) {
-            this.renderer.animateSwap('', swap.i, swap.j);
-        }
 
         return true;
     }

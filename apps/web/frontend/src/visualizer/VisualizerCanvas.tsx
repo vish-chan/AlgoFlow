@@ -217,21 +217,11 @@ function ChildPane({ child, renderer, autoScroll, hideTitle }: { child: any; ren
         };
     }, [paint]);
 
-    // Repaint on swap animation frames for array panes
-    useEffect(() => {
-        if (child?.type !== 'array') return;
-        const prev = renderer.onSwapFrame;
-        renderer.setSwapFrameCallback(() => {
-            prev?.();
-            paint();
-        });
-        return () => renderer.setSwapFrameCallback(prev);
-    }, [child, renderer, paint]);
-
     // Repaint during color transitions
     useEffect(() => {
-        renderer.setTransitionFrameCallback(() => paint());
-        return () => renderer.setTransitionFrameCallback(null);
+        const cb = () => paint();
+        renderer.addTransitionFrameCallback(cb);
+        return () => renderer.removeTransitionFrameCallback(cb);
     }, [renderer, paint]);
 
     // Auto-scroll log panes to bottom during playback
