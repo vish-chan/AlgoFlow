@@ -496,58 +496,44 @@ export class SimpleEngine {
         }
     }
 
+    private buildChildData(childKey: string): any | null {
+        const c = this.tracers[childKey];
+        if (!c) return null;
+        const _tracerKey = childKey;
+        if (c.type === 'graph') {
+            return { ...c, _tracerKey, dsType: this.treeKeys.has(childKey) ? 'Tree' : 'Graph', visitedEdges: [...c.visitedEdges], directed: c.directed, weighted: c.weighted, nodeLabels: c.nodeLabels, layout: c.layout, treeRoot: c.treeRoot, edges: c.edges, namedNodes: c.namedNodes, treeDims: this.getTreeMaxDimensions(childKey) };
+        }
+        if (c.type === 'log') {
+            return { ...c, _tracerKey, logs: [...c.logs] };
+        }
+        if (c.type === 'locals') {
+            return { ...c, _tracerKey, rows: [...c.rows], patchedRows: new Set(c.patchedRows), maxRows: this._maxLocalsRows, maxFrames: this._maxLocalsFrames };
+        }
+        if (c.type === 'variables') {
+            return { ...c, _tracerKey, patchState: c.patchState ? { ...c.patchState } : undefined };
+        }
+        return { ...c, _tracerKey };
+    }
+
+    private buildLayoutChildren(): any[] {
+        if (!this.root) return [];
+        const tracer = this.tracers[this.root];
+        if (tracer?.type !== 'layout') return [];
+        return tracer.children
+            .filter((childKey: string) => !this.hiddenChildren.has(childKey) && this.tracers[childKey]?.type !== 'code')
+            .map((childKey: string) => this.buildChildData(childKey))
+            .filter((child: any) => child);
+    }
+
     private updateRenderer() {
         if (this.batching) return;
         if (this.root && this.tracers[this.root]) {
             const tracer = this.tracers[this.root];
-            
-            if (tracer.type === 'chart') {
-                this.renderer.setData({ type: 'chart', data: tracer.data, title: tracer.title });
-            } else if (tracer.type === 'array') {
-                this.renderer.setData({ type: 'array', data: tracer.data, title: tracer.title, dsType: tracer.dsType });
-            } else if (tracer.type === 'array2d') {
-                this.renderer.setData({ type: 'array2d', data: tracer.data, title: tracer.title, dsType: tracer.dsType });
-            } else if (tracer.type === 'hashmap') {
-                this.renderer.setData({ type: 'hashmap', data: tracer.data, title: tracer.title });
-            } else if (tracer.type === 'log') {
-                this.renderer.setData({ type: 'log', logs: tracer.logs, title: tracer.title });
-            } else if (tracer.type === 'recursion') {
-                this.renderer.setData({ type: 'recursion', calls: tracer.calls, title: tracer.title });
-            } else if (tracer.type === 'locals') {
-                this.renderer.setData({ type: 'locals', rows: [...tracer.rows], patchedRows: new Set(tracer.patchedRows), title: tracer.title, maxRows: this._maxLocalsRows, maxFrames: this._maxLocalsFrames });
-            } else if (tracer.type === 'variables') {
-                this.renderer.setData({ type: 'variables', vars: tracer.vars, title: tracer.title, patchState: tracer.patchState });
-            } else if (tracer.type === 'graph') {
-                const graphKey = Object.entries(this.tracers).find(([, v]) => v === tracer)?.[0];
-                this.renderer.setData({ type: 'graph', adjMatrix: tracer.adjMatrix, nodes: tracer.nodes, visitedEdges: [...tracer.visitedEdges], title: tracer.title, directed: tracer.directed, weighted: tracer.weighted, nodeLabels: tracer.nodeLabels, layout: tracer.layout, treeRoot: tracer.treeRoot, edges: tracer.edges, namedNodes: tracer.namedNodes, treeDims: graphKey ? this.getTreeMaxDimensions(graphKey) : undefined });
-            } else if (tracer.type === 'layout') {
-                const children = tracer.children
-                    .filter((childKey: string) => !this.hiddenChildren.has(childKey) && this.tracers[childKey]?.type !== 'code')
-                    .map((childKey: string) => {
-                        const c = this.tracers[childKey];
-                        const _tracerKey = childKey;
-                        if (c?.type === 'graph') {
-                            return { ...c, _tracerKey, dsType: this.treeKeys.has(childKey) ? 'Tree' : 'Graph', visitedEdges: [...c.visitedEdges], directed: c.directed, weighted: c.weighted, nodeLabels: c.nodeLabels, layout: c.layout, treeRoot: c.treeRoot, edges: c.edges, namedNodes: c.namedNodes, treeDims: this.getTreeMaxDimensions(childKey) };
-                        }
-                        if (c?.type === 'chart') {
-                            return { ...c, _tracerKey };
-                        }
-                        if (c?.type === 'array') {
-                            return { ...c, _tracerKey, dsType: c.dsType };
-                        }
-                        if (c?.type === 'log') {
-                            return { ...c, _tracerKey, logs: [...c.logs] };
-                        }
-                        if (c?.type === 'variables') {
-                            return { ...c, _tracerKey, patchState: c.patchState ? { ...c.patchState } : undefined };
-                        }
-                        if (c?.type === 'locals') {
-                            return { ...c, _tracerKey, rows: [...c.rows], patchedRows: new Set(c.patchedRows), maxRows: this._maxLocalsRows, maxFrames: this._maxLocalsFrames };
-                        }
-                        return { ...c, _tracerKey };
-                    })
-                    .filter((child: any) => child);
-                this.renderer.setData({ type: 'layout', children });
+            if (tracer.type === 'layout') {
+                this.renderer.setData({ type: 'layout', children: this.buildLayoutChildren() });
+            } else {
+                const data = this.buildChildData(this.root);
+                if (data) { delete data._tracerKey; this.renderer.setData(data); }
             }
         }
     }
@@ -643,36 +629,7 @@ export class SimpleEngine {
     }
 
     getLayoutData(): any[] {
-        if (!this.root) return [];
-        const tracer = this.tracers[this.root];
-        if (tracer?.type !== 'layout') return [];
-        return tracer.children
-            .filter((childKey: string) => !this.hiddenChildren.has(childKey) && this.tracers[childKey]?.type !== 'code')
-            .map((childKey: string) => {
-                const c = this.tracers[childKey];
-                if (!c) return null;
-                const _tracerKey = childKey;
-                if (c.type === 'graph') {
-                    return { ...c, _tracerKey, dsType: this.treeKeys.has(childKey) ? 'Tree' : 'Graph', visitedEdges: [...c.visitedEdges], treeDims: this.getTreeMaxDimensions(childKey) };
-                }
-                if (c.type === 'chart') {
-                    return { ...c, _tracerKey };
-                }
-                if (c.type === 'array') {
-                    return { ...c, _tracerKey };
-                }
-                if (c.type === 'log') {
-                    return { ...c, _tracerKey, logs: [...c.logs] };
-                }
-                if (c.type === 'locals') {
-                    return { ...c, _tracerKey, rows: [...c.rows], patchedRows: new Set(c.patchedRows), maxRows: this._maxLocalsRows, maxFrames: this._maxLocalsFrames };
-                }
-                if (c.type === 'variables') {
-                    return { ...c, _tracerKey, patchState: c.patchState ? { ...c.patchState } : undefined };
-                }
-                return { ...c, _tracerKey };
-            })
-            .filter((child: any) => child);
+        return this.buildLayoutChildren();
     }
 
     getRenderer(): SimpleRenderer {
