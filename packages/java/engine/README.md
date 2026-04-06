@@ -40,7 +40,10 @@ Outputs `visualization.json` — an array of tracer commands consumed by the fro
 | Graphs | `@Graph int[][] adj` | GraphTracer |
 | Graphs (adj list) | `@Graph Map<K, List<V>> adj` | GraphTracer |
 | Binary trees | `@Tree TreeNode root` | GraphTracer + layoutTree |
+| Binary trees | `TreeNode root` | Auto-detected (2 self-refs with left/right names) |
 | Linked lists | `@LinkedList ListNode head` | Array1DTracer |
+| Linked lists | `ListNode head` | Auto-detected (1 self-ref) |
+| Doubly linked lists | `DListNode head` | Auto-detected (2 self-refs with next/prev names) |
 | Lists | `List<Integer> list` | Array1DTracer |
 | 2D Lists | `List<List<Integer>> grid` | Array2DTracer |
 | Maps | `Map<K, V> map` | Array2DTracer |
@@ -145,4 +148,33 @@ Receives events from the agent layer and translates them into tracer commands.
 
 ## Limitations
 
-- `@Tree` auto-detection requires exactly two self-referential fields in the node class
+- Tree auto-detection requires at least two self-referential fields with tree-like names (`left`/`right`, `lChild`/`rChild`, etc.)
+- Doubly linked list nodes with circular `next`/`prev` references work for visualization but local variable display shows the primary value only
+
+## Testing
+
+The engine has 32 snapshot tests covering every frontend example algorithm. Each test runs the example through the agent and compares the `visualization.json` output against a golden snapshot.
+
+```bash
+# Build the engine
+mvn package -DskipTests
+
+# Verify all snapshots match
+cd src/test/snapshot
+./snapshot_test.sh verify
+```
+
+| Command | Purpose |
+|---------|---------|
+| `./snapshot_test.sh verify` | Compare current output against golden snapshots |
+| `./snapshot_test.sh generate` | Regenerate all golden snapshots |
+| `./snapshot_test.sh run <slug>` | Run a single example (e.g. `bubble_sort`) |
+
+If `verify` shows **DIFF**, inspect the diff — if the change is intentional, run `generate` to update the snapshots.
+
+When adding new frontend algorithm examples, re-extract and regenerate:
+
+```bash
+python3 extract_examples.py
+./snapshot_test.sh generate
+```
