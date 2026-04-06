@@ -41,7 +41,7 @@ public class PrimitiveArray2DVisualizer implements ObjectVisualizer {
             int col = (Integer) args[0];
             Object value = args[1];
             _tracer.patch(row, col, value);
-            updateDisplay();
+            Tracer.delay();
             _tracer.depatch(row, col);
         }
     }
