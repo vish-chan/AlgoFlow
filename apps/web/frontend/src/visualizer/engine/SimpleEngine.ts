@@ -2,6 +2,31 @@ import { SimpleRenderer } from './SimpleRenderer';
 import type { Command, Chunk, Tracer, GraphTracer } from './types';
 export type { Command, Chunk } from './types';
 
+// Helpers
+function unwrap2D(raw: any): any[] {
+    return (raw.length === 1 && Array.isArray(raw[0]) && Array.isArray(raw[0][0])) ? raw[0] : raw;
+}
+
+function toCells(arr: any[]) {
+    return arr.map((v: any) => ({ value: v, selected: false, patched: false }));
+}
+
+function toCells2D(raw: any) {
+    return unwrap2D(raw).map((row: any[]) => row.map((v: any) => ({ value: v, selected: false, patched: false })));
+}
+
+function parseTitleDsType(rawTitle: string): { title: string; dsType?: string } {
+    const colonIdx = rawTitle.indexOf(': ');
+    if (colonIdx >= 0) return { dsType: rawTitle.substring(0, colonIdx), title: rawTitle.substring(colonIdx + 2) };
+    return { title: rawTitle };
+}
+
+function resolveNodeIdx(t: GraphTracer, id: string): number {
+    if (t.namedNodes.has(id)) return t.namedNodes.get(id)!;
+    const n = Number(id);
+    return isNaN(n) ? -1 : Math.floor(n);
+}
+
 export class SimpleEngine {
     private chunks: Chunk[] = [];
     private cursor = 0;
@@ -75,8 +100,7 @@ export class SimpleEngine {
                 if (title === 'locals') localsKeys.add(key);
             }
             if (method === 'set' && localsKeys.has(key)) {
-                const rawData = args[0];
-                const rows = (rawData?.length === 1 && Array.isArray(rawData[0]) && Array.isArray(rawData[0][0])) ? rawData[0] : rawData;
+                const rows = unwrap2D(args[0]);
                 if (Array.isArray(rows)) {
                     this._maxLocalsRows = Math.max(this._maxLocalsRows, rows.length);
                     let frames = 0;
@@ -101,7 +125,6 @@ export class SimpleEngine {
             } else if (method === 'layoutTree') {
                 t.isTree = true;
                 this.treeKeys.add(key);
-                // Compute depth and leaf count for this rebuild
                 const n = t.namedNodes.size;
                 const children: number[][] = Array.from({ length: n }, () => []);
                 const hasParent = new Set<number>();
@@ -144,359 +167,330 @@ export class SimpleEngine {
         this.renderer.setData(null);
     }
 
-    getActiveChildKey(): string | null {
-        return this.activeChildKey;
-    }
+    getActiveChildKey(): string | null { return this.activeChildKey; }
 
     getActiveChildType(): string | null {
         if (!this.activeChildKey) return null;
         return this.tracers[this.activeChildKey]?.type || null;
     }
 
-    getHighlightedLine(): number | null {
-        return this.highlightedLine;
-    }
+    getHighlightedLine(): number | null { return this.highlightedLine; }
+
+    // --- Command dispatch ---
 
     private applyCommand(command: Command) {
         const { key, method, args } = command;
 
-        // Track which tracer is actively being updated (prefer visual types over bookkeeping)
         if (key !== null && this.tracers[key] && this.tracers[key].type !== 'code') {
-            const newPriority = SimpleEngine.TYPE_PRIORITY[this.tracers[key].type] ?? 2;
-            const curPriority = this.activeChildKey && this.tracers[this.activeChildKey]
+            const newPri = SimpleEngine.TYPE_PRIORITY[this.tracers[key].type] ?? 2;
+            const curPri = this.activeChildKey && this.tracers[this.activeChildKey]
                 ? (SimpleEngine.TYPE_PRIORITY[this.tracers[this.activeChildKey].type] ?? 2) : -1;
-            if (newPriority >= curPriority) this.activeChildKey = key;
+            if (newPri >= curPri) this.activeChildKey = key;
         }
 
-        if (key === null && method === 'setRoot') {
-            this.root = args[0];
-        } else if (key !== null && method === 'ChartTracer') {
+        if (key === null) {
+            if (method === 'setRoot') this.root = args[0];
+            return;
+        }
+
+        const handler = this.dispatch[method];
+        if (handler) {
+            handler(key, args);
+        }
+    }
+
+    private dispatch: Record<string, (key: string, args: any[]) => void> = {
+        // --- Tracer creation ---
+        ChartTracer: (key, args) => {
             this.tracers[key] = { type: 'chart', data: [], title: args[0] || '' };
-        } else if (key !== null && method === 'Array1DTracer') {
-            const rawTitle = args[0] || '';
-            const colonIdx = rawTitle.indexOf(': ');
-            const dsType = colonIdx >= 0 ? rawTitle.substring(0, colonIdx) : undefined;
-            const displayTitle = colonIdx >= 0 ? rawTitle.substring(colonIdx + 2) : rawTitle;
-            this.tracers[key] = { type: 'array', data: [], title: displayTitle, dsType };
-        } else if (key !== null && method === 'Array2DTracer') {
+        },
+        Array1DTracer: (key, args) => {
+            const { title, dsType } = parseTitleDsType(args[0] || '');
+            this.tracers[key] = { type: 'array', data: [], title, dsType };
+        },
+        Array2DTracer: (key, args) => {
             const title = args[0] || '';
-            if (title.toLowerCase().includes('callstack')) {
-                this.tracers[key] = { type: 'recursion', calls: [], title: args[0] };
-            } else if (title.toLowerCase() === 'locals') {
-                this.tracers[key] = { type: 'locals', rows: [], patchedRows: new Set<number>(), title: args[0] };
-            } else if (title.toLowerCase().includes('variable') || title.toLowerCase().includes('local')) {
-                this.tracers[key] = { type: 'variables', vars: {}, title: args[0] };
-            } else if (title.toLowerCase().startsWith('map: ') || title.toLowerCase().startsWith('map:')) {
-                const mapTitle = title.replace(/^map:\s*/i, '');
-                this.tracers[key] = { type: 'hashmap', data: [], title: mapTitle };
+            const lower = title.toLowerCase();
+            if (lower.includes('callstack')) {
+                this.tracers[key] = { type: 'recursion', calls: [], title };
+            } else if (lower === 'locals') {
+                this.tracers[key] = { type: 'locals', rows: [], patchedRows: new Set(), title };
+            } else if (lower.includes('variable') || lower.includes('local')) {
+                this.tracers[key] = { type: 'variables', vars: {}, title };
+            } else if (lower.startsWith('map:')) {
+                this.tracers[key] = { type: 'hashmap', data: [], title: title.replace(/^map:\s*/i, '') };
             } else {
-                const colonIdx = title.indexOf(': ');
-                const dsType = colonIdx >= 0 ? title.substring(0, colonIdx) : undefined;
-                const displayTitle = colonIdx >= 0 ? title.substring(colonIdx + 2) : title;
-                this.tracers[key] = { type: 'array2d', data: [], title: displayTitle, dsType };
+                const { title: t, dsType } = parseTitleDsType(title);
+                this.tracers[key] = { type: 'array2d', data: [], title: t, dsType };
             }
-        } else if (key !== null && method === 'LogTracer') {
+        },
+        LogTracer: (key, args) => {
             this.tracers[key] = { type: 'log', logs: [], title: args[0] || 'Log' };
-        } else if (key !== null && method === 'CodeTracer') {
+        },
+        CodeTracer: (key, args) => {
             this.tracers[key] = { type: 'code', line: null, title: args[0] || 'Code' };
-        } else if (key !== null && method === 'GraphTracer') {
-            this.tracers[key] = { type: 'graph', adjMatrix: [], nodes: [], visitedEdges: new Set<string>(), layout: 'circle', title: args[0] || 'Graph', namedNodes: new Map<string, number>(), nodeLabels: [] as string[], edges: [] as [number, number][], treeRoot: null as string | null };
-        } else if (key !== null && method === 'VerticalLayout') {
+        },
+        GraphTracer: (key, args) => {
+            this.tracers[key] = { type: 'graph', adjMatrix: [], nodes: [], visitedEdges: new Set(), layout: 'circle', title: args[0] || 'Graph', namedNodes: new Map(), nodeLabels: [], edges: [], treeRoot: null };
+        },
+        VerticalLayout: (key, args) => {
             this.tracers[key] = { type: 'layout', children: args[0] || [], title: 'Layout' };
-        } else if (key !== null && method === 'set') {
-            if (this.tracers[key]?.type === 'chart' || this.tracers[key]?.type === 'array') {
-                this.tracers[key].data = args[0].map((v: any) => ({ value: v, selected: false, patched: false }));
-            } else if (this.tracers[key]?.type === 'array2d') {
-                const rawData = args[0];
-                const unwrapped = (rawData.length === 1 && Array.isArray(rawData[0]) && Array.isArray(rawData[0][0])) 
-                    ? rawData[0] 
-                    : rawData;
-                this.tracers[key].data = unwrapped.map((row: any[]) =>
-                    row.map((v: any) => ({ value: v, selected: false, patched: false }))
-                );
-            } else if (this.tracers[key]?.type === 'hashmap') {
-                const rawData = args[0];
-                const unwrapped = (rawData.length === 1 && Array.isArray(rawData[0]) && Array.isArray(rawData[0][0]))
-                    ? rawData[0]
-                    : rawData;
-                this.tracers[key].data = unwrapped.map((row: any[]) =>
-                    row.map((v: any) => ({ value: v, selected: false, patched: false }))
-                );
-            } else if (this.tracers[key]?.type === 'log') {
-                this.tracers[key].logs = [args[0]];
-            } else if (this.tracers[key]?.type === 'recursion') {
-                const rawData = args[0];
-                let flatData = rawData;
-                if (Array.isArray(rawData) && rawData.length === 1 && Array.isArray(rawData[0]) && Array.isArray(rawData[0][0])) {
-                    flatData = rawData[0];
-                }
-                if (Array.isArray(flatData) && flatData.length > 0) {
-                    this.tracers[key].calls = flatData.map((call: string) => {
-                        const raw = String(call);
-                        const m = raw.replace(/\s*recursive\s*/gi, '').trim().replace(/,\s*$/, '');
-                        return { method: m, params: [], active: false };
-                    });
-                    this.tracers[key].calls[0].active = true;
-                } else {
-                    this.tracers[key].calls = [];
-                }
-            } else if (this.tracers[key]?.type === 'graph') {
-                const raw = args[0];
-                const matrix = (raw.length === 1 && Array.isArray(raw[0]) && Array.isArray(raw[0][0])) ? raw[0] : raw;
-                this.tracers[key].adjMatrix = matrix;
-                this.tracers[key].nodes = matrix.map((_: any, i: number) => ({ state: 'default', index: i }));
-                this.tracers[key].visitedEdges = new Set<string>();
-            } else if (this.tracers[key]?.type === 'locals') {
-                const rawData = args[0];
-                const unwrapped = (rawData.length === 1 && Array.isArray(rawData[0]) && Array.isArray(rawData[0][0])) ? rawData[0] : rawData;
-                this.tracers[key].rows = unwrapped.map((r: any[]) => [r[0], r[1]]);
-                this.tracers[key].patchedRows = new Set<number>();
-            } else if (this.tracers[key]?.type === 'variables') {
-                const rawData = args[0];
-                let flatData = rawData;
-                if (Array.isArray(rawData) && rawData.length === 1 && Array.isArray(rawData[0]) && Array.isArray(rawData[0][0])) {
-                    flatData = rawData[0];
-                }
-                const vars: Record<string, any> = {};
-                if (Array.isArray(flatData) && flatData.length > 0) {
-                    flatData.forEach((item: any) => {
-                        if (Array.isArray(item) && item.length === 2) {
-                            vars[item[0]] = item[1];
-                        }
-                    });
-                }
-                this.tracers[key].vars = vars;
-            }
-        } else if (key !== null && method === 'print') {
-            if (this.tracers[key]?.type === 'code') {
-                const n = parseInt(String(args[0]));
-                if (!isNaN(n)) this.highlightedLine = n;
-            } else if (this.tracers[key]?.type === 'log') {
-                const logs = this.tracers[key].logs;
-                if (logs.length > 0 && !logs[logs.length - 1].endsWith('\n')) {
-                    logs[logs.length - 1] += args[0];
-                } else {
-                    logs.push(args[0]);
-                }
-            }
-        } else if (key !== null && method === 'println') {
-            if (this.tracers[key]?.type === 'code') {
-                const n = parseInt(String(args[0]));
-                if (!isNaN(n)) this.highlightedLine = n;
-            } else if (this.tracers[key]?.type === 'log') {
-                const logs = this.tracers[key].logs;
-                if (logs.length > 0 && !logs[logs.length - 1].endsWith('\n')) {
-                    logs[logs.length - 1] += args[0] + '\n';
-                } else {
-                    logs.push(args[0] + '\n');
-                }
-            }
-        } else if (key !== null && method === 'push') {
-            if (this.tracers[key]?.type === 'recursion') {
-                const rawMethod = String(args[0]);
-                const method = rawMethod.replace(/\s*recursive\s*/gi, '').trim().replace(/,\s*$/, '');
-                this.tracers[key].calls.push({ method, params: args[1] || [], active: true });
-            }
-        } else if (key !== null && method === 'pop') {
-            if (this.tracers[key]?.type === 'recursion' && this.tracers[key].calls.length > 0) {
-                this.tracers[key].calls[this.tracers[key].calls.length - 1].active = false;
-            }
-        } else if (key !== null && method === 'reset') {
-            if (this.tracers[key]?.type === 'graph') {
-                this.tracers[key].adjMatrix = [];
-                this.tracers[key].nodes = [];
-                this.tracers[key].visitedEdges = new Set<string>();
-                this.tracers[key].namedNodes = new Map<string, number>();
-                this.tracers[key].nodeLabels = [];
-                this.tracers[key].edges = [];
-                this.tracers[key].treeRoot = null;
-            }
-        } else if (key !== null && method === 'directed') {
-            if (this.tracers[key]?.type === 'graph') {
-                this.tracers[key].directed = !!args[0];
-            }
-        } else if (key !== null && method === 'weighted') {
-            if (this.tracers[key]?.type === 'graph') {
-                this.tracers[key].weighted = !!args[0];
-            }
-        } else if (key !== null && method === 'addNode') {
-            if (this.tracers[key]?.type === 'graph') {
-                const t = this.tracers[key];
-                const id = String(args[0]);
-                if (!t.namedNodes.has(id)) {
-                    const idx = t.nodes.length;
-                    t.namedNodes.set(id, idx);
-                    t.nodeLabels.push(String(args[1] ?? id));
-                    t.nodes.push({ state: 'default', index: idx });
-                    // Expand adjacency matrix
-                    const n = t.nodes.length;
-                    for (const row of t.adjMatrix) { row.push(0); }
-                    t.adjMatrix.push(new Array(n).fill(0));
-                }
-            }
-        } else if (key !== null && method === 'addEdge') {
-            if (this.tracers[key]?.type === 'graph') {
-                const t = this.tracers[key];
-                const fromId = String(args[0]), toId = String(args[1]);
-                const from = t.namedNodes.has(fromId) ? t.namedNodes.get(fromId) : (isNaN(Number(fromId)) ? -1 : Math.floor(Number(fromId)));
-                const to = t.namedNodes.has(toId) ? t.namedNodes.get(toId) : (isNaN(Number(toId)) ? -1 : Math.floor(Number(toId)));
-                if (from >= 0 && to >= 0 && t.adjMatrix[from]) {
-                    t.adjMatrix[from][to] = args[2] ?? 1;
-                    const posKey = `${from}-${to}`;
-                    const origIdx = t.removedEdgePositions?.get(posKey);
-                    if (origIdx !== undefined) {
-                        t.edges.splice(Math.min(origIdx, t.edges.length), 0, [from, to]);
-                        t.removedEdgePositions.delete(posKey);
+        },
+
+        // --- Data set ---
+        set: (key, args) => {
+            const t = this.tracers[key];
+            if (!t) return;
+            switch (t.type) {
+                case 'chart':
+                case 'array':
+                    t.data = toCells(args[0]);
+                    break;
+                case 'array2d':
+                case 'hashmap':
+                    t.data = toCells2D(args[0]);
+                    break;
+                case 'log':
+                    t.logs = [args[0]];
+                    break;
+                case 'recursion': {
+                    let flat = unwrap2D(args[0]);
+                    if (Array.isArray(flat) && flat.length > 0) {
+                        t.calls = flat.map((call: string) => ({
+                            method: String(call).replace(/\s*recursive\s*/gi, '').trim().replace(/,\s*$/, ''),
+                            params: [], active: false,
+                        }));
+                        t.calls[0].active = true;
                     } else {
-                        t.edges.push([from, to]);
+                        t.calls = [];
                     }
+                    break;
                 }
-            }
-        } else if (key !== null && method === 'removeEdge') {
-            if (this.tracers[key]?.type === 'graph') {
-                const t = this.tracers[key];
-                const fromId = String(args[0]), toId = String(args[1]);
-                const from = t.namedNodes.has(fromId) ? t.namedNodes.get(fromId) : (isNaN(Number(fromId)) ? -1 : Math.floor(Number(fromId)));
-                const to = t.namedNodes.has(toId) ? t.namedNodes.get(toId) : (isNaN(Number(toId)) ? -1 : Math.floor(Number(toId)));
-                if (from >= 0 && to >= 0 && t.adjMatrix[from]) {
-                    t.adjMatrix[from][to] = 0;
-                    const idx = t.edges.findIndex(([a, b]: [number, number]) => a === from && b === to);
-                    if (idx >= 0) {
-                        if (!t.removedEdgePositions) t.removedEdgePositions = new Map();
-                        t.removedEdgePositions.set(`${from}-${to}`, idx);
-                        t.edges.splice(idx, 1);
+                case 'graph': {
+                    const matrix = unwrap2D(args[0]);
+                    t.adjMatrix = matrix;
+                    t.nodes = matrix.map((_: any, i: number) => ({ state: 'default', index: i }));
+                    t.visitedEdges = new Set();
+                    break;
+                }
+                case 'locals': {
+                    const rows = unwrap2D(args[0]);
+                    t.rows = rows.map((r: any[]) => [r[0], r[1]]);
+                    t.patchedRows = new Set();
+                    break;
+                }
+                case 'variables': {
+                    let flat = unwrap2D(args[0]);
+                    const vars: Record<string, any> = {};
+                    if (Array.isArray(flat)) {
+                        flat.forEach((item: any) => {
+                            if (Array.isArray(item) && item.length === 2) vars[item[0]] = item[1];
+                        });
                     }
+                    t.vars = vars;
+                    break;
                 }
             }
-        } else if (key !== null && method === 'layoutCircle') {
-            if (this.tracers[key]?.type === 'graph') {
-                this.tracers[key].layout = 'circle';
+        },
+
+        // --- Print ---
+        print: (key, args) => { this.handlePrint(key, args, false); },
+        println: (key, args) => { this.handlePrint(key, args, true); },
+
+        // --- Select / Deselect ---
+        select: (key, args) => { this.handleCellOp(key, args, 'select'); },
+        deselect: (key, args) => { this.handleCellOp(key, args, 'deselect'); },
+        patch: (key, args) => { this.handleCellOp(key, args, 'patch'); },
+        depatch: (key, args) => { this.handleCellOp(key, args, 'depatch'); },
+
+        // --- Recursion ---
+        push: (key, args) => {
+            const t = this.tracers[key];
+            if (t?.type === 'recursion') {
+                const m = String(args[0]).replace(/\s*recursive\s*/gi, '').trim().replace(/,\s*$/, '');
+                t.calls.push({ method: m, params: args[1] || [], active: true });
             }
-        } else if (key !== null && method === 'layoutTree') {
-            if (this.tracers[key]?.type === 'graph') {
-                this.tracers[key].layout = 'tree';
-                this.tracers[key].treeRoot = String(args[0]);
+        },
+        pop: (key, _args) => {
+            const t = this.tracers[key];
+            if (t?.type === 'recursion' && t.calls.length > 0) {
+                t.calls[t.calls.length - 1].active = false;
             }
-        } else if (key !== null && method === 'visit') {
-            if (this.tracers[key]?.type === 'graph') {
-                const t = this.tracers[key];
-                // Clear any previously active node (only one should be active at a time)
-                for (const node of t.nodes) {
-                    if (node.state === 'active') node.state = 'default';
+        },
+
+        // --- Graph ---
+        reset: (key, _args) => {
+            const t = this.tracers[key];
+            if (t?.type === 'graph') {
+                t.adjMatrix = []; t.nodes = []; t.visitedEdges = new Set();
+                t.namedNodes = new Map(); t.nodeLabels = []; t.edges = []; t.treeRoot = null;
+            }
+        },
+        directed: (key, args) => {
+            const t = this.tracers[key];
+            if (t?.type === 'graph') t.directed = !!args[0];
+        },
+        weighted: (key, args) => {
+            const t = this.tracers[key];
+            if (t?.type === 'graph') t.weighted = !!args[0];
+        },
+        addNode: (key, args) => {
+            const t = this.tracers[key];
+            if (t?.type !== 'graph') return;
+            const id = String(args[0]);
+            if (t.namedNodes.has(id)) return;
+            const idx = t.nodes.length;
+            t.namedNodes.set(id, idx);
+            t.nodeLabels.push(String(args[1] ?? id));
+            t.nodes.push({ state: 'default', index: idx });
+            const n = t.nodes.length;
+            for (const row of t.adjMatrix) row.push(0);
+            t.adjMatrix.push(new Array(n).fill(0));
+        },
+        addEdge: (key, args) => {
+            const t = this.tracers[key];
+            if (t?.type !== 'graph') return;
+            const from = resolveNodeIdx(t, String(args[0]));
+            const to = resolveNodeIdx(t, String(args[1]));
+            if (from < 0 || to < 0 || !t.adjMatrix[from]) return;
+            t.adjMatrix[from][to] = args[2] ?? 1;
+            const posKey = `${from}-${to}`;
+            const origIdx = t.removedEdgePositions?.get(posKey);
+            if (origIdx !== undefined) {
+                t.edges.splice(Math.min(origIdx, t.edges.length), 0, [from, to]);
+                t.removedEdgePositions!.delete(posKey);
+            } else {
+                t.edges.push([from, to]);
+            }
+        },
+        removeEdge: (key, args) => {
+            const t = this.tracers[key];
+            if (t?.type !== 'graph') return;
+            const from = resolveNodeIdx(t, String(args[0]));
+            const to = resolveNodeIdx(t, String(args[1]));
+            if (from < 0 || to < 0 || !t.adjMatrix[from]) return;
+            t.adjMatrix[from][to] = 0;
+            const idx = t.edges.findIndex(([a, b]) => a === from && b === to);
+            if (idx >= 0) {
+                if (!t.removedEdgePositions) t.removedEdgePositions = new Map();
+                t.removedEdgePositions.set(`${from}-${to}`, idx);
+                t.edges.splice(idx, 1);
+            }
+        },
+        layoutCircle: (key, _args) => {
+            const t = this.tracers[key];
+            if (t?.type === 'graph') t.layout = 'circle';
+        },
+        layoutTree: (key, args) => {
+            const t = this.tracers[key];
+            if (t?.type === 'graph') { t.layout = 'tree'; t.treeRoot = String(args[0]); }
+        },
+        visit: (key, args) => {
+            const t = this.tracers[key];
+            if (t?.type !== 'graph') return;
+            for (const node of t.nodes) { if (node.state === 'active') node.state = 'default'; }
+            const nodeIdx = resolveNodeIdx(t, String(args[0]));
+            if (nodeIdx >= 0 && t.nodes[nodeIdx]) t.nodes[nodeIdx].state = 'active';
+            if (args.length >= 2) {
+                const src = resolveNodeIdx(t, String(args[1]));
+                if (src >= 0 && src !== nodeIdx) {
+                    const a = Math.min(src, nodeIdx), b = Math.max(src, nodeIdx);
+                    t.visitedEdges.add(`${a}-${b}`);
                 }
-                const id = String(args[0]);
-                const nodeIdx = t.namedNodes.has(id) ? t.namedNodes.get(id) : (isNaN(Number(id)) ? -1 : Math.floor(Number(id)));
-                if (nodeIdx >= 0 && t.nodes[nodeIdx]) {
-                    t.nodes[nodeIdx].state = 'active';
-                }
-                if (args.length >= 2) {
-                    const srcId = String(args[1]);
-                    const src = t.namedNodes.has(srcId) ? t.namedNodes.get(srcId) : (isNaN(Number(srcId)) ? -1 : Math.floor(Number(srcId)));
-                    if (src >= 0 && src !== nodeIdx) {
-                        const a = Math.min(src, nodeIdx), b = Math.max(src, nodeIdx);
-                        t.visitedEdges.add(`${a}-${b}`);
-                    }
-                }
             }
-        } else if (key !== null && method === 'leave') {
-            if (this.tracers[key]?.type === 'graph') {
-                const t = this.tracers[key];
-                const id = String(args[0]);
-                const nodeIdx = t.namedNodes.has(id) ? t.namedNodes.get(id) : (isNaN(Number(id)) ? -1 : Math.floor(Number(id)));
-                if (nodeIdx >= 0 && t.nodes[nodeIdx]) {
-                    t.nodes[nodeIdx].state = 'default';
-                }
-            }
-        } else if (key !== null && method === 'setVar') {
-            if (this.tracers[key]?.type === 'variables') {
-                this.tracers[key].vars[args[0]] = args[1];
-            }
-        } else if (key !== null && method === 'updateNode') {
-            if (this.tracers[key]?.type === 'graph') {
-                const t = this.tracers[key];
-                const id = String(args[0]);
-                const nodeIdx = t.namedNodes.has(id) ? t.namedNodes.get(id) : -1;
-                if (nodeIdx >= 0 && args.length >= 2) {
-                    t.nodeLabels[nodeIdx] = String(args[1]);
-                }
-            }
-        } else if (key !== null && method === 'select') {
-            if ((this.tracers[key]?.type === 'array' || this.tracers[key]?.type === 'chart') && this.tracers[key]?.data?.[args[0]]) {
-                this.tracers[key].data[args[0]].selected = true;
-                this.tracers[key].data[args[0]].patched = false;
-            } else if (this.tracers[key]?.type === 'array2d' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
-                this.tracers[key].data[args[0]][args[1]].selected = true;
-                this.tracers[key].data[args[0]][args[1]].patched = false;
-            } else if (this.tracers[key]?.type === 'hashmap' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
-                this.tracers[key].data[args[0]][args[1]].selected = true;
-                this.tracers[key].data[args[0]][args[1]].patched = false;
-            } else if (this.tracers[key]?.type === 'recursion' && this.tracers[key]?.calls?.[args[0]]) {
-                this.tracers[key].calls[args[0]].active = true;
-            }
-        } else if (key !== null && method === 'deselect') {
-            if ((this.tracers[key]?.type === 'array' || this.tracers[key]?.type === 'chart') && this.tracers[key]?.data?.[args[0]]) {
-                this.tracers[key].data[args[0]].selected = false;
-            } else if (this.tracers[key]?.type === 'array2d' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
-                this.tracers[key].data[args[0]][args[1]].selected = false;
-            } else if (this.tracers[key]?.type === 'hashmap' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
-                this.tracers[key].data[args[0]][args[1]].selected = false;
-            } else if (this.tracers[key]?.type === 'recursion' && this.tracers[key]?.calls?.[args[0]]) {
-                this.tracers[key].calls[args[0]].active = false;
-            }
-        } else if (key !== null && method === 'patch') {
-            if ((this.tracers[key]?.type === 'array' || this.tracers[key]?.type === 'chart') && this.tracers[key]?.data?.[args[0]]) {
-                this.tracers[key].data[args[0]].value = args[1];
-                this.tracers[key].data[args[0]].patched = true;
-                this.tracers[key].data[args[0]].selected = false;
-            } else if (this.tracers[key]?.type === 'array2d' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
-                this.tracers[key].data[args[0]][args[1]].value = args[2];
-                this.tracers[key].data[args[0]][args[1]].patched = true;
-                this.tracers[key].data[args[0]][args[1]].selected = false;
-            } else if (this.tracers[key]?.type === 'hashmap' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
-                this.tracers[key].data[args[0]][args[1]].value = args[2];
-                this.tracers[key].data[args[0]][args[1]].patched = true;
-                this.tracers[key].data[args[0]][args[1]].selected = false;
-            } else if (this.tracers[key]?.type === 'recursion' && this.tracers[key]?.calls?.[args[0]]) {
-                this.tracers[key].calls[args[0]].patched = true;
-            } else if (this.tracers[key]?.type === 'locals') {
-                this.tracers[key].patchedRows.add(Math.floor(args[0]));
-            } else if (this.tracers[key]?.type === 'variables') {
-                if (args.length >= 2) {
-                    const varNames = Object.keys(this.tracers[key].vars);
-                    const rowIndex = Math.floor(args[0]);
-                    const colIndex = Math.floor(args[1]);
-                    const varName = varNames[rowIndex];
-                    if (varName && this.tracers[key].vars.hasOwnProperty(varName)) {
-                        if (!this.tracers[key].patchState) {
-                            this.tracers[key].patchState = {};
-                        }
-                        this.tracers[key].patchState[varName] = { patched: true, col: colIndex };
-                    }
-                }
-            }
-        } else if (key !== null && method === 'depatch') {
-            if ((this.tracers[key]?.type === 'array' || this.tracers[key]?.type === 'chart') && this.tracers[key]?.data?.[args[0]]) {
-                this.tracers[key].data[args[0]].patched = false;
-            } else if (this.tracers[key]?.type === 'array2d' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
-                this.tracers[key].data[args[0]][args[1]].patched = false;
-            } else if (this.tracers[key]?.type === 'hashmap' && this.tracers[key]?.data?.[args[0]]?.[args[1]]) {
-                this.tracers[key].data[args[0]][args[1]].patched = false;
-            } else if (this.tracers[key]?.type === 'recursion' && this.tracers[key]?.calls?.[args[0]]) {
-                this.tracers[key].calls[args[0]].patched = false;
-            } else if (this.tracers[key]?.type === 'locals') {
-                this.tracers[key].patchedRows.delete(Math.floor(args[0]));
-            } else if (this.tracers[key]?.type === 'variables') {
-                if (args.length >= 1) {
-                    const varNames = Object.keys(this.tracers[key].vars);
-                    const rowIndex = Math.floor(args[0]);
-                    const varName = varNames[rowIndex];
-                    if (varName && this.tracers[key].patchState?.[varName]) {
-                        delete this.tracers[key].patchState[varName];
-                    }
-                }
+        },
+        leave: (key, args) => {
+            const t = this.tracers[key];
+            if (t?.type !== 'graph') return;
+            const nodeIdx = resolveNodeIdx(t, String(args[0]));
+            if (nodeIdx >= 0 && t.nodes[nodeIdx]) t.nodes[nodeIdx].state = 'default';
+        },
+        updateNode: (key, args) => {
+            const t = this.tracers[key];
+            if (t?.type !== 'graph') return;
+            const nodeIdx = resolveNodeIdx(t, String(args[0]));
+            if (nodeIdx >= 0 && args.length >= 2) t.nodeLabels[nodeIdx] = String(args[1]);
+        },
+
+        // --- Variables ---
+        setVar: (key, args) => {
+            const t = this.tracers[key];
+            if (t?.type === 'variables') t.vars[args[0]] = args[1];
+        },
+    };
+
+    private handlePrint(key: string, args: any[], newline: boolean) {
+        const t = this.tracers[key];
+        if (!t) return;
+        if (t.type === 'code') {
+            const n = parseInt(String(args[0]));
+            if (!isNaN(n)) this.highlightedLine = n;
+        } else if (t.type === 'log') {
+            const text = newline ? args[0] + '\n' : args[0];
+            if (t.logs.length > 0 && !t.logs[t.logs.length - 1].endsWith('\n')) {
+                t.logs[t.logs.length - 1] += text;
+            } else {
+                t.logs.push(text);
             }
         }
     }
+
+    private handleCellOp(key: string, args: any[], op: 'select' | 'deselect' | 'patch' | 'depatch') {
+        const t = this.tracers[key];
+        if (!t) return;
+
+        switch (t.type) {
+            case 'array':
+            case 'chart': {
+                const cell = t.data?.[args[0]];
+                if (!cell) return;
+                if (op === 'select') { cell.selected = true; cell.patched = false; }
+                else if (op === 'deselect') { cell.selected = false; }
+                else if (op === 'patch') { cell.value = args[1]; cell.patched = true; cell.selected = false; }
+                else { cell.patched = false; }
+                break;
+            }
+            case 'array2d':
+            case 'hashmap': {
+                const cell = t.data?.[args[0]]?.[args[1]];
+                if (!cell) return;
+                if (op === 'select') { cell.selected = true; cell.patched = false; }
+                else if (op === 'deselect') { cell.selected = false; }
+                else if (op === 'patch') { cell.value = args[2]; cell.patched = true; cell.selected = false; }
+                else { cell.patched = false; }
+                break;
+            }
+            case 'recursion': {
+                const call = t.calls?.[args[0]];
+                if (!call) return;
+                if (op === 'select') call.active = true;
+                else if (op === 'deselect') call.active = false;
+                else if (op === 'patch') call.patched = true;
+                else call.patched = false;
+                break;
+            }
+            case 'locals':
+                if (op === 'patch') t.patchedRows.add(Math.floor(args[0]));
+                else if (op === 'depatch') t.patchedRows.delete(Math.floor(args[0]));
+                break;
+            case 'variables':
+                if (op === 'patch' && args.length >= 2) {
+                    const varNames = Object.keys(t.vars);
+                    const varName = varNames[Math.floor(args[0])];
+                    if (varName && t.vars.hasOwnProperty(varName)) {
+                        if (!t.patchState) t.patchState = {};
+                        t.patchState[varName] = { patched: true, col: Math.floor(args[1]) };
+                    }
+                } else if (op === 'depatch' && args.length >= 1) {
+                    const varNames = Object.keys(t.vars);
+                    const varName = varNames[Math.floor(args[0])];
+                    if (varName && t.patchState?.[varName]) delete t.patchState[varName];
+                }
+                break;
+        }
+    }
+
+    // --- Render data ---
 
     private buildChildData(childKey: string): any | null {
         const c = this.tracers[childKey];
@@ -540,6 +534,8 @@ export class SimpleEngine {
         }
     }
 
+    // --- Playback ---
+
     next(): boolean {
         if (this.cursor >= this.chunks.length) return false;
         this.activeChildKey = null;
@@ -578,17 +574,9 @@ export class SimpleEngine {
         this.notify();
     }
 
-    getCursor() {
-        return this.cursor;
-    }
-
-    getLength() {
-        return this.chunks.length;
-    }
-
-    getCommands() {
-        return this.rawCommands;
-    }
+    getCursor() { return this.cursor; }
+    getLength() { return this.chunks.length; }
+    getCommands() { return this.rawCommands; }
 
     getLayoutChildren(): { key: string; title: string; dsType?: string }[] {
         if (!this.root) return [];
@@ -597,7 +585,7 @@ export class SimpleEngine {
         return tracer.children
             .map((k: string) => {
                 const t = this.tracers[k];
-                let dsType = t?.dsType;
+                let dsType = (t as any)?.dsType;
                 if (!dsType && t?.type === 'graph') dsType = this.treeKeys.has(k) ? 'Tree' : 'Graph';
                 if (!dsType && t?.type === 'chart') dsType = 'Chart';
                 if (!dsType && t?.type === 'locals') dsType = 'Call Stack';
@@ -621,25 +609,18 @@ export class SimpleEngine {
         this.notify();
     }
 
-    isChildHidden(key: string): boolean {
-        return this.hiddenChildren.has(key);
-    }
+    isChildHidden(key: string): boolean { return this.hiddenChildren.has(key); }
 
     isLayoutRoot(): boolean {
         if (!this.root) return false;
         return this.tracers[this.root]?.type === 'layout';
     }
 
-    getLayoutData(): any[] {
-        return this.buildLayoutChildren();
-    }
-
-    getRenderer(): SimpleRenderer {
-        return this.renderer;
-    }
+    getLayoutData(): any[] { return this.buildLayoutChildren(); }
+    getRenderer(): SimpleRenderer { return this.renderer; }
 
     hasRecursionTracer(): boolean {
-        return Object.values(this.tracers).some((t: any) => t.type === 'recursion');
+        return Object.values(this.tracers).some(t => t.type === 'recursion');
     }
 
     subscribe(listener: () => void) {
