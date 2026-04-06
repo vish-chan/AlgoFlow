@@ -1024,8 +1024,11 @@ export class SimpleRenderer {
                 const cx = startX + colIdx * cellSize;
                 const cy = startY + rowIdx * cellSize;
 
-                this.ctx!.fillStyle = patched ? theme.status.error : (selected ? theme.status.info : theme.bg.active);
+                const targetColor = patched ? theme.status.error : (selected ? theme.status.info : theme.bg.active);
+                if (patched) { this.ctx!.shadowColor = theme.status.error; this.ctx!.shadowBlur = 10; }
+                this.ctx!.fillStyle = this.transitionColor(`2d-${rowIdx}-${colIdx}`, targetColor);
                 this.ctx!.fillRect(cx, cy, cellSize, cellSize);
+                this.ctx!.shadowColor = 'transparent'; this.ctx!.shadowBlur = 0;
 
                 this.ctx!.strokeStyle = theme.text.faint;
                 this.ctx!.lineWidth = 1;
