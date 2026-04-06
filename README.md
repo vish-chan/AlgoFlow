@@ -11,7 +11,7 @@
 
 Write algorithms in Java or Python — see them execute step by step. No SDKs, no manual tracing.
 
-**[Try it live →](https://www.algopad.dev/)**
+AlgoFlow is the engine behind **[AlgoPad](https://www.algopad.dev/)** — **[Try it live →](https://www.algopad.dev/)**
 
 <!-- Add a demo GIF/screenshot here: -->
 ![AlgoFlow Demo](docs/demo.gif)
@@ -30,7 +30,7 @@ root.left = new TreeNode(2);    // ← visualized
 ```
 
 ```python
-# Python — automatic tracing
+# Python — AST transformation
 arr = [5, 2, 8, 1]
 arr[0] = 10                     # ← visualized
 
@@ -41,9 +41,11 @@ visited = set()                 # ← visualized
 ## Features
 
 - **Arrays** — 1D, 2D, bar charts with step-by-step highlighting
-- **Trees** — binary trees (Java: `@Tree` annotation, Python: auto-detected)
-- **Graphs** — directed, undirected, weighted (Java: `@Graph`, Python: adjacency lists/matrices)
+- **Trees** — binary trees (Java: `@Tree` annotation, Python: auto-detected via `left`/`right`/`val` attributes)
+- **Graphs** — directed, undirected, weighted (Java: `@Graph`, Python: adjacency lists/matrices, `# @graph` annotation)
+- **Linked Lists** — singly/doubly linked (Java: `@LinkedList`, Python: auto-detected via `next`/`val` attributes)
 - **Collections** — Lists, Queues, Stacks, Dicts, Sets
+- **Charts** — bar chart visualization (Java: `@Chart`, Python: `# @chart` annotation)
 - **Call Stack** — method/function enter/exit tracking for recursion
 - **Local Variables** — automatic detection and display
 - **Line Highlighting** — see exactly which line is executing
@@ -75,7 +77,7 @@ Opens at [localhost:5173](http://localhost:5173). Backend runs on `:8080`.
 ```
 
 - **Java** — A ByteBuddy agent transforms bytecode at class load time, intercepting array operations, collection methods, field mutations, and method calls.
-- **Python** — A tracer hooks into execution, tracking variable assignments, data structure mutations, and function calls.
+- **Python** — An AST transformer rewrites user code at parse time, injecting visualization callbacks for assignments, attribute access, subscript operations, and function calls.
 
 Both produce the same visualization command stream consumed by the frontend.
 
@@ -87,6 +89,7 @@ apps/
   web/frontend/     React + Monaco + Canvas visualizer
 packages/
   java/engine/      Bytecode transformation engine (Java agent)
+  python/engine/    AST transformation engine (Python tracer)
 ```
 
 ## Deployment
@@ -109,4 +112,4 @@ Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
-Built with [ByteBuddy](https://bytebuddy.net/) · [Monaco Editor](https://microsoft.github.io/monaco-editor/) · [React](https://reactjs.org/)
+Built with [ByteBuddy](https://bytebuddy.net/) · [Monaco Editor](https://microsoft.github.io/monaco-editor/) · [React](https://reactjs.org/) · [tracers.java](https://github.com/algorithm-visualizer/tracers.java)
