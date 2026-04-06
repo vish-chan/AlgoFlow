@@ -135,6 +135,8 @@ public class VisualizerInitializer {
         return registerValue(name, value, is2DList(field));
     }
 
+    private static final Deque<Map<String, Object>> _localVisualizedStack = new ArrayDeque<>();
+
     public static boolean registerLocalValue(String name, Object value) {
         if (value == null)
             return false;
@@ -144,11 +146,35 @@ public class VisualizerInitializer {
         // Check if it's a tree node — delegate to registry for temp registration
         VisualizerRegistry.handleTreeLocalVariable(name, value);
 
+        // If this variable name already has a visualizer for a different object, evict it
+        if (!_localVisualizedStack.isEmpty()) {
+            Map<String, Object> frame = _localVisualizedStack.peek();
+            Object prev = frame.get(name);
+            if (prev != null && prev != value) {
+                VisualizerRegistry.evict(prev);
+            }
+        }
+
         boolean is2D = (value instanceof List<?> list) && !list.isEmpty() && list.getFirst() instanceof List;
         if (!registerValue(name, value, is2D))
             return false;
+        if (!_localVisualizedStack.isEmpty()) {
+            _localVisualizedStack.peek().put(name, value);
+        }
         VisualizerRegistry.setLayout();
         return true;
+    }
+
+    public static void pushFrame() {
+        _localVisualizedStack.push(new HashMap<>());
+    }
+
+    public static void popFrame() {
+        if (_localVisualizedStack.isEmpty()) return;
+        Map<String, Object> frame = _localVisualizedStack.pop();
+        for (Object obj : frame.values()) {
+            VisualizerRegistry.evict(obj);
+        }
     }
 
     private static String typedName(String name, Object value) {

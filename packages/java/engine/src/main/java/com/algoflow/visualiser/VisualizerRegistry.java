@@ -364,6 +364,7 @@ public class VisualizerRegistry {
         _callStackVisualizer.onEnter(methodName, args);
         ensureLocalVariablesVisualizer();
         _localVariablesVisualizer.pushFrame(methodName);
+        VisualizerInitializer.pushFrame();
         _tempTreeStack.push(handleTreeArgs(methodName, args));
         highlightLine(getCallerLineNumber());
     }
@@ -383,6 +384,7 @@ public class VisualizerRegistry {
             if (!tempTrees.isEmpty()) setLayout();
         }
         for (LinkedListVisualizer lv : _linkedListVisualizers) lv.clearLocals();
+        VisualizerInitializer.popFrame();
         highlightLine(getCallerCallerLineNumber());
     }
 
@@ -415,6 +417,10 @@ public class VisualizerRegistry {
         } else if (vis instanceof GraphVisualizer g) {
             for (Object row : g.getRows()) _objectToVisualizer.put(row, g);
         }
+    }
+
+    public static void evict(Object value) {
+        evictExisting(value);
     }
 
     private static void evictExisting(Object value) {
