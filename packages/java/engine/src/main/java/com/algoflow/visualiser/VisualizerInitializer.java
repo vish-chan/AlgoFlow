@@ -187,7 +187,7 @@ public class VisualizerInitializer {
         return clazz.isArray() && clazz.getComponentType().isArray();
     }
 
-    private static void deferNull(Object instance, Class<?> clazz, String fieldName, Visualizer vis) {
+    private static void deferNull(Object instance, Class<?> clazz, String fieldName, ObjectVisualizer vis) {
         if (instance != null) {
             VisualizerRegistry.deferField(instance, fieldName, vis);
         } else {

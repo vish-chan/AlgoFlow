@@ -2,7 +2,7 @@ package com.algoflow.visualiser;
 
 import org.algorithm_visualizer.*;
 
-public class ChartVisualizer implements Visualizer {
+public class ChartVisualizer implements ObjectVisualizer {
 
     private Object _array;
     private final ChartTracer _tracer;
@@ -14,12 +14,14 @@ public class ChartVisualizer implements Visualizer {
         if (array != null) updateDisplay();
     }
 
-    void lateInit(Object array) {
-        this._array = array;
+    @Override
+    public void lateInit(Object value) {
+        this._array = value;
         updateDisplay();
     }
 
-    public void onGet(Object[] args) {
+    @Override
+    public void onRead(Object target, Object[] args) {
         if (_lastSelected != -1) {
             _tracer.deselect(_lastSelected);
         }
@@ -29,7 +31,8 @@ public class ChartVisualizer implements Visualizer {
         _lastSelected = idx;
     }
 
-    public void onSet(Object[] args) {
+    @Override
+    public void onWrite(Object target, Object[] args) {
         if (_lastSelected != -1) {
             _tracer.deselect(_lastSelected);
         }

@@ -3,14 +3,11 @@ package com.algoflow.visualiser;
 import org.algorithm_visualizer.*;
 
 import java.lang.reflect.Array;
-import java.util.IdentityHashMap;
-import java.util.Map;
 
-public class PrimitiveArray2DVisualizer implements Visualizer {
+public class PrimitiveArray2DVisualizer implements ObjectVisualizer {
 
     private Object _array;
     private final Array2DTracer _tracer;
-    private final Map<Object, RowVisualizer> _rowVisualizers = new IdentityHashMap<>();
 
     public PrimitiveArray2DVisualizer(Object array, String name) {
         this._array = array;
@@ -18,29 +15,38 @@ public class PrimitiveArray2DVisualizer implements Visualizer {
         if (array != null) updateDisplay();
     }
 
-    void lateInit(Object array) {
-        this._array = array;
+    @Override
+    public void lateInit(Object value) {
+        this._array = value;
         updateDisplay();
     }
 
-    public void onGet(Object[] args) {
-        // NOOP
+    @Override
+    public void onRead(Object target, Object[] args) {
+        if (target == _array) return; // top-level access, no-op
+        int row = findRowIndex(target);
+        if (row >= 0) {
+            int col = (Integer) args[0];
+            _tracer.select(row, col);
+            Tracer.delay();
+            _tracer.deselect(row, col);
+        }
     }
 
-    public void onSet(Object[] args) {
-        // NOOP
+    @Override
+    public void onWrite(Object target, Object[] args) {
+        if (target == _array) return;
+        int row = findRowIndex(target);
+        if (row >= 0) {
+            int col = (Integer) args[0];
+            Object value = args[1];
+            _tracer.patch(row, col, value);
+            updateDisplay();
+            _tracer.depatch(row, col);
+        }
     }
 
-    public RowVisualizer getRowVisualizer(Object rowArray) {
-        return _rowVisualizers.computeIfAbsent(rowArray, this::createRowVisualizer);
-    }
-
-    private RowVisualizer createRowVisualizer(Object rowArray) {
-        int rowIndex = findRowIndex(rowArray);
-        return new RowVisualizer(rowIndex);
-    }
-
-    private int findRowIndex(Object rowArray) {
+    public int findRowIndex(Object rowArray) {
         if (_array == null || !_array.getClass().isArray()) return -1;
         int len = Array.getLength(_array);
         for (int i = 0; i < len; i++) {
@@ -49,6 +55,18 @@ public class PrimitiveArray2DVisualizer implements Visualizer {
         return -1;
     }
 
+    /** Returns all row sub-arrays for eager registration. */
+    public Object[] getRows() {
+        if (_array == null || !_array.getClass().isArray()) return new Object[0];
+        int len = Array.getLength(_array);
+        Object[] rows = new Object[len];
+        for (int i = 0; i < len; i++) {
+            rows[i] = Array.get(_array, i);
+        }
+        return rows;
+    }
+
+    @Override
     public void refresh() {
         updateDisplay();
     }
@@ -79,28 +97,5 @@ public class PrimitiveArray2DVisualizer implements Visualizer {
     @Override
     public Commander getCommander() {
         return _tracer;
-    }
-
-    public class RowVisualizer {
-        private final int rowIndex;
-
-        public RowVisualizer(int rowIndex) {
-            this.rowIndex = rowIndex;
-        }
-
-        public void onGet(Object[] args) {
-            int col = (Integer) args[0];
-            _tracer.select(rowIndex, col);
-            Tracer.delay();
-            _tracer.deselect(rowIndex, col);
-        }
-
-        public void onSet(Object[] args) {
-            int col = (Integer) args[0];
-            Object value = args[1];
-            _tracer.patch(rowIndex, col, value);
-            updateDisplay();
-            _tracer.depatch(rowIndex, col);
-        }
     }
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class HashMapVisualizer implements Visualizer {
+public class HashMapVisualizer implements ObjectVisualizer {
 
     private final Map<?, ?> _map;
     private final Array2DTracer _tracer;
@@ -16,6 +16,16 @@ public class HashMapVisualizer implements Visualizer {
         this._tracer = new Array2DTracer(name);
         updateDisplay();
         Tracer.delay();
+    }
+
+    @Override
+    public void onRead(Object target, Object[] args) {
+        onGet(args[0]);
+    }
+
+    @Override
+    public void onWrite(Object target, Object[] args) {
+        // Map writes are handled via onPut/onRemove/onClear directly
     }
 
     public void onPut(Object key, Object value, String phase) {

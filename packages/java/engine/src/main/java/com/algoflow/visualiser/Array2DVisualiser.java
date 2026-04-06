@@ -11,36 +11,50 @@ public class Array2DVisualiser implements ListVisualizer {
     public Array2DVisualiser(Object list, String name) {
         this._matrix = (List<List<?>>) list;
         this._tracer = new Array2DTracer(name);
-
-        // Convert List<List<?>> to Object[][]
         Object[][] array = _matrix.stream().map(List::toArray).toArray(Object[][]::new);
-
         _tracer.set(array);
         Tracer.delay();
     }
 
     @Override
-    public void onGet(Object[] args) {
-        // NOOP
+    public void onRead(Object target, Object[] args) {
+        int row = findRowIndex(target);
+        if (row >= 0) {
+            int col = (Integer) args[0];
+            _tracer.select(row, col);
+            Tracer.delay();
+            _tracer.deselect(row, col);
+        }
+        // top-level get is no-op
     }
 
     @Override
-    public void onSet(Object[] args) {
-        // NOOP
+    public void onWrite(Object target, Object[] args) {
+        int row = findRowIndex(target);
+        if (row >= 0) {
+            int col = (Integer) args[0];
+            Object value = args[1];
+            _tracer.patch(row, col, value);
+            Tracer.delay();
+            _tracer.depatch(row, col);
+        }
+        // top-level set is no-op
     }
+
+    @Override
+    public void onGet(Object[] args) {}
+
+    @Override
+    public void onSet(Object[] args) {}
 
     @Override
     public void onAdd(Object[] args) {
-        Object[][] array = _matrix.stream().map(List::toArray).toArray(Object[][]::new);
-        _tracer.set(array);
-        Tracer.delay();
+        refreshDisplay();
     }
 
     @Override
     public void onRemove(Object[] args) {
-        Object[][] array = _matrix.stream().map(List::toArray).toArray(Object[][]::new);
-        _tracer.set(array);
-        Tracer.delay();
+        refreshDisplay();
     }
 
     @Override
@@ -63,50 +77,14 @@ public class Array2DVisualiser implements ListVisualizer {
         return -1;
     }
 
-    public ListVisualizer createNestedVisualizer(Object nestedList, int rowIndex) {
-        return new ListVisualizer() {
-            @Override
-            public void onGet(Object[] args) {
-                int col = (Integer) args[0];
-                _tracer.select(rowIndex, col);
-                Tracer.delay();
-                _tracer.deselect(rowIndex, col);
-            }
+    /** Returns all nested lists for eager registration. */
+    public List<?> getRows() {
+        return _matrix;
+    }
 
-            @Override
-            public void onSet(Object[] args) {
-                int col = (Integer) args[0];
-                Object value = args[1];
-                _tracer.patch(rowIndex, col, value);
-                Tracer.delay();
-                _tracer.depatch(rowIndex, col);
-            }
-
-            @Override
-            public void onAdd(Object[] args) {
-                Object[][] array = _matrix.stream().map(List::toArray).toArray(Object[][]::new);
-                _tracer.set(array);
-                Tracer.delay();
-            }
-
-            @Override
-            public void onRemove(Object[] args) {
-                Object[][] array = _matrix.stream().map(List::toArray).toArray(Object[][]::new);
-                _tracer.set(array);
-                Tracer.delay();
-            }
-
-            @Override
-            public void onClear() {
-                Object[][] array = _matrix.stream().map(List::toArray).toArray(Object[][]::new);
-                _tracer.set(array);
-                Tracer.delay();
-            }
-
-            @Override
-            public Commander getCommander() {
-                return _tracer;
-            }
-        };
+    private void refreshDisplay() {
+        Object[][] array = _matrix.stream().map(List::toArray).toArray(Object[][]::new);
+        _tracer.set(array);
+        Tracer.delay();
     }
 }

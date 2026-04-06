@@ -627,48 +627,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       0.0,
       0.0
     ]
@@ -779,10 +737,9 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -790,14 +747,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -866,48 +815,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       0.0,
       1.0
     ]
@@ -1018,10 +925,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -1029,14 +942,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -1099,48 +1004,6 @@
     "method": "println",
     "args": [
       17.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
     ]
   },
   {
@@ -1257,10 +1120,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -1268,14 +1137,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -1288,48 +1149,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       1.0,
       2.0
     ]
@@ -1348,10 +1167,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -1359,35 +1184,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -1411,10 +1207,9 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -1422,14 +1217,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -1583,48 +1370,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       0.0,
       3.0
     ]
@@ -1735,10 +1480,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -1746,14 +1497,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -1766,48 +1509,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       1.0,
       3.0
     ]
@@ -1826,10 +1527,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -1837,35 +1544,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -1889,10 +1567,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -1900,14 +1584,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -2061,48 +1737,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       0.0,
       4.0
     ]
@@ -2213,10 +1847,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -2224,14 +1864,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -2244,48 +1876,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       1.0,
       4.0
     ]
@@ -2304,10 +1894,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -2315,35 +1911,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -2367,10 +1934,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -2378,14 +1951,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -2539,48 +2104,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       0.0,
       5.0
     ]
@@ -2691,10 +2214,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -2702,14 +2231,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -2722,48 +2243,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       1.0,
       5.0
     ]
@@ -2782,10 +2261,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -2793,35 +2278,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -2845,10 +2301,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -2856,14 +2318,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -3017,48 +2471,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       0.0,
       6.0
     ]
@@ -3169,10 +2581,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -3180,14 +2598,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -3200,48 +2610,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       1.0,
       6.0
     ]
@@ -3260,10 +2628,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -3271,35 +2645,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -3323,10 +2668,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -3334,14 +2685,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -3495,48 +2838,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       0.0,
       7.0
     ]
@@ -3647,10 +2948,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -3658,14 +2965,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -3678,48 +2977,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       1.0,
       7.0
     ]
@@ -3738,10 +2995,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -3749,35 +3012,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -3801,10 +3035,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -3812,14 +3052,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -3973,48 +3205,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       0.0,
       8.0
     ]
@@ -4125,10 +3315,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -4136,14 +3332,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -4156,48 +3344,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       1.0,
       8.0
     ]
@@ -4216,10 +3362,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -4227,35 +3379,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -4279,10 +3402,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       0.0
     ]
   },
@@ -4290,14 +3419,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      0.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -4563,48 +3684,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       1.0,
       0.0
     ]
@@ -4715,10 +3794,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -4726,14 +3811,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -4802,48 +3879,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       1.0,
       1.0
     ]
@@ -4954,10 +3989,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -4965,14 +4006,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -5035,48 +4068,6 @@
     "method": "println",
     "args": [
       17.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
     ]
   },
   {
@@ -5193,10 +4184,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -5204,14 +4201,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -5274,48 +4263,6 @@
     "method": "println",
     "args": [
       17.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
     ]
   },
   {
@@ -5432,10 +4379,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -5443,14 +4396,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -5463,48 +4408,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       2.0,
       3.0
     ]
@@ -5523,10 +4426,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -5534,35 +4443,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -5586,10 +4466,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -5597,14 +4483,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -5752,48 +4630,6 @@
     "method": "println",
     "args": [
       17.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
     ]
   },
   {
@@ -5910,10 +4746,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -5921,14 +4763,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -5941,48 +4775,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       2.0,
       4.0
     ]
@@ -6001,10 +4793,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -6012,35 +4810,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -6064,10 +4833,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -6075,14 +4850,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -6236,48 +5003,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       1.0,
       5.0
     ]
@@ -6388,10 +5113,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -6399,14 +5130,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -6419,48 +5142,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       2.0,
       5.0
     ]
@@ -6479,10 +5160,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -6490,35 +5177,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -6542,10 +5200,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -6553,14 +5217,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -6714,48 +5370,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       1.0,
       6.0
     ]
@@ -6866,10 +5480,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -6877,14 +5497,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -6897,48 +5509,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       2.0,
       6.0
     ]
@@ -6957,10 +5527,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -6968,35 +5544,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -7020,10 +5567,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -7031,14 +5584,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -7192,48 +5737,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       1.0,
       7.0
     ]
@@ -7344,10 +5847,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -7355,14 +5864,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -7375,48 +5876,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       2.0,
       7.0
     ]
@@ -7435,10 +5894,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -7446,35 +5911,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -7498,10 +5934,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -7509,14 +5951,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -7670,48 +6104,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       1.0,
       8.0
     ]
@@ -7822,10 +6214,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -7833,14 +6231,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -7853,48 +6243,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       2.0,
       8.0
     ]
@@ -7913,10 +6261,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -7924,35 +6278,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -7976,10 +6301,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       1.0
     ]
   },
@@ -7987,14 +6318,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      1.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -8260,48 +6583,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       2.0,
       0.0
     ]
@@ -8412,10 +6693,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -8423,14 +6710,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -8493,48 +6772,6 @@
     "method": "println",
     "args": [
       17.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
     ]
   },
   {
@@ -8651,10 +6888,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -8662,14 +6905,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -8732,48 +6967,6 @@
     "method": "println",
     "args": [
       17.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
     ]
   },
   {
@@ -8890,10 +7083,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -8901,14 +7100,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -8971,48 +7162,6 @@
     "method": "println",
     "args": [
       17.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
     ]
   },
   {
@@ -9129,10 +7278,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -9140,14 +7295,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -9210,48 +7357,6 @@
     "method": "println",
     "args": [
       17.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
     ]
   },
   {
@@ -9368,10 +7473,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -9379,14 +7490,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -9399,48 +7502,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       3.0,
       4.0
     ]
@@ -9459,10 +7520,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -9470,35 +7537,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -9522,10 +7560,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -9533,14 +7577,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -9694,48 +7730,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       2.0,
       5.0
     ]
@@ -9846,10 +7840,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -9857,14 +7857,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -9877,48 +7869,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       3.0,
       5.0
     ]
@@ -9937,10 +7887,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -9948,35 +7904,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -10000,10 +7927,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -10011,14 +7944,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -10172,48 +8097,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       2.0,
       6.0
     ]
@@ -10324,10 +8207,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -10335,14 +8224,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -10355,48 +8236,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       3.0,
       6.0
     ]
@@ -10415,10 +8254,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -10426,35 +8271,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -10478,10 +8294,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -10489,14 +8311,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -10650,48 +8464,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       2.0,
       7.0
     ]
@@ -10802,10 +8574,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -10813,14 +8591,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -10833,48 +8603,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       3.0,
       7.0
     ]
@@ -10893,10 +8621,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -10904,35 +8638,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -10956,10 +8661,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -10967,14 +8678,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -11128,48 +8831,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       2.0,
       8.0
     ]
@@ -11280,10 +8941,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -11291,14 +8958,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -11311,48 +8970,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       3.0,
       8.0
     ]
@@ -11371,10 +8988,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -11382,35 +9005,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      2.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -11434,10 +9028,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       2.0
     ]
   },
@@ -11445,14 +9045,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      2.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -11718,48 +9310,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       3.0,
       0.0
     ]
@@ -11870,10 +9420,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -11881,14 +9437,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -11951,48 +9499,6 @@
     "method": "println",
     "args": [
       17.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
     ]
   },
   {
@@ -12109,10 +9615,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -12120,14 +9632,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -12190,48 +9694,6 @@
     "method": "println",
     "args": [
       17.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
     ]
   },
   {
@@ -12348,10 +9810,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -12359,14 +9827,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -12429,48 +9889,6 @@
     "method": "println",
     "args": [
       17.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
     ]
   },
   {
@@ -12587,10 +10005,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -12598,14 +10022,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -12668,48 +10084,6 @@
     "method": "println",
     "args": [
       17.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
     ]
   },
   {
@@ -12826,10 +10200,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -12837,14 +10217,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -12907,48 +10279,6 @@
     "method": "println",
     "args": [
       17.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
     ]
   },
   {
@@ -13065,10 +10395,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -13076,14 +10412,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -13096,48 +10424,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       4.0,
       5.0
     ]
@@ -13156,10 +10442,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -13167,35 +10459,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -13219,10 +10482,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -13230,14 +10499,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -13391,48 +10652,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       3.0,
       6.0
     ]
@@ -13543,10 +10762,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -13554,14 +10779,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -13574,48 +10791,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       4.0,
       6.0
     ]
@@ -13634,10 +10809,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -13645,35 +10826,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -13697,10 +10849,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -13708,14 +10866,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -13869,48 +11019,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       3.0,
       7.0
     ]
@@ -14021,10 +11129,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -14032,14 +11146,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -14052,48 +11158,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       4.0,
       7.0
     ]
@@ -14112,10 +11176,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -14123,35 +11193,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -14175,10 +11216,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -14186,14 +11233,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -14347,48 +11386,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       3.0,
       8.0
     ]
@@ -14499,10 +11496,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -14510,14 +11513,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_005",
@@ -14530,48 +11525,6 @@
     "key": "tracer_012",
     "method": "select",
     "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
       4.0,
       8.0
     ]
@@ -14590,10 +11543,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_009",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -14601,35 +11560,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      3.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -14653,10 +11583,16 @@
     ]
   },
   {
-    "key": "tracer_012",
+    "key": "tracer_010",
+    "method": "deselect",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_010",
     "method": "select",
     "args": [
-      -1.0,
       3.0
     ]
   },
@@ -14664,14 +11600,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      3.0
-    ]
   },
   {
     "key": "tracer_012",
@@ -14875,27 +11803,6 @@
     "method": "println",
     "args": [
       22.0
-    ]
-  },
-  {
-    "key": "tracer_012",
-    "method": "select",
-    "args": [
-      -1.0,
-      4.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "deselect",
-    "args": [
-      -1.0,
-      4.0
     ]
   },
   {
