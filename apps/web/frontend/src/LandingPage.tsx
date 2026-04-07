@@ -17,7 +17,12 @@ function DemoSlideshow() {
     return (
         <div className="lp-slides">
             {DEMOS.map((d, i) => (
-                <img key={d.src} src={d.src} alt="" className={i === idx ? "active" : ""} />
+                <img 
+                    key={d.src} 
+                    src={d.src} 
+                    alt={`Algorithm visualization demo ${i + 1} showing step-by-step code execution`} 
+                    className={i === idx ? "active" : ""} 
+                />
             ))}
         </div>
     );
@@ -106,7 +111,7 @@ export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playgr
 
             <main className="lp-main">
                 <p className="lp-desc">
-                    Algorithm visualizer for Java and Python. Write code, run it, step through the execution.
+                    Algorithm visualizer for Java and Python. Write normal code, see it execute step-by-step.
                 </p>
 
                 <div className="lp-actions">
@@ -118,12 +123,12 @@ export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playgr
                     create a lesson →
                 </button>
 
-                <div className="lp-demo">
+                <section className="lp-demo" aria-label="Algorithm visualization demo">
                     <div className="lp-demo-bar">
                         <div className="lp-dot" /><div className="lp-dot" /><div className="lp-dot" />
                     </div>
                     <DemoSlideshow />
-                </div>
+                </section>
             </main>
         </div>
     );
