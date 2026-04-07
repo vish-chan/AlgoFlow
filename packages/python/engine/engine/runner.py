@@ -16,14 +16,14 @@ def trace_calls(frame, event, arg):
 
     if event == "call":
         name = frame.f_code.co_name
-        if name != "<module>":
+        if name != "<module>" and name != "__init__":
             varnames = frame.f_code.co_varnames
             nargs = frame.f_code.co_argcount
             args = [frame.f_locals[varnames[i]] for i in range(nargs) if varnames[i] in frame.f_locals]
             _r.on_call(name, args)
     elif event == "return":
         name = frame.f_code.co_name
-        if name != "<module>":
+        if name != "<module>" and name != "__init__":
             _r.on_return(name, arg)
 
     return trace_calls
@@ -31,6 +31,8 @@ def trace_calls(frame, event, arg):
 
 def run(source):
     """Execute user source with visualization."""
+    import sys
+    sys.setrecursionlimit(max(sys.getrecursionlimit(), 10000))
     tree = rewrite(source)
     code = compile(tree, "<user>", "exec")
 

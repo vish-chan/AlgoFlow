@@ -33,7 +33,8 @@ class Registry:
         self._trees = []
         self._linked_lists = []
         self._annotations = {}
-        self._active_method_counts = {}  # method_name -> count (for recursive detection)
+        self._active_method_counts = {}
+        self._vis_scope_stack = []    # stack of lists of (kind, obj_id) created per scope  # method_name -> count (for recursive detection)
 
     # ── Helpers ──
 
@@ -118,6 +119,19 @@ class Registry:
         if self._locals_frames:
             self._locals_frames.pop()
             self._update_locals()
+        # Evict visualizers created in this scope
+        if self._vis_scope_stack:
+            scope = self._vis_scope_stack.pop()
+            for kind, obj_id in scope:
+                if kind == "tree":
+                    self._trees = [tv for tv in self._trees if not tv.is_tracked_by_id(obj_id)]
+                elif kind == "linkedlist":
+                    self._linked_lists = [lv for lv in self._linked_lists if not lv.is_tracked_by_id(obj_id)]
+                entry = self._obj_to_vis.pop(obj_id, None)
+                if entry and entry.vis in self._visualizers:
+                    self._visualizers.remove(entry.vis)
+            if scope:
+                self.set_layout()
 
     def _update_call_stack(self, patch_top=False):
         rows = [[label, "recursive" if recursive else ""]
@@ -251,8 +265,15 @@ class Registry:
             Tracer.delay()
             self._add("dict", vis, obj)
         elif self._is_tree_node(obj):
+            # If tracked by existing tree, skip
+            for tv in self._trees:
+                if tv.is_tracked(obj):
+                    return
             self._register_tree(name, obj)
         elif self._is_linked_list_node(obj):
+            for lv in self._linked_lists:
+                if lv.is_tracked_node(obj):
+                    return
             self._register_linked_list(name, obj)
         elif self._is_deque(obj):
             self._register_simple("deque", f"deque: {name}", obj, list(obj))
@@ -551,6 +572,8 @@ class Registry:
         tv = _TreeVis(name, root)
         self._trees.append(tv)
         self._visualizers.append(tv.tracer)
+        if self._vis_scope_stack:
+            self._vis_scope_stack[-1].append(("tree", id(root)))
         self.set_layout()
 
     def on_attr_set(self, obj, attr_name, value):
@@ -578,6 +601,8 @@ class Registry:
         lv = _LinkedListVis(name, head)
         self._linked_lists.append(lv)
         self._visualizers.append(lv.tracer)
+        if self._vis_scope_stack:
+            self._vis_scope_stack[-1].append(("linkedlist", id(head)))
         self.set_layout()
 
     # ── Console ──
@@ -661,6 +686,7 @@ class _TreeVis:
         self.tracer.directed(True)
         self._known = set()
         self._root = root
+        self._node_class = type(root)
         self._null_counter = 0
         self._last_visited = None
         self._rebuild()
@@ -699,6 +725,15 @@ class _TreeVis:
         if self._last_visited is not None and self._last_visited != new_id:
             self.tracer.leave(self._last_visited)
             Tracer.delay()
+
+    def is_same_node_type(self, obj):
+        return type(obj) == self._node_class
+
+    def is_tracked(self, obj):
+        return id(obj) in self._known
+
+    def is_tracked_by_id(self, obj_id):
+        return obj_id in self._known
 
     def on_field_set(self, owner, field_name):
         if id(owner) not in self._known:
@@ -739,6 +774,7 @@ class _LinkedListVis:
         label = "DoublyLinkedList" if hasattr(head, 'prev') else "SinglyLinkedList"
         self.tracer = Array1DTracer(f"{label}: {name}")
         self._head = head
+        self._node_class = type(head)
         self._ordered = []
         self._id_to_node = {}
         self._known_ids = set()
@@ -769,6 +805,12 @@ class _LinkedListVis:
 
     def is_tracked_node(self, obj):
         return id(obj) in self._known_ids
+
+    def is_same_node_type(self, obj):
+        return type(obj) == self._node_class
+
+    def is_tracked_by_id(self, obj_id):
+        return obj_id in self._known_ids
 
     def _select(self, idx):
         if self._last_selected >= 0:
