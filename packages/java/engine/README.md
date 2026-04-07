@@ -1,4 +1,4 @@
-# AlgoFlow Engine
+# AlgoFlow Java Engine
 
 Bytecode transformation engine that auto-visualizes algorithms with zero manual instrumentation.
 
