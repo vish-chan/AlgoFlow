@@ -31,10 +31,10 @@ class GraphTracer(Tracer):
         self,
         id: Serializable,
         weight: Number = UNDEFINED,
-        x: int = 0,
-        y: int = 0,
-        visitedCount: int = 0,
-        selectedCount: int = 0
+        x: int = UNDEFINED,
+        y: int = UNDEFINED,
+        visitedCount: int = UNDEFINED,
+        selectedCount: int = UNDEFINED
     ):
         self.command("addNode", id, weight, x, y, visitedCount, selectedCount)
 

@@ -692,7 +692,7 @@ class _TreeVis:
                 else:
                     null_id = f"null_{self._null_counter}"
                     self._null_counter += 1
-                    self.tracer.addNode(null_id, "∅")
+                    self.tracer.addNode(null_id)
                     self.tracer.addEdge(id(n), null_id)
 
     def _leave_last(self, new_id):
