@@ -231,7 +231,7 @@ export class SimpleEngine {
             this.tracers[key] = { type: 'code', line: null, title: args[0] || 'Code' };
         },
         GraphTracer: (key, args) => {
-            this.tracers[key] = { type: 'graph', adjMatrix: [], nodes: [], visitedEdges: new Set(), layout: 'circle', title: args[0] || 'Graph', namedNodes: new Map(), nodeLabels: [], edges: [], treeRoot: null };
+            this.tracers[key] = { type: 'graph', adjMatrix: [], nodes: [], visitedEdges: new Set(), layout: 'circle', title: args[0] || 'Graph', namedNodes: new Map(), nodeLabels: [], edges: [], treeRoot: null, activeEdge: null };
         },
         VerticalLayout: (key, args) => {
             this.tracers[key] = { type: 'layout', children: args[0] || [], title: 'Layout' };
@@ -323,7 +323,7 @@ export class SimpleEngine {
             const t = this.tracers[key];
             if (t?.type === 'graph') {
                 t.adjMatrix = []; t.nodes = []; t.visitedEdges = new Set();
-                t.namedNodes = new Map(); t.nodeLabels = []; t.edges = []; t.treeRoot = null;
+                t.namedNodes = new Map(); t.nodeLabels = []; t.edges = []; t.treeRoot = null; t.activeEdge = null;
             }
         },
         directed: (key, args) => {
@@ -391,10 +391,12 @@ export class SimpleEngine {
             for (const node of t.nodes) { if (node.state === 'active') node.state = 'default'; }
             const nodeIdx = resolveNodeIdx(t, String(args[0]));
             if (nodeIdx >= 0 && t.nodes[nodeIdx]) t.nodes[nodeIdx].state = 'active';
+            t.activeEdge = null;
             if (args.length >= 2) {
                 const src = resolveNodeIdx(t, String(args[1]));
                 if (src >= 0 && src !== nodeIdx) {
                     const a = Math.min(src, nodeIdx), b = Math.max(src, nodeIdx);
+                    t.activeEdge = `${a}-${b}`;
                     t.visitedEdges.add(`${a}-${b}`);
                 }
             }
@@ -404,6 +406,7 @@ export class SimpleEngine {
             if (t?.type !== 'graph') return;
             const nodeIdx = resolveNodeIdx(t, String(args[0]));
             if (nodeIdx >= 0 && t.nodes[nodeIdx]) t.nodes[nodeIdx].state = 'default';
+            t.activeEdge = null;
         },
         updateNode: (key, args) => {
             const t = this.tracers[key];
@@ -497,7 +500,7 @@ export class SimpleEngine {
         if (!c) return null;
         const _tracerKey = childKey;
         if (c.type === 'graph') {
-            return { ...c, _tracerKey, dsType: this.treeKeys.has(childKey) ? 'Tree' : 'Graph', visitedEdges: [...c.visitedEdges], directed: c.directed, weighted: c.weighted, nodeLabels: c.nodeLabels, layout: c.layout, treeRoot: c.treeRoot, edges: c.edges, namedNodes: c.namedNodes, treeDims: this.getTreeMaxDimensions(childKey) };
+            return { ...c, _tracerKey, dsType: this.treeKeys.has(childKey) ? 'Tree' : 'Graph', visitedEdges: [...c.visitedEdges], directed: c.directed, weighted: c.weighted, nodeLabels: c.nodeLabels, layout: c.layout, treeRoot: c.treeRoot, edges: c.edges, namedNodes: c.namedNodes, treeDims: this.getTreeMaxDimensions(childKey), activeEdge: c.activeEdge };
         }
         if (c.type === 'log') {
             return { ...c, _tracerKey, logs: [...c.logs] };

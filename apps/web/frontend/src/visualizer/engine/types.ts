@@ -95,6 +95,7 @@ export interface GraphTracer {
     edges: [number, number][];
     treeRoot: string | null;
     removedEdgePositions?: Map<string, number>;
+    activeEdge: string | null;
 }
 
 export interface LayoutTracer {

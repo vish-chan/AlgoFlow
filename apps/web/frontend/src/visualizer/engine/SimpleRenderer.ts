@@ -258,7 +258,7 @@ export class SimpleRenderer {
         } else if (this.data.type === 'locals') {
             this.renderLocalsInBounds(this.data.rows, this.data.patchedRows, this.data.title, 0, 0, width);
         } else if (this.data.type === 'graph') {
-            this.renderGraphInBounds(this.data.adjMatrix, this.data.nodes, this.data.title, 0, 0, width, height, this.data.visitedEdges, this.data.directed, this.data.weighted, this.data.nodeLabels, this.data.layout, this.data.edges, this.data.treeDims);
+            this.renderGraphInBounds(this.data.adjMatrix, this.data.nodes, this.data.title, 0, 0, width, height, this.data.visitedEdges, this.data.directed, this.data.weighted, this.data.nodeLabels, this.data.layout, this.data.edges, this.data.treeDims, this.data.activeEdge);
         } else if (this.data.type === 'layout') {
             this.renderLayout(this.data.children);
         } else {
@@ -472,7 +472,7 @@ export class SimpleRenderer {
             } else if (child?.type === 'recursion' && child.calls) {
                 this.renderRecursionInBounds(child.calls, child.title, 0, 0, width, sectionHeight, y);
             } else if (child?.type === 'graph') {
-                this.renderGraphInBounds(child.adjMatrix, child.nodes, child.title, 0, 0, width, sectionHeight, child.visitedEdges, child.directed, child.weighted, child.nodeLabels, child.layout, child.edges, child.treeDims);
+                this.renderGraphInBounds(child.adjMatrix, child.nodes, child.title, 0, 0, width, sectionHeight, child.visitedEdges, child.directed, child.weighted, child.nodeLabels, child.layout, child.edges, child.treeDims, child.activeEdge);
             } else if (child?.type === 'variables' && child.vars) {
                 this.renderVariablesInBounds(child.vars, child.title, 0, 0, width, sectionHeight, child.patchState);
             } else if (child?.type === 'variablesGroup') {
@@ -820,7 +820,7 @@ export class SimpleRenderer {
         } else if (child?.type === 'recursion' && child.calls) {
             this.renderRecursionInBounds(child.calls, child.title, 0, 0, width, height, 0);
         } else if (child?.type === 'graph') {
-            this.renderGraphInBounds(child.adjMatrix, child.nodes, child.title, 0, 0, width, height, child.visitedEdges, child.directed, child.weighted, child.nodeLabels, child.layout, child.edges, child.treeDims);
+            this.renderGraphInBounds(child.adjMatrix, child.nodes, child.title, 0, 0, width, height, child.visitedEdges, child.directed, child.weighted, child.nodeLabels, child.layout, child.edges, child.treeDims, child.activeEdge);
         } else if (child?.type === 'variables' && child.vars) {
             this.renderVariablesInBounds(child.vars, child.title, 0, 0, width, height, child.patchState);
         } else if (child?.type === 'variablesGroup') {
@@ -1229,7 +1229,7 @@ export class SimpleRenderer {
         else if (selected) { this.ctx!.shadowColor = theme.status.info; this.ctx!.shadowBlur = 8; }
     }
 
-    private renderGraphInBounds(adjMatrix: number[][], nodes: any[], title: string | undefined, x: number, y: number, width: number, height: number, visitedEdges?: string[], directed?: boolean, weighted?: boolean, nodeLabels?: string[], layout?: string, edges?: [number, number][], treeDims?: { maxLeaves: number; maxDepth: number }) {
+    private renderGraphInBounds(adjMatrix: number[][], nodes: any[], title: string | undefined, x: number, y: number, width: number, height: number, visitedEdges?: string[], directed?: boolean, weighted?: boolean, nodeLabels?: string[], layout?: string, edges?: [number, number][], treeDims?: { maxLeaves: number; maxDepth: number }, activeEdge?: string | null) {
         if (!this.ctx || !nodes.length) return;
 
         const n = nodes.length;
@@ -1244,14 +1244,14 @@ export class SimpleRenderer {
             this.ctx.scale(scale, scale);
             const sw = width / scale;
             const sh = height / scale;
-            this.renderGraphContent(adjMatrix, nodes, title, 0, 0, sw, sh, visitedEdges, directed, weighted, nodeLabels, layout, edges, nodeR, treeDims);
+            this.renderGraphContent(adjMatrix, nodes, title, 0, 0, sw, sh, visitedEdges, directed, weighted, nodeLabels, layout, edges, nodeR, treeDims, activeEdge);
             this.ctx.restore();
         } else {
-            this.renderGraphContent(adjMatrix, nodes, title, x, y, width, height, visitedEdges, directed, weighted, nodeLabels, layout, edges, nodeR, treeDims);
+            this.renderGraphContent(adjMatrix, nodes, title, x, y, width, height, visitedEdges, directed, weighted, nodeLabels, layout, edges, nodeR, treeDims, activeEdge);
         }
     }
 
-    private renderGraphContent(adjMatrix: number[][], nodes: any[], title: string | undefined, x: number, y: number, width: number, height: number, visitedEdges?: string[], directed?: boolean, weighted?: boolean, nodeLabels?: string[], layout?: string, edges?: [number, number][], nodeR?: number, treeDims?: { maxLeaves: number; maxDepth: number }) {
+    private renderGraphContent(adjMatrix: number[][], nodes: any[], title: string | undefined, x: number, y: number, width: number, height: number, visitedEdges?: string[], directed?: boolean, weighted?: boolean, nodeLabels?: string[], layout?: string, edges?: [number, number][], nodeR?: number, treeDims?: { maxLeaves: number; maxDepth: number }, activeEdge?: string | null) {
         if (!this.ctx) return;
 
         const n = nodes.length;
@@ -1293,7 +1293,8 @@ export class SimpleRenderer {
                     if (isNull(from) || isNull(to)) continue;
                     const a = Math.min(from, to), b = Math.max(from, to);
                     const visited = edgeSet.has(`${a}-${b}`);
-                    const wl = this.drawDirectedEdge(pos[from], pos[to], nr, visited, 0, weighted ? (adjMatrix[from]?.[to] || 0) : 0);
+                    const isActiveEdge = activeEdge === `${a}-${b}`;
+                    const wl = this.drawDirectedEdge(pos[from], pos[to], nr, visited, 0, weighted ? (adjMatrix[from]?.[to] || 0) : 0, undefined, isActiveEdge);
                     if (wl) weightLabels.push(wl);
                 }
             } else {
@@ -1313,7 +1314,7 @@ export class SimpleRenderer {
                             const cd = Math.sqrt(cdx * cdx + cdy * cdy) || 1;
                             bulgeDir = { nx: -cdy / cd, ny: cdx / cd };
                         }
-                        const wl = this.drawDirectedEdge(pos[i], pos[j], nr, visited, curveVal, w, bulgeDir);
+                        const wl = this.drawDirectedEdge(pos[i], pos[j], nr, visited, curveVal, w, bulgeDir, activeEdge === `${a}-${b}`);
                         if (wl && bidir) {
                             const mx = (pos[a].x + pos[b].x) / 2;
                             const my = (pos[a].y + pos[b].y) / 2;
@@ -1332,9 +1333,11 @@ export class SimpleRenderer {
                     const w = adjMatrix[i]?.[j] || adjMatrix[j]?.[i];
                     if (!w) continue;
                     const visited = edgeSet.has(`${i}-${j}`);
-                    const edgeTarget = visited ? theme.accent.default : theme.edge.default;
+                    const edgeKey = `${i}-${j}`;
+                    const isActive = activeEdge === edgeKey;
+                    const edgeTarget = isActive ? theme.edge.active : (visited ? theme.edge.visited : theme.edge.default);
                     this.ctx.strokeStyle = this.transitionColor(`edge-${i}-${j}`, edgeTarget);
-                    this.ctx.lineWidth = visited ? 2.5 : 1;
+                    this.ctx.lineWidth = isActive ? 3.5 : (visited ? 2 : 1);
                     this.ctx.beginPath();
                     this.ctx.moveTo(pos[i].x, pos[i].y);
                     this.ctx.lineTo(pos[j].x, pos[j].y);
@@ -1467,7 +1470,7 @@ export class SimpleRenderer {
         return pos;
     }
 
-    private drawDirectedEdge(from: { x: number; y: number }, to: { x: number; y: number }, nr: number, visited: boolean, curve: number, weight: number, bulgeOverride?: { nx: number; ny: number }): { x: number; y: number; text: string } | null {
+    private drawDirectedEdge(from: { x: number; y: number }, to: { x: number; y: number }, nr: number, visited: boolean, curve: number, weight: number, bulgeOverride?: { nx: number; ny: number }, isActive?: boolean): { x: number; y: number; text: string } | null {
         if (!this.ctx) return null;
         const dx = to.x - from.x, dy = to.y - from.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
@@ -1478,8 +1481,8 @@ export class SimpleRenderer {
         const sx = from.x + ux * nr, sy = from.y + uy * nr;
         const ex = to.x - ux * nr, ey = to.y - uy * nr;
 
-        this.ctx.strokeStyle = visited ? theme.accent.default : theme.text.muted;
-        this.ctx.lineWidth = visited ? 2.5 : 1;
+        this.ctx.strokeStyle = isActive ? theme.edge.active : (visited ? theme.edge.visited : theme.text.muted);
+        this.ctx.lineWidth = isActive ? 3.5 : (visited ? 2 : 1);
 
         const bulge = curve * 30;
         const nx = -uy, ny = ux; // perpendicular
@@ -1512,7 +1515,7 @@ export class SimpleRenderer {
         if (alen === 0) return null;
         ax /= alen; ay /= alen;
         const arrowLen = 8;
-        this.ctx.fillStyle = visited ? theme.accent.default : theme.text.muted;
+        this.ctx.fillStyle = isActive ? theme.edge.active : (visited ? theme.edge.visited : theme.text.muted);
         this.ctx.beginPath();
         this.ctx.moveTo(ex, ey);
         this.ctx.lineTo(ex - arrowLen * ax + arrowLen * 0.4 * (-ay), ey - arrowLen * ay + arrowLen * 0.4 * ax);
