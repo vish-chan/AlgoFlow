@@ -415,7 +415,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
                         language={lang === 'python' ? 'python' : 'java'}
                         theme="vs-dark"
                         value={code}
-                        onChange={(v) => { persistCode(v ?? ""); reset(); }}
+                        onChange={(v) => { if (!readOnly) { persistCode(v ?? ""); reset(); } }}
                         onMount={handleMount}
                         options={{ fontSize: 14, fontFamily: "'JetBrains Mono', monospace", fontLigatures: true, minimap: { enabled: false }, automaticLayout: true, wordWrap: "on", readOnly }}
                     />
