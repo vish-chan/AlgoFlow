@@ -85,8 +85,10 @@ export async function recordGif(
         const a = document.createElement('a');
         a.href = url;
         a.download = `algoflow-${Date.now()}.gif`;
+        document.body.appendChild(a);
         a.click();
-        URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(url), 5000);
     } catch (e) {
         console.error('GIF encoding failed:', e);
     }
