@@ -1291,8 +1291,7 @@ export class SimpleRenderer {
             if (layout === 'tree' && edges?.length) {
                 for (const [from, to] of edges) {
                     if (isNull(from) || isNull(to)) continue;
-                    const a = Math.min(from, to), b = Math.max(from, to);
-                    const visited = edgeSet.has(`${a}-${b}`);
+                    const visited = edgeSet.has(`${from}->${to}`);
                     const isActiveEdge = activeEdge === `${from}->${to}`;
                     const wl = this.drawDirectedEdge(pos[from], pos[to], nr, visited, 0, weighted ? (adjMatrix[from]?.[to] || 0) : 0, undefined, isActiveEdge);
                     if (wl) weightLabels.push(wl);
@@ -1302,22 +1301,22 @@ export class SimpleRenderer {
                     for (let j = 0; j < n; j++) {
                         if (i === j || !adjMatrix[i]?.[j]) continue;
                         if (isNull(i) || isNull(j)) continue;
-                        const a = Math.min(i, j), b = Math.max(i, j);
-                        const visited = edgeSet.has(`${a}-${b}`);
+                        const visited = edgeSet.has(`${i}->${j}`);
                         const bidir = !!(adjMatrix[j]?.[i]);
                         const curveVal = bidir ? (i < j ? 1 : -1) : 0;
                         const w = weighted ? adjMatrix[i][j] : 0;
-                        // For bidirectional edges, compute a canonical perpendicular so curves go opposite ways
                         let bulgeDir: { nx: number; ny: number } | undefined;
                         if (bidir) {
-                            const cdx = pos[b].x - pos[a].x, cdy = pos[b].y - pos[a].y;
+                            const lo = Math.min(i, j), hi = Math.max(i, j);
+                            const cdx = pos[hi].x - pos[lo].x, cdy = pos[hi].y - pos[lo].y;
                             const cd = Math.sqrt(cdx * cdx + cdy * cdy) || 1;
                             bulgeDir = { nx: -cdy / cd, ny: cdx / cd };
                         }
                         const wl = this.drawDirectedEdge(pos[i], pos[j], nr, visited, curveVal, w, bulgeDir, activeEdge === `${i}->${j}`);
                         if (wl && bidir) {
-                            const mx = (pos[a].x + pos[b].x) / 2;
-                            const my = (pos[a].y + pos[b].y) / 2;
+                            const lo = Math.min(i, j), hi = Math.max(i, j);
+                            const mx = (pos[lo].x + pos[hi].x) / 2;
+                            const my = (pos[lo].y + pos[hi].y) / 2;
                             const sign = i < j ? 1 : -1;
                             wl.x = mx + bulgeDir!.nx * sign * 35;
                             wl.y = my + bulgeDir!.ny * sign * 35;
@@ -1332,7 +1331,7 @@ export class SimpleRenderer {
                     if (isNull(i) || isNull(j)) continue;
                     const w = adjMatrix[i]?.[j] || adjMatrix[j]?.[i];
                     if (!w) continue;
-                    const visited = edgeSet.has(`${i}-${j}`);
+                    const visited = edgeSet.has(`${i}->${j}`) || edgeSet.has(`${j}->${i}`);
                     const isActive = activeEdge === `${i}->${j}` || activeEdge === `${j}->${i}`;
                     const edgeTarget = isActive ? theme.edge.active : (visited ? theme.edge.visited : theme.edge.default);
                     this.ctx.strokeStyle = this.transitionColor(`edge-${i}-${j}`, edgeTarget);

@@ -395,9 +395,8 @@ export class SimpleEngine {
             if (args.length >= 2) {
                 const src = resolveNodeIdx(t, String(args[1]));
                 if (src >= 0 && src !== nodeIdx) {
-                    const a = Math.min(src, nodeIdx), b = Math.max(src, nodeIdx);
                     t.activeEdge = `${src}->${nodeIdx}`;
-                    t.visitedEdges.add(`${a}-${b}`);
+                    t.visitedEdges.add(`${src}->${nodeIdx}`);
                 }
             }
         },
