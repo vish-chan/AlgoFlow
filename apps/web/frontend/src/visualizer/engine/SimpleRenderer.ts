@@ -1267,7 +1267,7 @@ export class SimpleRenderer {
         let pos: { x: number; y: number }[];
 
         if (layout === 'tree' && edges?.length) {
-            pos = this.computeTreeLayout(n, edges, x, y + titleH, width, height - titleH, nr, treeDims);
+            pos = this.computeTreeLayout(n, edges, x, y + titleH, width, height - titleH, nr, treeDims, labels);
         } else {
             const cxC = x + width / 2;
             const cyC = y + titleH + (height - titleH) / 2;
@@ -1290,11 +1290,26 @@ export class SimpleRenderer {
         if (directed) {
             if (layout === 'tree' && edges?.length) {
                 for (const [from, to] of edges) {
-                    if (isNull(from) || isNull(to)) continue;
-                    const visited = edgeSet.has(`${from}->${to}`);
-                    const isActiveEdge = activeEdge === `${from}->${to}`;
-                    const wl = this.drawDirectedEdge(pos[from], pos[to], nr, visited, 0, weighted ? (adjMatrix[from]?.[to] || 0) : 0, undefined, isActiveEdge);
-                    if (wl) weightLabels.push(wl);
+                    const toNull = isNull(to);
+                    if (isNull(from)) continue;
+                    if (toNull) {
+                        // Dashed edge to null node
+                        this.ctx.save();
+                        this.ctx.setLineDash([1, 3]);
+                        this.ctx.strokeStyle = '#999';
+                        this.ctx.lineWidth = 2;
+                        this.ctx.globalAlpha = 0.7;
+                        this.ctx.beginPath();
+                        this.ctx.moveTo(pos[from].x, pos[from].y);
+                        this.ctx.lineTo(pos[to].x, pos[to].y);
+                        this.ctx.stroke();
+                        this.ctx.restore();
+                    } else {
+                        const visited = edgeSet.has(`${from}->${to}`);
+                        const isActiveEdge = activeEdge === `${from}->${to}`;
+                        const wl = this.drawDirectedEdge(pos[from], pos[to], nr, visited, 0, weighted ? (adjMatrix[from]?.[to] || 0) : 0, undefined, isActiveEdge);
+                        if (wl) weightLabels.push(wl);
+                    }
                 }
             } else {
                 for (let i = 0; i < n; i++) {
@@ -1347,26 +1362,44 @@ export class SimpleRenderer {
             }
         }
 
-        // Draw nodes (skip null sentinel nodes)
+        // Draw nodes
         this.ctx.lineWidth = 1.5;
         for (let i = 0; i < n; i++) {
             const label = String(labels[i] ?? i);
-            if (label.startsWith('null_')) continue;
+            const isNullNode = label.startsWith('null_');
 
-            this.ctx.beginPath();
-            this.ctx.arc(pos[i].x, pos[i].y, nr, 0, Math.PI * 2);
-            const nodeTarget = nodes[i].state === 'active' ? theme.accent.default : nodes[i].state === 'explored' ? theme.accent.explored : theme.cell.default;
-            this.ctx.fillStyle = this.transitionColor(`node-${i}`, nodeTarget);
-            this.ctx.fill();
-            this.ctx.strokeStyle = theme.text.secondary;
-            this.ctx.stroke();
+            if (isNullNode) {
+                const nullR = Math.max(6, nr * 0.4);
+                this.ctx.beginPath();
+                this.ctx.arc(pos[i].x, pos[i].y, nullR, 0, Math.PI * 2);
+                this.ctx.fillStyle = '#555';
+                this.ctx.fill();
+                this.ctx.strokeStyle = '#777';
+                this.ctx.lineWidth = 1;
+                this.ctx.setLineDash([2, 2]);
+                this.ctx.stroke();
+                this.ctx.setLineDash([]);
+                this.ctx.fillStyle = '#aaa';
+                this.ctx.font = `bold ${Math.max(7, Math.min(11, nullR * 1.4))}px monospace`;
+                this.ctx.textAlign = 'center';
+                this.ctx.textBaseline = 'middle';
+                this.ctx.fillText('∅', pos[i].x, pos[i].y);
+            } else {
+                this.ctx.beginPath();
+                this.ctx.arc(pos[i].x, pos[i].y, nr, 0, Math.PI * 2);
+                const nodeTarget = nodes[i].state === 'active' ? theme.accent.default : nodes[i].state === 'explored' ? theme.accent.explored : theme.cell.default;
+                this.ctx.fillStyle = this.transitionColor(`node-${i}`, nodeTarget);
+                this.ctx.fill();
+                this.ctx.strokeStyle = theme.text.secondary;
+                this.ctx.stroke();
 
-            this.ctx.fillStyle = '#fff';
-            this.ctx.font = `${Math.max(8, Math.min(13, nr))}px monospace`;
-            this.ctx.textAlign = 'center';
-            this.ctx.textBaseline = 'middle';
-            this.ctx.fillText(this.truncateText(label, nr * 2 - 4), pos[i].x, pos[i].y);
-            this.tooltipRegions.push({ x: pos[i].x - nr, y: pos[i].y - nr, w: nr * 2, h: nr * 2, text: label });
+                this.ctx.fillStyle = '#fff';
+                this.ctx.font = `${Math.max(8, Math.min(13, nr))}px monospace`;
+                this.ctx.textAlign = 'center';
+                this.ctx.textBaseline = 'middle';
+                this.ctx.fillText(this.truncateText(label, nr * 2 - 4), pos[i].x, pos[i].y);
+                this.tooltipRegions.push({ x: pos[i].x - nr, y: pos[i].y - nr, w: nr * 2, h: nr * 2, text: label });
+            }
         }
 
         // Draw weight labels on top of everything
@@ -1385,7 +1418,7 @@ export class SimpleRenderer {
 
     }
 
-    private computeTreeLayout(n: number, edges: [number, number][], x: number, y: number, width: number, height: number, nodeR: number, treeDims?: { maxLeaves: number; maxDepth: number }): { x: number; y: number }[] {
+    private computeTreeLayout(n: number, edges: [number, number][], x: number, y: number, width: number, height: number, nodeR: number, treeDims?: { maxLeaves: number; maxDepth: number }, labels?: string[]): { x: number; y: number }[] {
         if (n === 0) return [];
         // Build children map from directed edges
         const children: number[][] = Array.from({ length: n }, () => []);
@@ -1460,9 +1493,11 @@ export class SimpleRenderer {
 
         const pos: { x: number; y: number }[] = new Array(n);
         for (let i = 0; i < n; i++) {
+            const isNullNode = labels && String(labels[i] ?? '').startsWith('null_');
+            const d = isNullNode ? depth[i] - 0.5 : depth[i];
             pos[i] = {
                 x: x + pad + (spacingLeaves > 1 ? (leafIndex[i] / (spacingLeaves - 1)) * usableW : usableW / 2),
-                y: y + pad + depth[i] * levelH,
+                y: y + pad + d * levelH,
             };
         }
         return pos;
