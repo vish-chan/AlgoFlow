@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import NavBar from "./NavBar";
 
 const DEMOS = [
     { src: "/demo.gif", ms: 3000 },
@@ -31,24 +32,6 @@ export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playgr
                     display: flex; flex-direction: column;
                 }
 
-                .lp-nav {
-                    padding: 12px 20px; display: flex; align-items: center; justify-content: space-between;
-                    border-bottom: 1px solid var(--border);
-                }
-                .lp-logo {
-                    display: inline-flex; align-items: center; gap: 7px;
-                    font-size: 13px; font-weight: 700; letter-spacing: 0.3px;
-                }
-                .lp-beta {
-                    font-size: 9px; background: var(--bg-active); color: var(--text-muted);
-                    padding: 1px 5px; border-radius: 3px; font-weight: 600;
-                }
-                .lp-links { display: flex; gap: 16px; }
-                .lp-links a {
-                    font-size: 12px; color: var(--text-faint); text-decoration: none;
-                }
-                .lp-links a:hover { color: var(--text-secondary); }
-
                 .lp-main {
                     flex: 1; display: flex; flex-direction: column;
                     align-items: center; padding: 48px 20px 32px; gap: 24px;
@@ -68,11 +51,11 @@ export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playgr
                 }
                 .lp-btn:active { transform: scale(0.97); }
                 .lp-btn-fill {
-                    background: var(--accent); color: #fff; border-color: var(--accent);
-                    box-shadow: 0 2px 12px var(--accent-glow);
+                    background: var(--info); color: #fff; border-color: var(--info);
+                    box-shadow: 0 2px 12px rgba(33,150,243,0.3);
                 }
                 .lp-btn-fill:hover {
-                    background: #fff; color: var(--accent); border-color: #fff;
+                    background: #fff; color: var(--info); border-color: #fff;
                     box-shadow: 0 4px 20px rgba(255,255,255,0.15);
                 }
                 .lp-btn-outline {
@@ -119,17 +102,7 @@ export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playgr
                 }
             `}</style>
 
-            <nav className="lp-nav">
-                <div className="lp-logo">
-                    <img src="/logo-dark.svg" alt="" width={16} height={16} />
-                    AlgoPad
-                    <span className="lp-beta">BETA</span>
-                </div>
-                <div className="lp-links">
-                    <a href="https://github.com/vish-chan/AlgoFlow" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://github.com/vish-chan/AlgoFlow/issues" target="_blank" rel="noopener noreferrer">Feedback</a>
-                </div>
-            </nav>
+            <NavBar badge={{ label: "BETA", bg: "var(--bg-active)" }} />
 
             <main className="lp-main">
                 <p className="lp-desc">
