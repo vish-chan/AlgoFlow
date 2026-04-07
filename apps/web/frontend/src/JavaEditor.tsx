@@ -321,7 +321,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
             }}>
                 {/* Language toggle — left */}
                 <div data-tour="language" className="lang-toggle">
-                    {([['java', '☕ Java'], ['python', '🐍 Python']] as const).map(([id, label]) => (
+                    {([['java', 'Java'], ['python', 'Python']] as const).map(([id, label]) => (
                         <button
                             key={id}
                             className={lang === id ? 'active' : ''}
@@ -340,7 +340,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
                                 onClick={() => setMenuOpen(menuOpen === 'templates' ? null : 'templates')}
                                 title="Code templates for common data structures"
                             >
-                                📝 Templates <span style={{ fontSize: 10, opacity: 0.5 }}>▾</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style={{verticalAlign: 'middle', marginRight: 4}}><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>Templates <span style={{ fontSize: 10, opacity: 0.5 }}>▾</span>
                             </button>
                             {menuOpen === 'templates' && (
                                 <div style={{ ...dropdownStyle, right: 0 }}>
@@ -371,7 +371,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
                                 onClick={() => setMenuOpen(menuOpen === 'algorithms' ? null : 'algorithms')}
                                 title="Pre-built algorithm examples"
                             >
-                                📚 Examples <span style={{ fontSize: 10, opacity: 0.5 }}>▾</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style={{verticalAlign: 'middle', marginRight: 4}}><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>Examples <span style={{ fontSize: 10, opacity: 0.5 }}>▾</span>
                             </button>
                             {menuOpen === 'algorithms' && (
                                 <div style={{ ...dropdownStyle, right: 0 }}>

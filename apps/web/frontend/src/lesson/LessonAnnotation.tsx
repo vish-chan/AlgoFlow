@@ -52,12 +52,13 @@ export default function LessonAnnotation({ step, total, value, annotationCount, 
                     title="Copy shareable lesson URL to clipboard"
                     style={{
                         fontSize: 11, fontWeight: 600, cursor: "pointer",
-                        background: "var(--accent)",
-                        color: "#fff", border: "none", borderRadius: 4,
+                        background: "rgba(76,175,80,0.1)",
+                        color: "var(--accent)", border: "1px solid var(--accent)", borderRadius: 4,
                         padding: "4px 12px", transition: "all 0.15s",
+                        display: "inline-flex", alignItems: "center",
                     }}
                 >
-                    🔗 Share Lesson
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style={{verticalAlign: 'middle', marginRight: 4}}><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>Share Lesson
                 </button>
             </div>
             {/* Hint for first-time users */}

@@ -155,8 +155,8 @@ export default function Controls({ annotating, onAnnotatingChange, onShare, anno
                             data-tour="annotate"
                             onClick={() => onAnnotatingChange(!annotating)}
                             title={annotating ? "Stop annotating" : "Annotate steps"}
-                            style={annotating ? { color: 'var(--accent)', fontSize: 12 } : { fontSize: 12 }}
-                        >📝</button>
+                            style={annotating ? { color: 'var(--accent)' } : {}}
+                        ><svg width="14" height="14" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></button>
                     )}
                     {onShare && (
                         <button
@@ -165,7 +165,7 @@ export default function Controls({ annotating, onAnnotatingChange, onShare, anno
                             onClick={onShare}
                             title="Share as lesson"
                             style={{ fontSize: 12 }}
-                        >🔗</button>
+                        ><svg width="14" height="14" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></button>
                     )}
                     <button
                         data-tour="record"
@@ -192,7 +192,7 @@ export default function Controls({ annotating, onAnnotatingChange, onShare, anno
                             opacity: total === 0 ? 0.4 : 1,
                             transition: 'all 0.15s',
                         }}
-                    >{gifState === 'recording' ? '⏹ Stop' : gifState === 'encoding' ? '⏳ Encoding…' : '⏺ Record'}</button>
+                    >{gifState === 'recording' ? '■ Stop' : gifState === 'encoding' ? 'Encoding…' : '● Record'}</button>
                     <span style={{ fontSize: 10, color: 'var(--text-secondary)', fontFamily: 'monospace', minWidth: 28, textAlign: 'right' }}>{speedMultiplier}</span>
                     <input
                         className="progress-track"
