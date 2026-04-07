@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.core.json.JsonReadFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 
 @RestController
 public class ExecutionController {
@@ -25,6 +27,9 @@ public class ExecutionController {
     private static final Logger log = LoggerFactory.getLogger(ExecutionController.class);
     private static final String RUNNER_PACKAGE = "com.algoflow.runner";
     private static final Pattern CLASS_NAME_PATTERN = Pattern.compile("public\\s+class\\s+(\\w+)");
+    private static final ObjectMapper MAPPER = JsonMapper.builder()
+            .enable(JsonReadFeature.ALLOW_NON_NUMERIC_NUMBERS)
+            .build();
 
     @org.springframework.beans.factory.annotation.Value("${engine.jar.path:../../../packages/java/engine/target/algo-transformer-1.0-SNAPSHOT.jar}")
     private String engineJarPath;
@@ -124,7 +129,7 @@ public class ExecutionController {
                 log.debug("visualization.json content:\n{}", jsonContent);
             }
             
-            List<?> commands = new ObjectMapper().readValue(jsonContent, List.class);
+            List<?> commands = MAPPER.readValue(jsonContent, List.class);
             return Map.of("commands", commands, "code", normalizedCode);
         } finally {
             log.debug("Cleaning up temp directory: {}", tempDir);
@@ -194,7 +199,7 @@ public class ExecutionController {
                 throw new RuntimeException("No visualization output produced");
             }
 
-            List<?> commands = new ObjectMapper().readValue(runOutput, List.class);
+            List<?> commands = MAPPER.readValue(runOutput, List.class);
             return Map.of("commands", commands, "code", code);
         } finally {
             log.debug("Cleaning up Python temp directory: {}", tempDir);
