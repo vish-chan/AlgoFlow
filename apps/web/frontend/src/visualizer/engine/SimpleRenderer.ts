@@ -1293,12 +1293,11 @@ export class SimpleRenderer {
                     const toNull = isNull(to);
                     if (isNull(from)) continue;
                     if (toNull) {
-                        // Dashed edge to null node
                         this.ctx.save();
-                        this.ctx.setLineDash([1, 3]);
-                        this.ctx.strokeStyle = '#999';
-                        this.ctx.lineWidth = 2;
-                        this.ctx.globalAlpha = 0.7;
+                        this.ctx.setLineDash([2, 4]);
+                        this.ctx.strokeStyle = theme.text.muted;
+                        this.ctx.lineWidth = 1;
+                        this.ctx.globalAlpha = 0.6;
                         this.ctx.beginPath();
                         this.ctx.moveTo(pos[from].x, pos[from].y);
                         this.ctx.lineTo(pos[to].x, pos[to].y);
@@ -1369,21 +1368,19 @@ export class SimpleRenderer {
             const isNullNode = label.startsWith('null_');
 
             if (isNullNode) {
-                const nullR = Math.max(6, nr * 0.4);
+                const nullR = Math.max(4, nr * 0.3);
                 this.ctx.beginPath();
                 this.ctx.arc(pos[i].x, pos[i].y, nullR, 0, Math.PI * 2);
-                this.ctx.fillStyle = '#555';
+                this.ctx.fillStyle = theme.bg.active;
                 this.ctx.fill();
-                this.ctx.strokeStyle = '#777';
+                this.ctx.strokeStyle = theme.text.faint;
                 this.ctx.lineWidth = 1;
-                this.ctx.setLineDash([2, 2]);
                 this.ctx.stroke();
-                this.ctx.setLineDash([]);
-                this.ctx.fillStyle = '#aaa';
-                this.ctx.font = `bold ${Math.max(7, Math.min(11, nullR * 1.4))}px monospace`;
+                this.ctx.fillStyle = theme.text.muted;
+                this.ctx.font = `${Math.max(7, Math.min(10, nullR * 1.6))}px sans-serif`;
                 this.ctx.textAlign = 'center';
                 this.ctx.textBaseline = 'middle';
-                this.ctx.fillText('∅', pos[i].x, pos[i].y);
+                this.ctx.fillText('∅', pos[i].x, pos[i].y + 0.5);
             } else {
                 this.ctx.beginPath();
                 this.ctx.arc(pos[i].x, pos[i].y, nr, 0, Math.PI * 2);
@@ -1494,7 +1491,7 @@ export class SimpleRenderer {
         const pos: { x: number; y: number }[] = new Array(n);
         for (let i = 0; i < n; i++) {
             const isNullNode = labels && String(labels[i] ?? '').startsWith('null_');
-            const d = isNullNode ? depth[i] - 0.5 : depth[i];
+            const d = isNullNode ? depth[i] - 0.6 : depth[i];
             pos[i] = {
                 x: x + pad + (spacingLeaves > 1 ? (leafIndex[i] / (spacingLeaves - 1)) * usableW : usableW / 2),
                 y: y + pad + d * levelH,
