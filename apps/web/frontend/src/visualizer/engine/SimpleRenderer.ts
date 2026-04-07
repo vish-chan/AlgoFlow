@@ -1293,7 +1293,7 @@ export class SimpleRenderer {
                     if (isNull(from) || isNull(to)) continue;
                     const a = Math.min(from, to), b = Math.max(from, to);
                     const visited = edgeSet.has(`${a}-${b}`);
-                    const isActiveEdge = activeEdge === `${a}-${b}`;
+                    const isActiveEdge = activeEdge === `${from}->${to}`;
                     const wl = this.drawDirectedEdge(pos[from], pos[to], nr, visited, 0, weighted ? (adjMatrix[from]?.[to] || 0) : 0, undefined, isActiveEdge);
                     if (wl) weightLabels.push(wl);
                 }
@@ -1314,7 +1314,7 @@ export class SimpleRenderer {
                             const cd = Math.sqrt(cdx * cdx + cdy * cdy) || 1;
                             bulgeDir = { nx: -cdy / cd, ny: cdx / cd };
                         }
-                        const wl = this.drawDirectedEdge(pos[i], pos[j], nr, visited, curveVal, w, bulgeDir, activeEdge === `${a}-${b}`);
+                        const wl = this.drawDirectedEdge(pos[i], pos[j], nr, visited, curveVal, w, bulgeDir, activeEdge === `${i}->${j}`);
                         if (wl && bidir) {
                             const mx = (pos[a].x + pos[b].x) / 2;
                             const my = (pos[a].y + pos[b].y) / 2;
@@ -1333,8 +1333,7 @@ export class SimpleRenderer {
                     const w = adjMatrix[i]?.[j] || adjMatrix[j]?.[i];
                     if (!w) continue;
                     const visited = edgeSet.has(`${i}-${j}`);
-                    const edgeKey = `${i}-${j}`;
-                    const isActive = activeEdge === edgeKey;
+                    const isActive = activeEdge === `${i}->${j}` || activeEdge === `${j}->${i}`;
                     const edgeTarget = isActive ? theme.edge.active : (visited ? theme.edge.visited : theme.edge.default);
                     this.ctx.strokeStyle = this.transitionColor(`edge-${i}-${j}`, edgeTarget);
                     this.ctx.lineWidth = isActive ? 3.5 : (visited ? 2 : 1);
