@@ -7,6 +7,19 @@ const DEMOS = [
     { src: "/demo3.gif", ms: 4000 },
 ];
 
+const GITHUB_REPO = "vish-chan/AlgoFlow";
+
+function useStarCount() {
+    const [stars, setStars] = useState<number | null>(null);
+    useEffect(() => {
+        fetch(`https://api.github.com/repos/${GITHUB_REPO}`)
+            .then(r => r.json())
+            .then(d => { if (typeof d.stargazers_count === 'number') setStars(d.stargazers_count); })
+            .catch(() => {});
+    }, []);
+    return stars;
+}
+
 function DemoSlideshow() {
     const [idx, setIdx] = useState(0);
     useEffect(() => {
@@ -29,6 +42,8 @@ function DemoSlideshow() {
 }
 
 export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playground" | "practice", opts?: { annotate?: boolean }) => void }) {
+    const stars = useStarCount();
+
     return (
         <div className="lp">
             <style>{`
@@ -101,6 +116,11 @@ export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playgr
                 }
                 .lp-slides img.active { opacity: 1; }
 
+                .lp-footer-link {
+                    color: var(--text-muted); text-decoration: none; transition: color 0.15s;
+                }
+                .lp-footer-link:hover { color: var(--text-secondary); }
+
                 @media (max-width: 500px) {
                     .lp-actions { flex-direction: column; width: 100%; }
                     .lp-btn { width: 100%; text-align: center; }
@@ -130,6 +150,23 @@ export default function LandingPage({ onNavigate }: { onNavigate: (mode: "playgr
                     <DemoSlideshow />
                 </section>
             </main>
+
+            <footer style={{
+                display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16,
+                padding: '16px 20px', borderTop: '1px solid var(--border)',
+                fontSize: 11, color: 'var(--text-muted)',
+            }}>
+                <a href={`https://github.com/${GITHUB_REPO}`} target="_blank" rel="noopener noreferrer" className="lp-footer-link" style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                    <svg height="11" width="11" viewBox="0 0 16 16" fill="currentColor"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25z"/></svg>
+                    Star{stars !== null && ` (${stars})`}
+                </a>
+                <span style={{ color: 'var(--border-light)' }}>·</span>
+                <a href={`https://github.com/${GITHUB_REPO}#readme`} target="_blank" rel="noopener noreferrer" className="lp-footer-link">Docs</a>
+                <span style={{ color: 'var(--border-light)' }}>·</span>
+                <a href={`https://github.com/${GITHUB_REPO}/blob/main/CONTRIBUTING.md`} target="_blank" rel="noopener noreferrer" className="lp-footer-link">Contributing</a>
+                <span style={{ color: 'var(--border-light)' }}>·</span>
+                <a href={`https://github.com/${GITHUB_REPO}/blob/main/LICENSE`} target="_blank" rel="noopener noreferrer" className="lp-footer-link">Apache-2.0</a>
+            </footer>
         </div>
     );
 }
