@@ -3736,13 +3736,6 @@
     "args": []
   },
   {
-    "key": "tracer_005",
-    "method": "println",
-    "args": [
-      31.0
-    ]
-  },
-  {
     "key": "tracer_009",
     "method": "reset",
     "args": []
@@ -3758,100 +3751,12 @@
     "key": "tracer_009",
     "method": "addNode",
     "args": [
-      "node_000",
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "node_001",
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_000",
-      "node_001"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "node_002",
-      7.0
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_000",
-      "node_002"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "node_003",
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_001",
-      "node_003"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "node_004",
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_001",
-      "node_004"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
       "node_006",
       9.0
     ]
   },
   {
     "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_002",
-      "node_006"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_002",
-      "node_006"
-    ]
-  },
-  {
-    "key": "tracer_009",
     "method": "addNode",
     "args": [
       "null_0"
@@ -3861,7 +3766,7 @@
     "key": "tracer_009",
     "method": "addEdge",
     "args": [
-      "node_003",
+      "node_006",
       "null_0"
     ]
   },
@@ -3876,81 +3781,28 @@
     "key": "tracer_009",
     "method": "addEdge",
     "args": [
-      "node_003",
+      "node_006",
       "null_1"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "null_2"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_004",
-      "null_2"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "null_3"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_004",
-      "null_3"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "null_4"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_006",
-      "null_4"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "null_5"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_006",
-      "null_5"
     ]
   },
   {
     "key": "tracer_009",
     "method": "layoutTree",
     "args": [
-      "node_000"
+      "node_006"
     ]
   },
   {
     "key": null,
     "method": "delay",
     "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      31.0
+    ]
   },
   {
     "key": "tracer_005",
@@ -5317,13 +5169,6 @@
     "args": []
   },
   {
-    "key": "tracer_005",
-    "method": "println",
-    "args": [
-      32.0
-    ]
-  },
-  {
     "key": "tracer_009",
     "method": "reset",
     "args": []
@@ -5339,108 +5184,12 @@
     "key": "tracer_009",
     "method": "addNode",
     "args": [
-      "node_000",
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "node_001",
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_000",
-      "node_001"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "node_002",
-      7.0
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_000",
-      "node_002"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "node_003",
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_001",
-      "node_003"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "node_004",
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_001",
-      "node_004"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "node_006",
-      9.0
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_002",
-      "node_006"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
       "node_005",
       6.0
     ]
   },
   {
     "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_002",
-      "node_005"
-    ]
-  },
-  {
-    "key": "tracer_009",
     "method": "addNode",
     "args": [
       "null_0"
@@ -5450,7 +5199,7 @@
     "key": "tracer_009",
     "method": "addEdge",
     "args": [
-      "node_003",
+      "node_005",
       "null_0"
     ]
   },
@@ -5465,111 +5214,28 @@
     "key": "tracer_009",
     "method": "addEdge",
     "args": [
-      "node_003",
+      "node_005",
       "null_1"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "null_2"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_004",
-      "null_2"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "null_3"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_004",
-      "null_3"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "null_4"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_006",
-      "null_4"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "null_5"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_006",
-      "null_5"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "null_6"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_005",
-      "null_6"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
-      "null_7"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_005",
-      "null_7"
     ]
   },
   {
     "key": "tracer_009",
     "method": "layoutTree",
     "args": [
-      "node_000"
+      "node_005"
     ]
   },
   {
     "key": null,
     "method": "delay",
     "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      32.0
+    ]
   },
   {
     "key": "tracer_005",
@@ -5682,13 +5348,6 @@
     "args": []
   },
   {
-    "key": "tracer_005",
-    "method": "println",
-    "args": [
-      31.0
-    ]
-  },
-  {
     "key": "tracer_009",
     "method": "reset",
     "args": []
@@ -5704,32 +5363,8 @@
     "key": "tracer_009",
     "method": "addNode",
     "args": [
-      "node_000",
-      4.0
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addNode",
-    "args": [
       "node_002",
       7.0
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_000",
-      "node_002"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_000",
-      "node_002"
     ]
   },
   {
@@ -5828,13 +5463,20 @@
     "key": "tracer_009",
     "method": "layoutTree",
     "args": [
-      "node_000"
+      "node_002"
     ]
   },
   {
     "key": null,
     "method": "delay",
     "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      31.0
+    ]
   },
   {
     "key": "tracer_005",
@@ -7628,6 +7270,68 @@
     "args": []
   },
   {
+    "key": "tracer_009",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_004",
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_004",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_004",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "layoutTree",
+    "args": [
+      "node_004"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "println",
     "args": [
@@ -9087,6 +8791,68 @@
     "args": []
   },
   {
+    "key": "tracer_009",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_003",
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "layoutTree",
+    "args": [
+      "node_003"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "println",
     "args": [
@@ -9354,11 +9120,217 @@
     "args": []
   },
   {
+    "key": "tracer_009",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_001",
+      2.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_004",
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_004"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_003",
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_003"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_004",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_004",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_3"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_3"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "layoutTree",
+    "args": [
+      "node_001"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "println",
     "args": [
       32.0
     ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      33.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "invert(com.algoflow.runner.Main$TreeNode@HASH) \u2192 com.algoflow.runner.Main$TreeNode@HASH",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          ""
+        ],
+        [
+          "  m",
+          "com.algoflow.runner.Main@HASH"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
   },
   {
     "key": "tracer_009",
@@ -9601,88 +9573,6 @@
     "method": "layoutTree",
     "args": [
       "node_000"
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_005",
-    "method": "println",
-    "args": [
-      33.0
-    ]
-  },
-  {
-    "key": "tracer_000",
-    "method": "set",
-    "args": [
-      [
-        [
-          "invert(com.algoflow.runner.Main$TreeNode@HASH) \u2192 com.algoflow.runner.Main$TreeNode@HASH",
-          ""
-        ],
-        [
-          "main([Ljava.lang.String;@HASH)",
-          ""
-        ]
-      ]
-    ]
-  },
-  {
-    "key": "tracer_000",
-    "method": "patch",
-    "args": [
-      0.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_000",
-    "method": "set",
-    "args": [
-      [
-        [
-          "main([Ljava.lang.String;@HASH)",
-          ""
-        ]
-      ]
-    ]
-  },
-  {
-    "key": "tracer_000",
-    "method": "select",
-    "args": [
-      0.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_003",
-    "method": "set",
-    "args": [
-      [
-        [
-          "\u25b8 main",
-          ""
-        ],
-        [
-          "  m",
-          "com.algoflow.runner.Main@HASH"
-        ]
-      ]
     ]
   },
   {

@@ -150,7 +150,15 @@ public class TreeVisualizer implements Visualizer {
         return _knownNodes.contains(obj);
     }
 
+    public Object getRoot() { return _root; }
+
     public Class<?> getNodeClass() { return _structure.getNodeClass(); }
+
+    public void reRoot(Object newRoot) {
+        if (newRoot == _root) return;
+        _root = newRoot;
+        rebuild();
+    }
 
     private boolean isChildField(String fieldName) {
         return (_structure.getLeftField() != null && _structure.getLeftField().getName().equals(fieldName))

@@ -143,9 +143,6 @@ public class VisualizerInitializer {
         if (VisualizerRegistry.isRegistered(value))
             return false;
 
-        // Check if it's a tree node — delegate to registry for temp registration
-        VisualizerRegistry.handleTreeLocalVariable(name, value);
-
         // If this variable name already has a visualizer for a different object, evict it
         if (!_localVisualizedStack.isEmpty()) {
             Map<String, Object> frame = _localVisualizedStack.peek();

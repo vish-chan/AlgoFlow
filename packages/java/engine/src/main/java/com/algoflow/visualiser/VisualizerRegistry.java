@@ -383,6 +383,14 @@ public class VisualizerRegistry {
             }
             if (!tempTrees.isEmpty()) setLayout();
         }
+        if (result != null) {
+            for (TreeVisualizer tv : _treeVisualizers) {
+                if (tv.getNodeClass() == result.getClass()) {
+                    tv.reRoot(result);
+                    break;
+                }
+            }
+        }
         for (LinkedListVisualizer lv : _linkedListVisualizers) lv.clearLocals();
         VisualizerInitializer.popFrame();
         highlightLine(getCallerCallerLineNumber());
@@ -394,11 +402,19 @@ public class VisualizerRegistry {
         String variableName = LocalVariablesVisualizer.getSlotName(methodKey, slotIndex);
         if (variableName == null) return;
 
-        boolean consumedByLL = false;
+        // Check linked list visualizers first
         for (LinkedListVisualizer lv : _linkedListVisualizers) {
-            if (lv.onLocalUpdate(variableName, value)) { consumedByLL = true; break; }
+            if (lv.onLocalUpdate(variableName, value)) break;
         }
-        if (!consumedByLL && value != null) consumedByLL = tryAutoRegisterNode(variableName, value);
+
+        // Check tree visualizers — skip if already tracked
+        if (value != null) {
+            if (!handleTreeLocalVariable(variableName, value)) {
+                tryAutoRegisterNode(variableName, value);
+            }
+        }
+
+        // Register collections/arrays as local visualizers
         if (VisualizerInitializer.registerLocalValue(variableName, value)) return;
 
         highlightLine(getCallerLineNumber());
@@ -443,12 +459,25 @@ public class VisualizerRegistry {
         return tempTrees;
     }
 
-    public static void handleTreeLocalVariable(String varName, Object value) {
-        if (value == null || _tempTreeStack.isEmpty()) return;
-        String name = varName;
-        int depth = _tempTreeStack.size() - 1;
-        if (depth > 0) name += " #" + depth;
-        handleTreeValue(value, name, _tempTreeStack.peek());
+    public static boolean handleTreeLocalVariable(String varName, Object value) {
+        if (value == null || _tempTreeStack.isEmpty()) return false;
+        for (TreeVisualizer tv : _treeVisualizers) {
+            if (tv.isTrackedNode(value)) return true;
+        }
+        for (TreeVisualizer tv : _treeVisualizers) {
+            if (tv.getNodeClass() == value.getClass()) {
+                List<TreeVisualizer> frame = _tempTreeStack.peek();
+                String name = varName;
+                int depth = _tempTreeStack.size() - 1;
+                if (depth > 0) name += " #" + depth;
+                TreeVisualizer tempVis = new TreeVisualizer(name, value, value.getClass());
+                registerTree(tempVis);
+                setLayout();
+                frame.add(tempVis);
+                return true;
+            }
+        }
+        return false;
     }
 
     private static void handleTreeValue(Object value, String name, List<TreeVisualizer> tempTrees) {
@@ -472,7 +501,7 @@ public class VisualizerRegistry {
         Class<?> clazz = value.getClass();
         if (!clazz.getPackageName().startsWith("com.algoflow.runner")) return false;
         for (LinkedListVisualizer lv : _linkedListVisualizers) if (lv.getNodeClass() == clazz) return false;
-        for (TreeVisualizer tv : _treeVisualizers) if (tv.getNodeClass() == clazz) return false;
+        for (TreeVisualizer tv : _treeVisualizers) if (tv.getNodeClass() == clazz || tv.isTrackedNode(value)) return false;
 
         NodeStructure ns = NodeStructure.of(clazz);
         if (ns.isLinkedList()) {
