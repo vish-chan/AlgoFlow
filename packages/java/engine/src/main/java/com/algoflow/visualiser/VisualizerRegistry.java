@@ -21,7 +21,7 @@ public class VisualizerRegistry {
     private static CodeVisualizer _codeVisualizer;
     private static volatile boolean _processing = false;
     private static final Deque<List<TreeVisualizer>> _tempTreeStack = new ArrayDeque<>();
-    private static final Set<Object> _localTreeNodeRefs = Collections.newSetFromMap(new IdentityHashMap<>());
+    private static final Deque<Set<Object>> _localTreeNodeRefsStack = new ArrayDeque<>();
 
     private static final IdentityHashMap<Object, ObjectVisualizer> _iteratorToVisualizer = new IdentityHashMap<>();
     private static final IdentityHashMap<Object, Object[]> _iteratorToGraphNode = new IdentityHashMap<>();
@@ -367,6 +367,7 @@ public class VisualizerRegistry {
         _localVariablesVisualizer.pushFrame(methodName);
         VisualizerInitializer.pushFrame();
         _tempTreeStack.push(handleTreeArgs(methodName, args));
+        _localTreeNodeRefsStack.push(Collections.newSetFromMap(new IdentityHashMap<>()));
         highlightLine(getCallerLineNumber());
     }
 
@@ -393,7 +394,7 @@ public class VisualizerRegistry {
             }
         }
         for (LinkedListVisualizer lv : _linkedListVisualizers) lv.clearLocals();
-        _localTreeNodeRefs.clear();
+        if (!_localTreeNodeRefsStack.isEmpty()) _localTreeNodeRefsStack.pop();
         VisualizerInitializer.popFrame();
         highlightLine(getCallerCallerLineNumber());
     }
@@ -473,7 +474,11 @@ public class VisualizerRegistry {
             if (tv.isTrackedNode(node)) return;
         }
         // Only create if the node was referenced as a local variable
-        if (!_localTreeNodeRefs.contains(node)) return;
+        boolean locallyReferenced = false;
+        for (Set<Object> frame : _localTreeNodeRefsStack) {
+            if (frame.contains(node)) { locallyReferenced = true; break; }
+        }
+        if (!locallyReferenced) return;
         List<TreeVisualizer> frame = _tempTreeStack.peek();
         String name = "detached";
         int depth = _tempTreeStack.size() - 1;
@@ -500,7 +505,7 @@ public class VisualizerRegistry {
         if (value == null || _tempTreeStack.isEmpty()) return false;
         for (TreeVisualizer tv : _treeVisualizers) {
             if (tv.isTrackedNode(value)) {
-                _localTreeNodeRefs.add(value);
+                if (!_localTreeNodeRefsStack.isEmpty()) _localTreeNodeRefsStack.peek().add(value);
                 return true;
             }
         }
@@ -525,14 +530,10 @@ public class VisualizerRegistry {
         for (TreeVisualizer tv : _treeVisualizers) {
             if (tv.isTrackedNode(value)) { tv.visit(value); return; }
         }
+        // If a tree visualizer exists for this node class, don't create a temp tree.
+        // The node will be tracked by the main tree or a detached panel.
         for (TreeVisualizer tv : _treeVisualizers) {
-            if (tv.getNodeClass() == value.getClass()) {
-                TreeVisualizer tempVis = new TreeVisualizer(name, value, value.getClass());
-                registerTree(tempVis);
-                setLayout();
-                tempTrees.add(tempVis);
-                return;
-            }
+            if (tv.getNodeClass() == value.getClass()) return;
         }
     }
 
