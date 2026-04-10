@@ -21,6 +21,7 @@ public class VisualizerRegistry {
     private static CodeVisualizer _codeVisualizer;
     private static volatile boolean _processing = false;
     private static final Deque<List<TreeVisualizer>> _tempTreeStack = new ArrayDeque<>();
+    private static final Deque<Set<Object>> _localTreeNodeRefsStack = new ArrayDeque<>();
 
     private static final IdentityHashMap<Object, ObjectVisualizer> _iteratorToVisualizer = new IdentityHashMap<>();
     private static final IdentityHashMap<Object, Object[]> _iteratorToGraphNode = new IdentityHashMap<>();
@@ -366,6 +367,7 @@ public class VisualizerRegistry {
         _localVariablesVisualizer.pushFrame(methodName);
         VisualizerInitializer.pushFrame();
         _tempTreeStack.push(handleTreeArgs(methodName, args));
+        _localTreeNodeRefsStack.push(Collections.newSetFromMap(new IdentityHashMap<>()));
         highlightLine(getCallerLineNumber());
     }
 
@@ -383,7 +385,16 @@ public class VisualizerRegistry {
             }
             if (!tempTrees.isEmpty()) setLayout();
         }
+        if (result != null) {
+            for (TreeVisualizer tv : _treeVisualizers) {
+                if (tv.getNodeClass() == result.getClass() && !tv.hasRootOwner()) {
+                    tv.reRoot(result);
+                    break;
+                }
+            }
+        }
         for (LinkedListVisualizer lv : _linkedListVisualizers) lv.clearLocals();
+        if (!_localTreeNodeRefsStack.isEmpty()) _localTreeNodeRefsStack.pop();
         VisualizerInitializer.popFrame();
         highlightLine(getCallerCallerLineNumber());
     }
@@ -394,11 +405,19 @@ public class VisualizerRegistry {
         String variableName = LocalVariablesVisualizer.getSlotName(methodKey, slotIndex);
         if (variableName == null) return;
 
-        boolean consumedByLL = false;
+        // Check linked list visualizers first
         for (LinkedListVisualizer lv : _linkedListVisualizers) {
-            if (lv.onLocalUpdate(variableName, value)) { consumedByLL = true; break; }
+            if (lv.onLocalUpdate(variableName, value)) break;
         }
-        if (!consumedByLL && value != null) consumedByLL = tryAutoRegisterNode(variableName, value);
+
+        // Check tree visualizers — skip if already tracked
+        if (value != null) {
+            if (!handleTreeLocalVariable(variableName, value)) {
+                tryAutoRegisterNode(variableName, value);
+            }
+        }
+
+        // Register collections/arrays as local visualizers
         if (VisualizerInitializer.registerLocalValue(variableName, value)) return;
 
         highlightLine(getCallerLineNumber());
@@ -431,6 +450,45 @@ public class VisualizerRegistry {
 
     // ── Tree / linked list helpers ───────────────────────────────────────
 
+    public static void cleanupReattachedTempTrees(TreeVisualizer rebuiltTree) {
+        if (_tempTreeStack.isEmpty()) return;
+        List<TreeVisualizer> frame = _tempTreeStack.peek();
+        Iterator<TreeVisualizer> it = frame.iterator();
+        boolean removed = false;
+        while (it.hasNext()) {
+            TreeVisualizer temp = it.next();
+            if (rebuiltTree.isTrackedNode(temp.getRoot())) {
+                it.remove();
+                _treeVisualizers.remove(temp);
+                _visualizers.remove(temp.getCommander());
+                removed = true;
+            }
+        }
+        if (removed) setLayout();
+    }
+
+    public static void onTreeNodeDisconnected(Object node, Class<?> nodeClass) {
+        if (_tempTreeStack.isEmpty()) return;
+        // Only create temp panel if no existing tree tracks this node
+        for (TreeVisualizer tv : _treeVisualizers) {
+            if (tv.isTrackedNode(node)) return;
+        }
+        // Only create if the node was referenced as a local variable
+        boolean locallyReferenced = false;
+        for (Set<Object> frame : _localTreeNodeRefsStack) {
+            if (frame.contains(node)) { locallyReferenced = true; break; }
+        }
+        if (!locallyReferenced) return;
+        List<TreeVisualizer> frame = _tempTreeStack.peek();
+        String name = "detached";
+        int depth = _tempTreeStack.size() - 1;
+        if (depth > 0) name += " #" + depth;
+        TreeVisualizer tempVis = new TreeVisualizer(name, node, nodeClass);
+        registerTree(tempVis);
+        setLayout();
+        frame.add(tempVis);
+    }
+
     private static List<TreeVisualizer> handleTreeArgs(String methodName, Object[] args) {
         if (args == null) return new ArrayList<>();
         int depth = _tempTreeStack.size();
@@ -443,12 +501,28 @@ public class VisualizerRegistry {
         return tempTrees;
     }
 
-    public static void handleTreeLocalVariable(String varName, Object value) {
-        if (value == null || _tempTreeStack.isEmpty()) return;
-        String name = varName;
-        int depth = _tempTreeStack.size() - 1;
-        if (depth > 0) name += " #" + depth;
-        handleTreeValue(value, name, _tempTreeStack.peek());
+    public static boolean handleTreeLocalVariable(String varName, Object value) {
+        if (value == null || _tempTreeStack.isEmpty()) return false;
+        for (TreeVisualizer tv : _treeVisualizers) {
+            if (tv.isTrackedNode(value)) {
+                if (!_localTreeNodeRefsStack.isEmpty()) _localTreeNodeRefsStack.peek().add(value);
+                return true;
+            }
+        }
+        for (TreeVisualizer tv : _treeVisualizers) {
+            if (tv.getNodeClass() == value.getClass()) {
+                List<TreeVisualizer> frame = _tempTreeStack.peek();
+                String name = varName;
+                int depth = _tempTreeStack.size() - 1;
+                if (depth > 0) name += " #" + depth;
+                TreeVisualizer tempVis = new TreeVisualizer(name, value, value.getClass());
+                registerTree(tempVis);
+                setLayout();
+                frame.add(tempVis);
+                return true;
+            }
+        }
+        return false;
     }
 
     private static void handleTreeValue(Object value, String name, List<TreeVisualizer> tempTrees) {
@@ -456,14 +530,10 @@ public class VisualizerRegistry {
         for (TreeVisualizer tv : _treeVisualizers) {
             if (tv.isTrackedNode(value)) { tv.visit(value); return; }
         }
+        // If a tree visualizer exists for this node class, don't create a temp tree.
+        // The node will be tracked by the main tree or a detached panel.
         for (TreeVisualizer tv : _treeVisualizers) {
-            if (tv.getNodeClass() == value.getClass()) {
-                TreeVisualizer tempVis = new TreeVisualizer(name, value, value.getClass());
-                registerTree(tempVis);
-                setLayout();
-                tempTrees.add(tempVis);
-                return;
-            }
+            if (tv.getNodeClass() == value.getClass()) return;
         }
     }
 
@@ -472,7 +542,7 @@ public class VisualizerRegistry {
         Class<?> clazz = value.getClass();
         if (!clazz.getPackageName().startsWith("com.algoflow.runner")) return false;
         for (LinkedListVisualizer lv : _linkedListVisualizers) if (lv.getNodeClass() == clazz) return false;
-        for (TreeVisualizer tv : _treeVisualizers) if (tv.getNodeClass() == clazz) return false;
+        for (TreeVisualizer tv : _treeVisualizers) if (tv.getNodeClass() == clazz || tv.isTrackedNode(value)) return false;
 
         NodeStructure ns = NodeStructure.of(clazz);
         if (ns.isLinkedList()) {

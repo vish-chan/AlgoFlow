@@ -9,6 +9,7 @@ public class TreeVisualizer implements Visualizer {
     private final GraphTracer _tracer;
     private final NodeStructure _structure;
     private final Set<Object> _knownNodes = Collections.newSetFromMap(new IdentityHashMap<>());
+    private final Set<String> _emittedEdges = new HashSet<>();
     private Object _lastVisited;
     private Object _rootOwner;
     private String _rootFieldName;
@@ -31,6 +32,7 @@ public class TreeVisualizer implements Visualizer {
 
     private void rebuild() {
         _knownNodes.clear();
+        _emittedEdges.clear();
         _nullCounter = 0;
         _tracer.reset();
         _tracer.directed(true);
@@ -56,11 +58,15 @@ public class TreeVisualizer implements Visualizer {
 
     private void addChild(Queue<Object> queue, Object node, Object child) {
         if (child != null) {
-            if (_knownNodes.add(child)) {
+            boolean isNew = _knownNodes.add(child);
+            if (isNew) {
                 _tracer.addNode(id(child), _structure.getPrimaryValueAsDouble(child));
                 queue.add(child);
             }
-            _tracer.addEdge(id(node), id(child));
+            String edgeKey = id(node) + "->" + id(child);
+            if (_emittedEdges.add(edgeKey)) {
+                _tracer.addEdge(id(node), id(child));
+            }
         } else {
             String nullId = "null_" + (_nullCounter++);
             _tracer.addNode(nullId);
@@ -105,7 +111,16 @@ public class TreeVisualizer implements Visualizer {
         }
 
         if (isChildField(fieldName)) {
+            Set<Object> beforeNodes = new HashSet<>(_knownNodes);
             rebuild();
+            // Clean up detached panels whose root is now reattached to this tree
+            VisualizerRegistry.cleanupReattachedTempTrees(this);
+            // Create temp panels for nodes that became disconnected and are locally referenced
+            for (Object prev : beforeNodes) {
+                if (!_knownNodes.contains(prev)) {
+                    VisualizerRegistry.onTreeNodeDisconnected(prev, _structure.getNodeClass());
+                }
+            }
             return true;
         }
         return false;
@@ -150,7 +165,17 @@ public class TreeVisualizer implements Visualizer {
         return _knownNodes.contains(obj);
     }
 
+    public Object getRoot() { return _root; }
+
+    public boolean hasRootOwner() { return _rootOwner != null; }
+
     public Class<?> getNodeClass() { return _structure.getNodeClass(); }
+
+    public void reRoot(Object newRoot) {
+        if (newRoot == _root) return;
+        _root = newRoot;
+        rebuild();
+    }
 
     private boolean isChildField(String fieldName) {
         return (_structure.getLeftField() != null && _structure.getLeftField().getName().equals(fieldName))

@@ -1463,14 +1463,21 @@ export class SimpleRenderer {
         }
 
         // Assign horizontal positions based on leaf ordering
+        // Only consider children that were actually reached by BFS (breaks cycles)
+        const bfsChildren: number[][] = Array.from({ length: n }, () => []);
+        for (const [from, to] of edges) {
+            if (visited.has(to) && depth[to] === depth[from] + 1) {
+                bfsChildren[from].push(to);
+            }
+        }
+
         let leafCounter = 0;
         const assignLeafIndex = (node: number) => {
-            const kids = [...new Set(children[node])];
+            const kids = [...new Set(bfsChildren[node])];
             if (kids.length === 0) {
                 leafIndex[node] = leafCounter++;
             } else {
                 for (const child of kids) assignLeafIndex(child);
-                // Center parent over children
                 const first = leafIndex[kids[0]];
                 const last = leafIndex[kids[kids.length - 1]];
                 leafIndex[node] = (first + last) / 2;

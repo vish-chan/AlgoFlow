@@ -3844,14 +3844,6 @@
   },
   {
     "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_002",
-      "node_006"
-    ]
-  },
-  {
-    "key": "tracer_009",
     "method": "addNode",
     "args": [
       "null_0"
@@ -3945,6 +3937,109 @@
     "method": "layoutTree",
     "args": [
       "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "GraphTracer",
+    "args": [
+      "detached #2"
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "addNode",
+    "args": [
+      "node_005",
+      6.0
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "addNode",
+    "args": [
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "addEdge",
+    "args": [
+      "node_005",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "addNode",
+    "args": [
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "addEdge",
+    "args": [
+      "node_005",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "layoutTree",
+    "args": [
+      "node_005"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_012",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_011",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_012"
     ]
   },
   {
@@ -4055,100 +4150,9 @@
   },
   {
     "key": "tracer_011",
-    "method": "GraphTracer",
-    "args": [
-      "invert \u2192 arg0 #3"
-    ]
-  },
-  {
-    "key": "tracer_011",
-    "method": "directed",
-    "args": [
-      true
-    ]
-  },
-  {
-    "key": "tracer_011",
-    "method": "reset",
-    "args": []
-  },
-  {
-    "key": "tracer_011",
-    "method": "directed",
-    "args": [
-      true
-    ]
-  },
-  {
-    "key": "tracer_011",
-    "method": "addNode",
-    "args": [
-      "node_005",
-      6.0
-    ]
-  },
-  {
-    "key": "tracer_011",
-    "method": "addNode",
-    "args": [
-      "null_0"
-    ]
-  },
-  {
-    "key": "tracer_011",
-    "method": "addEdge",
-    "args": [
-      "node_005",
-      "null_0"
-    ]
-  },
-  {
-    "key": "tracer_011",
-    "method": "addNode",
-    "args": [
-      "null_1"
-    ]
-  },
-  {
-    "key": "tracer_011",
-    "method": "addEdge",
-    "args": [
-      "node_005",
-      "null_1"
-    ]
-  },
-  {
-    "key": "tracer_011",
-    "method": "layoutTree",
+    "method": "visit",
     "args": [
       "node_005"
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_012",
-    "method": "VerticalLayout",
-    "args": [
-      [
-        "tracer_000",
-        "tracer_003",
-        "tracer_005",
-        "tracer_007",
-        "tracer_009",
-        "tracer_011",
-        "tracer_001"
-      ]
-    ]
-  },
-  {
-    "key": null,
-    "method": "setRoot",
-    "args": [
-      "tracer_012"
     ]
   },
   {
@@ -5291,32 +5295,6 @@
     "args": []
   },
   {
-    "key": "tracer_013",
-    "method": "VerticalLayout",
-    "args": [
-      [
-        "tracer_000",
-        "tracer_003",
-        "tracer_005",
-        "tracer_007",
-        "tracer_009",
-        "tracer_001"
-      ]
-    ]
-  },
-  {
-    "key": null,
-    "method": "setRoot",
-    "args": [
-      "tracer_013"
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
     "key": "tracer_005",
     "method": "println",
     "args": [
@@ -5572,6 +5550,32 @@
     "args": []
   },
   {
+    "key": "tracer_013",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_013"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "println",
     "args": [
@@ -5726,14 +5730,6 @@
   },
   {
     "key": "tracer_009",
-    "method": "addEdge",
-    "args": [
-      "node_000",
-      "node_002"
-    ]
-  },
-  {
-    "key": "tracer_009",
     "method": "addNode",
     "args": [
       "node_006",
@@ -5837,95 +5833,10 @@
     "args": []
   },
   {
-    "key": "tracer_005",
-    "method": "println",
-    "args": [
-      32.0
-    ]
-  },
-  {
-    "key": "tracer_000",
-    "method": "set",
-    "args": [
-      [
-        [
-          "invert(com.algoflow.runner.Main$TreeNode@HASH)",
-          "recursive"
-        ],
-        [
-          "invert(com.algoflow.runner.Main$TreeNode@HASH)",
-          ""
-        ],
-        [
-          "main([Ljava.lang.String;@HASH)",
-          ""
-        ]
-      ]
-    ]
-  },
-  {
-    "key": "tracer_000",
-    "method": "select",
-    "args": [
-      0.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_000",
-    "method": "deselect",
-    "args": [
-      0.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_003",
-    "method": "set",
-    "args": [
-      [
-        [
-          "\u25b8 invert",
-          ""
-        ],
-        [
-          "\u25b8 invert",
-          ""
-        ],
-        [
-          "  node",
-          "4"
-        ],
-        [
-          "  temp",
-          "2"
-        ],
-        [
-          "\u25b8 main",
-          ""
-        ],
-        [
-          "  m",
-          "com.algoflow.runner.Main@HASH"
-        ]
-      ]
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
     "key": "tracer_014",
     "method": "GraphTracer",
     "args": [
-      "invert \u2192 arg0 #2"
+      "detached #1"
     ]
   },
   {
@@ -6090,6 +6001,103 @@
     "key": "tracer_005",
     "method": "println",
     "args": [
+      32.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "invert(com.algoflow.runner.Main$TreeNode@HASH)",
+          "recursive"
+        ],
+        [
+          "invert(com.algoflow.runner.Main$TreeNode@HASH)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 invert",
+          ""
+        ],
+        [
+          "\u25b8 invert",
+          ""
+        ],
+        [
+          "  node",
+          "4"
+        ],
+        [
+          "  temp",
+          "2"
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ],
+        [
+          "  m",
+          "com.algoflow.runner.Main@HASH"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_014",
+    "method": "visit",
+    "args": [
+      "node_001"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
       29.0
     ]
   },
@@ -6156,6 +6164,18 @@
     "args": [
       30.0
     ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "leave",
+    "args": [
+      "node_001"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
   },
   {
     "key": "tracer_014",
@@ -7628,13 +7648,6 @@
     "args": []
   },
   {
-    "key": "tracer_005",
-    "method": "println",
-    "args": [
-      31.0
-    ]
-  },
-  {
     "key": "tracer_014",
     "method": "reset",
     "args": []
@@ -7650,32 +7663,8 @@
     "key": "tracer_014",
     "method": "addNode",
     "args": [
-      "node_001",
-      2.0
-    ]
-  },
-  {
-    "key": "tracer_014",
-    "method": "addNode",
-    "args": [
       "node_004",
       3.0
-    ]
-  },
-  {
-    "key": "tracer_014",
-    "method": "addEdge",
-    "args": [
-      "node_001",
-      "node_004"
-    ]
-  },
-  {
-    "key": "tracer_014",
-    "method": "addEdge",
-    "args": [
-      "node_001",
-      "node_004"
     ]
   },
   {
@@ -7712,13 +7701,20 @@
     "key": "tracer_014",
     "method": "layoutTree",
     "args": [
-      "node_001"
+      "node_004"
     ]
   },
   {
     "key": null,
     "method": "delay",
     "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      31.0
+    ]
   },
   {
     "key": "tracer_005",
@@ -7822,10 +7818,17 @@
     "args": []
   },
   {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      29.0
+    ]
+  },
+  {
     "key": "tracer_016",
     "method": "GraphTracer",
     "args": [
-      "invert \u2192 arg0 #3"
+      "node #3"
     ]
   },
   {
@@ -7924,13 +7927,6 @@
     "key": null,
     "method": "delay",
     "args": []
-  },
-  {
-    "key": "tracer_005",
-    "method": "println",
-    "args": [
-      29.0
-    ]
   },
   {
     "key": "tracer_003",
@@ -8506,6 +8502,33 @@
     "args": []
   },
   {
+    "key": "tracer_018",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_014",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_018"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
     "key": "tracer_005",
     "method": "println",
     "args": [
@@ -8868,68 +8891,6 @@
     ]
   },
   {
-    "key": "tracer_016",
-    "method": "reset",
-    "args": []
-  },
-  {
-    "key": "tracer_016",
-    "method": "directed",
-    "args": [
-      true
-    ]
-  },
-  {
-    "key": "tracer_016",
-    "method": "addNode",
-    "args": [
-      "node_003",
-      1.0
-    ]
-  },
-  {
-    "key": "tracer_016",
-    "method": "addNode",
-    "args": [
-      "null_0"
-    ]
-  },
-  {
-    "key": "tracer_016",
-    "method": "addEdge",
-    "args": [
-      "node_003",
-      "null_0"
-    ]
-  },
-  {
-    "key": "tracer_016",
-    "method": "addNode",
-    "args": [
-      "null_1"
-    ]
-  },
-  {
-    "key": "tracer_016",
-    "method": "addEdge",
-    "args": [
-      "node_003",
-      "null_1"
-    ]
-  },
-  {
-    "key": "tracer_016",
-    "method": "layoutTree",
-    "args": [
-      "node_003"
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
     "key": "tracer_005",
     "method": "println",
     "args": [
@@ -9060,25 +9021,60 @@
     "args": []
   },
   {
-    "key": "tracer_018",
-    "method": "VerticalLayout",
+    "key": "tracer_014",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_014",
+    "method": "directed",
     "args": [
-      [
-        "tracer_000",
-        "tracer_003",
-        "tracer_005",
-        "tracer_007",
-        "tracer_009",
-        "tracer_014",
-        "tracer_001"
-      ]
+      true
     ]
   },
   {
-    "key": null,
-    "method": "setRoot",
+    "key": "tracer_014",
+    "method": "addNode",
     "args": [
-      "tracer_018"
+      "node_003",
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addNode",
+    "args": [
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addNode",
+    "args": [
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "layoutTree",
+    "args": [
+      "node_003"
     ]
   },
   {
@@ -9092,6 +9088,116 @@
     "args": [
       32.0
     ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      33.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "invert(com.algoflow.runner.Main$TreeNode@HASH) \u2192 com.algoflow.runner.Main$TreeNode@HASH",
+          "recursive"
+        ],
+        [
+          "invert(com.algoflow.runner.Main$TreeNode@HASH)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "invert(com.algoflow.runner.Main$TreeNode@HASH)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 invert",
+          ""
+        ],
+        [
+          "  node",
+          "4"
+        ],
+        [
+          "  temp",
+          "2"
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ],
+        [
+          "  m",
+          "com.algoflow.runner.Main@HASH"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
   },
   {
     "key": "tracer_014",
@@ -9210,142 +9316,6 @@
     "method": "layoutTree",
     "args": [
       "node_001"
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_005",
-    "method": "println",
-    "args": [
-      33.0
-    ]
-  },
-  {
-    "key": "tracer_000",
-    "method": "set",
-    "args": [
-      [
-        [
-          "invert(com.algoflow.runner.Main$TreeNode@HASH) \u2192 com.algoflow.runner.Main$TreeNode@HASH",
-          "recursive"
-        ],
-        [
-          "invert(com.algoflow.runner.Main$TreeNode@HASH)",
-          ""
-        ],
-        [
-          "main([Ljava.lang.String;@HASH)",
-          ""
-        ]
-      ]
-    ]
-  },
-  {
-    "key": "tracer_000",
-    "method": "patch",
-    "args": [
-      0.0,
-      0.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_000",
-    "method": "set",
-    "args": [
-      [
-        [
-          "invert(com.algoflow.runner.Main$TreeNode@HASH)",
-          ""
-        ],
-        [
-          "main([Ljava.lang.String;@HASH)",
-          ""
-        ]
-      ]
-    ]
-  },
-  {
-    "key": "tracer_000",
-    "method": "select",
-    "args": [
-      0.0,
-      0.0
-    ]
-  },
-  {
-    "key": "tracer_000",
-    "method": "deselect",
-    "args": [
-      0.0,
-      1.0
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_003",
-    "method": "set",
-    "args": [
-      [
-        [
-          "\u25b8 invert",
-          ""
-        ],
-        [
-          "  node",
-          "4"
-        ],
-        [
-          "  temp",
-          "2"
-        ],
-        [
-          "\u25b8 main",
-          ""
-        ],
-        [
-          "  m",
-          "com.algoflow.runner.Main@HASH"
-        ]
-      ]
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_019",
-    "method": "VerticalLayout",
-    "args": [
-      [
-        "tracer_000",
-        "tracer_003",
-        "tracer_005",
-        "tracer_007",
-        "tracer_009",
-        "tracer_001"
-      ]
-    ]
-  },
-  {
-    "key": null,
-    "method": "setRoot",
-    "args": [
-      "tracer_019"
     ]
   },
   {
@@ -9601,6 +9571,32 @@
     "method": "layoutTree",
     "args": [
       "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_019",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_019"
     ]
   },
   {

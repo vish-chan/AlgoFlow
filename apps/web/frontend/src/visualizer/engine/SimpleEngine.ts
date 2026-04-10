@@ -134,17 +134,18 @@ export class SimpleEngine {
                 const depth = new Array(n).fill(0);
                 const queue = [root];
                 const visited = new Set([root]);
+                const bfsChildren: number[][] = Array.from({ length: n }, () => []);
                 while (queue.length) {
                     const nd = queue.shift()!;
                     for (const c of children[nd]) {
-                        if (!visited.has(c)) { visited.add(c); depth[c] = depth[nd] + 1; queue.push(c); }
+                        if (!visited.has(c)) { visited.add(c); depth[c] = depth[nd] + 1; bfsChildren[nd].push(c); queue.push(c); }
                     }
                 }
                 let leaves = 0;
                 for (let i = 0; i < n; i++) {
                     const label = [...t.namedNodes.entries()].find(([, v]) => v === i)?.[0];
                     if (label?.startsWith('null_')) continue;
-                    if (children[i].length === 0) leaves++;
+                    if (bfsChildren[i].length === 0) leaves++;
                 }
                 const maxD = Math.max(...depth);
                 this.treeMaxLeaves.set(key, Math.max(this.treeMaxLeaves.get(key) ?? 0, leaves));
