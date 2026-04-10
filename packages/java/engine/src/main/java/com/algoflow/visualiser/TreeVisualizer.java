@@ -105,7 +105,16 @@ public class TreeVisualizer implements Visualizer {
         }
 
         if (isChildField(fieldName)) {
+            Set<Object> beforeNodes = new HashSet<>(_knownNodes);
             rebuild();
+            // Clean up detached panels whose root is now reattached to this tree
+            VisualizerRegistry.cleanupReattachedTempTrees(this);
+            // Create temp panels for nodes that became disconnected and are locally referenced
+            for (Object prev : beforeNodes) {
+                if (!_knownNodes.contains(prev)) {
+                    VisualizerRegistry.onTreeNodeDisconnected(prev, _structure.getNodeClass());
+                }
+            }
             return true;
         }
         return false;
@@ -151,6 +160,8 @@ public class TreeVisualizer implements Visualizer {
     }
 
     public Object getRoot() { return _root; }
+
+    public boolean hasRootOwner() { return _rootOwner != null; }
 
     public Class<?> getNodeClass() { return _structure.getNodeClass(); }
 
