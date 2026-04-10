@@ -1,0 +1,2114 @@
+[
+  {
+    "key": "tracer_000",
+    "method": "Array2DTracer",
+    "args": [
+      "CallStack"
+    ]
+  },
+  {
+    "key": "tracer_001",
+    "method": "LogTracer",
+    "args": [
+      "Console"
+    ]
+  },
+  {
+    "key": "tracer_002",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_002"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "Array2DTracer",
+    "args": [
+      "Locals"
+    ]
+  },
+  {
+    "key": "tracer_004",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_004"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "CodeTracer",
+    "args": [
+      "Line Tracker"
+    ]
+  },
+  {
+    "key": "tracer_006",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_006"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      12.0
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "Array1DTracer",
+    "args": [
+      "int[]: args"
+    ]
+  },
+  {
+    "key": "tracer_007",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_008",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_008"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      12.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          ""
+        ],
+        [
+          "  demo",
+          "com.algoflow.runner.Main@HASH"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      8.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      14.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "GraphTracer",
+    "args": [
+      "root"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_000",
+      30.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "layoutTree",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_010",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_010"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          ""
+        ],
+        [
+          "  demo",
+          "com.algoflow.runner.Main@HASH"
+        ],
+        [
+          "  root",
+          "30"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      8.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      15.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_000",
+      30.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_001",
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_001"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "layoutTree",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "visit",
+    "args": [
+      "node_001",
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      8.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      16.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_000",
+      30.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_001",
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_001"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_002",
+      10.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_002"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_3"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_3"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "layoutTree",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "visit",
+    "args": [
+      "node_001",
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      8.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_000",
+      30.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_001",
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_001"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_002",
+      10.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_002"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_003",
+      25.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_003"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_3"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_3"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_4"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_4"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "layoutTree",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      19.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "rotateRight(com.algoflow.runner.Main$TreeNode@HASH)",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "deselect",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 rotateRight",
+          ""
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ],
+        [
+          "  demo",
+          "com.algoflow.runner.Main@HASH"
+        ],
+        [
+          "  root",
+          "30"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "leave",
+    "args": [
+      "node_001"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "visit",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      23.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 rotateRight",
+          ""
+        ],
+        [
+          "  y",
+          "30"
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ],
+        [
+          "  demo",
+          "com.algoflow.runner.Main@HASH"
+        ],
+        [
+          "  root",
+          "30"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "leave",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "visit",
+    "args": [
+      "node_001",
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 rotateRight",
+          ""
+        ],
+        [
+          "  y",
+          "30"
+        ],
+        [
+          "  x",
+          "20"
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ],
+        [
+          "  demo",
+          "com.algoflow.runner.Main@HASH"
+        ],
+        [
+          "  root",
+          "30"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      24.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "leave",
+    "args": [
+      "node_001"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "visit",
+    "args": [
+      "node_003",
+      "node_001"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 rotateRight",
+          ""
+        ],
+        [
+          "  y",
+          "30"
+        ],
+        [
+          "  x",
+          "20"
+        ],
+        [
+          "  T2",
+          "25"
+        ],
+        [
+          "\u25b8 main",
+          ""
+        ],
+        [
+          "  demo",
+          "com.algoflow.runner.Main@HASH"
+        ],
+        [
+          "  root",
+          "30"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      3.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      26.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_000",
+      30.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_001",
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_001"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_002",
+      10.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_002"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_000"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "layoutTree",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "GraphTracer",
+    "args": [
+      "detached #1"
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "addNode",
+    "args": [
+      "node_003",
+      25.0
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "addNode",
+    "args": [
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "addNode",
+    "args": [
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "layoutTree",
+    "args": [
+      "node_003"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_012",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_011",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_012"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      27.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_000",
+      30.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_003",
+      25.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_003"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "layoutTree",
+    "args": [
+      "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_013",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_013"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_014",
+    "method": "GraphTracer",
+    "args": [
+      "detached #1"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_014",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addNode",
+    "args": [
+      "node_001",
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addNode",
+    "args": [
+      "node_002",
+      10.0
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_002"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addNode",
+    "args": [
+      "node_000",
+      30.0
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_000"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addNode",
+    "args": [
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addNode",
+    "args": [
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addNode",
+    "args": [
+      "node_003",
+      25.0
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_003"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addNode",
+    "args": [
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addNode",
+    "args": [
+      "null_3"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_3"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addNode",
+    "args": [
+      "null_4"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_4"
+    ]
+  },
+  {
+    "key": "tracer_014",
+    "method": "layoutTree",
+    "args": [
+      "node_001"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_015",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_014",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_015"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      29.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "rotateRight(com.algoflow.runner.Main$TreeNode@HASH) \u2192 com.algoflow.runner.Main$TreeNode@HASH",
+          ""
+        ],
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "select",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          ""
+        ],
+        [
+          "  demo",
+          "com.algoflow.runner.Main@HASH"
+        ],
+        [
+          "  root",
+          "30"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_016",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_016"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_001",
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_002",
+      10.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_002"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_000",
+      30.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_001",
+      "node_000"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_0"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_002",
+      "null_1"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "node_003",
+      25.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "node_003"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_000",
+      "null_2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_3"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_3"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addNode",
+    "args": [
+      "null_4"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "addEdge",
+    "args": [
+      "node_003",
+      "null_4"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "layoutTree",
+    "args": [
+      "node_001"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      19.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          ""
+        ],
+        [
+          "  demo",
+          "com.algoflow.runner.Main@HASH"
+        ],
+        [
+          "  root",
+          "20"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      20.0
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      [
+        [
+          "main([Ljava.lang.String;@HASH)",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_000",
+    "method": "patch",
+    "args": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_000",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      []
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_017",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_009",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_017"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  }
+]

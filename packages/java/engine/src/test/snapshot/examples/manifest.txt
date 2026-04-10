@@ -12,6 +12,7 @@ dfs
 bst_inorder_traversal
 bst_insert_search
 invert_binary_tree
+tree_rotation
 dijkstra_s_shortest_path
 topological_sort_dfs
 fibonacci_memoized
