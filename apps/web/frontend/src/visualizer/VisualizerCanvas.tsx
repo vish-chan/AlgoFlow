@@ -124,11 +124,12 @@ function PaneResizeHandle() {
     );
 }
 
-function ChildPane({ child, renderer, autoScroll, hideTitle, onLinkSourcesUpdate }: { child: any; renderer: any; isFirst?: boolean; autoScroll?: boolean; hideTitle?: boolean; onLinkSourcesUpdate?: (sources: { x: number; y: number; ref: number }[]) => void }) {
+function ChildPane({ child, renderer, autoScroll, hideTitle, onLinkSourcesUpdate, onRefClick }: { child: any; renderer: any; isFirst?: boolean; autoScroll?: boolean; hideTitle?: boolean; onLinkSourcesUpdate?: (sources: { x: number; y: number; ref: number }[]) => void; onRefClick?: (ref: number) => void }) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const regionsRef = useRef<any[]>([]);
     const tooltipRef = useRef<any[]>([]);
+    const refClickRef = useRef<any[]>([]);
     const [tooltip, setTooltip] = useState<{ text: string; x: number; y: number } | null>(null);
     const [, forceUpdate] = useState({});
 
@@ -154,6 +155,7 @@ function ChildPane({ child, renderer, autoScroll, hideTitle, onLinkSourcesUpdate
         regionsRef.current = [...renderer.getClickRegions()];
         tooltipRef.current = [...renderer.getTooltipRegions()];
         if (onLinkSourcesUpdate) onLinkSourcesUpdate(renderer.getChildLinkSources());
+        refClickRef.current = [...renderer.getChildRefClickRegions()];
         if (child?.type === 'locals' && container.scrollTop > 0) {
             container.scrollTop = 0;
         }
@@ -181,6 +183,18 @@ function ChildPane({ child, renderer, autoScroll, hideTitle, onLinkSourcesUpdate
             return -1;
         };
         const onClick = (e: MouseEvent) => {
+            const rect = canvas.getBoundingClientRect();
+            const mx = e.clientX - rect.left;
+            const my = e.clientY - rect.top;
+            // Check ref click regions first
+            if (onRefClick) {
+                for (const r of refClickRef.current) {
+                    if (r.ref && mx >= r.x && mx <= r.x + r.w && my >= r.y && my <= r.y + r.h) {
+                        onRefClick(r.ref);
+                        return;
+                    }
+                }
+            }
             const idx = hitTest(e);
             if (idx >= 0) { regionsRef.current[idx].action(); paint(); forceUpdate({}); }
         };
@@ -189,7 +203,15 @@ function ChildPane({ child, renderer, autoScroll, hideTitle, onLinkSourcesUpdate
             const rect = canvas.getBoundingClientRect();
             const mx = e.clientX - rect.left;
             const my = e.clientY - rect.top;
-            canvas.style.cursor = idx >= 0 ? 'pointer' : '';
+            // Check ref click regions for pointer cursor
+            let onRef = false;
+            for (const r of refClickRef.current) {
+                if (r.ref && mx >= r.x && mx <= r.x + r.w && my >= r.y && my <= r.y + r.h) {
+                    onRef = true;
+                    break;
+                }
+            }
+            canvas.style.cursor = onRef || idx >= 0 ? 'pointer' : '';
             if (renderer.getHoveredRegion() !== idx) {
                 renderer.setHoveredRegion(idx);
                 paint();
@@ -276,14 +298,15 @@ function ChildPane({ child, renderer, autoScroll, hideTitle, onLinkSourcesUpdate
     );
 }
 
-function LinkOverlay({ scrollRef, engine, grouped, paneRefs, linkSourcesMap }: {
+function LinkOverlay({ scrollRef, engine, grouped, paneRefs, linkSourcesMap, onRefClick }: {
     scrollRef: React.RefObject<HTMLDivElement | null>;
     engine: any;
     grouped: any[];
     paneRefs: React.MutableRefObject<(HTMLElement | null)[]>;
     linkSourcesMap: Map<number, { sources: { x: number; y: number; ref: number }[]; paneIdx: number }>;
+    onRefClick?: (ref: number) => void;
 }) {
-    const [lines, setLines] = useState<{ x1: number; y1: number; x2: number; y2: number }[]>([]);
+    const [lines, setLines] = useState<{ x1: number; y1: number; x2: number; y2: number; ref: number }[]>([]);
 
     useEffect(() => {
         const container = scrollRef.current;
@@ -293,7 +316,7 @@ function LinkOverlay({ scrollRef, engine, grouped, paneRefs, linkSourcesMap }: {
 
         const containerRect = container.getBoundingClientRect();
         const scrollTop = container.scrollTop;
-        const newLines: { x1: number; y1: number; x2: number; y2: number }[] = [];
+        const newLines: { x1: number; y1: number; x2: number; y2: number; ref: number }[] = [];
 
         // Build tracerKey → pane label element map
         const targetMap = new Map<string, HTMLElement>();
@@ -325,6 +348,7 @@ function LinkOverlay({ scrollRef, engine, grouped, paneRefs, linkSourcesMap }: {
                     y1: canvasRect.top - containerRect.top + scrollTop + src.y,
                     x2: targetRect.left - containerRect.left + 14,
                     y2: targetRect.top - containerRect.top + scrollTop + targetRect.height / 2,
+                    ref: src.ref,
                 });
             }
         });
@@ -354,19 +378,36 @@ function LinkOverlay({ scrollRef, engine, grouped, paneRefs, linkSourcesMap }: {
             {lines.map((l, i) => {
                 const color = palette[i % palette.length];
                 const cpx = Math.min(l.x1, l.x2) - 16;
+                const d = `M ${l.x1} ${l.y1} C ${cpx} ${l.y1}, ${cpx} ${l.y2}, ${l.x2} ${l.y2}`;
                 return (
-                    <path
-                        key={i}
-                        d={`M ${l.x1} ${l.y1} C ${cpx} ${l.y1}, ${cpx} ${l.y2}, ${l.x2} ${l.y2}`}
-                        fill="none"
-                        stroke={color}
-                        strokeWidth={1.5}
-                        strokeDasharray="4 3"
-                    />
+                    <g key={i}>
+                        <path
+                            d={d}
+                            fill="none"
+                            stroke="transparent"
+                            strokeWidth={12}
+                            style={{ pointerEvents: 'stroke', cursor: 'pointer' }}
+                            onClick={() => onRefClick?.(l.ref)}
+                        />
+                        <path
+                            d={d}
+                            fill="none"
+                            stroke={color}
+                            strokeWidth={1.5}
+                            strokeDasharray="4 3"
+                            style={{ pointerEvents: 'none' }}
+                        />
+                    </g>
                 );
             })}
             {lines.map((l, i) => (
-                <circle key={`dot-${i}`} cx={l.x2} cy={l.y2} r={3} fill={dotPalette[i % dotPalette.length]} />
+                <circle
+                    key={`dot-${i}`}
+                    cx={l.x2} cy={l.y2} r={3}
+                    fill={dotPalette[i % dotPalette.length]}
+                    style={{ pointerEvents: 'auto', cursor: 'pointer' }}
+                    onClick={() => onRefClick?.(l.ref)}
+                />
             ))}
         </svg>
     );
@@ -447,12 +488,23 @@ export default function VisualizerCanvas() {
         setOffscreenActivity(null);
     };
 
+    const scrollToRef = useCallback((ref: number) => {
+        const objectRefs = engine.getObjectRefs();
+        const tracerKey = objectRefs.get(ref);
+        if (!tracerKey || !scrollRef.current) return;
+        const idx = grouped.findIndex((c: any) => c._tracerKey === tracerKey);
+        const el = idx >= 0 ? paneRefs.current[idx] : null;
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }, [grouped, engine]);
+
     return (
         <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "100%" }}>
             {isLayout && grouped.length > 0 ? (
                 <div style={{ flex: 1, minHeight: 0, position: 'relative', background: 'var(--bg-surface)' }}>
                     <div ref={scrollRef} style={{ height: '100%', overflowY: 'auto', display: 'flex', flexDirection: 'column', position: 'relative' }}>
-                        <LinkOverlay scrollRef={scrollRef} engine={engine} grouped={grouped} paneRefs={paneRefs} linkSourcesMap={linkSourcesRef.current} />
+                        <LinkOverlay scrollRef={scrollRef} engine={engine} grouped={grouped} paneRefs={paneRefs} linkSourcesMap={linkSourcesRef.current} onRefClick={scrollToRef} />
                         {grouped.map((child: any, i: number) => {
                             const paneKey = child.title || child.type + i;
                             const collapsed = collapsedPanes.has(paneKey);
@@ -462,6 +514,7 @@ export default function VisualizerCanvas() {
                                     {!collapsed && (
                                         <>
                                             <ChildPane child={child} renderer={renderer} isFirst={i === 0} autoScroll={playing && child?.type === 'log'} hideTitle
+                                                onRefClick={scrollToRef}
                                                 onLinkSourcesUpdate={(sources) => {
                                                     const map = linkSourcesRef.current;
                                                     if (sources.length > 0) {

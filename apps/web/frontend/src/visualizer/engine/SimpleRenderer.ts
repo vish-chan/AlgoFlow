@@ -23,7 +23,9 @@ export class SimpleRenderer {
     private childTransitions: Map<string, ColorTransition> = new Map();
     // Link line tracking
     private linkSources: { x: number; y: number; ref: number }[] = [];
-    private linkTargets: Map<string, { x: number; y: number }> = new Map(); // tracerKey → position
+    private linkTargets: Map<string, { x: number; y: number }> = new Map();
+    private refClickRegions: { x: number; y: number; w: number; h: number; ref: number }[] = [];
+    private lastChildRefClickRegions: { x: number; y: number; w: number; h: number; ref: number }[] = []; // tracerKey → position
 
     private static readonly TRANSITION_DURATION = 200;
 
@@ -839,6 +841,10 @@ export class SimpleRenderer {
         return this.lastChildLinkSources;
     }
 
+    getChildRefClickRegions() {
+        return this.lastChildRefClickRegions;
+    }
+
     getClickRegions() {
         return this.lastChildClickRegions;
     }
@@ -869,6 +875,7 @@ export class SimpleRenderer {
         this.clickRegions = [];
         this.tooltipRegions = [];
         this.linkSources = [];
+        this.refClickRegions = [];
         this.currentObjectRefs = child?.objectRefs ?? null;
 
         const dpr = window.devicePixelRatio || 1;
@@ -909,6 +916,7 @@ export class SimpleRenderer {
         this.lastChildClickRegions = this.clickRegions;
         this.lastChildTooltipRegions = this.tooltipRegions;
         this.lastChildLinkSources = this.linkSources;
+        this.lastChildRefClickRegions = this.refClickRegions;
         this.linkSources = prevLinkSources;
         this.currentObjectRefs = prevObjectRefs;
         this.transitions = prevTransitions;
@@ -1034,6 +1042,7 @@ export class SimpleRenderer {
                     if (hasLink && parentY !== undefined) {
                         this.linkSources.push({ x: cx, y: parentY + chipY + 1, ref: ref });
                     }
+                    this.refClickRegions.push({ x: cx, y: chipY - 7, w: chipW, h: 16, ref: hasLink ? ref : 0 });
                     cx += chipW + 5;
                 }
             }
@@ -1095,6 +1104,9 @@ export class SimpleRenderer {
             this.ctx.fillText(displayVal, valColX + 6, ry + rowH / 2);
             if (hasLink && parentY !== undefined) {
                 this.linkSources.push({ x: valColX, y: parentY + ry + rowH / 2, ref: ref });
+            }
+            if (hasLink) {
+                this.refClickRegions.push({ x: valColX, y: ry, w: chipW, h: rowH, ref: ref });
             }
         }
     }
