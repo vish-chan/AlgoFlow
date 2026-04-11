@@ -337,23 +337,36 @@ function LinkOverlay({ scrollRef, engine, grouped, paneRefs, linkSourcesMap }: {
     const h = container ? container.scrollHeight : 0;
     const w = container ? container.clientWidth : 0;
 
+    const palette = [
+        'rgba(59,130,246,0.35)',   // blue
+        'rgba(168,85,247,0.35)',   // purple
+        'rgba(236,72,153,0.35)',   // pink
+        'rgba(34,197,94,0.35)',    // green
+        'rgba(245,158,11,0.35)',   // amber
+        'rgba(6,182,212,0.35)',    // cyan
+        'rgba(239,68,68,0.35)',    // red
+        'rgba(99,102,241,0.35)',   // indigo
+    ];
+    const dotPalette = palette.map(c => c.replace('0.35)', '0.6)'));
+
     return (
         <svg style={{ position: 'absolute', top: 0, left: 0, width: w, height: h, pointerEvents: 'none', zIndex: 5 }}>
             {lines.map((l, i) => {
+                const color = palette[i % palette.length];
                 const cpx = Math.min(l.x1, l.x2) - 16;
                 return (
                     <path
                         key={i}
                         d={`M ${l.x1} ${l.y1} C ${cpx} ${l.y1}, ${cpx} ${l.y2}, ${l.x2} ${l.y2}`}
                         fill="none"
-                        stroke="rgba(59,130,246,0.3)"
+                        stroke={color}
                         strokeWidth={1.5}
                         strokeDasharray="4 3"
                     />
                 );
             })}
             {lines.map((l, i) => (
-                <circle key={`dot-${i}`} cx={l.x2} cy={l.y2} r={3} fill="rgba(59,130,246,0.5)" />
+                <circle key={`dot-${i}`} cx={l.x2} cy={l.y2} r={3} fill={dotPalette[i % dotPalette.length]} />
             ))}
         </svg>
     );
