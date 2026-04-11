@@ -108,6 +108,7 @@ public class LinkedListVisualizer implements Visualizer {
         if (owner == _rootOwner && fieldName.equals(_rootFieldName)) {
             _head = getOwnerField(_rootOwner, _rootFieldName);
             rebuild();
+            if (_head != null) VisualizerRegistry.emitObjectRef(_tracer, _head);
             return true;
         }
 
@@ -137,6 +138,7 @@ public class LinkedListVisualizer implements Visualizer {
     }
 
     public Class<?> getNodeClass() { return _structure.getNodeClass(); }
+    public Object getHead() { return _head; }
 
     private boolean isNextField(String fieldName) {
         return (_structure.getNextField() != null && _structure.getNextField().getName().equals(fieldName))

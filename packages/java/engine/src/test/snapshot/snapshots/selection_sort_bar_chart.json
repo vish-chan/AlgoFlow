@@ -97,6 +97,7 @@
       [
         [
           "\u25b8 main",
+          "",
           ""
         ]
       ]
@@ -165,6 +166,14 @@
     "args": []
   },
   {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_007",
+      "HASH0"
+    ]
+  },
+  {
     "key": "tracer_008",
     "method": "VerticalLayout",
     "args": [
@@ -190,6 +199,45 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          "",
+          ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
     "key": "tracer_005",
     "method": "println",
     "args": [
@@ -198,30 +246,18 @@
   },
   {
     "key": "tracer_009",
-    "method": "ChartTracer",
+    "method": "Array2DTracer",
     "args": [
-      "arr"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "set",
-    "args": [
-      [
-        5.0,
-        3.0,
-        8.0,
-        1.0,
-        9.0,
-        2.0,
-        7.0
-      ]
+      "Instance: Main@HASH"
     ]
   },
   {
     "key": null,
-    "method": "delay",
-    "args": []
+    "method": "objectRef",
+    "args": [
+      "tracer_009",
+      "HASH1"
+    ]
   },
   {
     "key": "tracer_010",
@@ -248,6 +284,130 @@
     "key": null,
     "method": "delay",
     "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "ChartTracer",
+    "args": [
+      "arr"
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "set",
+    "args": [
+      [
+        5.0,
+        3.0,
+        8.0,
+        1.0,
+        9.0,
+        2.0,
+        7.0
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_011",
+      "HASH2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "arr",
+          "int[](7)",
+          "HASH2"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_012",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_011",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_012"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          "",
+          ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
   },
   {
     "key": "tracer_005",
@@ -300,11 +460,23 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -328,15 +500,28 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -376,19 +561,33 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          0.0
+          0.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -428,23 +627,38 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          0.0
+          0.0,
+          ""
         ],
         [
           "  minIdx",
-          0.0
+          0.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -484,27 +698,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          0.0
+          0.0,
+          ""
         ],
         [
           "  minIdx",
-          0.0
+          0.0,
+          ""
         ],
         [
           "  temp",
-          1.0
+          1.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -538,7 +768,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       1.0
@@ -550,14 +780,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       1.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       0.0
@@ -582,27 +812,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          0.0
+          0.0,
+          ""
         ],
         [
           "  minIdx",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  temp",
-          1.0
+          1.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -642,27 +888,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          0.0
+          0.0,
+          ""
         ],
         [
           "  minIdx",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  temp",
-          2.0
+          2.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -696,14 +958,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       0.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       2.0
@@ -715,14 +977,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       2.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       1.0
@@ -747,27 +1009,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          0.0
+          0.0,
+          ""
         ],
         [
           "  minIdx",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  temp",
-          3.0
+          3.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -801,14 +1079,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       1.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       3.0
@@ -820,14 +1098,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       1.0
@@ -852,27 +1130,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          0.0
+          0.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          3.0
+          3.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -912,27 +1206,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          0.0
+          0.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          4.0
+          4.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -966,14 +1276,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       1.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       4.0
@@ -985,14 +1295,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       4.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       3.0
@@ -1017,27 +1327,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          0.0
+          0.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          5.0
+          5.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -1071,14 +1397,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       5.0
@@ -1090,14 +1416,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       3.0
@@ -1122,27 +1448,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          0.0
+          0.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          6.0
+          6.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -1176,14 +1518,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       6.0
@@ -1195,14 +1537,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       6.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       3.0
@@ -1227,27 +1569,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          0.0
+          0.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          7.0
+          7.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -1281,14 +1639,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       3.0
@@ -1306,27 +1664,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          0.0
+          0.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          1.0
+          1.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -1360,14 +1734,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       0.0
@@ -1379,14 +1753,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       0.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "patch",
     "args": [
       3.0,
@@ -1399,7 +1773,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "depatch",
     "args": [
       3.0
@@ -1413,14 +1787,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "patch",
     "args": [
       0.0,
@@ -1433,7 +1807,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "depatch",
     "args": [
       0.0
@@ -1453,27 +1827,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          1.0
+          1.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -1513,27 +1903,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  minIdx",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  temp",
-          1.0
+          1.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -1573,27 +1979,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  minIdx",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  temp",
-          2.0
+          2.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -1627,14 +2049,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       0.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       2.0
@@ -1646,14 +2068,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       2.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       1.0
@@ -1678,27 +2100,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  minIdx",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  temp",
-          3.0
+          3.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -1732,14 +2170,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       1.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       3.0
@@ -1751,14 +2189,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       1.0
@@ -1783,27 +2221,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  minIdx",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  temp",
-          4.0
+          4.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -1837,14 +2291,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       1.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       4.0
@@ -1856,14 +2310,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       4.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       1.0
@@ -1888,27 +2342,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  minIdx",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  temp",
-          5.0
+          5.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -1942,14 +2412,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       1.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       5.0
@@ -1961,14 +2431,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       1.0
@@ -1993,27 +2463,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          5.0
+          5.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2053,27 +2539,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          6.0
+          6.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2107,14 +2609,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       1.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       6.0
@@ -2126,14 +2628,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       6.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       5.0
@@ -2158,27 +2660,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          7.0
+          7.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2212,14 +2730,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       5.0
@@ -2237,27 +2755,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          1.0
+          1.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          2.0
+          2.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2291,14 +2825,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       1.0
@@ -2310,14 +2844,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       1.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "patch",
     "args": [
       5.0,
@@ -2330,7 +2864,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "depatch",
     "args": [
       5.0
@@ -2344,14 +2878,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "patch",
     "args": [
       1.0,
@@ -2364,7 +2898,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "depatch",
     "args": [
       1.0
@@ -2384,27 +2918,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          2.0
+          2.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          2.0
+          2.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2444,27 +2994,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          2.0
+          2.0,
+          ""
         ],
         [
           "  minIdx",
-          2.0
+          2.0,
+          ""
         ],
         [
           "  temp",
-          2.0
+          2.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2504,27 +3070,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          2.0
+          2.0,
+          ""
         ],
         [
           "  minIdx",
-          2.0
+          2.0,
+          ""
         ],
         [
           "  temp",
-          3.0
+          3.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2558,14 +3140,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       1.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       3.0
@@ -2577,14 +3159,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       2.0
@@ -2609,27 +3191,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          2.0
+          2.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          3.0
+          3.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2669,27 +3267,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          2.0
+          2.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          4.0
+          4.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2723,14 +3337,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       2.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       4.0
@@ -2742,14 +3356,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       4.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       3.0
@@ -2774,27 +3388,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          2.0
+          2.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          5.0
+          5.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2828,14 +3458,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       5.0
@@ -2847,14 +3477,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       3.0
@@ -2879,27 +3509,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          2.0
+          2.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          5.0
+          5.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2939,27 +3585,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          2.0
+          2.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          6.0
+          6.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2993,14 +3655,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       6.0
@@ -3012,14 +3674,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       6.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       5.0
@@ -3044,27 +3706,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          2.0
+          2.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          7.0
+          7.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3098,14 +3776,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       5.0
@@ -3123,27 +3801,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          2.0
+          2.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          3.0
+          3.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3177,14 +3871,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       2.0
@@ -3196,14 +3890,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       2.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "patch",
     "args": [
       5.0,
@@ -3216,7 +3910,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "depatch",
     "args": [
       5.0
@@ -3230,14 +3924,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "patch",
     "args": [
       2.0,
@@ -3250,7 +3944,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "depatch",
     "args": [
       2.0
@@ -3270,27 +3964,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          3.0
+          3.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3330,27 +4040,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          3.0
+          3.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3390,27 +4116,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          4.0
+          4.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3444,14 +4186,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       2.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       4.0
@@ -3463,14 +4205,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       4.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       3.0
@@ -3495,27 +4237,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          5.0
+          5.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3549,14 +4307,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       5.0
@@ -3568,14 +4326,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       3.0
@@ -3600,27 +4358,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          6.0
+          6.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3654,14 +4428,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       6.0
@@ -3673,14 +4447,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       6.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       3.0
@@ -3705,27 +4479,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          7.0
+          7.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3759,14 +4549,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       3.0
@@ -3784,27 +4574,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          5.0
+          5.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3838,14 +4644,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       3.0
@@ -3857,14 +4663,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "patch",
     "args": [
       3.0,
@@ -3877,7 +4683,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "depatch",
     "args": [
       3.0
@@ -3891,14 +4697,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "patch",
     "args": [
       3.0,
@@ -3911,7 +4717,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "depatch",
     "args": [
       3.0
@@ -3931,27 +4737,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          4.0
+          4.0,
+          ""
         ],
         [
           "  minIdx",
-          3.0
+          3.0,
+          ""
         ],
         [
           "  temp",
-          5.0
+          5.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3991,27 +4813,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          4.0
+          4.0,
+          ""
         ],
         [
           "  minIdx",
-          4.0
+          4.0,
+          ""
         ],
         [
           "  temp",
-          5.0
+          5.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4051,27 +4889,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          4.0
+          4.0,
+          ""
         ],
         [
           "  minIdx",
-          4.0
+          4.0,
+          ""
         ],
         [
           "  temp",
-          5.0
+          5.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4105,14 +4959,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       3.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       5.0
@@ -4124,14 +4978,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       4.0
@@ -4156,27 +5010,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          4.0
+          4.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          5.0
+          5.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4216,27 +5086,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          4.0
+          4.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          6.0
+          6.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4270,14 +5156,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       4.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       6.0
@@ -4289,14 +5175,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       6.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       5.0
@@ -4321,27 +5207,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          4.0
+          4.0,
+          ""
         ],
         [
           "  minIdx",
-          6.0
+          6.0,
+          ""
         ],
         [
           "  temp",
-          6.0
+          6.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4381,27 +5283,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          4.0
+          4.0,
+          ""
         ],
         [
           "  minIdx",
-          6.0
+          6.0,
+          ""
         ],
         [
           "  temp",
-          7.0
+          7.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4435,14 +5353,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       6.0
@@ -4460,27 +5378,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          4.0
+          4.0,
+          ""
         ],
         [
           "  minIdx",
-          6.0
+          6.0,
+          ""
         ],
         [
           "  temp",
-          7.0
+          7.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4514,14 +5448,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       6.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       4.0
@@ -4533,14 +5467,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       4.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "patch",
     "args": [
       6.0,
@@ -4553,7 +5487,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "depatch",
     "args": [
       6.0
@@ -4567,14 +5501,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       6.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "patch",
     "args": [
       4.0,
@@ -4587,7 +5521,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "depatch",
     "args": [
       4.0
@@ -4607,27 +5541,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  minIdx",
-          6.0
+          6.0,
+          ""
         ],
         [
           "  temp",
-          7.0
+          7.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4667,27 +5617,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          7.0
+          7.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4727,27 +5693,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          6.0
+          6.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4781,14 +5763,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       4.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       6.0
@@ -4800,14 +5782,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       6.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       5.0
@@ -4832,27 +5814,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          7.0
+          7.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4886,14 +5884,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       5.0
@@ -4911,27 +5909,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          8.0
+          8.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4965,14 +5979,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "select",
     "args": [
       5.0
@@ -4984,14 +5998,14 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "patch",
     "args": [
       5.0,
@@ -5004,7 +6018,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "depatch",
     "args": [
       5.0
@@ -5018,14 +6032,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "deselect",
     "args": [
       5.0
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "patch",
     "args": [
       5.0,
@@ -5038,7 +6052,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "depatch",
     "args": [
       5.0
@@ -5058,27 +6072,43 @@
       [
         [
           "\u25b8 selectionSort",
+          "",
           ""
         ],
         [
           "  n",
-          7.0
+          7.0,
+          ""
         ],
         [
           "  i",
-          6.0
+          6.0,
+          ""
         ],
         [
           "  minIdx",
-          5.0
+          5.0,
+          ""
         ],
         [
           "  temp",
-          8.0
+          8.0,
+          ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -5172,7 +6202,18 @@
       [
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -5241,7 +6282,7 @@
     "args": []
   },
   {
-    "key": "tracer_011",
+    "key": "tracer_013",
     "method": "VerticalLayout",
     "args": [
       [
@@ -5249,6 +6290,7 @@
         "tracer_003",
         "tracer_005",
         "tracer_009",
+        "tracer_011",
         "tracer_001"
       ]
     ]
@@ -5257,7 +6299,7 @@
     "key": null,
     "method": "setRoot",
     "args": [
-      "tracer_011"
+      "tracer_013"
     ]
   },
   {

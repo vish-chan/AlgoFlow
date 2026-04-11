@@ -37,21 +37,30 @@ public class LocalVariablesVisualizer implements Visualizer {
     public void onVariableUpdate(String variableName, Object value) {
         if (_frames.isEmpty()) return;
         Frame top = _frames.peekFirst();
-        top.variables.put(variableName, sanitize(value));
+        top.variables.put(variableName, sanitizeEntry(value));
         updateDisplay(variableName);
     }
 
-    private static Object sanitize(Object value) {
-        if (value == null) return "null";
+    public void removeVariable(String variableName) {
+        if (_frames.isEmpty()) return;
+        Frame top = _frames.peekFirst();
+        if (top.variables.remove(variableName) != null) {
+            updateDisplay(null);
+        }
+    }
+
+    /** Returns [displayValue, refId]. */
+    private static Object[] sanitizeEntry(Object value) {
+        if (value == null) return new Object[]{"null", ""};
         Class<?> clazz = value.getClass();
         if (clazz.isPrimitive() || value instanceof Number || value instanceof String
                 || value instanceof Boolean || value instanceof Character) {
-            return value;
+            return new Object[]{value, ""};
         }
         if (NodeStructure.isNodeClass(clazz)) {
-            return NodeStructure.of(clazz).getDisplayValue(value);
+            return new Object[]{NodeStructure.of(clazz).getDisplayValue(value), System.identityHashCode(value)};
         }
-        return String.valueOf(value);
+        return FieldsVisualizer.sanitizeEntry(value);
     }
 
     private void updateDisplay(String patchedVariable) {
@@ -60,12 +69,12 @@ public class LocalVariablesVisualizer implements Visualizer {
         int rowIdx = 0;
 
         for (Frame frame : _frames) {
-            // Header row for this frame
-            rows.add(new Object[]{"▸ " + frame.methodName, ""});
+            rows.add(new Object[]{"▸ " + frame.methodName, "", ""});
             rowIdx++;
 
-            for (Map.Entry<String, Object> entry : frame.variables.entrySet()) {
-                rows.add(new Object[]{"  " + entry.getKey(), entry.getValue()});
+            for (Map.Entry<String, Object[]> entry : frame.variables.entrySet()) {
+                Object[] val = entry.getValue();
+                rows.add(new Object[]{"  " + entry.getKey(), val[0], val[1]});
                 if (frame == _frames.peekFirst() && entry.getKey().equals(patchedVariable)) {
                     patchedRow = rowIdx;
                 }
@@ -90,7 +99,7 @@ public class LocalVariablesVisualizer implements Visualizer {
 
     private static class Frame {
         final String methodName;
-        final Map<String, Object> variables = new LinkedHashMap<>();
+        final Map<String, Object[]> variables = new LinkedHashMap<>();
 
         Frame(String methodName) {
             this.methodName = methodName;

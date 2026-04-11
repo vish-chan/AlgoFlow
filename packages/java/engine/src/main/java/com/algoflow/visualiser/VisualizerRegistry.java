@@ -19,6 +19,8 @@ public class VisualizerRegistry {
     private static LocalVariablesVisualizer _localVariablesVisualizer;
     private static CallStackVisualizer _callStackVisualizer;
     private static CodeVisualizer _codeVisualizer;
+    private static FieldsVisualizer _staticFieldsVisualizer;
+    private static final IdentityHashMap<Object, FieldsVisualizer> _instanceFieldsVisualizers = new IdentityHashMap<>();
     private static volatile boolean _processing = false;
     private static final Deque<List<TreeVisualizer>> _tempTreeStack = new ArrayDeque<>();
     private static final Deque<Set<Object>> _localTreeNodeRefsStack = new ArrayDeque<>();
@@ -47,7 +49,10 @@ public class VisualizerRegistry {
 
     public static void register(ObjectVisualizer visualizer, Object... objects) {
         _visualizers.add(visualizer.getCommander());
-        for (Object obj : objects) _objectToVisualizer.put(obj, visualizer);
+        for (Object obj : objects) {
+            _objectToVisualizer.put(obj, visualizer);
+            emitObjectRef(visualizer.getCommander(), obj);
+        }
         registerChildren(visualizer);
     }
 
@@ -55,29 +60,36 @@ public class VisualizerRegistry {
         _visualizers.add(visualizer.getCommander());
         if (graphObj != null) {
             _objectToVisualizer.put(graphObj, visualizer);
+            emitObjectRef(visualizer.getCommander(), graphObj);
             for (Object row : visualizer.getRows()) _objectToVisualizer.put(row, visualizer);
         }
     }
 
     public static void registerChart(ChartVisualizer visualizer, Object arrayObj) {
         _visualizers.add(visualizer.getCommander());
-        if (arrayObj != null) _objectToVisualizer.put(arrayObj, visualizer);
+        if (arrayObj != null) {
+            _objectToVisualizer.put(arrayObj, visualizer);
+            emitObjectRef(visualizer.getCommander(), arrayObj);
+        }
     }
 
     public static void registerMap(HashMapVisualizer visualizer, Object mapObj) {
         _visualizers.add(visualizer.getCommander());
         _objectToVisualizer.put(mapObj, visualizer);
         _mapIndex.put(mapObj, visualizer);
+        emitObjectRef(visualizer.getCommander(), mapObj);
     }
 
     public static void registerTree(TreeVisualizer visualizer) {
         _visualizers.add(visualizer.getCommander());
         _treeVisualizers.add(visualizer);
+        if (visualizer.getRoot() != null) emitObjectRef(visualizer.getCommander(), visualizer.getRoot());
     }
 
     public static void registerLinkedList(LinkedListVisualizer visualizer) {
         _visualizers.add(visualizer.getCommander());
         _linkedListVisualizers.add(visualizer);
+        if (visualizer.getHead() != null) emitObjectRef(visualizer.getCommander(), visualizer.getHead());
     }
 
     public static void register(Visualizer visualizer) {
@@ -281,6 +293,20 @@ public class VisualizerRegistry {
 
     private static void doFieldSet(Object owner, String fieldName, int lineNumber) {
         if (lineNumber > 0) highlightLine(lineNumber);
+
+        // Update instance fields panel (before tree/LL handlers which may return early)
+        if (owner != null && owner.getClass().getName().startsWith("com.algoflow.runner")
+                && !NodeStructure.isNodeClass(owner.getClass())) {
+            FieldsVisualizer fv = _instanceFieldsVisualizers.get(owner);
+            if (fv != null) {
+                try {
+                    java.lang.reflect.Field f = owner.getClass().getDeclaredField(fieldName);
+                    f.setAccessible(true);
+                    fv.onFieldUpdate(fieldName, f.get(owner));
+                } catch (Exception ignored) {}
+            }
+        }
+
         // Check all tree/LL visualizers — both for tracked nodes and root owner updates
         for (TreeVisualizer tv : _treeVisualizers) {
             if (tv.onFieldSet(owner, fieldName)) return;
@@ -313,6 +339,15 @@ public class VisualizerRegistry {
                 f.setAccessible(true);
                 Object value = f.get(null);
                 if (value != null) initDeferred(vis, value);
+            } catch (Exception ignored) {}
+        }
+        // Update static fields panel
+        if (_staticFieldsVisualizer != null && className.startsWith("com.algoflow.runner")) {
+            try {
+                Class<?> clazz = Class.forName(className);
+                java.lang.reflect.Field f = clazz.getDeclaredField(fieldName);
+                f.setAccessible(true);
+                _staticFieldsVisualizer.onFieldUpdate(fieldName, f.get(null));
             } catch (Exception ignored) {}
         }
     }
@@ -401,9 +436,33 @@ public class VisualizerRegistry {
 
     // ── Local variable tracking ──────────────────────────────────────────
 
+    // ── Anonymous instance tracking ─────────────────────────────────────
+
+    private static final IdentityHashMap<Object, String> _anonymousInstances = new IdentityHashMap<>();
+
+    public static void trackAnonymousInstance(Object instance) {
+        if (instance == null || _localVariablesVisualizer == null) return;
+        String name = "this (" + instance.getClass().getSimpleName() + ")";
+        _anonymousInstances.put(instance, name);
+        _localVariablesVisualizer.onVariableUpdate(name, instance);
+    }
+
+    private static void removeAnonymousIfNamed(Object value) {
+        if (value == null) return;
+        String anonName = _anonymousInstances.remove(value);
+        if (anonName != null && _localVariablesVisualizer != null) {
+            _localVariablesVisualizer.removeVariable(anonName);
+        }
+    }
+
+    // ── Local variable tracking ──────────────────────────────────────
+
     public static void onLocalVariableUpdate(String methodKey, int slotIndex, Object value) {
         String variableName = LocalVariablesVisualizer.getSlotName(methodKey, slotIndex);
         if (variableName == null) return;
+
+        // If this value was tracked as anonymous, remove the anonymous entry
+        removeAnonymousIfNamed(value);
 
         // Check linked list visualizers first
         for (LinkedListVisualizer lv : _linkedListVisualizers) {
@@ -418,7 +477,7 @@ public class VisualizerRegistry {
         }
 
         // Register collections/arrays as local visualizers
-        if (VisualizerInitializer.registerLocalValue(variableName, value)) return;
+        boolean registeredLocal = VisualizerInitializer.registerLocalValue(variableName, value);
 
         highlightLine(getCallerLineNumber());
         ensureLocalVariablesVisualizer();
@@ -431,6 +490,7 @@ public class VisualizerRegistry {
         evictExisting(value);
         _objectToVisualizer.put(value, vis);
         vis.lateInit(value);
+        emitObjectRef(vis.getCommander(), value);
         if (vis instanceof PrimitiveArray2DVisualizer v) {
             for (Object row : v.getRows()) _objectToVisualizer.put(row, v);
         } else if (vis instanceof GraphVisualizer g) {
@@ -592,6 +652,30 @@ public class VisualizerRegistry {
         }
     }
 
+    public static void ensureStaticFieldsVisualizer(String className) {
+        if (_staticFieldsVisualizer == null) {
+            String simpleName = className.contains(".") ? className.substring(className.lastIndexOf('.') + 1) : className;
+            _staticFieldsVisualizer = new FieldsVisualizer("Static: " + simpleName);
+            _visualizers.add(_staticFieldsVisualizer.getCommander());
+            setLayout();
+        }
+    }
+
+    public static FieldsVisualizer ensureInstanceFieldsVisualizer(Object instance) {
+        FieldsVisualizer fv = _instanceFieldsVisualizers.get(instance);
+        if (fv == null) {
+            String name = "Instance: " + instance.getClass().getSimpleName() + "@" + System.identityHashCode(instance);
+            fv = new FieldsVisualizer(name);
+            _instanceFieldsVisualizers.put(instance, fv);
+            _visualizers.add(fv.getCommander());
+            emitObjectRef(fv.getCommander(), instance);
+            setLayout();
+        }
+        return fv;
+    }
+
+    public static FieldsVisualizer getStaticFieldsVisualizer() { return _staticFieldsVisualizer; }
+
     public static void setLayout() {
         if (_logVisualizer == null) _logVisualizer = new LogVisualizer();
         List<Commander> allCommanders = new ArrayList<>(_visualizers);
@@ -632,6 +716,18 @@ public class VisualizerRegistry {
     }
 
     // ── Utility ──────────────────────────────────────────────────────────
+
+    static void emitObjectRef(Commander commander, Object obj) {
+        try {
+            java.lang.reflect.Field keyField = Commander.class.getDeclaredField("key");
+            keyField.setAccessible(true);
+            String tracerKey = (String) keyField.get(commander);
+            // Use static Commander.command to emit: {key: null, method: "objectRef", args: [tracerKey, identityHashCode]}
+            java.lang.reflect.Method cmd = Commander.class.getDeclaredMethod("command", String.class, String.class, Object[].class);
+            cmd.setAccessible(true);
+            cmd.invoke(null, null, "objectRef", new Object[]{tracerKey, System.identityHashCode(obj)});
+        } catch (Exception ignored) {}
+    }
 
     private static int getCallerLineNumber() { return getRunnerLineNumber(0); }
     private static int getCallerCallerLineNumber() { return getRunnerLineNumber(1); }

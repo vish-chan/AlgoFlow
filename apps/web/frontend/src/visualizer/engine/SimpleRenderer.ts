@@ -21,6 +21,10 @@ export class SimpleRenderer {
     private hoveredRegionIdx: number = -1;
     private transitions: Map<string, ColorTransition> = new Map();
     private childTransitions: Map<string, ColorTransition> = new Map();
+    // Link line tracking
+    private linkSources: { x: number; y: number; ref: number }[] = [];
+    private refClickRegions: { x: number; y: number; w: number; h: number; ref: number }[] = [];
+    private lastChildRefClickRegions: { x: number; y: number; w: number; h: number; ref: number }[] = []; // tracerKey → position
 
     private static readonly TRANSITION_DURATION = 200;
 
@@ -256,7 +260,9 @@ export class SimpleRenderer {
         } else if (this.data.type === 'variables') {
             this.renderVariables(this.data.vars, this.data.title, this.data.patchState);
         } else if (this.data.type === 'locals') {
-            this.renderLocalsInBounds(this.data.rows, this.data.patchedRows, this.data.title, 0, 0, width);
+            this.renderLocalsInBounds(this.data.rows, this.data.patchedRows, this.data.title, 0, 0, width, undefined, this.data.objectRefs);
+        } else if (this.data.type === 'fields') {
+            this.renderFieldsInBounds(this.data.rows, this.data.patchedRows, this.data.title, 0, 0, width, height, this.data.objectRefs);
         } else if (this.data.type === 'graph') {
             this.renderGraphInBounds(this.data.adjMatrix, this.data.nodes, this.data.title, 0, 0, width, height, this.data.visitedEdges, this.data.directed, this.data.weighted, this.data.nodeLabels, this.data.layout, this.data.edges, this.data.treeDims, this.data.activeEdge);
         } else if (this.data.type === 'layout') {
@@ -375,6 +381,7 @@ export class SimpleRenderer {
             return Math.max(120, 30 + 80);
         }
         if (child?.type === 'variables' && child.vars) return Math.max(60, 45 + 28);
+        if (child?.type === 'fields' && child.rows) return Math.max(60, 30 + child.rows.length * 28);
         if (child?.type === 'locals' && child.rows) {
             const rows = child.maxRows || child.rows.length;
             return this.calcLocalsHeightFromCount(rows, child.maxFrames);
@@ -422,6 +429,8 @@ export class SimpleRenderer {
                 recursionChild = child;
             } else if (child?.type === 'locals') {
                 grouped.push({ ...child, callStack: recursionChild });
+            } else if (child?.type === 'fields') {
+                grouped.push(child);
             } else {
                 if (child?.type === 'array' && child.data?.length === 0) continue;
                 if (child?.type === 'chart' && child.data?.length === 0) continue;
@@ -462,7 +471,9 @@ export class SimpleRenderer {
                 this.renderChartInBounds(child.data, child.title, 0, 0, width, sectionHeight);
             } else if (child?.type === 'array' && child.data) {
                 this.renderArrayInBounds(child.data, child.title, 0, 0, width, sectionHeight, child.dsType, child._tracerKey);            } else if (child?.type === 'locals' && child.rows) {
-                this.renderLocalsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, child.callStack);
+                this.renderLocalsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, child.callStack, child.objectRefs, y);
+            } else if (child?.type === 'fields' && child.rows) {
+                this.renderFieldsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, sectionHeight, child.objectRefs, y);
             } else if (child?.type === 'array2d' && child.data) {
                 this.renderArray2DInBounds(child.data, child.title, 0, 0, width, sectionHeight, child.dsType);
             } else if (child?.type === 'hashmap' && child.data) {
@@ -490,6 +501,8 @@ export class SimpleRenderer {
             }
         });
     }
+
+    private currentObjectRefs: Map<number, string> | null = null;
 
     private renderArrayInBounds(arr: any[], title: string | undefined, x: number, y: number, width: number, height: number, dsType?: string, tracerKey?: string) {
         if (!this.ctx) return;
@@ -770,7 +783,16 @@ export class SimpleRenderer {
         });
     }
 
+    private lastChildLinkSources: { x: number; y: number; ref: number }[] = [];
     private lastChildClickRegions: { x: number; y: number; w: number; h: number; action: () => void }[] = [];
+
+    getChildLinkSources() {
+        return this.lastChildLinkSources;
+    }
+
+    getChildRefClickRegions() {
+        return this.lastChildRefClickRegions;
+    }
 
     getClickRegions() {
         return this.lastChildClickRegions;
@@ -794,11 +816,16 @@ export class SimpleRenderer {
         const prevCanvas = this.canvas;
         const prevCtx = this.ctx;
         const prevTransitions = this.transitions;
+        const prevLinkSources = this.linkSources;
+        const prevObjectRefs = this.currentObjectRefs;
         this.canvas = canvas;
         this.ctx = ctx;
         this.transitions = this.childTransitions;
         this.clickRegions = [];
         this.tooltipRegions = [];
+        this.linkSources = [];
+        this.refClickRegions = [];
+        this.currentObjectRefs = child?.objectRefs ?? null;
 
         const dpr = window.devicePixelRatio || 1;
         const width = canvas.width / dpr;
@@ -810,7 +837,9 @@ export class SimpleRenderer {
             this.renderChartInBounds(child.data, child.title, 0, 0, width, height);
         } else if (child?.type === 'array' && child.data) {
             this.renderArrayInBounds(child.data, child.title, 0, 0, width, height, child.dsType, child._tracerKey);        } else if (child?.type === 'locals' && child.rows) {
-            this.renderLocalsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, child.callStack);
+            this.renderLocalsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, child.callStack, child.objectRefs, 0);
+        } else if (child?.type === 'fields' && child.rows) {
+            this.renderFieldsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, height, child.objectRefs, 0);
         } else if (child?.type === 'array2d' && child.data) {
             this.renderArray2DInBounds(child.data, child.title, 0, 0, width, height, child.dsType);
         } else if (child?.type === 'hashmap' && child.data) {
@@ -835,6 +864,10 @@ export class SimpleRenderer {
 
         this.lastChildClickRegions = this.clickRegions;
         this.lastChildTooltipRegions = this.tooltipRegions;
+        this.lastChildLinkSources = this.linkSources;
+        this.lastChildRefClickRegions = this.refClickRegions;
+        this.linkSources = prevLinkSources;
+        this.currentObjectRefs = prevObjectRefs;
         this.transitions = prevTransitions;
         this.canvas = prevCanvas;
         this.ctx = prevCtx;
@@ -850,20 +883,20 @@ export class SimpleRenderer {
 
 
 
-    private parseLocalsFrames(rows: any[]): { name: string; vars: { name: string; val: any; rowIdx: number }[] }[] {
-        const frames: { name: string; vars: { name: string; val: any; rowIdx: number }[] }[] = [];
+    private parseLocalsFrames(rows: any[]): { name: string; vars: { name: string; val: any; ref: any; rowIdx: number }[] }[] {
+        const frames: { name: string; vars: { name: string; val: any; ref: any; rowIdx: number }[] }[] = [];
         for (let i = 0; i < rows.length; i++) {
             const name = String(rows[i][0]);
             if (name.startsWith('\u25b8')) {
                 frames.push({ name: name.substring(2), vars: [] });
             } else if (frames.length > 0) {
-                frames[frames.length - 1].vars.push({ name: name.replace(/^\s+/, ''), val: rows[i][1], rowIdx: i });
+                frames[frames.length - 1].vars.push({ name: name.replace(/^\s+/, ''), val: rows[i][1], ref: rows[i][2] ?? '', rowIdx: i });
             }
         }
         return frames;
     }
 
-    private renderLocalsInBounds(rows: any[], patchedRows: Set<number>, _title: string | undefined, x: number, y: number, _width: number, callStack?: any) {
+    private renderLocalsInBounds(rows: any[], patchedRows: Set<number>, _title: string | undefined, x: number, y: number, _width: number, callStack?: any, objectRefs?: Map<number, string>, parentY?: number) {
         if (!this.ctx) return;
         const frames = this.parseLocalsFrames(rows);
         const csCalls = callStack?.calls || [];
@@ -930,7 +963,9 @@ export class SimpleRenderer {
                 const chipY = ly + 28;
                 this.ctx.font = '10px monospace';
                 for (const v of frame.vars) {
-                    const label = `${v.name}=${v.val}`;
+                    const ref = v.ref;
+                    const hasLink = ref !== '' && ref != null && objectRefs?.has(ref);
+                    const label = `${v.name}=${v.val}` + (hasLink ? ' →' : '');
                     const tw = this.ctx.measureText(label).width;
                     const chipW = tw + 10;
                     const patched = patchedRows?.has(v.rowIdx);
@@ -938,21 +973,25 @@ export class SimpleRenderer {
                         this.ctx.shadowColor = theme.status.error;
                         this.ctx.shadowBlur = 8;
                     }
-                    this.ctx.fillStyle = patched ? theme.status.error : 'rgba(0,0,0,0.35)';
+                    this.ctx.fillStyle = patched ? theme.status.error : (hasLink ? 'rgba(59,130,246,0.25)' : 'rgba(0,0,0,0.35)');
                     this.ctx.beginPath();
                     this.ctx.roundRect(cx, chipY - 7, chipW, 16, 3);
                     this.ctx.fill();
                     this.ctx.shadowColor = 'transparent';
                     this.ctx.shadowBlur = 0;
-                    this.ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+                    this.ctx.strokeStyle = hasLink ? 'rgba(59,130,246,0.5)' : 'rgba(255,255,255,0.25)';
                     this.ctx.beginPath();
                     this.ctx.roundRect(cx, chipY - 7, chipW, 16, 3);
                     this.ctx.stroke();
-                    this.ctx.fillStyle = '#fff';
+                    this.ctx.fillStyle = hasLink ? '#93c5fd' : '#fff';
                     this.ctx.font = '10px monospace';
                     this.ctx.textAlign = 'left';
                     this.ctx.textBaseline = 'middle';
                     this.ctx.fillText(label, cx + 5, chipY + 1);
+                    if (hasLink && parentY !== undefined) {
+                        this.linkSources.push({ x: cx, y: parentY + chipY + 1, ref: ref });
+                    }
+                    this.refClickRegions.push({ x: cx, y: chipY - 7, w: chipW, h: 16, ref: hasLink ? ref : 0 });
                     cx += chipW + 5;
                 }
             }
@@ -960,6 +999,67 @@ export class SimpleRenderer {
             ly += barH + 4;
         }
     }
+    private renderFieldsInBounds(rows: any[], patchedRows: Set<number>, title: string | undefined, x: number, y: number, width: number, _height: number, objectRefs?: Map<number, string>, parentY?: number) {
+        if (!this.ctx) return;
+        let ly = y + 18;
+
+        if (title) {
+            this.ctx.fillStyle = theme.text.secondary;
+            this.ctx.font = '12px sans-serif';
+            this.ctx.textAlign = 'left';
+            this.ctx.fillText(title, x + 10, ly);
+            ly += 20;
+        }
+
+        const nameColW = Math.min(120, width * 0.3);
+        const valColX = x + 10 + nameColW + 8;
+        const rowH = 24;
+        const gap = 4;
+
+        for (let i = 0; i < rows.length; i++) {
+            const [name, val, ref] = rows[i];
+            const patched = patchedRows?.has(i);
+            const hasLink = ref !== '' && ref != null && objectRefs?.has(ref);
+            const ry = ly + i * (rowH + gap);
+
+            // Name
+            this.ctx.fillStyle = theme.text.muted;
+            this.ctx.font = '11px monospace';
+            this.ctx.textAlign = 'right';
+            this.ctx.textBaseline = 'middle';
+            this.ctx.fillText(this.truncateText(String(name), nameColW), x + 10 + nameColW, ry + rowH / 2);
+
+            // Value chip
+            const displayVal = String(val) + (hasLink ? ' \u2192' : '');
+            this.ctx.font = '11px monospace';
+            const tw = this.ctx.measureText(displayVal).width;
+            const chipW = tw + 12;
+
+            if (patched) { this.ctx.shadowColor = theme.status.error; this.ctx.shadowBlur = 8; }
+            this.ctx.fillStyle = patched ? theme.status.error : (hasLink ? 'rgba(59,130,246,0.25)' : theme.cell.default);
+            this.ctx.beginPath();
+            this.ctx.roundRect(valColX, ry, chipW, rowH, 4);
+            this.ctx.fill();
+            this.ctx.shadowColor = 'transparent'; this.ctx.shadowBlur = 0;
+            this.ctx.strokeStyle = hasLink ? 'rgba(59,130,246,0.5)' : theme.text.muted;
+            this.ctx.beginPath();
+            this.ctx.roundRect(valColX, ry, chipW, rowH, 4);
+            this.ctx.stroke();
+
+            this.ctx.fillStyle = hasLink ? '#93c5fd' : '#fff';
+            this.ctx.font = '11px monospace';
+            this.ctx.textAlign = 'left';
+            this.ctx.textBaseline = 'middle';
+            this.ctx.fillText(displayVal, valColX + 6, ry + rowH / 2);
+            if (hasLink && parentY !== undefined) {
+                this.linkSources.push({ x: valColX, y: parentY + ry + rowH / 2, ref: ref });
+            }
+            if (hasLink) {
+                this.refClickRegions.push({ x: valColX, y: ry, w: chipW, h: rowH, ref: ref });
+            }
+        }
+    }
+
     private renderLogInBounds(logs: any[], title: string | undefined, x: number, y: number, maxWidth?: number) {
         if (!this.ctx) return;
         

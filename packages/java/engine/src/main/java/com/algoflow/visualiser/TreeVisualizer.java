@@ -39,6 +39,7 @@ public class TreeVisualizer implements Visualizer {
         if (_root != null) {
             walkAndBuild(_root);
             _tracer.layoutTree(id(_root));
+            VisualizerRegistry.emitObjectRef(_tracer, _root);
         }
         Tracer.delay();
     }

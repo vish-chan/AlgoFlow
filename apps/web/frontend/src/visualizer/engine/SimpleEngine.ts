@@ -39,8 +39,9 @@ export class SimpleEngine {
     private batching = false;
     private activeChildKey: string | null = null;
     private rawCommands: Command[] = [];
+    private objectRefs: Map<number, string> = new Map(); // identityHashCode → tracerKey
     private static readonly TYPE_PRIORITY: Record<string, number> = {
-        graph: 10, array: 9, array2d: 9, hashmap: 9, log: 5, variables: 3, locals: 1, recursion: 0,
+        graph: 10, array: 9, array2d: 9, hashmap: 9, log: 5, variables: 3, fields: 2, locals: 1, recursion: 0,
     };
 
     constructor() {
@@ -165,6 +166,7 @@ export class SimpleEngine {
         this.tracers = {};
         this.root = null;
         this.highlightedLine = null;
+        this.objectRefs = new Map();
         this.renderer.setData(null);
     }
 
@@ -191,6 +193,11 @@ export class SimpleEngine {
 
         if (key === null) {
             if (method === 'setRoot') this.root = args[0];
+            else if (method === 'objectRef') {
+                const tracerKey = args[0] as string;
+                const ref = args[1] as number;
+                if (tracerKey && ref) this.objectRefs.set(ref, tracerKey);
+            }
             return;
         }
 
@@ -216,6 +223,10 @@ export class SimpleEngine {
                 this.tracers[key] = { type: 'recursion', calls: [], title };
             } else if (lower === 'locals') {
                 this.tracers[key] = { type: 'locals', rows: [], patchedRows: new Set(), title };
+            } else if (lower.startsWith('static:') || lower.startsWith('instance:')) {
+                const isStatic = lower.startsWith('static:');
+                const cleanTitle = title.replace(/^(Static|Instance):\s*/i, '');
+                this.tracers[key] = { type: 'fields', rows: [], patchedRows: new Set(), title: cleanTitle, dsType: isStatic ? 'Static' : 'Instance' } as any;
             } else if (lower.includes('variable') || lower.includes('local')) {
                 this.tracers[key] = { type: 'variables', vars: {}, title };
             } else if (lower.startsWith('map:')) {
@@ -276,7 +287,13 @@ export class SimpleEngine {
                 }
                 case 'locals': {
                     const rows = unwrap2D(args[0]);
-                    t.rows = rows.map((r: any[]) => [r[0], r[1]]);
+                    t.rows = rows.map((r: any[]) => [r[0], r[1], r[2] ?? '']);
+                    t.patchedRows = new Set();
+                    break;
+                }
+                case 'fields': {
+                    const rows = unwrap2D(args[0]);
+                    t.rows = rows.map((r: any[]) => [r[0], r[1], r[2] ?? '']);
                     t.patchedRows = new Set();
                     break;
                 }
@@ -473,6 +490,7 @@ export class SimpleEngine {
                 break;
             }
             case 'locals':
+            case 'fields':
                 if (op === 'patch') t.patchedRows.add(Math.floor(args[0]));
                 else if (op === 'depatch') t.patchedRows.delete(Math.floor(args[0]));
                 break;
@@ -506,7 +524,10 @@ export class SimpleEngine {
             return { ...c, _tracerKey, logs: [...c.logs] };
         }
         if (c.type === 'locals') {
-            return { ...c, _tracerKey, rows: [...c.rows], patchedRows: new Set(c.patchedRows), maxRows: this._maxLocalsRows, maxFrames: this._maxLocalsFrames };
+            return { ...c, _tracerKey, rows: [...c.rows], patchedRows: new Set(c.patchedRows), maxRows: this._maxLocalsRows, maxFrames: this._maxLocalsFrames, objectRefs: this.objectRefs };
+        }
+        if (c.type === 'fields') {
+            return { ...c, _tracerKey, rows: [...c.rows], patchedRows: new Set(c.patchedRows), objectRefs: this.objectRefs };
         }
         if (c.type === 'variables') {
             return { ...c, _tracerKey, patchState: c.patchState ? { ...c.patchState } : undefined };
@@ -580,6 +601,7 @@ export class SimpleEngine {
     getCursor() { return this.cursor; }
     getLength() { return this.chunks.length; }
     getCommands() { return this.rawCommands; }
+    getObjectRefs() { return this.objectRefs; }
 
     getLayoutChildren(): { key: string; title: string; dsType?: string }[] {
         if (!this.root) return [];
@@ -593,6 +615,7 @@ export class SimpleEngine {
                 if (!dsType && t?.type === 'chart') dsType = 'Chart';
                 if (!dsType && t?.type === 'locals') dsType = 'Call Stack';
                 if (!dsType && t?.type === 'hashmap') dsType = 'Map';
+                if (!dsType && t?.type === 'fields') dsType = (t as any).dsType || 'Fields';
                 return { key: k, title: t?.title || k, dsType };
             })
             .filter((c: { key: string; title: string }) => {
@@ -601,6 +624,7 @@ export class SimpleEngine {
                 if ((t.type === 'array' || t.type === 'chart') && t.data?.length === 0) return false;
                 if (t.type === 'graph' && t.nodes?.length === 0) return false;
                 if (t.type === 'hashmap' && (!t.data?.length || t.data.length < 2)) return false;
+                if (t.type === 'fields' && t.rows?.length === 0) return false;
                 return true;
             });
     }
