@@ -34,7 +34,8 @@ class Registry:
         self._linked_lists = []
         self._annotations = {}
         self._active_method_counts = {}
-        self._vis_scope_stack = []    # stack of lists of (kind, obj_id) created per scope  # method_name -> count (for recursive detection)
+        self._vis_scope_stack = []
+        self._local_tree_node_refs_stack = []
 
     # ── Helpers ──
 
@@ -100,6 +101,8 @@ class Registry:
             self._locals_vis = Array2DTracer("Locals")
             self.set_layout()
         self._locals_frames.append({})
+        self._vis_scope_stack.append([])
+        self._local_tree_node_refs_stack.append(set())
         self._update_locals()
 
     def on_return(self, name, result=None):
@@ -119,6 +122,8 @@ class Registry:
         if self._locals_frames:
             self._locals_frames.pop()
             self._update_locals()
+        if self._local_tree_node_refs_stack:
+            self._local_tree_node_refs_stack.pop()
         # Evict visualizers created in this scope
         if self._vis_scope_stack:
             scope = self._vis_scope_stack.pop()
@@ -171,6 +176,13 @@ class Registry:
             Tracer.delay()
 
     def on_local_update(self, name, value):
+        # Track tree node references per frame
+        if value is not None and self._is_tree_node(value):
+            for tv in self._trees:
+                if tv.is_tracked(value):
+                    if self._local_tree_node_refs_stack:
+                        self._local_tree_node_refs_stack[-1].add(value)
+                    break
         for lv in self._linked_lists:
             if lv.on_local_pointer(name, value):
                 if self._locals_frames:
@@ -268,6 +280,11 @@ class Registry:
             # If tracked by existing tree, skip
             for tv in self._trees:
                 if tv.is_tracked(obj):
+                    return
+            # If a tree visualizer exists for this node class, skip
+            # (prewrite barrier handles disconnected nodes)
+            for tv in self._trees:
+                if tv.is_same_node_type(obj):
                     return
             self._register_tree(name, obj)
         elif self._is_linked_list_node(obj):
@@ -578,11 +595,57 @@ class Registry:
 
     def on_attr_set(self, obj, attr_name, value):
         for tv in self._trees:
-            if tv.on_field_set(obj, attr_name):
-                return
+            result = tv.on_field_set(obj, attr_name)
+            if result is False:
+                continue
+            if isinstance(result, tuple):
+                _, disconnected = result
+                # Cleanup reattached temp trees
+                self._cleanup_reattached(tv)
+                # Create detached panels for locally-referenced disconnected nodes
+                for node_id in disconnected:
+                    if self._is_locally_referenced(node_id):
+                        node_obj = self._find_node_by_id(node_id, tv)
+                        if node_obj is not None:
+                            self._register_tree("detached", node_obj)
+            return
         for lv in self._linked_lists:
             if lv.on_field_set(obj, attr_name):
                 return
+
+    def _is_locally_referenced(self, node_id):
+        for frame in self._local_tree_node_refs_stack:
+            for obj in frame:
+                if id(obj) == node_id:
+                    return True
+        return False
+
+    def _find_node_by_id(self, node_id, source_tv):
+        for frame in self._local_tree_node_refs_stack:
+            for obj in frame:
+                if id(obj) == node_id:
+                    return obj
+        return None
+
+    def _cleanup_reattached(self, rebuilt_tree):
+        """Remove detached panels whose root is now tracked by the rebuilt tree."""
+        if not self._vis_scope_stack:
+            return
+        frame = self._vis_scope_stack[-1]
+        removed = []
+        for i, (kind, obj_id) in enumerate(frame):
+            if kind == "tree":
+                for tv in self._trees:
+                    if tv is not rebuilt_tree and tv.root is not None and rebuilt_tree.is_tracked(tv.root):
+                        removed.append(i)
+                        self._trees.remove(tv)
+                        if tv.tracer in self._visualizers:
+                            self._visualizers.remove(tv.tracer)
+                        break
+        for i in reversed(removed):
+            frame.pop(i)
+        if removed:
+            self.set_layout()
 
     def on_attr_get(self, obj, attr_name):
         for tv in self._trees:
@@ -685,6 +748,7 @@ class _TreeVis:
         self.tracer = GraphTracer(f"tree: {name}")
         self.tracer.directed(True)
         self._known = set()
+        self._emitted_edges = set()
         self._root = root
         self._node_class = type(root)
         self._null_counter = 0
@@ -693,6 +757,7 @@ class _TreeVis:
 
     def _rebuild(self):
         self._known.clear()
+        self._emitted_edges.clear()
         self._null_counter = 0
         self.tracer.reset()
         self.tracer.directed(True)
@@ -714,7 +779,10 @@ class _TreeVis:
                         self._known.add(id(child))
                         self.tracer.addNode(id(child), getattr(child, 'val', 0))
                         q.append(child)
-                    self.tracer.addEdge(id(n), id(child))
+                    edge_key = f"{id(n)}->{id(child)}"
+                    if edge_key not in self._emitted_edges:
+                        self._emitted_edges.add(edge_key)
+                        self.tracer.addEdge(id(n), id(child))
                 else:
                     null_id = f"null_{self._null_counter}"
                     self._null_counter += 1
@@ -726,6 +794,10 @@ class _TreeVis:
             self.tracer.leave(self._last_visited)
             Tracer.delay()
 
+    @property
+    def root(self):
+        return self._root
+
     def is_same_node_type(self, obj):
         return type(obj) == self._node_class
 
@@ -735,6 +807,12 @@ class _TreeVis:
     def is_tracked_by_id(self, obj_id):
         return obj_id in self._known
 
+    def reroot(self, new_root):
+        if new_root is self._root:
+            return
+        self._root = new_root
+        self._rebuild()
+
     def on_field_set(self, owner, field_name):
         if id(owner) not in self._known:
             return False
@@ -743,8 +821,10 @@ class _TreeVis:
             Tracer.delay()
             return True
         if field_name in ('left', 'right'):
+            before_nodes = set(self._known)
             self._rebuild()
-            return True
+            disconnected = before_nodes - self._known
+            return True, disconnected
         return False
 
     def on_field_get(self, owner, field_name):
