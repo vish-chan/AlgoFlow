@@ -453,7 +453,7 @@ public class VisualizerRegistry {
         }
 
         // Register collections/arrays as local visualizers
-        if (VisualizerInitializer.registerLocalValue(variableName, value)) return;
+        boolean registeredLocal = VisualizerInitializer.registerLocalValue(variableName, value);
 
         highlightLine(getCallerLineNumber());
         ensureLocalVariablesVisualizer();
