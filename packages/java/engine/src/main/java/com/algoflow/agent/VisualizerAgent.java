@@ -189,7 +189,8 @@ public class VisualizerAgent {
                         .or(ElementMatchers.is(java.util.PriorityQueue.class))
                         .or(ElementMatchers.is(java.util.HashSet.class))
                         .or(ElementMatchers.is(java.util.LinkedHashSet.class))
-                        .or(ElementMatchers.is(java.util.TreeSet.class)))
+                        .or(ElementMatchers.is(java.util.TreeSet.class))
+                        .or(nameStartsWith("java.util.Arrays$")))
                 .transform((builder, type, classLoader, module, protectionDomain) -> {
                     return builder.visit(Advice.to(IteratorInterceptor.CreatedInterceptor.class)
                             .on(named("iterator").and(takesArguments(0))));
