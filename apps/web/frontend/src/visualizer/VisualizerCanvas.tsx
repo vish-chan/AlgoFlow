@@ -313,22 +313,12 @@ function LinkOverlay({ scrollRef, engine, grouped, paneRefs, linkSourcesMap }: {
             if (!canvas) return;
             const canvasRect = canvas.getBoundingClientRect();
 
-            // Skip if source canvas is not visible in viewport
-            if (canvasRect.bottom < containerRect.top || canvasRect.top > containerRect.bottom) return;
-
             for (const src of sources) {
                 const targetTracerKey = objectRefs.get(src.ref);
                 if (!targetTracerKey) continue;
                 const targetEl = targetMap.get(targetTracerKey);
                 if (!targetEl) continue;
                 const targetRect = targetEl.getBoundingClientRect();
-
-                // Skip if target is not visible
-                if (targetRect.bottom < containerRect.top || targetRect.top > containerRect.bottom) continue;
-
-                // Skip if source point is outside visible area
-                const srcAbsY = canvasRect.top - containerRect.top + src.y;
-                if (srcAbsY < 0 || srcAbsY > containerRect.height) continue;
 
                 newLines.push({
                     x1: canvasRect.left - containerRect.left + src.x,
@@ -472,15 +462,13 @@ export default function VisualizerCanvas() {
                                         <>
                                             <ChildPane child={child} renderer={renderer} isFirst={i === 0} autoScroll={playing && child?.type === 'log'} hideTitle
                                                 onLinkSourcesUpdate={(sources) => {
-                                                    setLinkSourcesMap(prev => {
-                                                        const next = new Map(prev);
-                                                        if (sources.length > 0) {
+                                                    if (sources.length > 0) {
+                                                        setLinkSourcesMap(prev => {
+                                                            const next = new Map(prev);
                                                             next.set(i, { sources, paneIdx: i });
-                                                        } else {
-                                                            next.delete(i);
-                                                        }
-                                                        return next;
-                                                    });
+                                                            return next;
+                                                        });
+                                                    }
                                                 }}
                                             />
                                             {i < grouped.length - 1 && <PaneResizeHandle />}
