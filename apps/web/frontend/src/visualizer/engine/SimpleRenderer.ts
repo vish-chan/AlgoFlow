@@ -23,7 +23,6 @@ export class SimpleRenderer {
     private childTransitions: Map<string, ColorTransition> = new Map();
     // Link line tracking
     private linkSources: { x: number; y: number; ref: number }[] = [];
-    private linkTargets: Map<string, { x: number; y: number }> = new Map();
     private refClickRegions: { x: number; y: number; w: number; h: number; ref: number }[] = [];
     private lastChildRefClickRegions: { x: number; y: number; w: number; h: number; ref: number }[] = []; // tracerKey → position
 
@@ -455,22 +454,6 @@ export class SimpleRenderer {
         
         const grouped = this.groupLayoutChildren(children);
         const heights = grouped.map(c => this.calcChildHeight(c));
-
-        // Reset link tracking
-        this.linkSources = [];
-        this.linkTargets = new Map();
-        // Extract objectRefs from first child that has it
-        this.currentObjectRefs = grouped.find((c: any) => c?.objectRefs)?.objectRefs ?? null;
-
-        // First pass: compute panel Y positions for link targets
-        let preY = 0;
-        grouped.forEach((child, i) => {
-            const tracerKey = child?._tracerKey;
-            if (tracerKey) {
-                this.linkTargets.set(tracerKey, { x: 6, y: preY + 14 });
-            }
-            preY += heights[i];
-        });
         
         let yOffset = 0;
         grouped.forEach((child, i) => {
@@ -517,40 +500,6 @@ export class SimpleRenderer {
                 this.ctx!.stroke();
             }
         });
-
-        // Draw link lines from reference chips to target panels
-        this.drawLinkLines();
-    }
-
-    private drawLinkLines() {
-        if (!this.ctx || this.linkSources.length === 0 || !this.currentObjectRefs) return;
-        for (const src of this.linkSources) {
-            const tracerKey = this.currentObjectRefs.get(src.ref);
-            if (!tracerKey) continue;
-            const target = this.linkTargets.get(tracerKey);
-            if (!target) continue;
-
-            const sx = src.x;
-            const sy = src.y;
-            const tx = target.x;
-            const ty = target.y;
-
-            this.ctx.save();
-            this.ctx.strokeStyle = 'rgba(59,130,246,0.25)';
-            this.ctx.lineWidth = 1;
-            this.ctx.setLineDash([3, 3]);
-            this.ctx.beginPath();
-            this.ctx.moveTo(sx, sy);
-            const cpx = Math.min(sx, tx) - 20;
-            this.ctx.bezierCurveTo(cpx, sy, cpx, ty, tx, ty);
-            this.ctx.stroke();
-
-            this.ctx.fillStyle = 'rgba(59,130,246,0.4)';
-            this.ctx.beginPath();
-            this.ctx.arc(tx, ty, 3, 0, Math.PI * 2);
-            this.ctx.fill();
-            this.ctx.restore();
-        }
     }
 
     private currentObjectRefs: Map<number, string> | null = null;
