@@ -550,7 +550,8 @@ export class SimpleEngine {
         if (this.root && this.tracers[this.root]) {
             const tracer = this.tracers[this.root];
             if (tracer.type === 'layout') {
-                this.renderer.setData({ type: 'layout', children: this.buildLayoutChildren() });
+                // Layout rendering is handled by individual ChildPane components
+                this.renderer.setData(null);
             } else {
                 const data = this.buildChildData(this.root);
                 if (data) { delete data._tracerKey; this.renderer.setData(data); }

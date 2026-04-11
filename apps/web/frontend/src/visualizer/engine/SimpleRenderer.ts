@@ -80,12 +80,6 @@ export class SimpleRenderer {
         let requiredHeight = containerHeight;
         if (this.data?.type === 'log' && this.data.logs) {
             requiredHeight = Math.max(containerHeight, 50 + this.data.logs.length * 20);
-        } else if (this.data?.type === 'layout' && this.data.children) {
-            let total = 0;
-            for (const child of this.data.children) {
-                total += this.calcChildHeight(child);
-            }
-            requiredHeight = Math.max(containerHeight, total);
         }
         
         const newW = Math.round(containerWidth * dpr);
@@ -265,8 +259,6 @@ export class SimpleRenderer {
             this.renderFieldsInBounds(this.data.rows, this.data.patchedRows, this.data.title, 0, 0, width, height, this.data.objectRefs);
         } else if (this.data.type === 'graph') {
             this.renderGraphInBounds(this.data.adjMatrix, this.data.nodes, this.data.title, 0, 0, width, height, this.data.visitedEdges, this.data.directed, this.data.weighted, this.data.nodeLabels, this.data.layout, this.data.edges, this.data.treeDims, this.data.activeEdge);
-        } else if (this.data.type === 'layout') {
-            this.renderLayout(this.data.children);
         } else {
             this.renderText(JSON.stringify(this.data, null, 2));
         }
@@ -444,62 +436,6 @@ export class SimpleRenderer {
         }
         if (logChild) grouped.push(logChild);
         return grouped;
-    }
-
-    private renderLayout(children: any[]) {
-        if (!this.ctx || !this.canvas) return;
-        
-        const dpr = window.devicePixelRatio || 1;
-        const width = this.canvas.width / dpr;
-        
-        const grouped = this.groupLayoutChildren(children);
-        const heights = grouped.map(c => this.calcChildHeight(c));
-        
-        let yOffset = 0;
-        grouped.forEach((child, i) => {
-            const sectionHeight = heights[i];
-            const y = yOffset;
-            yOffset += sectionHeight;
-            
-            this.ctx!.save();
-            this.ctx!.translate(0, y);
-            this.ctx!.beginPath();
-            this.ctx!.rect(0, 0, width, sectionHeight);
-            this.ctx!.clip();
-            
-            if (child?.type === 'chart' && child.data) {
-                this.renderChartInBounds(child.data, child.title, 0, 0, width, sectionHeight);
-            } else if (child?.type === 'array' && child.data) {
-                this.renderArrayInBounds(child.data, child.title, 0, 0, width, sectionHeight, child.dsType, child._tracerKey);            } else if (child?.type === 'locals' && child.rows) {
-                this.renderLocalsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, child.callStack, child.objectRefs, y);
-            } else if (child?.type === 'fields' && child.rows) {
-                this.renderFieldsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, sectionHeight, child.objectRefs, y);
-            } else if (child?.type === 'array2d' && child.data) {
-                this.renderArray2DInBounds(child.data, child.title, 0, 0, width, sectionHeight, child.dsType);
-            } else if (child?.type === 'hashmap' && child.data) {
-                this.renderHashMapInBounds(child.data, child.title, 0, 0, width, sectionHeight);
-            } else if (child?.type === 'log' && child.logs) {
-                this.renderLogInBounds(child.logs, child.title, 0, 0, width);
-            } else if (child?.type === 'recursion' && child.calls) {
-                this.renderRecursionInBounds(child.calls, child.title, 0, 0, width, sectionHeight, y);
-            } else if (child?.type === 'graph') {
-                this.renderGraphInBounds(child.adjMatrix, child.nodes, child.title, 0, 0, width, sectionHeight, child.visitedEdges, child.directed, child.weighted, child.nodeLabels, child.layout, child.edges, child.treeDims, child.activeEdge);
-            } else if (child?.type === 'variables' && child.vars) {
-                this.renderVariablesInBounds(child.vars, child.title, 0, 0, width, sectionHeight, child.patchState);
-            } else if (child?.type === 'variablesGroup') {
-                this.renderVariablesGroupInBounds(child.items, 0, 0, width);
-            }
-            
-            this.ctx!.restore();
-            
-            if (i < grouped.length - 1) {
-                this.ctx!.strokeStyle = theme.text.faint;
-                this.ctx!.beginPath();
-                this.ctx!.moveTo(0, yOffset);
-                this.ctx!.lineTo(width, yOffset);
-                this.ctx!.stroke();
-            }
-        });
     }
 
     private currentObjectRefs: Map<number, string> | null = null;
