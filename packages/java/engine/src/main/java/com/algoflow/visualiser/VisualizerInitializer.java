@@ -17,6 +17,10 @@ public class VisualizerInitializer {
             return;
         _scanned.put(instance, true);
 
+        // Skip node classes (tree/linked list nodes) — their fields are tracked by their visualizers
+        if (NodeStructure.isNodeClass(instance.getClass()))
+            return;
+
         scanStatics(instance.getClass());
         scanFields(instance.getClass(), instance);
     }
@@ -33,6 +37,26 @@ public class VisualizerInitializer {
 
         boolean scanStatic = (instance == null);
 
+        FieldsVisualizer fieldsVis = null;
+        if (scanStatic) {
+            boolean hasStaticFields = false;
+            for (Field f : clazz.getDeclaredFields()) {
+                if (java.lang.reflect.Modifier.isStatic(f.getModifiers())) { hasStaticFields = true; break; }
+            }
+            if (hasStaticFields) {
+                VisualizerRegistry.ensureStaticFieldsVisualizer(clazz.getName());
+                fieldsVis = VisualizerRegistry.getStaticFieldsVisualizer();
+            }
+        } else {
+            boolean hasInstanceFields = false;
+            for (Field f : clazz.getDeclaredFields()) {
+                if (!java.lang.reflect.Modifier.isStatic(f.getModifiers())) { hasInstanceFields = true; break; }
+            }
+            if (hasInstanceFields) {
+                fieldsVis = VisualizerRegistry.ensureInstanceFieldsVisualizer(instance);
+            }
+        }
+
         for (Field field : clazz.getDeclaredFields()) {
             if (scanStatic != java.lang.reflect.Modifier.isStatic(field.getModifiers()))
                 continue;
@@ -40,6 +64,9 @@ public class VisualizerInitializer {
             field.setAccessible(true);
             try {
                 Object value = field.get(instance);
+                if (fieldsVis != null) {
+                    fieldsVis.setField(field.getName(), value);
+                }
                 if (registerField(field, value, instance, clazz)) {
                     registered = true;
                 }
@@ -47,6 +74,8 @@ public class VisualizerInitializer {
                 // skip inaccessible fields
             }
         }
+
+        if (fieldsVis != null) fieldsVis.flush();
 
         if (registered)
             VisualizerRegistry.setLayout();
