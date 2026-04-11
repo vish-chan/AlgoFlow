@@ -97,6 +97,7 @@
       [
         [
           "\u25b8 main",
+          "",
           ""
         ]
       ]
@@ -165,6 +166,14 @@
     "args": []
   },
   {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_007",
+      "HASH0"
+    ]
+  },
+  {
     "key": "tracer_008",
     "method": "VerticalLayout",
     "args": [
@@ -190,88 +199,19 @@
     "args": []
   },
   {
-    "key": "tracer_005",
-    "method": "println",
-    "args": [
-      5.0
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "GraphTracer",
-    "args": [
-      "root"
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "directed",
-    "args": [
-      true
-    ]
-  },
-  {
-    "key": "tracer_009",
-    "method": "reset",
-    "args": []
-  },
-  {
-    "key": "tracer_009",
-    "method": "directed",
-    "args": [
-      true
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_010",
-    "method": "VerticalLayout",
-    "args": [
-      [
-        "tracer_000",
-        "tracer_003",
-        "tracer_005",
-        "tracer_007",
-        "tracer_009",
-        "tracer_001"
-      ]
-    ]
-  },
-  {
-    "key": null,
-    "method": "setRoot",
-    "args": [
-      "tracer_010"
-    ]
-  },
-  {
-    "key": null,
-    "method": "delay",
-    "args": []
-  },
-  {
-    "key": "tracer_005",
-    "method": "println",
-    "args": [
-      17.0
-    ]
-  },
-  {
     "key": "tracer_003",
     "method": "set",
     "args": [
       [
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
-          "  m",
-          "com.algoflow.runner.Main@HASH"
+          "  args",
+          "String[](0)",
+          "HASH0"
         ]
       ]
     ]
@@ -301,6 +241,248 @@
     "key": "tracer_005",
     "method": "println",
     "args": [
+      5.0
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "Array2DTracer",
+    "args": [
+      "Instance: Main@HASH"
+    ]
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_009",
+      "HASH1"
+    ]
+  },
+  {
+    "key": "tracer_010",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_010"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "GraphTracer",
+    "args": [
+      "root"
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "directed",
+    "args": [
+      true
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "root",
+          "null",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_012",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_011",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_012"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          "",
+          ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      17.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          "",
+          ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          "",
+          ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  m",
+          "Main",
+          "HASH1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
       10.0
     ]
   },
@@ -313,18 +495,52 @@
   },
   {
     "key": "tracer_009",
-    "method": "reset",
+    "method": "set",
+    "args": [
+      [
+        [
+          "root",
+          "TreeNode",
+          "HASH2"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "patch",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
     "args": []
   },
   {
     "key": "tracer_009",
+    "method": "depatch",
+    "args": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_011",
+    "method": "reset",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
     "method": "directed",
     "args": [
       true
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_000",
@@ -332,14 +548,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_0"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_000",
@@ -347,14 +563,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_1"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_000",
@@ -362,10 +578,18 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "layoutTree",
     "args": [
       "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_011",
+      "HASH2"
     ]
   },
   {
@@ -395,19 +619,19 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "reset",
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "directed",
     "args": [
       true
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_000",
@@ -415,7 +639,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_001",
@@ -423,7 +647,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_000",
@@ -431,14 +655,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_0"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_000",
@@ -446,14 +670,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_1"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_001",
@@ -461,14 +685,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_2"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_001",
@@ -476,10 +700,18 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "layoutTree",
     "args": [
       "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_011",
+      "HASH2"
     ]
   },
   {
@@ -509,19 +741,19 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "reset",
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "directed",
     "args": [
       true
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_000",
@@ -529,7 +761,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_001",
@@ -537,7 +769,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_000",
@@ -545,7 +777,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_002",
@@ -553,7 +785,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_000",
@@ -561,14 +793,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_0"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_001",
@@ -576,14 +808,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_1"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_001",
@@ -591,14 +823,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_2"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_002",
@@ -606,14 +838,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_3"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_002",
@@ -621,10 +853,18 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "layoutTree",
     "args": [
       "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_011",
+      "HASH2"
     ]
   },
   {
@@ -640,7 +880,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_001",
@@ -667,19 +907,19 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "reset",
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "directed",
     "args": [
       true
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_000",
@@ -687,7 +927,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_001",
@@ -695,7 +935,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_000",
@@ -703,7 +943,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_002",
@@ -711,7 +951,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_000",
@@ -719,7 +959,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_003",
@@ -727,7 +967,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_001",
@@ -735,14 +975,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_0"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_001",
@@ -750,14 +990,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_1"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_002",
@@ -765,14 +1005,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_2"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_002",
@@ -780,14 +1020,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_3"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_003",
@@ -795,14 +1035,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_4"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_003",
@@ -810,10 +1050,18 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "layoutTree",
     "args": [
       "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_011",
+      "HASH2"
     ]
   },
   {
@@ -829,7 +1077,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_001",
@@ -856,19 +1104,19 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "reset",
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "directed",
     "args": [
       true
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_000",
@@ -876,7 +1124,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_001",
@@ -884,7 +1132,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_000",
@@ -892,7 +1140,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_002",
@@ -900,7 +1148,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_000",
@@ -908,7 +1156,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_003",
@@ -916,7 +1164,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_001",
@@ -924,7 +1172,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_004",
@@ -932,7 +1180,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_001",
@@ -940,14 +1188,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_0"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_002",
@@ -955,14 +1203,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_1"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_002",
@@ -970,14 +1218,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_2"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_003",
@@ -985,14 +1233,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_3"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_003",
@@ -1000,14 +1248,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_4"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_004",
@@ -1015,14 +1263,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_5"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_004",
@@ -1030,10 +1278,18 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "layoutTree",
     "args": [
       "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_011",
+      "HASH2"
     ]
   },
   {
@@ -1049,7 +1305,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "leave",
     "args": [
       "node_001"
@@ -1061,7 +1317,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_002",
@@ -1088,19 +1344,19 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "reset",
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "directed",
     "args": [
       true
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_000",
@@ -1108,7 +1364,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_001",
@@ -1116,7 +1372,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_000",
@@ -1124,7 +1380,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_002",
@@ -1132,7 +1388,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_000",
@@ -1140,7 +1396,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_003",
@@ -1148,7 +1404,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_001",
@@ -1156,7 +1412,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_004",
@@ -1164,7 +1420,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_001",
@@ -1172,7 +1428,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_005",
@@ -1180,7 +1436,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_002",
@@ -1188,14 +1444,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_0"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_002",
@@ -1203,14 +1459,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_1"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_003",
@@ -1218,14 +1474,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_2"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_003",
@@ -1233,14 +1489,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_3"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_004",
@@ -1248,14 +1504,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_4"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_004",
@@ -1263,14 +1519,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_5"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_005",
@@ -1278,14 +1534,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_6"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_005",
@@ -1293,10 +1549,18 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "layoutTree",
     "args": [
       "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_011",
+      "HASH2"
     ]
   },
   {
@@ -1312,7 +1576,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_002",
@@ -1339,19 +1603,19 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "reset",
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "directed",
     "args": [
       true
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_000",
@@ -1359,7 +1623,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_001",
@@ -1367,7 +1631,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_000",
@@ -1375,7 +1639,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_002",
@@ -1383,7 +1647,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_000",
@@ -1391,7 +1655,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_003",
@@ -1399,7 +1663,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_001",
@@ -1407,7 +1671,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_004",
@@ -1415,7 +1679,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_001",
@@ -1423,7 +1687,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_005",
@@ -1431,7 +1695,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_002",
@@ -1439,7 +1703,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "node_006",
@@ -1447,7 +1711,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_002",
@@ -1455,14 +1719,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_0"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_003",
@@ -1470,14 +1734,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_1"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_003",
@@ -1485,14 +1749,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_2"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_004",
@@ -1500,14 +1764,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_3"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_004",
@@ -1515,14 +1779,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_4"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_005",
@@ -1530,14 +1794,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_5"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_005",
@@ -1545,14 +1809,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_6"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_006",
@@ -1560,14 +1824,14 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addNode",
     "args": [
       "null_7"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "addEdge",
     "args": [
       "node_006",
@@ -1575,10 +1839,18 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "layoutTree",
     "args": [
       "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_011",
+      "HASH2"
     ]
   },
   {
@@ -1637,15 +1909,23 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -1656,7 +1936,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "leave",
     "args": [
       "node_002"
@@ -1668,7 +1948,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_000"
@@ -1693,19 +1973,28 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -1739,7 +2028,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "leave",
     "args": [
       "node_000"
@@ -1751,7 +2040,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_001",
@@ -1811,23 +2100,33 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -1838,7 +2137,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_001"
@@ -1863,27 +2162,38 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -1917,7 +2227,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "leave",
     "args": [
       "node_001"
@@ -1929,7 +2239,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_003",
@@ -1993,31 +2303,43 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2028,7 +2350,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_003"
@@ -2053,35 +2375,48 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "1"
+          "1",
+          "HASH4"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2170,39 +2505,53 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "1"
+          "1",
+          "HASH4"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2226,43 +2575,58 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "null"
+          "null",
+          ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "1"
+          "1",
+          "HASH4"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2388,35 +2752,48 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "1"
+          "1",
+          "HASH4"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2515,39 +2892,53 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "1"
+          "1",
+          "HASH4"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2571,43 +2962,58 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "null"
+          "null",
+          ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "1"
+          "1",
+          "HASH4"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2733,35 +3139,48 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "1"
+          "1",
+          "HASH4"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2870,27 +3289,38 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -2915,7 +3345,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "leave",
     "args": [
       "node_003"
@@ -2927,7 +3357,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_001"
@@ -2958,7 +3388,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "leave",
     "args": [
       "node_001"
@@ -2970,7 +3400,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_004",
@@ -3034,31 +3464,43 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3069,7 +3511,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_004"
@@ -3094,35 +3536,48 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "3"
+          "3",
+          "HASH5"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3211,39 +3666,53 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "3"
+          "3",
+          "HASH5"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3267,43 +3736,58 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "null"
+          "null",
+          ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "3"
+          "3",
+          "HASH5"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3429,35 +3913,48 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "3"
+          "3",
+          "HASH5"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3556,39 +4053,53 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "3"
+          "3",
+          "HASH5"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3612,43 +4123,58 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "null"
+          "null",
+          ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "3"
+          "3",
+          "HASH5"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3774,35 +4300,48 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "3"
+          "3",
+          "HASH5"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -3911,27 +4450,38 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "2"
+          "2",
+          "HASH3"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4032,19 +4582,28 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4069,7 +4628,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "leave",
     "args": [
       "node_004"
@@ -4081,7 +4640,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_000"
@@ -4112,7 +4671,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "leave",
     "args": [
       "node_000"
@@ -4124,7 +4683,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_002",
@@ -4184,23 +4743,33 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4211,7 +4780,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_002"
@@ -4236,27 +4805,38 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4290,7 +4870,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "leave",
     "args": [
       "node_002"
@@ -4302,7 +4882,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_005",
@@ -4366,31 +4946,43 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4401,7 +4993,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_005"
@@ -4426,35 +5018,48 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "5"
+          "5",
+          "HASH7"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4543,39 +5148,53 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "5"
+          "5",
+          "HASH7"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4599,43 +5218,58 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "null"
+          "null",
+          ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "5"
+          "5",
+          "HASH7"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4761,35 +5395,48 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "5"
+          "5",
+          "HASH7"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4888,39 +5535,53 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "5"
+          "5",
+          "HASH7"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -4944,43 +5605,58 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "null"
+          "null",
+          ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "5"
+          "5",
+          "HASH7"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -5106,35 +5782,48 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "5"
+          "5",
+          "HASH7"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -5243,27 +5932,38 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -5288,7 +5988,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "leave",
     "args": [
       "node_005"
@@ -5300,7 +6000,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_002"
@@ -5331,7 +6031,7 @@
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "leave",
     "args": [
       "node_002"
@@ -5343,7 +6043,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_006",
@@ -5407,31 +6107,43 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -5442,7 +6154,7 @@
     "args": []
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "visit",
     "args": [
       "node_006"
@@ -5467,35 +6179,48 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "7"
+          "7",
+          "HASH8"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -5584,39 +6309,53 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "7"
+          "7",
+          "HASH8"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -5640,43 +6379,58 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "null"
+          "null",
+          ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "7"
+          "7",
+          "HASH8"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -5802,35 +6556,48 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "7"
+          "7",
+          "HASH8"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -5929,39 +6696,53 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "7"
+          "7",
+          "HASH8"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -5985,43 +6766,58 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "null"
+          "null",
+          ""
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "7"
+          "7",
+          "HASH8"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -6147,35 +6943,48 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "7"
+          "7",
+          "HASH8"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -6284,27 +7093,38 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "6"
+          "6",
+          "HASH6"
         ],
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -6405,19 +7225,28 @@
       [
         [
           "\u25b8 inorder",
+          "",
           ""
         ],
         [
           "  node",
-          "4"
+          "4",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -6502,11 +7331,18 @@
       [
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  m",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -6575,7 +7411,7 @@
     "args": []
   },
   {
-    "key": "tracer_011",
+    "key": "tracer_013",
     "method": "VerticalLayout",
     "args": [
       [
@@ -6583,6 +7419,7 @@
         "tracer_003",
         "tracer_005",
         "tracer_009",
+        "tracer_011",
         "tracer_001"
       ]
     ]
@@ -6591,7 +7428,7 @@
     "key": null,
     "method": "setRoot",
     "args": [
-      "tracer_011"
+      "tracer_013"
     ]
   },
   {

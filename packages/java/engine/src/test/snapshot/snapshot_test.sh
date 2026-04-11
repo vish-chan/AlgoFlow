@@ -61,7 +61,7 @@ for cmd in commands:
 # These appear as large numeric strings (6-10 digits) in args for
 # addNode, addEdge, visit, leave, select, deselect, layoutTree, etc.
 NODE_ID_METHODS = {'addNode', 'addEdge', 'visit', 'leave', 'select', 'deselect',
-                   'layoutTree', 'removeNode', 'removeEdge', 'updateNode'}
+                   'layoutTree', 'removeNode', 'removeEdge', 'updateNode', 'objectRef'}
 NUMERIC_ID = re.compile(r'^-?\d{6,}$')
 node_id_map = {}
 node_counter = 0
@@ -75,12 +75,40 @@ def stable_node_id(v):
         return node_id_map[v]
     return v
 
+# Also normalize identity hash codes that appear as floats (e.g. 1.67560336E9)
+# in objectRef args and as the 3rd column in locals/fields set commands.
+# Also used for decimal hashes in strings like "Instance: Main@1648217898".
+hash_map = {}
+hash_counter = 0
+
+def stable_hash(v):
+    """Map a raw hash value (float or string of digits) to a stable placeholder."""
+    global hash_counter
+    key = str(int(v)) if isinstance(v, float) else str(v)
+    if key not in hash_map:
+        hash_map[key] = f"HASH{hash_counter}"
+        hash_counter += 1
+    return hash_map[key]
+
+def replace_at_hex_hash(m):
+    """Regex replacement for @<hex> hashes in strings."""
+    return '@HASH'
+
+def replace_at_hash(m):
+    """Regex replacement function for @<decimal> in strings."""
+    return '@HASH'
+
 def replace_val(v):
     if isinstance(v, str):
         if v in key_map:
             return key_map[v]
-        # Scrub JVM identity hashes like @2b4c3c29
-        return re.sub(r'@[0-9a-f]{6,8}', '@HASH', v)
+        # Scrub JVM identity hashes: hex (@2b4c3c29) then decimal (@1648217898)
+        # Hex pattern requires at least one a-f char to avoid matching pure decimal
+        v = re.sub(r'@(?=[0-9a-f]*[a-f])[0-9a-f]{6,8}', replace_at_hex_hash, v)
+        v = re.sub(r'@\d{6,10}', replace_at_hash, v)
+        return v
+    if isinstance(v, float) and v > 1e6:
+        return stable_hash(v)
     if isinstance(v, list):
         return [replace_val(item) for item in v]
     return v
@@ -89,8 +117,11 @@ def replace_val_with_nodes(v):
     if isinstance(v, str):
         if v in key_map:
             return key_map[v]
-        v = re.sub(r'@[0-9a-f]{6,8}', '@HASH', v)
+        v = re.sub(r'@(?=[0-9a-f]*[a-f])[0-9a-f]{6,8}', replace_at_hex_hash, v)
+        v = re.sub(r'@\d{6,10}', replace_at_hash, v)
         return stable_node_id(v)
+    if isinstance(v, float) and v > 1e6:
+        return stable_hash(v)
     if isinstance(v, list):
         return [replace_val_with_nodes(item) for item in v]
     return v

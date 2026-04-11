@@ -97,6 +97,7 @@
       [
         [
           "\u25b8 main",
+          "",
           ""
         ]
       ]
@@ -165,6 +166,14 @@
     "args": []
   },
   {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_007",
+      "HASH0"
+    ]
+  },
+  {
     "key": "tracer_008",
     "method": "VerticalLayout",
     "args": [
@@ -190,31 +199,19 @@
     "args": []
   },
   {
-    "key": "tracer_005",
-    "method": "println",
-    "args": [
-      3.0
-    ]
-  },
-  {
-    "key": "tracer_005",
-    "method": "println",
-    "args": [
-      12.0
-    ]
-  },
-  {
     "key": "tracer_003",
     "method": "set",
     "args": [
       [
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
-          "  demo",
-          "com.algoflow.runner.Main@HASH"
+          "  args",
+          "String[](0)",
+          "HASH0"
         ]
       ]
     ]
@@ -237,6 +234,131 @@
     "method": "depatch",
     "args": [
       1.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      3.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          "",
+          ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": "tracer_005",
+    "method": "println",
+    "args": [
+      12.0
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          "",
+          ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          "",
+          ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  demo",
+          "Main",
+          "HASH1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
       1.0
     ]
   },
@@ -327,8 +449,24 @@
   },
   {
     "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_009",
+      "HASH2"
+    ]
+  },
+  {
+    "key": null,
     "method": "delay",
     "args": []
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_009",
+      "HASH2"
+    ]
   },
   {
     "key": "tracer_010",
@@ -363,15 +501,23 @@
       [
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  demo",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ],
         [
           "  root",
-          "30"
+          "30",
+          "HASH2"
         ]
       ]
     ]
@@ -380,7 +526,7 @@
     "key": "tracer_003",
     "method": "patch",
     "args": [
-      2.0,
+      3.0,
       1.0
     ]
   },
@@ -393,7 +539,7 @@
     "key": "tracer_003",
     "method": "depatch",
     "args": [
-      2.0,
+      3.0,
       1.0
     ]
   },
@@ -497,6 +643,14 @@
     "method": "layoutTree",
     "args": [
       "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_009",
+      "HASH2"
     ]
   },
   {
@@ -655,6 +809,14 @@
     "method": "layoutTree",
     "args": [
       "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_009",
+      "HASH2"
     ]
   },
   {
@@ -848,6 +1010,14 @@
   },
   {
     "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_009",
+      "HASH2"
+    ]
+  },
+  {
+    "key": null,
     "method": "delay",
     "args": []
   },
@@ -902,19 +1072,28 @@
       [
         [
           "\u25b8 rotateRight",
+          "",
           ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  demo",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ],
         [
           "  root",
-          "30"
+          "30",
+          "HASH2"
         ]
       ]
     ]
@@ -962,23 +1141,33 @@
       [
         [
           "\u25b8 rotateRight",
+          "",
           ""
         ],
         [
           "  y",
-          "30"
+          "30",
+          "HASH2"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  demo",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ],
         [
           "  root",
-          "30"
+          "30",
+          "HASH2"
         ]
       ]
     ]
@@ -1036,27 +1225,38 @@
       [
         [
           "\u25b8 rotateRight",
+          "",
           ""
         ],
         [
           "  y",
-          "30"
+          "30",
+          "HASH2"
         ],
         [
           "  x",
-          "20"
+          "20",
+          "HASH3"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  demo",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ],
         [
           "  root",
-          "30"
+          "30",
+          "HASH2"
         ]
       ]
     ]
@@ -1121,31 +1321,43 @@
       [
         [
           "\u25b8 rotateRight",
+          "",
           ""
         ],
         [
           "  y",
-          "30"
+          "30",
+          "HASH2"
         ],
         [
           "  x",
-          "20"
+          "20",
+          "HASH3"
         ],
         [
           "  T2",
-          "25"
+          "25",
+          "HASH4"
         ],
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  demo",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ],
         [
           "  root",
-          "30"
+          "30",
+          "HASH2"
         ]
       ]
     ]
@@ -1292,6 +1504,14 @@
   },
   {
     "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_009",
+      "HASH2"
+    ]
+  },
+  {
+    "key": null,
     "method": "delay",
     "args": []
   },
@@ -1368,8 +1588,24 @@
   },
   {
     "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_011",
+      "HASH4"
+    ]
+  },
+  {
+    "key": null,
     "method": "delay",
     "args": []
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_011",
+      "HASH4"
+    ]
   },
   {
     "key": "tracer_012",
@@ -1491,6 +1727,14 @@
     "method": "layoutTree",
     "args": [
       "node_000"
+    ]
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_009",
+      "HASH2"
     ]
   },
   {
@@ -1690,8 +1934,24 @@
   },
   {
     "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_014",
+      "HASH3"
+    ]
+  },
+  {
+    "key": null,
     "method": "delay",
     "args": []
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_014",
+      "HASH3"
+    ]
   },
   {
     "key": "tracer_015",
@@ -1788,15 +2048,23 @@
       [
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  demo",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ],
         [
           "  root",
-          "30"
+          "30",
+          "HASH2"
         ]
       ]
     ]
@@ -1984,6 +2252,14 @@
   },
   {
     "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_009",
+      "HASH3"
+    ]
+  },
+  {
+    "key": null,
     "method": "delay",
     "args": []
   },
@@ -2001,15 +2277,23 @@
       [
         [
           "\u25b8 main",
+          "",
           ""
         ],
         [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
           "  demo",
-          "com.algoflow.runner.Main@HASH"
+          "Main",
+          "HASH1"
         ],
         [
           "  root",
-          "20"
+          "20",
+          "HASH3"
         ]
       ]
     ]
@@ -2018,7 +2302,7 @@
     "key": "tracer_003",
     "method": "patch",
     "args": [
-      2.0,
+      3.0,
       1.0
     ]
   },
@@ -2031,7 +2315,7 @@
     "key": "tracer_003",
     "method": "depatch",
     "args": [
-      2.0,
+      3.0,
       1.0
     ]
   },

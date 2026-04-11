@@ -97,6 +97,7 @@
       [
         [
           "\u25b8 main",
+          "",
           ""
         ]
       ]
@@ -165,6 +166,14 @@
     "args": []
   },
   {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_007",
+      "HASH0"
+    ]
+  },
+  {
     "key": "tracer_008",
     "method": "VerticalLayout",
     "args": [
@@ -190,6 +199,45 @@
     "args": []
   },
   {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          "",
+          ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      1.0,
+      1.0
+    ]
+  },
+  {
     "key": "tracer_005",
     "method": "println",
     "args": [
@@ -200,11 +248,52 @@
     "key": "tracer_009",
     "method": "Array2DTracer",
     "args": [
+      "Instance: Main@HASH"
+    ]
+  },
+  {
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_009",
+      "HASH1"
+    ]
+  },
+  {
+    "key": "tracer_010",
+    "method": "VerticalLayout",
+    "args": [
+      [
+        "tracer_000",
+        "tracer_003",
+        "tracer_005",
+        "tracer_007",
+        "tracer_009",
+        "tracer_001"
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "setRoot",
+    "args": [
+      "tracer_010"
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_011",
+    "method": "Array2DTracer",
+    "args": [
       "int[][]: matrix"
     ]
   },
   {
-    "key": "tracer_009",
+    "key": "tracer_011",
     "method": "set",
     "args": [
       [
@@ -232,7 +321,33 @@
     "args": []
   },
   {
-    "key": "tracer_010",
+    "key": null,
+    "method": "objectRef",
+    "args": [
+      "tracer_011",
+      "HASH2"
+    ]
+  },
+  {
+    "key": "tracer_009",
+    "method": "set",
+    "args": [
+      [
+        [
+          "matrix",
+          "int[][](3)",
+          "HASH2"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_012",
     "method": "VerticalLayout",
     "args": [
       [
@@ -241,6 +356,7 @@
         "tracer_005",
         "tracer_007",
         "tracer_009",
+        "tracer_011",
         "tracer_001"
       ]
     ]
@@ -249,13 +365,57 @@
     "key": null,
     "method": "setRoot",
     "args": [
-      "tracer_010"
+      "tracer_012"
     ]
   },
   {
     "key": null,
     "method": "delay",
     "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "set",
+    "args": [
+      [
+        [
+          "\u25b8 main",
+          "",
+          ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
+        ]
+      ]
+    ]
+  },
+  {
+    "key": "tracer_003",
+    "method": "patch",
+    "args": [
+      2.0,
+      1.0
+    ]
+  },
+  {
+    "key": null,
+    "method": "delay",
+    "args": []
+  },
+  {
+    "key": "tracer_003",
+    "method": "depatch",
+    "args": [
+      2.0,
+      1.0
+    ]
   },
   {
     "key": "tracer_005",
@@ -308,11 +468,23 @@
       [
         [
           "\u25b8 solve",
+          "",
           ""
         ],
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -390,7 +562,18 @@
       [
         [
           "\u25b8 main",
+          "",
           ""
+        ],
+        [
+          "  args",
+          "String[](0)",
+          "HASH0"
+        ],
+        [
+          "  this (Main)",
+          "Main",
+          "HASH1"
         ]
       ]
     ]
@@ -459,7 +642,7 @@
     "args": []
   },
   {
-    "key": "tracer_011",
+    "key": "tracer_013",
     "method": "VerticalLayout",
     "args": [
       [
@@ -467,6 +650,7 @@
         "tracer_003",
         "tracer_005",
         "tracer_009",
+        "tracer_011",
         "tracer_001"
       ]
     ]
@@ -475,7 +659,7 @@
     "key": null,
     "method": "setRoot",
     "args": [
-      "tracer_011"
+      "tracer_013"
     ]
   },
   {
