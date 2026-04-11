@@ -69,7 +69,14 @@ export interface RecursionTracer {
 
 export interface LocalsTracer {
     type: 'locals';
-    rows: [string, any][];
+    rows: [string, any, any][];
+    patchedRows: Set<number>;
+    title: string;
+}
+
+export interface FieldsTracer {
+    type: 'fields';
+    rows: [string, any, any][];
     patchedRows: Set<number>;
     title: string;
 }
@@ -113,6 +120,7 @@ export type Tracer =
     | CodeTracer
     | RecursionTracer
     | LocalsTracer
+    | FieldsTracer
     | VariablesTracer
     | GraphTracer
     | LayoutTracer;
