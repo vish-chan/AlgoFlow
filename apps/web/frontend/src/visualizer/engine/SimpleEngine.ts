@@ -224,7 +224,9 @@ export class SimpleEngine {
             } else if (lower === 'locals') {
                 this.tracers[key] = { type: 'locals', rows: [], patchedRows: new Set(), title };
             } else if (lower.startsWith('static:') || lower.startsWith('instance:')) {
-                this.tracers[key] = { type: 'fields', rows: [], patchedRows: new Set(), title };
+                const isStatic = lower.startsWith('static:');
+                const cleanTitle = title.replace(/^(Static|Instance):\s*/i, '');
+                this.tracers[key] = { type: 'fields', rows: [], patchedRows: new Set(), title: cleanTitle, dsType: isStatic ? 'Static' : 'Instance' } as any;
             } else if (lower.includes('variable') || lower.includes('local')) {
                 this.tracers[key] = { type: 'variables', vars: {}, title };
             } else if (lower.startsWith('map:')) {
@@ -613,7 +615,7 @@ export class SimpleEngine {
                 if (!dsType && t?.type === 'chart') dsType = 'Chart';
                 if (!dsType && t?.type === 'locals') dsType = 'Call Stack';
                 if (!dsType && t?.type === 'hashmap') dsType = 'Map';
-                if (!dsType && t?.type === 'fields') dsType = t.title?.startsWith('Static') ? 'Static' : 'Instance';
+                if (!dsType && t?.type === 'fields') dsType = (t as any).dsType || 'Fields';
                 return { key: k, title: t?.title || k, dsType };
             })
             .filter((c: { key: string; title: string }) => {

@@ -8,7 +8,7 @@ function PaneLabel({ child, collapsed, onToggle, paneId }: { child: any; collaps
         || (type === 'chart' ? 'Chart' : null)
         || (type === 'hashmap' ? 'Map' : null)
         || (type === 'locals' ? 'Call Stack' : null)
-        || (type === 'fields' ? (title.startsWith('Static') ? 'Static' : 'Instance') : null);
+        || (type === 'fields' ? (child?.dsType || 'Fields') : null);
     const typeIcon: Record<string, string> = {
         array: '▦', array2d: '▦', chart: '▥', graph: '◉', log: '▸', locals: '⧉',
         variables: '𝑥', variablesGroup: '𝑥', recursion: '↻', hashmap: '◈', fields: '⊞',
