@@ -407,7 +407,8 @@ export default function VisualizerCanvas() {
     const paneRefs = useRef<(HTMLElement | null)[]>([]);
     const [offscreenActivity, setOffscreenActivity] = useState<'above' | 'below' | null>(null);
     const activeTypeRef = useRef<string | null>(null);
-    const [linkSourcesMap, setLinkSourcesMap] = useState<Map<number, { sources: { x: number; y: number; ref: number }[]; paneIdx: number }>>(new Map());
+    const linkSourcesRef = useRef<Map<number, { sources: { x: number; y: number; ref: number }[]; paneIdx: number }>>(new Map());
+    const [linkVersion, setLinkVersion] = useState(0);
 
     // Track which pane is active and whether it's off-screen
     const offscreenRef = useRef<'above' | 'below' | null>(null);
@@ -451,7 +452,7 @@ export default function VisualizerCanvas() {
             {isLayout && grouped.length > 0 ? (
                 <div style={{ flex: 1, minHeight: 0, position: 'relative', background: 'var(--bg-surface)' }}>
                     <div ref={scrollRef} style={{ height: '100%', overflowY: 'auto', display: 'flex', flexDirection: 'column', position: 'relative' }}>
-                        <LinkOverlay scrollRef={scrollRef} engine={engine} grouped={grouped} paneRefs={paneRefs} linkSourcesMap={linkSourcesMap} />
+                        <LinkOverlay scrollRef={scrollRef} engine={engine} grouped={grouped} paneRefs={paneRefs} linkSourcesMap={linkSourcesRef.current} />
                         {grouped.map((child: any, i: number) => {
                             const paneKey = child.title || child.type + i;
                             const collapsed = collapsedPanes.has(paneKey);
@@ -462,13 +463,16 @@ export default function VisualizerCanvas() {
                                         <>
                                             <ChildPane child={child} renderer={renderer} isFirst={i === 0} autoScroll={playing && child?.type === 'log'} hideTitle
                                                 onLinkSourcesUpdate={(sources) => {
+                                                    const map = linkSourcesRef.current;
                                                     if (sources.length > 0) {
-                                                        setLinkSourcesMap(prev => {
-                                                            const next = new Map(prev);
-                                                            next.set(i, { sources, paneIdx: i });
-                                                            return next;
-                                                        });
+                                                        map.set(i, { sources, paneIdx: i });
+                                                    } else {
+                                                        map.delete(i);
                                                     }
+                                                    for (const key of map.keys()) {
+                                                        if (key >= grouped.length) map.delete(key);
+                                                    }
+                                                    setLinkVersion(v => v + 1);
                                                 }}
                                             />
                                             {i < grouped.length - 1 && <PaneResizeHandle />}
