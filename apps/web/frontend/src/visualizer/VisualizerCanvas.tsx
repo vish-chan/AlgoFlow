@@ -323,7 +323,7 @@ function LinkOverlay({ scrollRef, engine, grouped, paneRefs, linkSourcesMap }: {
                 newLines.push({
                     x1: canvasRect.left - containerRect.left + src.x,
                     y1: canvasRect.top - containerRect.top + scrollTop + src.y,
-                    x2: targetRect.left - containerRect.left + targetRect.width - 8,
+                    x2: targetRect.left - containerRect.left + 14,
                     y2: targetRect.top - containerRect.top + scrollTop + targetRect.height / 2,
                 });
             }
