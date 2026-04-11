@@ -832,7 +832,12 @@ export class SimpleRenderer {
         });
     }
 
+    private lastChildLinkSources: { x: number; y: number; ref: number }[] = [];
     private lastChildClickRegions: { x: number; y: number; w: number; h: number; action: () => void }[] = [];
+
+    getChildLinkSources() {
+        return this.lastChildLinkSources;
+    }
 
     getClickRegions() {
         return this.lastChildClickRegions;
@@ -856,11 +861,15 @@ export class SimpleRenderer {
         const prevCanvas = this.canvas;
         const prevCtx = this.ctx;
         const prevTransitions = this.transitions;
+        const prevLinkSources = this.linkSources;
+        const prevObjectRefs = this.currentObjectRefs;
         this.canvas = canvas;
         this.ctx = ctx;
         this.transitions = this.childTransitions;
         this.clickRegions = [];
         this.tooltipRegions = [];
+        this.linkSources = [];
+        this.currentObjectRefs = child?.objectRefs ?? null;
 
         const dpr = window.devicePixelRatio || 1;
         const width = canvas.width / dpr;
@@ -872,9 +881,9 @@ export class SimpleRenderer {
             this.renderChartInBounds(child.data, child.title, 0, 0, width, height);
         } else if (child?.type === 'array' && child.data) {
             this.renderArrayInBounds(child.data, child.title, 0, 0, width, height, child.dsType, child._tracerKey);        } else if (child?.type === 'locals' && child.rows) {
-            this.renderLocalsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, child.callStack, child.objectRefs);
+            this.renderLocalsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, child.callStack, child.objectRefs, 0);
         } else if (child?.type === 'fields' && child.rows) {
-            this.renderFieldsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, height, child.objectRefs);
+            this.renderFieldsInBounds(child.rows, child.patchedRows, child.title, 0, 0, width, height, child.objectRefs, 0);
         } else if (child?.type === 'array2d' && child.data) {
             this.renderArray2DInBounds(child.data, child.title, 0, 0, width, height, child.dsType);
         } else if (child?.type === 'hashmap' && child.data) {
@@ -899,6 +908,9 @@ export class SimpleRenderer {
 
         this.lastChildClickRegions = this.clickRegions;
         this.lastChildTooltipRegions = this.tooltipRegions;
+        this.lastChildLinkSources = this.linkSources;
+        this.linkSources = prevLinkSources;
+        this.currentObjectRefs = prevObjectRefs;
         this.transitions = prevTransitions;
         this.canvas = prevCanvas;
         this.ctx = prevCtx;

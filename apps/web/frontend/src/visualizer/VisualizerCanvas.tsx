@@ -1,16 +1,17 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { getEngine, subscribe, subscribeToPlaying } from "./visualizerEngine";
 
-function PaneLabel({ child, collapsed, onToggle }: { child: any; collapsed: boolean; onToggle: () => void }) {
+function PaneLabel({ child, collapsed, onToggle, paneId }: { child: any; collapsed: boolean; onToggle: () => void; paneId?: string }) {
     const type = child?.type || '';
     const title = child?.title || '';
     const dsType = child?.dsType
         || (type === 'chart' ? 'Chart' : null)
         || (type === 'hashmap' ? 'Map' : null)
-        || (type === 'locals' ? 'Call Stack' : null);
+        || (type === 'locals' ? 'Call Stack' : null)
+        || (type === 'fields' ? (title.startsWith('Static') ? 'Static' : 'Instance') : null);
     const typeIcon: Record<string, string> = {
         array: '▦', array2d: '▦', chart: '▥', graph: '◉', log: '▸', locals: '⧉',
-        variables: '𝑥', variablesGroup: '𝑥', recursion: '↻', hashmap: '◈',
+        variables: '𝑥', variablesGroup: '𝑥', recursion: '↻', hashmap: '◈', fields: '⊞',
     };
     const displayName: Record<string, string> = {
         locals: 'Call Stack & Locals',
@@ -23,6 +24,7 @@ function PaneLabel({ child, collapsed, onToggle }: { child: any; collapsed: bool
     const icon = typeIcon[type] || '';
     return (
         <div
+            data-pane-id={paneId}
             onClick={onToggle}
             style={{
                 padding: '3px 10px', fontSize: 11, color: 'var(--text-muted)', background: 'var(--bg-surface)',
@@ -122,7 +124,7 @@ function PaneResizeHandle() {
     );
 }
 
-function ChildPane({ child, renderer, autoScroll, hideTitle }: { child: any; renderer: any; isFirst?: boolean; autoScroll?: boolean; hideTitle?: boolean }) {
+function ChildPane({ child, renderer, autoScroll, hideTitle, onLinkSourcesUpdate }: { child: any; renderer: any; isFirst?: boolean; autoScroll?: boolean; hideTitle?: boolean; onLinkSourcesUpdate?: (sources: { x: number; y: number; ref: number }[]) => void }) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const regionsRef = useRef<any[]>([]);
@@ -151,6 +153,7 @@ function ChildPane({ child, renderer, autoScroll, hideTitle }: { child: any; ren
         renderer.renderChildToCanvas(canvas, renderChild);
         regionsRef.current = [...renderer.getClickRegions()];
         tooltipRef.current = [...renderer.getTooltipRegions()];
+        if (onLinkSourcesUpdate) onLinkSourcesUpdate(renderer.getChildLinkSources());
         if (child?.type === 'locals' && container.scrollTop > 0) {
             container.scrollTop = 0;
         }
@@ -273,6 +276,86 @@ function ChildPane({ child, renderer, autoScroll, hideTitle }: { child: any; ren
     );
 }
 
+function LinkOverlay({ scrollRef, engine, grouped, paneRefs, linkSourcesMap }: {
+    scrollRef: React.RefObject<HTMLDivElement | null>;
+    engine: any;
+    grouped: any[];
+    paneRefs: React.MutableRefObject<(HTMLElement | null)[]>;
+    linkSourcesMap: Map<number, { sources: { x: number; y: number; ref: number }[]; paneIdx: number }>;
+}) {
+    const [lines, setLines] = useState<{ x1: number; y1: number; x2: number; y2: number }[]>([]);
+
+    useEffect(() => {
+        const container = scrollRef.current;
+        if (!container) return;
+        const objectRefs: Map<number, string> = engine.getObjectRefs();
+        if (!objectRefs || objectRefs.size === 0) { setLines([]); return; }
+
+        const containerRect = container.getBoundingClientRect();
+        const scrollTop = container.scrollTop;
+        const newLines: { x1: number; y1: number; x2: number; y2: number }[] = [];
+
+        // Build tracerKey → pane label element map
+        const targetMap = new Map<string, HTMLElement>();
+        for (let i = 0; i < grouped.length; i++) {
+            const tk = grouped[i]?._tracerKey;
+            const el = paneRefs.current[i];
+            if (tk && el) targetMap.set(tk, el);
+        }
+
+        linkSourcesMap.forEach(({ sources, paneIdx }) => {
+            const sourceEl = paneRefs.current[paneIdx];
+            if (!sourceEl) return;
+            const canvas = sourceEl.querySelector('canvas');
+            if (!canvas) return;
+            const canvasRect = canvas.getBoundingClientRect();
+
+            for (const src of sources) {
+                const targetTracerKey = objectRefs.get(src.ref);
+                if (!targetTracerKey) continue;
+                const targetEl = targetMap.get(targetTracerKey);
+                if (!targetEl) continue;
+                const targetRect = targetEl.getBoundingClientRect();
+
+                newLines.push({
+                    x1: canvasRect.left - containerRect.left + src.x,
+                    y1: canvasRect.top - containerRect.top + scrollTop + src.y,
+                    x2: targetRect.left - containerRect.left + 4,
+                    y2: targetRect.top - containerRect.top + scrollTop + targetRect.height / 2,
+                });
+            }
+        });
+
+        setLines(newLines);
+    });
+
+    if (lines.length === 0) return null;
+    const container = scrollRef.current;
+    const h = container ? container.scrollHeight : 0;
+    const w = container ? container.clientWidth : 0;
+
+    return (
+        <svg style={{ position: 'absolute', top: 0, left: 0, width: w, height: h, pointerEvents: 'none', zIndex: 5 }}>
+            {lines.map((l, i) => {
+                const cpx = Math.min(l.x1, l.x2) - 16;
+                return (
+                    <path
+                        key={i}
+                        d={`M ${l.x1} ${l.y1} C ${cpx} ${l.y1}, ${cpx} ${l.y2}, ${l.x2} ${l.y2}`}
+                        fill="none"
+                        stroke="rgba(59,130,246,0.3)"
+                        strokeWidth={1.5}
+                        strokeDasharray="4 3"
+                    />
+                );
+            })}
+            {lines.map((l, i) => (
+                <circle key={`dot-${i}`} cx={l.x2} cy={l.y2} r={3} fill="rgba(59,130,246,0.5)" />
+            ))}
+        </svg>
+    );
+}
+
 export default function VisualizerCanvas() {
     const containerRef = useRef<HTMLDivElement>(null);
     const [, forceUpdate] = useState({});
@@ -308,6 +391,7 @@ export default function VisualizerCanvas() {
     const paneRefs = useRef<(HTMLElement | null)[]>([]);
     const [offscreenActivity, setOffscreenActivity] = useState<'above' | 'below' | null>(null);
     const activeTypeRef = useRef<string | null>(null);
+    const [linkSourcesMap, setLinkSourcesMap] = useState<Map<number, { sources: { x: number; y: number; ref: number }[]; paneIdx: number }>>(new Map());
 
     // Track which pane is active and whether it's off-screen
     const offscreenRef = useRef<'above' | 'below' | null>(null);
@@ -350,16 +434,27 @@ export default function VisualizerCanvas() {
         <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "100%" }}>
             {isLayout && grouped.length > 0 ? (
                 <div style={{ flex: 1, minHeight: 0, position: 'relative', background: 'var(--bg-surface)' }}>
-                    <div ref={scrollRef} style={{ height: '100%', overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
+                    <div ref={scrollRef} style={{ height: '100%', overflowY: 'auto', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+                        <LinkOverlay scrollRef={scrollRef} engine={engine} grouped={grouped} paneRefs={paneRefs} linkSourcesMap={linkSourcesMap} />
                         {grouped.map((child: any, i: number) => {
                             const paneKey = child.title || child.type + i;
                             const collapsed = collapsedPanes.has(paneKey);
                             return (
                                 <div key={paneKey} ref={el => { paneRefs.current[i] = el; }}>
-                                    <PaneLabel child={child} collapsed={collapsed} onToggle={() => toggleCollapse(paneKey)} />
+                                    <PaneLabel child={child} collapsed={collapsed} onToggle={() => toggleCollapse(paneKey)} paneId={child._tracerKey} />
                                     {!collapsed && (
                                         <>
-                                            <ChildPane child={child} renderer={renderer} isFirst={i === 0} autoScroll={playing && child?.type === 'log'} hideTitle />
+                                            <ChildPane child={child} renderer={renderer} isFirst={i === 0} autoScroll={playing && child?.type === 'log'} hideTitle
+                                                onLinkSourcesUpdate={(sources) => {
+                                                    if (sources.length > 0) {
+                                                        setLinkSourcesMap(prev => {
+                                                            const next = new Map(prev);
+                                                            next.set(i, { sources, paneIdx: i });
+                                                            return next;
+                                                        });
+                                                    }
+                                                }}
+                                            />
                                             {i < grouped.length - 1 && <PaneResizeHandle />}
                                         </>
                                     )}

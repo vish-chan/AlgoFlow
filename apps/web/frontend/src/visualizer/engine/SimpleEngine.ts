@@ -599,6 +599,7 @@ export class SimpleEngine {
     getCursor() { return this.cursor; }
     getLength() { return this.chunks.length; }
     getCommands() { return this.rawCommands; }
+    getObjectRefs() { return this.objectRefs; }
 
     getLayoutChildren(): { key: string; title: string; dsType?: string }[] {
         if (!this.root) return [];
