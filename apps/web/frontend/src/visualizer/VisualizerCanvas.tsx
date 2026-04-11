@@ -300,7 +300,10 @@ function LinkOverlay({ scrollRef, engine, grouped, paneRefs, linkSourcesMap }: {
         for (let i = 0; i < grouped.length; i++) {
             const tk = grouped[i]?._tracerKey;
             const el = paneRefs.current[i];
-            if (tk && el) targetMap.set(tk, el);
+            if (tk && el) {
+                const label = el.querySelector(`[data-pane-id="${tk}"]`) as HTMLElement;
+                if (label) targetMap.set(tk, label);
+            }
         }
 
         linkSourcesMap.forEach(({ sources, paneIdx }) => {
@@ -320,7 +323,7 @@ function LinkOverlay({ scrollRef, engine, grouped, paneRefs, linkSourcesMap }: {
                 newLines.push({
                     x1: canvasRect.left - containerRect.left + src.x,
                     y1: canvasRect.top - containerRect.top + scrollTop + src.y,
-                    x2: targetRect.left - containerRect.left + 4,
+                    x2: targetRect.left - containerRect.left + targetRect.width - 8,
                     y2: targetRect.top - containerRect.top + scrollTop + targetRect.height / 2,
                 });
             }
