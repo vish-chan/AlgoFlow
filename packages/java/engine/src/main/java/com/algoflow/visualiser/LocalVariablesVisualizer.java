@@ -41,6 +41,14 @@ public class LocalVariablesVisualizer implements Visualizer {
         updateDisplay(variableName);
     }
 
+    public void removeVariable(String variableName) {
+        if (_frames.isEmpty()) return;
+        Frame top = _frames.peekFirst();
+        if (top.variables.remove(variableName) != null) {
+            updateDisplay(null);
+        }
+    }
+
     /** Returns [displayValue, refId]. */
     private static Object[] sanitizeEntry(Object value) {
         if (value == null) return new Object[]{"null", ""};

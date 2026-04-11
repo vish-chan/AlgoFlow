@@ -436,9 +436,33 @@ public class VisualizerRegistry {
 
     // ── Local variable tracking ──────────────────────────────────────────
 
+    // ── Anonymous instance tracking ─────────────────────────────────────
+
+    private static final IdentityHashMap<Object, String> _anonymousInstances = new IdentityHashMap<>();
+
+    public static void trackAnonymousInstance(Object instance) {
+        if (instance == null || _localVariablesVisualizer == null) return;
+        String name = "this (" + instance.getClass().getSimpleName() + ")";
+        _anonymousInstances.put(instance, name);
+        _localVariablesVisualizer.onVariableUpdate(name, instance);
+    }
+
+    private static void removeAnonymousIfNamed(Object value) {
+        if (value == null) return;
+        String anonName = _anonymousInstances.remove(value);
+        if (anonName != null && _localVariablesVisualizer != null) {
+            _localVariablesVisualizer.removeVariable(anonName);
+        }
+    }
+
+    // ── Local variable tracking ──────────────────────────────────────
+
     public static void onLocalVariableUpdate(String methodKey, int slotIndex, Object value) {
         String variableName = LocalVariablesVisualizer.getSlotName(methodKey, slotIndex);
         if (variableName == null) return;
+
+        // If this value was tracked as anonymous, remove the anonymous entry
+        removeAnonymousIfNamed(value);
 
         // Check linked list visualizers first
         for (LinkedListVisualizer lv : _linkedListVisualizers) {

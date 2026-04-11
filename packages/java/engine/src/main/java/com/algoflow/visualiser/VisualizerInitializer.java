@@ -23,6 +23,9 @@ public class VisualizerInitializer {
 
         scanStatics(instance.getClass());
         scanFields(instance.getClass(), instance);
+
+        // Add anonymous instances to the current locals frame so they appear in the Locals panel
+        VisualizerRegistry.trackAnonymousInstance(instance);
     }
 
     public static void scanStatics(Class<?> clazz) {
