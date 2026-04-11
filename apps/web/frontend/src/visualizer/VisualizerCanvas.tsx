@@ -449,7 +449,7 @@ export default function VisualizerCanvas() {
     const [offscreenActivity, setOffscreenActivity] = useState<'above' | 'below' | null>(null);
     const activeTypeRef = useRef<string | null>(null);
     const linkSourcesRef = useRef<Map<number, { sources: { x: number; y: number; ref: number }[]; paneIdx: number }>>(new Map());
-    const [linkVersion, setLinkVersion] = useState(0);
+    const linkVersionRef = useRef(0);
 
     // Track which pane is active and whether it's off-screen
     const offscreenRef = useRef<'above' | 'below' | null>(null);
@@ -525,7 +525,7 @@ export default function VisualizerCanvas() {
                                                     for (const key of map.keys()) {
                                                         if (key >= grouped.length) map.delete(key);
                                                     }
-                                                    setLinkVersion(v => v + 1);
+                                                    linkVersionRef.current++;
                                                 }}
                                             />
                                             {i < grouped.length - 1 && <PaneResizeHandle />}
