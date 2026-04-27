@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -36,6 +37,9 @@ public class ExecutionController {
 
     @org.springframework.beans.factory.annotation.Value("${engine.python.path:../../../packages/python/engine}")
     private String pythonEnginePath;
+
+    @org.springframework.beans.factory.annotation.Value("${engine.execution.timeout-seconds:10}")
+    private int executionTimeoutSeconds;
 
     @PostMapping("/execute")
     public ResponseEntity<Map<String, Object>> execute(@RequestBody Map<String, String> request) {
@@ -79,7 +83,12 @@ public class ExecutionController {
                 .start();
             
             String compileStderr = new String(compile.getErrorStream().readAllBytes());
-            int compileExitCode = compile.waitFor();
+            boolean compileFinished = compile.waitFor(executionTimeoutSeconds, TimeUnit.SECONDS);
+            if (!compileFinished) {
+                compile.destroyForcibly();
+                throw new RuntimeException("Compilation timed out after " + executionTimeoutSeconds + "s");
+            }
+            int compileExitCode = compile.exitValue();
             log.debug("Compilation exit code: {}", compileExitCode);
             
             if (compileExitCode != 0) {
@@ -100,9 +109,14 @@ public class ExecutionController {
             
             Process run = runBuilder.start();
             run.getOutputStream().close();
+            boolean finished = run.waitFor(executionTimeoutSeconds, TimeUnit.SECONDS);
+            if (!finished) {
+                run.destroyForcibly();
+                throw new RuntimeException("Execution timed out after " + executionTimeoutSeconds + "s — check for infinite loops");
+            }
             String runOutput = new String(run.getInputStream().readAllBytes());
             String runStderr = new String(run.getErrorStream().readAllBytes());
-            int runExitCode = run.waitFor();
+            int runExitCode = run.exitValue();
             
             if (log.isDebugEnabled()) {
                 log.debug("Java process output:\n{}", runOutput);
@@ -181,9 +195,14 @@ public class ExecutionController {
 
             Process run = runBuilder.start();
             run.getOutputStream().close();
+            boolean finished = run.waitFor(executionTimeoutSeconds, TimeUnit.SECONDS);
+            if (!finished) {
+                run.destroyForcibly();
+                throw new RuntimeException("Execution timed out after " + executionTimeoutSeconds + "s — check for infinite loops");
+            }
             String runOutput = new String(run.getInputStream().readAllBytes());
             String runStderr = new String(run.getErrorStream().readAllBytes());
-            int runExitCode = run.waitFor();
+            int runExitCode = run.exitValue();
 
             if (log.isDebugEnabled()) {
                 log.debug("Python process stdout length: {}", runOutput.length());
