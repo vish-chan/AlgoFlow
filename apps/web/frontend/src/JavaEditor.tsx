@@ -1,12 +1,11 @@
 import Editor from "@monaco-editor/react";
 import { useEffect, useRef, useState, useImperativeHandle, forwardRef } from "react";
-import { loadCommands, play, reset, subscribe } from "./visualizer/visualizerEngine";
+import { loadCommands, play, reset, subscribe, engine } from "./visualizer/visualizerEngine";
 import { executeCode, fetchProblems } from "./api/backend";
 import type { Problem } from "./api/backend";
 import { DEFAULT_JAVA_CODE, DEFAULT_PYTHON_CODE, ALGORITHMS, CATEGORIES, TEMPLATES, TEMPLATE_CATEGORIES, PYTHON_ALGORITHMS, PYTHON_CATEGORIES, PYTHON_TEMPLATES, PYTHON_TEMPLATE_CATEGORIES } from "./constants/algorithms";
 import { getCategories } from "./constants/problems";
 import { registerJavaCompletions } from "./constants/javaCompletions";
-import { engine } from "./visualizer/visualizerEngine";
 
 const CODE_KEY = 'algoflow-code';
 const CODE_KEY_PY = 'algoflow-code-py';
@@ -162,6 +161,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
     });
     const [loading, setLoading] = useState(false);
     const [editorReady, setEditorReady] = useState(false);
+    const [hasRun, setHasRun] = useState(false);
     const [menuOpen, setMenuOpen] = useState<'algorithms' | 'templates' | null>(null);
     const editorRef = useRef<any>(null);
     const monacoRef = useRef<any>(null);
@@ -294,6 +294,7 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
             const result = await executeCode(code, lang);
             if (result.code) setCode(result.code);
             loadCommands(result.commands);
+            setHasRun(true);
             play();
         } catch (err) {
             const msg = err instanceof Error ? err.message : 'Execution failed';
@@ -303,11 +304,13 @@ const JavaEditor = forwardRef<JavaEditorHandle, { mode?: string; onLoadingChange
                 {"key":"log","method":"println","args":[msg]},
                 {"key":null,"method":"delay","args":[]},
             ]);
+            setHasRun(true);
             play();
         } finally { setLoadingState(false); }
     };
 
     const isMac = typeof navigator !== 'undefined' && navigator.platform?.includes('Mac');
+    const shortcut = isMac ? '⌘' : 'Ctrl';
 
     return (
         <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>

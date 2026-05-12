@@ -8,6 +8,7 @@ import { parseLessonFromURL, buildLessonURL, detectLanguage } from "./lesson/les
 import type { Lesson } from "./lesson/lessonStore";
 import { subscribe, getEngine, loadCommands } from "./visualizer/visualizerEngine";
 import NavBar from "./NavBar";
+import ToastContainer, { showToast } from "./components/Toast";
 
 type Mode = "landing" | "playground" | "practice";
 
@@ -75,7 +76,7 @@ export default function App() {
         const lesson: Lesson = { code, annotations, language };
         const url = await buildLessonURL(lesson);
         await navigator.clipboard.writeText(url);
-        alert("Lesson URL copied to clipboard!");
+        showToast("Lesson URL copied to clipboard!");
     }, [annotations]);
 
 
@@ -241,6 +242,7 @@ export default function App() {
                 </div>
             )}
             {showTour && (mode !== 'practice' || sidebarProblems.length > 0) && <Tour mode={tourMode} onFinish={finishTour} />}
+            <ToastContainer />
         </div>
     );
 }
