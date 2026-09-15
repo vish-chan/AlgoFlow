@@ -1,4 +1,4 @@
-import VisualizerCanvas from "./VisualizerCanvas";
+import { VisualizerCanvas } from "@algoflow/visualizer/react";
 import Controls from "./Controls";
 import LessonAnnotation from "../lesson/LessonAnnotation";
 import LessonBanner from "../lesson/LessonBanner";

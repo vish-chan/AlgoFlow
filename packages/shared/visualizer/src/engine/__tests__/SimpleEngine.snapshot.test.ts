@@ -6,7 +6,8 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const REPO_ROOT = join(__dirname, '..', '..', '..', '..', '..', '..', '..');
+// __tests__ -> engine -> src -> visualizer -> shared -> packages -> repo root
+const REPO_ROOT = join(__dirname, '..', '..', '..', '..', '..', '..');
 const SNAPSHOTS_DIR = join(REPO_ROOT, 'packages/java/engine/src/test/snapshot/snapshots');
 
 function captureStepState(engine: SimpleEngine) {
@@ -56,6 +57,7 @@ function serializeChild(child: any): any {
             }));
             break;
         case 'locals':
+        case 'fields':
             base.rows = child.rows?.map((r: any) => [...r]);
             base.patchedRows = [...(child.patchedRows || [])].sort();
             break;
