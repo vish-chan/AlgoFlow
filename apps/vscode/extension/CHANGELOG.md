@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [0.1.0] — 2026-09-16
 
 First release. Brings the AlgoFlow visualizer into VS Code.
 

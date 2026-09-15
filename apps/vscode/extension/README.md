@@ -78,3 +78,9 @@ Python uses the `algorithm_visualizer` tracer API directly; see the examples und
 ## Contributing
 
 See [CONTRIBUTING.md](../../../CONTRIBUTING.md) and [docs/vscode-extension.md](../../../docs/vscode-extension.md) in the repository root.
+
+## License
+
+Apache-2.0 — see `LICENSE`.
+
+The bundled Java engine embeds [tracers.java](https://github.com/algorithm-visualizer/tracers.java) (MIT, © Jinseo Jason Park), Byte Buddy and Gson (both Apache-2.0). `THIRD-PARTY-NOTICES.md`, which ships alongside this file, has the details and the license texts.

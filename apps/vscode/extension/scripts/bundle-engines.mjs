@@ -72,7 +72,23 @@ function bundlePython() {
     console.log(`bundle-engines: python -> ${dest}`);
 }
 
+/*
+ * The .vsix ships a jar that embeds tracers.java (MIT), Byte Buddy and Gson, so the
+ * license texts have to travel with it. They live at the repo root — the single source of
+ * truth — and are copied in here rather than duplicated in the extension directory.
+ * `vsce` picks up LICENSE, NOTICE and CHANGELOG from the extension root automatically.
+ */
+function bundleLicenses() {
+    for (const name of ['LICENSE', 'NOTICE', 'THIRD-PARTY-NOTICES.md']) {
+        const from = join(REPO_ROOT, name);
+        if (!existsSync(from)) fail(`${from} does not exist.`);
+        cpSync(from, join(EXTENSION_DIR, name));
+    }
+    console.log('bundle-engines: licenses -> LICENSE, NOTICE, THIRD-PARTY-NOTICES.md');
+}
+
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 bundleJava();
 bundlePython();
+bundleLicenses();

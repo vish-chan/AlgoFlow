@@ -1,4 +1,5 @@
-# Shipped: dist/extension.js, media/webview/, engine/, package.json, README, CHANGELOG.
+# Shipped: dist/extension.js, media/, engine/, package.json, README, CHANGELOG, and the
+# license texts bundle-engines.mjs copies in from the repo root.
 # Everything below is build input or dev tooling.
 
 .vscode/**

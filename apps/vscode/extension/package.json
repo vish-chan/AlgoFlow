@@ -2,9 +2,10 @@
   "name": "algoflow-vscode",
   "displayName": "AlgoFlow",
   "description": "Visualize the algorithm in the file you're editing — no copy-pasting into a browser.",
-  "version": "0.0.1",
-  "publisher": "algoflow",
+  "version": "0.1.0",
+  "publisher": "vish-chan",
   "license": "Apache-2.0",
+  "icon": "media/icon.png",
   "private": true,
   "repository": {
     "type": "git",

@@ -99,3 +99,20 @@ npm run package -w algoflow-vscode
 ```
 
 `prepackage` builds both bundles and runs `scripts/bundle-engines.mjs`, which copies the shaded jar to `engine/algo-transformer.jar` and the Python engine (`engine/` plus `algorithm_visualizer/`, minus `__pycache__` and tests) to `engine/python/`. It refuses a jar under 1 MB, since that would mean the pre-shade artifact was picked up.
+
+It also copies `LICENSE`, `NOTICE` and `THIRD-PARTY-NOTICES.md` in from the repo root, and the extension's `.gitignore` ignores those copies. **This is not cosmetic.** The shaded jar redistributes tracers.java (MIT), Byte Buddy and Gson to every user who installs the extension, so their license texts have to travel inside the `.vsix`. Keeping one copy at the root and treating the extension's as a build artifact is what stops the two from drifting.
+
+`media/icon.png` is committed, not generated at build time. `scripts/make-icon.py` redraws it from the visualizer's own theme colors; run it only to change the artwork.
+
+### Publishing
+
+```bash
+npm run package -w algoflow-vscode          # produces the .vsix
+npx vsce publish --no-dependencies -p "$VSCE_PAT"
+```
+
+The publisher is `vish-chan`. Publishing needs that publisher registered on the Marketplace and an Azure DevOps personal access token scoped to **Marketplace → Manage**; `vsce login vish-chan` stores it if you would rather not pass `-p`.
+
+A published version number can never be reused — only unpublished — so bump `version` in `package.json` and add a matching `CHANGELOG.md` heading in the same commit as the release.
+
+Note that `"private": true` stays in the manifest. `vsce` never reads that field; it is there to make an accidental `npm publish` fail.

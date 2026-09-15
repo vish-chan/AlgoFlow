@@ -80,4 +80,6 @@ Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 [Apache-2.0](LICENSE)
 
+The Java engine builds on [tracers.java](https://github.com/algorithm-visualizer/tracers.java) (MIT) and ships it, Byte Buddy and Gson inside its shaded jar — see [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+
 
