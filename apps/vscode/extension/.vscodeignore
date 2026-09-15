@@ -1,0 +1,25 @@
+# Shipped: dist/extension.js, media/webview/, engine/, package.json, README, CHANGELOG.
+# Everything below is build input or dev tooling.
+
+.vscode/**
+# Both spellings: the bare name also covers a symlinked shared VS Code test cache,
+# which vsce's secret scanner otherwise tries to read as a file (EISDIR).
+.vscode-test
+.vscode-test/**
+src/**
+webview/**
+node_modules/**
+scripts/**
+dist/integration/**
+**/__pycache__/**
+
+esbuild.*.mjs
+vite.webview.config.ts
+vitest.config.ts
+tsconfig*.json
+.eslintrc*
+.gitignore
+
+**/*.ts
+**/*.tsx
+**/*.map

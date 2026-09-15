@@ -1,0 +1,9 @@
+# Build output
+dist/
+media/webview/
+
+# Engine artifacts, copied in by scripts/bundle-engines.mjs at package time
+engine/
+
+*.vsix
+.vscode-test/

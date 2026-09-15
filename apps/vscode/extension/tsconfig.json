@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    /* Extension host: Node, no DOM. esbuild does the emitting; tsc only typechecks. */
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "types": ["node"],
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  /*
+   * Tests are excluded on purpose: `lib` here deliberately omits DOM so that a stray
+   * browser API in host code is a compile error, but the end-to-end test drives the real
+   * `SimpleEngine`, whose type graph is DOM-bound. `types` is likewise narrowed to node,
+   * which leaves out mocha's globals. `tsconfig.test.json` covers both directories.
+   */
+  "include": ["src"],
+  "exclude": ["src/test", "src/integration"]
+}
