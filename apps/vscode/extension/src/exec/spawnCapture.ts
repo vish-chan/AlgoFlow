@@ -32,9 +32,10 @@ export type SpawnCaptureOptions = {
      * Literal string the process prints to stderr once it is done initializing. Until it
      * appears, `readyTimeoutMs` applies instead of `timeoutMs`.
      *
-     * This exists because the Java agent spends 4-6s retransforming JDK classes before
-     * user code runs, which made a 10s limit fire on finite programs and report an
-     * infinite loop that was not there.
+     * This exists because the Java agent spends a fixed, CPU-bound stretch retransforming
+     * JDK classes before user code runs. It is the part of a run the user cannot influence,
+     * and the part that degrades worst on a loaded machine, so charging it to their
+     * program's budget produces timeouts that blame an infinite loop that is not there.
      */
     readyMarker?: string;
     /**

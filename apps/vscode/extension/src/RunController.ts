@@ -50,6 +50,15 @@ export class RunController implements vscode.Disposable {
 
     private active: ActiveRun | undefined;
 
+    /**
+     * The document the loaded trace was recorded from, which outlives `active`.
+     *
+     * `invalidate` drops `active` on the first edit, so anything keyed on `active` stops
+     * reacting to the second one — that is how editing used to pause playback once and
+     * then never again after a manual resume.
+     */
+    private traced: vscode.Uri | undefined;
+
     constructor(
         private readonly context: vscode.ExtensionContext,
         private readonly wire: (panel: VisualizerPanel) => VisualizerPanel,
@@ -59,11 +68,25 @@ export class RunController implements vscode.Disposable {
         return this.active;
     }
 
-    /** Called when the traced document is edited: playback continues, the highlight stops. */
+    /** The document behind the trace in the panel, whether or not it is still in sync. */
+    get tracedUri(): vscode.Uri | undefined {
+        return this.traced;
+    }
+
+    /** Called when the traced document is edited: the highlight can no longer be trusted. */
     invalidate(): void {
         if (!this.active) return;
         this.active = undefined;
         this.changed.fire(undefined);
+    }
+
+    /**
+     * Called when the panel stops showing a document's trace — it was closed, or a fixture
+     * replaced it. Editing the old document must not then reach into unrelated playback.
+     */
+    forget(): void {
+        this.traced = undefined;
+        this.invalidate();
     }
 
     nextRunId(): number {
@@ -96,6 +119,7 @@ export class RunController implements vscode.Disposable {
             const result = await this.run(document, language);
 
             if (result.ok) {
+                this.traced = document.uri;
                 this.active = {
                     runId,
                     uri: document.uri,
@@ -115,6 +139,8 @@ export class RunController implements vscode.Disposable {
                 return;
             }
 
+            // The panel now shows an error, not this document's trace.
+            this.traced = undefined;
             this.active = undefined;
             this.changed.fire(undefined);
             if (result.diagnostics?.length) {
@@ -122,6 +148,7 @@ export class RunController implements vscode.Disposable {
             }
             panel.post({ type: 'errorTrace', runId, message: result.message });
         } catch (error) {
+            this.traced = undefined;
             this.active = undefined;
             this.changed.fire(undefined);
             panel.post({ type: 'status', phase: 'idle' });

@@ -114,6 +114,8 @@ export function activate(context: vscode.ExtensionContext): AlgoFlowApi {
             setHasTrace(false);
             statusBar.idle();
             playing = false;
+            // No panel, no trace: stop treating edits to that document as staleness.
+            runController.forget();
         });
         return panel;
     }
@@ -162,14 +164,23 @@ export function activate(context: vscode.ExtensionContext): AlgoFlowApi {
          * Pause, not reset: the trace is still a truthful recording of the run that
          * happened, only its mapping onto the source went stale. Scrubbing and stepping
          * still work, so a stray keystroke costs nothing. Re-run to re-sync.
+         *
+         * Keyed on `tracedUri` rather than `activeRun`, which the first edit clears: keyed
+         * on the latter, typing paused playback once and then never again once the user
+         * resumed it.
          */
         vscode.workspace.onDidChangeTextDocument(event => {
-            const active = runController.activeRun;
-            if (active && event.document.uri.toString() === active.uri.toString()) {
+            // VS Code also fires this for changes with no edits, e.g. a dirty-flag flip.
+            if (event.contentChanges.length === 0) return;
+            const traced = runController.tracedUri;
+            if (!traced || event.document.uri.toString() !== traced.toString()) return;
+
+            // Only the first edit has a live highlight to drop; every edit pauses.
+            if (runController.activeRun) {
                 runController.invalidate();
                 statusBar.stale();
-                VisualizerPanel.active?.post({ type: 'transport', action: 'pause' });
             }
+            VisualizerPanel.active?.post({ type: 'transport', action: 'pause' });
         }),
 
         vscode.commands.registerCommand('algoflow.openPanel', () => {
@@ -216,7 +227,9 @@ export function activate(context: vscode.ExtensionContext): AlgoFlowApi {
                     autoPlay: config().get<boolean>('playback.autoPlayOnRun', true),
                 });
                 // A fixture has no document behind it, so transport works but the
-                // highlight has nothing to attach to.
+                // highlight has nothing to attach to — and edits to whatever document was
+                // traced before must not pause the fixture's playback.
+                runController.forget();
                 setHasTrace(true);
                 decorations.setRun(undefined);
             } catch (error) {

@@ -54,9 +54,11 @@ The scan is a state machine, not a regex. The backend's `replaceFirst("^\\s*pack
 
 ## The execution timeout does not start at spawn
 
-Installing the tracing agent costs **4–6 seconds** before the user's `main` runs, and the cost is noisy — it retransforms ~50 already-loaded `java.util` classes plus `PrintStream` (`VisualizerAgent.java:134-223`). Measured on a developer Mac: `System.out.println("hi")` alone takes 3.7–6.0 s under the agent versus 0.25 s without it, and the 38-step `binary_search.java` example takes 7.3 s end to end.
+Installing the tracing agent takes a fixed stretch before the user's `main` runs: it retransforms ~50 already-loaded `java.util` classes plus `PrintStream` (`VisualizerAgent.java:134-223`). On an idle Apple silicon Mac that is cheap — `System.out.println("hi")` takes 0.65 s under the agent against 0.04 s without it, and `binary_search.java` runs end to end in 0.73 s, `n_queens.java` in 1.5 s.
 
-Charged against a single budget, that made finite programs fail: the old 10 s default left only 4–6 s for the program, `n_queens.java` came in at 9.4 s, and the failure was reported as an infinite loop that did not exist.
+It is also the part of a run that degrades worst, because it is CPU-bound and the user cannot make it smaller. Measured on the *same* machine while a build and a test suite were running, every one of those numbers grew by 6-10x: hello-world under the agent hit 3.7-6.0 s, `binary_search` 7.3 s, `n_queens` 9.4 s. Against the old single 10 s budget that is a timeout on a finite program, reported as an infinite loop.
+
+(If you are re-measuring any of this: do it on an idle machine, and do not trust a number taken while the repo is building. The first version of these figures was collected that way and was wrong by an order of magnitude.)
 
 So `spawnCapture` takes a `readyMarker`, and `javaRunner` passes the agent's last startup line (`AGENT_READY_MARKER`, `[VisualizerAgent] Agent installed`, printed after `installOn` returns). Until the marker appears, `readyTimeoutMs` applies — 60 s, bounded separately so a JVM that never initializes still dies; after it, `timeoutMs` measures the user's program alone. `SpawnResult.ready` distinguishes the two, so "the agent never installed" and "your program is looping" are different messages.
 

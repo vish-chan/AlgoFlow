@@ -125,7 +125,29 @@ suite('visualize', () => {
         }
         assert.equal(api.isPlaying, false, 'playback kept running against a stale highlight');
 
+        /*
+         * And again after a manual resume. This is the regression: the handler used to be
+         * keyed on the active run, which the first edit clears, so a second edit reached a
+         * handler that no longer had anything to compare against and playback ran on.
+         */
+        await vscode.commands.executeCommand('algoflow.reset');
+        await vscode.commands.executeCommand('algoflow.playPause');
+        for (let attempt = 0; attempt < 30 && !api.isPlaying; attempt++) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+        }
+        assert.equal(api.isPlaying, true, 'precondition: playback should have resumed');
+
+        const second = new vscode.WorkspaceEdit();
+        second.insert(uri, new vscode.Position(0, 0), '// touched again\n');
+        await vscode.workspace.applyEdit(second);
+
+        for (let attempt = 0; attempt < 50 && api.isPlaying; attempt++) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+        }
+        assert.equal(api.isPlaying, false, 'a second edit did not pause playback');
+
         // Leave the fixture as it was found.
+        await vscode.commands.executeCommand('undo');
         await vscode.commands.executeCommand('undo');
     });
 });

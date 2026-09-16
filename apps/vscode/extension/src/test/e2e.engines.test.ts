@@ -89,25 +89,12 @@ describe.skipIf(!engineJarPath)('java engine end to end', () => {
     }, 180_000);
 
     /*
-     * Installing the agent takes 4-6s on a developer machine — measurably longer than this
-     * whole 38-step program's own work. Before the timeout clock started at the agent's
-     * ready marker, a budget this small killed the run and blamed an infinite loop.
+     * There is deliberately no test here for the timeout clock starting at the agent's
+     * ready marker. Any version of it is a race: on an idle machine the whole run finishes
+     * in under a second, so a budget small enough to prove the point is small enough to
+     * fail spuriously. `src/test/spawnCapture.test.ts` pins the behaviour with scripted
+     * startup delays instead, and `javaRunner.args.test.ts` pins the marker string.
      */
-    it('does not spend the execution budget on agent startup', async () => {
-        const result = await runJava({
-            source: readFileSync(join(JAVA_EXAMPLES, 'binary_search.java'), 'utf-8'),
-            scratchDir: join(scratchRoot, 'java-timeout'),
-            javaPath: 'java',
-            javacPath: 'javac',
-            engineJarPath: engineJarPath!,
-            vmArgs: ['-Xmx512m'],
-            timeoutMs: 5_000,
-            maxTraceBytes: 64 * 1024 * 1024,
-        });
-
-        if (!result.ok) expect.fail(`${result.kind}: ${result.message}`);
-        expect(result.warning).toBeUndefined();
-    }, 180_000);
 });
 
 describe.skipIf(!pythonRunnerExists)('python engine end to end', () => {

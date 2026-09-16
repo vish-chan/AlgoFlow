@@ -14,16 +14,17 @@ const TRACE_FILE = 'visualization.json';
  * `main`. See `VisualizerAgent.java:232`.
  *
  * The extension uses it as the starting gun for the execution timeout. Installing the
- * agent costs 4-6s (it redefines ~50 already-loaded `java.util` classes), which was being
- * charged to the user's program: a 38-step binary search took 7.3s wall clock, and a
- * perfectly finite run was reported as an infinite loop.
+ * agent redefines ~50 already-loaded `java.util` classes, which costs ~0.6s on an idle
+ * machine but several seconds on a busy one — it is CPU-bound, and it is the one part of a
+ * run the user cannot make faster. Charged to their program's budget, it turns a slow
+ * machine into a report of an infinite loop that is not there.
  */
 export const AGENT_READY_MARKER = '[VisualizerAgent] Agent installed';
 
 /**
- * Ceiling on installing the agent, separate from the execution timeout. Generous — the
- * measured cost is 4-6s but varies with machine load — while still bounded, so a JVM that
- * never gets as far as running anything cannot hang the run forever.
+ * Ceiling on installing the agent, separate from the execution timeout. Generous, because
+ * the cost swings by an order of magnitude with machine load, while still bounded, so a JVM
+ * that never gets as far as running anything cannot hang the run forever.
  */
 const AGENT_INSTALL_TIMEOUT_MS = 60_000;
 

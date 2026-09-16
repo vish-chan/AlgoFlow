@@ -73,7 +73,7 @@ Python uses the `algorithm_visualizer` tracer API directly; see the examples und
 
 - **Java must be a single self-contained file** with one `public class` and a `main`. Multi-file projects are not supported yet.
 - An infinite loop is killed at the timeout. Java writes its trace from a JVM shutdown hook, which survives `SIGTERM`, so you usually still get a **partial trace** with a warning rather than nothing.
-- **The first few seconds of a Java run are not your code.** The tracing agent rewrites the JDK collection classes before `main` starts, which costs 4–6 seconds. That is why `algoflow.execution.timeoutMs` only starts counting once the agent reports itself installed — otherwise a short, perfectly finite program gets killed and blamed for looping forever.
+- **The start of a Java run is not your code.** The tracing agent rewrites the JDK collection classes before `main` runs — about half a second on an idle machine, several seconds on a busy one. `algoflow.execution.timeoutMs` therefore only starts counting once the agent reports itself installed, so a slow machine cannot turn a short, finite program into a report of an infinite loop.
 - Editing the file **pauses playback** and drops the highlight (the status bar says so), because the recorded line numbers no longer describe the text on screen. The trace is kept, so you can still scrub and step through it; re-run to re-sync with your edits.
 
 ## Contributing

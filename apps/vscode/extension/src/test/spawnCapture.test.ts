@@ -84,9 +84,9 @@ describe('spawnCapture', () => {
     });
 
     /*
-     * The Java agent spends 4-6s retransforming JDK classes before user code runs. Charging
-     * that to `timeoutMs` made finite programs report an infinite loop, so the clock starts
-     * at the marker instead.
+     * The Java agent retransforms JDK classes before user code runs — cheap on an idle
+     * machine, seconds on a loaded one. Charging that to `timeoutMs` made finite programs
+     * report an infinite loop, so the clock starts at the marker instead.
      */
     describe('readyMarker', () => {
         it('does not charge startup time to the timeout', async () => {
