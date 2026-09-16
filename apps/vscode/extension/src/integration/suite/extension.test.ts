@@ -3,8 +3,14 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import * as vscode from 'vscode';
 import type { AlgoFlowApi } from '../../extension';
+import manifest from '../../../package.json';
 
-const EXTENSION_ID = 'algoflow.algoflow-vscode';
+/*
+ * Derived, not hardcoded: `publisher` is the kind of field that changes once, at publish
+ * time, and a stale literal here fails with "not installed" rather than pointing at the
+ * rename.
+ */
+const EXTENSION_ID = `${manifest.publisher}.${manifest.name}`;
 
 /** Every command the manifest contributes; activation must register all of them. */
 const CONTRIBUTED_COMMANDS = [
@@ -73,7 +79,7 @@ suite('visualize', () => {
         assert.ok(webviewTabs.length > 0, 'The visualizer panel did not open.');
     });
 
-    test('editing the document invalidates the highlight', async () => {
+    test('editing the document pauses playback and invalidates the highlight', async () => {
         const api = await activate();
         if (!api.activeRun) {
             console.warn('skipping: the previous test did not leave a run to invalidate.');
@@ -90,12 +96,34 @@ suite('visualize', () => {
             });
         });
 
+        /*
+         * Rewind before playing, or the pause assertion below passes vacuously: the previous
+         * test's auto-play has likely reached the end of this short trace, and `play()` from
+         * the end is a no-op — it flips `playing` true and straight back to false in the same
+         * tick, because its first `engine.next()` returns false.
+         */
+        await vscode.commands.executeCommand('algoflow.reset');
+        await vscode.commands.executeCommand('algoflow.playPause');
+        for (let attempt = 0; attempt < 30 && !api.isPlaying; attempt++) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+        }
+        assert.equal(api.isPlaying, true, 'precondition: playback should be running');
+
         const edit = new vscode.WorkspaceEdit();
         edit.insert(uri, new vscode.Position(0, 0), '// touched by the integration test\n');
         await vscode.workspace.applyEdit(edit);
 
         await invalidated;
         assert.equal(api.activeRun, undefined);
+
+        /*
+         * The pause is the webview's to perform, so it lands a round trip after the edit:
+         * host posts `transport: pause`, webview stops its timer and reports `playState`.
+         */
+        for (let attempt = 0; attempt < 50 && api.isPlaying; attempt++) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+        }
+        assert.equal(api.isPlaying, false, 'playback kept running against a stale highlight');
 
         // Leave the fixture as it was found.
         await vscode.commands.executeCommand('undo');

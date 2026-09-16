@@ -20,6 +20,8 @@ import type { TransportAction, WebviewToHost } from './protocol';
 export type AlgoFlowApi = {
     readonly activeRun: ActiveRun | undefined;
     readonly onDidChangeActiveRun: vscode.Event<ActiveRun | undefined>;
+    /** Mirrored from the webview, which owns playback. Read-only, and only for tests. */
+    readonly isPlaying: boolean;
 };
 
 function config() {
@@ -55,6 +57,9 @@ export function activate(context: vscode.ExtensionContext): AlgoFlowApi {
     const decorations = new DecorationController();
     const statusBar = new StatusBar();
 
+    /** The webview clocks playback; this is the host's mirror of whether it is running. */
+    let playing = false;
+
     /** Gates the transport keybindings so `alt+arrow` is never shadowed while idle. */
     const setHasTrace = (value: boolean) =>
         void vscode.commands.executeCommand('setContext', 'algoflow.hasTrace', value);
@@ -86,6 +91,10 @@ export function activate(context: vscode.ExtensionContext): AlgoFlowApi {
                     statusBar.step(message.cursor, message.total, message.line);
                     break;
 
+                case 'playState':
+                    playing = message.playing;
+                    break;
+
                 case 'speedChanged':
                     void config().update(
                         'playback.speedMs',
@@ -104,6 +113,7 @@ export function activate(context: vscode.ExtensionContext): AlgoFlowApi {
             decorations.setRun(undefined);
             setHasTrace(false);
             statusBar.idle();
+            playing = false;
         });
         return panel;
     }
@@ -144,13 +154,21 @@ export function activate(context: vscode.ExtensionContext): AlgoFlowApi {
         vscode.commands.registerCommand('algoflow.playPause', transport('playPause')),
         vscode.commands.registerCommand('algoflow.reset', transport('reset')),
 
-        // A trace recorded against older text would highlight lines that have moved, so
-        // stop the highlight. Playback itself keeps working.
+        /*
+         * A trace recorded against older text would highlight lines that have moved, so the
+         * highlight has to stop — and playback pauses with it, otherwise the canvas keeps
+         * animating against a dead editor, which reads as a bug.
+         *
+         * Pause, not reset: the trace is still a truthful recording of the run that
+         * happened, only its mapping onto the source went stale. Scrubbing and stepping
+         * still work, so a stray keystroke costs nothing. Re-run to re-sync.
+         */
         vscode.workspace.onDidChangeTextDocument(event => {
             const active = runController.activeRun;
             if (active && event.document.uri.toString() === active.uri.toString()) {
                 runController.invalidate();
                 statusBar.stale();
+                VisualizerPanel.active?.post({ type: 'transport', action: 'pause' });
             }
         }),
 
@@ -222,6 +240,9 @@ export function activate(context: vscode.ExtensionContext): AlgoFlowApi {
             return runController.activeRun;
         },
         onDidChangeActiveRun: runController.onDidChangeActiveRun,
+        get isPlaying() {
+            return playing;
+        },
     };
 }
 

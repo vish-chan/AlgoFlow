@@ -73,7 +73,7 @@ Python uses the `algorithm_visualizer` tracer API directly; see the examples und
 
 - **Java must be a single self-contained file** with one `public class` and a `main`. Multi-file projects are not supported yet.
 - An infinite loop is killed at the timeout. Java writes its trace from a JVM shutdown hook, which survives `SIGTERM`, so you usually still get a **partial trace** with a warning rather than nothing.
-- Editing the file invalidates the highlight (the status bar says so) because the recorded line numbers no longer describe the text on screen. Playback keeps working; re-run to re-sync.
+- Editing the file **pauses playback** and drops the highlight (the status bar says so), because the recorded line numbers no longer describe the text on screen. The trace is kept, so you can still scrub and step through it; re-run to re-sync with your edits.
 
 ## Contributing
 

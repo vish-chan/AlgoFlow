@@ -7,7 +7,7 @@ First release. Brings the AlgoFlow visualizer into VS Code.
 ### Added
 
 - **AlgoFlow: Visualize This File** (<kbd>Cmd/Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Enter</kbd>) runs the Java or Python file in the active editor and renders the trace in a panel beside it.
-- The current trace line is highlighted in the real editor via a theme-aware decoration, with an overview-ruler mark. Highlighting stops when the document is edited, since the recorded lines no longer match.
+- The current trace line is highlighted in the real editor via a theme-aware decoration, with an overview-ruler mark. Editing the document pauses playback and drops the highlight, since the recorded lines no longer match the text on screen; the trace is kept so it can still be scrubbed.
 - Transport commands and keybindings — step forward/backward, play/pause, reset — gated so they are inert while no trace is loaded.
 - Java compile errors are surfaced as editor diagnostics on the correct line and column.
 - Completions for `@Graph`, `@Tree`, `@Chart` and `@LinkedList`, adding the import automatically.
