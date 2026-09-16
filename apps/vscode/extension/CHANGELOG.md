@@ -12,6 +12,7 @@ First release. Brings the AlgoFlow visualizer into VS Code.
 - Java compile errors are surfaced as editor diagnostics on the correct line and column.
 - Completions for `@Graph`, `@Tree`, `@Chart` and `@LinkedList`, adding the import automatically.
 - Status bar item showing progress and current line during playback.
+- `algoflow.execution.timeoutMs` (30 s) starts counting once the Java tracing agent reports itself installed, so the 4–6 s it spends rewriting JDK classes is not charged to your program — a short, finite run is no longer killed and blamed for looping forever.
 - The Java and Python engines ship inside the extension; only a JDK 21+ or Python 3.10+ is needed. `algoflow.java.enginePath` / `algoflow.python.enginePath` override them for engine development.
 - JDK discovery via `algoflow.java.home`, the Java extension's settings, `JAVA_HOME`, then `PATH`; Python discovery follows the environment selected in the Python extension.
 

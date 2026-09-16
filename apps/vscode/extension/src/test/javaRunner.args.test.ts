@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { delimiter } from 'node:path';
+import { existsSync, readFileSync } from 'node:fs';
+import { delimiter, join } from 'node:path';
 import {
+    AGENT_READY_MARKER,
     compileArgs,
     extractUserError,
     parseJavacDiagnostics,
@@ -8,6 +10,29 @@ import {
     runEnv,
 } from '../exec/javaRunner';
 import { normalizeToRunnerPackage } from '../exec/javaNormalize';
+
+describe('AGENT_READY_MARKER', () => {
+    /*
+     * The execution timeout starts at this marker, so if the agent ever renames the line
+     * the marker silently stops matching: every Java run would then wait out the much
+     * longer install budget before reporting a timeout that never mentions the real cause.
+     */
+    it('matches the line the agent actually prints', () => {
+        const agent = join(
+            __dirname,
+            '../../../../../packages/java/engine/src/main/java/com/algoflow/agent/VisualizerAgent.java',
+        );
+        if (!existsSync(agent)) {
+            // Engine sources are absent from a packaged install; nothing to check against.
+            return;
+        }
+        expect(readFileSync(agent, 'utf-8')).toContain(`println("${AGENT_READY_MARKER}")`);
+    });
+
+    it('is filtered out of user-visible errors', () => {
+        expect(extractUserError(AGENT_READY_MARKER)).toBe('');
+    });
+});
 
 describe('runEnv', () => {
     // Not a feature flag: without it the upstream Commander's shutdown hook uploads the

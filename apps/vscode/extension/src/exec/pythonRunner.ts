@@ -55,7 +55,9 @@ export async function runPython(request: PythonRunRequest): Promise<PythonRunRes
         return {
             ok: false,
             kind: 'timeout',
-            message: `Execution timed out after ${timeoutMs}ms — check for an infinite loop.`,
+            // No ready marker here: the Python engine has no equivalent of the Java
+            // agent's multi-second install, so the whole budget is the program's already.
+            message: `The program ran longer than ${timeoutMs}ms and was stopped. Look for an infinite loop, or raise algoflow.execution.timeoutMs if it is simply a long run.`,
         };
     }
     if (result.truncated) {

@@ -141,7 +141,9 @@ export class RunController implements vscode.Disposable {
     > {
         const source = document.getText();
         const scratchDir = this.scratchDir(document.uri);
-        const timeoutMs = this.setting<number>('execution.timeoutMs', 10_000);
+        // Fallback must track the manifest default, or the two disagree when the setting
+        // is unset in a fresh install.
+        const timeoutMs = this.setting<number>('execution.timeoutMs', 30_000);
         const maxTraceBytes = this.setting<number>('execution.maxTraceBytes', 64 * 1024 * 1024);
 
         if (language === 'java') {

@@ -8,6 +8,25 @@ import { extractClassName, normalizeToRunnerPackage, RUNNER_PACKAGE, type LineMa
 /** Written by the agent, relative to the process's working directory. */
 const TRACE_FILE = 'visualization.json';
 
+/**
+ * Last line `VisualizerAgent.premain` prints, after `installOn` has returned — so once it
+ * appears, every JDK retransformation is done and the next thing to run is the user's
+ * `main`. See `VisualizerAgent.java:232`.
+ *
+ * The extension uses it as the starting gun for the execution timeout. Installing the
+ * agent costs 4-6s (it redefines ~50 already-loaded `java.util` classes), which was being
+ * charged to the user's program: a 38-step binary search took 7.3s wall clock, and a
+ * perfectly finite run was reported as an infinite loop.
+ */
+export const AGENT_READY_MARKER = '[VisualizerAgent] Agent installed';
+
+/**
+ * Ceiling on installing the agent, separate from the execution timeout. Generous — the
+ * measured cost is 4-6s but varies with machine load — while still bounded, so a JVM that
+ * never gets as far as running anything cannot hang the run forever.
+ */
+const AGENT_INSTALL_TIMEOUT_MS = 60_000;
+
 export type JavaRunRequest = {
     source: string;
     /** Empty directory the run owns; compiled classes and the trace land here. */
@@ -87,7 +106,11 @@ export async function runJava(request: JavaRunRequest): Promise<JavaRunResult> {
     );
 
     if (compile.timedOut) {
-        return { ok: false, kind: 'timeout', message: `Compilation timed out after ${timeoutMs}ms.` };
+        return {
+            ok: false,
+            kind: 'timeout',
+            message: `Compilation exceeded the ${timeoutMs}ms limit. Raise algoflow.execution.timeoutMs if this machine just needs longer.`,
+        };
     }
     if (compile.code !== 0) {
         const message = extractUserError(compile.stderr) || compile.stdout;
@@ -104,11 +127,23 @@ export async function runJava(request: JavaRunRequest): Promise<JavaRunResult> {
         env: runEnv(),
         timeoutMs,
         maxBytes: maxTraceBytes,
+        // So `timeoutMs` is a budget for the user's program, not for agent installation.
+        readyMarker: AGENT_READY_MARKER,
+        readyTimeoutMs: AGENT_INSTALL_TIMEOUT_MS,
     });
 
     const tracePath = join(scratchDir, TRACE_FILE);
 
     if (run.timedOut) {
+        if (!run.ready) {
+            // Nothing of the user's ran, so this is never an infinite loop; the JVM never
+            // got as far as their `main`.
+            return {
+                ok: false,
+                kind: 'timeout',
+                message: `The tracing agent did not finish installing within ${AGENT_INSTALL_TIMEOUT_MS}ms, so the program never started.`,
+            };
+        }
         // The agent writes the trace from a JVM shutdown hook, which SIGTERM still runs,
         // so a partial trace is often on disk. Show it rather than nothing.
         const partial = tryReadTrace(tracePath, maxTraceBytes);
@@ -117,13 +152,13 @@ export async function runJava(request: JavaRunRequest): Promise<JavaRunResult> {
                 ok: true,
                 commands: partial,
                 lineMap,
-                warning: `Execution timed out after ${timeoutMs}ms — showing a partial trace. Check for an infinite loop.`,
+                warning: `The program ran longer than ${timeoutMs}ms — showing a partial trace. Look for an infinite loop, or raise algoflow.execution.timeoutMs if it is simply a long run.`,
             };
         }
         return {
             ok: false,
             kind: 'timeout',
-            message: `Execution timed out after ${timeoutMs}ms — check for an infinite loop.`,
+            message: `The program ran longer than ${timeoutMs}ms and was stopped. Look for an infinite loop, or raise algoflow.execution.timeoutMs if it is simply a long run.`,
         };
     }
 

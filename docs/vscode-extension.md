@@ -52,6 +52,21 @@ The trace's line numbers come from `StackWalker` on the *compiled* class, but th
 
 The scan is a state machine, not a regex. The backend's `replaceFirst("^\\s*package…")` only matches when `package` is the very first token, so a file with a license header above its package declaration ends up with two package declarations and a compile error. `src/test/javaNormalize.test.ts` covers that case and ten others.
 
+## The execution timeout does not start at spawn
+
+Installing the tracing agent costs **4–6 seconds** before the user's `main` runs, and the cost is noisy — it retransforms ~50 already-loaded `java.util` classes plus `PrintStream` (`VisualizerAgent.java:134-223`). Measured on a developer Mac: `System.out.println("hi")` alone takes 3.7–6.0 s under the agent versus 0.25 s without it, and the 38-step `binary_search.java` example takes 7.3 s end to end.
+
+Charged against a single budget, that made finite programs fail: the old 10 s default left only 4–6 s for the program, `n_queens.java` came in at 9.4 s, and the failure was reported as an infinite loop that did not exist.
+
+So `spawnCapture` takes a `readyMarker`, and `javaRunner` passes the agent's last startup line (`AGENT_READY_MARKER`, `[VisualizerAgent] Agent installed`, printed after `installOn` returns). Until the marker appears, `readyTimeoutMs` applies — 60 s, bounded separately so a JVM that never initializes still dies; after it, `timeoutMs` measures the user's program alone. `SpawnResult.ready` distinguishes the two, so "the agent never installed" and "your program is looping" are different messages.
+
+Two things to know if you touch this:
+
+- **The marker is a log line, so it is a coupling.** `src/test/javaRunner.args.test.ts` asserts the constant still appears verbatim in `VisualizerAgent.java`. Rename the line without that test and every Java run silently waits out the 60 s install budget instead.
+- **Marker detection spans chunk boundaries.** stderr arrives in arbitrary pieces, so `spawnCapture` keeps a `marker.length - 1` tail between chunks; there is a test that splits the marker in two.
+
+Python gets no marker: its engine has no comparable startup, so the whole budget is already the program's.
+
 ## Bugs deliberately not ported from the backend
 
 `apps/api/backend/.../ExecutionController.java` is the spec for `src/exec/`, with three exceptions:

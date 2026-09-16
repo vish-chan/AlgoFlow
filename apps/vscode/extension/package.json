@@ -187,9 +187,9 @@
         },
         "algoflow.execution.timeoutMs": {
           "type": "number",
-          "default": 10000,
+          "default": 30000,
           "minimum": 1000,
-          "description": "Kill the compile or run after this many milliseconds."
+          "description": "Kill the compile or run after this many milliseconds. For Java the clock starts once the tracing agent has installed, so its startup is not charged to your program."
         },
         "algoflow.execution.maxTraceBytes": {
           "type": "number",

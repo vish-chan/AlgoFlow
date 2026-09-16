@@ -59,7 +59,7 @@ Python uses the `algorithm_visualizer` tracer API directly; see the examples und
 | `algoflow.java.home` | `""` | JDK 21+ to use. Empty means auto-detect. |
 | `algoflow.java.vmArgs` | `["-Xmx512m"]` | Extra JVM arguments for the traced run. |
 | `algoflow.python.interpreterPath` | `""` | Python 3.10+ to use. Empty means auto-detect. |
-| `algoflow.execution.timeoutMs` | `10000` | Kill the run after this long. |
+| `algoflow.execution.timeoutMs` | `30000` | Kill the run after this long. For Java the clock starts once the tracing agent has installed. |
 | `algoflow.execution.maxTraceBytes` | `67108864` | Refuse traces larger than this. |
 | `algoflow.playback.speedMs` | `500` | Delay between steps. |
 | `algoflow.playback.autoPlayOnRun` | `true` | Start playing as soon as the trace is ready. |
@@ -73,6 +73,7 @@ Python uses the `algorithm_visualizer` tracer API directly; see the examples und
 
 - **Java must be a single self-contained file** with one `public class` and a `main`. Multi-file projects are not supported yet.
 - An infinite loop is killed at the timeout. Java writes its trace from a JVM shutdown hook, which survives `SIGTERM`, so you usually still get a **partial trace** with a warning rather than nothing.
+- **The first few seconds of a Java run are not your code.** The tracing agent rewrites the JDK collection classes before `main` starts, which costs 4–6 seconds. That is why `algoflow.execution.timeoutMs` only starts counting once the agent reports itself installed — otherwise a short, perfectly finite program gets killed and blamed for looping forever.
 - Editing the file **pauses playback** and drops the highlight (the status bar says so), because the recorded line numbers no longer describe the text on screen. The trace is kept, so you can still scrub and step through it; re-run to re-sync with your edits.
 
 ## Contributing

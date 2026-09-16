@@ -8,6 +8,12 @@ export type SpawnResult = {
     stderr: string;
     /** The timeout elapsed and we killed the process tree. */
     timedOut: boolean;
+    /**
+     * `readyMarker` was seen on stderr, so `timeoutMs` was measuring the process's own
+     * work. Always true when no marker was asked for. A timeout with `ready: false` is a
+     * different failure — startup never finished — and deserves a different message.
+     */
+    ready: boolean;
     /** Output exceeded `maxBytes`; the captured text is cut short. */
     truncated: boolean;
 };
@@ -15,9 +21,27 @@ export type SpawnResult = {
 export type SpawnCaptureOptions = {
     cwd: string;
     env?: NodeJS.ProcessEnv;
+    /**
+     * Budget for the process. With `readyMarker`, it is measured from the marker rather
+     * than from spawn, so fixed startup cost does not eat into it.
+     */
     timeoutMs: number;
     /** Cap per stream. Prevents a runaway trace from exhausting the host's heap. */
     maxBytes: number;
+    /**
+     * Literal string the process prints to stderr once it is done initializing. Until it
+     * appears, `readyTimeoutMs` applies instead of `timeoutMs`.
+     *
+     * This exists because the Java agent spends 4-6s retransforming JDK classes before
+     * user code runs, which made a 10s limit fire on finite programs and report an
+     * infinite loop that was not there.
+     */
+    readyMarker?: string;
+    /**
+     * Budget for reaching `readyMarker`, bounded separately so a process that never
+     * initializes still dies. Defaults to `timeoutMs`. Ignored without a marker.
+     */
+    readyTimeoutMs?: number;
 };
 
 /** Grace period between asking a process tree to stop and forcing it. */
@@ -55,6 +79,7 @@ export function spawnCapture(
         let truncated = false;
         let timedOut = false;
         let settled = false;
+        let ready = options.readyMarker === undefined;
 
         const collect = (chunks: Buffer[], getBytes: () => number, addBytes: (n: number) => void) =>
             (chunk: Buffer) => {
@@ -78,9 +103,14 @@ export function spawnCapture(
                 addBytes(chunk.length);
             };
 
+        const collectStderr = collect(stderr, () => stderrBytes, n => (stderrBytes += n));
+
         // Attached before any await: this is the deadlock fix.
         child.stdout.on('data', collect(stdout, () => stdoutBytes, n => (stdoutBytes += n)));
-        child.stderr.on('data', collect(stderr, () => stderrBytes, n => (stderrBytes += n)));
+        child.stderr.on('data', (chunk: Buffer) => {
+            collectStderr(chunk);
+            watchForReady(chunk);
+        });
 
         let forceTimer: NodeJS.Timeout | undefined;
         const stop = () => {
@@ -89,10 +119,33 @@ export function spawnCapture(
             forceTimer.unref?.();
         };
 
-        const timer = setTimeout(() => {
+        const expire = () => {
             timedOut = true;
             stop();
-        }, options.timeoutMs);
+        };
+
+        let timer = setTimeout(expire, ready ? options.timeoutMs : (options.readyTimeoutMs ?? options.timeoutMs));
+
+        /*
+         * The marker can straddle two chunks, so keep just enough of the previous one to
+         * span the boundary. Searched independently of `stderr`, which the byte cap may
+         * have stopped filling.
+         */
+        let tail = '';
+        function watchForReady(chunk: Buffer): void {
+            const marker = options.readyMarker;
+            if (ready || marker === undefined) return;
+            const window = tail + chunk.toString('utf-8');
+            if (!window.includes(marker)) {
+                tail = window.slice(-(marker.length - 1));
+                return;
+            }
+            // Restart the clock: from here on, `timeoutMs` measures the real work.
+            ready = true;
+            tail = '';
+            clearTimeout(timer);
+            timer = setTimeout(expire, options.timeoutMs);
+        }
 
         const cleanup = () => {
             clearTimeout(timer);
@@ -117,6 +170,7 @@ export function spawnCapture(
                 stdout: Buffer.concat(stdout).toString('utf-8'),
                 stderr: Buffer.concat(stderr).toString('utf-8'),
                 timedOut,
+                ready,
                 truncated,
             });
         });
