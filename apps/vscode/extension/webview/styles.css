@@ -1,0 +1,58 @@
+/* The visualizer subtree reads these custom properties (they live in the web app's
+   index.css, which is not shipped here). Mapped onto the active VS Code theme, with
+   the web app's dark values as fallbacks for themes that omit a color.
+
+   Canvas drawing does not read CSS at all — SimpleRenderer takes its colors from the
+   mutable `theme` object, populated over postMessage. This block covers only the DOM
+   chrome: pane labels, resize handles and the controls bar. */
+
+:root {
+    --bg-base: var(--vscode-editor-background, #0a0a0a);
+    --bg-surface: var(--vscode-sideBar-background, #121212);
+    --bg-elevated: var(--vscode-editorWidget-background, #1e1e1e);
+    --bg-hover: var(--vscode-list-hoverBackground, #252525);
+    --bg-active: var(--vscode-list-activeSelectionBackground, #2a2a2a);
+
+    --border: var(--vscode-panel-border, #262626);
+    --border-light: var(--vscode-widget-border, #333);
+
+    --text-primary: var(--vscode-editor-foreground, #e0e0e0);
+    --text-secondary: var(--vscode-descriptionForeground, #a0a0a0);
+    --text-muted: var(--vscode-disabledForeground, #737373);
+    --text-faint: var(--vscode-editorLineNumber-foreground, #4a4a4a);
+
+    --accent: var(--vscode-charts-green, #4caf50);
+    --accent-hover: var(--vscode-textLink-activeForeground, #43a047);
+    --accent-glow: rgba(76, 175, 80, 0.25);
+
+    --error: var(--vscode-charts-red, #f44336);
+    --warning: var(--vscode-charts-yellow, #f89f1b);
+    --info: var(--vscode-charts-blue, #2196f3);
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--vscode-font-family);
+    font-size: var(--vscode-font-size);
+    overflow: hidden;
+}
+
+.algoflow-placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: var(--text-secondary);
+}

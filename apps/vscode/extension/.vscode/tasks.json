@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build",
+      "problemMatcher": ["$tsc"],
+      "group": { "kind": "build", "isDefault": true },
+      "label": "npm: build",
+      "detail": "Bundle the webview (vite) and the extension host (esbuild)."
+    },
+    {
+      "type": "npm",
+      "script": "watch",
+      "problemMatcher": ["$esbuild-watch"],
+      "isBackground": true,
+      "label": "npm: watch",
+      "detail": "Rebuild the extension host on change."
+    },
+    {
+      "type": "npm",
+      "script": "watch:webview",
+      "problemMatcher": [],
+      "isBackground": true,
+      "label": "npm: watch:webview",
+      "detail": "Rebuild the webview bundle on change."
+    }
+  ]
+}

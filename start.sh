@@ -12,10 +12,8 @@ cd packages/java/engine
 mvn clean install
 cd ../../..
 
-echo "Installing frontend dependencies..."
-cd apps/web/frontend
+echo "Installing node dependencies (workspace root)..."
 npm install
-cd ../../..
 
 echo "Starting backend server..."
 cd apps/api/backend
@@ -24,10 +22,8 @@ BACKEND_PID=$!
 cd ../../..
 
 echo "Starting frontend dev server..."
-cd apps/web/frontend
-npm run dev &
+npm run dev -w algo-frontend &
 FRONTEND_PID=$!
-cd ../../..
 
 echo ""
 echo "✓ Backend running (PID: $BACKEND_PID)"

@@ -1,0 +1,20 @@
+{
+  "name": "algoflow",
+  "version": "0.0.0",
+  "private": true,
+  "description": "AlgoFlow monorepo — algorithm visualization engines, web app and VS Code extension",
+  "license": "Apache-2.0",
+  "workspaces": [
+    "packages/shared/visualizer",
+    "apps/web/frontend",
+    "apps/vscode/extension"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w algo-frontend",
+    "build": "npm run build -w algo-frontend",
+    "build:vscode": "npm run build -w algoflow-vscode",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  }
+}

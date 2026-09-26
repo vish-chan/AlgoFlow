@@ -5,6 +5,9 @@ Thumbs.db
 *.swo
 .idea/
 .vscode/
+# ...but the VS Code extension's own launch/task config is part of the source
+!apps/vscode/extension/.vscode/
+!apps/vscode/extension/.vscode/*
 
 ## Node / frontend
 node_modules/
@@ -14,6 +17,12 @@ build/
 .nuxt/
 pnpm-lock.yaml
 yarn.lock
+
+## Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
 
 ## Java / Maven / Gradle
 target/

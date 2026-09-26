@@ -1,0 +1,30 @@
+{
+  "name": "@algoflow/visualizer",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Framework-agnostic trace interpreter and canvas renderer shared by the AlgoFlow web app and VS Code extension",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./react": "./src/react.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:update": "vitest run --update"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "typescript": "~5.9.3",
+    "vitest": "^4.1.2"
+  }
+}

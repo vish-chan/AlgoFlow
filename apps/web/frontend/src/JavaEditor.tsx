@@ -1,6 +1,6 @@
 import Editor from "@monaco-editor/react";
 import { useEffect, useRef, useState, useImperativeHandle, forwardRef } from "react";
-import { loadCommands, play, reset, subscribe, engine } from "./visualizer/visualizerEngine";
+import { loadCommands, play, reset, subscribe, engine } from "@algoflow/visualizer";
 import { executeCode, fetchProblems } from "./api/backend";
 import type { Problem } from "./api/backend";
 import { DEFAULT_JAVA_CODE, DEFAULT_PYTHON_CODE, ALGORITHMS, CATEGORIES, TEMPLATES, TEMPLATE_CATEGORIES, PYTHON_ALGORITHMS, PYTHON_CATEGORIES, PYTHON_TEMPLATES, PYTHON_TEMPLATE_CATEGORIES } from "./constants/algorithms";

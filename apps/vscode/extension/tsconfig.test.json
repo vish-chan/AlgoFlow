@@ -1,0 +1,14 @@
+{
+  /*
+   * Tests run in Node under vitest but reach into `@algoflow/visualizer`, whose renderer
+   * is written against the DOM. DOM is in `lib` here and nowhere else, so host code still
+   * cannot use browser APIs by accident.
+   */
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["node", "mocha"]
+  },
+  "include": ["src"],
+  "exclude": []
+}

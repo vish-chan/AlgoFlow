@@ -42,6 +42,22 @@ cd AlgoFlow
 ./start.sh
 ```
 
+## In VS Code
+
+The same visualizer runs inside VS Code, on the file you already have open —
+<kbd>Cmd/Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Enter</kbd> opens a panel beside the editor and
+walks a highlight down your source. Execution is entirely local (no backend, no network)
+and the engines ship with the extension, so all you need is a JDK 21+ or Python 3.10+.
+
+```bash
+npm install
+npm run build -w algoflow-vscode
+code apps/vscode/extension        # then press F5
+```
+
+See [apps/vscode/extension/README.md](apps/vscode/extension/README.md) for usage and
+[docs/vscode-extension.md](docs/vscode-extension.md) for how it is built.
+
 ## How It Works
 
 - **Java** — ByteBuddy agent intercepts bytecode operations
@@ -63,5 +79,7 @@ Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
 ## License
 
 [Apache-2.0](LICENSE)
+
+The Java engine builds on [tracers.java](https://github.com/algorithm-visualizer/tracers.java) (MIT) and ships it, Byte Buddy and Gson inside its shaded jar — see [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 
 

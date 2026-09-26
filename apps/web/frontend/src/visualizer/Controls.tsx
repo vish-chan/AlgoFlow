@@ -9,7 +9,7 @@ import {
     subscribe,
     getEngine,
     setSpeed,
-} from "./visualizerEngine";
+} from "@algoflow/visualizer";
 import { recordGif, cancelRecording, onStateChange, getState, type RecordingState } from "./gifRecorder";
 
 interface ControlsProps {

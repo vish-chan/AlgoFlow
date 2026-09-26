@@ -6,7 +6,7 @@ import Tour, { useTour } from "./Tour";
 import LandingPage from "./LandingPage";
 import { parseLessonFromURL, buildLessonURL, detectLanguage } from "./lesson/lessonStore";
 import type { Lesson } from "./lesson/lessonStore";
-import { subscribe, getEngine, loadCommands } from "./visualizer/visualizerEngine";
+import { subscribe, getEngine, loadCommands } from "@algoflow/visualizer";
 import NavBar from "./NavBar";
 import ToastContainer, { showToast } from "./components/Toast";
 

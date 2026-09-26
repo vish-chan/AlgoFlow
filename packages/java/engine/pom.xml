@@ -7,6 +7,15 @@
     <groupId>com.algoflow</groupId>
     <artifactId>algo-transformer</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>AlgoFlow Java engine</name>
+    <url>https://github.com/vish-chan/AlgoFlow</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

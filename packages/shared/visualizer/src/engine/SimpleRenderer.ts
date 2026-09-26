@@ -1,4 +1,4 @@
-import { theme } from "../../constants/theme";
+import { theme } from "../theme";
 
 interface ColorTransition {
     from: [number, number, number, number];

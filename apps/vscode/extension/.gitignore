@@ -1,0 +1,13 @@
+# Build output
+dist/
+media/webview/
+
+# Engine artifacts and license texts, copied in by scripts/bundle-engines.mjs at package
+# time. The licenses live at the repo root; these are build outputs, not sources.
+engine/
+LICENSE
+NOTICE
+THIRD-PARTY-NOTICES.md
+
+*.vsix
+.vscode-test/

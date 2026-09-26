@@ -1,0 +1,264 @@
+{
+  "name": "algoflow-vscode",
+  "displayName": "AlgoFlow",
+  "description": "Visualize the algorithm in the file you're editing — no copy-pasting into a browser.",
+  "version": "0.1.0",
+  "publisher": "vish-chan",
+  "license": "Apache-2.0",
+  "icon": "media/icon.png",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vish-chan/AlgoFlow.git",
+    "directory": "apps/vscode/extension"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Visualization",
+    "Education",
+    "Debuggers"
+  ],
+  "keywords": [
+    "algorithm",
+    "visualization",
+    "java",
+    "python",
+    "leetcode"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage:java",
+    "onLanguage:python",
+    "onWebviewPanel:algoflow.visualizer"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "algoflow.visualize",
+        "title": "Visualize This File",
+        "category": "AlgoFlow",
+        "icon": "$(play-circle)"
+      },
+      {
+        "command": "algoflow.stepForward",
+        "title": "Step Forward",
+        "category": "AlgoFlow"
+      },
+      {
+        "command": "algoflow.stepBackward",
+        "title": "Step Backward",
+        "category": "AlgoFlow"
+      },
+      {
+        "command": "algoflow.playPause",
+        "title": "Play / Pause",
+        "category": "AlgoFlow"
+      },
+      {
+        "command": "algoflow.reset",
+        "title": "Reset Playback",
+        "category": "AlgoFlow"
+      },
+      {
+        "command": "algoflow.openPanel",
+        "title": "Open Visualizer Panel",
+        "category": "AlgoFlow"
+      },
+      {
+        "command": "algoflow.buildJavaEngine",
+        "title": "Build the Java Engine",
+        "category": "AlgoFlow"
+      },
+      {
+        "command": "algoflow.revealScratchDir",
+        "title": "Reveal Scratch Directory",
+        "category": "AlgoFlow"
+      },
+      {
+        "command": "algoflow.loadFixture",
+        "title": "Load Golden Trace (development)",
+        "category": "AlgoFlow"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "algoflow.visualize",
+        "key": "ctrl+alt+enter",
+        "mac": "cmd+alt+enter",
+        "when": "editorTextFocus && editorLangId =~ /^(java|python)$/"
+      },
+      {
+        "command": "algoflow.stepForward",
+        "key": "alt+right",
+        "when": "algoflow.hasTrace"
+      },
+      {
+        "command": "algoflow.stepBackward",
+        "key": "alt+left",
+        "when": "algoflow.hasTrace"
+      },
+      {
+        "command": "algoflow.playPause",
+        "key": "ctrl+alt+p",
+        "mac": "cmd+alt+p",
+        "when": "algoflow.hasTrace"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "algoflow.visualize",
+          "when": "editorLangId =~ /^(java|python)$/"
+        },
+        {
+          "command": "algoflow.stepForward",
+          "when": "algoflow.hasTrace"
+        },
+        {
+          "command": "algoflow.stepBackward",
+          "when": "algoflow.hasTrace"
+        },
+        {
+          "command": "algoflow.playPause",
+          "when": "algoflow.hasTrace"
+        },
+        {
+          "command": "algoflow.reset",
+          "when": "algoflow.hasTrace"
+        },
+        {
+          "command": "algoflow.buildJavaEngine",
+          "when": "algoflow.inMonorepo"
+        },
+        {
+          "command": "algoflow.loadFixture",
+          "when": "algoflow.inMonorepo"
+        }
+      ],
+      "editor/title/run": [
+        {
+          "command": "algoflow.visualize",
+          "when": "resourceLangId in algoflow.supportedLanguages",
+          "group": "algoflow"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "algoflow.visualize",
+          "when": "resourceLangId in algoflow.supportedLanguages",
+          "group": "z_algoflow"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "AlgoFlow",
+      "properties": {
+        "algoflow.java.home": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Path to a JDK 21+ installation (a full JDK — `javac` is required, a JRE will not do). Leave empty to use `java.jdt.ls.java.home`, `java.configuration.runtimes`, `JAVA_HOME`, or `PATH`, in that order."
+        },
+        "algoflow.java.enginePath": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Path to `algo-transformer.jar`. Leave empty to use the copy bundled with the extension. Set this when working on the Java engine itself."
+        },
+        "algoflow.java.vmArgs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "-Xmx512m"
+          ],
+          "description": "Extra JVM arguments for the traced run."
+        },
+        "algoflow.python.interpreterPath": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Path to a Python 3.10+ interpreter. Leave empty to use the environment selected in the Python extension, then `python3`/`python` on `PATH`."
+        },
+        "algoflow.python.enginePath": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Directory containing `engine/runner.py`. Leave empty to use the copy bundled with the extension."
+        },
+        "algoflow.execution.timeoutMs": {
+          "type": "number",
+          "default": 30000,
+          "minimum": 1000,
+          "description": "Kill the compile or run after this many milliseconds. For Java the clock starts once the tracing agent has installed, so its startup is not charged to your program."
+        },
+        "algoflow.execution.maxTraceBytes": {
+          "type": "number",
+          "default": 67108864,
+          "minimum": 65536,
+          "description": "Refuse traces larger than this, rather than exhausting memory."
+        },
+        "algoflow.highlight.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Highlight the current trace line in the editor."
+        },
+        "algoflow.highlight.followCursor": {
+          "type": "boolean",
+          "default": true,
+          "description": "Scroll the editor to keep the highlighted line visible."
+        },
+        "algoflow.trace.keepScratchDir": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Keep the per-file scratch directory (compiled classes and `visualization.json`) after a run, for debugging."
+        },
+        "algoflow.playback.speedMs": {
+          "type": "number",
+          "default": 500,
+          "minimum": 100,
+          "maximum": 2000,
+          "description": "Delay between playback steps, in milliseconds."
+        },
+        "algoflow.playback.autoPlayOnRun": {
+          "type": "boolean",
+          "default": true,
+          "description": "Start playing as soon as a trace is ready."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "npm run build:webview && npm run build:host",
+    "build:host": "node esbuild.host.mjs",
+    "build:webview": "vite build --config vite.webview.config.ts",
+    "watch": "node esbuild.host.mjs --watch",
+    "watch:webview": "vite build --watch --config vite.webview.config.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.webview.json --noEmit && tsc -p tsconfig.test.json --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest",
+    "test:integration": "npm run build && node esbuild.integration.mjs && node dist/integration/runTest.js",
+    "bundle-engines": "node scripts/bundle-engines.mjs",
+    "prepackage": "npm run build && npm run bundle-engines",
+    "package": "vsce package --no-dependencies"
+  },
+  "dependencies": {
+    "@algoflow/visualizer": "*",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@types/vscode": "^1.90.0",
+    "@vitejs/plugin-react": "^5.1.1",
+    "@vscode/test-electron": "^3.1.0",
+    "@vscode/vsce": "^3.6.0",
+    "esbuild": "^0.25.0",
+    "mocha": "^11.8.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1",
+    "vitest": "^4.1.2"
+  }
+}

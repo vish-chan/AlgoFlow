@@ -1,0 +1,14 @@
+{
+  // Open `apps/vscode/extension` as the workspace folder, then press F5.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run AlgoFlow Extension",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": ["--extensionDevelopmentPath=${workspaceFolder}"],
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+      "preLaunchTask": "npm: build"
+    }
+  ]
+}
